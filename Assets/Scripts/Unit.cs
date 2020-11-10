@@ -90,6 +90,8 @@ public class Unit : MonoBehaviour {
         float newSpeed = Mathf.Min(0, currentSpeed) - otherMomentum / (momentum + otherMomentum) * totalSpeed - 0.5f;
         other.currentSpeed = Mathf.Min(0, other.currentSpeed) - momentum / (momentum + otherMomentum) * totalSpeed - 0.5f;
         currentSpeed = newSpeed;
+        
+        G.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
     }
 
     public bool CanAttack() {

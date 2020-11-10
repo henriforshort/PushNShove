@@ -8,6 +8,8 @@ public class G : MonoBehaviour {
 	public float bumpRecoverySpeed;
 	public GameObject restartButton;
 	public TMP_Text gameOverText;
+	public List<AudioClip> damageSounds;
+	public AudioSource audioSource;
 	
 	public static G m;
 	
