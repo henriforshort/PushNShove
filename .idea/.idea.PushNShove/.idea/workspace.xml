@@ -20,15 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Aahaah-1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Aahaah-1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/background.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/platform.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/platform.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/warrior.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/warrior.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/warriorRed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/warriorRed.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/warriorRed_bumped.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/warriorRed_bumped.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/warriorRed_running.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/warriorRed_running.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/warrior_bumped.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/warrior_bumped.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/warrior_running.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/warrior_running.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sounds/Aa.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sounds/Aahaah-1.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sounds/Aie.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sounds/Aie2.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sounds/Eh.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sounds/Ooh.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sounds/Ouillie.m4a" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +51,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Martians/Assets/Scripts/Util.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
       </list>
     </option>
   </component>
@@ -96,7 +109,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605013741397</updated>
       <workItem from="1605013752758" duration="2344000" />
-      <workItem from="1605028279213" duration="480000" />
+      <workItem from="1605028279213" duration="1078000" />
+      <workItem from="1605089334096" duration="13848000" />
     </task>
     <servers />
   </component>

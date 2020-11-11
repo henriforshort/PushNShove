@@ -9,7 +9,10 @@ public class G : MonoBehaviour {
 	public GameObject restartButton;
 	public TMP_Text gameOverText;
 	public List<AudioClip> damageSounds;
+	public List<AudioClip> deathSounds;
 	public AudioSource audioSource;
+	public GameObject deathParticles;
+	public float collisionForceIncrease;
 	
 	public static G m;
 	
