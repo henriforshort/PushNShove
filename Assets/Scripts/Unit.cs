@@ -54,7 +54,7 @@ public class Unit : MonoBehaviour {
         currentSpeed += Time.deltaTime * maxSpeed * G.m.bumpRecoverySpeed;
         if (currentSpeed > 0) {
             status = S.MOVING;
-            animator.SetBool("Running", true);
+            // animator.SetBool("Running", true);
         }
         
         if (currentSpeed >= maxSpeed) {
@@ -100,8 +100,8 @@ public class Unit : MonoBehaviour {
         float totalSpeed = speed1 + speed2;
         
         // Speed cannot be lower than 0.5 so that immobile units offer some resistance (and no one has < 0 momentum)
-        float momentum1 = mass1 * Mathf.Max(speed1, 0.5f); 
-        float momentum2 = mass2 * Mathf.Max(speed2, 0.5f);
+        float momentum1 = mass1 * Mathf.Max(speed1, G.m.minMomentum); 
+        float momentum2 = mass2 * Mathf.Max(speed2, G.m.minMomentum);
         float totalMomentum = momentum1 + momentum2;
         
         // If unit was moving forward, stop it completely before adding the speed from the collision
@@ -118,7 +118,7 @@ public class Unit : MonoBehaviour {
 
     public void Bump() {
         status = S.BUMPED;
-        animator.SetBool("Running", false);
+        // animator.SetBool("Running", false);
     }
 
     public bool CanAttack() {

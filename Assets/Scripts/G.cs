@@ -13,6 +13,7 @@ public class G : MonoBehaviour {
 	public AudioSource audioSource;
 	public GameObject deathParticles;
 	public float collisionForceIncrease;
+	public float minMomentum;
 	
 	public static G m;
 	
