@@ -54,7 +54,7 @@ public class Unit : MonoBehaviour {
         currentSpeed += Time.deltaTime * maxSpeed * G.m.bumpRecoverySpeed;
         if (currentSpeed > 0) {
             status = S.MOVING;
-            // animator.SetBool("Running", true);
+            animator.SetBool("Bumped", false);
         }
         
         if (currentSpeed >= maxSpeed) {
@@ -118,7 +118,7 @@ public class Unit : MonoBehaviour {
 
     public void Bump() {
         status = S.BUMPED;
-        // animator.SetBool("Running", false);
+        animator.SetBool("Bumped", true);
     }
 
     public bool CanAttack() {
