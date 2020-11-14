@@ -54,7 +54,7 @@ public class Unit : MonoBehaviour {
         currentSpeed += Time.deltaTime * maxSpeed * G.m.bumpRecoverySpeed;
         if (currentSpeed > 0) {
             status = S.MOVING;
-            animator.SetBool("Bumped", false);
+            animator.SetTrigger("walk");
         }
         
         if (currentSpeed >= maxSpeed) {
@@ -81,15 +81,15 @@ public class Unit : MonoBehaviour {
         if (CanAttack()) Attack(other);
         if (other.CanAttack()) other.Attack(this);
         
-        Bump();
-        other.Bump();
-        
         List<float> newSpeeds =  SpeedAfterBump(currentSpeed, other.currentSpeed, mass, 
             other.mass);
         currentSpeed = newSpeeds[0];
         other.currentSpeed = newSpeeds[1];
         
         G.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
+        
+        Bump();
+        other.Bump();
     }
 
     public List<float> SpeedAfterBump(float speed1, float speed2, float mass1, float mass2) {
@@ -118,7 +118,9 @@ public class Unit : MonoBehaviour {
 
     public void Bump() {
         status = S.BUMPED;
-        animator.SetBool("Bumped", true);
+        
+        if (currentSpeed < G.m.speedToBump) animator.SetTrigger("bump");
+        else animator.SetTrigger("hit");
     }
 
     public bool CanAttack() {

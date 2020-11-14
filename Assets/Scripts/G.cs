@@ -14,6 +14,7 @@ public class G : MonoBehaviour {
 	public GameObject deathParticles;
 	public float collisionForceIncrease;
 	public float minMomentum;
+	public float speedToBump; //negative speed after which a unit is considered bumped
 	
 	public static G m;
 	
