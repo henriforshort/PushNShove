@@ -111,6 +111,22 @@ public static class Util {
         obj.transform.LerpTo(target, smoothness);
     }
 
+    public static void LerpTo(this Transform obj, Transform target, float smoothness = 2) {
+        obj.position = Vector3.Lerp(obj.position, target.position, smoothness / 100);
+    }
+
+    public static void LerpTo(this GameObject obj, Transform target, float smoothness = 2) {
+        obj.transform.LerpTo(target, smoothness);
+    }
+
+    public static void LerpTo(this Transform obj, GameObject target, float smoothness = 2) {
+        obj.position = Vector3.Lerp(obj.position, target.transform.position, smoothness / 100);
+    }
+
+    public static void LerpTo(this GameObject obj, GameObject target, float smoothness = 2) {
+        obj.transform.LerpTo(target, smoothness);
+    }
+
     public static void SlerpTo(this Transform obj, Quaternion target, float smoothness = 2) {
         obj.rotation = Quaternion.Slerp(obj.rotation, target, smoothness / 100);
     }

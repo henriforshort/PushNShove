@@ -21,26 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Bump.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Bump.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Unit.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Unit.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Walk.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Units/Unit.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_bumped.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_bumped.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_concept.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_concept.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/blacksquare.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/blacksquare.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/background.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/platform.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/platform.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/platform.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/platform.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/whitesquare.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/whitesquare.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/background.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/background.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer_bumped.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer_bumped.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/platform.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/platform.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +106,7 @@
       <workItem from="1605089334096" duration="13848000" />
       <workItem from="1605189344606" duration="1045000" />
       <workItem from="1605373857813" duration="1682000" />
+      <workItem from="1605437271847" duration="11412000" />
     </task>
     <servers />
   </component>

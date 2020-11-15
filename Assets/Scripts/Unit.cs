@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Unit : MonoBehaviour {
@@ -21,7 +23,7 @@ public class Unit : MonoBehaviour {
     [Header("References")]
     public Slider healthBar;
     public Animator animator;
-    public Rigidbody rigidbody;
+    public Rigidbody rigidbodee;
 
     private static List<Unit> _player1Units;
     public static List<Unit> player1Units => _player1Units ?? (_player1Units = new List<Unit>());
@@ -33,10 +35,11 @@ public class Unit : MonoBehaviour {
     public List<Unit> enemies => playerIndex == PI.PLAYER_ONE ? player2Units : player1Units;
     
     public enum S { MOVING, BUMPED, FALLING }
+    public enum A { WALK, HIT, BUMPED }
 
     public void Start() {
         currentSpeed = maxSpeed;
-        AddHealth(maxHealth);
+        SetHealth(maxHealth);
         if (playerIndex == PI.PLAYER_ONE) player1Units.Add(this);
         if (playerIndex == PI.PLAYER_TWO) player2Units.Add(this);
     }
@@ -54,7 +57,7 @@ public class Unit : MonoBehaviour {
         currentSpeed += Time.deltaTime * maxSpeed * G.m.bumpRecoverySpeed;
         if (currentSpeed > 0) {
             status = S.MOVING;
-            animator.SetTrigger("walk");
+            animator.SetInteger("anim", (int)A.WALK);
         }
         
         if (currentSpeed >= maxSpeed) {
@@ -108,7 +111,7 @@ public class Unit : MonoBehaviour {
         float initialSpeed1 = Mathf.Min(0, speed1);
         float initialSpeed2 = Mathf.Min(0, speed2);
         
-        //Add some momentum to the other unit to make the &éollision more powerful
+        //Add some momentum to the other unit to make the collision more powerful
         //Gain a fraction of total speed (backwards) equivalent to the fraction of total momentum the other unit has
         float newSpeed1 = initialSpeed1 - ((momentum2 + G.m.collisionForceIncrease) / totalMomentum) * totalSpeed;
         float newSpeed2 = initialSpeed2 - ((momentum1 + G.m.collisionForceIncrease) / totalMomentum) * totalSpeed;
@@ -118,9 +121,16 @@ public class Unit : MonoBehaviour {
 
     public void Bump() {
         status = S.BUMPED;
-        
-        if (currentSpeed < G.m.speedToBump) animator.SetTrigger("bump");
-        else animator.SetTrigger("hit");
+
+        if (currentSpeed < G.m.speedToBump) {
+            animator.SetInteger("anim", (int)A.BUMPED);
+            Destroy(Instantiate(
+                G.m.bumpDustParticles, 
+                transform.position + Vector3.up*0.5f, 
+                Quaternion.identity), 0.5f);
+            
+        }
+        else animator.SetInteger("anim", (int)A.HIT);
     }
 
     public bool CanAttack() {
@@ -129,11 +139,16 @@ public class Unit : MonoBehaviour {
 
     public void Attack(Unit other) {
         lastAttack = Time.time;
-        other.AddHealth(-damage);
+        other.TakeDamage(damage);
     }
 
-    public void AddHealth(float amount) {
-        currentHealth = Mathf.Clamp(currentHealth+amount, 0, maxHealth);
+    public void TakeDamage(float amount) {
+        SetHealth(currentHealth-amount);
+        G.m.CreateHpLossUI(transform.position + new Vector3(0, 1.8f, -5));
+    }
+
+    public void SetHealth(float amount) {
+        currentHealth = Mathf.Clamp(amount, 0, maxHealth);
         healthBar.value = currentHealth / maxHealth;
         if (currentHealth <= 0) DeathByHp();
     }
@@ -146,8 +161,8 @@ public class Unit : MonoBehaviour {
     public void DeathByFall() {
         Deactivate();
         status = S.FALLING;
-        rigidbody.useGravity = true;
-        this.Wait(0.5f, () => Destroy());
+        rigidbodee.useGravity = true;
+        this.Wait(0.5f, Destroy);
     }
 
     public void Deactivate() {
@@ -161,7 +176,7 @@ public class Unit : MonoBehaviour {
 
     public void Destroy() {
         G.m.audioSource.PlayOneShot(G.m.deathSounds.Random());
-        Instantiate(G.m.deathParticles, transform.position, Quaternion.identity);
+        Instantiate(G.m.deathCloud, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
