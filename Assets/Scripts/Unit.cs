@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.IO.Compression;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Unit : MonoBehaviour {
@@ -98,8 +96,7 @@ public class Unit : MonoBehaviour {
     public List<float> SpeedAfterBump(float speed1, float speed2, float mass1, float mass2) {
         // Basic concept : the total amount of speed is conserved (the sum of the two unit's speed stays the same)
         // This total speed is distributed proportionally to each unit's momentum (speed * mass)
-        // A few deatils have been added for better gamefeel
-
+        // A few details have been added for better gamefeel
         float totalSpeed = speed1 + speed2;
         
         // Speed cannot be lower than 0.5 so that immobile units offer some resistance (and no one has < 0 momentum)

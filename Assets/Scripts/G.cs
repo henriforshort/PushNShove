@@ -22,7 +22,8 @@ public class G : MonoBehaviour {
 	public GameObject cameraFocus;
 	public GameObject cameraGO;
 	public float camDist;
-	public float camSmooth;
+	[FormerlySerializedAs("camSmooth")]
+	public float camSpeed;
 	public GameObject hills;
 	public float hillsParallax;
 	public GameObject hpLossUIPrefab;
@@ -49,26 +50,20 @@ public class G : MonoBehaviour {
 
 	public void UpdateHpLossUIs() {
 		foreach (GameObject go in hpLossUIs) {
-			go.LerpTo(new Vector3(go.transform.position.x, hpLossUITargetY, go.transform.position.z), 
+			go.LerpTo(new Vector3(go.GetX(), hpLossUITargetY, go.GetZ()), 
 				hpLossUISpeed);
 		}
 	}
 
 	public void CameraAndParallax() {
 		cameraFocus.transform.position = (Vector3.forward * -10) + Vector3.right *
-			(Unit.player1Units.Select(unit => unit.transform.position.x).Max()
-			 + Unit.player2Units.Select(unit => unit.transform.position.x).Min()) / 2;
+			(Unit.player1Units.Select(unit => unit.GetX()).Max()
+			 + Unit.player2Units.Select(unit => unit.GetX()).Min()) / 2;
 			
-		if (Mathf.Abs(cameraFocus.transform.position.x - cameraGO.transform.position.x) > camDist) 
-			cameraGO.LerpTo(cameraFocus, camSmooth);
+		if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > camDist) 
+			cameraGO.LerpTo(cameraFocus, camSpeed).ClampX(-0.5f, 0.5f);
 
-		if (cameraGO.transform.position.x < -0.5f) cameraGO.transform.position = Vector3.right * -0.5f 
-			+ -10 * Vector3.forward;
-		if (cameraGO.transform.position.x > 0.5f) cameraGO.transform.position = Vector3.right * 0.5f 
-			+ -10 * Vector3.forward;
-			
-		hills.transform.position = cameraGO.transform.position.x * hillsParallax * Vector3.right 
-		                           + 10 * Vector3.forward;
+		hills.SetX(cameraGO.GetX() * hillsParallax);
 	}
 
 	public void CreateHpLossUI(Vector3 position) {
