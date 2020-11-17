@@ -17,12 +17,12 @@ public class G : MonoBehaviour {
 	public float collisionForceIncrease;
 	public float minMomentum;
 	public float speedToBump; //negative speed after which a unit is considered bumped
-	public GameObject bumpDustParticles;
-	public GameObject deathCloud;
+	public GameObject bumpDustFx;
+	public GameObject deathCloudFx;
+	public GameObject sparkFx;
 	public GameObject cameraFocus;
 	public GameObject cameraGO;
 	public float camDist;
-	[FormerlySerializedAs("camSmooth")]
 	public float camSpeed;
 	public GameObject hills;
 	public float hillsParallax;
@@ -94,5 +94,11 @@ public class G : MonoBehaviour {
 		Unit.player1Units.Clear();
 		Unit.player2Units.Clear();
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, float duration = 0.5f) {
+		GameObject spawnedFx = Instantiate(fx, position, Quaternion.identity, transform);
+		if (mirrored) spawnedFx.transform.localScale = new Vector3(-1, 1, 1);
+		Destroy(spawnedFx, duration);
 	}
 }

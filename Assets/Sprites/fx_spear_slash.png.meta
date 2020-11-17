@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: a9b63df3f20a26c4b9a69ec0feeb215d
+guid: 8f6e49c887e0d534ab42ffa6841952a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8190657522501117702
-    second: Shieldbearer_red_bumped_0
+      213: 7989379418485909028
+    second: fx_spear_slash_0
   - first:
-      213: 6476594208144318311
-    second: Shieldbearer_red_bumped_1
+      213: -9066479374122816541
+    second: fx_spear_slash_1
   - first:
-      213: -7916313648815968007
-    second: Shieldbearer_red_bumped_2
+      213: 349300542367317258
+    second: fx_spear_slash_2
   - first:
-      213: 3664394260216935111
-    second: Shieldbearer_red_bumped_3
+      213: 1168245725072323037
+    second: fx_spear_slash_3
+  - first:
+      213: -8505419357016379328
+    second: fx_spear_slash_0
+  - first:
+      213: -5935484436822636990
+    second: fx_spear_slash_1
+  - first:
+      213: 2922069239656501458
+    second: fx_spear_slash_2
+  - first:
+      213: -4612551086535860226
+    second: fx_spear_slash_3
+  - first:
+      213: -3878977938625309012
+    second: fx_spear_slash_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shieldbearer_red_bumped_0
+      name: fx_spear_slash_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 36
-        height: 36
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6076f89ee9f0ba170800000000000000
-      internalID: 8190657522501117702
+      spriteID: 040be4f882ea6f980800000000000000
+      internalID: -8505419357016379328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shieldbearer_red_bumped_1
+      name: fx_spear_slash_1
       rect:
         serializedVersion: 2
-        x: 36
+        x: 16
         y: 0
-        width: 36
-        height: 36
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f5bca2e1c71e950800000000000000
-      internalID: 6476594208144318311
+      spriteID: 246c35d2a5ce0ada0800000000000000
+      internalID: -5935484436822636990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shieldbearer_red_bumped_2
+      name: fx_spear_slash_2
       rect:
         serializedVersion: 2
-        x: 72
+        x: 32
         y: 0
-        width: 36
-        height: 36
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f07fb7cdaa932290800000000000000
-      internalID: -7916313648815968007
+      spriteID: 2d052dedd764d8820800000000000000
+      internalID: 2922069239656501458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shieldbearer_red_bumped_3
+      name: fx_spear_slash_3
       rect:
         serializedVersion: 2
-        x: 108
+        x: 48
         y: 0
-        width: 36
-        height: 36
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +205,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c2f5353a2b8ad230800000000000000
-      internalID: 3664394260216935111
+      spriteID: eff10b2a93decffb0800000000000000
+      internalID: -4612551086535860226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx_spear_slash_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca659a4dd1a1b2ac0800000000000000
+      internalID: -3878977938625309012
       vertices: []
       indices: 
       edges: []

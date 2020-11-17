@@ -22,6 +22,7 @@ public class Unit : MonoBehaviour {
     public Slider healthBar;
     public Animator animator;
     public Rigidbody rigidbodee;
+    public GameObject attackFx;
 
     private static List<Unit> _player1Units;
     public static List<Unit> player1Units => _player1Units ?? (_player1Units = new List<Unit>());
@@ -32,8 +33,7 @@ public class Unit : MonoBehaviour {
     public List<Unit> allies => playerIndex == PI.PLAYER_ONE ? player1Units : player2Units;
     public List<Unit> enemies => playerIndex == PI.PLAYER_ONE ? player2Units : player1Units;
     
-    public enum S { MOVING, BUMPED, FALLING }
-    public enum A { WALK, HIT, BUMPED }
+    public enum S { WALK, HIT, BUMPED, FALLING } //Also for the animations
 
     public void Start() {
         currentSpeed = maxSpeed;
@@ -53,9 +53,14 @@ public class Unit : MonoBehaviour {
         if (status == S.FALLING) return;
         
         currentSpeed += Time.deltaTime * maxSpeed * G.m.bumpRecoverySpeed;
-        if (currentSpeed > 0) {
-            status = S.MOVING;
-            animator.SetInteger("anim", (int)A.WALK);
+        if (currentSpeed > 0 && status != S.WALK) {
+            if (status == S.BUMPED)  Destroy(Instantiate(
+                    G.m.bumpDustFx, 
+                    transform.position + new Vector3(-0.75f * (int)playerIndex, 0.5f, -2), 
+                    Quaternion.identity), 0.5f);
+            
+            status = S.WALK;
+            animator.SetInteger("anim", (int)status);
         }
         
         if (currentSpeed >= maxSpeed) {
@@ -71,7 +76,7 @@ public class Unit : MonoBehaviour {
 
     public void OnTriggerStay(Collider other) {
         Unit otherUnit = other.GetComponent<Unit>();
-        if (status != S.BUMPED && enemies.Select(e => e.gameObject).Contains(other.gameObject)) {
+        if (status == S.WALK && enemies.Select(e => e.gameObject).Contains(other.gameObject)) {
             Collide(otherUnit);
         }
         
@@ -79,18 +84,21 @@ public class Unit : MonoBehaviour {
     }
 
     public void Collide(Unit other) {
-        if (CanAttack()) Attack(other);
-        if (other.CanAttack()) other.Attack(this);
-        
         List<float> newSpeeds =  SpeedAfterBump(currentSpeed, other.currentSpeed, mass, 
             other.mass);
         currentSpeed = newSpeeds[0];
         other.currentSpeed = newSpeeds[1];
         
-        G.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
-        
         Bump();
         other.Bump();
+        
+        G.m.SpawnFX(
+            G.m.sparkFx, 
+            transform.position + new Vector3(0.75f * (int)playerIndex, Random.Range(-0.5f, 0.5f), -2),
+            true);
+        
+        if (CanAttack(other)) Attack(other);
+        if (other.CanAttack(this)) other.Attack(this);
     }
 
     public List<float> SpeedAfterBump(float speed1, float speed2, float mass1, float mass2) {
@@ -117,26 +125,26 @@ public class Unit : MonoBehaviour {
     }
 
     public void Bump() {
-        status = S.BUMPED;
-
         if (currentSpeed < G.m.speedToBump) {
-            animator.SetInteger("anim", (int)A.BUMPED);
-            Destroy(Instantiate(
-                G.m.bumpDustParticles, 
-                transform.position + Vector3.up*0.5f, 
-                Quaternion.identity), 0.5f);
-            
+            G.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
+            status = S.BUMPED;
         }
-        else animator.SetInteger("anim", (int)A.HIT);
+        else status = S.HIT;
+        
+        animator.SetInteger("anim", (int)status);
     }
 
-    public bool CanAttack() {
-        return status == S.MOVING && Time.time - lastAttack > attackSpeed;
+    public bool CanAttack(Unit other) {
+        return status != S.BUMPED && other.status == S.BUMPED;
     }
 
     public void Attack(Unit other) {
         lastAttack = Time.time;
         other.TakeDamage(damage);
+        
+        G.m.SpawnFX(attackFx, 
+            transform.position + new Vector3((int)playerIndex * 0.7f, 0.12f, -5f), 
+            playerIndex != PI.PLAYER_ONE);
     }
 
     public void TakeDamage(float amount) {
@@ -158,6 +166,7 @@ public class Unit : MonoBehaviour {
     public void DeathByFall() {
         Deactivate();
         status = S.FALLING;
+        animator.SetInteger("anim", (int)S.BUMPED);
         rigidbodee.useGravity = true;
         this.Wait(0.5f, Destroy);
     }
@@ -173,7 +182,7 @@ public class Unit : MonoBehaviour {
 
     public void Destroy() {
         G.m.audioSource.PlayOneShot(G.m.deathSounds.Random());
-        Instantiate(G.m.deathCloud, transform.position, Quaternion.identity);
+        Instantiate(G.m.deathCloudFx, transform.position + 0.5f*Vector3.up, Quaternion.identity);
         Destroy(gameObject);
     }
 }

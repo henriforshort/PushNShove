@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2169665080544586209}
   - component: {fileID: 2169665080544586208}
   m_Layer: 0
-  m_Name: DeathCloud 1
+  m_Name: fx_spear_slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1538,10 +1538,11 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 509935994663998345, guid: 999d2da347079af4c90b6b55e07c4e71, type: 3}
-    - sprite: {fileID: -258941129229258168, guid: 999d2da347079af4c90b6b55e07c4e71, type: 3}
-    - sprite: {fileID: -6718774336904274594, guid: 999d2da347079af4c90b6b55e07c4e71, type: 3}
-    - sprite: {fileID: -7801867616705174070, guid: 999d2da347079af4c90b6b55e07c4e71, type: 3}
+    - sprite: {fileID: 7989379418485909028, guid: 8f6e49c887e0d534ab42ffa6841952a2, type: 3}
+    - sprite: {fileID: -9066479374122816541, guid: 8f6e49c887e0d534ab42ffa6841952a2, type: 3}
+    - sprite: {fileID: 349300542367317258, guid: 8f6e49c887e0d534ab42ffa6841952a2, type: 3}
+    - sprite: {fileID: 1168245725072323037, guid: 8f6e49c887e0d534ab42ffa6841952a2, type: 3}
+    - sprite: {fileID: -3878977938625309012, guid: 8f6e49c887e0d534ab42ffa6841952a2, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

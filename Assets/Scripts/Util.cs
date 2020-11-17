@@ -92,36 +92,47 @@ public static class Util {
     public static Vector3 SetZ(this Vector3 target, float z) => new Vector3(target.x, target.y, z);
 
     public static Transform SetX(this Transform target, float x) {
-        target.position.SetX(x);
+        target.position = SetX(target.position, x);
         return target;
     }
 
     public static Transform SetY(this Transform target, float y) {
-        target.position.SetX(y);
+        target.position = SetY(target.position, y);
         return target;
     }
 
     public static Transform SetZ(this Transform target, float z) {
-        target.position.SetX(z);
+        target.position = SetZ(target.position, z);
         return target;
     }
 
-    public static GameObject SetX(this GameObject target, float x) => target.transform.SetX(x).gameObject;
-    public static GameObject SetY(this GameObject target, float y) => target.transform.SetX(y).gameObject;
-    public static GameObject SetZ(this GameObject target, float z) => target.transform.SetX(z).gameObject;
-    
+    public static GameObject SetX(this GameObject target, float x) {
+        target.transform.SetX(x);
+        return target.gameObject;
+    }
+
+    public static GameObject SetY(this GameObject target, float y) {
+        target.transform.SetY(y);
+        return target.gameObject;
+    }
+
+    public static GameObject SetZ(this GameObject target, float z) {
+        target.transform.SetZ(z);
+        return target.gameObject;
+    }
+
     public static MonoBehaviour SetX(this MonoBehaviour target, float x) {
         target.transform.SetX(x);
         return target;
     }
 
     public static MonoBehaviour SetY(this MonoBehaviour target, float y) {
-        target.transform.SetX(y);
+        target.transform.SetY(y);
         return target;
     }
 
     public static MonoBehaviour SetZ(this MonoBehaviour target, float z) {
-        target.transform.SetX(z);
+        target.transform.SetZ(z);
         return target;
     }
 
@@ -352,6 +363,18 @@ public static class Util {
         if (i == 0) return t1;
         else if (i == 1) return t2;
         else return t3;
+    }
+
+    public static T Random<T>(T t1, T t2, T t3, T t4) {
+        int i = UnityEngine.Random.Range(0, 4);
+        if (i == 0) return t1;
+        else if (i == 1) return t2;
+        else if (i == 2) return t3;
+        else return t4;
+    }
+
+    public static bool Random<T>() {
+        return UnityEngine.Random.Range(0, 2) == 0;
     }
 
     
