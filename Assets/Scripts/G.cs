@@ -22,8 +22,9 @@ public class G : MonoBehaviour {
 	public GameObject sparkFx;
 	public GameObject cameraFocus;
 	public GameObject cameraGO;
-	public float camDist;
+	public float camAllowedDist;
 	public float camSpeed;
+	public float camMaxDistance;
 	public GameObject hills;
 	public float hillsParallax;
 	public GameObject hpLossUIPrefab;
@@ -31,6 +32,7 @@ public class G : MonoBehaviour {
 	public float hpLossUITargetY;
 	public float hpLossUISpeed;
 	public float hpLossUIDuration;
+	public GameObject sun;
 	
 	public static G m;
 	
@@ -60,10 +62,11 @@ public class G : MonoBehaviour {
 			(Unit.player1Units.Select(unit => unit.GetX()).Max()
 			 + Unit.player2Units.Select(unit => unit.GetX()).Min()) / 2;
 			
-		if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > camDist) 
-			cameraGO.LerpTo(cameraFocus, camSpeed).ClampX(-0.5f, 0.5f);
+		if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > camAllowedDist) 
+			cameraGO.LerpTo(cameraFocus, camSpeed).ClampX(-camMaxDistance, camMaxDistance);
 
 		hills.SetX(cameraGO.GetX() * hillsParallax);
+		sun.SetX(cameraGO.GetX());
 	}
 
 	public void CreateHpLossUI(Vector3 position) {

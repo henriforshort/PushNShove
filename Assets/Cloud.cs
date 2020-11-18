@@ -5,6 +5,6 @@ public class Cloud : MonoBehaviour {
     
     private void Update() {
         transform.position +=  speed * Time.deltaTime * Vector3.right;
-        if (this.GetX() > 13) this.SetX(-13);
+        if (this.GetX() > 23) this.SetX(-23);
     }
 }

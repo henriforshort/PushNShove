@@ -143,7 +143,7 @@ public class Unit : MonoBehaviour {
         other.TakeDamage(damage);
         
         G.m.SpawnFX(attackFx, 
-            transform.position + new Vector3((int)playerIndex * 0.7f, 0.12f, -5f), 
+            transform.position + new Vector3((int)playerIndex * 0.6f, 0.09f, -5f), 
             playerIndex != PI.PLAYER_ONE);
     }
 
