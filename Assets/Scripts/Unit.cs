@@ -10,13 +10,12 @@ public class Unit : MonoBehaviour {
     public float mass;
     public float maxHealth;
     public float damage;
-    public float attackSpeed; //Delay between attacks
+    public bool spawnAttackFx;
     
     [Header("State")]
     public float currentSpeed;
     public S status;
     public float currentHealth;
-    public float lastAttack;
     
     [Header("References")]
     public Slider healthBar;
@@ -92,11 +91,6 @@ public class Unit : MonoBehaviour {
         Bump();
         other.Bump();
         
-        G.m.SpawnFX(
-            G.m.sparkFx, 
-            transform.position + new Vector3(0.75f * (int)playerIndex, Random.Range(-0.5f, 0.5f), -2),
-            true);
-        
         if (CanAttack(other)) Attack(other);
         if (other.CanAttack(this)) other.Attack(this);
     }
@@ -139,17 +133,24 @@ public class Unit : MonoBehaviour {
     }
 
     public void Attack(Unit other) {
-        lastAttack = Time.time;
         other.TakeDamage(damage);
         
-        G.m.SpawnFX(attackFx, 
-            transform.position + new Vector3((int)playerIndex * 0.6f, 0.09f, -5f), 
+        if (spawnAttackFx) G.m.SpawnFX(attackFx, 
+            transform.position + new Vector3((int)playerIndex * 0.4f, 0.06f, -5f), 
             playerIndex != PI.PLAYER_ONE);
+        
+        G.m.SpawnFX(G.m.sparkFx, 
+            transform.position + new Vector3(0.75f * (int)playerIndex, 
+                Random.Range(-0.5f, 0.5f), -2),
+            playerIndex == PI.PLAYER_ONE);
     }
 
     public void TakeDamage(float amount) {
         SetHealth(currentHealth-amount);
-        G.m.CreateHpLossUI(transform.position + new Vector3(0, 1.8f, -5));
+        G.m.hpLossUIs.Add(G.m.SpawnFX(G.m.hpLossUIPrefab, 
+            transform.position + new Vector3((int)playerIndex * -0.3f, 1.9f, -5f),
+            false, 
+            transform));
     }
 
     public void SetHealth(float amount) {

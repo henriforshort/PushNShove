@@ -21,17 +21,59 @@
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Cloud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cloud.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fx_spear_slash.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/fx_spear_slash.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/hp loss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/hp loss.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/hills.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/hills.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/spikes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/spikes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Bump_dust_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Bump_dust_cloud.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Death_Cloud 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Death_Cloud 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_bumped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_bumped.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_hit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_red.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_red_bumped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_red_bumped.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_red_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_red_hit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cloud.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cloud2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cloud2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cloud3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/cloud3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/flag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/flag.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/flies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/flies.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx_sparks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx_sparks.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx_spear_slash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx_spear_slash.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/hills.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/hills.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/hp_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/hp_bg.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/hp_fg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/hp_fg.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/platform.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/platform.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/spikes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/spikes.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/victory_screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/victory_screen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Working Files/Sprites/background.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/background.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/cloud.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/cloud.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/fx_slash.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/fx_slash.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/platform.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/platform.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +93,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
         <option value="$PROJECT_DIR$/Assets/Cloud.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
       </list>
     </option>
@@ -111,6 +153,8 @@
       <workItem from="1605539686205" duration="5879000" />
       <workItem from="1605627295538" duration="9845000" />
       <workItem from="1605706067108" duration="4069000" />
+      <workItem from="1605782294404" duration="4992000" />
+      <workItem from="1605863311720" duration="1941000" />
     </task>
     <servers />
   </component>

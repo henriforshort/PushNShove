@@ -51,9 +51,9 @@ public class G : MonoBehaviour {
 	}
 
 	public void UpdateHpLossUIs() {
+		hpLossUIs = hpLossUIs.Where(go => go != null).ToList();
 		foreach (GameObject go in hpLossUIs) {
-			go.LerpTo(new Vector3(go.GetX(), hpLossUITargetY, go.GetZ()), 
-				hpLossUISpeed);
+			go.LerpTo(new Vector3(go.GetX(), hpLossUITargetY, go.GetZ()), hpLossUISpeed);
 		}
 	}
 
@@ -67,15 +67,6 @@ public class G : MonoBehaviour {
 
 		hills.SetX(cameraGO.GetX() * hillsParallax);
 		sun.SetX(cameraGO.GetX());
-	}
-
-	public void CreateHpLossUI(Vector3 position) {
-		GameObject go = Instantiate(hpLossUIPrefab, position, Quaternion.identity, transform);
-		hpLossUIs.Add(go);
-		this.Wait(hpLossUIDuration, () => {
-			hpLossUIs.Remove(go);
-			Destroy(go);
-		});
 	}
 
 	public void Defeat() {
@@ -99,9 +90,12 @@ public class G : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	public void SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, float duration = 0.5f) {
-		GameObject spawnedFx = Instantiate(fx, position, Quaternion.identity, transform);
+	public GameObject SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, Transform holder = null, 
+		float duration = 0.5f) {
+		if (holder == null) holder = transform;
+		GameObject spawnedFx = Instantiate(fx, position, Quaternion.identity, holder);
 		if (mirrored) spawnedFx.transform.localScale = new Vector3(-1, 1, 1);
 		Destroy(spawnedFx, duration);
+		return spawnedFx;
 	}
 }
