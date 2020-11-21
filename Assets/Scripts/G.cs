@@ -31,8 +31,8 @@ public class G : MonoBehaviour {
 	public List<GameObject> hpLossUIs;
 	public float hpLossUITargetY;
 	public float hpLossUISpeed;
-	public float hpLossUIDuration;
 	public GameObject sun;
+	public List<GameObject> deathZones;
 	
 	public static G m;
 	
