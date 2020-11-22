@@ -48,6 +48,15 @@ public static class Util {
     public static float Remap(this float target, float oldA, float oldB, float newA, float newB) {
         return Mathf.Lerp(newA, newB, target.Prel(oldA, oldB));
     }
+
+    public static float Round(this float target, float precision) {
+        float pow = Mathf.Pow(10, precision);
+        return Mathf.Floor(target * pow) / pow;
+    }
+
+    public static float Round(this float target) {
+        return Mathf.Floor(target);
+    }
     
     // --------------------
     // VECTOR2

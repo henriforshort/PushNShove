@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Miserable
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1487928938
   material: {fileID: -4130529005698457381}
-  materialHashCode: 0
+  materialHashCode: -947724662
   m_Version: 1.1.0
   m_SourceFontFileGUID: c65b53d30b333554fab050aab967294b
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: c65b53d30b333554fab050aab967294b, type: 3}

@@ -6,10 +6,13 @@
     <e p="C:\Users\couvr\Documents\GitHub\PushNShove" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Cloud.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="B.cs" t="Include" />
+          <e p="Cloud.cs" t="Include" />
           <e p="DeadZone.cs" t="Include" />
+          <e p="EnemyCluster.cs" t="Include" />
           <e p="G.cs" t="Include" />
+          <e p="HpLossUi.cs" t="Include" />
           <e p="PI.cs" t="Include" />
           <e p="Unit.cs" t="Include" />
           <e p="Util.cs" t="Include" />

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 270424159158228439}
   - component: {fileID: 270424159158228424}
   m_Layer: 0
-  m_Name: Player1Unit
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270424159158228438}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.109, y: -2.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 270424161011191806}
@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8328409, y: 1.0463306, z: 1}
-  m_Center: {x: 0.3372059, y: 0.023165286, z: 0}
+  m_Size: {x: 0.7872002, y: 1.1033821, z: 1}
+  m_Center: {x: 0.023423553, y: -0.43895006, z: 0}
 --- !u!114 &270424159158228439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,18 +61,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   maxSpeed: 5
-  mass: 4.1
-  maxHealth: 30
+  mass: 20
+  maxHealth: 10
   damage: 1
-  attackSpeed: 0.1
+  attackAnimDuration: 0.25
+  size: 1
+  attackAnimOnAllCollisions: 0
+  hpLossPosition: {x: -0.3, y: 1.4, z: -5}
   currentSpeed: 0
   status: 0
+  anim: 0
   currentHealth: 0
   lastAttack: 0
   healthBar: {fileID: 3613491691768811228}
   animator: {fileID: 270424161011191807}
   rigidbodee: {fileID: 270424159158228424}
-  attackFx: {fileID: 2169665080544586211, guid: e625ddf9ce8b9f641b7dc80e87e6dcac, type: 3}
 --- !u!54 &270424159158228424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270424161011191801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8795596523964319228}

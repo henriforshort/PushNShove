@@ -20,13 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Cloud.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Cloud.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Miserable.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Miserable.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BumpDustParticles.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BumpDustParticles.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Death.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Death.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeathCloud 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeathCloud 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player1Unit.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player1Unit.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player2Unit.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player2Unit.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fx_sparks.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fx_sparks.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fx_spear_slash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fx_spear_slash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/hp loss.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/hp loss.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer_hit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer_hit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer_red_hit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer_red_hit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/dog.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/dog.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/dog_ref.png" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/dog_ref.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +61,21 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/04/aa59889e/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/B.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Martians/Assets/Scripts/Util.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Cloud.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Cloud.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
+        <option value="$PROJECT_DIR$/Assets/HpLossUi.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyCluster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/S.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyCluster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
       </list>
     </option>
   </component>
@@ -109,6 +136,7 @@
       <workItem from="1605782294404" duration="4992000" />
       <workItem from="1605863311720" duration="1941000" />
       <workItem from="1605980442988" duration="7679000" />
+      <workItem from="1606041112572" duration="19913000" />
     </task>
     <servers />
   </component>
@@ -131,5 +159,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1606056440259">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1606056440259" />
   </component>
 </project>
