@@ -14,6 +14,7 @@ public class Unit : MonoBehaviour {
     public float size;
     public bool attackAnimOnAllCollisions;
     public Vector3 hpLossPosition;
+    public bool shakeOnHit;
     
     [Header("State")]
     public float currentSpeed;
@@ -24,6 +25,8 @@ public class Unit : MonoBehaviour {
     
     [Header("References")]
     public Slider healthBar;
+    public Image healthBarFill;
+    public Slider orangeHealthBar;
     public Animator animator;
     public Rigidbody rigidbodee;
 
@@ -47,23 +50,25 @@ public class Unit : MonoBehaviour {
         
         if (playerIndex == PI.PLAYER_ONE) SetHealth(G.m.heroHp);
         else SetHealth(maxHealth);
+        orangeHealthBar.value = maxHealth;
         
         if (playerIndex == PI.PLAYER_ONE) player1Units.Add(this);
         if (playerIndex == PI.PLAYER_TWO) player2Units.Add(this);
     }
 
     public void Update() {
-        AdjustSpeed();
-        AdjustAnim();
+        UpdateSpeed();
+        UpdateVisuals();
         Move();
     }
 
     public void SetAnim(Anim a) {
         anim = a;
         animator.SetInteger("anim", (int)a);
+        if (shakeOnHit && a == Anim.HIT) B.m.Shake(0.1f);
     }
 
-    public void AdjustSpeed() {
+    public void UpdateSpeed() {
         if (currentSpeed >= maxSpeed) return;
         if (B.m.gameState != B.State.PLAYING) return;
         if (status == Status.FALLING) return;
@@ -72,7 +77,10 @@ public class Unit : MonoBehaviour {
         if (currentSpeed >= maxSpeed) currentSpeed = maxSpeed;
     }
 
-    public void AdjustAnim() {
+    public void UpdateVisuals() {
+        if (!orangeHealthBar.value.isApprox(currentHealth))
+            orangeHealthBar.value = orangeHealthBar.value.LerpTo(healthBar.value, 3);
+        
         if (currentSpeed > 0 && anim == Anim.BUMPED) {
             status = Status.WALK;
             SetAnim(Anim.WALK);
@@ -160,6 +168,9 @@ public class Unit : MonoBehaviour {
 
     public void TakeDamage(float amount) {
         SetHealth(currentHealth-amount);
+        healthBarFill.color = G.m.orange;
+        this.Wait(0.1f, () => healthBarFill.color = G.m.red);
+        
         B.m.SpawnFX(G.m.hpLossUIPrefab, 
             transform.position + hpLossPosition,
             false, 
@@ -169,6 +180,8 @@ public class Unit : MonoBehaviour {
     public void SetHealth(float amount) {
         currentHealth = Mathf.Clamp(amount, 0, maxHealth);
         healthBar.value = currentHealth / maxHealth;
+        healthBar.gameObject.SetActive(!currentHealth.isApprox(maxHealth));
+        orangeHealthBar.gameObject.SetActive(!currentHealth.isApprox(maxHealth));
         if (currentHealth <= 0) DeathByHp();
     }
 

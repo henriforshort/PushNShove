@@ -41,6 +41,10 @@ public static class Util {
         return Mathf.Lerp(a, b, x);
     }
 
+    public static float LerpTo(this float a, float b, float speed) {
+        return Mathf.Lerp(a, b, speed/100);
+    }
+
     public static float Prel(this float x, float a, float b) {
         return (x - a) / (b - a);
     }
@@ -56,6 +60,10 @@ public static class Util {
 
     public static float Round(this float target) {
         return Mathf.Floor(target);
+    }
+
+    public static bool isApprox(this float target, float other) {
+        return Mathf.Approximately(target, other);
     }
     
     // --------------------
@@ -93,8 +101,28 @@ public static class Util {
     
     
     // --------------------
+    // VECTOR3
+    // --------------------
+
+    
+    public static Vector3 RandomWithin(this Vector3 obj, float range) {
+        return obj + new Vector3(
+            UnityEngine.Random.Range(-range, range), 
+            UnityEngine.Random.Range(-range, range), 
+            0);
+    }
+    
+    public static Vector3 RandomWithin(this MonoBehaviour obj, float range) {
+        return new Vector3(
+            UnityEngine.Random.Range(-range, range), 
+            UnityEngine.Random.Range(-range, range), 
+            0);
+    }
+    
+    // --------------------
     // VECTOR3 - SET
     // --------------------
+
 
     public static Vector3 SetX(this Vector3 target, float x) => new Vector3(x, target.y, target.z);
     public static Vector3 SetY(this Vector3 target, float y) => new Vector3(target.x, y, target.z);

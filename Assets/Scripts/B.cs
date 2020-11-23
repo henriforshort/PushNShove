@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class B : MonoBehaviour { //Battle manager, handles a single battle.
                                  //Should contain only Balancing and References relative to this battle.
-                                 //Should contain only State info to be deleted at the end of the level.
+                                 //Should contain only State info to be deleted at the end of the battle.
     [Header("Balancing")]
     public List<EnemyCluster> enemyClusters;
     
     [Header("State")]
     public float gameOverDate;
     public State gameState;
+    public Unit hero;
+    public bool isFirstFrame;
+    public float currentShake;
     
     [Header("References")]
     public GameObject restartButton;
@@ -21,6 +24,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public AudioSource audioSource;
     public GameObject cameraFocus;
     public GameObject cameraGO;
+    public GameObject shakeGO;
     public GameObject hills;
     public GameObject sun;
     public List<GameObject> deathZones;
@@ -28,7 +32,9 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public Slider xpSlider;
     public TMP_Text xpText;
     public Transform unitsHolder;
-    public TMP_Text levelText;
+    public TMP_Text battle;
+    public TMP_Text level;
+    public TMP_Text levelUp;
 	
     public enum State { PLAYING, GAME_OVER }
 
@@ -39,36 +45,75 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         if (m == null) m = this;
         if (m != this) Destroy(this);
         
+        InitBattle();
+    }
+
+    public void InitBattle() {
+        isFirstFrame = true;
+        this.Wait(() => isFirstFrame = false);
         gameState = State.PLAYING;
-        GainExperience(0);
-        G.m.level++;
-        levelText.text = "Level " + G.m.level;
+        xpSlider.value = G.m.experience;
+        level.text = G.m.level.ToString();
+        G.m.battle++;
+        battle.text = G.m.battle.ToString();
         Instantiate(enemyClusters.Random(), unitsHolder);
         Instantiate(enemyClusters.Random(), unitsHolder);
+        hero = Instantiate(
+                G.m.heroPrefab,
+                new Vector3(-4, -2, 0),
+                Quaternion.identity,
+                unitsHolder)
+            .GetComponent<Unit>();
+        
     }
 
     public void Update() {
-        if (gameState == State.PLAYING) CameraAndParallax();
-        if (gameState == State.GAME_OVER) AwaitRestart();
+        if (gameState == State.PLAYING) {
+            UpdateCameraAndParallax();
+        }
+
+        if (gameState == State.GAME_OVER) {
+            AwaitRestart();
+        }
+        
+        
+        UpdateXp();
+        UpdateShake();
+    }
+
+    public void UpdateShake() {
+        currentShake = currentShake.LerpTo(0, 5);
+        shakeGO.transform.localPosition = new Vector3(
+            Random.Range(-currentShake, currentShake), 
+            Random.Range(-currentShake, currentShake), 
+            0);
+    }
+
+    public void Shake(float amount) {
+        currentShake = amount;
     }
 
     public void GainExperience(float amount) {
-        SetExperience(G.m.experience + amount);
+        G.m.experience += amount;
         if (G.m.experience >= 1) LevelUp();
     }
 
-    public void SetExperience(float amount) {
-        G.m.experience = amount;
-        xpSlider.value = amount;
-        xpText.text = (100 * G.m.experience).Round() + "/100";
+    public void UpdateXp() {
+        xpSlider.value = xpSlider.value.LerpTo(G.m.experience+0.01f, 2);
+        xpText.text = (100 * xpSlider.value).Round() + "/100";
     }
 
     public void LevelUp() {
-        SetExperience(G.m.experience - 1);
-        Debug.Log("level up!");
+        G.m.experience--;
+        xpSlider.value = 0;
+        
+        G.m.level++;
+        level.text = G.m.level.ToString();
+        levelUp.gameObject.SetActive(true);
+        this.Wait(1, () => levelUp.gameObject.SetActive(false));
     }
 
-    public void CameraAndParallax() {
+    public void UpdateCameraAndParallax() {
         if (Unit.player1Units.Count == 0 || Unit.player2Units.Count == 0) return;
 		
         cameraFocus.transform.position = (Vector3.forward * -10) + Vector3.right *
@@ -94,13 +139,17 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
 
     public void Defeat() {
         gameOverText.text = "Defeat";
+        G.m.needRunInit = true;
+        
         GameOver();
     }
 
     public void Victory() {
         gameOverText.text = "Victory";
+        GainExperience(0.47f);
+        G.m.heroHp = Unit.player1Units[0].currentHealth;
+        
         GameOver();
-        GainExperience(0.2f);
     }
 
     public void GameOver() {
@@ -120,7 +169,6 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
 
     public void Restart() {
         gameState = State.PLAYING;
-        G.m.heroHp = Unit.player1Units[0].currentHealth;
         Unit.player1Units.Clear();
         Unit.player2Units.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

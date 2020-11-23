@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class G : MonoBehaviour { //Game manager, handles the whold game flow.
                                  //Should contain the global balancing and the prefabs.
-                                 //Should contain all State info that is persisted across levels
+                                 //Should contain all State info that is persisted across battles
 	[Header("Balancing")]
 	public float camSpeed;
 	public float camMaxDistFromUnits;
@@ -19,16 +20,29 @@ public class G : MonoBehaviour { //Game manager, handles the whold game flow.
 	
 	[Header("State")]
 	public float experience;
+	public float level;
 	public float heroHp;
-	public int level;
-	
+	public int battle;
+	public bool needRunInit;
+
 	[Header("Prefabs")]
+	public GameObject heroPrefab;
 	public GameObject hpLossUIPrefab;
 	public GameObject bumpDustFxPrefab;
 	public GameObject deathCloudFxPrefab;
 	public GameObject sparkFxPrefab;
 	public List<AudioClip> damageSounds;
 	public List<AudioClip> deathSounds;
+
+	[Header("Colors")]
+	public Color white = new Color(201, 204, 161);
+	public Color yellow = new Color(202, 160, 90);
+	public Color orange = new Color(174, 106, 71);
+	public Color red = new Color(139, 64, 73);
+	public Color black = new Color(84, 51, 68);
+	public Color darkGrey = new Color(81, 82, 98);
+	public Color grey = new Color(99, 120, 125);
+	public Color lightGrey = new Color(142, 160, 145);
 
 	public static G m;
 
@@ -40,5 +54,19 @@ public class G : MonoBehaviour { //Game manager, handles the whold game flow.
 			return;
 		}
 		DontDestroyOnLoad(this);
+		
+		needRunInit = true;
+	}
+
+	private void LateUpdate() {
+		if (needRunInit && B.m.isFirstFrame) LateInitRun();
+	}
+
+	public void LateInitRun() { //Called at the start of each run, after init the first battle
+		heroHp = B.m.hero.maxHealth;
+		experience = 0;
+		battle = 1;
+		B.m.battle.text = battle.ToString();
+		needRunInit = false;
 	}
 }
