@@ -20,9 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Miserable.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Miserable.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/XP.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/XP.anim.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Brute.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/hp loss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fx/hp loss.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Dog.prefab" afterDir="false" />
@@ -31,9 +34,10 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/B.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HpLossUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HpLossUi.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer_red_hit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer_red_hit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/hp_bg_big.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/hp_bg_big.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +51,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/84/d6cd6dd9/ColorUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.1.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/ColorBlock.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/04/aa59889e/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/b4/c0ce131f/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/B.cs" root0="FORCE_HIGHLIGHTING" />
@@ -62,8 +67,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/S.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyCluster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HpLossUi.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
       </list>
     </option>
@@ -127,6 +134,7 @@
       <workItem from="1605980442988" duration="7679000" />
       <workItem from="1606041112572" duration="19913000" />
       <workItem from="1606127440730" duration="14046000" />
+      <workItem from="1606222421377" duration="10586000" />
     </task>
     <servers />
   </component>

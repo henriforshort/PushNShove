@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class HpLossUi : MonoBehaviour {
     [Header("Balancing")]
@@ -9,6 +10,9 @@ public class HpLossUi : MonoBehaviour {
     [Header("State")]
     public float initialY;
     public float expirationDate;
+
+    [Header("References")]
+    public TMP_Text number;
 
     private void Start() {
         initialY = transform.position.y;

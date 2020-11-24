@@ -62,18 +62,19 @@ MonoBehaviour:
   playerIndex: 1
   maxSpeed: 5
   mass: 20
-  maxHealth: 10
+  maxHealth: 100
   damage: 10
   attackAnimDuration: 0.25
   size: 1
   attackAnimOnAllCollisions: 0
-  hpLossPosition: {x: -0.3, y: 1.4, z: -5}
+  hpLossPosition: {x: -0.3, y: 1.6, z: -5}
   shakeOnHit: 0
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
+  unitToCollide: []
   healthBar: {fileID: 3613491691768811228}
   healthBarFill: {fileID: 7421798103064623841}
   orangeHealthBar: {fileID: 7611896808606983883}

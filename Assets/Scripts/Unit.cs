@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,7 @@ public class Unit : MonoBehaviour {
     public Anim anim;
     public float currentHealth;
     public float lastAttack;
+    public List<Unit> unitToCollide;
     
     [Header("References")]
     public Slider healthBar;
@@ -56,10 +58,20 @@ public class Unit : MonoBehaviour {
         if (playerIndex == PI.PLAYER_TWO) player2Units.Add(this);
     }
 
+    public void InitRun() { //Called at the end of the first frame of a run
+        SetHealth(G.m.heroHp);
+    }
+
     public void Update() {
         UpdateSpeed();
         UpdateVisuals();
-        Move();
+        
+        if (unitToCollide.Count == 0) {
+            Move();
+        } else {
+            unitToCollide.ForEach(Collide);
+            unitToCollide.Clear();
+        }
     }
 
     public void SetAnim(Anim a) {
@@ -100,13 +112,16 @@ public class Unit : MonoBehaviour {
 
     public void OnTriggerStay(Collider other) {
         Unit otherUnit = player2Units.FirstOrDefault(u => u.gameObject == other.gameObject);
-        if (playerIndex == PI.PLAYER_ONE && otherUnit != null) Collide(otherUnit);
+        if (playerIndex == PI.PLAYER_ONE && otherUnit != null) unitToCollide.Add(otherUnit);
         
         if (status != Status.FALLING && B.m.deathZones.Contains(other.gameObject)) DeathByFall();
     }
 
     public void Collide(Unit other) { //Only called by player character
         if (currentSpeed < 0 && other.currentSpeed < 0) return;
+        
+        if (G.m.enableCheats && Input.GetKey(KeyCode.W)) other.DeathByHp();
+        if (G.m.enableCheats && Input.GetKey(KeyCode.L)) DeathByHp();
         
         List<float> newSpeeds =  SpeedAfterBump(currentSpeed, other.currentSpeed, mass, 
             other.mass);
@@ -125,7 +140,7 @@ public class Unit : MonoBehaviour {
     public List<float> SpeedAfterBump(float speed1, float speed2, float mass1, float mass2) {
         // Basic concept : the total amount of speed is conserved (the sum of the two unit's speed stays the same)
         // This total speed is distributed proportionally to each unit's momentum (speed * mass)
-        // Anim few details have been added for better gamefeel
+        // I added a few tweaks for better gamefeel
         float totalSpeed = speed1 + speed2;
         
         // Speed cannot be lower than 0.5 so that immobile units offer some resistance (and no one has < 0 momentum)
@@ -167,14 +182,18 @@ public class Unit : MonoBehaviour {
     }
 
     public void TakeDamage(float amount) {
+        amount = Random.Range((int)(0.8f * amount), (int)(1.2f * amount));
         SetHealth(currentHealth-amount);
-        healthBarFill.color = G.m.orange;
-        this.Wait(0.1f, () => healthBarFill.color = G.m.red);
+        // healthBarFill.color = G.m.orange;
+        // this.Wait(0.1f, () => healthBarFill.color = G.m.red);
+
+        HpLossUi hpLossUi = B.m.SpawnFX(G.m.hpLossUIPrefab,
+                transform.position + hpLossPosition,
+                false,
+                transform)
+            .GetComponent<HpLossUi>();
         
-        B.m.SpawnFX(G.m.hpLossUIPrefab, 
-            transform.position + hpLossPosition,
-            false, 
-            transform);
+        hpLossUi.number.text = amount.ToString();
     }
 
     public void SetHealth(float amount) {

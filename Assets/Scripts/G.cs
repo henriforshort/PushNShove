@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class G : MonoBehaviour { //Game manager, handles the whold game flow.
+public class G : MonoBehaviour { //Game manager, handles the whole game flow.
                                  //Should contain the global balancing and the prefabs.
                                  //Should contain all State info that is persisted across battles
 	[Header("Balancing")]
@@ -17,13 +15,15 @@ public class G : MonoBehaviour { //Game manager, handles the whold game flow.
 	public float speedToBump; //negative speed after which a unit is considered bumped
 	public float timeToAutoRestart;
 	public Vector2 enemySpawnPosXRange;
+	public bool enableCheats;
 	
 	[Header("State")]
 	public float experience;
-	public float level;
+	public int level;
 	public float heroHp;
 	public int battle;
 	public bool needRunInit;
+	public int skillPoints;
 
 	[Header("Prefabs")]
 	public GameObject heroPrefab;
@@ -58,15 +58,21 @@ public class G : MonoBehaviour { //Game manager, handles the whold game flow.
 		needRunInit = true;
 	}
 
+	public void InitRun() {
+		if (!needRunInit) return;
+		experience = 0;
+		battle = 1;
+		level = 1;
+		skillPoints = 0;
+	}
+
 	private void LateUpdate() {
 		if (needRunInit && B.m.isFirstFrame) LateInitRun();
 	}
 
 	public void LateInitRun() { //Called at the start of each run, after init the first battle
 		heroHp = B.m.hero.maxHealth;
-		experience = 0;
-		battle = 1;
-		B.m.battle.text = battle.ToString();
+		B.m.hero.InitRun();
 		needRunInit = false;
 	}
 }

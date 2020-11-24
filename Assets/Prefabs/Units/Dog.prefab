@@ -165,12 +165,13 @@ MonoBehaviour:
   playerIndex: -1
   maxSpeed: 5
   mass: 1
-  maxHealth: 3
-  damage: 1
+  maxHealth: 30
+  damage: 10
   attackAnimDuration: 0.25
   size: 1
   attackAnimOnAllCollisions: 1
-  hpLossPosition: {x: 0, y: 0.5, z: -5}
+  hpLossPosition: {x: 0, y: 0.7, z: -5}
+  shakeOnHit: 0
   currentSpeed: 0
   status: 0
   anim: 0

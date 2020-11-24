@@ -55,11 +55,11 @@ public static class Util {
 
     public static float Round(this float target, float precision) {
         float pow = Mathf.Pow(10, precision);
-        return Mathf.Floor(target * pow) / pow;
+        return Mathf.Round(target * pow) / pow;
     }
 
     public static float Round(this float target) {
-        return Mathf.Floor(target);
+        return Mathf.Round(target);
     }
 
     public static bool isApprox(this float target, float other) {

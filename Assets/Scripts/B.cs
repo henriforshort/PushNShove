@@ -30,11 +30,13 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public List<GameObject> deathZones;
     public Image gameOverPanelBackGround;
     public Slider xpSlider;
+    public Animator xpAnimator;
     public TMP_Text xpText;
     public Transform unitsHolder;
     public TMP_Text battle;
     public TMP_Text level;
     public TMP_Text levelUp;
+    public GameObject lvUpNotif;
 	
     public enum State { PLAYING, GAME_OVER }
 
@@ -54,8 +56,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         gameState = State.PLAYING;
         xpSlider.value = G.m.experience;
         level.text = G.m.level.ToString();
-        G.m.battle++;
         battle.text = G.m.battle.ToString();
+        lvUpNotif.SetActive(G.m.skillPoints != 0);
         Instantiate(enemyClusters.Random(), unitsHolder);
         Instantiate(enemyClusters.Random(), unitsHolder);
         hero = Instantiate(
@@ -81,6 +83,10 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         UpdateShake();
     }
 
+    public void Pause() {
+        Debug.Log("pause");
+    }
+
     public void UpdateShake() {
         currentShake = currentShake.LerpTo(0, 5);
         shakeGO.transform.localPosition = new Vector3(
@@ -96,10 +102,14 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public void GainExperience(float amount) {
         G.m.experience += amount;
         if (G.m.experience >= 1) LevelUp();
+        this.Wait(1, () => xpAnimator.SetInteger("shine", 1));
+        this.Wait(2, () => xpAnimator.SetInteger("shine", 0));
     }
 
     public void UpdateXp() {
-        xpSlider.value = xpSlider.value.LerpTo(G.m.experience+0.01f, 2);
+        if (xpSlider.value.isApprox(G.m.experience)) xpSlider.value = G.m.experience;
+        else xpSlider.value = xpSlider.value.LerpTo(G.m.experience, 2);
+        
         xpText.text = (100 * xpSlider.value).Round() + "/100";
     }
 
@@ -111,6 +121,9 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         level.text = G.m.level.ToString();
         levelUp.gameObject.SetActive(true);
         this.Wait(1, () => levelUp.gameObject.SetActive(false));
+
+        G.m.skillPoints++;
+        lvUpNotif.SetActive(true);
     }
 
     public void UpdateCameraAndParallax() {
@@ -129,12 +142,13 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         sun.SetX(cameraGO.GetX());
     }
 
-    public void SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, Transform holder = null, 
+    public GameObject SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, Transform holder = null, 
         float duration = 0.5f) {
         if (holder == null) holder = transform;
         GameObject spawnedFx = Instantiate(fx, position, Quaternion.identity, holder);
         if (mirrored) spawnedFx.transform.localScale = new Vector3(-1, 1, 1);
         Destroy(spawnedFx, duration);
+        return spawnedFx;
     }
 
     public void Defeat() {
@@ -148,6 +162,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         gameOverText.text = "Victory";
         GainExperience(0.47f);
         G.m.heroHp = Unit.player1Units[0].currentHealth;
+        G.m.battle++;
         
         GameOver();
     }
