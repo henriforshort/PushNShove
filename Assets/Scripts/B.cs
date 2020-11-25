@@ -13,6 +13,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     
     [Header("State")]
     public float gameOverDate;
+    public float timeSinceGameOver;
     public State gameState;
     public Unit hero;
     public bool isFirstFrame;
@@ -37,8 +38,9 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public TMP_Text level;
     public TMP_Text levelUp;
     public GameObject lvUpNotif;
+    public GameObject lvUpMenu;
 	
-    public enum State { PLAYING, GAME_OVER }
+    public enum State { PLAYING, GAME_OVER, PAUSE }
 
     public static B m;
 
@@ -59,7 +61,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         battle.text = G.m.battle.ToString();
         lvUpNotif.SetActive(G.m.skillPoints != 0);
         Instantiate(enemyClusters.Random(), unitsHolder);
-        Instantiate(enemyClusters.Random(), unitsHolder);
+        // Instantiate(enemyClusters.Random(), unitsHolder);
         hero = Instantiate(
                 G.m.heroPrefab,
                 new Vector3(-4, -2, 0),
@@ -84,7 +86,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void Pause() {
-        Debug.Log("pause");
+        lvUpMenu.SetActive(true);
     }
 
     public void UpdateShake() {
@@ -170,15 +172,17 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public void GameOver() {
         restartButton.SetActive(true);
         gameState = State.GAME_OVER;
-        gameOverDate = Time.time;
+        timeSinceGameOver = 0;
     }
 
     public void AwaitRestart() {
+        timeSinceGameOver += Time.deltaTime;
+        
         if (Input.GetKeyDown(KeyCode.Space)) Restart();
-        if (Time.time - gameOverDate > G.m.timeToAutoRestart) Restart();
+        if (timeSinceGameOver > G.m.timeToAutoRestart) Restart();
 
-        gameOverPanelBackGround.fillAmount = Time.time
-            .Prel(gameOverDate, gameOverDate + G.m.timeToAutoRestart)
+        gameOverPanelBackGround.fillAmount = timeSinceGameOver
+            .Prel(0, G.m.timeToAutoRestart)
             .Clamp01();
     }
 

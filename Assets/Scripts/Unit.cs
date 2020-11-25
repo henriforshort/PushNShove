@@ -90,8 +90,10 @@ public class Unit : MonoBehaviour {
     }
 
     public void UpdateVisuals() {
+        animator.enabled = (B.m.gameState != B.State.PAUSE);
+        
         if (!orangeHealthBar.value.isApprox(currentHealth))
-            orangeHealthBar.value = orangeHealthBar.value.LerpTo(healthBar.value, 3);
+            orangeHealthBar.value = orangeHealthBar.value.LerpTo(healthBar.value, 2);
         
         if (currentSpeed > 0 && anim == Anim.BUMPED) {
             status = Status.WALK;
@@ -141,21 +143,21 @@ public class Unit : MonoBehaviour {
         // Basic concept : the total amount of speed is conserved (the sum of the two unit's speed stays the same)
         // This total speed is distributed proportionally to each unit's momentum (speed * mass)
         // I added a few tweaks for better gamefeel
-        float totalSpeed = speed1 + speed2;
+        float totalSpeed = (speed1 + speed2) * G.m.postCollisionSpeedMultiplier;
         
         // Speed cannot be lower than 0.5 so that immobile units offer some resistance (and no one has < 0 momentum)
-        float momentum1 = mass1 * Mathf.Max(speed1, G.m.minMomentum); 
-        float momentum2 = mass2 * Mathf.Max(speed2, G.m.minMomentum);
+        float momentum1 = mass1 * Mathf.Max(speed1, 0); 
+        float momentum2 = mass2 * Mathf.Max(speed2, 0);
         float totalMomentum = momentum1 + momentum2;
         
         // If unit was moving forward, stop it completely before adding the speed from the collision
-        float initialSpeed1 = Mathf.Min(0, speed1);
-        float initialSpeed2 = Mathf.Min(0, speed2);
+        float initialSpeed1 = Mathf.Min(G.m.postCollisionMinSpeed, speed1);
+        float initialSpeed2 = Mathf.Min(G.m.postCollisionMinSpeed, speed2);
         
         //Add some momentum to the other unit to make the collision more powerful
         //Gain a fraction of total speed (backwards) equivalent to the fraction of total momentum the other unit has
-        float newSpeed1 = initialSpeed1 - ((momentum2 + G.m.collisionForceIncrease) / totalMomentum) * totalSpeed;
-        float newSpeed2 = initialSpeed2 - ((momentum1 + G.m.collisionForceIncrease) / totalMomentum) * totalSpeed;
+        float newSpeed1 = initialSpeed1 - (momentum2/totalMomentum)*totalSpeed;
+        float newSpeed2 = initialSpeed2 - (momentum1/totalMomentum)*totalSpeed;
         
         return new List<float> {newSpeed1, newSpeed2};
     }

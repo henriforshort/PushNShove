@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class G : MonoBehaviour { //Game manager, handles the whole game flow.
                                  //Should contain the global balancing and the prefabs.
@@ -10,8 +11,8 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 	public float camMaxDistanceFromCenter;
 	public float hillsParallax;
 	public float bumpRecoverySpeed;
-	public float collisionForceIncrease;
-	public float minMomentum;
+	public float postCollisionSpeedMultiplier;
+	public float postCollisionMinSpeed;
 	public float speedToBump; //negative speed after which a unit is considered bumped
 	public float timeToAutoRestart;
 	public Vector2 enemySpawnPosXRange;

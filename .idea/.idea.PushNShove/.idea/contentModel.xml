@@ -14,6 +14,7 @@
           <e p="EnemyCluster.cs" t="Include" />
           <e p="G.cs" t="Include" />
           <e p="HpLossUi.cs" t="Include" />
+          <e p="LvUpMenu.cs" t="Include" />
           <e p="PI.cs" t="Include" />
           <e p="Unit.cs" t="Include" />
           <e p="Util.cs" t="Include" />

@@ -22,22 +22,26 @@
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/XP.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/XP.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Brute.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/hp loss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fx/hp loss.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthBar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Hit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Hit.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Pack of Dogs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Pack of Dogs.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Dog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Hero.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Shieldbearer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Shieldbearer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/B.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HpLossUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HpLossUi.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/hp_bg_big.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/hp_bg_big.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_hit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_hit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill_anim.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill_anim.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/banner.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/banner.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/brute_copy.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/brute_copy.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +76,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" />
       </list>
     </option>
   </component>
@@ -135,6 +140,7 @@
       <workItem from="1606041112572" duration="19913000" />
       <workItem from="1606127440730" duration="14046000" />
       <workItem from="1606222421377" duration="10586000" />
+      <workItem from="1606299888674" duration="8390000" />
     </task>
     <servers />
   </component>
