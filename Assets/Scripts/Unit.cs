@@ -2,13 +2,15 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Unit : MonoBehaviour {
     [Header("Balancing")]
     public PI playerIndex;
     public float maxSpeed;
-    public float mass;
+    [FormerlySerializedAs("mass")]
+    public float weight;
     public float maxHealth;
     public float damage;
     public float attackAnimDuration;
@@ -50,16 +52,11 @@ public class Unit : MonoBehaviour {
         
         currentSpeed = maxSpeed;
         
-        if (playerIndex == PI.PLAYER_ONE) SetHealth(G.m.heroHp);
-        else SetHealth(maxHealth);
+        if (playerIndex != PI.PLAYER_ONE) SetHealth(maxHealth);
         orangeHealthBar.value = maxHealth;
         
         if (playerIndex == PI.PLAYER_ONE) player1Units.Add(this);
         if (playerIndex == PI.PLAYER_TWO) player2Units.Add(this);
-    }
-
-    public void InitRun() { //Called at the end of the first frame of a run
-        SetHealth(G.m.heroHp);
     }
 
     public void Update() {
@@ -125,8 +122,8 @@ public class Unit : MonoBehaviour {
         if (G.m.enableCheats && Input.GetKey(KeyCode.W)) other.DeathByHp();
         if (G.m.enableCheats && Input.GetKey(KeyCode.L)) DeathByHp();
         
-        List<float> newSpeeds =  SpeedAfterBump(currentSpeed, other.currentSpeed, mass, 
-            other.mass);
+        List<float> newSpeeds =  SpeedAfterBump(currentSpeed, other.currentSpeed, weight, 
+            other.weight);
         currentSpeed = newSpeeds[0];
         other.currentSpeed = newSpeeds[1];
 
@@ -139,25 +136,24 @@ public class Unit : MonoBehaviour {
         else if (other.CanAttack(this)) other.Attack(this);
     }
 
-    public List<float> SpeedAfterBump(float speed1, float speed2, float mass1, float mass2) {
+    public List<float> SpeedAfterBump(float speed1, float speed2, float weight1, float weight2) {
         // Basic concept : the total amount of speed is conserved (the sum of the two unit's speed stays the same)
-        // This total speed is distributed proportionally to each unit's momentum (speed * mass)
+        // This total speed is distributed proportionally to each unit's momentum (speed * weight)
         // I added a few tweaks for better gamefeel
-        float totalSpeed = (speed1 + speed2) * G.m.postCollisionSpeedMultiplier;
+        float totalSpeed = speed1.AtLeast(0) + speed2.AtLeast(0);
         
-        // Speed cannot be lower than 0.5 so that immobile units offer some resistance (and no one has < 0 momentum)
-        float momentum1 = mass1 * Mathf.Max(speed1, 0); 
-        float momentum2 = mass2 * Mathf.Max(speed2, 0);
+        // Speed cannot be lower than 0 so that immobile units offer some resistance (and no one has < 0 momentum)
+        float momentum1 = weight1 * speed1.AtLeast(0); 
+        float momentum2 = weight2 * speed2.AtLeast(0);
         float totalMomentum = momentum1 + momentum2;
         
         // If unit was moving forward, stop it completely before adding the speed from the collision
-        float initialSpeed1 = Mathf.Min(G.m.postCollisionMinSpeed, speed1);
-        float initialSpeed2 = Mathf.Min(G.m.postCollisionMinSpeed, speed2);
+        float initialSpeed1 = speed1.AtMost(0);
+        float initialSpeed2 = speed2.AtMost(0);
         
-        //Add some momentum to the other unit to make the collision more powerful
         //Gain a fraction of total speed (backwards) equivalent to the fraction of total momentum the other unit has
-        float newSpeed1 = initialSpeed1 - (momentum2/totalMomentum)*totalSpeed;
-        float newSpeed2 = initialSpeed2 - (momentum1/totalMomentum)*totalSpeed;
+        float newSpeed1 = (initialSpeed1 - (momentum2/totalMomentum)*totalSpeed).AtMost(G.m.postCollisionMinSpeed);
+        float newSpeed2 = (initialSpeed2 - (momentum1/totalMomentum)*totalSpeed).AtMost(G.m.postCollisionMinSpeed);
         
         return new List<float> {newSpeed1, newSpeed2};
     }

@@ -65,6 +65,14 @@ public static class Util {
     public static bool isApprox(this float target, float other) {
         return Mathf.Approximately(target, other);
     }
+
+    public static float AtLeast(this float target, float other) {
+        return Mathf.Max(target, other);
+    }
+
+    public static float AtMost(this float target, float other) {
+        return Mathf.Min(target, other);
+    }
     
     // --------------------
     // VECTOR2

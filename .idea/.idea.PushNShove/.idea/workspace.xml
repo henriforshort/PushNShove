@@ -22,26 +22,25 @@
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Hit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Hit.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Pack of Dogs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Pack of Dogs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select3.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/B.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_hit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Shieldbearer_hit.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/victory_screen.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill_anim.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/xp_bar_fill_anim.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/banner.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/banner.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/brute_copy.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/brute_copy.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/lvUpMenu.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/lvUpMenu.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +51,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/84/d6cd6dd9/ColorUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.1.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/ColorBlock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/04/aa59889e/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/b4/c0ce131f/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/B.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,13 +70,18 @@
         <option value="$PROJECT_DIR$/Assets/EnemyCluster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/S.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyCluster.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HpLossUi.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
       </list>
     </option>
   </component>
@@ -140,7 +145,9 @@
       <workItem from="1606041112572" duration="19913000" />
       <workItem from="1606127440730" duration="14046000" />
       <workItem from="1606222421377" duration="10586000" />
-      <workItem from="1606299888674" duration="8390000" />
+      <workItem from="1606299888674" duration="8702000" />
+      <workItem from="1606387182587" duration="9674000" />
+      <workItem from="1606425998304" duration="600000" />
     </task>
     <servers />
   </component>
@@ -169,5 +176,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1606056440259" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606387286559">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1606387286559" />
   </component>
 </project>

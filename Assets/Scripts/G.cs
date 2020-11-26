@@ -17,14 +17,11 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 	public float timeToAutoRestart;
 	public Vector2 enemySpawnPosXRange;
 	public bool enableCheats;
+	public float xpGainPerLevel;
 	
 	[Header("State")]
-	public float experience;
-	public int level;
-	public float heroHp;
-	public int battle;
 	public bool needRunInit;
-	public int skillPoints;
+	public GameState s;
 
 	[Header("Prefabs")]
 	public GameObject heroPrefab;
@@ -59,21 +56,11 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 		needRunInit = true;
 	}
 
-	public void InitRun() {
-		if (!needRunInit) return;
-		experience = 0;
-		battle = 1;
-		level = 1;
-		skillPoints = 0;
-	}
-
-	private void LateUpdate() {
-		if (needRunInit && B.m.isFirstFrame) LateInitRun();
-	}
-
-	public void LateInitRun() { //Called at the start of each run, after init the first battle
-		heroHp = B.m.hero.maxHealth;
-		B.m.hero.InitRun();
+	public void InitRun() { //Called at the start of each run, after init the first battle
 		needRunInit = false;
+		
+		B.m.hero.currentHealth = B.m.hero.maxHealth;
+		s.InitRun();
+		s.SaveHero();
 	}
 }

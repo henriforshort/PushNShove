@@ -44,6 +44,30 @@ TextureImporter:
   - first:
       213: -5974321855097979247
     second: lvUpMenu_select1_8
+  - first:
+      213: -4540053105946126206
+    second: lvUpMenu_select1_5
+  - first:
+      213: -7473063471717419276
+    second: lvUpMenu_select1_6
+  - first:
+      213: -8513600940824332638
+    second: lvUpMenu_select1_7
+  - first:
+      213: 7083455767175247617
+    second: lvUpMenu_select1_8
+  - first:
+      213: -6945796840184262462
+    second: lvUpMenu_select1_9
+  - first:
+      213: -2479590056848749588
+    second: lvUpMenu_select1_10
+  - first:
+      213: 5464084656036093543
+    second: lvUpMenu_select1_9
+  - first:
+      213: -4234715291039040570
+    second: lvUpMenu_select1_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -262,8 +286,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a6c59681b587b990800000000000000
-      internalID: -7370275267654859101
+      spriteID: 2881cae11cd7ef0c0800000000000000
+      internalID: -4540053105946126206
       vertices: []
       indices: 
       edges: []
@@ -283,8 +307,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bbc4ab12e71192a0800000000000000
-      internalID: -6732573708048348233
+      spriteID: 4f6f550dd585a4890800000000000000
+      internalID: -7473063471717419276
       vertices: []
       indices: 
       edges: []
@@ -304,8 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc360a8cdab57380800000000000000
-      internalID: -8974061226094609189
+      spriteID: 2a6fbb22d0d99d980800000000000000
+      internalID: -8513600940824332638
       vertices: []
       indices: 
       edges: []
@@ -325,8 +349,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19e38051de1f61da0800000000000000
-      internalID: -5974321855097979247
+      spriteID: 1073ca09d7d7d4260800000000000000
+      internalID: 7083455767175247617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvUpMenu_select1_9
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 160
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e91b17b0454db40800000000000000
+      internalID: 5464084656036093543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvUpMenu_select1_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 160
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbf3b811e44b35c0800000000000000
+      internalID: -4234715291039040570
       vertices: []
       indices: 
       edges: []
