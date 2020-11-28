@@ -20,27 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/lvUpPanel_select3.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/B.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Shieldbearer.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/lvUpMenu.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/lvUpMenu.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/character_template.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/character_template.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/concept_archer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/concept_archer.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/concept_knight.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/concept_knight.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/concept_priest.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/concept_priest.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +132,8 @@
       <workItem from="1606299888674" duration="8702000" />
       <workItem from="1606387182587" duration="9674000" />
       <workItem from="1606425998304" duration="600000" />
+      <workItem from="1606510996880" duration="599000" />
+      <workItem from="1606555497091" duration="1826000" />
     </task>
     <servers />
   </component>
