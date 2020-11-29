@@ -3,6 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class B : MonoBehaviour { //Battle manager, handles a single battle.
@@ -18,7 +19,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public float currentShake;
     
     [Header("References")]
-    public GameObject restartButton;
+    public GameObject gameOverPanel;
     public TMP_Text gameOverText;
     public AudioSource audioSource;
     public GameObject cameraFocus;
@@ -27,7 +28,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public GameObject hills;
     public GameObject sun;
     public List<GameObject> deathZones;
-    public Image gameOverPanelBackGround;
+    public Image gameOverPanelWhiteButton;
     public Slider xpSlider;
     public Animator xpAnimator;
     public TMP_Text xpText;
@@ -170,7 +171,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void GameOver() {
-        restartButton.SetActive(true);
+        gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
     }
@@ -181,7 +182,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         if (Input.GetKeyDown(KeyCode.Space)) Restart();
         if (timeSinceGameOver > G.m.timeToAutoRestart) Restart();
 
-        gameOverPanelBackGround.fillAmount = timeSinceGameOver
+        gameOverPanelWhiteButton.fillAmount = timeSinceGameOver
             .Prel(0, G.m.timeToAutoRestart)
             .Clamp01();
     }

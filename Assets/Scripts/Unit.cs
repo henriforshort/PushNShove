@@ -66,8 +66,8 @@ public class Unit : MonoBehaviour {
         if (unitToCollide.Count == 0) {
             Move();
         } else {
-            unitToCollide.ForEach(Collide);
-            unitToCollide.Clear();
+            Collide(unitToCollide[0]);
+            unitToCollide.RemoveAt(0);
         }
     }
 
@@ -90,7 +90,7 @@ public class Unit : MonoBehaviour {
         animator.enabled = (B.m.gameState != B.State.PAUSE);
         
         if (!orangeHealthBar.value.isApprox(currentHealth))
-            orangeHealthBar.value = orangeHealthBar.value.LerpTo(healthBar.value, 2);
+            orangeHealthBar.value = orangeHealthBar.value.LerpTo(healthBar.value, 2.5f);
         
         if (currentSpeed > 0 && anim == Anim.BUMPED) {
             status = Status.WALK;
@@ -172,7 +172,7 @@ public class Unit : MonoBehaviour {
         other.SetAnim(Anim.BUMPED);
         other.TakeDamage(damage);
         
-        B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
+        // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
         B.m.SpawnFX(G.m.sparkFxPrefab, 
             transform.position + new Vector3(0.75f * (int)playerIndex, 
                 Random.Range(-0.5f, 0.5f), -2),
@@ -225,7 +225,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void Destroy() {
-        B.m.audioSource.PlayOneShot(G.m.deathSounds.Random());
+        // B.m.audioSource.PlayOneShot(G.m.deathSounds.Random());
         Instantiate(G.m.deathCloudFxPrefab, transform.position + 0.5f*Vector3.up, Quaternion.identity);
         Destroy(gameObject);
     }

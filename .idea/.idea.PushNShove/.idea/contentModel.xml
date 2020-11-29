@@ -4,8 +4,16 @@
     <e p="C:\Users\couvr\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\couvr\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_PushNShove.-2022987125.00" t="ExcludeRecursive" />
     <e p="C:\Users\couvr\Documents\GitHub\PushNShove" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="EasyAnchors" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="EasyAnchors.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="B.cs" t="Include" />
           <e p="Cloud.cs" t="Include" />

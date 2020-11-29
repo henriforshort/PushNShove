@@ -98,11 +98,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: _atural
+  m_Name: Natural
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1430732977
   material: {fileID: -4862191789931857851}
-  materialHashCode: 0
+  materialHashCode: -1949188623
   m_Version: 1.1.0
   m_SourceFontFileGUID: f051d962cc162564381091ad05240408
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: f051d962cc162564381091ad05240408, type: 3}

@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LvUpMenu : MonoBehaviour {
-    public Animator animator;
+    public Animator backgroundAnimator;
     public Anim anim;
     public bool available;
     public B.State previousState;
@@ -32,7 +33,7 @@ public class LvUpMenu : MonoBehaviour {
 
     public void SetAnimation(Anim a) {
         anim = a;
-        animator.SetInteger("Anim", (int)a);
+        backgroundAnimator.SetInteger("Anim", (int)a);
     }
 
     public void Shine() {
