@@ -29,7 +29,6 @@ public class Unit : MonoBehaviour {
     
     [Header("References")]
     public Slider healthBar;
-    public Image healthBarFill;
     public Slider orangeHealthBar;
     public Animator animator;
     public Rigidbody rigidbodee;
@@ -44,7 +43,7 @@ public class Unit : MonoBehaviour {
     public List<Unit> enemies => playerIndex == PI.PLAYER_ONE ? player2Units : player1Units;
     
     public enum Status { WALK, BUMPED, FALLING } //Status
-    public enum Anim { WALK, HIT, BUMPED } //Animation
+    public enum Anim { WALK, HIT, DEFEND, BUMPED } //Animation
 
     public void Start() {
         status = Status.WALK;
@@ -72,9 +71,14 @@ public class Unit : MonoBehaviour {
     }
 
     public void SetAnim(Anim a) {
+        if (anim == a) return;
+        
         anim = a;
-        animator.SetInteger("anim", (int)a);
-        if (shakeOnHit && a == Anim.HIT) B.m.Shake(0.1f);
+
+        string animToPlay = "Unit_" + a.ToString().ToSentenceCase();
+        if (a == Anim.HIT && this.CoinFlip()) animToPlay += "2";
+        animator.Play(animToPlay);
+        
     }
 
     public void UpdateSpeed() {
@@ -129,7 +133,7 @@ public class Unit : MonoBehaviour {
 
         if (other.attackAnimOnAllCollisions) {
             other.lastAttack = Time.time;
-            other.SetAnim(Anim.HIT);
+            other.SetAnim(Anim.HIT); 
         }
         
         if (CanAttack(other)) Attack(other);
@@ -167,10 +171,12 @@ public class Unit : MonoBehaviour {
     public void Attack(Unit other) {
         lastAttack = Time.time;
         SetAnim(Anim.HIT);
-        
+
         other.status = Status.BUMPED;
         other.SetAnim(Anim.BUMPED);
         other.TakeDamage(damage);
+        
+        if (shakeOnHit) B.m.Shake(0.1f);
         
         // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
         B.m.SpawnFX(G.m.sparkFxPrefab, 
@@ -182,8 +188,6 @@ public class Unit : MonoBehaviour {
     public void TakeDamage(float amount) {
         amount = Random.Range((int)(0.8f * amount), (int)(1.2f * amount));
         SetHealth(currentHealth-amount);
-        // healthBarFill.color = G.m.orange;
-        // this.Wait(0.1f, () => healthBarFill.color = G.m.red);
 
         HpLossUi hpLossUi = B.m.SpawnFX(G.m.hpLossUIPrefab,
                 transform.position + hpLossPosition,

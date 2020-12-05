@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 3644710}
   - component: {fileID: 3644713}
   - component: {fileID: 3644712}
-  - component: {fileID: 3644711}
   - component: {fileID: 3644714}
+  - component: {fileID: 3644711}
   m_Layer: 5
   m_Name: lvUpNotif
   m_TagString: Untagged
@@ -162,25 +162,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &3644711
-Animator:
-  serializedVersion: 3
+--- !u!111 &3644711
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3644709}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c230b73d55aca14b93475905ea6199f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: f6474497eb3d3314597345113a96ecfd, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: f6474497eb3d3314597345113a96ecfd, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &3644712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.8000183, y: -1.699997}
+  m_AnchoredPosition: {x: -0.8000488, y: -1.7000122}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &111877764
@@ -871,7 +868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0017700195, y: -0.8598938}
+  m_AnchoredPosition: {x: -0.0017089844, y: -0.8598633}
   m_SizeDelta: {x: -0.0032958984, y: -1.7233276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187588064
@@ -1593,7 +1590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.28799438, y: -53.810028}
+  m_AnchoredPosition: {x: 0.28796387, y: -53.81006}
   m_SizeDelta: {x: -435.5357, y: -242.33916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434914648
@@ -2351,7 +2348,7 @@ MonoBehaviour:
     level: 0
     battle: 0
     skillPoints: 0
-  heroPrefab: {fileID: 270424159158228438, guid: 6fbbd06cc307030448953e81fc17c258, type: 3}
+  heroPrefab: {fileID: 6971875616277727282, guid: ef8e44773ad2a9a4b9a75ba4fa668ed9, type: 3}
   hpLossUIPrefab: {fileID: 3702322553957803386, guid: 3147a734958550741ab644e000ca9509, type: 3}
   bumpDustFxPrefab: {fileID: 8783008603150916102, guid: 09246576b00787943bdfcbbc914d0aaa, type: 3}
   deathCloudFxPrefab: {fileID: 2169665080544586211, guid: 9d9abc41ff6ba8446a024b2edd9dcd08, type: 3}
@@ -2816,7 +2813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.8000183, y: -1.699997}
+  m_AnchoredPosition: {x: -0.8000488, y: -1.6999817}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &912404913
@@ -4445,7 +4442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.41833472, y: 0.7305196}
   m_AnchorMax: {x: 0.5801005, y: 0.84596187}
-  m_AnchoredPosition: {x: -1.0933609, y: -14.712891}
+  m_AnchoredPosition: {x: -1.0933533, y: -14.712891}
   m_SizeDelta: {x: 225.64935, y: 80.96118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537178392
@@ -5221,7 +5218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.8000183, y: -1.699997}
+  m_AnchoredPosition: {x: -0.8000488, y: -1.7000122}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1758700703

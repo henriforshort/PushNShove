@@ -6,6 +6,16 @@ using UnityEngine;
 
 public static class Util {
     // --------------------
+    // STRINGS
+    // --------------------
+
+
+    public static string ToSentenceCase(this string target) {
+        if (string.IsNullOrEmpty(target)) return target;
+        return target.First().ToString().ToUpper() + target.Substring(1).ToLower();
+    }
+    
+    // --------------------
     // LISTS
     // --------------------
     
@@ -22,6 +32,21 @@ public static class Util {
     public static List<T> Except<T> (this List<T> target, T except) {
         if (target == null || target.Count == 0) return default;
         return target.Where(t => !t.Equals(except)).ToList();
+    }
+
+    public static void Log<T>(this List<T> target) {
+        if (target == null) {
+            Debug.Log("null");
+            return;
+        }
+        
+        string result = "[";
+        target.ForEach(e => {
+            result += e;
+            if (!target.LastOrDefault().Equals(e)) result += ", ";
+        });
+        result += "]";
+        Debug.Log(result);
     }
 
     
@@ -399,18 +424,18 @@ public static class Util {
     // RANDOM
     // --------------------
 
-    public static T Random<T>(T t1, T t2) {
+    public static T Random<T>(this MonoBehaviour target, T t1, T t2) {
         return UnityEngine.Random.Range(0, 2) == 0 ? t1 : t2;
     }
 
-    public static T Random<T>(T t1, T t2, T t3) {
+    public static T Random<T>(this MonoBehaviour target, T t1, T t2, T t3) {
         int i = UnityEngine.Random.Range(0, 3);
         if (i == 0) return t1;
         else if (i == 1) return t2;
         else return t3;
     }
 
-    public static T Random<T>(T t1, T t2, T t3, T t4) {
+    public static T Random<T>(this MonoBehaviour target, T t1, T t2, T t3, T t4) {
         int i = UnityEngine.Random.Range(0, 4);
         if (i == 0) return t1;
         else if (i == 1) return t2;
@@ -418,7 +443,7 @@ public static class Util {
         else return t4;
     }
 
-    public static bool Random<T>() {
+    public static bool CoinFlip(this MonoBehaviour target) {
         return UnityEngine.Random.Range(0, 2) == 0;
     }
 
@@ -451,8 +476,8 @@ public static class Util {
     // REPEAT
     // --------------------
 
-    public static void Repeat(this Action action, int amount) {
-        if (amount < 1) return;
-        for (int i = 0; i < amount; i++) action();
+    public static void Repeat(this MonoBehaviour target, Action action, int times) {
+        if (times < 1) return;
+        for (int i = 0; i < times; i++) action();
     }
 }
