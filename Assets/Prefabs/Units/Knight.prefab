@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7161617, y: 1.1331823, z: 1}
-  m_Center: {x: 0.0045655966, y: -0.44716394, z: 0}
+  m_Size: {x: 1.6196916, y: 1.1331823, z: 1}
+  m_Center: {x: 0.3401542, y: -0.44716394, z: 0}
 --- !u!114 &6971875616277727283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,22 +59,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 1
-  maxSpeed: 5
+  side: 1
+  maxSpeed: 4
   weight: 20
-  maxHealth: 100
+  maxHealth: 120
   damage: 10
   attackAnimDuration: 0.25
   size: 1
   attackAnimOnAllCollisions: 0
   hpLossPosition: {x: 0.3, y: 1.6, z: -5}
   shakeOnHit: 0
+  delayHit: 1
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
   unitToCollide: []
+  unitsColliding: []
   healthBar: {fileID: 7398883394539054116}
   orangeHealthBar: {fileID: 4407138794253257779}
   animator: {fileID: 6971875616310140932}
@@ -303,11 +305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.5
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -6,6 +6,6 @@ public class FeastUpgrade : Upgrade {
     public float weightGain;
     
     public override void Apply() {
-        B.m.hero.weight += weightGain;
+        B.m.heroes.Random().weight += weightGain;
     }
 }

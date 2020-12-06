@@ -6,6 +6,6 @@ public class TrainingUpgrade : Upgrade {
     public float damageGain;
     
     public override void Apply() {
-        B.m.hero.damage += damageGain;
+        B.m.heroes.Random().damage += damageGain;
     }
 }

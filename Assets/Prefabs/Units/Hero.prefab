@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 1
+  side: 1
   maxSpeed: 5
-  mass: 20
+  weight: 20
   maxHealth: 100
   damage: 10
   attackAnimDuration: 0.25
@@ -69,6 +69,7 @@ MonoBehaviour:
   attackAnimOnAllCollisions: 0
   hpLossPosition: {x: -0.3, y: 1.6, z: -5}
   shakeOnHit: 0
+  delayHit: 0
   currentSpeed: 0
   status: 0
   anim: 0
@@ -76,7 +77,6 @@ MonoBehaviour:
   lastAttack: 0
   unitToCollide: []
   healthBar: {fileID: 3613491691768811228}
-  healthBarFill: {fileID: 7421798103064623841}
   orangeHealthBar: {fileID: 7611896808606983883}
   animator: {fileID: 270424161011191807}
   rigidbodee: {fileID: 270424159158228424}
@@ -345,16 +345,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7421798103064623841 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5959734902293682391, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
-  m_PrefabInstance: {fileID: 3768032241777893942}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

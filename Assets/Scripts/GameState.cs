@@ -1,37 +1,35 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public struct GameState {
-    public float heroHp;
-    public float heroDamage;
-    public float heroWeight;
-    public float heroMaxHealth;
+public class GameState {
     public float experience;
     public int level;
     public int battle;
     public int skillPoints;
+    public List<HeroState> heroes;
 
     public void InitRun() {
         experience = 0;
         battle = 1;
         level = 1;
         skillPoints = 0;
+        
+        heroes = new List<HeroState>();
+        for (int i = 0; i < G.m.heroPrefabs.Count; i++) heroes.Add(new HeroState(i, G.m.heroPrefabs[i]));
+        heroes.ForEach(h => h.InitRun());
     }
 
-    public void SaveHero() { //Called at the end of each battle
-        heroHp = B.m.hero.currentHealth;
-        heroMaxHealth = B.m.hero.maxHealth;
-        heroWeight = B.m.hero.weight;
-        heroDamage = B.m.hero.damage;
+    public void Save() { //Called at the end of each battle
+        heroes = heroes.Where(h => h.instance != null).ToList();
+        for (int i = 0; i < heroes.Count; i++) heroes[i].index = i;
+        
+        heroes.ForEach(h => h.Save());
     }
 
-    public void LoadHero() { //Called at the beginning of each battle
-        B.m.hero.maxHealth = heroMaxHealth;
-        B.m.hero.SetHealth(heroHp);
-        B.m.hero.weight = heroWeight;
-        B.m.hero.damage = heroDamage;
+    public void Load() { //Called at the beginning of each battle
+        heroes.ForEach(h => h.Load());
     }
 }

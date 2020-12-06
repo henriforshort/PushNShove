@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Unit : MonoBehaviour {
     [Header("Balancing")]
-    public PI playerIndex;
+    public Side side;
     public float maxSpeed;
-    [FormerlySerializedAs("mass")]
     public float weight;
     public float maxHealth;
     public float damage;
@@ -18,6 +19,7 @@ public class Unit : MonoBehaviour {
     public bool attackAnimOnAllCollisions;
     public Vector3 hpLossPosition;
     public bool shakeOnHit;
+    public bool delayHit;
     
     [Header("State")]
     public float currentSpeed;
@@ -26,6 +28,7 @@ public class Unit : MonoBehaviour {
     public float currentHealth;
     public float lastAttack;
     public List<Unit> unitToCollide;
+    public List<Unit> unitsColliding;
     
     [Header("References")]
     public Slider healthBar;
@@ -33,14 +36,13 @@ public class Unit : MonoBehaviour {
     public Animator animator;
     public Rigidbody rigidbodee;
 
-    private static List<Unit> _player1Units;
-    public static List<Unit> player1Units => _player1Units ?? (_player1Units = new List<Unit>());
+    private static List<Unit> _heroUnits;
+    public static List<Unit> heroUnits => _heroUnits ?? (_heroUnits = new List<Unit>());
 
-    private static List<Unit> _player2Units;
-    public static List<Unit> player2Units => _player2Units ?? (_player2Units = new List<Unit>());
+    private static List<Unit> _enemyUnits;
+    public static List<Unit> enemyUnits => _enemyUnits ?? (_enemyUnits = new List<Unit>());
 
-    public List<Unit> allies => playerIndex == PI.PLAYER_ONE ? player1Units : player2Units;
-    public List<Unit> enemies => playerIndex == PI.PLAYER_ONE ? player2Units : player1Units;
+    public List<Unit> allies => side == Side.HERO ? heroUnits : enemyUnits;
     
     public enum Status { WALK, BUMPED, FALLING } //Status
     public enum Anim { WALK, HIT, DEFEND, BUMPED } //Animation
@@ -51,11 +53,11 @@ public class Unit : MonoBehaviour {
         
         currentSpeed = maxSpeed;
         
-        if (playerIndex != PI.PLAYER_ONE) SetHealth(maxHealth);
+        if (side != Side.HERO) SetHealth(maxHealth);
         orangeHealthBar.value = maxHealth;
         
-        if (playerIndex == PI.PLAYER_ONE) player1Units.Add(this);
-        if (playerIndex == PI.PLAYER_TWO) player2Units.Add(this);
+        if (side == Side.HERO) heroUnits.Add(this);
+        if (side == Side.ENEMY) enemyUnits.Add(this);
     }
 
     public void Update() {
@@ -74,11 +76,9 @@ public class Unit : MonoBehaviour {
         if (anim == a) return;
         
         anim = a;
-
-        string animToPlay = "Unit_" + a.ToString().ToSentenceCase();
-        if (a == Anim.HIT && this.CoinFlip()) animToPlay += "2";
-        animator.Play(animToPlay);
         
+        if (a == Anim.HIT && this.CoinFlip()) animator.Play("HIT2");
+        else animator.Play(a.ToString());
     }
 
     public void UpdateSpeed() {
@@ -96,12 +96,12 @@ public class Unit : MonoBehaviour {
         if (!orangeHealthBar.value.isApprox(currentHealth))
             orangeHealthBar.value = orangeHealthBar.value.LerpTo(healthBar.value, 2.5f);
         
-        if (currentSpeed > 0 && anim == Anim.BUMPED) {
+        if (currentSpeed > 0 && (anim == Anim.BUMPED || anim == Anim.DEFEND)) {
             status = Status.WALK;
             SetAnim(Anim.WALK);
             B.m.SpawnFX(G.m.bumpDustFxPrefab,
-                new Vector3(this.GetX() - (int)playerIndex*size, -2, -2),
-                playerIndex == PI.PLAYER_TWO);
+                new Vector3(this.GetX() - (int)side*size, -2, -2),
+                side == Side.ENEMY);
         }
         
         if (anim == Anim.HIT && Time.time - lastAttack > attackAnimDuration) SetAnim(Anim.WALK);
@@ -110,34 +110,42 @@ public class Unit : MonoBehaviour {
     public void Move() {
         if (B.m.gameState != B.State.PLAYING && status != Status.FALLING) return;
         
-        transform.position += currentSpeed * Time.deltaTime * (int)playerIndex * Vector3.right;
+        transform.position += currentSpeed * Time.deltaTime * (int)side * Vector3.right;
     }
 
     public void OnTriggerStay(Collider other) {
-        Unit otherUnit = player2Units.FirstOrDefault(u => u.gameObject == other.gameObject);
-        if (playerIndex == PI.PLAYER_ONE && otherUnit != null) unitToCollide.Add(otherUnit);
+        Unit otherUnit = enemyUnits.FirstOrDefault(u => u.gameObject == other.gameObject);
+        if (side == Side.HERO && otherUnit != null) unitToCollide.Add(otherUnit);
         
         if (status != Status.FALLING && B.m.deathZones.Contains(other.gameObject)) DeathByFall();
     }
 
     public void Collide(Unit other) { //Only called by player character
         if (currentSpeed < 0 && other.currentSpeed < 0) return;
+        if (unitsColliding.Contains(other)) return;
         
         if (G.m.enableCheats && Input.GetKey(KeyCode.W)) other.DeathByHp();
         if (G.m.enableCheats && Input.GetKey(KeyCode.L)) DeathByHp();
         
+        SetAnim(Anim.DEFEND);
+        other.SetAnim(Anim.DEFEND);
+
+        unitsColliding.Add(other);
         List<float> newSpeeds =  SpeedAfterBump(currentSpeed, other.currentSpeed, weight, 
             other.weight);
-        currentSpeed = newSpeeds[0];
-        other.currentSpeed = newSpeeds[1];
-
+        this.Wait(delayHit ? 0.05f : 0, () => {
+            unitsColliding.Remove(other);
+            currentSpeed = newSpeeds[0];
+            other.currentSpeed = newSpeeds[1];
+        });
+        
         if (other.attackAnimOnAllCollisions) {
             other.lastAttack = Time.time;
             other.SetAnim(Anim.HIT); 
         }
         
-        if (CanAttack(other)) Attack(other);
-        else if (other.CanAttack(this)) other.Attack(this);
+        if (CanAttack(newSpeeds[0], newSpeeds[1])) Attack(other);
+        else if (other.CanAttack(newSpeeds[1], newSpeeds[0])) other.Attack(this);
     }
 
     public List<float> SpeedAfterBump(float speed1, float speed2, float weight1, float weight2) {
@@ -162,27 +170,31 @@ public class Unit : MonoBehaviour {
         return new List<float> {newSpeed1, newSpeed2};
     }
 
-    public bool CanAttack(Unit other) {
+    public bool CanAttack(float newSweed, float otherNewSpeed) {
         return status == Status.WALK 
-               && currentSpeed > other.currentSpeed 
-               && other.currentSpeed < G.m.speedToBump;
+               && newSweed > otherNewSpeed 
+               && otherNewSpeed < G.m.speedToBump;
     }
 
     public void Attack(Unit other) {
         lastAttack = Time.time;
         SetAnim(Anim.HIT);
 
-        other.status = Status.BUMPED;
-        other.SetAnim(Anim.BUMPED);
-        other.TakeDamage(damage);
-        
-        if (shakeOnHit) B.m.Shake(0.1f);
-        
-        // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
-        B.m.SpawnFX(G.m.sparkFxPrefab, 
-            transform.position + new Vector3(0.75f * (int)playerIndex, 
-                Random.Range(-0.5f, 0.5f), -2),
-            playerIndex == PI.PLAYER_ONE);
+        this.Wait(delayHit ? 0.05f : 0, () => {
+            if (other == null) return;
+            
+            other.status = Status.BUMPED;
+            other.SetAnim(Anim.BUMPED);
+            other.TakeDamage(damage);
+
+            if (shakeOnHit) B.m.Shake(0.1f);
+
+            // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
+            B.m.SpawnFX(G.m.sparkFxPrefab,
+                transform.position + new Vector3(0.75f * (int) side,
+                    Random.Range(-0.5f, 0.5f), -2),
+                side == Side.HERO);
+        });
     }
 
     public void TakeDamage(float amount) {
@@ -223,8 +235,8 @@ public class Unit : MonoBehaviour {
         allies.Remove(this);
 
         if (allies.Count == 0) {
-            if (playerIndex == PI.PLAYER_ONE) B.m.Defeat();
-            else if (playerIndex == PI.PLAYER_TWO) B.m.Victory();
+            if (side == Side.HERO) B.m.Defeat();
+            else if (side == Side.ENEMY) B.m.Victory();
         }
     }
 

@@ -20,62 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/Platform.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/Platform.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/Platform.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/Platform.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flag.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flag.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flag.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flag.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flies.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flies.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flies.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Platform/flies.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Notif.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Notif.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute.overrideController" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute.overrideController.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute_Bump.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute_Bump.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute_Hit.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute_Hit.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute_Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Brute_Walk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/DeathCloud.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/DeathCloud.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/DeathCloud.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/DeathCloud.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog.overrideController" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog.overrideController.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog_Bump.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog_Bump.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog_Hit.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog_Hit.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog_Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Dog_Walk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/FX_Bump_Dust_Cloud.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/FX_Bump_Dust_Cloud.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/FX_Bump_Dust_Cloud.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/FX_Bump_Dust_Cloud.controller.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Units/Unit.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Bump.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Bump.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Hit.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Hit.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red.overrideController" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red.overrideController.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red_Bump.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red_Bump.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red_Hit.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red_Hit.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red_Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Red_Walk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit_Walk.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Pack of Dogs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Pack of Dogs.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_sparks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_sparks.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Brute.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Dog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Hero.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Knight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Shieldbearer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Shieldbearer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Strongman.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/B.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Side.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Side.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/fx_sparks.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/fx_sparks.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +57,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/84/d6cd6dd9/ColorUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/04/aa59889e/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HeroState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/b4/c0ce131f/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/de/31acd207/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21BBF68D-61D6-4A2A-A5C3-E180E6B6706D/47/0e08a226/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -111,16 +79,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyCluster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HpLossUi.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Upgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BattleLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
         <option value="$PROJECT_DIR$/Assets/EasyAnchors/Scripts/Editor/EasyAnchors.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Side.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HeroState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
       </list>
     </option>
@@ -194,6 +164,7 @@
       <workItem from="1606903484186" duration="629000" />
       <workItem from="1607093596706" duration="5586000" />
       <workItem from="1607184853611" duration="4147000" />
+      <workItem from="1607247472549" duration="15627000" />
     </task>
     <servers />
   </component>
@@ -222,6 +193,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1606056440259" />
+    <state x="2678" y="-24" width="1154" height="655" maximized="true" key="dock-window-1" timestamp="1607265809752">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2678" y="-24" width="1154" height="655" maximized="true" key="dock-window-1/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1607265809752" />
+    <state x="-1442" y="-23" width="1156" height="811" maximized="true" key="dock-window-2" timestamp="1607265809752">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1442" y="-23" width="1156" height="811" maximized="true" key="dock-window-2/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1607265809752" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606387286559">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

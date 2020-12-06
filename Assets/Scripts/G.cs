@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class G : MonoBehaviour { //Game manager, handles the whole game flow.
                                  //Should contain the global balancing and the prefabs.
@@ -23,7 +22,7 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 	public GameState s;
 
 	[Header("Prefabs")]
-	public GameObject heroPrefab;
+	public List<Unit> heroPrefabs;
 	public GameObject hpLossUIPrefab;
 	public GameObject bumpDustFxPrefab;
 	public GameObject deathCloudFxPrefab;
@@ -58,8 +57,6 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 	public void InitRun() { //Called at the start of each run, after init the first battle
 		needRunInit = false;
 		
-		B.m.hero.currentHealth = B.m.hero.maxHealth;
 		s.InitRun();
-		s.SaveHero();
 	}
 }

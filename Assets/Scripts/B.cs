@@ -3,7 +3,6 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class B : MonoBehaviour { //Battle manager, handles a single battle.
@@ -11,11 +10,12 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
                                  //Should contain only State info to be deleted at the end of the battle.
     [Header("Balancing")]
     public List<EnemyCluster> enemyClusters;
+    public int numberOfEnemies;
     
     [Header("State")]
     public float timeSinceGameOver;
     public State gameState;
-    public Unit hero;
+    public List<Unit> heroes;
     public float currentShake;
     
     [Header("References")]
@@ -54,18 +54,22 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public void InitBattle() {
         gameState = State.PLAYING;
         
-        hero = Instantiate(
-                G.m.heroPrefab,
-                new Vector3(-4, -2, 0),
-                Quaternion.identity,
-                unitsHolder)
-            .GetComponent<Unit>();
-        
         if (G.m.needRunInit) G.m.InitRun();
-        G.m.s.LoadHero();
+
+        G.m.s.heroes.ForEach(h =>
+            heroes.Add(Instantiate(
+                    h.prefab,
+                    new Vector3(
+                        Random.Range(-G.m.enemySpawnPosXRange.x, -G.m.enemySpawnPosXRange.y), 
+                        -2, 
+                        0),
+                    Quaternion.identity,
+                    unitsHolder)
+                .GetComponent<Unit>()));
         
-        Instantiate(enemyClusters.Random(), unitsHolder);
-        // Instantiate(enemyClusters.Random(), unitsHolder);
+        G.m.s.Load();
+        
+        this.Repeat(() => Instantiate(enemyClusters.Random(), unitsHolder), numberOfEnemies);
         
         xpSlider.value = G.m.s.experience; //Set xp bar with no lerp
         level.text = G.m.s.level.ToString();
@@ -131,11 +135,11 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void UpdateCameraAndParallax() {
-        if (Unit.player1Units.Count == 0 || Unit.player2Units.Count == 0) return;
+        if (Unit.heroUnits.Count == 0 || Unit.enemyUnits.Count == 0) return;
 		
         cameraFocus.transform.position = (Vector3.forward * -10) + Vector3.right *
-            (Unit.player1Units.Select(unit => unit.GetX()).Max()
-             + Unit.player2Units.Select(unit => unit.GetX()).Min()) / 2;
+            (Unit.heroUnits.Select(unit => unit.GetX()).Max()
+             + Unit.enemyUnits.Select(unit => unit.GetX()).Min()) / 2;
 			
         if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > G.m.camMaxDistFromUnits) 
             cameraGO
@@ -188,10 +192,10 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void Restart() {
-        G.m.s.SaveHero();
+        G.m.s.Save();
         gameState = State.PLAYING;
-        Unit.player1Units.Clear();
-        Unit.player2Units.Clear();
+        Unit.heroUnits.Clear();
+        Unit.enemyUnits.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
