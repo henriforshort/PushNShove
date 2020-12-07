@@ -1,21 +1,29 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class G : MonoBehaviour { //Game manager, handles the whole game flow.
                                  //Should contain the global balancing and the prefabs.
                                  //Should contain all State info that is persisted across battles
 	[Header("Balancing")]
+	public bool enableCheats;
+	[Space(20)]
 	public float camSpeed;
 	public float camMaxDistFromUnits;
-	public float camMaxDistanceFromCenter;
+	public float camMaxDistFromMapCenter;
 	public float hillsParallax;
-	public float bumpRecoverySpeed;
-	public float postCollisionMinSpeed;
+	[Space(20)]
+	public float speedToAttack;
 	public float speedToBump; //negative speed after which a unit is considered bumped
+	public float collisionSpeedMultiplier;
+	public float postCollisionMinSpeed;
+	public float postCollisionMaxSpeed;
+	public float bumpDurationBeforeRecovery;
+	public float bumpRecoverySpeed;
+	[Space(20)]
 	public float timeToAutoRestart;
-	public Vector2 enemySpawnPosXRange;
-	public bool enableCheats;
 	public float xpGainPerLevel;
+	public Vector2 enemySpawnPosXRange;
 	
 	[Header("State")]
 	public bool needRunInit;

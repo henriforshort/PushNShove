@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brute
       objectReference: {fileID: 0}
+    - target: {fileID: 4974386014944740836, guid: 99d7920a90c17a54fa84680443683aaa, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6865855976475236143, guid: 99d7920a90c17a54fa84680443683aaa, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

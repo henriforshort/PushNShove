@@ -135,25 +135,26 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void UpdateCameraAndParallax() {
-        if (Unit.heroUnits.Count == 0 || Unit.enemyUnits.Count == 0) return;
+        if (Unit.heroUnits.Count == 0 || Unit.monsterUnits.Count == 0) return;
 		
         cameraFocus.transform.position = (Vector3.forward * -10) + Vector3.right *
             (Unit.heroUnits.Select(unit => unit.GetX()).Max()
-             + Unit.enemyUnits.Select(unit => unit.GetX()).Min()) / 2;
+             + Unit.monsterUnits.Select(unit => unit.GetX()).Min()) / 2;
 			
         if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > G.m.camMaxDistFromUnits) 
             cameraGO
                 .LerpTo(cameraFocus, G.m.camSpeed)
-                .ClampX(-G.m.camMaxDistanceFromCenter, G.m.camMaxDistanceFromCenter);
+                .ClampX(-G.m.camMaxDistFromMapCenter, G.m.camMaxDistFromMapCenter);
 
         hills.SetX(cameraGO.GetX() * G.m.hillsParallax);
         sun.SetX(cameraGO.GetX());
     }
 
-    public GameObject SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, Transform holder = null, 
-        float duration = 0.5f) {
+    public GameObject SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, 
+        Transform holder = null, float duration = 0.5f, Vector3 rotation = default) {
         if (holder == null) holder = transform;
-        GameObject spawnedFx = Instantiate(fx, position, Quaternion.identity, holder);
+        if (rotation == default) rotation = Vector3.zero;
+        GameObject spawnedFx = Instantiate(fx, position, Quaternion.Euler(rotation), holder);
         if (mirrored) spawnedFx.transform.localScale = new Vector3(-1, 1, 1);
         Destroy(spawnedFx, duration);
         return spawnedFx;
@@ -195,7 +196,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         G.m.s.Save();
         gameState = State.PLAYING;
         Unit.heroUnits.Clear();
-        Unit.enemyUnits.Clear();
+        Unit.monsterUnits.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5914191361000633561, guid: caccfe4afe68ecf4a9dbd7392d45e69e, type: 3}
       propertyPath: m_Name
-      value: Player2Unit
+      value: Shieldbearer
       objectReference: {fileID: 0}
     - target: {fileID: 5914191361000633564, guid: caccfe4afe68ecf4a9dbd7392d45e69e, type: 3}
       propertyPath: m_RootOrder
@@ -132,7 +132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5914191361000633561, guid: caccfe4afe68ecf4a9dbd7392d45e69e, type: 3}
       propertyPath: m_Name
-      value: Player2Unit (1)
+      value: Shieldbearer (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5914191361000633564, guid: caccfe4afe68ecf4a9dbd7392d45e69e, type: 3}
       propertyPath: m_RootOrder

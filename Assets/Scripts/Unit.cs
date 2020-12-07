@@ -16,10 +16,9 @@ public class Unit : MonoBehaviour {
     public float damage;
     public float attackAnimDuration;
     public float size;
-    public bool attackAnimOnAllCollisions;
     public Vector3 hpLossPosition;
     public bool shakeOnHit;
-    public bool delayHit;
+    public Vector3 visualsPosition;
     
     [Header("State")]
     public float currentSpeed;
@@ -27,8 +26,7 @@ public class Unit : MonoBehaviour {
     public Anim anim;
     public float currentHealth;
     public float lastAttack;
-    public List<Unit> unitToCollide;
-    public List<Unit> unitsColliding;
+    public float collideDate;
     
     [Header("References")]
     public Slider healthBar;
@@ -39,13 +37,19 @@ public class Unit : MonoBehaviour {
     private static List<Unit> _heroUnits;
     public static List<Unit> heroUnits => _heroUnits ?? (_heroUnits = new List<Unit>());
 
-    private static List<Unit> _enemyUnits;
-    public static List<Unit> enemyUnits => _enemyUnits ?? (_enemyUnits = new List<Unit>());
+    private static List<Unit> _monsterUnits;
+    public static List<Unit> monsterUnits => _monsterUnits ?? (_monsterUnits = new List<Unit>());
 
-    public List<Unit> allies => side == Side.HERO ? heroUnits : enemyUnits;
+    public List<Unit> allies => side == Side.HERO ? heroUnits : monsterUnits;
+    public List<Unit> enemies => side == Side.MONSTER ? heroUnits : monsterUnits;
     
     public enum Status { WALK, BUMPED, FALLING } //Status
-    public enum Anim { WALK, HIT, DEFEND, BUMPED } //Animation
+    public enum Anim { WALK, WINDUP, HIT, DEFEND, BUMPED } //Animation
+    
+    
+    // ====================
+    // BASIC METHODS
+    // ====================
 
     public void Start() {
         status = Status.WALK;
@@ -54,28 +58,25 @@ public class Unit : MonoBehaviour {
         currentSpeed = maxSpeed;
         
         if (side != Side.HERO) SetHealth(maxHealth);
-        orangeHealthBar.value = maxHealth;
+        orangeHealthBar.value = currentHealth;
         
         if (side == Side.HERO) heroUnits.Add(this);
-        if (side == Side.ENEMY) enemyUnits.Add(this);
+        if (side == Side.MONSTER) monsterUnits.Add(this);
     }
 
     public void Update() {
         UpdateSpeed();
         UpdateVisuals();
         
-        if (unitToCollide.Count == 0) {
-            Move();
-        } else {
-            Collide(unitToCollide[0]);
-            unitToCollide.RemoveAt(0);
-        }
+        Move();
     }
 
     public void SetAnim(Anim a) {
         if (anim == a) return;
         
         anim = a;
+
+        if (a == Anim.HIT) lastAttack = Time.time;
         
         if (a == Anim.HIT && this.CoinFlip()) animator.Play("HIT2");
         else animator.Play(a.ToString());
@@ -83,11 +84,14 @@ public class Unit : MonoBehaviour {
 
     public void UpdateSpeed() {
         if (currentSpeed >= maxSpeed) return;
+        if (currentSpeed.isApprox(maxSpeed)) return;
         if (B.m.gameState != B.State.PLAYING) return;
         if (status == Status.FALLING) return;
         
-        currentSpeed += Time.deltaTime * maxSpeed * G.m.bumpRecoverySpeed;
-        if (currentSpeed >= maxSpeed) currentSpeed = maxSpeed;
+        if (Time.time - collideDate > G.m.bumpDurationBeforeRecovery)
+            currentSpeed = currentSpeed.LerpTo(maxSpeed, G.m.bumpRecoverySpeed);
+        
+        if (currentSpeed >= maxSpeed || currentSpeed.isApprox(maxSpeed)) currentSpeed = maxSpeed;
     }
 
     public void UpdateVisuals() {
@@ -95,16 +99,19 @@ public class Unit : MonoBehaviour {
         
         if (!orangeHealthBar.value.isApprox(currentHealth))
             orangeHealthBar.value = orangeHealthBar.value.LerpTo(healthBar.value, 2.5f);
+
+        if (anim == Anim.HIT && Time.time - lastAttack > attackAnimDuration) {
+            if (status == Status.BUMPED) SetAnim(Anim.BUMPED);
+            else SetAnim(Anim.DEFEND);
+        }
         
         if (currentSpeed > 0 && (anim == Anim.BUMPED || anim == Anim.DEFEND)) {
             status = Status.WALK;
             SetAnim(Anim.WALK);
             B.m.SpawnFX(G.m.bumpDustFxPrefab,
                 new Vector3(this.GetX() - (int)side*size, -2, -2),
-                side == Side.ENEMY);
+                side == Side.MONSTER);
         }
-        
-        if (anim == Anim.HIT && Time.time - lastAttack > attackAnimDuration) SetAnim(Anim.WALK);
     }
 
     public void Move() {
@@ -112,89 +119,101 @@ public class Unit : MonoBehaviour {
         
         transform.position += currentSpeed * Time.deltaTime * (int)side * Vector3.right;
     }
+    
+    
+    // ====================
+    // COLLISIONS
+    // ====================
+
+    public void LongRangeCollide(Collider other) { //Called by both sides
+        Unit otherUnit = enemies.FirstOrDefault(u => u.gameObject == other.gameObject);
+        if (otherUnit == null) return;
+        
+        if (currentSpeed > 0 && otherUnit.currentSpeed > 0) SetAnim(Anim.WINDUP);
+    }
 
     public void OnTriggerStay(Collider other) {
-        Unit otherUnit = enemyUnits.FirstOrDefault(u => u.gameObject == other.gameObject);
-        if (side == Side.HERO && otherUnit != null) unitToCollide.Add(otherUnit);
+        Unit otherUnit = monsterUnits.FirstOrDefault(u => u.gameObject == other.gameObject);
+        if (side == Side.HERO && otherUnit != null) Collide(otherUnit);
         
         if (status != Status.FALLING && B.m.deathZones.Contains(other.gameObject)) DeathByFall();
     }
 
     public void Collide(Unit other) { //Only called by player character
         if (currentSpeed < 0 && other.currentSpeed < 0) return;
-        if (unitsColliding.Contains(other)) return;
         
         if (G.m.enableCheats && Input.GetKey(KeyCode.W)) other.DeathByHp();
         if (G.m.enableCheats && Input.GetKey(KeyCode.L)) DeathByHp();
         
-        SetAnim(Anim.DEFEND);
-        other.SetAnim(Anim.DEFEND);
+        other.collideDate = Time.time;
+        collideDate = Time.time;
+        
+        if (currentSpeed > G.m.speedToAttack) SetAnim(Anim.HIT);
+        else SetAnim(Anim.DEFEND);
+        
+        if (other.currentSpeed > G.m.speedToAttack) other.SetAnim(Anim.HIT);
+        else other.SetAnim(Anim.DEFEND);
 
-        unitsColliding.Add(other);
-        List<float> newSpeeds =  SpeedAfterBump(currentSpeed, other.currentSpeed, weight, 
-            other.weight);
-        this.Wait(delayHit ? 0.05f : 0, () => {
-            unitsColliding.Remove(other);
-            currentSpeed = newSpeeds[0];
-            other.currentSpeed = newSpeeds[1];
-        });
+        SetSpeedsAfterBump(other, 
+            currentSpeed < 0, 
+            other.currentSpeed < 0);
         
-        if (other.attackAnimOnAllCollisions) {
-            other.lastAttack = Time.time;
-            other.SetAnim(Anim.HIT); 
-        }
-        
-        if (CanAttack(newSpeeds[0], newSpeeds[1])) Attack(other);
-        else if (other.CanAttack(newSpeeds[1], newSpeeds[0])) other.Attack(this);
+        if (CanAttack(other)) Attack(other);
+        if (other.CanAttack(this)) other.Attack(this);
     }
 
-    public List<float> SpeedAfterBump(float speed1, float speed2, float weight1, float weight2) {
+    public void SetSpeedsAfterBump(Unit other, bool hasDisadvantage, bool otherHasDisadvantage) {
         // Basic concept : the total amount of speed is conserved (the sum of the two unit's speed stays the same)
-        // This total speed is distributed proportionally to each unit's momentum (speed * weight)
+        // This total speed is distributed proportionally to each unit's weight
         // I added a few tweaks for better gamefeel
-        float totalSpeed = speed1.AtLeast(0) + speed2.AtLeast(0);
+        float totalSpeed = currentSpeed + other.currentSpeed;
         
-        // Speed cannot be lower than 0 so that immobile units offer some resistance (and no one has < 0 momentum)
-        float momentum1 = weight1 * speed1.AtLeast(0); 
-        float momentum2 = weight2 * speed2.AtLeast(0);
-        float totalMomentum = momentum1 + momentum2;
+        //If a unit is moving backwards, their weight is divided bu 10
+        float collisionWeight = hasDisadvantage ? weight / 10 : weight;
+        float otherCollisionWeight = otherHasDisadvantage ? other.weight / 10 : other.weight;
+        float totalWeight = collisionWeight + otherCollisionWeight;
         
-        // If unit was moving forward, stop it completely before adding the speed from the collision
-        float initialSpeed1 = speed1.AtMost(0);
-        float initialSpeed2 = speed2.AtMost(0);
+        // If the units were moving forward, stop them completely before adding the speed from the collision
+        currentSpeed = currentSpeed.AtMost(0);
+        other.currentSpeed = other.currentSpeed.AtMost(0);
         
-        //Gain a fraction of total speed (backwards) equivalent to the fraction of total momentum the other unit has
-        float newSpeed1 = (initialSpeed1 - (momentum2/totalMomentum)*totalSpeed).AtMost(G.m.postCollisionMinSpeed);
-        float newSpeed2 = (initialSpeed2 - (momentum1/totalMomentum)*totalSpeed).AtMost(G.m.postCollisionMinSpeed);
+        //Add some random
+        float random = Random.Range(0, totalWeight);
+        collisionWeight = (collisionWeight + random)/2;
+        otherCollisionWeight = (otherCollisionWeight + totalWeight - random)/2;
         
-        return new List<float> {newSpeed1, newSpeed2};
+        //Gain a fraction of total speed (backwards) depending on other unit's weight, compared to total weight
+        //I increased that number a bit because it looks nicer
+        currentSpeed -= (otherCollisionWeight / totalWeight) * totalSpeed * G.m.collisionSpeedMultiplier;
+        other.currentSpeed -= (collisionWeight / totalWeight) * totalSpeed * G.m.collisionSpeedMultiplier;
+        
+        //Clamp speeds, so that we don't have either imperceptible or extreme movements
+        currentSpeed = currentSpeed.AtMost(G.m.postCollisionMinSpeed).AtLeast(G.m.postCollisionMaxSpeed);
+        other.currentSpeed = other.currentSpeed.AtMost(G.m.postCollisionMinSpeed).AtLeast(G.m.postCollisionMaxSpeed);
     }
+    
+    
+    // ====================
+    // ATTACK & DAMAGE
+    // ====================
 
-    public bool CanAttack(float newSweed, float otherNewSpeed) {
-        return status == Status.WALK 
-               && newSweed > otherNewSpeed 
-               && otherNewSpeed < G.m.speedToBump;
+    public bool CanAttack(Unit other) {
+        return other.currentSpeed < G.m.speedToBump;
     }
 
     public void Attack(Unit other) {
-        lastAttack = Time.time;
-        SetAnim(Anim.HIT);
+        other.status = Status.BUMPED;
+        other.TakeDamage(damage);
 
-        this.Wait(delayHit ? 0.05f : 0, () => {
-            if (other == null) return;
-            
-            other.status = Status.BUMPED;
-            other.SetAnim(Anim.BUMPED);
-            other.TakeDamage(damage);
+        if (shakeOnHit) B.m.Shake(0.1f);
 
-            if (shakeOnHit) B.m.Shake(0.1f);
-
-            // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
-            B.m.SpawnFX(G.m.sparkFxPrefab,
-                transform.position + new Vector3(0.75f * (int) side,
-                    Random.Range(-0.5f, 0.5f), -2),
-                side == Side.HERO);
-        });
+        // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
+        B.m.SpawnFX(G.m.sparkFxPrefab,
+            transform.position + visualsPosition + new Vector3(1.5f * (int) side, 1, -2),
+            side == Side.HERO,
+            null,
+            0.5f,
+            Vector3.forward * Random.Range(0, 360));
     }
 
     public void TakeDamage(float amount) {
@@ -213,10 +232,15 @@ public class Unit : MonoBehaviour {
     public void SetHealth(float amount) {
         currentHealth = Mathf.Clamp(amount, 0, maxHealth);
         healthBar.value = currentHealth / maxHealth;
-        healthBar.gameObject.SetActive(!currentHealth.isApprox(maxHealth));
-        orangeHealthBar.gameObject.SetActive(!currentHealth.isApprox(maxHealth));
+        // healthBar.gameObject.SetActive(!currentHealth.isApprox(maxHealth));
+        // orangeHealthBar.gameObject.SetActive(!currentHealth.isApprox(maxHealth));
         if (currentHealth <= 0) DeathByHp();
     }
+    
+    
+    // ====================
+    // DEATH
+    // ====================
 
     public void DeathByHp() {
         Deactivate();
@@ -236,7 +260,7 @@ public class Unit : MonoBehaviour {
 
         if (allies.Count == 0) {
             if (side == Side.HERO) B.m.Defeat();
-            else if (side == Side.ENEMY) B.m.Victory();
+            else if (side == Side.MONSTER) B.m.Victory();
         }
     }
 

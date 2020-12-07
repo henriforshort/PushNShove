@@ -26,6 +26,7 @@
           <e p="LvUpMenu.cs" t="Include" />
           <e p="Side.cs" t="Include" />
           <e p="Unit.cs" t="Include" />
+          <e p="UnitMaxRange.cs" t="Include" />
           <e p="Upgrades" t="Include">
             <e p="FeastUpgrade.cs" t="Include" />
             <e p="SelfDefenseUpgrade.cs" t="Include" />
