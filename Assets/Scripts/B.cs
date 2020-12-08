@@ -67,7 +67,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
                     unitsHolder)
                 .GetComponent<Unit>()));
         
-        G.m.s.Load();
+        G.m.s.LoadHeroes();
         
         this.Repeat(() => Instantiate(enemyClusters.Random(), unitsHolder), numberOfEnemies);
         
@@ -193,7 +193,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void Restart() {
-        G.m.s.Save();
+        G.m.s.SaveHeroes();
         gameState = State.PLAYING;
         Unit.heroUnits.Clear();
         Unit.monsterUnits.Clear();

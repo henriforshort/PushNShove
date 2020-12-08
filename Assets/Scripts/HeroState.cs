@@ -6,8 +6,8 @@ using UnityEngine.Serialization;
 public class HeroState {
     public Unit prefab;
     public int index;
-    public float currentHealth;
     public float maxHealth;
+    public float currentHealth;
     public float damage;
     public float weight;
 
@@ -16,13 +16,11 @@ public class HeroState {
     public HeroState (int index, Unit prefab) {
         this.prefab = prefab;
         this.index = index;
-        currentHealth = 0;
-        damage = 0;
-        weight = 0;
-        maxHealth = 0;
+        
+        InitRun();
     }
 
-    public void InitRun() {
+    public void InitRun() { //Called at the beginning of each run
         currentHealth = prefab.maxHealth;
         maxHealth = prefab.maxHealth;
         damage = prefab.damage;

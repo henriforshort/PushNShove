@@ -1426,8 +1426,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyClusters:
   - {fileID: 3252120635310811114, guid: 084954b836ec31646af7c43e05c10bbb, type: 3}
-  - {fileID: 4680288517125227900, guid: 0372c8552d4c7f044b077195b326f9e5, type: 3}
-  - {fileID: 7138288912769154093, guid: 85022e76302088f42b9714ec5f1e932a, type: 3}
   numberOfEnemies: 1
   timeSinceGameOver: 0
   gameState: 0
@@ -2334,7 +2332,8 @@ MonoBehaviour:
   camMaxDistFromMapCenter: 10
   hillsParallax: 0.75
   speedToAttack: 1
-  speedToBump: -3
+  speedToBump: -4
+  collisionRandom: 0.2
   collisionSpeedMultiplier: 4
   postCollisionMinSpeed: -1
   postCollisionMaxSpeed: -10

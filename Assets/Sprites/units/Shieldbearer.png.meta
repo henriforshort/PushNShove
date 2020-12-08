@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba94d23acce6b3a42b856f37f3d599a1
+guid: a8358957a5cace546ba6776621617d95
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,6 +14,27 @@ TextureImporter:
   - first:
       213: -6201221139989666735
     second: Shieldbearer_3
+  - first:
+      213: -9155063323150433618
+    second: Shieldbearer_4
+  - first:
+      213: -7058090812444314124
+    second: Shieldbearer_5
+  - first:
+      213: -3094193515071434152
+    second: Shieldbearer_6
+  - first:
+      213: -654665205619561766
+    second: Shieldbearer_7
+  - first:
+      213: 1858197379982269684
+    second: Shieldbearer_8
+  - first:
+      213: -1055571764222102526
+    second: Shieldbearer_9
+  - first:
+      213: -3448914769251482193
+    second: Shieldbearer_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,8 +138,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 36
+        y: 72
+        width: 56
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,9 +158,9 @@ TextureImporter:
       name: Shieldbearer_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 0
-        width: 36
+        x: 56
+        y: 72
+        width: 56
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -158,9 +179,9 @@ TextureImporter:
       name: Shieldbearer_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 0
-        width: 36
+        x: 112
+        y: 72
+        width: 56
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,9 +200,9 @@ TextureImporter:
       name: Shieldbearer_3
       rect:
         serializedVersion: 2
-        x: 108
-        y: 0
-        width: 36
+        x: 168
+        y: 72
+        width: 56
         height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -192,6 +213,153 @@ TextureImporter:
       bones: []
       spriteID: 154e5498a36d0f9a0800000000000000
       internalID: -6201221139989666735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shieldbearer_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea24967c96ea2f080800000000000000
+      internalID: -9155063323150433618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shieldbearer_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 36
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5fecb2dcf9c0e90800000000000000
+      internalID: -7058090812444314124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shieldbearer_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 36
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85299db44673f05d0800000000000000
+      internalID: -3094193515071434152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shieldbearer_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 36
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adaec3cc6792ae6f0800000000000000
+      internalID: -654665205619561766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shieldbearer_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc97640ca4a9c910800000000000000
+      internalID: 1858197379982269684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shieldbearer_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204fb96b21bd951f0800000000000000
+      internalID: -1055571764222102526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shieldbearer_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5ca2e5a4ef220d0800000000000000
+      internalID: -3448914769251482193
       vertices: []
       indices: 
       edges: []

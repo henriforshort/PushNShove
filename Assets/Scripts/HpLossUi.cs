@@ -6,11 +6,11 @@ public class HpLossUi : MonoBehaviour {
     public float targetY;
     public float speed;
     public float lifetime;
+    public float fadeDuration;
     
     [Header("State")]
     public float initialY;
     public float expirationDate;
-
     [Header("References")]
     public TMP_Text number;
 
@@ -25,6 +25,13 @@ public class HpLossUi : MonoBehaviour {
             pos, 
             new Vector3(pos.x, initialY + targetY, pos.z), 
             speed / 100);
-        if (Time.time > expirationDate) Destroy(gameObject);
+        
+        if (Time.time > expirationDate) {
+            number.alpha = Time.time.Prel(expirationDate + fadeDuration, expirationDate);
+        }
+
+        if (Time.time > (expirationDate + fadeDuration)) {
+            Destroy(gameObject);
+        }
     }
 }

@@ -13,7 +13,7 @@ public class SelfDefenseUpgrade : Upgrade {
         
         if (alsoHeal) {
             hero.TakeDamage(-hpGain);
-            G.m.s.Save();
+            G.m.s.SaveHeroes();
         }
     }
 }

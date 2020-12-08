@@ -11,7 +11,7 @@ public class GameState {
     public int skillPoints;
     public List<HeroState> heroes;
 
-    public void InitRun() {
+    public void InitRun() { //Called at the beginning of each run
         experience = 0;
         battle = 1;
         level = 1;
@@ -19,17 +19,16 @@ public class GameState {
         
         heroes = new List<HeroState>();
         for (int i = 0; i < G.m.heroPrefabs.Count; i++) heroes.Add(new HeroState(i, G.m.heroPrefabs[i]));
-        heroes.ForEach(h => h.InitRun());
     }
 
-    public void Save() { //Called at the end of each battle
-        heroes = heroes.Where(h => h.instance != null).ToList();
-        for (int i = 0; i < heroes.Count; i++) heroes[i].index = i;
+    public void SaveHeroes() { //Called at the end of each battle
+        heroes.RemoveAll(h => h.instance==null); //Remove dead heroes from save
+        for (int i = 0; i < heroes.Count; i++) heroes[i].index = i; //Update heroes index
         
         heroes.ForEach(h => h.Save());
     }
 
-    public void Load() { //Called at the beginning of each battle
+    public void LoadHeroes() { //Called at the beginning of each battle
         heroes.ForEach(h => h.Load());
     }
 }

@@ -15,6 +15,7 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 	[Space(20)]
 	public float speedToAttack;
 	public float speedToBump; //negative speed after which a unit is considered bumped
+	[Range(0, 1)] public float collisionRandom; //the % of the collision strength that is random
 	public float collisionSpeedMultiplier;
 	public float postCollisionMinSpeed;
 	public float postCollisionMaxSpeed;

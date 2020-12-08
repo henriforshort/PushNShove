@@ -15,10 +15,7 @@ public class Unit : MonoBehaviour {
     public float maxHealth;
     public float damage;
     public float attackAnimDuration;
-    public float size;
-    public Vector3 hpLossPosition;
     public bool shakeOnHit;
-    public Vector3 visualsPosition;
     
     [Header("State")]
     public float currentSpeed;
@@ -29,6 +26,7 @@ public class Unit : MonoBehaviour {
     public float collideDate;
     
     [Header("References")]
+    public float size;
     public Slider healthBar;
     public Slider orangeHealthBar;
     public Animator animator;
@@ -48,7 +46,7 @@ public class Unit : MonoBehaviour {
     
     
     // ====================
-    // BASIC METHODS
+    // INIT
     // ====================
 
     public void Start() {
@@ -63,6 +61,11 @@ public class Unit : MonoBehaviour {
         if (side == Side.HERO) heroUnits.Add(this);
         if (side == Side.MONSTER) monsterUnits.Add(this);
     }
+    
+    
+    // ====================
+    // VISUALS AND MOVEMENT
+    // ====================
 
     public void Update() {
         UpdateSpeed();
@@ -75,11 +78,21 @@ public class Unit : MonoBehaviour {
         if (anim == a) return;
         
         anim = a;
-
-        if (a == Anim.HIT) lastAttack = Time.time;
         
-        if (a == Anim.HIT && this.CoinFlip()) animator.Play("HIT2");
-        else animator.Play(a.ToString());
+        if (a == Anim.WINDUP) PlayAnim(transform);
+        else if (a == Anim.HIT) {
+            lastAttack = Time.time;
+            PlayAnim(true);
+        } else PlayAnim();
+    }
+
+    //Play current anim
+    //Pick one at random if there are two versions (like "HIT" and "HIT2")
+    public void PlayAnim(bool twoVersions = false) { 
+        if (twoVersions) {
+            if (this.CoinFlip()) animator.Play(anim.ToString());
+            else animator.Play(anim + "2");
+        } else animator.Play(anim.ToString());
     }
 
     public void UpdateSpeed() {
@@ -178,9 +191,13 @@ public class Unit : MonoBehaviour {
         other.currentSpeed = other.currentSpeed.AtMost(0);
         
         //Add some random
-        float random = Random.Range(0, totalWeight);
-        collisionWeight = (collisionWeight + random)/2;
-        otherCollisionWeight = (otherCollisionWeight + totalWeight - random)/2;
+        float random = Random.value;
+        float randomWeight = random * totalWeight;
+        float otherRandomWeight = (1 - random) * totalWeight;
+        collisionWeight = collisionWeight*(1 - G.m.collisionRandom) + 
+                          randomWeight*G.m.collisionRandom;
+        otherCollisionWeight = otherCollisionWeight * (1 - G.m.collisionRandom) + 
+                               otherRandomWeight * G.m.collisionRandom;
         
         //Gain a fraction of total speed (backwards) depending on other unit's weight, compared to total weight
         //I increased that number a bit because it looks nicer
@@ -209,7 +226,7 @@ public class Unit : MonoBehaviour {
 
         // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
         B.m.SpawnFX(G.m.sparkFxPrefab,
-            transform.position + visualsPosition + new Vector3(1.5f * (int) side, 1, -2),
+            transform.position + new Vector3(1.5f * (int) side, 0, -2),
             side == Side.HERO,
             null,
             0.5f,
@@ -221,9 +238,10 @@ public class Unit : MonoBehaviour {
         SetHealth(currentHealth-amount);
 
         HpLossUi hpLossUi = B.m.SpawnFX(G.m.hpLossUIPrefab,
-                transform.position + hpLossPosition,
+                transform.position + new Vector3(0f * (int) side, 2.25f*size - 0.4f, -5),
                 false,
-                transform)
+                transform,
+                3)
             .GetComponent<HpLossUi>();
         
         hpLossUi.number.text = amount.ToString();

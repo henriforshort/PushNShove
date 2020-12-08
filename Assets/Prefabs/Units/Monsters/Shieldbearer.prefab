@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5914191361000633561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5914191361033034984}
@@ -46,7 +46,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1164582, y: 1.1331823, z: 1}
-  m_Center: {x: -0.19558278, y: -0.44716394, z: 0}
+  m_Center: {x: -0.68, y: -0.44716394, z: 0}
 --- !u!114 &5914191361000633560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,18 +63,16 @@ MonoBehaviour:
   maxSpeed: 3
   weight: 2
   maxHealth: 100
-  damage: 10
+  damage: 5
   attackAnimDuration: 0.15
-  size: 1
-  hpLossPosition: {x: 0.3, y: 1.6, z: -5}
   shakeOnHit: 0
-  visualsPosition: {x: 0.5, y: -1, z: 0}
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
   collideDate: 0
+  size: 1
   healthBar: {fileID: 6087850083390855375}
   orangeHealthBar: {fileID: 1151570446728982744}
   animator: {fileID: 5914191361033034991}
@@ -121,8 +119,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5914191361033034985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.484, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2038420370698097647}
   - {fileID: 1873142377612212536}
@@ -169,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8525242854278163697, guid: 9b5b73faba6136943ac4461bf5313f95, type: 3}
+  m_Sprite: {fileID: 4902428322751657069, guid: a8358957a5cace546ba6776621617d95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1996428754146833308, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1996428754146833308, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.x
-      value: 0.57521564
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.y
@@ -306,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4509305656242547575, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4509305656242547575, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -410,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262325635221722628, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8293401416456333148, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_Name
