@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetY: 0.5
   speed: 1
-  lifetime: 0.75
+  lifetime: 0.5
   fadeDuration: 0.25
   initialY: 0
   expirationDate: 0

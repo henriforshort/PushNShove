@@ -12,7 +12,7 @@ public class SelfDefenseUpgrade : Upgrade {
         hero.maxHealth += hpGain;
         
         if (alsoHeal) {
-            hero.TakeDamage(-hpGain);
+            hero.AddHealth(hpGain);
             G.m.s.SaveHeroes();
         }
     }

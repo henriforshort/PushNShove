@@ -60,23 +60,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 1
-  maxSpeed: 3
+  maxSpeed: 3.5
   weight: 2
   maxHealth: 200
-  damage: 10
-  attackAnimDuration: 0.15
+  damage: 20
   shakeOnHit: 0
+  strength: 0.5
+  prot: 0.25
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
-  collideDate: 0
+  lastWindupIsOne: 0
+  isDeactivated: 0
   size: 1
+  attackAnimDuration: 0.25
   healthBar: {fileID: 45564277804295137}
   orangeHealthBar: {fileID: 6568130779824425974}
   animator: {fileID: 490591814931064769}
   rigidbodee: {fileID: 490591814827413485}
+  hpLossUis: []
 --- !u!54 &490591814827413485
 Rigidbody:
   m_ObjectHideFlags: 0

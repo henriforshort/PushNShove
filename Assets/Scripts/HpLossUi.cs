@@ -11,26 +11,27 @@ public class HpLossUi : MonoBehaviour {
     [Header("State")]
     public float initialY;
     public float expirationDate;
+    
     [Header("References")]
     public TMP_Text number;
+    public Unit unit;
 
-    private void Start() {
+    public void Start() {
         initialY = transform.position.y;
         expirationDate = Time.time + lifetime;
     }
 
+    //Move up, slower and slower
+    //After (lifetime) seconds, get progressively transparent in (fadeDuration) seconds, then get destroyed
     public void Update() {
-        Vector3 pos = transform.position;
-        transform.position = Vector3.Lerp(
-            pos, 
-            new Vector3(pos.x, initialY + targetY, pos.z), 
-            speed / 100);
+        transform.LerpYTo(initialY + targetY, speed);
         
         if (Time.time > expirationDate) {
             number.alpha = Time.time.Prel(expirationDate + fadeDuration, expirationDate);
         }
 
         if (Time.time > (expirationDate + fadeDuration)) {
+            unit.hpLossUis.Remove(this);
             Destroy(gameObject);
         }
     }

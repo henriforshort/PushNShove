@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6381897783652793425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.254, y: 0, z: 0}
+  m_LocalPosition: {x: -0.254, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1761313059448805923}
@@ -164,23 +164,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: -1
-  maxSpeed: 3
+  maxSpeed: 4
   weight: 0.5
   maxHealth: 30
   damage: 5
-  attackAnimDuration: 0.15
   shakeOnHit: 0
+  strength: 1
+  prot: 0
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
-  collideDate: 0
-  size: 1
+  lastWindupIsOne: 0
+  isDeactivated: 0
+  size: 0.5
+  attackAnimDuration: 0.25
   healthBar: {fileID: 5784028226419069187}
   orangeHealthBar: {fileID: 847713964275857684}
   animator: {fileID: 6381897783652793431}
   rigidbodee: {fileID: 6381897783818097787}
+  hpLossUis: []
 --- !u!54 &6381897783818097787
 Rigidbody:
   m_ObjectHideFlags: 0

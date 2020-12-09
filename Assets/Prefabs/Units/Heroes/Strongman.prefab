@@ -63,20 +63,24 @@ MonoBehaviour:
   maxSpeed: 3
   weight: 2
   maxHealth: 200
-  damage: 10
-  attackAnimDuration: 0.15
+  damage: 5
   shakeOnHit: 0
+  strength: 2
+  prot: 0.25
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
-  collideDate: 0
+  lastWindupIsOne: 0
+  isDeactivated: 0
   size: 1
+  attackAnimDuration: 0.25
   healthBar: {fileID: 2229701680886870555}
   orangeHealthBar: {fileID: 5005238066686466572}
   animator: {fileID: 1773981805822391867}
   rigidbodee: {fileID: 1773981805588913687}
+  hpLossUis: []
 --- !u!54 &1773981805588913687
 Rigidbody:
   m_ObjectHideFlags: 0

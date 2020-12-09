@@ -60,23 +60,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 1
-  maxSpeed: 3
-  weight: 2
-  maxHealth: 200
+  maxSpeed: 2
+  weight: 3
+  maxHealth: 250
   damage: 10
-  attackAnimDuration: 0.15
   shakeOnHit: 0
+  strength: 1
+  prot: 0.5
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
-  collideDate: 0
+  lastWindupIsOne: 0
   size: 1
+  attackAnimDuration: 0.25
   healthBar: {fileID: 7398883394539054116}
   orangeHealthBar: {fileID: 4407138794253257779}
   animator: {fileID: 6971875616310140932}
   rigidbodee: {fileID: 6971875616277727272}
+  hpLossUis: []
 --- !u!54 &6971875616277727272
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -250,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Size.x
-      value: 1.68941
+      value: 1.7982855
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Size.y
@@ -258,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.x
-      value: 0.34470558
+      value: 0.39914334
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.y

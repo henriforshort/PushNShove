@@ -18,7 +18,6 @@
           <e p="B.cs" t="Include" />
           <e p="Cloud.cs" t="Include" />
           <e p="DeadZone.cs" t="Include" />
-          <e p="EnemyCluster.cs" t="Include" />
           <e p="G.cs" t="Include" />
           <e p="GameState.cs" t="Include" />
           <e p="HeroState.cs" t="Include" />

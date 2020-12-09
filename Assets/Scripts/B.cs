@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
                                  //Should contain only Balancing and References relative to this battle.
                                  //Should contain only State info to be deleted at the end of the battle.
     [Header("Balancing")]
-    public List<EnemyCluster> enemyClusters;
+    public List<Transform> enemyClusters;
     public int numberOfEnemies;
     
     [Header("State")]
@@ -69,7 +70,15 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         
         G.m.s.LoadHeroes();
         
-        this.Repeat(() => Instantiate(enemyClusters.Random(), unitsHolder), numberOfEnemies);
+        //Create enemies and give them a random X
+        this.Repeat(() => {
+            Transform clusterInstance = Instantiate(enemyClusters.Random());
+            while (clusterInstance.childCount > 0) {
+                clusterInstance.GetChild(0).SetX(Random.Range(G.m.enemySpawnPosXRange.x, G.m.enemySpawnPosXRange.y));
+                clusterInstance.GetChild(0).SetParent(unitsHolder);
+            }
+            Destroy(clusterInstance.gameObject);
+        }, numberOfEnemies);
         
         xpSlider.value = G.m.s.experience; //Set xp bar with no lerp
         level.text = G.m.s.level.ToString();

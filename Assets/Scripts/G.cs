@@ -13,14 +13,9 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 	public float camMaxDistFromMapCenter;
 	public float hillsParallax;
 	[Space(20)]
-	public float speedToAttack;
-	public float speedToBump; //negative speed after which a unit is considered bumped
-	[Range(0, 1)] public float collisionRandom; //the % of the collision strength that is random
-	public float collisionSpeedMultiplier;
-	public float postCollisionMinSpeed;
-	public float postCollisionMaxSpeed;
-	public float bumpDurationBeforeRecovery;
 	public float bumpRecoverySpeed;
+	public float bumpSpeed;
+	public float defendSpeed;
 	[Space(20)]
 	public float timeToAutoRestart;
 	public float xpGainPerLevel;
