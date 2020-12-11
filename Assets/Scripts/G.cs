@@ -13,6 +13,7 @@ public class G : MonoBehaviour { //Game manager, handles the whole game flow.
 	public float camMaxDistFromMapCenter;
 	public float hillsParallax;
 	[Space(20)]
+	public float freezeFrameDuration;
 	public float bumpRecoverySpeed;
 	public float bumpSpeed;
 	public float defendSpeed;

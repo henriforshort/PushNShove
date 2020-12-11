@@ -39,6 +39,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public TMP_Text levelUp;
     public GameObject lvUpNotif;
     public GameObject lvUpMenu;
+    public GameObject fightPrompt;
 	
     public enum State { PLAYING, GAME_OVER, PAUSE }
 
@@ -53,7 +54,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void InitBattle() {
-        gameState = State.PLAYING;
+        gameState = State.PAUSE;
         
         if (G.m.needRunInit) G.m.InitRun();
 
@@ -79,6 +80,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
             }
             Destroy(clusterInstance.gameObject);
         }, numberOfEnemies);
+        
+        fightPrompt.SetActive(true);
         
         xpSlider.value = G.m.s.experience; //Set xp bar with no lerp
         level.text = G.m.s.level.ToString();

@@ -61,18 +61,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   side: -1
   maxSpeed: 3
-  weight: 1
   maxHealth: 70
-  damage: 5
-  shakeOnHit: 0
-  strength: 1
   prot: 0.25
+  weight: 1
+  damage: 5
+  strength: 1
+  critChance: 0.05
+  shakeOnHit: 0
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
   lastWindupIsOne: 0
+  critCollisionDate: 0
   size: 1
   attackAnimDuration: 0.25
   healthBar: {fileID: 6087850083390855375}
@@ -257,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Size.x
-      value: 2.1984673
+      value: 2.0071573
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Size.y
@@ -265,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.x
-      value: -1.79
+      value: -1.8856549
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.y

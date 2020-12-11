@@ -149,8 +149,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2757518, y: 0.94740605, z: 1}
-  m_Center: {x: -0.545166, y: -0.61, z: 0}
+  m_Size: {x: 1.2757518, y: 1.5600853, z: 1}
+  m_Center: {x: -0.545166, y: -0.21841788, z: 0}
 --- !u!114 &6381897783818097760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,19 +165,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   side: -1
   maxSpeed: 4
-  weight: 0.5
   maxHealth: 30
-  damage: 5
-  shakeOnHit: 0
-  strength: 1
   prot: 0
+  weight: 0.5
+  damage: 5
+  strength: 1
+  critChance: 0.05
+  shakeOnHit: 0
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
   lastWindupIsOne: 0
-  isDeactivated: 0
+  critCollisionDate: 0
   size: 0.5
   attackAnimDuration: 0.25
   healthBar: {fileID: 5784028226419069187}
@@ -254,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Size.x
-      value: 1.8732526
+      value: 1.5429382
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Size.y
@@ -262,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.x
-      value: -0.44426048
+      value: -0.6094177
       objectReference: {fileID: 0}
     - target: {fileID: 3552556677700187261, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_Center.y

@@ -73,6 +73,12 @@ public static class Util {
 
     public static float AtLeast(this float target, float other) => Mathf.Max(target, other);
     public static float AtMost(this float target, float other) => Mathf.Min(target, other);
+
+    public static int AtLeast(this int target, int other) => Mathf.Max(target, other);
+    public static int AtMost(this int target, int other) => Mathf.Min(target, other);
+
+    public static float Abs(this float target) => Mathf.Abs(target);
+    public static float Abs(this int target) => Mathf.Abs(target);
     
     // --------------------
     // VECTOR2
@@ -318,6 +324,20 @@ public static class Util {
     public static void LocalLerpTo(this GameObject obj, Vector3 target, float speed = 2) {
         obj.transform.LocalLerpTo(target, speed);
     }
+
+    
+    // --------------------
+    // VECTOR3 - CLOSER
+    // --------------------
+
+    public static bool isCloserTo(this Component obj, Vector3 target, Component than) =>
+        Vector3.Distance(obj.transform.position, target) < 
+        Vector3.Distance(than.transform.position, target);
+
+    public static bool isFurtherFrom(this Component obj, Vector3 target, Component than) => 
+        !obj.isCloserTo(target, than);
+    
+    
 
     
     // --------------------
