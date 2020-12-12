@@ -49,10 +49,10 @@ public class Unit : MonoBehaviour {
 
     public bool isRunning => currentSpeed.isApprox(maxSpeed);
     public bool isAttacking => Time.time - lastAttack < attackAnimDuration;
-    public bool isOnFreezeFrame => Time.time - lastBump < G.m.freezeFrameDuration;
+    public bool isOnFreezeFrame => Time.time - lastBump < R.m.freezeFrameDuration;
     
     public enum Status { WALK, BUMPED, FALLING, DYING }
-    public enum Anim { WALK, WINDUP, HIT, DEFEND, BUMPED }
+    public enum Anim { WALK, WINDUP, HIT, DEFEND, BUMPED }public enum Side { HERO = 1, MONSTER = -1 }
     
     
     // ====================
@@ -67,8 +67,8 @@ public class Unit : MonoBehaviour {
         
         if (side != Side.HERO) SetHealth(maxHealth);
         orangeHealthBar.value = currentHealth;
-        if (side == Side.HERO) healthBar.fillRect.GetComponent<Image>().color = G.m.yellow;
-        if (side == Side.HERO) orangeHealthBar.fillRect.GetComponent<Image>().color = G.m.white;
+        if (side == Side.HERO) healthBar.fillRect.GetComponent<Image>().color = R.m.yellow;
+        if (side == Side.HERO) orangeHealthBar.fillRect.GetComponent<Image>().color = R.m.white;
         
         if (side == Side.HERO) heroUnits.Add(this);
         if (side == Side.MONSTER) monsterUnits.Add(this);
@@ -104,7 +104,7 @@ public class Unit : MonoBehaviour {
         if (currentSpeed > 0 && (anim == Anim.BUMPED || anim == Anim.DEFEND)) {
             status = Status.WALK;
             SetAnim(Anim.WALK);
-            B.m.SpawnFX(G.m.bumpDustFxPrefab,
+            B.m.SpawnFX(R.m.bumpDustFxPrefab,
                 new Vector3(this.GetX() - (int)side, -2, -2),
                 side == Side.MONSTER);
         }
@@ -149,7 +149,7 @@ public class Unit : MonoBehaviour {
         if (status == Status.FALLING) return;
         if (isOnFreezeFrame) return;
         
-        currentSpeed = currentSpeed.LerpTo(maxSpeed, G.m.bumpRecoverySpeed);
+        currentSpeed = currentSpeed.LerpTo(maxSpeed, R.m.bumpRecoverySpeed);
         
         if (currentSpeed >= maxSpeed || currentSpeed.isApprox(maxSpeed)) currentSpeed = maxSpeed;
     }
@@ -231,12 +231,12 @@ public class Unit : MonoBehaviour {
         lastBump = Time.time;
 
         if (heroAttacks || monsterAttacks) { //FIGHT!
-            B.m.SpawnFX(G.m.sparkFxPrefab,
+            B.m.SpawnFX(R.m.sparkFxPrefab,
                 transform.position + new Vector3(1.5f * (int) side, 0, -2),
                 side == Side.HERO, null, 0.5f,
                 Vector3.forward * Random.Range(0, 360));
 
-            // B.m.audioSource.PlayOneShot(G.m.damageSounds.Random());
+            // B.m.audioSource.PlayOneShot(R.m.damageSounds.Random());
         }
 
         if (heroAttacks) other.GetBumped(this, monsterAttacks);
@@ -244,8 +244,8 @@ public class Unit : MonoBehaviour {
         if (monsterAttacks) GetBumped(other, heroAttacks);
         else Defend(other, heroAttacks);
         
-        if (G.m.enableCheats && Input.GetKey(KeyCode.W)) other.DeathByHp();
-        if (G.m.enableCheats && Input.GetKey(KeyCode.L)) DeathByHp();
+        if (R.m.enableCheats && Input.GetKey(KeyCode.W)) other.DeathByHp();
+        if (R.m.enableCheats && Input.GetKey(KeyCode.L)) DeathByHp();
 
         //I won't get bumped by a dead man!
         if (status == Status.FALLING || status == Status.DYING) other.Defend(this, true);
@@ -264,7 +264,7 @@ public class Unit : MonoBehaviour {
 
     public void Defend(Unit other, bool alsoAttack) {
         status = Status.WALK;
-        currentSpeed = G.m.defendSpeed * other.strength * (1 - prot);
+        currentSpeed = R.m.defendSpeed * other.strength * (1 - prot);
         //If I'm bigger, and we both defend, only the smaller unit attacks! the bigger unit doesnt move
         if (size > other.size && !alsoAttack) SetAnim(Anim.DEFEND); 
         else SetAnim(Anim.HIT);
@@ -279,7 +279,7 @@ public class Unit : MonoBehaviour {
         if (other.shakeOnHit) B.m.Shake(0.2f);
 
         bool isCrit = critChance.Chance();
-        currentSpeed = G.m.bumpSpeed * other.strength * (1 - prot) - (isCrit ? 5 : 0);
+        currentSpeed = R.m.bumpSpeed * other.strength * (1 - prot) - (isCrit ? 5 : 0);
         critCollisionDate = isCrit ? Time.time : -1;
         TakeCollisionDamage(other.damage, isCrit);
     }
@@ -296,7 +296,7 @@ public class Unit : MonoBehaviour {
             return;
         }
         
-        HpLossUi hpLossUi = B.m.SpawnFX(G.m.hpLossUIPrefab,
+        HpLossUi hpLossUi = B.m.SpawnFX(R.m.hpLossUIPrefab,
                 transform.position + new Vector3(0.2f * (int) side, 2.25f*size - 0.6f, -5),
                 false,
                 transform,
@@ -307,7 +307,7 @@ public class Unit : MonoBehaviour {
         
         TMP_Text number = hpLossUi.number;
         if (isCrit) {
-            number.color = G.m.red;
+            number.color = R.m.red;
             amount = 3 * amount;
             number.text = amount + "!";
             B.m.Shake(0.2f);
@@ -334,7 +334,7 @@ public class Unit : MonoBehaviour {
     public void DeathByHp() {
         status = Status.DYING;
         SetAnim(Anim.BUMPED);
-        currentSpeed = G.m.bumpSpeed * (1 - prot);
+        currentSpeed = R.m.bumpSpeed * (1 - prot);
     }
 
     public void DeathByFall() {
@@ -346,9 +346,9 @@ public class Unit : MonoBehaviour {
 
     public void Die() {
         if (B.m == null || B.m.gameState != B.State.PLAYING) return;
-        if (size >= 2) B.m.Shake(0.2f);
-        // B.m.audioSource.PlayOneShot(G.m.deathSounds.Random());
-        Instantiate(G.m.deathCloudFxPrefab, transform.position + 0.5f*Vector3.up, Quaternion.identity);
+        if (size >= 2 || side == Side.HERO) B.m.Shake(0.2f);
+        // B.m.audioSource.PlayOneShot(R.m.deathSounds.Random());
+        Instantiate(R.m.deathCloudFxPrefab, transform.position + 0.5f*Vector3.up, Quaternion.identity);
         Destroy(gameObject);
     }
 
@@ -361,6 +361,6 @@ public class Unit : MonoBehaviour {
             else if (side == Side.MONSTER) B.m.Victory();
         }
         
-        hpLossUis.ForEach(ui => ui.transform.SetParent(G.m.transform));
+        hpLossUis.ForEach(ui => ui.transform.SetParent(R.m.transform));
     }
 }

@@ -40,6 +40,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public GameObject lvUpNotif;
     public GameObject lvUpMenu;
     public GameObject fightPrompt;
+    public UIBackground background;
 	
     public enum State { PLAYING, GAME_OVER, PAUSE }
 
@@ -56,37 +57,38 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public void InitBattle() {
         gameState = State.PAUSE;
         
-        if (G.m.needRunInit) G.m.InitRun();
+        if (R.m.needRunInit) R.m.InitRun();
 
-        G.m.s.heroes.ForEach(h =>
+        R.m.s.heroes.ForEach(h =>
             heroes.Add(Instantiate(
                     h.prefab,
                     new Vector3(
-                        Random.Range(-G.m.enemySpawnPosXRange.x, -G.m.enemySpawnPosXRange.y), 
+                        Random.Range(-R.m.enemySpawnPosXRange.x, -R.m.enemySpawnPosXRange.y), 
                         -2, 
                         0),
                     Quaternion.identity,
                     unitsHolder)
                 .GetComponent<Unit>()));
         
-        G.m.s.LoadHeroes();
+        R.m.s.LoadHeroes();
         
         //Create enemies and give them a random X
         this.Repeat(() => {
             Transform clusterInstance = Instantiate(enemyClusters.Random());
             while (clusterInstance.childCount > 0) {
-                clusterInstance.GetChild(0).SetX(Random.Range(G.m.enemySpawnPosXRange.x, G.m.enemySpawnPosXRange.y));
+                clusterInstance.GetChild(0).SetX(Random.Range(R.m.enemySpawnPosXRange.x, R.m.enemySpawnPosXRange.y));
                 clusterInstance.GetChild(0).SetParent(unitsHolder);
             }
             Destroy(clusterInstance.gameObject);
         }, numberOfEnemies);
         
         fightPrompt.SetActive(true);
+        background.FadeOut();
         
-        xpSlider.value = G.m.s.experience; //Set xp bar with no lerp
-        level.text = G.m.s.level.ToString();
-        battle.text = G.m.s.battle.ToString();
-        lvUpNotif.SetActive(G.m.s.skillPoints > 0);
+        xpSlider.value = R.m.s.experience; //Set xp bar with no lerp
+        level.text = R.m.s.level.ToString();
+        battle.text = R.m.s.battle.ToString();
+        lvUpNotif.SetActive(R.m.s.skillPoints > 0);
     }
 
     public void Update() {
@@ -120,29 +122,29 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void GainExperience(float amount) {
-        G.m.s.experience += amount;
-        if (G.m.s.experience >= 1) LevelUp();
+        R.m.s.experience += amount;
+        if (R.m.s.experience >= 1) LevelUp();
         this.Wait(1, () => xpAnimator.SetInteger("shine", 1));
         this.Wait(2, () => xpAnimator.SetInteger("shine", 0));
     }
 
     public void UpdateXp() {
-        if (xpSlider.value.isApprox(G.m.s.experience)) xpSlider.value = G.m.s.experience;
-        else xpSlider.value = xpSlider.value.LerpTo(G.m.s.experience, 2);
+        if (xpSlider.value.isApprox(R.m.s.experience)) xpSlider.value = R.m.s.experience;
+        else xpSlider.value = xpSlider.value.LerpTo(R.m.s.experience, 2);
         
         xpText.text = (100 * xpSlider.value).Round() + "/100";
     }
 
     public void LevelUp() {
-        G.m.s.experience--;
+        R.m.s.experience--;
         xpSlider.value = 0;
         
-        G.m.s.level++;
-        level.text = G.m.s.level.ToString();
+        R.m.s.level++;
+        level.text = R.m.s.level.ToString();
         levelUp.gameObject.SetActive(true);
         this.Wait(1, () => levelUp.gameObject.SetActive(false));
 
-        G.m.s.skillPoints++;
+        R.m.s.skillPoints++;
         lvUpNotif.SetActive(true);
     }
 
@@ -153,12 +155,12 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
             (Unit.heroUnits.Select(unit => unit.GetX()).Max()
              + Unit.monsterUnits.Select(unit => unit.GetX()).Min()) / 2;
 			
-        if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > G.m.camMaxDistFromUnits) 
+        if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > R.m.camMaxDistFromUnits) 
             cameraGO
-                .LerpTo(cameraFocus, G.m.camSpeed)
-                .ClampX(-G.m.camMaxDistFromMapCenter, G.m.camMaxDistFromMapCenter);
+                .LerpTo(cameraFocus, R.m.camSpeed)
+                .ClampX(-R.m.camMaxDistFromMapCenter, R.m.camMaxDistFromMapCenter);
 
-        hills.SetX(cameraGO.GetX() * G.m.hillsParallax);
+        hills.SetX(cameraGO.GetX() * R.m.hillsParallax);
         sun.SetX(cameraGO.GetX());
     }
 
@@ -173,17 +175,19 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void Defeat() {
-        gameOverText.text = "Defeat";
-        G.m.needRunInit = true;
+        if (gameState == State.GAME_OVER) return;
         
+        gameOverText.text = "Defeat";
+        R.m.needRunInit = true;
         GameOver();
     }
 
     public void Victory() {
+        if (gameState == State.GAME_OVER) return;
+
         gameOverText.text = "Victory";
-        GainExperience(G.m.xpGainPerLevel / 100);
-        G.m.s.battle++;
-        
+        GainExperience(R.m.xpGainPerLevel / 100);
+        R.m.s.battle++;
         GameOver();
     }
 
@@ -197,18 +201,22 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         timeSinceGameOver += Time.deltaTime;
         
         if (Input.GetKeyDown(KeyCode.Space)) Restart();
-        if (timeSinceGameOver > G.m.timeToAutoRestart) Restart();
+        if (timeSinceGameOver > R.m.timeToAutoRestart) Restart();
 
         gameOverPanelWhiteButton.fillAmount = timeSinceGameOver
-            .Prel(0, G.m.timeToAutoRestart)
+            .Prel(0, R.m.timeToAutoRestart)
             .Clamp01();
     }
 
     public void Restart() {
-        G.m.s.SaveHeroes();
-        gameState = State.PLAYING;
+        background.FadeIn();
+        R.m.s.SaveHeroes();
         Unit.heroUnits.Clear();
         Unit.monsterUnits.Clear();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        this.Wait(0.2f, () => {
+            gameState = State.PLAYING;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        });
     }
 }

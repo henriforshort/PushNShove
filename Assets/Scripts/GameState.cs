@@ -18,7 +18,7 @@ public class GameState {
         skillPoints = 0;
         
         heroes = new List<HeroState>();
-        for (int i = 0; i < G.m.heroPrefabs.Count; i++) heroes.Add(new HeroState(i, G.m.heroPrefabs[i]));
+        for (int i = 0; i < R.m.heroPrefabs.Count; i++) heroes.Add(new HeroState(i, R.m.heroPrefabs[i]));
     }
 
     public void SaveHeroes() { //Called at the end of each battle

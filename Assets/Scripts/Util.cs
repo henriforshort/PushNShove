@@ -489,4 +489,16 @@ public static class Util {
         obj.MoveChildrenTo(newParent.transform);
     public static void MoveChildrenTo(this MonoBehaviour obj, MonoBehaviour newParent) =>
         obj.MoveChildrenTo(newParent.transform);
+
+    
+    // --------------------
+    // COLORS
+    // --------------------
+
+    public static T SetAlpha<T>(this T g, float alpha) where T : Graphic {         
+        Color color = g.color;
+        color.a = alpha;
+        g.color = color;
+        return g;
+    }
 }

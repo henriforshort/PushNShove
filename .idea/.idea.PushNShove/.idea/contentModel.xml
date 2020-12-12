@@ -24,7 +24,9 @@
           <e p="HeroState.cs" t="Include" />
           <e p="HpLossUi.cs" t="Include" />
           <e p="LvUpMenu.cs" t="Include" />
-          <e p="Side.cs" t="Include" />
+          <e p="R.cs" t="Include" />
+          <e p="Sine.cs" t="Include" />
+          <e p="UiBackground.cs" t="Include" />
           <e p="Unit.cs" t="Include" />
           <e p="UnitMaxRange.cs" t="Include" />
           <e p="Upgrades" t="Include">

@@ -73,6 +73,7 @@ MonoBehaviour:
   anim: 0
   currentHealth: 0
   lastAttack: 0
+  lastBump: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
   size: 1

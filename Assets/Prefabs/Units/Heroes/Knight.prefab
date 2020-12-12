@@ -73,6 +73,7 @@ MonoBehaviour:
   anim: 0
   currentHealth: 0
   lastAttack: 0
+  lastBump: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
   size: 1
@@ -393,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.9
+      value: 0.855
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
