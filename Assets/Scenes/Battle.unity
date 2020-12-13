@@ -1881,6 +1881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695594707}
+  - component: {fileID: 695594708}
   - component: {fileID: 695594706}
   m_Layer: 0
   m_Name: GameManager
@@ -1907,8 +1908,8 @@ MonoBehaviour:
   camMaxDistFromMapCenter: 10
   hillsParallax: 0.75
   freezeFrameDuration: 0.15
-  bumpRecoverySpeed: 1
-  bumpSpeed: -20
+  bumpRecoverySpeed: 5
+  bumpSpeed: -25
   defendSpeed: -10
   timeToAutoRestart: 2
   xpGainPerLevel: 47
@@ -1959,6 +1960,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695594708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695594705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3cf68eda5662349ab6e4d8adedeb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collideDistance: 2.5
+  background: {fileID: 0}
 --- !u!1 &724054067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4311,7 +4326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1692000557
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4898,9 +4913,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1991115990}
     m_Modifications:
+    - target: {fileID: 6810708429010523013, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1116086871140444036, guid: d5d6e191356af3d41bf9f58325c5e24f, type: 3}
     - target: {fileID: 6810708429010523014, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_Name
       value: background
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810708429010523014, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_Pivot.x

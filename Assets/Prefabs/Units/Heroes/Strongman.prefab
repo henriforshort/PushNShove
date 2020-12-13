@@ -62,7 +62,7 @@ MonoBehaviour:
   side: 1
   maxSpeed: 3
   maxHealth: 200
-  prot: 0.25
+  prot: 0.1
   weight: 2
   damage: 5
   strength: 1.5

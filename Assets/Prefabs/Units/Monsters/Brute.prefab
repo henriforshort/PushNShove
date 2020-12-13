@@ -156,7 +156,7 @@ MonoBehaviour:
   prot: 0.65
   weight: 10
   damage: 5
-  strength: 1.5
+  strength: 1.25
   critChance: 0.2
   shakeOnHit: 1
   currentSpeed: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   anim: 0
   currentHealth: 0
   lastAttack: 0
+  lastBump: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
   size: 2

@@ -45,7 +45,7 @@ public static class Util {
         string result = "[";
         target.ForEach(e => {
             result += e;
-            if (!target.LastOrDefault().Equals(e)) result += ", ";
+            if (!e.Equals(target.LastOrDefault())) result += ", ";
         });
         result += "]";
         Debug.Log(result);
@@ -60,16 +60,31 @@ public static class Util {
     public static float Clamp01(this float target) => Mathf.Clamp01(target);
 
     public static float Lerp(this float x, float a, float b) => Mathf.Lerp(a, b, x);
-    public static float LerpTo(this float a, float b, float speed) => Mathf.Lerp(a, b, speed/100);
     public static float Prel(this float x, float a, float b) => (x - a) / (b - a);
     public static float Remap(this float target, float oldA, float oldB, float newA, float newB) => 
-        Mathf.Lerp(newA, newB, target.Prel(oldA, oldB));
+        target.Prel(oldA, oldB).Lerp(newA, newB);
+    
+    public static float LerpTo(this float a, float b, float speed) => //Call in Update only
+        (1 - speed/100).Pow(60 * Time.deltaTime).Lerp(b, a);
+    public static float FixedLerpTo(this float a, float b, float speed) => //Call in FixedUpdate only
+        (1 - speed/100).Pow(60 * Time.fixedDeltaTime).Lerp(b, a);
 
-    public static float Round(this float target, float precision = 0) => 
-        Mathf.Round(target * Mathf.Pow(10, precision)) / Mathf.Pow(10, precision);
+    public static float Round(this float target) => Mathf.Round(target);
+    public static float Round(this float target, float precision) => 
+        (target * 10.Pow(precision)).Round() / 10.Pow(precision);
 
-    public static bool isApprox(this float target, float other) => Mathf.Approximately(target, other);
-    public static bool isNotApprox(this float target, float other) => !Mathf.Approximately(target, other);
+    public static bool isAbout(this float target, float other) => Mathf.Approximately(target, other);
+    public static bool isClearlyNot(this float target, float other) => !Mathf.Approximately(target, other);
+    
+    public static bool isAboutOrHigherThan(this float target, float other) => target.isAbout(other) || target > other;
+    public static bool isClearlyHigherThan(this float target, float other) => 
+        target.isClearlyNot(other) && target > other;
+    public static bool isClearlyPositive(this float target) => target.isClearlyNot(0) && target > 0;
+    
+    public static bool isAboutOrLowerThan(this float target, float other) => target.isAbout(other) || target < other;
+    public static bool isClearlyLowerThan(this float target, float other) => 
+        target.isClearlyNot(other) && target < other;
+    public static bool isClearlyNegative(this float target) => target.isClearlyNot(0) && target < 0;
 
     public static float AtLeast(this float target, float other) => Mathf.Max(target, other);
     public static float AtMost(this float target, float other) => Mathf.Min(target, other);
@@ -79,6 +94,11 @@ public static class Util {
 
     public static float Abs(this float target) => Mathf.Abs(target);
     public static float Abs(this int target) => Mathf.Abs(target);
+
+    public static float Pow(this float target, float other) => Mathf.Pow(target, other);
+    public static float Pow(this float target, int other) => Mathf.Pow(target, other);
+    public static float Pow(this int target, float other) => Mathf.Pow(target, other);
+    public static float Pow(this int target, int other) => Mathf.Pow(target, other);
     
     // --------------------
     // VECTOR2

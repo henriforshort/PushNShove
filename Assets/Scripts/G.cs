@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 
 public class G : MonoBehaviour {
+    public float collideDistance;
     public GameObject background;
     
     public static G m;

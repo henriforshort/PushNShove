@@ -25,9 +25,10 @@ public class Unit : MonoBehaviour {
     public Anim anim;
     public float currentHealth;
     public float lastAttack;//last date I triggered my hit animation
-    public float lastBump;//last date I hit someone
     public bool lastWindupIsOne;
     public float critCollisionDate;
+    public bool isOnFreezeFrame;
+    public Unit attackTarget;
     
     [Header("References")]
     public float size;
@@ -45,14 +46,16 @@ public class Unit : MonoBehaviour {
     public static List<Unit> monsterUnits => _monsterUnits ?? (_monsterUnits = new List<Unit>());
 
     public List<Unit> allies => side == Side.HERO ? heroUnits : monsterUnits;
-    public List<Unit> enemies => side == Side.MONSTER ? heroUnits : monsterUnits;
+    public List<Unit>  enemies => side == Side.MONSTER ? heroUnits : monsterUnits;
 
-    public bool isRunning => currentSpeed.isApprox(maxSpeed);
+    public bool isRunning => currentSpeed.isAbout(maxSpeed);
+    public bool isWalking => currentSpeed > 0;
     public bool isAttacking => Time.time - lastAttack < attackAnimDuration;
-    public bool isOnFreezeFrame => Time.time - lastBump < R.m.freezeFrameDuration;
+    public bool attackIsOnCooldown => Time.time - lastAttack < 0.5f;
     
-    public enum Status { WALK, BUMPED, FALLING, DYING }
-    public enum Anim { WALK, WINDUP, HIT, DEFEND, BUMPED }public enum Side { HERO = 1, MONSTER = -1 }
+    public enum Status { ALIVE, FALLING, DYING }
+    public enum Anim { WALK, WINDUP, HIT, DEFEND, BUMPED }
+    public enum Side { HERO = 1, MONSTER = -1 }
     
     
     // ====================
@@ -60,7 +63,7 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void Start() {
-        status = Status.WALK;
+        status = Status.ALIVE;
         SetAnim(Anim.WALK);
         
         currentSpeed = maxSpeed;
@@ -79,6 +82,7 @@ public class Unit : MonoBehaviour {
         UpdateSpeed();
         
         Move();
+        CheckCollision();
     }
     
     
@@ -89,20 +93,19 @@ public class Unit : MonoBehaviour {
     public void UpdateVisuals() {
         animator.enabled = (B.m.gameState != B.State.PAUSE);
 
-        if (!isAttacking && transform.position.z.isApprox(-1)) this.SetZ(0.5f);
-        if (currentSpeed > 0 && transform.position.z.isApprox(-0.5f)) this.SetZ(0f);
+        if (!isAttacking && transform.position.z.isAbout(-1)) this.SetZ(0.5f);
+        if (currentSpeed > 0 && transform.position.z.isAbout(-0.5f)) this.SetZ(0f);
         
-        if (orangeHealthBar.value.isNotApprox(currentHealth)) orangeHealthBar.LerpTo(healthBar.value, 0.5f);
+        if (orangeHealthBar.value.isClearlyNot(currentHealth)) orangeHealthBar.LerpTo(healthBar.value, 3f);
         
         if (anim == Anim.HIT && !isAttacking) {
-            if (status == Status.BUMPED) SetAnim(Anim.BUMPED);
-            else SetAnim(Anim.DEFEND);
+            SetAnim(Anim.DEFEND);
         }
 
         if (currentSpeed > 0 && status == Status.DYING) Die();
         
         if (currentSpeed > 0 && (anim == Anim.BUMPED || anim == Anim.DEFEND)) {
-            status = Status.WALK;
+            status = Status.ALIVE;
             SetAnim(Anim.WALK);
             B.m.SpawnFX(R.m.bumpDustFxPrefab,
                 new Vector3(this.GetX() - (int)side, -2, -2),
@@ -110,12 +113,14 @@ public class Unit : MonoBehaviour {
         }
     }
 
+    public void FreezeFrame() {
+        isOnFreezeFrame = true;
+        this.Wait(R.m.freezeFrameDuration, () => isOnFreezeFrame = false);
+    }
+
     public void SetAnim(Anim a) {
         if (anim == a) return;
-        
         anim = a;
-        if (a == Anim.HIT) lastAttack = Time.time;
-        
         PlayAnim();
     }
 
@@ -143,15 +148,20 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void UpdateSpeed() {
-        if (currentSpeed >= maxSpeed) return;
-        if (currentSpeed.isApprox(maxSpeed)) return;
-        if (B.m.gameState == B.State.PAUSE) return;
-        if (status == Status.FALLING) return;
-        if (isOnFreezeFrame) return;
+        if (!CanUpdateSpeed()) return;
         
         currentSpeed = currentSpeed.LerpTo(maxSpeed, R.m.bumpRecoverySpeed);
+        if (currentSpeed.isAboutOrHigherThan(maxSpeed)) currentSpeed = maxSpeed;
+    }
+
+    public bool CanUpdateSpeed() {
+        if (isOnFreezeFrame) return false;
+        if (B.m.gameState == B.State.PAUSE) return false;
         
-        if (currentSpeed >= maxSpeed || currentSpeed.isApprox(maxSpeed)) currentSpeed = maxSpeed;
+        if (status == Status.FALLING) return false;
+        if (currentSpeed.isAboutOrHigherThan(maxSpeed)) return false;
+
+        return true;
     }
 
     public void Move() {
@@ -162,39 +172,34 @@ public class Unit : MonoBehaviour {
 
     public bool CanMove() {
         if (isOnFreezeFrame) return false;
+        if (B.m.gameState == B.State.PAUSE) return false;
+        
         if (B.m.gameState == B.State.PLAYING) return true;
-        else if (status == Status.FALLING) return true;
-        else if (currentSpeed < 0) return true;
+        if (status == Status.FALLING) return true; //During Game Over
+        if (currentSpeed < 0) return true;
         
         return false;
     }
     
     
     // ====================
-    // LONG RANGE COLLIDE (WINDUP & FRIENDLY COLLIDE)
+    // COLLISIONS
     // ====================
 
     public void LongRangeCollide(Collider other) { //Called by both sides
-        Unit collidedEnemy = enemies.FirstOrDefault(u => u.gameObject == other.gameObject);
-        if (collidedEnemy != null 
-                && currentSpeed > 0 
-                && collidedEnemy.currentSpeed > 0) 
-            SetAnim(Anim.WINDUP);
-        
         Unit collidedAlly = allies.FirstOrDefault(u => u.gameObject == other.gameObject);
         if (collidedAlly != null 
                 && enemies.Count > 0
                 && currentSpeed < 0
                 && this.isCloserTo(enemies[0].transform.position, than:collidedAlly)
                 && critCollisionDate > 0
-                && critCollisionDate.isNotApprox(collidedAlly.critCollisionDate)) 
+                && critCollisionDate.isClearlyNot(collidedAlly.critCollisionDate)) 
             FriendlyCollide(collidedAlly);
     }
 
     public void FriendlyCollide(Unit ally) { //Called by the unit in front
         currentSpeed = (currentSpeed + 2).AtMost(0); //slow down
         
-        ally.status = Status.BUMPED;
         ally.currentSpeed = currentSpeed;
         ally.SetAnim(Anim.BUMPED);
         ally.TakeCollisionDamage(-currentSpeed/5, true);
@@ -202,87 +207,74 @@ public class Unit : MonoBehaviour {
         
         B.m.Shake(0.2f);
     }
-
-    
-    
-    // ====================
-    // SORT RANGE COLLIDE (ATTACK & FALL)
-    // ====================
     
     public void OnTriggerStay(Collider other) {
-        Unit otherUnit = monsterUnits.FirstOrDefault(u => u.gameObject == other.gameObject);
-        if (side == Side.HERO 
-                && currentSpeed > 0 
-                && otherUnit != null 
-                && otherUnit.currentSpeed > 0)
-            Collide(otherUnit);
-        
         if (status != Status.FALLING 
-                && B.m.deathZones.Contains(other.gameObject)) 
+            && B.m.deathZones.Contains(other.gameObject)
+            && currentSpeed.isAboutOrLowerThan(0)) 
             DeathByFall();
     }
+    
+    
+    // ====================
+    // COMBAT
+    // ====================
 
-    public void Collide(Unit other) { //Only called by player character
-        bool heroAttacks = CanAttack(other);
-        bool monsterAttacks = other.CanAttack(this);
-        this.SetZ(-1);
-        other.SetZ(-1);
-        other.lastBump = Time.time;
-        lastBump = Time.time;
-
-        if (heroAttacks || monsterAttacks) { //FIGHT!
-            B.m.SpawnFX(R.m.sparkFxPrefab,
-                transform.position + new Vector3(1.5f * (int) side, 0, -2),
-                side == Side.HERO, null, 0.5f,
-                Vector3.forward * Random.Range(0, 360));
-
-            // B.m.audioSource.PlayOneShot(R.m.damageSounds.Random());
-        }
-
-        if (heroAttacks) other.GetBumped(this, monsterAttacks);
-        else other.Defend(this, monsterAttacks);
-        if (monsterAttacks) GetBumped(other, heroAttacks);
-        else Defend(other, heroAttacks);
+    public void CheckCollision() { //Called by both sides
+        Unit nearbyEnemy = NearbyEnemy();
+        if (nearbyEnemy == null) return;
         
-        if (R.m.enableCheats && Input.GetKey(KeyCode.W)) other.DeathByHp();
-        if (R.m.enableCheats && Input.GetKey(KeyCode.L)) DeathByHp();
+        if (isWalking) Attack();
+    }
+    
+    public Unit NearbyEnemy () => enemies
+            .Where (e => DistanceToMe(e) < G.m.collideDistance)
+            .OrderBy(DistanceToMe)
+            .FirstOrDefault();
 
-        //I won't get bumped by a dead man!
-        if (status == Status.FALLING || status == Status.DYING) other.Defend(this, true);
-        if (other.status == Status.FALLING || other.status == Status.DYING) Defend(other, true);
+    public void Attack() {//Called by both sides. Prepare attack. In 0.1 sec, will hit whoever is in range.
+        this.SetZ(-1);
+        FreezeFrame();
+        SetAnim(Anim.WINDUP);
+        this.Wait(0.1f, () => {
+            //Set Hit anim
+            Unit target = NearbyEnemy();
+            SetAnim(Anim.HIT);
+            if (target != null && target.status == Status.ALIVE) {
+                //Inflict damage to any unit in range
+                if (R.m.enableCheats && side == Side.MONSTER && Input.GetKey(KeyCode.W)) DeathByHp();
+                if (R.m.enableCheats && side == Side.HERO && Input.GetKey(KeyCode.L)) DeathByHp();
+                if (AttackLandsOn(target)) target.GetBumpedBy(this);
+                else target.DefendFrom(this);
+            }
+
+            lastAttack = Time.time;
+        });
     }
 
-    public bool CanAttack(Unit other) {
-        if (currentSpeed < 0) return false;
-        if (Time.time - lastAttack < 0.5f) return false;
-        if (other.currentSpeed < 0) return true;
-        if (Time.time - other.lastAttack < 0.5f) return true;
+    public void GetBumpedBy(Unit other) {
+        SetAnim(Anim.BUMPED);
+        if (other.shakeOnHit) B.m.Shake(0.2f);
+
+        critCollisionDate = critChance.Chance() ? Time.time : -1;
+        TakeCollisionDamage(other.damage, critCollisionDate > 0);
+        currentSpeed = R.m.bumpSpeed * other.strength * (1 - prot) - (critCollisionDate > 0 ? 5 : 0);
+    }
+
+    public void DefendFrom(Unit other) {
+        status = Status.ALIVE;
+        currentSpeed = R.m.defendSpeed * other.strength * (1 - prot);
+    }
+
+    public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();
+    public bool AttackLandsOn(Unit other) {
+        if (!CanAttack()) return false;
+        if (!other.CanAttack()) return true;
         
         float momentum = (weight * currentSpeed / maxSpeed).AtLeast(0);
         return Random.value < momentum / (momentum + other.weight);
     }
-
-    public void Defend(Unit other, bool alsoAttack) {
-        status = Status.WALK;
-        currentSpeed = R.m.defendSpeed * other.strength * (1 - prot);
-        //If I'm bigger, and we both defend, only the smaller unit attacks! the bigger unit doesnt move
-        if (size > other.size && !alsoAttack) SetAnim(Anim.DEFEND); 
-        else SetAnim(Anim.HIT);
-    } 
-
-    public void GetBumped(Unit other, bool alsoAttack) {
-        status = Status.BUMPED;
-
-        //Small units don't hit if both are bumped
-        if (alsoAttack && size >= 1) SetAnim(Anim.HIT);
-        else SetAnim(Anim.BUMPED);
-        if (other.shakeOnHit) B.m.Shake(0.2f);
-
-        bool isCrit = critChance.Chance();
-        currentSpeed = R.m.bumpSpeed * other.strength * (1 - prot) - (isCrit ? 5 : 0);
-        critCollisionDate = isCrit ? Time.time : -1;
-        TakeCollisionDamage(other.damage, isCrit);
-    }
+    public bool CanAttack() => isWalking && !attackIsOnCooldown;
 
 
     // ====================
@@ -291,7 +283,7 @@ public class Unit : MonoBehaviour {
 
     public void TakeCollisionDamage(float amount, bool isCrit = false) {
         amount = amount.MoreOrLessPercent(0.5f).Round();
-        if (amount.isApprox(0)) {
+        if (amount.isAbout(0)) {
             critCollisionDate = -1;
             return;
         }
@@ -334,6 +326,7 @@ public class Unit : MonoBehaviour {
     public void DeathByHp() {
         status = Status.DYING;
         SetAnim(Anim.BUMPED);
+        orangeHealthBar.transform.parent.gameObject.SetActive(false);
         currentSpeed = R.m.bumpSpeed * (1 - prot);
     }
 

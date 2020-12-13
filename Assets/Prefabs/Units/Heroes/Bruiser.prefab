@@ -62,7 +62,7 @@ MonoBehaviour:
   side: 1
   maxSpeed: 3.5
   maxHealth: 200
-  prot: 0.25
+  prot: 0
   weight: 2
   damage: 20
   strength: 0.5
@@ -73,9 +73,9 @@ MonoBehaviour:
   anim: 0
   currentHealth: 0
   lastAttack: 0
-  lastBump: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
+  isOnFreezeFrame: 0
   size: 1
   attackAnimDuration: 0.25
   healthBar: {fileID: 45564277804295137}

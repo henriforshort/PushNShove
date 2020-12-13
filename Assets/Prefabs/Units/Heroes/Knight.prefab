@@ -62,8 +62,8 @@ MonoBehaviour:
   side: 1
   maxSpeed: 3
   maxHealth: 250
-  prot: 0.5
-  weight: 3
+  prot: 0.25
+  weight: 2
   damage: 10
   strength: 1
   critChance: 0.1

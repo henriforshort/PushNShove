@@ -17,6 +17,42 @@ TextureImporter:
   - first:
       213: -3919082380490823665
     second: fight_prompt_background_4
+  - first:
+      213: 3846678895352012735
+    second: fight_prompt_background_0
+  - first:
+      213: 5230221796776154438
+    second: fight_prompt_background_1
+  - first:
+      213: -9108822388752130401
+    second: fight_prompt_background_2
+  - first:
+      213: 3215479483848179366
+    second: fight_prompt_background_3
+  - first:
+      213: -5815099373550525126
+    second: fight_prompt_background_4
+  - first:
+      213: 7238967473989721838
+    second: fight_prompt_background_5
+  - first:
+      213: -1132616808825638757
+    second: fight_prompt_background_6
+  - first:
+      213: 5307080513951892097
+    second: fight_prompt_background_7
+  - first:
+      213: 2308839155200038009
+    second: fight_prompt_background_8
+  - first:
+      213: -3512366696469164907
+    second: fight_prompt_background_9
+  - first:
+      213: -4898748039463176506
+    second: fight_prompt_background_10
+  - first:
+      213: 1116086871140444036
+    second: fight_prompt_background_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,6 +156,90 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 80
+        width: 640
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbfd2722316226530800000000000000
+      internalID: 3846678895352012735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight_prompt_background_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 80
+        width: 640
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6451955630b759840800000000000000
+      internalID: 5230221796776154438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight_prompt_background_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 80
+        width: 640
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9edd4c4c46f69180800000000000000
+      internalID: -9108822388752130401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight_prompt_background_3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 80
+        width: 640
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aeb351ed8daf9c20800000000000000
+      internalID: 3215479483848179366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight_prompt_background_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 40
         width: 640
         height: 40
@@ -130,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 799d4ffec56a5a560800000000000000
-      internalID: 7324443287080982935
+      spriteID: a35ace1fded9c4fa0800000000000000
+      internalID: -5815099373550525126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fight_prompt_background_1
+      name: fight_prompt_background_5
       rect:
         serializedVersion: 2
         x: 640
@@ -151,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f768fa3c78e032a00800000000000000
-      internalID: 730443540830586495
+      spriteID: eee93cb509af57460800000000000000
+      internalID: 7238967473989721838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fight_prompt_background_2
+      name: fight_prompt_background_6
       rect:
         serializedVersion: 2
         x: 1280
@@ -172,14 +292,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8330194229c970e10800000000000000
-      internalID: 2163870297467454264
+      spriteID: b90bf4363032840f0800000000000000
+      internalID: -1132616808825638757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fight_prompt_background_3
+      name: fight_prompt_background_7
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 40
+        width: 640
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182008cfb9986a940800000000000000
+      internalID: 5307080513951892097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight_prompt_background_8
       rect:
         serializedVersion: 2
         x: 0
@@ -193,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16b134fba6b9118e0800000000000000
-      internalID: -1724426299528504479
+      spriteID: 97416399af4aa0020800000000000000
+      internalID: 2308839155200038009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fight_prompt_background_4
+      name: fight_prompt_background_9
       rect:
         serializedVersion: 2
         x: 640
@@ -214,8 +355,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f082a51d65f9c99c0800000000000000
-      internalID: -3919082380490823665
+      spriteID: 59c0b005911914fc0800000000000000
+      internalID: -3512366696469164907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight_prompt_background_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 640
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6f7afdc96240cb0800000000000000
+      internalID: -4898748039463176506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fight_prompt_background_11
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 640
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487adc498132d7f00800000000000000
+      internalID: 1116086871140444036
       vertices: []
       indices: 
       edges: []

@@ -100,7 +100,6 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
             AwaitRestart();
         }
         
-        
         UpdateXp();
         UpdateShake();
     }
@@ -110,7 +109,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void UpdateShake() {
-        currentShake = currentShake.LerpTo(0, 5);
+        currentShake = currentShake.LerpTo(0, 20);
         shakeGO.transform.localPosition = new Vector3(
             Random.Range(-currentShake, currentShake), 
             Random.Range(-currentShake, currentShake), 
@@ -129,7 +128,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void UpdateXp() {
-        if (xpSlider.value.isApprox(R.m.s.experience)) xpSlider.value = R.m.s.experience;
+        if (xpSlider.value.isAbout(R.m.s.experience)) xpSlider.value = R.m.s.experience;
         else xpSlider.value = xpSlider.value.LerpTo(R.m.s.experience, 2);
         
         xpText.text = (100 * xpSlider.value).Round() + "/100";
@@ -215,7 +214,6 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         Unit.monsterUnits.Clear();
 
         this.Wait(0.2f, () => {
-            gameState = State.PLAYING;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });
     }
