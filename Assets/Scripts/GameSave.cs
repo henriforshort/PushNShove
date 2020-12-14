@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public class GameState {
+public class GameSave {
     public float experience;
     public int level;
     public int battle;

@@ -7,13 +7,13 @@ public class SelfDefenseUpgrade : Upgrade {
     public bool alsoHeal;
     
     public override void Apply() {
-        Unit hero = B.m.heroes.Random();
+        Hero hero = B.m.heroes.Random();
         
-        hero.maxHealth += hpGain;
+        hero.unit.maxHealth += hpGain;
         
         if (alsoHeal) {
-            hero.AddHealth(hpGain);
-            R.m.s.SaveHeroes();
+            hero.unit.AddHealth(hpGain);
+            R.m.save.SaveHeroes();
         }
     }
 }

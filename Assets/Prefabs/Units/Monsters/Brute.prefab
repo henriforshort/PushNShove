@@ -164,13 +164,15 @@ MonoBehaviour:
   anim: 0
   currentHealth: 0
   lastAttack: 0
-  lastBump: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
+  isOnFreezeFrame: 0
+  attackTarget: {fileID: 0}
+  hero: {fileID: 0}
   size: 2
   attackAnimDuration: 0.25
   healthBar: {fileID: 2202191930307489267}
-  orangeHealthBar: {fileID: 4974386014944740836}
+  tmpHealthBar: {fileID: 4974386014944740836}
   animator: {fileID: 4884354167670392196}
   rigidbodee: {fileID: 4884354168730958000}
   hpLossUis: []

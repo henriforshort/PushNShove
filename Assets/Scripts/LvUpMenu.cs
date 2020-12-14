@@ -72,8 +72,8 @@ public class LvUpMenu : MonoBehaviour {
 
     public void Close() {
         available = false;
-        R.m.s.skillPoints--;
-        B.m.lvUpNotif.SetActive(R.m.s.skillPoints > 0);
+        R.m.save.skillPoints--;
+        B.m.xpManager.lvUpNotif.SetActive(R.m.save.skillPoints > 0);
         this.Wait(2, () => {
             B.m.gameState = previousState;
             gameObject.SetActive(false);

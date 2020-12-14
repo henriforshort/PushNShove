@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIBackground : MonoBehaviour {
+public class UITransition : MonoBehaviour {
     public Anim startAnim;
     public Anim currentAnim;
     public Animator animator;

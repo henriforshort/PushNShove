@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public static class Util {
     // --------------------
@@ -442,26 +441,38 @@ public static class Util {
     // DELAY
     // --------------------
 
-    public static Coroutine Wait(this MonoBehaviour obj, float duration, Action then) {
-        return obj.StartCoroutine(_Wait(duration, then));
-    }
-
+    public static Coroutine Wait(this MonoBehaviour obj, float duration, Action then) => 
+        obj.StartCoroutine(_Wait(duration, then));
     private static IEnumerator _Wait(float duration, Action then) {
         yield return new WaitForSeconds(duration);
         then();
     }
 
-    // Waits only one frame
-    public static Coroutine Wait(this MonoBehaviour obj, Action then) {
-        return obj.StartCoroutine(_Wait(then));
-    }
-
-    private static IEnumerator _Wait(Action then) {
+    public static Coroutine WaitOneFrame(this MonoBehaviour obj, Action then) => 
+        obj.StartCoroutine(_WaitOneFrame(then));
+    private static IEnumerator _WaitOneFrame(Action then) {
         yield return new WaitForEndOfFrame();
         then();
     }
 
-    
+    public static Coroutine When(this MonoBehaviour obj, Func<bool> condition, Action then) =>
+        obj.StartCoroutine(_When(condition, then));
+    private static IEnumerator _When(Func<bool> condition, Action then) {
+        while (!condition()) yield return new WaitForEndOfFrame();
+        then();
+    }
+        
+    public static Coroutine While(this MonoBehaviour obj, Func<bool> condition, Action then) =>
+        obj.StartCoroutine(_While(condition, then));
+    private static IEnumerator _While(Func<bool> condition, Action doThis) {
+        while (condition()) {
+            yield return new WaitForEndOfFrame();
+            doThis();
+        }
+        yield return null;
+    }
+
+
     // --------------------
     // REPEAT
     // --------------------
@@ -485,29 +496,17 @@ public static class Util {
     // TRANSFORMS
     // --------------------
 
-    //Move children of a transform
     public static void MoveChildrenTo(this Transform obj, Transform newParent) {
         while (obj.childCount > 0) obj.GetChild(0).SetParent(newParent);
     }
-    public static void MoveChildrenTo(this Transform obj, GameObject newParent) =>
+    
+    public static void MoveChildrenTo(this Component obj, Component newParent) =>
+        obj.transform.MoveChildrenTo(newParent.transform);
+    public static void MoveChildrenTo(this Component obj, GameObject newParent) =>
         obj.MoveChildrenTo(newParent.transform);
-    public static void MoveChildrenTo(this Transform obj, MonoBehaviour newParent) =>
-        obj.MoveChildrenTo(newParent.transform);
-
-    //Move children of a gameobject
-    public static void MoveChildrenTo(this GameObject obj, Transform newParent) =>
+    public static void MoveChildrenTo(this GameObject obj, Component newParent) =>
         obj.transform.MoveChildrenTo(newParent);
     public static void MoveChildrenTo(this GameObject obj, GameObject newParent) =>
-        obj.MoveChildrenTo(newParent.transform);
-    public static void MoveChildrenTo(this GameObject obj, MonoBehaviour newParent) =>
-        obj.MoveChildrenTo(newParent.transform);
-
-    //Move children of a monobehavior
-    public static void MoveChildrenTo(this MonoBehaviour obj, Transform newParent) =>
-        obj.transform.MoveChildrenTo(newParent);
-    public static void MoveChildrenTo(this MonoBehaviour obj, GameObject newParent) =>
-        obj.MoveChildrenTo(newParent.transform);
-    public static void MoveChildrenTo(this MonoBehaviour obj, MonoBehaviour newParent) =>
         obj.MoveChildrenTo(newParent.transform);
 
     

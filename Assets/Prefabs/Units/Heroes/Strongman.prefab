@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773981805588913672}
   - component: {fileID: 1773981805588913675}
+  - component: {fileID: 6646292189090240541}
   - component: {fileID: 1773981805588913676}
   - component: {fileID: 1773981805588913687}
   m_Layer: 0
@@ -47,6 +48,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.69554555, y: 1.5959363, z: 1}
   m_Center: {x: 0.42000002, y: -0.21578693, z: 0}
+--- !u!114 &6646292189090240541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773981805588913677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 1773981805588913676}
+  image: {fileID: 21300000, guid: 64471d6bee8f92143a750eb72e4d10a5, type: 3}
+  icon: {fileID: 0}
+  state: 0
+  ultCooldown: 10
 --- !u!114 &1773981805588913676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,18 +86,20 @@ MonoBehaviour:
   strength: 1.5
   critChance: 0.1
   shakeOnHit: 0
+  attackAnimDuration: 0.25
+  size: 1
   currentSpeed: 0
   status: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
-  lastBump: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
-  size: 1
-  attackAnimDuration: 0.25
+  isOnFreezeFrame: 0
+  attackTarget: {fileID: 0}
+  hero: {fileID: 6646292189090240541}
   healthBar: {fileID: 2229701680886870555}
-  orangeHealthBar: {fileID: 5005238066686466572}
+  tmpHealthBar: {fileID: 5005238066686466572}
   animator: {fileID: 1773981805822391867}
   rigidbodee: {fileID: 1773981805588913687}
   hpLossUis: []

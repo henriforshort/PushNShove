@@ -18,6 +18,8 @@ public class Unit : MonoBehaviour {
     public float strength; //How far I push people I collide with (wether I hit them or not)
     [Range(0, 1)] public float critChance;
     public bool shakeOnHit;
+    public float attackAnimDuration;
+    public float size;
     
     [Header("State")]
     public float currentSpeed;
@@ -29,12 +31,11 @@ public class Unit : MonoBehaviour {
     public float critCollisionDate;
     public bool isOnFreezeFrame;
     public Unit attackTarget;
-    
-    [Header("References")]
-    public float size;
-    public float attackAnimDuration;
+
+    [Header("Self References")]
+    public Hero hero;
     public Slider healthBar;
-    public Slider orangeHealthBar;
+    public Slider tmpHealthBar;
     public Animator animator;
     public Rigidbody rigidbodee;
     public List<HpLossUi> hpLossUis;
@@ -69,9 +70,9 @@ public class Unit : MonoBehaviour {
         currentSpeed = maxSpeed;
         
         if (side != Side.HERO) SetHealth(maxHealth);
-        orangeHealthBar.value = currentHealth;
-        if (side == Side.HERO) healthBar.fillRect.GetComponent<Image>().color = R.m.yellow;
-        if (side == Side.HERO) orangeHealthBar.fillRect.GetComponent<Image>().color = R.m.white;
+        tmpHealthBar.value = currentHealth;
+        if (side == Side.HERO) healthBar.fillRect.GetComponent<Image>().color = G.m.yellow;
+        if (side == Side.HERO) tmpHealthBar.fillRect.GetComponent<Image>().color = G.m.white;
         
         if (side == Side.HERO) heroUnits.Add(this);
         if (side == Side.MONSTER) monsterUnits.Add(this);
@@ -96,7 +97,7 @@ public class Unit : MonoBehaviour {
         if (!isAttacking && transform.position.z.isAbout(-1)) this.SetZ(0.5f);
         if (currentSpeed > 0 && transform.position.z.isAbout(-0.5f)) this.SetZ(0f);
         
-        if (orangeHealthBar.value.isClearlyNot(currentHealth)) orangeHealthBar.LerpTo(healthBar.value, 3f);
+        if (tmpHealthBar.value.isClearlyNot(currentHealth)) tmpHealthBar.LerpTo(healthBar.value, 3f);
         
         if (anim == Anim.HIT && !isAttacking) {
             SetAnim(Anim.DEFEND);
@@ -205,7 +206,7 @@ public class Unit : MonoBehaviour {
         ally.TakeCollisionDamage(-currentSpeed/5, true);
         ally.critCollisionDate = critCollisionDate;
         
-        B.m.Shake(0.2f);
+        B.m.cameraManager.Shake(0.2f);
     }
     
     public void OnTriggerStay(Collider other) {
@@ -254,7 +255,7 @@ public class Unit : MonoBehaviour {
 
     public void GetBumpedBy(Unit other) {
         SetAnim(Anim.BUMPED);
-        if (other.shakeOnHit) B.m.Shake(0.2f);
+        if (other.shakeOnHit) B.m.cameraManager.Shake(0.2f);
 
         critCollisionDate = critChance.Chance() ? Time.time : -1;
         TakeCollisionDamage(other.damage, critCollisionDate > 0);
@@ -271,7 +272,7 @@ public class Unit : MonoBehaviour {
         if (!CanAttack()) return false;
         if (!other.CanAttack()) return true;
         
-        float momentum = (weight * currentSpeed / maxSpeed).AtLeast(0);
+        float momentum = (2 * weight * currentSpeed / maxSpeed).AtLeast(0);
         return Random.value < momentum / (momentum + other.weight);
     }
     public bool CanAttack() => isWalking && !attackIsOnCooldown;
@@ -299,10 +300,10 @@ public class Unit : MonoBehaviour {
         
         TMP_Text number = hpLossUi.number;
         if (isCrit) {
-            number.color = R.m.red;
+            number.color = G.m.red;
             amount = 3 * amount;
             number.text = amount + "!";
-            B.m.Shake(0.2f);
+            B.m.cameraManager.Shake(0.2f);
         } else {
             number.text = amount.ToString();
             
@@ -315,6 +316,7 @@ public class Unit : MonoBehaviour {
     public void SetHealth(float amount) {
         currentHealth = Mathf.Clamp(amount, 0, maxHealth);
         healthBar.value = currentHealth / maxHealth;
+        if (hero != null) hero.icon.SetHealth(currentHealth/maxHealth);
         if (currentHealth <= 0) DeathByHp();
     }
     
@@ -324,22 +326,27 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void DeathByHp() {
+        Deactivate();
         status = Status.DYING;
-        SetAnim(Anim.BUMPED);
-        orangeHealthBar.transform.parent.gameObject.SetActive(false);
+        healthBar.transform.parent.gameObject.SetActive(false);
         currentSpeed = R.m.bumpSpeed * (1 - prot);
     }
 
     public void DeathByFall() {
+        Deactivate();
         status = Status.FALLING;
-        SetAnim(Anim.BUMPED);
         rigidbodee.useGravity = true;
         this.Wait(0.5f, Die);
     }
 
+    public void Deactivate() {
+        SetAnim(Anim.BUMPED);
+        
+    }
+
     public void Die() {
         if (B.m == null || B.m.gameState != B.State.PLAYING) return;
-        if (size >= 2 || side == Side.HERO) B.m.Shake(0.2f);
+        if (size >= 2 || side == Side.HERO) B.m.cameraManager.Shake(0.2f);
         // B.m.audioSource.PlayOneShot(R.m.deathSounds.Random());
         Instantiate(R.m.deathCloudFxPrefab, transform.position + 0.5f*Vector3.up, Quaternion.identity);
         Destroy(gameObject);

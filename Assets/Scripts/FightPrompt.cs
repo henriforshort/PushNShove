@@ -21,10 +21,10 @@ public class FightPrompt : MonoBehaviour {
     public TMP_Text fightText;
     public TMP_Text battleText;
     public List<Image> battleImages;
-    public UIBackground bg;
+    public UITransition bg;
     
     public void Start() {
-        battleText.text = "Battle " + R.m.s.battle.AtLeast(1);
+        battleText.text = "Battle " + R.m.save.battle.AtLeast(1);
         battleExpirationDate = Time.time + battleDuration;
         fightExpirationDate = Time.time + fightDuration;
         fightAppearDate = Time.time + fightAppearDelay;
@@ -37,17 +37,13 @@ public class FightPrompt : MonoBehaviour {
         if (Time.time > battleAppearDate) battleText.gameObject.SetActive(true);
         
         if (Time.time > battleExpirationDate) {
-            battleText.alpha = Time.time.Prel(battleExpirationDate + fadeDuration, battleExpirationDate);
-            battleImages.ForEach(i => i.color = new Color(
-                R.m.black.r, 
-                R.m.black.g, 
-                R.m.black.b, 
-                Time.time.Prel(battleExpirationDate + fadeDuration, battleExpirationDate)
-                ));
+            float alpha = Time.time.Prel(battleExpirationDate + fadeDuration, battleExpirationDate);
+            battleText.alpha = alpha;
+            battleImages.ForEach(i => i.SetAlpha(alpha));
         }
         if (Time.time > fightExpirationDate) {
             fightText.alpha = Time.time.Prel(fightExpirationDate + fadeDuration/2, fightExpirationDate);
-            if (bg.currentAnim != UIBackground.Anim.FADE_OUT) bg.FadeOut();
+            if (bg.currentAnim != UITransition.Anim.FADE_OUT) bg.FadeOut();
         }
         
         if (Time.time > fightExpirationDate + fadeDuration) StartGame();

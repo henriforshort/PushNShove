@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class B : MonoBehaviour { //Battle manager, handles a single battle.
@@ -16,31 +17,23 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     [Header("State")]
     public float timeSinceGameOver;
     public State gameState;
-    public List<Unit> heroes;
-    public float currentShake;
-    
-    [Header("References")]
+
+    [Header("Scene References (Assigned at runtime)")]
+    public List<Hero> heroes;
+
+    [Header("Scene References")]
+    public List<GameObject> deathZones;
+    public List<HeroIcon> heroIcons;
+    public CameraManager cameraManager;
+    public XPManager xpManager;
     public GameObject gameOverPanel;
     public TMP_Text gameOverText;
     public AudioSource audioSource;
-    public GameObject cameraFocus;
-    public GameObject cameraGO;
-    public GameObject shakeGO;
-    public GameObject hills;
-    public GameObject sun;
-    public List<GameObject> deathZones;
     public Image gameOverPanelWhiteButton;
-    public Slider xpSlider;
-    public Animator xpAnimator;
-    public TMP_Text xpText;
     public Transform unitsHolder;
     public TMP_Text battle;
-    public TMP_Text level;
-    public TMP_Text levelUp;
-    public GameObject lvUpNotif;
-    public GameObject lvUpMenu;
     public GameObject fightPrompt;
-    public UIBackground background;
+    public UITransition transition;
 	
     public enum State { PLAYING, GAME_OVER, PAUSE }
 
@@ -56,111 +49,40 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
 
     public void InitBattle() {
         gameState = State.PAUSE;
-        
         if (R.m.needRunInit) R.m.InitRun();
-
-        R.m.s.heroes.ForEach(h =>
-            heroes.Add(Instantiate(
-                    h.prefab,
-                    new Vector3(
-                        Random.Range(-R.m.enemySpawnPosXRange.x, -R.m.enemySpawnPosXRange.y), 
-                        -2, 
-                        0),
-                    Quaternion.identity,
-                    unitsHolder)
-                .GetComponent<Unit>()));
         
-        R.m.s.LoadHeroes();
+        //Create heroes
+        for (int i = 0; i < R.m.save.heroes.Count; i++) {
+            Hero hero = Instantiate(
+                R.m.save.heroes[i].prefab,
+                new Vector3(this.Random(-R.m.spawnPosXRange.x, -R.m.spawnPosXRange.y), -2, 0),
+                Quaternion.identity,
+                unitsHolder);
+            heroes.Add(hero);
+            heroIcons[i].Init(hero);
+        }
+        R.m.save.LoadHeroes();
         
-        //Create enemies and give them a random X
+        //Create enemies
         this.Repeat(() => {
             Transform clusterInstance = Instantiate(enemyClusters.Random());
             while (clusterInstance.childCount > 0) {
-                clusterInstance.GetChild(0).SetX(Random.Range(R.m.enemySpawnPosXRange.x, R.m.enemySpawnPosXRange.y));
+                clusterInstance.GetChild(0).SetX(Random.Range(R.m.spawnPosXRange.x, R.m.spawnPosXRange.y));
                 clusterInstance.GetChild(0).SetParent(unitsHolder);
             }
             Destroy(clusterInstance.gameObject);
         }, numberOfEnemies);
         
+        //Init scene
         fightPrompt.SetActive(true);
-        background.FadeOut();
-        
-        xpSlider.value = R.m.s.experience; //Set xp bar with no lerp
-        level.text = R.m.s.level.ToString();
-        battle.text = R.m.s.battle.ToString();
-        lvUpNotif.SetActive(R.m.s.skillPoints > 0);
+        transition.FadeOut();
+        battle.text = R.m.save.battle.ToString();
     }
 
     public void Update() {
-        if (gameState == State.PLAYING) {
-            UpdateCameraAndParallax();
-        }
-
         if (gameState == State.GAME_OVER) {
             AwaitRestart();
         }
-        
-        UpdateXp();
-        UpdateShake();
-    }
-
-    public void Pause() {
-        lvUpMenu.SetActive(true);
-    }
-
-    public void UpdateShake() {
-        currentShake = currentShake.LerpTo(0, 20);
-        shakeGO.transform.localPosition = new Vector3(
-            Random.Range(-currentShake, currentShake), 
-            Random.Range(-currentShake, currentShake), 
-            0);
-    }
-
-    public void Shake(float amount) {
-        currentShake = amount;
-    }
-
-    public void GainExperience(float amount) {
-        R.m.s.experience += amount;
-        if (R.m.s.experience >= 1) LevelUp();
-        this.Wait(1, () => xpAnimator.SetInteger("shine", 1));
-        this.Wait(2, () => xpAnimator.SetInteger("shine", 0));
-    }
-
-    public void UpdateXp() {
-        if (xpSlider.value.isAbout(R.m.s.experience)) xpSlider.value = R.m.s.experience;
-        else xpSlider.value = xpSlider.value.LerpTo(R.m.s.experience, 2);
-        
-        xpText.text = (100 * xpSlider.value).Round() + "/100";
-    }
-
-    public void LevelUp() {
-        R.m.s.experience--;
-        xpSlider.value = 0;
-        
-        R.m.s.level++;
-        level.text = R.m.s.level.ToString();
-        levelUp.gameObject.SetActive(true);
-        this.Wait(1, () => levelUp.gameObject.SetActive(false));
-
-        R.m.s.skillPoints++;
-        lvUpNotif.SetActive(true);
-    }
-
-    public void UpdateCameraAndParallax() {
-        if (Unit.heroUnits.Count == 0 || Unit.monsterUnits.Count == 0) return;
-		
-        cameraFocus.transform.position = (Vector3.forward * -10) + Vector3.right *
-            (Unit.heroUnits.Select(unit => unit.GetX()).Max()
-             + Unit.monsterUnits.Select(unit => unit.GetX()).Min()) / 2;
-			
-        if (Mathf.Abs(cameraFocus.GetX() - cameraGO.GetX()) > R.m.camMaxDistFromUnits) 
-            cameraGO
-                .LerpTo(cameraFocus, R.m.camSpeed)
-                .ClampX(-R.m.camMaxDistFromMapCenter, R.m.camMaxDistFromMapCenter);
-
-        hills.SetX(cameraGO.GetX() * R.m.hillsParallax);
-        sun.SetX(cameraGO.GetX());
     }
 
     public GameObject SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, 
@@ -185,8 +107,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         if (gameState == State.GAME_OVER) return;
 
         gameOverText.text = "Victory";
-        GainExperience(R.m.xpGainPerLevel / 100);
-        R.m.s.battle++;
+        // xpManager.GainExperience(R.m.xpGainPerLevel / 100);
+        R.m.save.battle++;
         GameOver();
     }
 
@@ -208,8 +130,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void Restart() {
-        background.FadeIn();
-        R.m.s.SaveHeroes();
+        transition.FadeIn();
+        R.m.save.SaveHeroes();
         Unit.heroUnits.Clear();
         Unit.monsterUnits.Clear();
 
