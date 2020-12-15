@@ -30,6 +30,7 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 	public GameObject hpLossUIPrefab;
 	public GameObject bumpDustFxPrefab;
 	public GameObject deathCloudFxPrefab;
+	public GameObject sparkFxPrefab;
 	public List<AudioClip> damageSounds;
 	public List<AudioClip> deathSounds;
 

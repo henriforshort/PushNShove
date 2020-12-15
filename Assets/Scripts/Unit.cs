@@ -24,6 +24,7 @@ public class Unit : MonoBehaviour {
     [Header("State")]
     public float currentSpeed;
     public Status status;
+    public AttackStatus attackStatus;
     public Anim anim;
     public float currentHealth;
     public float lastAttack;//last date I triggered my hit animation
@@ -55,6 +56,8 @@ public class Unit : MonoBehaviour {
     public bool attackIsOnCooldown => Time.time - lastAttack < 0.5f;
     
     public enum Status { ALIVE, FALLING, DYING }
+    public enum AttackStatus { NONE, PREPARING, ATTACKING, RECOVERING }
+    
     public enum Anim { WALK, WINDUP, HIT, DEFEND, BUMPED }
     public enum Side { HERO = 1, MONSTER = -1 }
     
@@ -222,38 +225,41 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void CheckCollision() { //Called by both sides
-        Unit nearbyEnemy = NearbyEnemy();
-        if (nearbyEnemy == null) return;
+        if (NearbyEnemy() == null) return;
         
-        if (isWalking) Attack();
+        if (isWalking) PrepareAttack();
     }
-    
-    public Unit NearbyEnemy () => enemies
-            .Where (e => DistanceToMe(e) < G.m.collideDistance)
-            .OrderBy(DistanceToMe)
-            .FirstOrDefault();
 
-    public void Attack() {//Called by both sides. Prepare attack. In 0.1 sec, will hit whoever is in range.
+    public Unit NearbyEnemy() => enemies
+        .WithLowest(DistanceToMe)
+        .If(e => DistanceToMe(e) < G.m.collideDistance);
+
+    public void PrepareAttack() {//Called by both sides. Prepare attack. In 0.1 sec, will hit whoever is in range.
         this.SetZ(-1);
         FreezeFrame();
         SetAnim(Anim.WINDUP);
-        this.Wait(0.1f, () => {
-            //Set Hit anim
-            Unit target = NearbyEnemy();
-            SetAnim(Anim.HIT);
-            if (target != null && target.status == Status.ALIVE) {
-                //Inflict damage to any unit in range
-                if (R.m.enableCheats && side == Side.MONSTER && Input.GetKey(KeyCode.W)) DeathByHp();
-                if (R.m.enableCheats && side == Side.HERO && Input.GetKey(KeyCode.L)) DeathByHp();
-                if (AttackLandsOn(target)) target.GetBumpedBy(this);
-                else target.DefendFrom(this);
-            }
+        this.Wait(0.1f, ResolveAttack);
+    }
 
-            lastAttack = Time.time;
-        });
+    public void ResolveAttack() {
+        Unit target = NearbyEnemy();
+        SetAnim(Anim.HIT);
+        if (target != null && target.status == Status.ALIVE) {
+            //Inflict damage to any unit in range
+            if (R.m.enableCheats && side == Side.MONSTER && Input.GetKey(KeyCode.W)) DeathByHp();
+            if (R.m.enableCheats && side == Side.HERO && Input.GetKey(KeyCode.L)) DeathByHp();
+            if (AttackLandsOn(target)) target.GetBumpedBy(this);
+            else target.DefendFrom(this);
+        }
+
+        lastAttack = Time.time;
     }
 
     public void GetBumpedBy(Unit other) {
+        B.m.SpawnFX(R.m.sparkFxPrefab,
+            transform.position + new Vector3(1.5f * (int) side, 0, -2),
+            false, null, 0.5f,
+            Vector3.forward * Random.Range(0, 360));
         SetAnim(Anim.BUMPED);
         if (other.shakeOnHit) B.m.cameraManager.Shake(0.2f);
 
@@ -264,6 +270,7 @@ public class Unit : MonoBehaviour {
 
     public void DefendFrom(Unit other) {
         status = Status.ALIVE;
+        if (other.size < size) SetAnim(Anim.DEFEND);
         currentSpeed = R.m.defendSpeed * other.strength * (1 - prot);
     }
 
@@ -316,7 +323,10 @@ public class Unit : MonoBehaviour {
     public void SetHealth(float amount) {
         currentHealth = Mathf.Clamp(amount, 0, maxHealth);
         healthBar.value = currentHealth / maxHealth;
-        if (hero != null) hero.icon.SetHealth(currentHealth/maxHealth);
+        if (hero != null) {
+            hero.icon.SetHealth(currentHealth/maxHealth);
+            hero.icon.FlashHealth();
+        }
         if (currentHealth <= 0) DeathByHp();
     }
     

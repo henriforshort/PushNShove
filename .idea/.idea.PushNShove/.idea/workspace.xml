@@ -20,54 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Environment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Environment.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Hero Icon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Hero Icon.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/B.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FightPrompt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FightPrompt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameSave.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameSave.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HeroState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HeroState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/R.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/R.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UITransition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIBackground.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UITransition.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/icon_damage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/icon_damage.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/icon_health.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/icon_health.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/icon_weight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/icon_weight.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_select3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_shine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/lvUpMenu_shine.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp_bar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp_bar.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp_bar_fill.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp_bar_fill.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp_bar_fill_anim.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp_bar_fill_anim.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/ui/xp_bar.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/ui/xp_bar.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/blank_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/blank_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/blank_icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/blank_icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/bruiser_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/bruiser_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/knight_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/knight_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/strongman_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/strongman_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar_fill.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar_fill.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar_fill_anim.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar_fill_anim.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/xp/xp_bar_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/Shieldbearer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/Shieldbearer.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,13 +105,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Hero.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HeroState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/R.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FightPrompt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/R.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" />
       </list>
     </option>
   </component>
@@ -222,7 +192,9 @@
       <workItem from="1607683906299" duration="11554000" />
       <workItem from="1607771357909" duration="12773000" />
       <workItem from="1607872835391" duration="19238000" />
-      <workItem from="1607936155965" duration="16878000" />
+      <workItem from="1607936155965" duration="16966000" />
+      <workItem from="1608026365868" duration="6025000" />
+      <workItem from="1608035822811" duration="3557000" />
     </task>
     <servers />
   </component>
@@ -247,10 +219,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="498" height="446" key="SwitcherDM" timestamp="1607798086639">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1608067416511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1607798086639" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1608067416511" />
     <state x="2678" y="-24" width="1154" height="655" maximized="true" key="dock-window-1" timestamp="1607265809752">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

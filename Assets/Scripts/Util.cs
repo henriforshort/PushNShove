@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public static class Util {
     // --------------------
@@ -50,6 +51,12 @@ public static class Util {
         Debug.Log(result);
     }
 
+    public static T WithLowest<T, TKey>(this IEnumerable<T> target, Func<T, TKey> keySelector) =>
+        target.OrderBy(keySelector).FirstOrDefault();
+    
+    public static T WithHighest<T, TKey>(this IEnumerable<T> target, Func<T, TKey> keySelector) =>
+        target.OrderBy(keySelector).LastOrDefault();
+
     
     // --------------------
     // MATH
@@ -63,9 +70,9 @@ public static class Util {
     public static float Remap(this float target, float oldA, float oldB, float newA, float newB) => 
         target.Prel(oldA, oldB).Lerp(newA, newB);
     
-    public static float LerpTo(this float a, float b, float speed) => //Call in Update only
+    public static float LerpTo(this float a, float b, float speed = 2) => //Call in Update only
         (1 - speed/100).Pow(60 * Time.deltaTime).Lerp(b, a);
-    public static float FixedLerpTo(this float a, float b, float speed) => //Call in FixedUpdate only
+    public static float FixedLerpTo(this float a, float b, float speed = 2) => //Call in FixedUpdate only
         (1 - speed/100).Pow(60 * Time.fixedDeltaTime).Lerp(b, a);
 
     public static float Round(this float target) => Mathf.Round(target);
@@ -130,7 +137,7 @@ public static class Util {
             0);
     }
     
-    public static Vector3 RandomWithin(this MonoBehaviour obj, float range) {
+    public static Vector3 RandomWithin(this Component obj, float range) {
         return new Vector3(
             UnityEngine.Random.Range(-range, range), 
             UnityEngine.Random.Range(-range, range), 
@@ -142,20 +149,15 @@ public static class Util {
     // VECTOR3 - GET
     // --------------------
     
-    //Get from Transform
-    public static float GetX (this Transform target) => target.position.x;
-    public static float GetY (this Transform target) => target.position.y;
-    public static float GetZ (this Transform target) => target.position.z;
+    //Get from Component
+    public static float GetX (this Component target) => target == null ? default : target.transform.position.x;
+    public static float GetY (this Component target) => target == null ? default : target.transform.position.y;
+    public static float GetZ (this Component target) => target == null ? default : target.transform.position.z;
     
     //Get from GameObject
-    public static float GetX (this GameObject target) => target.transform.position.x;
-    public static float GetY (this GameObject target) => target.transform.position.y;
-    public static float GetZ (this GameObject target) => target.transform.position.z;
-    
-    //Get from MonoBehaviour
-    public static float GetX (this MonoBehaviour target) => target.transform.position.x;
-    public static float GetY (this MonoBehaviour target) => target.transform.position.y;
-    public static float GetZ (this MonoBehaviour target) => target.transform.position.z;
+    public static float GetX (this GameObject target) => target == null ? default : target.transform.position.x;
+    public static float GetY (this GameObject target) => target == null ? default : target.transform.position.y;
+    public static float GetZ (this GameObject target) => target == null ? default : target.transform.position.z;
     
     // --------------------
     // VECTOR3 - SET
@@ -166,17 +168,17 @@ public static class Util {
     public static Vector3 SetY(this Vector3 target, float y) => new Vector3(target.x, y, target.z);
     public static Vector3 SetZ(this Vector3 target, float z) => new Vector3(target.x, target.y, z);
 
-    //Set Transform with float
-    public static Transform SetX(this Transform target, float x) {
-        target.position = SetX(target.position, x);
+    //Set Component with float
+    public static Component SetX(this Component target, float x) {
+        target.transform.position = target.transform.position.SetX(x);
         return target;
     }
-    public static Transform SetY(this Transform target, float y) {
-        target.position = SetY(target.position, y);
+    public static Component SetY(this Component target, float y) {
+        target.transform.position = target.transform.position.SetY(y);
         return target;
     }
-    public static Transform SetZ(this Transform target, float z) {
-        target.position = SetZ(target.position, z);
+    public static Component SetZ(this Component target, float z) {
+        target.transform.position = target.transform.position.SetZ(z);
         return target;
     }
 
@@ -194,20 +196,6 @@ public static class Util {
         return target.gameObject;
     }
 
-    // Set MonoBehaviour with float
-    public static MonoBehaviour SetX(this MonoBehaviour target, float x) {
-        target.transform.SetX(x);
-        return target;
-    }
-    public static MonoBehaviour SetY(this MonoBehaviour target, float y) {
-        target.transform.SetY(y);
-        return target;
-    }
-    public static MonoBehaviour SetZ(this MonoBehaviour target, float z) {
-        target.transform.SetZ(z);
-        return target;
-    }
-
 
     // --------------------
     // VECTOR3 - CLAMP
@@ -216,22 +204,16 @@ public static class Util {
     //Clamp Vector3 with floats
     public static Vector3 Clamp(this Vector3 target, float min, float max) => 
         new Vector3(target.x.Clamp(min, max), target.y.Clamp(min, max), target.z.Clamp(min, max));
-    public static Vector3 ClampX(this Vector3 target, float min, float max) => 
-        new Vector3(target.x.Clamp(min, max), target.y, target.z);
-    public static Vector3 ClampY(this Vector3 target, float min, float max) => 
-        new Vector3(target.x, target.y.Clamp(min, max), target.z);
-    public static Vector3 ClampZ(this Vector3 target, float min, float max) => 
-        new Vector3(target.x, target.y, target.z.Clamp(min, max));
+    public static Vector3 ClampX(this Vector3 target, float min, float max) => target.SetX(target.x.Clamp(min, max));
+    public static Vector3 ClampY(this Vector3 target, float min, float max) => target.SetY(target.y.Clamp(min, max));
+    public static Vector3 ClampZ(this Vector3 target, float min, float max) => target.SetZ(target.z.Clamp(min, max));
 
-    //Clamp Transform with floats
-    public static void Clamp(this Transform target, float min, float max) => 
-        target.position = target.position.Clamp(min, max);
-    public static void ClampX(this Transform target, float min, float max) => 
-        target.position = target.position.ClampX(min, max);
-    public static void ClampY(this Transform target, float min, float max) => 
-        target.position = target.position.ClampY(min, max);
-    public static void ClampZ(this Transform target, float min, float max) => 
-        target.position = target.position.ClampZ(min, max);
+    //Clamp Component with floats
+    public static void Clamp(this Component target, float min, float max) => 
+        target.transform.position = target.transform.position.Clamp(min, max);
+    public static void ClampX(this Component target, float min, float max) => target.SetX(target.GetX().Clamp(min,max));
+    public static void ClampY(this Component target, float min, float max) => target.SetY(target.GetY().Clamp(min,max));
+    public static void ClampZ(this Component target, float min, float max) => target.SetZ(target.GetZ().Clamp(min,max));
 
     //Clamp GameObject with floats
     public static void Clamp(this GameObject target, float min, float max) => target.transform.Clamp(min, max);
@@ -243,106 +225,162 @@ public static class Util {
     // --------------------
     // VECTOR3 - LERPTO
     // --------------------
+
+    public static Vector3 LerpTo(this Vector3 obj, Vector3 target, float speed = 2) => //Update only
+        new Vector3(obj.x.LerpTo(target.x, speed), obj.y.LerpTo(target.y, speed), obj.z.LerpTo(target.z, speed));
     
-    //Basic LerpTo methods
-    public static Transform LerpTo(this Transform obj, Vector3 target, float speed = 2) {
-        obj.position = Vector3.Lerp(obj.position, target, speed / 100);
+    //Lerp Component
+    public static Component LerpTo(this Component obj, Vector3 target, float speed = 2) {
+        obj.transform.position = obj.transform.position.LerpTo(target, speed);
         return obj;
     }
-    public static Transform LerpTo(this Transform obj, Transform target, float speed = 2) {
-        obj.position = Vector3.Lerp(obj.position, target.position, speed / 100);
+    public static Component LerpTo(this Component obj, Component target, float speed = 2) {
+        obj.transform.position = obj.transform.position.LerpTo(target.transform.position, speed);
         return obj;
     }
-    public static Transform LerpTo(this Transform obj, GameObject target, float speed = 2) {
-        obj.position = Vector3.Lerp(obj.position, target.transform.position, speed / 100);
+    public static Component LerpTo(this Component obj, GameObject target, float speed = 2) {
+        obj.transform.position = obj.transform.position.LerpTo(target.transform.position, speed);
         return obj;
     }
+    
+    //Lerp GameObject
     public static GameObject LerpTo(this GameObject obj, Vector3 target, float speed = 2) => 
         obj.transform.LerpTo(target, speed).gameObject;
-    public static GameObject LerpTo(this GameObject obj, Transform target, float speed = 2) =>
+    public static GameObject LerpTo(this GameObject obj, Component target, float speed = 2) =>
         obj.transform.LerpTo(target, speed).gameObject;
     public static GameObject LerpTo(this GameObject obj, GameObject target, float speed = 2) => 
         obj.transform.LerpTo(target, speed).gameObject;
     
-    //Lerp Transform to float
-    public static void LerpXTo(this Transform obj, float target, float speed = 2) =>
-        obj.LerpTo(new Vector3(target, obj.position.y, obj.position.z), speed);
-    public static void LerpYTo(this Transform obj, float target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, target, obj.position.z), speed);
-    public static void LerpZTo(this Transform obj, float target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, obj.position.y, target), speed);
+    //Lerp Component to float by axis
+    public static void LerpXTo(this Component obj, float target, float speed = 2) =>
+        obj.SetX(obj.GetX().LerpTo(target, speed));
+    public static void LerpYTo(this Component obj, float target, float speed = 2) =>
+        obj.SetY(obj.GetY().LerpTo(target, speed));
+    public static void LerpZTo(this Component obj, float target, float speed = 2) =>
+        obj.SetZ(obj.GetZ().LerpTo(target, speed));
     
-    //Lerp Transform to Vector3
-    public static void LerpXTo(this Transform obj, Vector3 target, float speed = 2) =>
-        obj.LerpTo(new Vector3(target.x, obj.position.y, obj.position.z), speed);
-    public static void LerpYTo(this Transform obj, Vector3 target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, target.y, obj.position.z), speed);
-    public static void LerpZTo(this Transform obj, Vector3 target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, obj.position.y, target.z), speed);
+    //Lerp Component to Vector3 by axis
+    public static void LerpXTo(this Component obj, Vector3 target, float speed = 2) =>
+        obj.SetX(obj.GetX().LerpTo(target.x, speed));
+    public static void LerpYTo(this Component obj, Vector3 target, float speed = 2) =>
+        obj.SetY(obj.GetY().LerpTo(target.y, speed));
+    public static void LerpZTo(this Component obj, Vector3 target, float speed = 2) =>
+        obj.SetZ(obj.GetZ().LerpTo(target.z, speed));
 
-    //Lerp Transform to Transform
-    public static void LerpXTo(this Transform obj, Transform target, float speed = 2) =>
-        obj.LerpTo(new Vector3(target.position.x, obj.position.y, obj.position.z), speed);
-    public static void LerpYTo(this Transform obj, Transform target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, target.position.y, obj.position.z), speed);
-    public static void LerpZTo(this Transform obj, Transform target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, obj.position.y, target.position.z), speed);
+    //Lerp Component to Component by axis
+    public static void LerpXTo(this Component obj, Component target, float speed = 2) =>
+        obj.SetX(obj.GetX().LerpTo(target.GetX(), speed));
+    public static void LerpYTo(this Component obj, Component target, float speed = 2) =>
+        obj.SetY(obj.GetY().LerpTo(target.GetY(), speed));
+    public static void LerpZTo(this Component obj, Component target, float speed = 2) =>
+        obj.SetZ(obj.GetZ().LerpTo(target.GetZ(), speed));
     
-    //Lerp Transform to GameObejct
-    public static void LerpXTo(this Transform obj, GameObject target, float speed = 2) =>
-        obj.LerpTo(new Vector3(target.transform.position.x, obj.position.y, obj.position.z), speed);
-    public static void LerpYTo(this Transform obj, GameObject target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, target.transform.position.y, obj.position.z), speed);
-    public static void LerpZTo(this Transform obj, GameObject target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.position.x, obj.position.y, target.transform.position.z), speed);
+    //Lerp Component to GameObject by axis
+    public static void LerpXTo(this Component obj, GameObject target, float speed = 2) =>
+        obj.SetX(obj.GetX().LerpTo(target.GetX(), speed));
+    public static void LerpYTo(this Component obj, GameObject target, float speed = 2) =>
+        obj.SetY(obj.GetY().LerpTo(target.GetY(), speed));
+    public static void LerpZTo(this Component obj, GameObject target, float speed = 2) =>
+        obj.SetZ(obj.GetZ().LerpTo(target.GetZ(), speed));
     
-    //Lerp GameObject to float
+    //Lerp GameObject to float by axis
     public static void LerpXTo(this GameObject obj, float target, float speed = 2) =>
-        obj.LerpTo(new Vector3(target, obj.transform.position.y, obj.transform.position.z), speed);
+        obj.SetX(obj.GetX().LerpTo(target, speed));
     public static void LerpYTo(this GameObject obj, float target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.transform.position.x, target, obj.transform.position.z), speed);
+        obj.SetY(obj.GetY().LerpTo(target, speed));
     public static void LerpZTo(this GameObject obj, float target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.transform.position.x, obj.transform.position.y, target), speed);
+        obj.SetZ(obj.GetZ().LerpTo(target, speed));
     
-    //Lerp GameObject to Vector3
+    //Lerp GameObject to Vector3 by axis
     public static void LerpXTo(this GameObject obj, Vector3 target, float speed = 2) => 
-        obj.LerpTo(new Vector3(target.x, obj.transform.position.y, obj.transform.position.z), speed);
+        obj.SetX(obj.GetX().LerpTo(target.x, speed));
     public static void LerpYTo(this GameObject obj, Vector3 target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.transform.position.x, target.y, obj.transform.position.z), speed);
+        obj.SetY(obj.GetY().LerpTo(target.y, speed));
     public static void LerpZTo(this GameObject obj, Vector3 target, float speed = 2) => 
-        obj.LerpTo(new Vector3(obj.transform.position.x, obj.transform.position.y, target.z), speed);
+        obj.SetZ(obj.GetZ().LerpTo(target.z, speed));
 
-    //Lerp GameObject to Transform
-    public static void LerpXTo(this GameObject obj, Transform target, float speed = 2) =>
-        obj.LerpTo(new Vector3(target.position.x, obj.transform.position.y, obj.transform.position.z), speed);
-    public static void LerpYTo(this GameObject obj, Transform target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.transform.position.x, target.position.y, obj.transform.position.z), speed);
-    public static void LerpZTo(this GameObject obj, Transform target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.transform.position.x, obj.transform.position.y, target.position.z), speed);
+    //Lerp GameObject to Component by axis
+    public static void LerpXTo(this GameObject obj, Component target, float speed = 2) =>
+        obj.SetX(obj.GetX().LerpTo(target.GetX(), speed));
+    public static void LerpYTo(this GameObject obj, Component target, float speed = 2) =>
+        obj.SetY(obj.GetY().LerpTo(target.GetY(), speed));
+    public static void LerpZTo(this GameObject obj, Component target, float speed = 2) =>
+        obj.SetZ(obj.GetZ().LerpTo(target.GetZ(), speed));
     
-    //Lerp GameObject to GameObject
+    //Lerp GameObject to GameObject by axis
     public static void LerpXTo(this GameObject obj, GameObject target, float speed = 2) =>
-        obj.LerpTo(new Vector3(target.transform.position.x, obj.transform.position.y, obj.transform.position.z), 
-            speed);
+        obj.SetX(obj.GetX().LerpTo(target.GetX(), speed));
     public static void LerpYTo(this GameObject obj, GameObject target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.transform.position.x, target.transform.position.y, obj.transform.position.z), 
-            speed);
+        obj.SetY(obj.GetY().LerpTo(target.GetY(), speed));
     public static void LerpZTo(this GameObject obj, GameObject target, float speed = 2) =>
-        obj.LerpTo(new Vector3(obj.transform.position.x, obj.transform.position.y, target.transform.position.z), 
-            speed);
+        obj.SetZ(obj.GetZ().LerpTo(target.GetZ(), speed));
+
+    
+    // --------------------
+    // VECTOR3 - LOCAL GET
+    // --------------------
+    
+    //Get from GameObject
+    public static float GetLocalX (this GameObject target) => target.transform.localPosition.x;
+    public static float GetLocalY (this GameObject target) => target.transform.localPosition.y;
+    public static float GetLocalZ (this GameObject target) => target.transform.localPosition.z;
+    
+    //Get from Component
+    public static float GetLocalX (this Component target) => target.transform.localPosition.x;
+    public static float GetLocalY (this Component target) => target.transform.localPosition.y;
+    public static float GetLocalZ (this Component target) => target.transform.localPosition.z;
+    
+    
+    // --------------------
+    // VECTOR3 - LOCAL SET
+    // --------------------
+
+    //Set Component with float
+    public static Component SetLocalX(this Component target, float x) {
+        target.transform.position = target.transform.localPosition.SetX(x);
+        return target;
+    }
+    public static Component SetLocalY(this Component target, float y) {
+        target.transform.position = target.transform.localPosition.SetY(y);
+        return target;
+    }
+    public static Component SetLocalZ(this Component target, float z) {
+        target.transform.position = target.transform.localPosition.SetZ(z);
+        return target;
+    }
+
+    //Set GameObject with float
+    public static GameObject SetLocalX(this GameObject target, float x) {
+        target.transform.SetLocalX(x);
+        return target.gameObject;
+    }
+    public static GameObject SetLocalY(this GameObject target, float y) {
+        target.transform.SetLocalY(y);
+        return target.gameObject;
+    }
+    public static GameObject SetLocalZ(this GameObject target, float z) {
+        target.transform.SetLocalZ(z);
+        return target.gameObject;
+    }
 
     
     // --------------------
     // VECTOR3 - LOCALLERPTO
     // --------------------
 
-    public static void LocalLerpTo(this Transform obj, Vector3 target, float speed = 2) {
-        obj.localPosition = Vector3.Lerp(obj.localPosition, target, speed / 100);
-    }
+    public static void LocalLerpTo(this Component obj, Vector3 target, float speed = 2) =>
+        obj.transform.localPosition = obj.transform.localPosition.LerpTo(target, speed);
 
-    public static void LocalLerpTo(this GameObject obj, Vector3 target, float speed = 2) {
+    public static void LocalLerpTo(this GameObject obj, Vector3 target, float speed = 2) =>
         obj.transform.LocalLerpTo(target, speed);
-    }
+    public static void LocalLerpTo(this Component obj, Component target, float speed = 2) =>
+        obj.transform.LocalLerpTo(target.transform.position, speed);
+    public static void LocalLerpTo(this GameObject obj, Component target, float speed = 2) =>
+        obj.transform.LocalLerpTo(target.transform.position, speed);
+    public static void LocalLerpTo(this Component obj, GameObject target, float speed = 2) =>
+        obj.transform.LocalLerpTo(target.transform.position, speed);
+    public static void LocalLerpTo(this GameObject obj, GameObject target, float speed = 2) =>
+        obj.transform.LocalLerpTo(target.transform.position, speed);
 
     
     // --------------------
@@ -350,14 +388,12 @@ public static class Util {
     // --------------------
 
     public static bool isCloserTo(this Component obj, Vector3 target, Component than) =>
-        Vector3.Distance(obj.transform.position, target) < 
-        Vector3.Distance(than.transform.position, target);
+        Vector3.SqrMagnitude(obj.transform.position - target) < 
+        Vector3.SqrMagnitude(than.transform.position - target);
 
     public static bool isFurtherFrom(this Component obj, Vector3 target, Component than) => 
         !obj.isCloserTo(target, than);
     
-    
-
     
     // --------------------
     // QUATERNION
@@ -370,16 +406,16 @@ public static class Util {
             0);
     }
 
-    public static void LocalSlerpTo(this Transform obj, Quaternion target, float speed = 2) {
-        obj.localRotation = Quaternion.Slerp(obj.localRotation, target, speed / 100);
+    public static void LocalSlerpTo(this Component obj, Quaternion target, float speed = 2) {
+        obj.transform.localRotation = Quaternion.Slerp(obj.transform.localRotation, target, speed / 100);
     }
 
     public static void LocalSlerpTo(this GameObject obj, Quaternion target, float speed = 2) {
         obj.transform.LocalSlerpTo(target, speed);
     }
 
-    public static void RotateTowards(this Transform obj, Quaternion target, float distance) {
-        obj.rotation = Quaternion.RotateTowards(obj.rotation, target, distance);
+    public static void RotateTowards(this Component obj, Quaternion target, float distance) {
+        obj.transform.rotation = Quaternion.RotateTowards(obj.transform.rotation, target, distance);
     }
 
     public static void RotateTowards(this GameObject obj, Quaternion target, float distance) {
@@ -390,8 +426,8 @@ public static class Util {
         return Quaternion.Slerp(obj, target, speed / 100);
     }
 
-    public static void SlerpTo(this Transform obj, Quaternion target, float speed = 2) {
-        obj.rotation = Quaternion.Slerp(obj.rotation, target, speed / 100);
+    public static void SlerpTo(this Component obj, Quaternion target, float speed = 2) {
+        obj.transform.rotation = Quaternion.Slerp(obj.transform.rotation, target, speed / 100);
     }
 
     public static void SlerpTo(this GameObject obj, Quaternion target, float speed = 2) {
@@ -405,9 +441,9 @@ public static class Util {
 
     public static float Random(this MonoBehaviour target) => UnityEngine.Random.value;
     public static float Random(this MonoBehaviour target, float max) => UnityEngine.Random.Range(0, max);
-    public static float Random(this MonoBehaviour target, int max) => UnityEngine.Random.Range(0, max);
+    public static int Random(this MonoBehaviour target, int max) => UnityEngine.Random.Range(0, max);
     public static float Random(this MonoBehaviour target, float min, float max) => UnityEngine.Random.Range(min, max);
-    public static float Random(this MonoBehaviour target, int min, int max) => UnityEngine.Random.Range(min, max);
+    public static int Random(this MonoBehaviour target, int min, int max) => UnityEngine.Random.Range(min, max);
 
     public static bool PercentChance(this float target) => UnityEngine.Random.value < target / 100;
     public static bool PercentChance(this int target) => UnityEngine.Random.value < (float)target / 100;
@@ -417,19 +453,19 @@ public static class Util {
     public static float MoreOrLessPercent(this float target, float amount) =>
         UnityEngine.Random.Range((1-amount) * target, (1+amount) * target);
 
-    public static bool CoinFlip(this MonoBehaviour target) => UnityEngine.Random.Range(0, 2) == 0;
+    public static bool CoinFlip(this MonoBehaviour target) => target.Random(2) == 0;
 
     public static T Random<T>(this MonoBehaviour target, T t1, T t2) => target.CoinFlip() ? t1 : t2;
 
     public static T Random<T>(this MonoBehaviour target, T t1, T t2, T t3) {
-        int i = UnityEngine.Random.Range(0, 3);
+        int i = target.Random(3);
         if (i == 0) return t1;
         else if (i == 1) return t2;
         else return t3;
     }
 
     public static T Random<T>(this MonoBehaviour target, T t1, T t2, T t3, T t4) {
-        int i = UnityEngine.Random.Range(0, 4);
+        int i = target.Random(3);
         if (i == 0) return t1;
         else if (i == 1) return t2;
         else if (i == 2) return t3;
@@ -496,12 +532,10 @@ public static class Util {
     // TRANSFORMS
     // --------------------
 
-    public static void MoveChildrenTo(this Transform obj, Transform newParent) {
-        while (obj.childCount > 0) obj.GetChild(0).SetParent(newParent);
+    public static void MoveChildrenTo(this Component obj, Component newParent) {
+        while (obj.transform.childCount > 0) obj.transform.GetChild(0).SetParent(newParent.transform);
     }
     
-    public static void MoveChildrenTo(this Component obj, Component newParent) =>
-        obj.transform.MoveChildrenTo(newParent.transform);
     public static void MoveChildrenTo(this Component obj, GameObject newParent) =>
         obj.MoveChildrenTo(newParent.transform);
     public static void MoveChildrenTo(this GameObject obj, Component newParent) =>
@@ -520,4 +554,11 @@ public static class Util {
         g.color = color;
         return g;
     }
+    
+    
+    // --------------------
+    // MISC
+    // --------------------
+
+    public static T If<T>(this T target, Func<T, bool> condition) => condition(target) ? target : default;
 }
