@@ -113,6 +113,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void GameOver() {
+        heroes.ForEach(h => h.unit.EndUlt());
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;

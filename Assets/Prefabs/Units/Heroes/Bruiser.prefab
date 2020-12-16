@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 490591814827413490}
   - component: {fileID: 490591814827413489}
   - component: {fileID: 1125540990976075291}
-  - component: {fileID: 490591814827413494}
+  - component: {fileID: -1779900876489107469}
   - component: {fileID: 490591814827413485}
   m_Layer: 0
   m_Name: Bruiser
@@ -60,12 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 490591814827413494}
+  unit: {fileID: -1779900876489107469}
   image: {fileID: 21300000, guid: 5ec68743aad18b648baaa4880f9acf8c, type: 3}
   icon: {fileID: 0}
   state: 0
   ultCooldown: 5
---- !u!114 &490591814827413494
+  ultDuration: 5
+--- !u!114 &-1779900876489107469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 490591814827413495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e5ea4cd1728ee648b51225c093f0328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   side: 1
@@ -88,8 +89,10 @@ MonoBehaviour:
   shakeOnHit: 0
   attackAnimDuration: 0.25
   size: 1
+  attackSpeed: 0.5
   currentSpeed: 0
   status: 0
+  attackStatus: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0
@@ -103,6 +106,15 @@ MonoBehaviour:
   animator: {fileID: 490591814931064769}
   rigidbodee: {fileID: 490591814827413485}
   hpLossUis: []
+  increasedWeight: 2
+  increasedDamage: 20
+  ultActive: 0
+  oldProt: 0
+  oldStrength: 0
+  oldDamage: 0
+  oldWeight: 0
+  oldAttackSpeed: 0
+  oldCrit: 0
 --- !u!54 &490591814827413485
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -449,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 5812119589657359497, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: unit
       value: 
-      objectReference: {fileID: 490591814827413494}
+      objectReference: {fileID: -1779900876489107469}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
 --- !u!4 &9121465626171203504 stripped

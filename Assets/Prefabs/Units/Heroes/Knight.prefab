@@ -65,6 +65,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   state: 0
   ultCooldown: 7
+  ultDuration: 0
 --- !u!114 &6971875616277727283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,8 +89,10 @@ MonoBehaviour:
   shakeOnHit: 0
   attackAnimDuration: 0.25
   size: 1
+  attackSpeed: 0.5
   currentSpeed: 0
   status: 0
+  attackStatus: 0
   anim: 0
   currentHealth: 0
   lastAttack: 0

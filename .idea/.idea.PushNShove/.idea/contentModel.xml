@@ -16,6 +16,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="B.cs" t="Include" />
+          <e p="Bruiser.cs" t="Include" />
           <e p="CameraManager.cs" t="Include" />
           <e p="Cloud.cs" t="Include" />
           <e p="DeadZone.cs" t="Include" />

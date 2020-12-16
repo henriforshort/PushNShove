@@ -45,6 +45,7 @@ public class HeroIcon : MonoBehaviour {
     public void UpdateUltTimer() {
         if (ultCooldown.fillAmount == 0) return;
         
+        if (hero == null) return;
         if (ultCooldown.fillAmount > 0) ultCooldown.fillAmount -= Time.deltaTime / hero.ultCooldown;
         if (ultCooldown.fillAmount == 0)  PlayUltAnim(UltAnim.SHINE);
     }
@@ -58,11 +59,13 @@ public class HeroIcon : MonoBehaviour {
 
     public void Ult() {
         if (ultCooldown.fillAmount > 0) return;
-        hero.Ult();
+        hero.unit.Ult();
         PlayUltAnim(UltAnim.USED);
-        this.Wait(1, () => {
-            ultCooldown.fillAmount = 1;
-            PlayUltAnim(UltAnim.LOADING);
-        });
+        this.Wait(hero.ultDuration, ReloadUlt);
+    }
+
+    public void ReloadUlt() {
+        ultCooldown.fillAmount = 1;
+        PlayUltAnim(UltAnim.LOADING);
     }
 }

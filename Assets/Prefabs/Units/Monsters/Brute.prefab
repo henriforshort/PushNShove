@@ -159,18 +159,19 @@ MonoBehaviour:
   strength: 1.25
   critChance: 0.2
   shakeOnHit: 1
+  attackAnimDuration: 0.25
+  size: 2
+  attackSpeed: 0.5
   currentSpeed: 0
   status: 0
+  attackStatus: 0
   anim: 0
   currentHealth: 0
-  lastAttack: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
-  attackTarget: {fileID: 0}
+  isInvincible: 0
   hero: {fileID: 0}
-  size: 2
-  attackAnimDuration: 0.25
   healthBar: {fileID: 2202191930307489267}
   tmpHealthBar: {fileID: 4974386014944740836}
   animator: {fileID: 4884354167670392196}

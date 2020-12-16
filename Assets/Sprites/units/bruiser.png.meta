@@ -47,6 +47,63 @@ TextureImporter:
   - first:
       213: -1542703513063588084
     second: bruiser_14
+  - first:
+      213: -6112451675234857042
+    second: bruiser_0
+  - first:
+      213: 5049956625488601147
+    second: bruiser_1
+  - first:
+      213: 7475164984329516360
+    second: bruiser_2
+  - first:
+      213: -2682627698789685787
+    second: bruiser_3
+  - first:
+      213: -7623918083920590992
+    second: bruiser_4
+  - first:
+      213: 7159075152299336324
+    second: bruiser_5
+  - first:
+      213: -2213606496811589985
+    second: bruiser_6
+  - first:
+      213: 7518374677287762603
+    second: bruiser_7
+  - first:
+      213: -3057229811804082989
+    second: bruiser_8
+  - first:
+      213: 492273648049988347
+    second: bruiser_9
+  - first:
+      213: -8944087732907580179
+    second: bruiser_10
+  - first:
+      213: -6426872697829441965
+    second: bruiser_11
+  - first:
+      213: 6127418311059992398
+    second: bruiser_12
+  - first:
+      213: -3913230218184360539
+    second: bruiser_13
+  - first:
+      213: 8479195717226039170
+    second: bruiser_14
+  - first:
+      213: -4153296833321500193
+    second: bruiser_15
+  - first:
+      213: 2751765179324594813
+    second: bruiser_16
+  - first:
+      213: 8320475909363473942
+    second: bruiser_17
+  - first:
+      213: -7062840624321980151
+    second: bruiser_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28f8ba17d2ed54a00800000000000000
-      internalID: 740242000534278018
+      spriteID: eaf82e626953c2ba0800000000000000
+      internalID: -6112451675234857042
       vertices: []
       indices: 
       edges: []
@@ -181,8 +238,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d1fc154f12328ca0800000000000000
-      internalID: -6016191042328661550
+      spriteID: b30e0698bcc051640800000000000000
+      internalID: 5049956625488601147
       vertices: []
       indices: 
       edges: []
@@ -202,8 +259,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bd542e70fdb19360800000000000000
-      internalID: 7174724521984023984
+      spriteID: 8453668b2fe1db760800000000000000
+      internalID: 7475164984329516360
       vertices: []
       indices: 
       edges: []
@@ -223,8 +280,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d27acdb440703580800000000000000
-      internalID: -8849449827238776105
+      spriteID: 5e56405325465cad0800000000000000
+      internalID: -2682627698789685787
       vertices: []
       indices: 
       edges: []
@@ -233,8 +290,8 @@ TextureImporter:
       name: bruiser_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 118
+        x: 396
+        y: 177
         width: 99
         height: 59
       alignment: 0
@@ -244,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0efb53ae35a70b360800000000000000
-      internalID: 7183375906486206432
+      spriteID: 0778c3b55e6623690800000000000000
+      internalID: -7623918083920590992
       vertices: []
       indices: 
       edges: []
@@ -254,7 +311,7 @@ TextureImporter:
       name: bruiser_5
       rect:
         serializedVersion: 2
-        x: 99
+        x: 0
         y: 118
         width: 99
         height: 59
@@ -265,8 +322,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a9ca99647f206da0800000000000000
-      internalID: -5953706530349332062
+      spriteID: 482a02dabe42a5360800000000000000
+      internalID: 7159075152299336324
       vertices: []
       indices: 
       edges: []
@@ -275,7 +332,7 @@ TextureImporter:
       name: bruiser_6
       rect:
         serializedVersion: 2
-        x: 198
+        x: 99
         y: 118
         width: 99
         height: 59
@@ -286,8 +343,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf27dd77ce0afeaf0800000000000000
-      internalID: -364896107309993220
+      spriteID: f9e5c0d8e90b741e0800000000000000
+      internalID: -2213606496811589985
       vertices: []
       indices: 
       edges: []
@@ -296,6 +353,27 @@ TextureImporter:
       name: bruiser_7
       rect:
         serializedVersion: 2
+        x: 198
+        y: 118
+        width: 99
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa77085fe1a65860800000000000000
+      internalID: 7518374677287762603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_8
+      rect:
+        serializedVersion: 2
         x: 297
         y: 118
         width: 99
@@ -307,14 +385,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70ae51e48092cb240800000000000000
-      internalID: 4808763617771383303
+      spriteID: 3dceeae1fa98295d0800000000000000
+      internalID: -3057229811804082989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bruiser_8
+      name: bruiser_9
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 118
+        width: 99
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf22e445648e4d600800000000000000
+      internalID: 492273648049988347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_10
       rect:
         serializedVersion: 2
         x: 0
@@ -328,14 +427,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e69a3cafddf9b7f80800000000000000
-      internalID: -8107710928406730386
+      spriteID: de46d10489730e380800000000000000
+      internalID: -8944087732907580179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bruiser_9
+      name: bruiser_11
       rect:
         serializedVersion: 2
         x: 99
@@ -349,14 +448,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 321753a08300e59c0800000000000000
-      internalID: -3936708783585791709
+      spriteID: 35e383515592fc6a0800000000000000
+      internalID: -6426872697829441965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bruiser_10
+      name: bruiser_12
       rect:
         serializedVersion: 2
         x: 198
@@ -370,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 972e04b66af6ea180800000000000000
-      internalID: -9102215036314525063
+      spriteID: e4f64fc4d76f80550800000000000000
+      internalID: 6127418311059992398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bruiser_11
+      name: bruiser_13
       rect:
         serializedVersion: 2
         x: 297
@@ -391,14 +490,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e82c94d5f2de8050800000000000000
-      internalID: 5804808923002972390
+      spriteID: 5adfbc889d961b9c0800000000000000
+      internalID: -3913230218184360539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bruiser_12
+      name: bruiser_14
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 59
+        width: 99
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287854284972ca570800000000000000
+      internalID: 8479195717226039170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_15
       rect:
         serializedVersion: 2
         x: 0
@@ -412,14 +532,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 720aaf5b736437460800000000000000
-      internalID: 7238206231204765735
+      spriteID: fd10e1309868c56c0800000000000000
+      internalID: -4153296833321500193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bruiser_13
+      name: bruiser_16
       rect:
         serializedVersion: 2
         x: 99
@@ -433,14 +553,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eda3dd4fdeba811a0800000000000000
-      internalID: -6838526995658360098
+      spriteID: d7a7ee2e9db303620800000000000000
+      internalID: 2751765179324594813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bruiser_14
+      name: bruiser_17
       rect:
         serializedVersion: 2
         x: 198
@@ -454,8 +574,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0ff8161457379ae0800000000000000
-      internalID: -1542703513063588084
+      spriteID: 61e1ecb71c4487370800000000000000
+      internalID: 8320475909363473942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_18
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 99
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909171a6fdfbbfd90800000000000000
+      internalID: -7062840624321980151
       vertices: []
       indices: 
       edges: []
