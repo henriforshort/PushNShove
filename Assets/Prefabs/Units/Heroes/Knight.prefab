@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6971875616277727287}
   - component: {fileID: 6971875616277727284}
   - component: {fileID: 5839365868507422637}
-  - component: {fileID: 6971875616277727283}
+  - component: {fileID: -8380110151794944169}
   - component: {fileID: 6971875616277727272}
   m_Layer: 0
   m_Name: Knight
@@ -60,13 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 6971875616277727283}
+  unit: {fileID: -8380110151794944169}
   image: {fileID: 21300000, guid: 0ef2f9755ffd62d40a534b56122d91ae, type: 3}
   icon: {fileID: 0}
   state: 0
-  ultCooldown: 7
-  ultDuration: 0
---- !u!114 &6971875616277727283
+  ultCooldown: 2
+  ultDuration: 5
+--- !u!114 &-8380110151794944169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6971875616277727282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
+  m_Script: {fileID: 11500000, guid: bce11c64293f26c4ab56edbaf79d6e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   side: 1
@@ -95,17 +95,21 @@ MonoBehaviour:
   attackStatus: 0
   anim: 0
   currentHealth: 0
-  lastAttack: 0
   lastWindupIsOne: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
-  attackTarget: {fileID: 0}
+  isInvincible: 0
   hero: {fileID: 5839365868507422637}
   healthBar: {fileID: 7398883394539054116}
   tmpHealthBar: {fileID: 4407138794253257779}
   animator: {fileID: 6971875616310140932}
   rigidbodee: {fileID: 6971875616277727272}
   hpLossUis: []
+  healDelay: 0.2
+  healFxDuration: 0.5
+  protBuff: 0.5
+  ultActive: 0
+  ultFx: {fileID: 7057374150237274002, guid: 95e2b3cd432312a44badd8635b85b45b, type: 3}
 --- !u!54 &6971875616277727272
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -300,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 5812119589657359497, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: unit
       value: 
-      objectReference: {fileID: 6971875616277727283}
+      objectReference: {fileID: -8380110151794944169}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
 --- !u!4 &1452417295982719293 stripped

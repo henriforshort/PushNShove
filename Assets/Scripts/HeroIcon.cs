@@ -23,14 +23,11 @@ public class HeroIcon : MonoBehaviour {
         hero = h;
         h.icon = this;
     }
-
-    public void Update() {
-        UpdateUltTimer();
-    }
-
-    public void SetTmpHealth(float health) {
-        tmpHealthBar.value = health;
-    }
+    
+    
+    // ====================
+    // HEALTH
+    // ====================
 
     public void FlashHealth() {
         healthBar.gameObject.SetActive(false);
@@ -41,15 +38,28 @@ public class HeroIcon : MonoBehaviour {
         healthBar.value = health;
         tmpHealthBar.value = health;
     }
+    
+    
+    // ====================
+    // ULT
+    // ====================
 
-    public void UpdateUltTimer() {
-        if (ultCooldown.fillAmount == 0) return;
-        
-        if (hero == null) return;
-        if (ultCooldown.fillAmount > 0) ultCooldown.fillAmount -= Time.deltaTime / hero.ultCooldown;
-        if (ultCooldown.fillAmount == 0)  PlayUltAnim(UltAnim.SHINE);
+    public void Update() {
+        UpdateUltTimer();
     }
 
+    public void UpdateUltTimer() {
+        if (hero == null) return;
+        ultCooldown.fillAmount = (hero.ultCooldownLeft / hero.ultCooldown).Clamp01();
+    }
+
+    public void Ult() {
+        if (hero.ultStatus != Hero.UltStatus.AVAILABLE) return;
+        
+        hero.Ult();
+        PlayUltAnim(UltAnim.USED);
+    }
+    
     public void PlayUltAnim(UltAnim ba) {
         if (ultAnim == ba) return;
         
@@ -57,15 +67,6 @@ public class HeroIcon : MonoBehaviour {
         backgroundAnimator.Play(ultAnim.ToString());
     }
 
-    public void Ult() {
-        if (ultCooldown.fillAmount > 0) return;
-        hero.unit.Ult();
-        PlayUltAnim(UltAnim.USED);
-        this.Wait(hero.ultDuration, ReloadUlt);
-    }
-
-    public void ReloadUlt() {
-        ultCooldown.fillAmount = 1;
-        PlayUltAnim(UltAnim.LOADING);
-    }
+    public void StartUltReload() => PlayUltAnim(UltAnim.LOADING);
+    public void EndUltReload() => PlayUltAnim(UltAnim.SHINE);
 }

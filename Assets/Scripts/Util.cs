@@ -56,6 +56,10 @@ public static class Util {
     
     public static T WithHighest<T, TKey>(this IEnumerable<T> target, Func<T, TKey> keySelector) =>
         target.OrderBy(keySelector).LastOrDefault();
+    
+    public static List<T> AsList<T>(this T item) {
+        return new List<T> { item };
+    }
 
     
     // --------------------
@@ -498,13 +502,15 @@ public static class Util {
         then();
     }
         
-    public static Coroutine While(this MonoBehaviour obj, Func<bool> condition, Action then) =>
-        obj.StartCoroutine(_While(condition, then));
-    private static IEnumerator _While(Func<bool> condition, Action doThis) {
+    public static Coroutine While(this MonoBehaviour obj, Func<bool> condition, Action then, float delay = -1, 
+        Action eventually = null) => obj.StartCoroutine(_While(condition, then, delay, eventually));
+    private static IEnumerator _While(Func<bool> condition, Action then, float delay, Action eventually) {
         while (condition()) {
-            yield return new WaitForEndOfFrame();
-            doThis();
+            if (delay < 0) yield return new WaitForEndOfFrame();
+            else yield return new WaitForSeconds(delay);
+            then();
         }
+        eventually?.Invoke();
         yield return null;
     }
 

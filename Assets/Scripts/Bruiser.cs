@@ -7,9 +7,7 @@ public class Bruiser : Unit {
     [Header("BRUISER VARIABLES", order = 2)]
     
     [Header("State", order = 3)]
-    public bool ultActive;
     public float oldProt;
-    public float oldStrength;
     public float oldDamage;
     public float oldWeight;
     public float oldAttackSpeed;
@@ -17,19 +15,14 @@ public class Bruiser : Unit {
     public float oldCrit;
 
     public override void SetAnim(Anim a) {
-        if (!ultActive) base.SetAnim(a);
+        if (hero.ultStatus != Hero.UltStatus.ACTIVATED) base.SetAnim(a);
     }
 
-    public override void UpdateZ() {
-        if (!ultActive) base.UpdateZ();
-    }
-
-    public override void Ult() {
-        SetAnim(Anim.ULT_BRUISER);
-        ultActive = true;
+    public override void Ult() {;
+        anim = Anim.ULT_BRUISER;
+        PlayAnim();
 
         oldProt = prot;
-        oldStrength = strength;
         oldDamage = damage;
         oldWeight = weight;
         oldAttackSpeed = attackSpeed;
@@ -37,7 +30,6 @@ public class Bruiser : Unit {
         oldAttackAnimDuration = attackAnimDuration;
 
         prot = 0.9f;
-        // strength =
         weight *= 50;
         damage /= 3;
         attackSpeed = 0f;
@@ -45,17 +37,12 @@ public class Bruiser : Unit {
         critChance /= 10;
 
         isInvincible = true;
-        
-        this.SetZ(-3);
-        this.Wait(hero.ultDuration, EndUlt);
     }
 
     public override void EndUlt() {
-        ultActive = false;
         SetAnim(Anim.DEFEND);
 
         prot = oldProt;
-        strength = oldStrength;
         damage = oldDamage;
         weight = oldWeight;
         attackSpeed = oldAttackSpeed;

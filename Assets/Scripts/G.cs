@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class G : MonoBehaviour {
     [Header("Balancing")]
+    public float attackDistance;
     public float collideDistance;
     
     [Header("Scene References")]

@@ -22,25 +22,16 @@
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/HeroIconButton/HeroIconButton_Used.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/HeroIconButton/HeroIconButton_Used.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Bruiser/Bruiser.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Units/Bruiser/Bruiser.overrideController" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/Unit.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Units/Unit.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/UIBackground/fadeIn.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/UIBackground/fadeIn.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/B.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bruiser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bruiser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/G.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hero.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/blank_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/Character_icons/blank_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/bruiser.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/bruiser.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/bruiser.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/bruiser.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/bruiser.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/bruiser.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +55,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/B.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21BBF68D-61D6-4A2A-A5C3-E180E6B6706D/b7/9d89350f/OrderedEnumerable`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tween.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/3e/17a82823/Scene.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/04/aa59889e/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HeroState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -75,6 +67,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/G.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.1.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/ColorBlock.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/4e/0b0cc5d4/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Knight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/2d/061a09d0/Comparison`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/89/ecc8fecd/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hero.cs" root0="FORCE_HIGHLIGHTING" />
@@ -100,7 +93,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Side.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UiBackground.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIBackground.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Sine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LvUpMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/XPManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" />
@@ -108,16 +100,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/FeastUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/SelfDefenseUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Upgrades/TrainingUpgrade.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FightPrompt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/R.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HeroState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Hero.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/B.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Bruiser.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Sine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tween.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/G.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HeroIcon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Knight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Hero.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Bruiser.cs" />
       </list>
     </option>
   </component>
@@ -201,7 +196,8 @@
       <workItem from="1607936155965" duration="16966000" />
       <workItem from="1608026365868" duration="6025000" />
       <workItem from="1608035822811" duration="3557000" />
-      <workItem from="1608131356169" duration="10967000" />
+      <workItem from="1608131356169" duration="11285000" />
+      <workItem from="1608196790129" duration="14475000" />
     </task>
     <servers />
   </component>
