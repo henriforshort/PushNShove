@@ -60,12 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ultCooldown: 2
+  ultDuration: 5
+  ultCooldownLeft: 0
+  ultStatus: 0
   unit: {fileID: -1779900876489107469}
   image: {fileID: 21300000, guid: 5ec68743aad18b648baaa4880f9acf8c, type: 3}
   icon: {fileID: 0}
-  state: 0
-  ultCooldown: 5
-  ultDuration: 5
 --- !u!114 &-1779900876489107469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,25 +96,23 @@ MonoBehaviour:
   attackStatus: 0
   anim: 0
   currentHealth: 0
-  lastAttack: 0
-  lastWindupIsOne: 0
+  lastWindupIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
-  attackTarget: {fileID: 0}
+  isInvincible: 0
+  lockZOrder: 0
+  lockAnim: 0
   hero: {fileID: 1125540990976075291}
   healthBar: {fileID: 45564277804295137}
   tmpHealthBar: {fileID: 6568130779824425974}
   animator: {fileID: 490591814931064769}
   rigidbodee: {fileID: 490591814827413485}
   hpLossUis: []
-  increasedWeight: 2
-  increasedDamage: 20
-  ultActive: 0
   oldProt: 0
-  oldStrength: 0
   oldDamage: 0
   oldWeight: 0
   oldAttackSpeed: 0
+  oldAttackAnimDuration: 0
   oldCrit: 0
 --- !u!54 &490591814827413485
 Rigidbody:

@@ -59,7 +59,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
                 Quaternion.identity,
                 unitsHolder);
             heroes.Add(hero);
-            heroIcons[i].Init(hero);
+            hero.InitIcon(heroIcons[i]);
         }
         R.m.save.LoadHeroes();
         

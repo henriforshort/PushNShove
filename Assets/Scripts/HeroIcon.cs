@@ -16,13 +16,7 @@ public class HeroIcon : MonoBehaviour {
     [Header("Scene References (Assigned at runtime)")]
     public Hero hero;
 
-    public enum UltAnim { AVAILABLE, LOADING, SHINE, USED }
-
-    public void Init(Hero h) {
-        icon.sprite = h.image;
-        hero = h;
-        h.icon = this;
-    }
+    public enum UltAnim { LOADING, SHINE, USED }
     
     
     // ====================
@@ -54,8 +48,8 @@ public class HeroIcon : MonoBehaviour {
     }
 
     public void Ult() {
-        if (hero.ultStatus != Hero.UltStatus.AVAILABLE) return;
-        
+        if (!hero.CanUlt()) return;
+
         hero.Ult();
         PlayUltAnim(UltAnim.USED);
     }
@@ -68,5 +62,5 @@ public class HeroIcon : MonoBehaviour {
     }
 
     public void StartUltReload() => PlayUltAnim(UltAnim.LOADING);
-    public void EndUltReload() => PlayUltAnim(UltAnim.SHINE);
+    public void ReadyUlt() => PlayUltAnim(UltAnim.SHINE);
 }

@@ -26,25 +26,38 @@ public class Hero : MonoBehaviour {
         UpdateUlt();
     }
 
+    public void InitIcon(HeroIcon hi) {
+        icon = hi;
+        icon.hero = this;
+        icon.icon.sprite = image;
+    }
+
     public void UpdateUlt() {
         if (B.m.gameState != B.State.PLAYING) return;
         if (ultStatus != UltStatus.RELOADING) return;
         
         ultCooldownLeft -= Time.deltaTime;
-        if (ultCooldownLeft < 0) EndUltReload();
+        if (ultCooldownLeft < 0) ReadyUlt();
     }
 
-    public void EndUltReload() {
+    public bool CanUlt() {
+        if (B.m.gameState != B.State.PLAYING) return false;
+        if (ultStatus != UltStatus.AVAILABLE) return false;
+
+        return true;
+    }
+
+    public void ReadyUlt() {
         ultCooldownLeft = 0;
         ultStatus = UltStatus.AVAILABLE;
-        icon.EndUltReload();
+        icon.ReadyUlt();
     }
 
     public void Ult() {
         ultStatus = UltStatus.ACTIVATED;
         unit.Ult();
         this.Wait(ultDuration, EndUlt);
-        unit.alwaysOnTop = true;
+        unit.lockZOrder = true;
     }
 
     public void EndUlt() {
@@ -52,6 +65,6 @@ public class Hero : MonoBehaviour {
         ultCooldownLeft = ultCooldown;
         unit.EndUlt();
         icon.StartUltReload();
-        unit.alwaysOnTop = false;
+        unit.lockZOrder = false;
     }
 }

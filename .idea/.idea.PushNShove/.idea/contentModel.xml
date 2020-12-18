@@ -31,6 +31,7 @@
           <e p="LvUpMenu.cs" t="Include" />
           <e p="R.cs" t="Include" />
           <e p="Sine.cs" t="Include" />
+          <e p="Strongman.cs" t="Include" />
           <e p="Tween.cs" t="Include" />
           <e p="UITransition.cs" t="Include" />
           <e p="Unit.cs" t="Include" />

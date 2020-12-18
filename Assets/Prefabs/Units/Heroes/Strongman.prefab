@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1773981805588913672}
   - component: {fileID: 1773981805588913675}
   - component: {fileID: 6646292189090240541}
-  - component: {fileID: 1773981805588913676}
+  - component: {fileID: 4700471019136354901}
   - component: {fileID: 1773981805588913687}
   m_Layer: 0
   m_Name: Strongman
@@ -60,13 +60,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 1773981805588913676}
+  ultCooldown: 2
+  ultDuration: 0.5
+  ultCooldownLeft: 0
+  ultStatus: 0
+  unit: {fileID: 4700471019136354901}
   image: {fileID: 21300000, guid: 64471d6bee8f92143a750eb72e4d10a5, type: 3}
   icon: {fileID: 0}
-  state: 0
-  ultCooldown: 10
-  ultDuration: 0
---- !u!114 &1773981805588913676
+--- !u!114 &4700471019136354901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1773981805588913677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
+  m_Script: {fileID: 11500000, guid: c78638656cee26a4a92baf113b897ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   side: 1
@@ -95,17 +96,21 @@ MonoBehaviour:
   attackStatus: 0
   anim: 0
   currentHealth: 0
-  lastAttack: 0
-  lastWindupIsOne: 0
+  lastWindupIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
-  attackTarget: {fileID: 0}
+  isInvincible: 0
+  lockZOrder: 0
+  lockAnim: 0
+  lockPosition: 0
   hero: {fileID: 6646292189090240541}
   healthBar: {fileID: 2229701680886870555}
   tmpHealthBar: {fileID: 5005238066686466572}
   animator: {fileID: 1773981805822391867}
   rigidbodee: {fileID: 1773981805588913687}
   hpLossUis: []
+  strengthIncrease: 0.25
+  strongmanUltFx: {fileID: 688306038408255481, guid: 279e740964ee90a4faae7db10cffb98f, type: 3}
 --- !u!54 &1773981805588913687
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 5812119589657359497, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: unit
       value: 
-      objectReference: {fileID: 1773981805588913676}
+      objectReference: {fileID: 4700471019136354901}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
 --- !u!4 &502979398683219210 stripped

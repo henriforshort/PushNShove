@@ -32,7 +32,9 @@ public class Unit : MonoBehaviour {
     public float critCollisionDate;
     public bool isOnFreezeFrame;
     public bool isInvincible;
-    public bool alwaysOnTop;
+    public bool lockZOrder;
+    public bool lockAnim;
+    public bool lockPosition;
 
     [Header("Self References")]
     public Hero hero;
@@ -40,6 +42,8 @@ public class Unit : MonoBehaviour {
     public Slider tmpHealthBar;
     public Animator animator;
     public Rigidbody rigidbodee;
+    
+    [Header("Scene References (Assigned at runtime)")]
     public List<HpLossUi> hpLossUis;
 
     private static List<Unit> _heroUnits;
@@ -55,11 +59,11 @@ public class Unit : MonoBehaviour {
     public bool isWalking => currentSpeed > 0;
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
-    public enum AttackStatus { FREE, PREPARING, ATTACKING, RECOVERING }
+    public enum AttackStatus { NOT_PREPARED, PREPARING, ATTACKING, RECOVERING }
 
     public enum Anim {
         WALK, WINDUP, HIT, DEFEND, BUMPED,
-        ULT_BRUISER
+        ULT_BRUISER, ULT_STRONGMAN
     }
     public enum Side { HERO = 1, MONSTER = -1 }
     
@@ -99,13 +103,16 @@ public class Unit : MonoBehaviour {
     
     public void UpdateVisuals() {
         animator.enabled = (B.m.gameState != B.State.PAUSE);
-        if (attackStatus != AttackStatus.ATTACKING && this.GetZ().isAbout(-1)) this.SetZ(-0.5f);
+        
         if (tmpHealthBar.value.isClearlyNot(currentHealth)) tmpHealthBar.LerpTo(healthBar.value, 3f);
-        if (alwaysOnTop) this.SetZ(-5);
+        if (lockZOrder) this.SetZ(-5);
+        else if (attackStatus != AttackStatus.ATTACKING && this.GetZ().isAbout(-1)) this.SetZ(-0.5f);
     }
 
-    public virtual void SetAnim(Anim a) {
+    public void SetAnim(Anim a) {
+        if (lockAnim) return;
         if (anim == a) return;
+        
         anim = a;
         PlayAnim();
     }
@@ -152,6 +159,7 @@ public class Unit : MonoBehaviour {
     }
 
     public bool CanUpdateSpeed() {
+        if (lockPosition) return false;
         if (isOnFreezeFrame) return false;
         if (B.m.gameState == B.State.PAUSE) return false;
         
@@ -168,12 +176,13 @@ public class Unit : MonoBehaviour {
     }
 
     public bool CanMove() {
+        if (lockPosition) return false;
         if (isOnFreezeFrame) return false;
         if (B.m.gameState == B.State.PAUSE) return false;
         
         if (B.m.gameState == B.State.PLAYING) return true;
         if (status == Status.FALLING) return true; //During Game Over
-        if (currentSpeed < 0) return true;
+        if (currentSpeed < 0) return true; //During Game Over
         
         return false;
     }
@@ -226,7 +235,7 @@ public class Unit : MonoBehaviour {
     public void UpdateCombat() { //Called by both sides
         if (B.m.gameState != B.State.PLAYING) return;
         if (isWalking 
-                && attackStatus == AttackStatus.FREE 
+                && attackStatus == AttackStatus.NOT_PREPARED 
                 && NearbyEnemy() != null) 
             PrepareAttack();
 
@@ -303,7 +312,7 @@ public class Unit : MonoBehaviour {
 
     public void RecoverFromAttack() {
         attackStatus = AttackStatus.RECOVERING;
-        this.Wait(attackSpeed, () => attackStatus = AttackStatus.FREE);
+        this.Wait(attackSpeed, () => attackStatus = AttackStatus.NOT_PREPARED);
     }
 
     public void GetBumpedBy(Unit other) {

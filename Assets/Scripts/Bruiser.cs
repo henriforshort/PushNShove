@@ -14,13 +14,9 @@ public class Bruiser : Unit {
     public float oldAttackAnimDuration;
     public float oldCrit;
 
-    public override void SetAnim(Anim a) {
-        if (hero.ultStatus != Hero.UltStatus.ACTIVATED) base.SetAnim(a);
-    }
-
     public override void Ult() {;
-        anim = Anim.ULT_BRUISER;
-        PlayAnim();
+        SetAnim(Anim.ULT_BRUISER);
+        lockAnim = true;
 
         oldProt = prot;
         oldDamage = damage;
@@ -40,6 +36,7 @@ public class Bruiser : Unit {
     }
 
     public override void EndUlt() {
+        lockAnim = false;
         SetAnim(Anim.DEFEND);
 
         prot = oldProt;
