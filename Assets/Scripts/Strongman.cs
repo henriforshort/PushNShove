@@ -8,6 +8,7 @@ public class Strongman : Unit {
     [Header("STRONGMAN VARIABLES", order = 2)]
     [Header("Balancing", order = 3)]
     public float strengthIncrease;
+    public float range;
 
     public GameObject strongmanUltFx;
     
@@ -26,10 +27,12 @@ public class Strongman : Unit {
         float oldCrit = critChance;
         critChance = 1;
         
-        target.GetBumpedBy(this);
-        DefendFrom(target);
         B.m.SpawnFX(strongmanUltFx, transform.position + new Vector3(3, 0, -1), 
             false, B.m.transform, 0.5f);
+        if (target != null) {
+            target.GetBumpedBy(this);
+            DefendFrom(target);
+        }
 
         lockPosition = false;
         critChance = oldCrit;
@@ -39,7 +42,8 @@ public class Strongman : Unit {
     public Unit TargetInRange() {
         return enemies
             .Where(e => e.status == Status.ALIVE)
-            .WithLowest(DistanceToMe);
+            .WithLowest(DistanceToMe)
+            .If(e => DistanceToMe(e) < range);
     }
 
     public override void EndUlt() { }

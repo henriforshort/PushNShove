@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6904197423648050531}
   - component: {fileID: 6904197423648050530}
   - component: {fileID: 6904197423648050533}
-  - component: {fileID: 6904197423648050532}
   m_Layer: 0
   m_Name: DeadZone
   m_TagString: Untagged
@@ -96,18 +95,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6904197423648050532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6904197423648050535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f6f89dd48c8e71d2b0d1b1176350e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6904197423918970765
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +271,6 @@ GameObject:
   - component: {fileID: 6904197424047741964}
   - component: {fileID: 6904197424047741967}
   - component: {fileID: 6904197424047741966}
-  - component: {fileID: 6904197424047741969}
   m_Layer: 0
   m_Name: DeadZone (1)
   m_TagString: Untagged
@@ -368,18 +354,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6904197424047741969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6904197424047741968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f6f89dd48c8e71d2b0d1b1176350e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6904197424096867606
 GameObject:
   m_ObjectHideFlags: 0

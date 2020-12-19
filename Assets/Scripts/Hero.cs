@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Hero : MonoBehaviour {
     [Header("Balancing")]
@@ -19,7 +18,6 @@ public class Hero : MonoBehaviour {
 
     public void Start() {
         ultStatus = UltStatus.RELOADING;
-        ultCooldownLeft = ultCooldown;
     }
 
     public void Update() {
@@ -34,10 +32,17 @@ public class Hero : MonoBehaviour {
 
     public void UpdateUlt() {
         if (B.m.gameState != B.State.PLAYING) return;
+        if (unit.status != Unit.Status.ALIVE) return;
         if (ultStatus != UltStatus.RELOADING) return;
         
         ultCooldownLeft -= Time.deltaTime;
         if (ultCooldownLeft < 0) ReadyUlt();
+    }
+
+    public void ReadyUlt() {
+        ultCooldownLeft = 0;
+        ultStatus = UltStatus.AVAILABLE;
+        icon.ReadyUlt();
     }
 
     public bool CanUlt() {
@@ -45,12 +50,6 @@ public class Hero : MonoBehaviour {
         if (ultStatus != UltStatus.AVAILABLE) return false;
 
         return true;
-    }
-
-    public void ReadyUlt() {
-        ultCooldownLeft = 0;
-        ultStatus = UltStatus.AVAILABLE;
-        icon.ReadyUlt();
     }
 
     public void Ult() {

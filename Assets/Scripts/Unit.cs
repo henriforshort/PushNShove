@@ -43,7 +43,7 @@ public class Unit : MonoBehaviour {
     public Animator animator;
     public Rigidbody rigidbodee;
     
-    [Header("Scene References (Assigned at runtime)")]
+    [Header("Self References (Assigned at runtime)")]
     public List<HpLossUi> hpLossUis;
 
     private static List<Unit> _heroUnits;
@@ -60,7 +60,6 @@ public class Unit : MonoBehaviour {
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
     public enum AttackStatus { NOT_PREPARED, PREPARING, ATTACKING, RECOVERING }
-
     public enum Anim {
         WALK, WINDUP, HIT, DEFEND, BUMPED,
         ULT_BRUISER, ULT_STRONGMAN
@@ -73,19 +72,32 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void Start() {
-        status = Status.ALIVE;
-        SetAnim(Anim.WALK);
-        
-        currentSpeed = maxSpeed;
-        
-        if (side != Side.HERO) SetHealth(maxHealth);
-        tmpHealthBar.value = currentHealth;
-        if (side == Side.HERO) healthBar.fillRect.GetComponent<Image>().color = G.m.yellow;
-        if (side == Side.HERO) tmpHealthBar.fillRect.GetComponent<Image>().color = G.m.white;
-        
-        if (side == Side.HERO) heroUnits.Add(this);
-        if (side == Side.MONSTER) monsterUnits.Add(this);
+        Init();
     }
+
+    public void Init() {
+        SetAnim(Anim.WALK);
+        currentSpeed = maxSpeed;
+        tmpHealthBar.value = currentHealth;
+        
+        if (side == Side.HERO) HeroInit();
+        if (side == Side.MONSTER) MonsterInit();
+    }
+
+    public void HeroInit() {
+        heroUnits.Add(this);
+    }
+
+    public void MonsterInit() {
+        monsterUnits.Add(this);
+        status = Status.ALIVE;
+        SetHealth(maxHealth);
+    }
+    
+    
+    // ====================
+    // UPDATE
+    // ====================
 
     public void Update() {
         if (status == Status.DEAD) return;
@@ -127,7 +139,7 @@ public class Unit : MonoBehaviour {
             lastWindupIsTwo = playAnimTwo;
         }
         if (anim == Anim.HIT) playAnimTwo = lastWindupIsTwo;
-        animator.Play(anim + (playAnimTwo ? "2" : ""));
+        if (animator.gameObject.activeInHierarchy) animator.Play(anim + (playAnimTwo ? "2" : ""));
     }
 
     public void FreezeFrame() {
@@ -139,7 +151,7 @@ public class Unit : MonoBehaviour {
         SetAnim(Anim.WALK);
         B.m.SpawnFX(R.m.bumpDustFxPrefab,
             new Vector3(this.GetX() - (int)side, -2, -2),
-            side == Side.MONSTER);
+            side == Side.MONSTER, B.m.transform);
         this.SetZ(0f);
         if (status == Status.DYING) Die();
     }
@@ -223,7 +235,6 @@ public class Unit : MonoBehaviour {
     public void OnTriggerStay(Collider other) {
         if (status != Status.FALLING 
             && B.m.deathZones.Contains(other.gameObject))
-            // && currentSpeed.isAboutOrLowerThan(0)) 
             DeathByFall();
     }
     
@@ -275,8 +286,8 @@ public class Unit : MonoBehaviour {
     }
 
     public void ResolveCombat(Unit unit1, Unit unit2) { //Called by attacking side only
-        // if (R.m.enableCheats && side == Side.MONSTER && Input.GetKey(KeyCode.W)) DeathByHp();
-        // if (R.m.enableCheats && side == Side.HERO && Input.GetKey(KeyCode.L)) DeathByHp();
+        if (R.m.enableCheats && Input.GetKey(KeyCode.W)) (unit1.side == Side.HERO ? unit2 : unit1).DeathByHp();
+        if (R.m.enableCheats && Input.GetKey(KeyCode.L)) (unit1.side == Side.MONSTER ? unit2 : unit1).DeathByHp();
 
         Unit winner = GetAttackWinner(unit1, unit2);
         Unit loser = (winner == unit1 ? unit2 : unit1); 
@@ -304,9 +315,6 @@ public class Unit : MonoBehaviour {
         
         float momentum1 = (unit1.weight * unit1.speedPercent).AtLeast(0);
         float momentum2 = (unit2.weight * unit2.speedPercent).AtLeast(0);
-        // Debug.LogError(unit1.name+" has "+(momentum1*100 / (momentum1 + momentum2)).Round()+"% chance to win\n" + 
-        //               "("+unit1.name+": weight "+unit1.weight+", speed% "+unit1.speedPercent+ 
-        //               ", "+unit2.name+": weight "+unit2.weight+", speed% "+unit2.speedPercent+")");
         return Random.value < momentum1 / (momentum1 + momentum2) ? unit1 : unit2;
     }
 
@@ -343,7 +351,6 @@ public class Unit : MonoBehaviour {
     public bool CanAttack() => isWalking && attackStatus == AttackStatus.PREPARING;
 
     public virtual void Ult() { }
-
     public virtual void EndUlt() { }
 
 
@@ -420,24 +427,23 @@ public class Unit : MonoBehaviour {
 
     public void Die() {
         status = Status.DEAD;
+        allies.Remove(this);
         if (size >= 2 || side == Side.HERO) B.m.cameraManager.Shake(0.2f);
-        // B.m.audioSource.PlayOneShot(R.m.deathSounds.Random());
         Instantiate(R.m.deathCloudFxPrefab, transform.position + 0.5f*Vector3.up, Quaternion.identity);
         if (side == Side.HERO) {
             animator.gameObject.SetActive(false);
             OnDestroy();
+            hero.icon.Die();
         } else Destroy(gameObject);
     }
 
     public void OnDestroy() {
         if (B.m == null || B.m.gameState != B.State.PLAYING) return;
         
-        allies.Remove(this);
         if (allies.Count == 0) {
             if (side == Side.HERO) B.m.Defeat();
             else if (side == Side.MONSTER) B.m.Victory();
         }
-        
         hpLossUis.ForEach(ui => ui.transform.SetParent(R.m.transform));
     }
 }

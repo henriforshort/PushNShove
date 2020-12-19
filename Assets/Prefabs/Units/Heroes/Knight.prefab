@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 2
+  ultCooldown: 40
   ultDuration: 5
-  ultCooldownLeft: 0
+  ultCooldownLeft: 2
   ultStatus: 0
   unit: {fileID: -8380110151794944169}
   image: {fileID: 21300000, guid: 0ef2f9755ffd62d40a534b56122d91ae, type: 3}
@@ -102,6 +102,7 @@ MonoBehaviour:
   isInvincible: 0
   lockZOrder: 0
   lockAnim: 0
+  lockPosition: 0
   hero: {fileID: 5839365868507422637}
   healthBar: {fileID: 7398883394539054116}
   tmpHealthBar: {fileID: 4407138794253257779}
@@ -436,6 +437,30 @@ PrefabInstance:
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959734902293682391, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959734902293682391, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959734902293682391, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.79215693
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075689924130556044, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075689924130556044, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075689924130556044, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 6262325635221722628, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalScale.x

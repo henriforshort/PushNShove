@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HeroIcon : MonoBehaviour {
     [Header("State")]
-    public UltAnim ultAnim;
+    public IconAnim iconAnim;
     
     [Header("Self References")]
     public Image icon;
@@ -12,11 +12,28 @@ public class HeroIcon : MonoBehaviour {
     public Slider tmpHealthBar;
     public Image ultCooldown;
     public Animator backgroundAnimator;
+    public Image deadOverlay;
 
     [Header("Scene References (Assigned at runtime)")]
     public Hero hero;
 
-    public enum UltAnim { LOADING, SHINE, USED }
+    public enum IconAnim { LOADING, SHINE, USED, DEAD }
+    
+    
+    // ====================
+    // BASICS
+    // ====================
+    
+    public void Update() {
+        UpdateUltTimer();
+    }
+    
+    public void PlayIconAnim(IconAnim ia) {
+        if (iconAnim == ia) return;
+        
+        iconAnim = ia;
+        backgroundAnimator.Play(iconAnim.ToString());
+    }
     
     
     // ====================
@@ -35,12 +52,19 @@ public class HeroIcon : MonoBehaviour {
     
     
     // ====================
-    // ULT
+    // DEATH
     // ====================
 
-    public void Update() {
-        UpdateUltTimer();
+    public void Die() {
+        deadOverlay.gameObject.SetActive(true);
+        PlayIconAnim(IconAnim.DEAD);
+        ultCooldown.gameObject.SetActive(false);
     }
+    
+    
+    // ====================
+    // ULT
+    // ====================
 
     public void UpdateUltTimer() {
         if (hero == null) return;
@@ -51,16 +75,9 @@ public class HeroIcon : MonoBehaviour {
         if (!hero.CanUlt()) return;
 
         hero.Ult();
-        PlayUltAnim(UltAnim.USED);
-    }
-    
-    public void PlayUltAnim(UltAnim ba) {
-        if (ultAnim == ba) return;
-        
-        ultAnim = ba;
-        backgroundAnimator.Play(ultAnim.ToString());
+        PlayIconAnim(IconAnim.USED);
     }
 
-    public void StartUltReload() => PlayUltAnim(UltAnim.LOADING);
-    public void ReadyUlt() => PlayUltAnim(UltAnim.SHINE);
+    public void StartUltReload() => PlayIconAnim(IconAnim.LOADING);
+    public void ReadyUlt() => PlayIconAnim(IconAnim.SHINE);
 }

@@ -25,13 +25,11 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public List<GameObject> deathZones;
     public List<HeroIcon> heroIcons;
     public CameraManager cameraManager;
-    public XPManager xpManager;
     public GameObject gameOverPanel;
     public TMP_Text gameOverText;
     public AudioSource audioSource;
     public Image gameOverPanelWhiteButton;
     public Transform unitsHolder;
-    public TMP_Text battle;
     public GameObject fightPrompt;
     public UITransition transition;
 	
@@ -76,7 +74,6 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         //Init scene
         fightPrompt.SetActive(true);
         transition.FadeOut();
-        battle.text = R.m.save.battle.ToString();
     }
 
     public void Update() {
@@ -113,7 +110,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void GameOver() {
-        heroes.ForEach(h => h.unit.EndUlt());
+        Unit.heroUnits.ForEach(h => h.EndUlt());
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
@@ -125,9 +122,14 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         if (Input.GetKeyDown(KeyCode.Space)) Restart();
         if (timeSinceGameOver > R.m.timeToAutoRestart) Restart();
 
-        gameOverPanelWhiteButton.fillAmount = timeSinceGameOver
+        if (gameOverPanelWhiteButton.fillAmount < 1) gameOverPanelWhiteButton.fillAmount = timeSinceGameOver
             .Prel(0, R.m.timeToAutoRestart)
             .Clamp01();
+    }
+
+    public void PressRestartButton() {
+        gameOverPanelWhiteButton.fillAmount = 1;
+        this.Wait(0.1f, Restart);
     }
 
     public void Restart() {
