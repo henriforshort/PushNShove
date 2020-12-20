@@ -86,7 +86,7 @@ MonoBehaviour:
   weight: 2
   damage: 10
   strength: 1
-  critChance: 0.1
+  critChance: 0.2
   shakeOnHit: 0
   attackAnimDuration: 0.25
   size: 1
@@ -103,6 +103,7 @@ MonoBehaviour:
   lockZOrder: 0
   lockAnim: 0
   lockPosition: 0
+  index: 0
   hero: {fileID: 5839365868507422637}
   healthBar: {fileID: 7398883394539054116}
   tmpHealthBar: {fileID: 4407138794253257779}

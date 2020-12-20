@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using UnityEngine;
 
 [Serializable]
 public class HeroState {
@@ -7,11 +9,9 @@ public class HeroState {
     public int index;
     public float maxHealth;
     public float currentHealth;
-    public float damage;
-    public float weight;
     public float ultCooldownLeft;
     
-    public Hero instance => B.m.heroes[index];
+    public Hero instance => Unit.heroUnits.Get(index)?.hero;
 
     public HeroState (int index, Hero prefab) {
         this.prefab = prefab;
@@ -24,31 +24,31 @@ public class HeroState {
         isAlive = true;
         currentHealth = prefab.unit.maxHealth;
         maxHealth = prefab.unit.maxHealth;
-        damage = prefab.unit.damage;
-        weight = prefab.unit.weight;
         ultCooldownLeft = prefab.ultCooldown;
     }
 
     public void Save() { //Called at the end of each battle
-        isAlive = (instance.unit.status != Unit.Status.DEAD);
+        isAlive = instance != null && instance.unit.status != Unit.Status.DEAD;
+        if (!isAlive) return;
+        
+        isAlive = true;
         currentHealth = instance.unit.currentHealth;
         maxHealth = instance.unit.maxHealth;
-        weight = instance.unit.weight;
-        damage = instance.unit.damage;
         ultCooldownLeft = instance.ultCooldownLeft;
     }
 
     public void Load() { //Called at the beginning of each battle
-        if (!isAlive) instance.unit.Die();
+        if (!isAlive) {
+            instance.unit.Die();
+            return;
+        }
         instance.unit.maxHealth = maxHealth;
         instance.unit.SetHealth(currentHealth);
-        instance.unit.weight = weight;
-        instance.unit.damage = damage;
         instance.ultCooldownLeft = ultCooldownLeft;
     }
 
     public override string ToString() {
-        return "index: " + index + ", currentHealth: " + currentHealth + ", damage: " + damage 
-               + ", weight: " + weight + ", maxHealth: " + maxHealth;
+        return "index: " + index + ", currentHealth: " + currentHealth + ", maxHealth: " + maxHealth 
+               + ", ultCoolDownLeft: " + ultCooldownLeft;
     }
 }

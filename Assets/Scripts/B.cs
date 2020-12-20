@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class B : MonoBehaviour { //Battle manager, handles a single battle.
@@ -16,10 +12,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     
     [Header("State")]
     public float timeSinceGameOver;
+    public bool restarting;
     public State gameState;
-
-    [Header("Scene References (Assigned at runtime)")]
-    public List<Hero> heroes;
 
     [Header("Scene References")]
     public List<GameObject> deathZones;
@@ -27,7 +21,6 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public CameraManager cameraManager;
     public GameObject gameOverPanel;
     public TMP_Text gameOverText;
-    public AudioSource audioSource;
     public Image gameOverPanelWhiteButton;
     public Transform unitsHolder;
     public GameObject fightPrompt;
@@ -56,8 +49,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
                 new Vector3(this.Random(-R.m.spawnPosXRange.x, -R.m.spawnPosXRange.y), -2, 0),
                 Quaternion.identity,
                 unitsHolder);
-            heroes.Add(hero);
             hero.InitIcon(heroIcons[i]);
+            hero.unit.Init();
         }
         R.m.save.LoadHeroes();
         
@@ -65,8 +58,10 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         this.Repeat(() => {
             Transform clusterInstance = Instantiate(enemyClusters.Random());
             while (clusterInstance.childCount > 0) {
-                clusterInstance.GetChild(0).SetX(Random.Range(R.m.spawnPosXRange.x, R.m.spawnPosXRange.y));
-                clusterInstance.GetChild(0).SetParent(unitsHolder);
+                Transform monster = clusterInstance.GetChild(0);
+                monster.SetX(Random.Range(R.m.spawnPosXRange.x, R.m.spawnPosXRange.y));
+                monster.SetParent(unitsHolder);
+                monster.GetComponent<Unit>().Init();
             }
             Destroy(clusterInstance.gameObject);
         }, numberOfEnemies);
@@ -77,9 +72,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void Update() {
-        if (gameState == State.GAME_OVER) {
-            AwaitRestart();
-        }
+        if (gameState == State.GAME_OVER && !restarting) AwaitRestart();
     }
 
     public GameObject SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, 
@@ -104,7 +97,6 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         if (gameState == State.GAME_OVER) return;
 
         gameOverText.text = "Victory";
-        // xpManager.GainExperience(R.m.xpGainPerLevel / 100);
         R.m.save.battle++;
         GameOver();
     }
@@ -119,7 +111,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public void AwaitRestart() {
         timeSinceGameOver += Time.deltaTime;
         
-        if (Input.GetKeyDown(KeyCode.Space)) Restart();
+        if (Input.GetKeyDown(KeyCode.Space)) PressRestartButton();
         if (timeSinceGameOver > R.m.timeToAutoRestart) Restart();
 
         if (gameOverPanelWhiteButton.fillAmount < 1) gameOverPanelWhiteButton.fillAmount = timeSinceGameOver
@@ -129,17 +121,15 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
 
     public void PressRestartButton() {
         gameOverPanelWhiteButton.fillAmount = 1;
-        this.Wait(0.1f, Restart);
+        this.Wait(0.1f, then:Restart);
     }
 
     public void Restart() {
+        restarting = true;
         transition.FadeIn();
         R.m.save.SaveHeroes();
         Unit.heroUnits.Clear();
         Unit.monsterUnits.Clear();
-
-        this.Wait(0.2f, () => {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        });
+        G.m.LoadScene(G.SceneName.Battle);
     }
 }

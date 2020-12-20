@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -33,8 +34,13 @@ public class G : MonoBehaviour {
         DontDestroyOnLoad(this);
     }
 
-    public static void StartGame() {
-        m.background.SetActive(true);
-        m.Wait(0.2f, () => SceneManager.LoadScene(SceneName.Battle.ToString()));
+    public void StartGame() {
+        background.SetActive(true);
+        LoadScene(SceneName.Battle);
+    }
+
+    public void LoadScene(SceneName sceneName) {
+        m.Wait(0.4f, () => SceneManager.LoadScene(sceneName.ToString()));
+        
     }
 }

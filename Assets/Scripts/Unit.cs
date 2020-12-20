@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -35,6 +33,7 @@ public class Unit : MonoBehaviour {
     public bool lockZOrder;
     public bool lockAnim;
     public bool lockPosition;
+    public int index;
 
     [Header("Self References")]
     public Hero hero;
@@ -71,27 +70,26 @@ public class Unit : MonoBehaviour {
     // INIT
     // ====================
 
-    public void Start() {
-        Init();
-    }
-
     public void Init() {
         SetAnim(Anim.WALK);
         currentSpeed = maxSpeed;
         tmpHealthBar.value = currentHealth;
         
-        if (side == Side.HERO) HeroInit();
         if (side == Side.MONSTER) MonsterInit();
-    }
-
-    public void HeroInit() {
-        heroUnits.Add(this);
+        if (side == Side.HERO) HeroInit();
     }
 
     public void MonsterInit() {
-        monsterUnits.Add(this);
+        if (gameObject.activeInHierarchy) monsterUnits.Add(this);
         status = Status.ALIVE;
         SetHealth(maxHealth);
+    }
+
+    public void HeroInit() {
+        if (gameObject.activeInHierarchy) {
+            index = heroUnits.Count;
+            heroUnits.Add(this);
+        }
     }
     
     
@@ -153,7 +151,7 @@ public class Unit : MonoBehaviour {
             new Vector3(this.GetX() - (int)side, -2, -2),
             side == Side.MONSTER, B.m.transform);
         this.SetZ(0f);
-        if (status == Status.DYING) Die();
+        if (status == Status.DYING) DieDuringBattle();
     }
 
     
@@ -341,7 +339,10 @@ public class Unit : MonoBehaviour {
 
     public Unit NearbyEnemy() => enemies
         .WithLowest(DistanceToMe)
-        .If(e => DistanceToMe(e) < G.m.attackDistance && e.status == Status.ALIVE);
+        .If(e => 
+            e != null && 
+            DistanceToMe(e) < G.m.attackDistance && 
+            e.status == Status.ALIVE);
     
     public Unit CollidingEnemy() => enemies
         .WithLowest(DistanceToMe)
@@ -417,33 +418,44 @@ public class Unit : MonoBehaviour {
         Deactivate();
         status = Status.FALLING;
         rigidbodee.useGravity = true;
-        this.Wait(0.5f, Die);
+        this.Wait(0.5f, DieDuringBattle);
     }
 
     public void Deactivate() {
         SetAnim(Anim.BUMPED);
-        
+    }
+
+    public void DieDuringBattle() {
+        if (size >= 2 || side == Side.HERO) B.m.cameraManager.Shake(0.2f);
+        Instantiate(R.m.deathCloudFxPrefab, transform.position + 0.5f*Vector3.up, Quaternion.identity);
+        Die();
     }
 
     public void Die() {
         status = Status.DEAD;
         allies.Remove(this);
-        if (size >= 2 || side == Side.HERO) B.m.cameraManager.Shake(0.2f);
-        Instantiate(R.m.deathCloudFxPrefab, transform.position + 0.5f*Vector3.up, Quaternion.identity);
-        if (side == Side.HERO) {
-            animator.gameObject.SetActive(false);
-            OnDestroy();
-            hero.icon.Die();
-        } else Destroy(gameObject);
+        if (side == Side.HERO) HeroDeath();
+        else Destroy(gameObject);
+    }
+
+    public void HeroDeath() {
+        animator.gameObject.SetActive(false);
+        OnDestroy();
+        hero.icon.Die();
     }
 
     public void OnDestroy() {
         if (B.m == null || B.m.gameState != B.State.PLAYING) return;
-        
-        if (allies.Count == 0) {
-            if (side == Side.HERO) B.m.Defeat();
-            else if (side == Side.MONSTER) B.m.Victory();
-        }
         hpLossUis.ForEach(ui => ui.transform.SetParent(R.m.transform));
+        allies.Remove(this);
+
+        if (side == Side.HERO) {
+            if (allies.Count == 0) B.m.Defeat();
+            R.m.save.heroes[index].Save();
+        }
+
+        if (side == Side.MONSTER) {
+            if (allies.Count == 0) B.m.Victory();
+        }
     }
 }

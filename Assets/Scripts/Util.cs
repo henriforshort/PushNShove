@@ -57,8 +57,17 @@ public static class Util {
     public static T WithHighest<T, TKey>(this IEnumerable<T> target, Func<T, TKey> keySelector) =>
         target.OrderBy(keySelector).LastOrDefault();
     
-    public static List<T> AsList<T>(this T item) {
-        return new List<T> { item };
+    public static List<T> AsList<T>(this T item) => new List<T> { item };
+
+    public static T Get<T>(this List<T> target, int index) {
+        try { return target[index]; } 
+        catch (Exception) { return default; }
+    }
+
+    public static List<T> Clone<T>(this List<T> target) {
+        List<T> result = new List<T>();
+        target.ForEach(t => result.Add(t));
+        return result;
     }
 
     
@@ -493,6 +502,7 @@ public static class Util {
     private static IEnumerator _WaitOneFrame(Action then) {
         yield return new WaitForEndOfFrame();
         then();
+        yield return null;
     }
 
     public static Coroutine When(this MonoBehaviour obj, Func<bool> condition, Action then) =>
@@ -500,6 +510,7 @@ public static class Util {
     private static IEnumerator _When(Func<bool> condition, Action then) {
         while (!condition()) yield return new WaitForEndOfFrame();
         then();
+        yield return null;
     }
         
     public static Coroutine While(this MonoBehaviour obj, Func<bool> condition, Action then, float delay = -1, 

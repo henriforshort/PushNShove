@@ -154,7 +154,7 @@ MonoBehaviour:
   maxSpeed: 2.5
   maxHealth: 200
   prot: 0.65
-  weight: 10
+  weight: 5
   damage: 5
   strength: 1.25
   critChance: 0.2
@@ -167,10 +167,14 @@ MonoBehaviour:
   attackStatus: 0
   anim: 0
   currentHealth: 0
-  lastWindupIsOne: 0
+  lastWindupIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
   isInvincible: 0
+  lockZOrder: 0
+  lockAnim: 0
+  lockPosition: 0
+  index: 0
   hero: {fileID: 0}
   healthBar: {fileID: 2202191930307489267}
   tmpHealthBar: {fileID: 4974386014944740836}

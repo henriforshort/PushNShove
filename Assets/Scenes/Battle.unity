@@ -414,8 +414,8 @@ MonoBehaviour:
   - {fileID: 5452640271022862066, guid: 084954b836ec31646af7c43e05c10bbb, type: 3}
   numberOfEnemies: 1
   timeSinceGameOver: 0
+  restarting: 0
   gameState: 0
-  heroes: []
   deathZones:
   - {fileID: 1250013049}
   - {fileID: 1656520206}
@@ -426,7 +426,6 @@ MonoBehaviour:
   cameraManager: {fileID: 1779532643}
   gameOverPanel: {fileID: 1335224971}
   gameOverText: {fileID: 1537178392}
-  audioSource: {fileID: 1226202754}
   gameOverPanelWhiteButton: {fileID: 57677652}
   unitsHolder: {fileID: 605282007}
   fightPrompt: {fileID: 28056942}
@@ -499,6 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -945,15 +945,13 @@ MonoBehaviour:
   bumpSpeed: -20
   defendSpeed: -10
   timeToAutoRestart: 2
-  xpGainPerLevel: 47
   spawnPosXRange: {x: 1, y: 7}
   needRunInit: 1
   save:
-    experience: 0
-    level: 0
     battle: 0
-    skillPoints: 0
     heroes: []
+  amountOfHeroes: 2
+  usedHeroes: []
   heroPrefabs:
   - {fileID: 1125540990976075291, guid: 28fe68f2b07b05a429625dea2bd27067, type: 3}
   - {fileID: 5839365868507422637, guid: ef8e44773ad2a9a4b9a75ba4fa668ed9, type: 3}
@@ -962,15 +960,6 @@ MonoBehaviour:
   bumpDustFxPrefab: {fileID: 8783008603150916102, guid: 09246576b00787943bdfcbbc914d0aaa, type: 3}
   deathCloudFxPrefab: {fileID: 2169665080544586211, guid: 9d9abc41ff6ba8446a024b2edd9dcd08, type: 3}
   sparkFxPrefab: {fileID: 2169665080544586211, guid: 11a43bd9a4377574fb4265aa8276a349, type: 3}
-  damageSounds:
-  - {fileID: 8300000, guid: fd2e953d824bb5c44afd2f8213b66f1d, type: 3}
-  - {fileID: 8300000, guid: 0bad3bca43f5aaf4db4eaa9f701c89e5, type: 3}
-  - {fileID: 8300000, guid: 9bb733b5214cb53448e9b0104be23d00, type: 3}
-  - {fileID: 8300000, guid: 0dc2a8b1519b277409eea1e8b3b8e177, type: 3}
-  - {fileID: 8300000, guid: 5c9c509b57c02234dafde5e9bcf59632, type: 3}
-  - {fileID: 8300000, guid: 45c618af434e33545b402e1ec52f5b9a, type: 3}
-  deathSounds:
-  - {fileID: 8300000, guid: a49647491479e4d4380baa1c0d48ce46, type: 3}
 --- !u!4 &695594707
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,6 +1349,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1207772342
 Canvas:
   m_ObjectHideFlags: 0
@@ -1567,7 +1557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1259911777
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1627,6 +1617,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1259911780
 Canvas:
   m_ObjectHideFlags: 0
@@ -2243,11 +2234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1865648381491382892, guid: 79af0055012bea94abcaa8ce4f7357cb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1865648381491382892, guid: 79af0055012bea94abcaa8ce4f7357cb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2643312749051240337, guid: 79af0055012bea94abcaa8ce4f7357cb, type: 3}
       propertyPath: m_Name
@@ -2255,11 +2246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293269245258361450, guid: 79af0055012bea94abcaa8ce4f7357cb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3293269245258361450, guid: 79af0055012bea94abcaa8ce4f7357cb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4168213492102314886, guid: 79af0055012bea94abcaa8ce4f7357cb, type: 3}
       propertyPath: m_Pivot.x
@@ -2429,6 +2420,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1864068790
 Canvas:
   m_ObjectHideFlags: 0
@@ -2509,6 +2501,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1991115989
 Canvas:
   m_ObjectHideFlags: 0

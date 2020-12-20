@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class R : MonoBehaviour { //Run manager, handles a single run.
                                  //Should contain the global balancing and the prefabs.
@@ -18,12 +17,13 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 	public float defendSpeed;
 	[Space(20)]
 	public float timeToAutoRestart;
-	public float xpGainPerLevel;
 	public Vector2 spawnPosXRange;
 	
 	[Header("State")]
 	public bool needRunInit;
 	public GameSave save;
+	public int amountOfHeroes;
+	public List<Hero> usedHeroes;
 
 	[Header("Prefabs")]
 	public List<Hero> heroPrefabs;
@@ -31,12 +31,9 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 	public GameObject bumpDustFxPrefab;
 	public GameObject deathCloudFxPrefab;
 	public GameObject sparkFxPrefab;
-	public List<AudioClip> damageSounds;
-	public List<AudioClip> deathSounds;
 
 	public static R m;
-
-
+	
 	public void Start() {
 		if (m == null) m = this;
 		if (m != this) {
@@ -44,13 +41,16 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 			return;
 		}
 		DontDestroyOnLoad(this);
-		
 		needRunInit = true;
 	}
 
 	public void InitRun() { //Called at the start of each run, after init the first battle
 		needRunInit = false;
-		
+
+		usedHeroes = heroPrefabs.Clone();
+		while (usedHeroes.Count > amountOfHeroes) {
+			usedHeroes.RemoveAt(this.Random(usedHeroes.Count));
+		}
 		save.InitRun();
 	}
 }
