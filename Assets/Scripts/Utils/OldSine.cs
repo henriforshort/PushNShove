@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class Sine : MonoBehaviour {
+public class OldSine : MonoBehaviour {
     [Header("Balancing")]
     public Style style;
     public float period;

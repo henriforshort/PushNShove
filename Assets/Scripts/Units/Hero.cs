@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Hero : MonoBehaviour {
     [Header("Balancing")]
@@ -8,8 +9,11 @@ public class Hero : MonoBehaviour {
     [Header("State")]
     public float ultCooldownLeft;
     public UltStatus ultStatus;
+
+    [Header("Scene References (assigned at runtime)")]
+    public List<Item> items;
     
-    [Header("References")]
+    [Header("Self References")]
     public Unit unit;
     public Sprite image;
     public HeroIcon icon;

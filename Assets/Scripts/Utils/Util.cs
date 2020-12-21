@@ -578,4 +578,9 @@ public static class Util {
     // --------------------
 
     public static T If<T>(this T target, Func<T, bool> condition) => condition(target) ? target : default;
+    
+    public static float ReverseIf(this float target, bool condition) => target * (condition ? -1 : 1);
+    public static float ReverseIf(this int target, bool condition) => target * (condition ? -1 : 1);
+    
+    public static float ToInt(this bool target) => target ? 1 : 0;
 }

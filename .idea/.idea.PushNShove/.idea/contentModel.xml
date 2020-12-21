@@ -15,27 +15,37 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="B.cs" t="Include" />
-          <e p="Bruiser.cs" t="Include" />
-          <e p="CameraManager.cs" t="Include" />
-          <e p="Cloud.cs" t="Include" />
-          <e p="FightPrompt.cs" t="Include" />
-          <e p="G.cs" t="Include" />
-          <e p="GameSave.cs" t="Include" />
-          <e p="Hero.cs" t="Include" />
-          <e p="HeroIcon.cs" t="Include" />
-          <e p="HeroState.cs" t="Include" />
-          <e p="HpLossUi.cs" t="Include" />
-          <e p="Knight.cs" t="Include" />
-          <e p="R.cs" t="Include" />
-          <e p="Sine.cs" t="Include" />
-          <e p="Strongman.cs" t="Include" />
-          <e p="Tween.cs" t="Include" />
-          <e p="UITransition.cs" t="Include" />
-          <e p="Unit.cs" t="Include" />
-          <e p="UnitMaxRange.cs" t="Include" />
-          <e p="Util.cs" t="Include" />
-          <e p="VersionText.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="B.cs" t="Include" />
+            <e p="CameraManager.cs" t="Include" />
+            <e p="G.cs" t="Include" />
+            <e p="GameSave.cs" t="Include" />
+            <e p="HeroState.cs" t="Include" />
+            <e p="R.cs" t="Include" />
+          </e>
+          <e p="SimpleBehaviors" t="Include">
+            <e p="Cloud.cs" t="Include" />
+            <e p="FightPrompt.cs" t="Include" />
+            <e p="UITransition.cs" t="Include" />
+            <e p="VersionText.cs" t="Include" />
+          </e>
+          <e p="Units" t="Include">
+            <e p="Bruiser.cs" t="Include" />
+            <e p="Hero.cs" t="Include" />
+            <e p="HeroIcon.cs" t="Include" />
+            <e p="HpLossUi.cs" t="Include" />
+            <e p="Knight.cs" t="Include" />
+            <e p="Strongman.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+            <e p="UnitMaxRange.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="OldSine.cs" t="Include" />
+            <e p="OldTween.cs" t="Include" />
+            <e p="Tween.cs" t="Include" />
+            <e p="Util.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

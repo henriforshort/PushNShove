@@ -423,6 +423,7 @@ public class Unit : MonoBehaviour {
 
     public void Deactivate() {
         SetAnim(Anim.BUMPED);
+        if (side == Side.HERO) hero.icon.Die();
     }
 
     public void DieDuringBattle() {
@@ -441,7 +442,6 @@ public class Unit : MonoBehaviour {
     public void HeroDeath() {
         animator.gameObject.SetActive(false);
         OnDestroy();
-        hero.icon.Die();
     }
 
     public void OnDestroy() {

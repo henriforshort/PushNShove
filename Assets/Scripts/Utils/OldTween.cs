@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Tween : MonoBehaviour {
+public class OldTween : MonoBehaviour {
     [Header("Balancing")]
     public Style style;
     public Vector3 targetPosition;
