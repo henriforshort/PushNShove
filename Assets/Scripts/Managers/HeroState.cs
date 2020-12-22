@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class HeroState {
     public float maxHealth;
     public float currentHealth;
     public float ultCooldownLeft;
+    public List<Item> itemPrefabs;
     
     public Hero instance => Unit.heroUnits.Get(index)?.hero;
 
@@ -25,9 +27,12 @@ public class HeroState {
         currentHealth = prefab.unit.maxHealth;
         maxHealth = prefab.unit.maxHealth;
         ultCooldownLeft = prefab.ultCooldown;
+        itemPrefabs = new List<Item>();
     }
 
     public void Save() { //Called at the end of each battle
+        itemPrefabs = instance.items.Select(i => i.prefab).ToList();
+        
         isAlive = instance != null && instance.unit.status != Unit.Status.DEAD;
         if (!isAlive) return;
         
@@ -38,6 +43,8 @@ public class HeroState {
     }
 
     public void Load() { //Called at the beginning of each battle
+        itemPrefabs.ForEach(i => instance.GetItem(i, false));
+        
         if (!isAlive) {
             instance.unit.Die();
             return;

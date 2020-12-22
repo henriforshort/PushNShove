@@ -5,5 +5,12 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour {
     public Hero hero;
-    public Image image;
+    public Rarity rarity;
+    public Item prefab;
+    
+    public enum Rarity { COMMON, RARE, LEGGY }
+
+    public void ApplyEffect() {
+        Debug.Log("apply effect of " + name);
+    }
 }

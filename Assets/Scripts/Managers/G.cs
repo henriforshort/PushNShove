@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -7,6 +8,17 @@ public class G : MonoBehaviour {
     [Header("Balancing")]
     public float attackDistance;
     public float collideDistance;
+    public float commonDropChance;
+    public float rareDropChance;
+    public float leggyDropChance;
+
+    [Header("State")]
+    public List<Item> commonItems;
+    public List<Item> rareItems;
+    public List<Item> leggyItems;
+
+    [Header("Prefabs")]
+    public List<Item> items;
     
     [Header("Scene References")]
     public GameObject background;
@@ -32,6 +44,10 @@ public class G : MonoBehaviour {
             return;
         }
         DontDestroyOnLoad(this);
+
+        commonItems = items.Where(i => i.rarity == Item.Rarity.COMMON).ToList();
+        rareItems = items.Where(i => i.rarity == Item.Rarity.RARE).ToList();
+        leggyItems = items.Where(i => i.rarity == Item.Rarity.LEGGY).ToList();
     }
 
     public void StartGame() {
@@ -41,6 +57,27 @@ public class G : MonoBehaviour {
 
     public void LoadScene(SceneName sceneName) {
         m.Wait(0.4f, () => SceneManager.LoadScene(sceneName.ToString()));
-        
+    }
+
+    public bool itemsDepleted => commonItems.Count == 0 && rareItems.Count == 0 && leggyItems.Count == 0;
+
+    public Item GetRandomItem() {
+        Item.Rarity rarity = this.WeightedRandom(
+            Item.Rarity.COMMON, (commonItems.Count == 0) ? 0 : commonDropChance, 
+            Item.Rarity.RARE, (rareItems.Count == 0) ? 0 : rareDropChance,
+            Item.Rarity.LEGGY, (leggyItems.Count == 0) ? 0 : leggyDropChance);
+
+        Item pickedItem;
+        if (rarity == Item.Rarity.COMMON) {
+            pickedItem = commonItems.Random();
+            commonItems.Remove(pickedItem);
+        } else if (rarity == Item.Rarity.RARE) {
+            pickedItem = rareItems.Random();
+            rareItems.Remove(pickedItem);
+        } else  {
+            pickedItem = leggyItems.Random();
+            leggyItems.Remove(pickedItem);
+        }
+        return pickedItem;
     }
 }

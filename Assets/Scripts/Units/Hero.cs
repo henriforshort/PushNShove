@@ -70,4 +70,10 @@ public class Hero : MonoBehaviour {
         icon.StartUltReload();
         unit.lockZOrder = false;
     }
+
+    public void GetItem(Item itemPrefab, bool applyEffect) {
+        Item itemInstance = icon.GainItemFromFight(itemPrefab);
+        items.Add(itemInstance);
+        if (applyEffect) itemInstance.ApplyEffect();
+    }
 }

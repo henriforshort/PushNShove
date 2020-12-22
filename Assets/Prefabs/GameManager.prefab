@@ -45,6 +45,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDistance: 3
   collideDistance: 2
+  commonDropChance: 4
+  rareDropChance: 2
+  leggyDropChance: 1
+  totalDropChance: 0
+  commonItems: []
+  rareItems: []
+  leggyItems: []
+  items:
+  - {fileID: 3321443299101329539, guid: 998dafd3b118ac0469b24d5747368cd1, type: 3}
+  - {fileID: 7410053156325812281, guid: ef6a788c2aeb1ff41b94a5f4bdd6e2a9, type: 3}
+  - {fileID: 7102741274629417624, guid: 0c843314b65f11646849c7d40cd88e51, type: 3}
+  - {fileID: 1381736783535941630, guid: 16f7b0ac5a3c2c449997534df379dafb, type: 3}
+  - {fileID: 8181644753000356535, guid: df957815bb9950143bb5648e94a5fb15, type: 3}
+  - {fileID: 2125169180880466266, guid: 5617e4e504b11014b9a97d2eae388a42, type: 3}
+  - {fileID: 2115722894053080354, guid: 1b1bab740052ad04fa98e22137adb3d3, type: 3}
+  - {fileID: 2534875866003958429, guid: 7d0a50036bdd06d42a0a10c2b1c37c4b, type: 3}
+  - {fileID: 6896337625780982063, guid: 5b7b97d6253cac84780fdaf5a4c59163, type: 3}
+  - {fileID: 9100206727555660126, guid: 0fbc96de09b1e0247b2fed3859d1b7d4, type: 3}
+  - {fileID: 6520123957042954038, guid: e257d13e9f14d5c45b28216a3fa6e71f, type: 3}
+  - {fileID: 4944882007245194473, guid: 992313a85d654714199096f237ca34b8, type: 3}
+  - {fileID: 4757785148268657691, guid: 0ce9e78824ee71a4c9f00fd67eb8befc, type: 3}
+  - {fileID: 6296110485828225360, guid: e06a54229fb179048991eff3d688631e, type: 3}
   background: {fileID: 0}
   white: {r: 0.7411765, g: 0.7490196, b: 0.5921569, a: 1}
   yellow: {r: 0.79215693, g: 0.627451, b: 0.3529412, a: 1}

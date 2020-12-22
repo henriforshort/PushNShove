@@ -18,11 +18,11 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 	[Space(20)]
 	public float timeToAutoRestart;
 	public Vector2 spawnPosXRange;
+	public int amountOfHeroes;
 	
 	[Header("State")]
 	public bool needRunInit;
 	public GameSave save;
-	public int amountOfHeroes;
 	public List<Hero> usedHeroes;
 
 	[Header("Prefabs")]

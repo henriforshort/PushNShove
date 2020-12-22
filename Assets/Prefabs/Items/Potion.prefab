@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9100206727555660127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4254523308521918364}
+  - component: {fileID: 4524768815966528063}
+  - component: {fileID: 7177376018357661645}
+  - component: {fileID: 9100206727555660126}
+  - component: {fileID: 9100206727555660125}
+  m_Layer: 5
+  m_Name: Potion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4254523308521918364
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100206727555660127}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4524768815966528063
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100206727555660127}
+  m_CullTransparentMesh: 0
+--- !u!114 &7177376018357661645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100206727555660127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d6df5b0849bc33848ac950292031c1d2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9100206727555660126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100206727555660127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf0fd9dc78e40f42b3d9764f648fcbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 0}
+  rarity: 2
+  prefab: {fileID: 0}
+--- !u!114 &9100206727555660125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100206727555660127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlay: 1
+  isUI: 1
+  anims:
+  - name: 
+    frameDuration: 50
+    sprites:
+    - {fileID: -5087832769711658109, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: 5319707544115273250, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: -4001804442468399036, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: -1162812709308472008, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: -4173218851564248782, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: 7739967608456437669, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: 8671706650680427043, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: 6971967926152909722, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: -7686804427142951891, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    - {fileID: 7375928416158484732, guid: 7fe05e0ce5c9113449f775d5e8604c9a, type: 3}
+    loop: 1
+    delay: 0
+    randomStart: 1
+  playing: 0
+  currentAnim:
+    name: 
+    frameDuration: 0
+    sprites: []
+    loop: 0
+    delay: 0
+    randomStart: 0
+  currentFrame: 0
+  startAnimDate: 0
+  spriteRenderer: {fileID: 0}
+  image: {fileID: 7177376018357661645}

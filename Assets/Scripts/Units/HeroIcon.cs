@@ -13,6 +13,7 @@ public class HeroIcon : MonoBehaviour {
     public Image ultCooldown;
     public Animator backgroundAnimator;
     public Image deadOverlay;
+    public Transform items;
 
     [Header("Scene References (Assigned at runtime)")]
     public Hero hero;
@@ -80,4 +81,19 @@ public class HeroIcon : MonoBehaviour {
 
     public void StartUltReload() => PlayIconAnim(IconAnim.LOADING);
     public void ReadyUlt() => PlayIconAnim(IconAnim.SHINE);
+    
+    
+    // ====================
+    // ITEMS
+    // ====================
+
+    public Item GainItemFromFight(Item itemPrefab) {
+        return InstantiateItem(itemPrefab);
+    }
+
+    public Item InstantiateItem(Item itemPrefab) {
+        Item itemInstance = Instantiate(itemPrefab, items);
+        itemInstance.prefab = itemPrefab;
+        return itemInstance;
+    }
 }

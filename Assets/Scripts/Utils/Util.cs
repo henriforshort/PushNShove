@@ -485,6 +485,27 @@ public static class Util {
         else return t4;
     }
 
+    public static T WeightedRandom<T>(this MonoBehaviour target, T t1, float weight1, T t2, float weight2) {
+        return target.Random() < weight1 / (weight1 + weight2) ? t1 : t2;
+    }
+
+    public static T WeightedRandom<T>(this MonoBehaviour target, T t1, float weight1, T t2, float weight2, 
+        T t3, float weight3) {
+        float f = target.Random(weight1 + weight2 + weight3);
+        if (f < weight1) return t1;
+        else if (f < weight1 + weight2) return t2;
+        else return t3;
+    }
+
+    public static T WeightedRandom<T>(this MonoBehaviour target, T t1, float weight1, T t2, float weight2, 
+        T t3, float weight3, T t4, float weight4) {
+        float f = target.Random(weight1 + weight2 + weight3 + weight4);
+        if (f < weight1) return t1;
+        else if (f < weight1 + weight2) return t2;
+        else if (f < weight1 + weight2 + weight3) return t3;
+        else return t4;
+    }
+
     
     // --------------------
     // DELAY

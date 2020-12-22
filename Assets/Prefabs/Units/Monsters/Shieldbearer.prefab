@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5914191361000633564}
   - component: {fileID: 5914191361000633567}
-  - component: {fileID: 5914191361000633560}
   - component: {fileID: 5914191361000633539}
+  - component: {fileID: 5914191361000633560}
+  - component: {fileID: -3954800748470413380}
   m_Layer: 0
   m_Name: Shieldbearer
   m_TagString: Untagged
@@ -47,6 +48,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1164582, y: 1.1331823, z: 1}
   m_Center: {x: -0.68, y: -0.44716394, z: 0}
+--- !u!54 &5914191361000633539
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914191361000633561}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &5914191361000633560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,32 +93,35 @@ MonoBehaviour:
   attackStatus: 0
   anim: 0
   currentHealth: 0
-  lastWindupIsOne: 0
+  lastWindupIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
   isInvincible: 0
+  lockZOrder: 0
+  lockAnim: 0
+  lockPosition: 0
+  index: 0
   hero: {fileID: 0}
+  monster: {fileID: -3954800748470413380}
   healthBar: {fileID: 6087850083390855375}
   tmpHealthBar: {fileID: 1151570446728982744}
   animator: {fileID: 5914191361033034991}
   rigidbodee: {fileID: 5914191361000633539}
   hpLossUis: []
---- !u!54 &5914191361000633539
-Rigidbody:
+--- !u!114 &-3954800748470413380
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5914191361000633561}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d63027eee2f2b439718c3ba6d39967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropRate: 0.2
+  unit: {fileID: 5914191361000633560}
 --- !u!1 &5914191361033034985
 GameObject:
   m_ObjectHideFlags: 0

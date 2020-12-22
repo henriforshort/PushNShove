@@ -37,6 +37,7 @@ public class Unit : MonoBehaviour {
 
     [Header("Self References")]
     public Hero hero;
+    public Monster monster;
     public Slider healthBar;
     public Slider tmpHealthBar;
     public Animator animator;
@@ -436,12 +437,20 @@ public class Unit : MonoBehaviour {
         status = Status.DEAD;
         allies.Remove(this);
         if (side == Side.HERO) HeroDeath();
-        else Destroy(gameObject);
+        else MonsterDeath();
     }
 
     public void HeroDeath() {
         animator.gameObject.SetActive(false);
         OnDestroy();
+    }
+
+    public void MonsterDeath() {
+        if (monster.dropRate.Chance() && !G.m.itemsDepleted) 
+            heroUnits.Where(u => u.hero.items.Count < 7).ToList()
+            .Random()
+            .hero.GetItem(G.m.GetRandomItem(), true);
+        Destroy(gameObject);
     }
 
     public void OnDestroy() {
