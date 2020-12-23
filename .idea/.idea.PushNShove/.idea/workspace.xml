@@ -20,33 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Hero Icon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Hero Icon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/G.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/G.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/R.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/R.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/eye.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/eye.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/flower.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/items/flower.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/glass.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/items/glass.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/glass.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/items/glass.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/key.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/key.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/items/potion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/items/potion.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +211,7 @@
       <workItem from="1608487263805" duration="4552000" />
       <workItem from="1608543413971" duration="15392000" />
       <workItem from="1608626878298" duration="13706000" />
+      <workItem from="1608722727780" duration="1877000" />
     </task>
     <servers />
   </component>
