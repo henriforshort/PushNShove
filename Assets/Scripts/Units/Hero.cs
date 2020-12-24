@@ -19,20 +19,27 @@ public class Hero : MonoBehaviour {
     public HeroIcon icon;
     
     public enum UltStatus { AVAILABLE, RELOADING, ACTIVATED }
+    
+    
+    // ====================
+    // BASICS
+    // ====================
 
-    public void Start() {
+    public void InitBattle(HeroIcon i) {
         ultStatus = UltStatus.RELOADING;
+        icon = i;
+        icon.InitBattle(this);
+        unit.InitBattle();
     }
 
     public void Update() {
         UpdateUlt();
     }
-
-    public void InitIcon(HeroIcon hi) {
-        icon = hi;
-        icon.hero = this;
-        icon.icon.sprite = image;
-    }
+    
+    
+    // ====================
+    // ULT
+    // ====================
 
     public void UpdateUlt() {
         if (B.m.gameState != B.State.PLAYING) return;
@@ -70,10 +77,25 @@ public class Hero : MonoBehaviour {
         icon.StartUltReload();
         unit.lockZOrder = false;
     }
+    
+    
+    // ====================
+    // ITEMS
+    // ====================
 
-    public void GetItem(Item itemPrefab, bool applyEffect) {
+    public void ClearItems() {
+        items = new List<Item>();
+        icon.ClearItems();
+    }
+
+    public void GetItemFromFight(Item itemPrefab) {
         Item itemInstance = icon.GainItemFromFight(itemPrefab);
         items.Add(itemInstance);
-        if (applyEffect) itemInstance.ApplyEffect();
+        itemInstance.ApplyEffect();
+    }
+
+    public void GetItemAtStartup(Item itemPrefab) {
+        Item itemInstance = icon.GetItemAtStartup(itemPrefab);
+        items.Add(itemInstance);
     }
 }

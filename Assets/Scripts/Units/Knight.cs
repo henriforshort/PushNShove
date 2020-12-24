@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Knight : Unit {
     [Header("--------------------")]
-    [Header("Knight VARIABLES", order = 2)]
+    [Header("KNIGHT VARIABLES", order = 2)]
     [Header("Balancing", order = 3)]
     public float healDelay;
     public float healFxDuration;

@@ -46,7 +46,10 @@ public class Unit : MonoBehaviour {
     [Header("Self References (Assigned at runtime)")]
     public List<HpLossUi> hpLossUis;
 
-    private static List<Unit> _heroUnits;
+    private static List<Unit> _allHeroUnits; //Even the dead ones
+    public static List<Unit> allHeroUnits => _allHeroUnits ?? (_allHeroUnits = new List<Unit>());
+
+    private static List<Unit> _heroUnits; //Only the ones that are still alive
     public static List<Unit> heroUnits => _heroUnits ?? (_heroUnits = new List<Unit>());
 
     private static List<Unit> _monsterUnits;
@@ -71,7 +74,7 @@ public class Unit : MonoBehaviour {
     // INIT
     // ====================
 
-    public void Init() {
+    public void InitBattle() {
         SetAnim(Anim.WALK);
         currentSpeed = maxSpeed;
         tmpHealthBar.value = currentHealth;
@@ -82,15 +85,13 @@ public class Unit : MonoBehaviour {
 
     public void MonsterInit() {
         if (gameObject.activeInHierarchy) monsterUnits.Add(this);
-        status = Status.ALIVE;
         SetHealth(maxHealth);
     }
 
     public void HeroInit() {
-        if (gameObject.activeInHierarchy) {
-            index = heroUnits.Count;
-            heroUnits.Add(this);
-        }
+        index = allHeroUnits.Count;
+        allHeroUnits.Add(this);
+        heroUnits.Add(this);
     }
     
     
@@ -206,8 +207,6 @@ public class Unit : MonoBehaviour {
     public void LongRangeCollide(Collider other) { //Called by both sides
         Unit collidedAlly = allies.FirstOrDefault(u => u.gameObject == other.gameObject);
         if (collidedAlly != null 
-                && status == Status.ALIVE
-                && collidedAlly.status == Status.ALIVE
                 && enemies.Count > 0
                 && currentSpeed < 0
                 && this.isCloserTo(enemies[0].transform.position, than:collidedAlly)
@@ -340,14 +339,11 @@ public class Unit : MonoBehaviour {
 
     public Unit NearbyEnemy() => enemies
         .WithLowest(DistanceToMe)
-        .If(e => 
-            e != null && 
-            DistanceToMe(e) < G.m.attackDistance && 
-            e.status == Status.ALIVE);
+        .If(e => e != null && DistanceToMe(e) < G.m.attackDistance);
     
     public Unit CollidingEnemy() => enemies
         .WithLowest(DistanceToMe)
-        .If(e => DistanceToMe(e) < G.m.collideDistance && e.status == Status.ALIVE);
+        .If(e => e != null && DistanceToMe(e) < G.m.collideDistance);
 
     public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();
     public bool CanAttack() => isWalking && attackStatus == AttackStatus.PREPARING;
@@ -423,6 +419,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void Deactivate() {
+        allies.Remove(this);
         SetAnim(Anim.BUMPED);
         if (side == Side.HERO) hero.icon.Die();
     }
@@ -435,13 +432,15 @@ public class Unit : MonoBehaviour {
 
     public void Die() {
         status = Status.DEAD;
-        allies.Remove(this);
         if (side == Side.HERO) HeroDeath();
         else MonsterDeath();
     }
 
     public void HeroDeath() {
+        allies.Remove(this);
         animator.gameObject.SetActive(false);
+        R.m.save.heroes[index].Save();
+        hero.icon.Die();
         OnDestroy();
     }
 
@@ -449,7 +448,7 @@ public class Unit : MonoBehaviour {
         if (monster.dropRate.Chance() && !G.m.itemsDepleted) 
             heroUnits.Where(u => u.hero.items.Count < 7).ToList()
             .Random()
-            .hero.GetItem(G.m.GetRandomItem(), true);
+            .hero.GetItemFromFight(G.m.GetRandomItem());
         Destroy(gameObject);
     }
 
@@ -458,13 +457,9 @@ public class Unit : MonoBehaviour {
         hpLossUis.ForEach(ui => ui.transform.SetParent(R.m.transform));
         allies.Remove(this);
 
-        if (side == Side.HERO) {
-            if (allies.Count == 0) B.m.Defeat();
-            R.m.save.heroes[index].Save();
-        }
-
-        if (side == Side.MONSTER) {
-            if (allies.Count == 0) B.m.Victory();
+        if (allies.Count == 0) {
+            if (side == Side.HERO) B.m.Defeat();
+            else B.m.Victory();
         }
     }
 }

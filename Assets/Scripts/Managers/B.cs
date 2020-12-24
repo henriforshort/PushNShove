@@ -49,8 +49,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
                 new Vector3(this.Random(-R.m.spawnPosXRange.x, -R.m.spawnPosXRange.y), -2, 0),
                 Quaternion.identity,
                 unitsHolder);
-            hero.InitIcon(heroIcons[i]);
-            hero.unit.Init();
+            hero.InitBattle(heroIcons[i]);
         }
         R.m.save.LoadHeroes();
         
@@ -61,7 +60,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
                 Transform monster = clusterInstance.GetChild(0);
                 monster.SetX(Random.Range(R.m.spawnPosXRange.x, R.m.spawnPosXRange.y));
                 monster.SetParent(unitsHolder);
-                monster.GetComponent<Unit>().Init();
+                monster.GetComponent<Unit>().InitBattle();
             }
             Destroy(clusterInstance.gameObject);
         }, numberOfEnemies);
@@ -102,7 +101,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     }
 
     public void GameOver() {
-        Unit.heroUnits.ForEach(h => h.EndUlt());
+        Unit.allHeroUnits.ForEach(h => h.EndUlt());
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
@@ -129,6 +128,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         transition.FadeIn();
         R.m.save.SaveHeroes();
         Unit.heroUnits.Clear();
+        Unit.allHeroUnits.Clear();
         Unit.monsterUnits.Clear();
         G.m.LoadScene(G.SceneName.Battle);
     }

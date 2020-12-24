@@ -24,6 +24,11 @@ public class HeroIcon : MonoBehaviour {
     // ====================
     // BASICS
     // ====================
+
+    public void InitBattle(Hero h) {
+        hero = h;
+        icon.sprite = h.image;
+    }
     
     public void Update() {
         UpdateUltTimer();
@@ -60,6 +65,7 @@ public class HeroIcon : MonoBehaviour {
         deadOverlay.gameObject.SetActive(true);
         PlayIconAnim(IconAnim.DEAD);
         ultCooldown.gameObject.SetActive(false);
+        SetHealth(0);
     }
     
     
@@ -87,11 +93,15 @@ public class HeroIcon : MonoBehaviour {
     // ITEMS
     // ====================
 
-    public Item GainItemFromFight(Item itemPrefab) {
-        return InstantiateItem(itemPrefab);
+    public void ClearItems() {
+        foreach (Transform i in items) Destroy(i.gameObject);
     }
 
-    public Item InstantiateItem(Item itemPrefab) {
+    public Item GainItemFromFight(Item itemPrefab) {
+        return GetItemAtStartup(itemPrefab);
+    }
+
+    public Item GetItemAtStartup(Item itemPrefab) {
         Item itemInstance = Instantiate(itemPrefab, items);
         itemInstance.prefab = itemPrefab;
         return itemInstance;

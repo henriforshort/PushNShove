@@ -44,7 +44,7 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 		needRunInit = true;
 	}
 
-	public void InitRun() { //Called at the start of each run, after init the first battle
+	public void InitRun() { //Called at the start of each run, before init the first battle
 		needRunInit = false;
 
 		usedHeroes = heroPrefabs.Clone();
