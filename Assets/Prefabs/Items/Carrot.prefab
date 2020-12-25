@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9108757936134696664}
   - component: {fileID: 2459915635615273311}
   - component: {fileID: 7410053156325812281}
+  - component: {fileID: -1199026700727654941}
   m_Layer: 5
   m_Name: Carrot
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9108757936134696664
 CanvasRenderer:
@@ -90,3 +91,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 0}
   rarity: 0
+  prefab: {fileID: 0}
+  oldHero: {fileID: 0}
+  isDragged: 0
+  canvasGroup: {fileID: -1199026700727654941}
+--- !u!225 &-1199026700727654941
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7410053156325812280}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

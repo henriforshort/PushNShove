@@ -506,13 +506,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyClusters:
-  - {fileID: 3931528018635196961, guid: 0372c8552d4c7f044b077195b326f9e5, type: 3}
-  - {fileID: 3012777840633684400, guid: 85022e76302088f42b9714ec5f1e932a, type: 3}
   - {fileID: 5452640271022862066, guid: 084954b836ec31646af7c43e05c10bbb, type: 3}
   numberOfEnemies: 1
   timeSinceGameOver: 0
   restarting: 0
   gameState: 0
+  movingItem: {fileID: 0}
   deathZones:
   - {fileID: 1250013049}
   - {fileID: 1656520206}
@@ -527,6 +526,7 @@ MonoBehaviour:
   unitsHolder: {fileID: 605282007}
   fightPrompt: {fileID: 28056942}
   transition: {fileID: 831594556}
+  itemsCanvas: {fileID: 1847672174}
 --- !u!224 &382655257 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
@@ -1288,6 +1288,7 @@ MonoBehaviour:
   timeToAutoRestart: 2
   spawnPosXRange: {x: 1, y: 7}
   amountOfHeroes: 2
+  maxItemsPerHero: 7
   needRunInit: 1
   save:
     battle: 0
@@ -2729,7 +2730,7 @@ MonoBehaviour:
   hillsParallax: 0.25
   currentShake: 0
   cameraFocus: {fileID: 2096997357}
-  cameraGO: {fileID: 519420028}
+  cam: {fileID: 519420031}
   hills: {fileID: 1695861070}
   sun: {fileID: 217855273}
 --- !u!1 &1788485785
@@ -2928,6 +2929,105 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79af0055012bea94abcaa8ce4f7357cb, type: 3}
+--- !u!1 &1847672173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847672174}
+  - component: {fileID: 1847672177}
+  - component: {fileID: 1847672176}
+  - component: {fileID: 1847672175}
+  m_Layer: 0
+  m_Name: Items Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1847672174
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847672173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2061860719}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1847672175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847672173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1847672176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847672173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1847672177
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847672173}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1864068786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,6 +3347,7 @@ Transform:
   m_Children:
   - {fileID: 1991115990}
   - {fileID: 952774437}
+  - {fileID: 1847672174}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

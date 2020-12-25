@@ -13,7 +13,7 @@ public class HeroIcon : MonoBehaviour {
     public Image ultCooldown;
     public Animator backgroundAnimator;
     public Image deadOverlay;
-    public Transform items;
+    public ItemPanel itemPanel;
 
     [Header("Scene References (Assigned at runtime)")]
     public Hero hero;
@@ -28,6 +28,7 @@ public class HeroIcon : MonoBehaviour {
     public void InitBattle(Hero h) {
         hero = h;
         icon.sprite = h.image;
+        itemPanel.hero = h;
     }
     
     public void Update() {
@@ -94,16 +95,29 @@ public class HeroIcon : MonoBehaviour {
     // ====================
 
     public void ClearItems() {
-        foreach (Transform i in items) Destroy(i.gameObject);
+        foreach (Transform i in itemPanel.transform) Destroy(i.gameObject);
     }
 
-    public Item GainItemFromFight(Item itemPrefab) {
-        return GetItemAtStartup(itemPrefab);
+    public Item GainItemFromFight(Item itemPrefab, Vector3 position) {
+        Item itemInstance = Instantiate(
+            itemPrefab, 
+            B.m.cameraManager.cam.WorldToScreenPoint(position),
+            Quaternion.identity,
+            B.m.itemsCanvas);
+        itemInstance.Init(itemPrefab, hero);
+        this.Wait(0.5f, () => {
+        });
+        itemInstance.TweenPosition(itemInstance.transform.position + Vector3.up * 50, 
+            Tween.Style.BOUNCE, 0.5f, () => 
+                this.Wait(0.25f, () => 
+                    itemInstance.TweenPosition(icon.transform.position, Tween.Style.EASE_OUT, 0.25f, () => 
+                        itemInstance.transform.SetParent(itemPanel.transform))));
+        return itemInstance;
     }
 
     public Item GetItemAtStartup(Item itemPrefab) {
-        Item itemInstance = Instantiate(itemPrefab, items);
-        itemInstance.prefab = itemPrefab;
+        Item itemInstance = Instantiate(itemPrefab, itemPanel.transform);
+        itemInstance.Init(itemPrefab, hero);
         return itemInstance;
     }
 }

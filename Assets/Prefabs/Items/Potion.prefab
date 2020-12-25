@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7177376018357661645}
   - component: {fileID: 9100206727555660126}
   - component: {fileID: 9100206727555660125}
+  - component: {fileID: -8002032880780711534}
   m_Layer: 5
   m_Name: Potion
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4524768815966528063
 CanvasRenderer:
@@ -92,6 +93,9 @@ MonoBehaviour:
   hero: {fileID: 0}
   rarity: 2
   prefab: {fileID: 0}
+  oldHero: {fileID: 0}
+  isDragged: 0
+  canvasGroup: {fileID: -8002032880780711534}
 --- !u!114 &9100206727555660125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +139,15 @@ MonoBehaviour:
   startAnimDate: 0
   spriteRenderer: {fileID: 0}
   image: {fileID: 7177376018357661645}
+--- !u!225 &-8002032880780711534
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100206727555660127}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7973334922422915092}
   - component: {fileID: 6896337625780982063}
   - component: {fileID: 6896337625780982056}
+  - component: {fileID: 1602370799949386382}
   m_Layer: 5
   m_Name: Mushroom
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2845276229688696760
 CanvasRenderer:
@@ -92,6 +93,9 @@ MonoBehaviour:
   hero: {fileID: 0}
   rarity: 2
   prefab: {fileID: 0}
+  oldHero: {fileID: 0}
+  isDragged: 0
+  canvasGroup: {fileID: 1602370799949386382}
 --- !u!114 &6896337625780982056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +139,15 @@ MonoBehaviour:
   startAnimDate: 0
   spriteRenderer: {fileID: 0}
   image: {fileID: 7973334922422915092}
+--- !u!225 &1602370799949386382
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896337625780982062}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

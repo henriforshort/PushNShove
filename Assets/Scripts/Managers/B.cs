@@ -14,6 +14,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public float timeSinceGameOver;
     public bool restarting;
     public State gameState;
+    public Item movingItem;
 
     [Header("Scene References")]
     public List<GameObject> deathZones;
@@ -25,6 +26,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public Transform unitsHolder;
     public GameObject fightPrompt;
     public UITransition transition;
+    public Transform itemsCanvas;
 	
     public enum State { PLAYING, GAME_OVER, PAUSE }
 

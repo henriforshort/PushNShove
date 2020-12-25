@@ -12,7 +12,7 @@ public class CameraManager : MonoBehaviour {
     [Header("References")]
     public GameObject cameraFocus;
     [FormerlySerializedAs("shakeGO")]
-    public GameObject cameraGO;
+    public Camera cam;
     public GameObject hills;
     public GameObject sun;
 
@@ -26,7 +26,7 @@ public class CameraManager : MonoBehaviour {
 
     public void UpdateShake() {
         currentShake = currentShake.LerpTo(0, 20);
-        cameraGO.transform.localPosition = new Vector3(
+        cam.transform.localPosition = new Vector3(
             Random.Range(-currentShake, currentShake), 
             Random.Range(-currentShake, currentShake), 
             0);

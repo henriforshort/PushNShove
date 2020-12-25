@@ -448,7 +448,7 @@ public class Unit : MonoBehaviour {
         if (monster.dropRate.Chance() && !G.m.itemsDepleted) 
             heroUnits.Where(u => u.hero.items.Count < 7).ToList()
             .Random()
-            .hero.GetItemFromFight(G.m.GetRandomItem());
+            .hero.GetItemFromFight(G.m.GetRandomItem(), this);
         Destroy(gameObject);
     }
 

@@ -604,4 +604,16 @@ public static class Util {
     public static float ReverseIf(this int target, bool condition) => target * (condition ? -1 : 1);
     
     public static float ToInt(this bool target) => target ? 1 : 0;
+    
+    
+    // --------------------
+    // TWEEN
+    // --------------------
+
+    public static void TweenPosition(this MonoBehaviour target, 
+        Vector3 targetValue, Tween.Style style, float duration, 
+        Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
+        target.gameObject.AddComponent<Tween>().Init(targetValue, Tween.Property.POSITION, style, duration, whenDone, 
+            onEnd, restartDelay);
+    }
 }
