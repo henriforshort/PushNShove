@@ -1,42 +1,50 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler {
-    public Hero hero;
+    [Header("Balancing")]
     public Rarity rarity;
-    public Item prefab;
-    public Hero oldHero;
+    [TextArea] public string description;
+    
+    [Header("State")]
     public bool isDragged;
+    
+    [Header("Self References")]
     public CanvasGroup canvasGroup;
+    
+    [Header("Scene References (assigned at runtime)")]
+    public Hero hero;
+    public Item prefab;
+
+    public static Item describedItem;
     
     public enum Rarity { COMMON, RARE, LEGGY }
 
     public void Init(Item p, Hero h) {
         prefab = p;
         hero = h;
+        description = name+description;
     }
 
     public void Update() {
-        if (isDragged) transform.position = Vector3.Lerp(transform.position,Input.mousePosition, 2);
+        if (isDragged) this.LerpTo(Input.mousePosition, 20);
     }
 
     public void ApplyEffect() {
-        Debug.Log("apply effect of " + name + " to " + hero.name);
+        // Debug.Log("apply effect of " + name + " to " + hero.name);
     }
 
     public void RemoveEffect() {
-        Debug.Log("remove effect of " + name + " from " + hero.name);
+        // Debug.Log("remove effect of " + name + " from " + hero.name);
     }
 
     public void SwitchTo(Hero h) {
-        Debug.Log(name+" switch");
-        // RemoveEffect();
+        if (hero == h) return;
+        
+        RemoveEffect();
         hero = h;
-        // ApplyEffect();
+        ApplyEffect();
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
@@ -46,8 +54,8 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         B.m.movingItem = this;
         transform.SetParent(B.m.itemsCanvas);
         canvasGroup.blocksRaycasts = false;
-        oldHero = hero;
         isDragged = true;
+        B.m.itemDescription.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData) { }
@@ -56,7 +64,6 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (B.m.movingItem != this) return;
         if (B.m.gameState != B.State.PLAYING) return;
         
-        Debug.Log("dragEnd "+(oldHero == hero?"on same icon":"on a different icon"));
         B.m.movingItem = null;
         canvasGroup.blocksRaycasts = true;
         transform.SetParent(hero.icon.itemPanel.transform);
@@ -64,7 +71,14 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
 
     public void OnPointerClick(PointerEventData eventData) {
-        //Show tooltip
-        // Debug.Log("click on "+name);
+        if (B.m.itemDescription.activeSelf && describedItem == this) {
+            B.m.itemDescription.SetActive(false);
+        }
+        else {
+            B.m.itemDescription.transform.position = transform.position;
+            B.m.itemDescription.SetActive(true);
+            B.m.itemDescriptionText.text = description;
+            describedItem = this;
+        }
     }
 }

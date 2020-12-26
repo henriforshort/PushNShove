@@ -16,7 +16,7 @@ public class Tween : MonoBehaviour {
 
     [Header("Alternative Parameters")]
     // public float targetValue; //overrides amplitude if different from 0
-    public Graphic graphicComponent; //for alpha changes
+    public Graphic visuals; //for alpha changes
 
     [Header("State")]
     public bool playing;
@@ -29,8 +29,8 @@ public class Tween : MonoBehaviour {
     public enum Style { LINEAR, EASE_IN, EASE_OUT, EASE_IN_OUT, SINE, BOUNCE }
     public enum WhenDone { RESTART, PINGPONG, STOP, DESTROY }
 
-    public void Init(Vector3 targetValue, Property property, Style style, float duration, 
-        WhenDone whenDone, Action onEnd, float restartDelay) {
+    public Tween Init(Vector3 targetValue, Property property, Style style, float duration, 
+        WhenDone whenDone, Action onEnd, float restartDelay, Graphic visuals) {
         this.targetValue = targetValue;
         this.property = property;
         this.style = style;
@@ -38,7 +38,9 @@ public class Tween : MonoBehaviour {
         this.whenDone = whenDone;
         this.onEnd = onEnd;
         this.restartDelay = restartDelay;
+        this.visuals = visuals;
         Start();
+        return this;
     }
 
     public void Start() {
@@ -48,12 +50,12 @@ public class Tween : MonoBehaviour {
 
         if (property == Property.HORIZONTAL) startValue.x = transform.position.x;
         if (property == Property.VERTICAL) startValue.x = transform.position.y;
-        if (property == Property.ALPHA) startValue.x = graphicComponent.color.a;
+        if (property == Property.ALPHA) startValue.x = visuals.color.a;
         if (property == Property.SCALE) startValue = transform.localScale;
         if (property == Property.POSITION) startValue = transform.position;
     }
 
-    private void Update() {
+    public void Update() {
         if (!playing) return;
         
         linearValue += (Time.deltaTime / duration).ReverseIf(reversed);
@@ -61,7 +63,7 @@ public class Tween : MonoBehaviour {
         
         if (property == Property.HORIZONTAL) this.SetX(currentValue.x);
         if (property == Property.VERTICAL) this.SetY(currentValue.x);
-        if (property == Property.ALPHA) graphicComponent.SetAlpha(currentValue.x);
+        if (property == Property.ALPHA) visuals.SetAlpha(currentValue.x);
         if (property == Property.SCALE) transform.localScale = currentValue;
         if (property == Property.POSITION) transform.position = currentValue;
 
@@ -73,6 +75,8 @@ public class Tween : MonoBehaviour {
             if (whenDone == WhenDone.DESTROY) Destroy(gameObject);
         }
     }
+
+    public void MaxOut() => linearValue = reversed ? 0 : 1;
 
     public float GetValue(float x) {
         

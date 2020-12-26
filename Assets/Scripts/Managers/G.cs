@@ -19,6 +19,7 @@ public class G : MonoBehaviour {
 
     [Header("Prefabs")]
     public List<Item> items;
+    public Sprite transparentSprite;
     
     [Header("Scene References")]
     public GameObject background;

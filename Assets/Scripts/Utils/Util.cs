@@ -610,10 +610,17 @@ public static class Util {
     // TWEEN
     // --------------------
 
-    public static void TweenPosition(this MonoBehaviour target, 
-        Vector3 targetValue, Tween.Style style, float duration, 
+    public static Tween TweenPosition(this MonoBehaviour target, Vector3 targetValue, Tween.Style style, float duration, 
         Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
-        target.gameObject.AddComponent<Tween>().Init(targetValue, Tween.Property.POSITION, style, duration, whenDone, 
-            onEnd, restartDelay);
+        return target.gameObject.AddComponent<Tween>().Init(
+            targetValue, Tween.Property.POSITION, style, duration,
+            whenDone, onEnd, restartDelay, null);
+    }
+
+    public static Tween TweenAlpha(this Graphic visuals, float targetValue, Tween.Style style, float duration, 
+        Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
+        return visuals.gameObject.AddComponent<Tween>().Init(
+            targetValue * Vector3.right, Tween.Property.ALPHA, 
+            style, duration, whenDone, onEnd, restartDelay, visuals);
     }
 }

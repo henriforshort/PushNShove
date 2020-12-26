@@ -88,8 +88,8 @@ public class Hero : MonoBehaviour {
         icon.ClearItems();
     }
 
-    public void GetItemFromFight(Item itemPrefab, Unit unit) {
-        Item itemInstance = icon.GainItemFromFight(itemPrefab, unit.transform.position);
+    public void GetItemFromFight(Item itemPrefab, Unit u) {
+        Item itemInstance = icon.GainItemFromFight(itemPrefab, u.transform.position.SetY(-2.75f));
         items.Add(itemInstance);
         itemInstance.ApplyEffect();
     }

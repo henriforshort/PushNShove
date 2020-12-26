@@ -99,19 +99,27 @@ public class HeroIcon : MonoBehaviour {
     }
 
     public Item GainItemFromFight(Item itemPrefab, Vector3 position) {
+        //Create item
         Item itemInstance = Instantiate(
             itemPrefab, 
             B.m.cameraManager.cam.WorldToScreenPoint(position),
             Quaternion.identity,
             B.m.itemsCanvas);
         itemInstance.Init(itemPrefab, hero);
-        this.Wait(0.5f, () => {
-        });
+        
+        //Bounce item then move it to top left corner
+        GameObject placeholder = new GameObject();
+        placeholder.AddComponent<Image>().sprite = G.m.transparentSprite;
+        placeholder.transform.SetParent(itemPanel.transform);
         itemInstance.TweenPosition(itemInstance.transform.position + Vector3.up * 50, 
             Tween.Style.BOUNCE, 0.5f, () => 
                 this.Wait(0.25f, () => 
-                    itemInstance.TweenPosition(icon.transform.position, Tween.Style.EASE_OUT, 0.25f, () => 
-                        itemInstance.transform.SetParent(itemPanel.transform))));
+                    itemInstance.TweenPosition(placeholder.transform.position, Tween.Style.EASE_OUT, 0.25f, 
+                        () => {
+                        Destroy(placeholder);
+                        itemInstance.transform.SetParent(itemPanel.transform);
+                    })));
+        
         return itemInstance;
     }
 

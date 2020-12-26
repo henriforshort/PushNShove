@@ -14,9 +14,9 @@
             </e>
           </e>
         </e>
-        <e p="ItemPanel.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Item.cs" t="Include" />
+          <e p="ItemPanel.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="B.cs" t="Include" />
             <e p="CameraManager.cs" t="Include" />

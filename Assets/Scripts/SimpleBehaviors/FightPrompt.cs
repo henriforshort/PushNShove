@@ -5,17 +5,14 @@ using UnityEngine.UI;
 
 public class FightPrompt : MonoBehaviour {
     [Header("Balancing")]
-    public float battleAppearDelay;
     public float battleDuration;
-    public float fightAppearDelay;
+    public float battleFadeDuration;
     public float fightDuration;
-    public float fadeDuration;
+    public float fightFadeDuration;
     
     [Header("State")]
-    public float battleExpirationDate;
-    public float fightExpirationDate;
-    public float fightAppearDate;
-    public float battleAppearDate;
+    public List<Tween> currentTweens;
+    public int currentPhase;
     
     [Header("References")]
     public TMP_Text fightText;
@@ -24,29 +21,46 @@ public class FightPrompt : MonoBehaviour {
     public UITransition bg;
     
     public void Start() {
-        battleText.text = "Battle " + R.m.save.battle.AtLeast(1);
-        battleExpirationDate = Time.time + battleDuration;
-        fightExpirationDate = Time.time + fightDuration;
-        fightAppearDate = Time.time + fightAppearDelay;
-        battleAppearDate = Time.time + battleAppearDelay;
-        fightText.gameObject.SetActive(false);
+        Phase1();
     }
 
-    public void Update() {
-        if (Time.time > fightAppearDate) fightText.gameObject.SetActive(true);
-        if (Time.time > battleAppearDate) battleText.gameObject.SetActive(true);
-        
-        if (Time.time > battleExpirationDate) {
-            float alpha = Time.time.Prel(battleExpirationDate + fadeDuration, battleExpirationDate);
-            battleText.alpha = alpha;
-            battleImages.ForEach(i => i.SetAlpha(alpha));
-        }
-        if (Time.time > fightExpirationDate) {
-            fightText.alpha = Time.time.Prel(fightExpirationDate + fadeDuration/2, fightExpirationDate);
-            if (bg.currentAnim != UITransition.Anim.FADE_OUT) bg.FadeOut();
-        }
-        
-        if (Time.time > fightExpirationDate + fadeDuration) StartGame();
+    public void Phase1() {//Enable battle text
+        currentPhase = 1;
+        StopAll();
+        battleText.text = "Battle " + R.m.save.battle.AtLeast(1);
+        battleText.gameObject.SetActive(true);
+        fightText.gameObject.SetActive(false);
+        this.Wait(battleDuration, Phase2);
+    }
+
+    public void Phase2() {//Fade out battle text, enable battle text
+        currentPhase = 2;
+        StopAll();
+        currentTweens.Add(battleText.TweenAlpha(0, Tween.Style.LINEAR, battleFadeDuration, 
+            () => fightText.gameObject.SetActive(true)));
+        battleImages.ForEach(i => 
+            currentTweens.Add(i.TweenAlpha(0, Tween.Style.LINEAR, battleFadeDuration)));
+        this.Wait(battleFadeDuration + fightDuration, Phase3);
+    }
+
+    public void Phase3() {//Fade out fight text 
+        currentPhase = 3;
+        StopAll();
+        bg.FadeOut();
+        currentTweens.Add(fightText.TweenAlpha(0, Tween.Style.LINEAR, fightFadeDuration, StartGame));
+    }
+
+    public void StopAll() {
+        currentTweens.ForEach(t => t.MaxOut());
+        StopAllCoroutines();
+        currentTweens.Clear();
+    }
+
+    public void NextPhase() {
+        if (currentPhase == 0) Phase1();
+        else if (currentPhase == 1) Phase2();
+        else if (currentPhase == 2) Phase3();
+        else if (currentPhase == 3) StartGame();
     }
 
     public void StartGame() {

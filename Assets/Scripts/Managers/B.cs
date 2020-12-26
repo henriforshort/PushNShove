@@ -27,6 +27,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public GameObject fightPrompt;
     public UITransition transition;
     public Transform itemsCanvas;
+    public GameObject itemDescription;
+    public TMP_Text itemDescriptionText;
 	
     public enum State { PLAYING, GAME_OVER, PAUSE }
 
@@ -85,6 +87,9 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         Destroy(spawnedFx, duration);
         return spawnedFx;
     }
+
+    public void CheatVictory() { while (Unit.monsterUnits.Count > 0) Unit.monsterUnits[0].DeathByHp(); }
+    public void CheatDefeat() { while (Unit.heroUnits.Count > 0) Unit.heroUnits[0].DeathByHp(); }
 
     public void Defeat() {
         if (gameState == State.GAME_OVER) return;
