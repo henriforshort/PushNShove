@@ -105,7 +105,7 @@ public class HeroIcon : MonoBehaviour {
             B.m.cameraManager.cam.WorldToScreenPoint(position),
             Quaternion.identity,
             B.m.itemsCanvas);
-        itemInstance.Init(itemPrefab, hero);
+        itemInstance.Init(itemPrefab);
         
         //Bounce item then move it to top left corner
         GameObject placeholder = new GameObject();
@@ -114,7 +114,7 @@ public class HeroIcon : MonoBehaviour {
         itemInstance.TweenPosition(itemInstance.transform.position + Vector3.up * 50, 
             Tween.Style.BOUNCE, 0.5f, () => 
                 this.Wait(0.25f, () => 
-                    itemInstance.TweenPosition(placeholder.transform.position, Tween.Style.EASE_OUT, 0.25f, 
+                    itemInstance.TweenPosition(placeholder.transform.position, Tween.Style.EASE_OUT, 0.5f, 
                         () => {
                         Destroy(placeholder);
                         itemInstance.transform.SetParent(itemPanel.transform);
@@ -125,7 +125,7 @@ public class HeroIcon : MonoBehaviour {
 
     public Item GetItemAtStartup(Item itemPrefab) {
         Item itemInstance = Instantiate(itemPrefab, itemPanel.transform);
-        itemInstance.Init(itemPrefab, hero);
+        itemInstance.Init(itemPrefab);
         return itemInstance;
     }
 }

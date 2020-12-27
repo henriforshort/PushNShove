@@ -12,6 +12,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     
     [Header("Self References")]
     public CanvasGroup canvasGroup;
+    public ItemEffect effect;
     
     [Header("Scene References (assigned at runtime)")]
     public Hero hero;
@@ -21,30 +22,23 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     
     public enum Rarity { COMMON, RARE, LEGGY }
 
-    public void Init(Item p, Hero h) {
+    public void Init(Item p) {
         prefab = p;
-        hero = h;
-        description = name+description;
+        name = prefab.name;
+        description = name+"\n"+description;
+        effect.item = this;
     }
 
     public void Update() {
         if (isDragged) this.LerpTo(Input.mousePosition, 20);
     }
 
-    public void ApplyEffect() {
-        // Debug.Log("apply effect of " + name + " to " + hero.name);
-    }
-
-    public void RemoveEffect() {
-        // Debug.Log("remove effect of " + name + " from " + hero.name);
-    }
-
     public void SwitchTo(Hero h) {
         if (hero == h) return;
         
-        RemoveEffect();
+        effect.Cancel();
         hero = h;
-        ApplyEffect();
+        effect.Apply();
     }
 
     public void OnBeginDrag(PointerEventData eventData) {

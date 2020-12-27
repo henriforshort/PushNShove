@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 528228321}
   - component: {fileID: 528228323}
   - component: {fileID: 528228322}
-  - component: {fileID: 528228324}
+  - component: {fileID: 528228325}
   m_Layer: 5
   m_Name: Touch Anywhere
   m_TagString: Untagged
@@ -423,7 +423,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528228320}
   m_CullTransparentMesh: 0
---- !u!114 &528228324
+--- !u!114 &528228325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,18 +432,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 528228320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640cc06d7440b2f4587043d29d484655, type: 3}
+  m_Script: {fileID: 11500000, guid: 281b979ff7e09254ba68b1136fffd0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  style: 0
-  period: 3
-  amplitude: 2
-  valueBoost: 0
-  startOffset: 0
-  startDate: 0
-  startValue: 0
-  currentValue: 0
-  graphicComponent: {fileID: 528228322}
+  property: 4
+  style: 1
+  whenDone: 1
+  duration: 2
+  valueType: 0
+  value: {x: 0, y: 0, z: 0}
+  restartDelay: 0
+  visuals: {fileID: 528228322}
+  playing: 0
+  reversed: 0
+  startValue: {x: 0, y: 0, z: 0}
+  targetValue: {x: 0, y: 0, z: 0}
+  currentValue: {x: 0, y: 0, z: 0}
+  linearValue: 0
 --- !u!1001 &574615315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454,6 +459,22 @@ PrefabInstance:
     - target: {fileID: 6810708429010523011, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: startAnim
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810708429010523013, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 81285999a139f494fb84c0501f058978, type: 3}
+    - target: {fileID: 6810708429010523013, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810708429010523013, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810708429010523013, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523014, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_Name
@@ -481,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.7728951
+      value: 1.0000131
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_AnchorMin.x
@@ -489,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.63377154
+      value: -0.000013158056
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -497,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 929.7457
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -533,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -219.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -922,7 +943,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1685973852
 GameObject:
@@ -935,7 +956,7 @@ GameObject:
   - component: {fileID: 1685973853}
   - component: {fileID: 1685973856}
   - component: {fileID: 1685973855}
-  - component: {fileID: 1685973854}
+  - component: {fileID: 1685973857}
   m_Layer: 5
   m_Name: Push & Shove
   m_TagString: Untagged
@@ -962,27 +983,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1685973854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685973852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640cc06d7440b2f4587043d29d484655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  style: 0
-  period: 5
-  amplitude: 20
-  valueBoost: 0
-  startOffset: 0
-  startDate: 0
-  startValue: 0
-  currentValue: 0
-  graphicComponent: {fileID: 0}
 --- !u!114 &1685973855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,6 +1080,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685973852}
   m_CullTransparentMesh: 0
+--- !u!114 &1685973857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685973852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281b979ff7e09254ba68b1136fffd0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: 0
+  style: 4
+  whenDone: 0
+  duration: 5
+  valueType: 1
+  value: {x: 20, y: 0, z: 0}
+  restartDelay: 0
+  visuals: {fileID: 0}
+  playing: 0
+  reversed: 0
+  startValue: {x: 0, y: 0, z: 0}
+  targetValue: {x: 950, y: 0, z: 0}
+  currentValue: {x: 0, y: 0, z: 0}
+  linearValue: 0
 --- !u!114 &1706493416 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1755454257190141480, guid: 1a60d3dda9b1d2d49ab0ba5d2d7579ed, type: 3}
@@ -1100,7 +1126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6904197424794876784, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6904197424794876784, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
       propertyPath: m_LocalPosition.x

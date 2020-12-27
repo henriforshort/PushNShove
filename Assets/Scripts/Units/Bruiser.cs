@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Bruiser : Unit {
@@ -7,30 +6,23 @@ public class Bruiser : Unit {
     [Header("BRUISER VARIABLES", order = 2)]
     
     [Header("State", order = 3)]
-    public float oldProt;
-    public float oldDamage;
-    public float oldWeight;
-    public float oldAttackSpeed;
     public float oldAttackAnimDuration;
-    public float oldCrit;
+    public float oldAttackSpeed;
+    public List<StatModifier> ultStatModifs = new List<StatModifier>();
 
-    public override void Ult() {;
+    public override void Ult() {
         SetAnim(Anim.ULT_BRUISER);
         lockAnim = true;
 
-        oldProt = prot;
-        oldDamage = damage;
-        oldWeight = weight;
-        oldAttackSpeed = attackSpeed;
-        oldCrit = critChance;
         oldAttackAnimDuration = attackAnimDuration;
-
-        prot = 0.9f;
-        weight *= 50;
-        damage /= 3;
+        oldAttackSpeed = attackSpeed;
         attackSpeed = 0f;
         attackAnimDuration = 0;
-        critChance /= 10;
+
+        ultStatModifs.Add(prot.AddModifier(0.9f, StatModifier.Type.SET));
+        ultStatModifs.Add(weight.AddModifier(50, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(damage.AddModifier(0.3f, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(critChance.AddModifier(0.1f, StatModifier.Type.MULTIPLY));
 
         isInvincible = true;
     }
@@ -38,13 +30,10 @@ public class Bruiser : Unit {
     public override void EndUlt() {
         lockAnim = false;
         SetAnim(Anim.DEFEND);
-
-        prot = oldProt;
-        damage = oldDamage;
-        weight = oldWeight;
-        attackSpeed = oldAttackSpeed;
-        critChance = oldCrit;
         attackAnimDuration = oldAttackAnimDuration;
+        attackSpeed = oldAttackSpeed;
+        ultStatModifs.ForEach(m => m.Terminate());
+        ultStatModifs.Clear();
         
         isInvincible = false;
     }

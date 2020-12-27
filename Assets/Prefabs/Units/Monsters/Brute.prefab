@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4884354167670392199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 1.277778, z: 1}
+  m_LocalPosition: {x: -1.01, y: 2.277778, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6249393224986453715}
@@ -180,14 +180,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed:
+    startValue: 0
+    value: 0
+    modifiers: []
+  maxHealth:
+    startValue: 0
+    value: 0
+    modifiers: []
+  prot:
+    startValue: 0
+    value: 0
+    modifiers: []
+  weight:
+    startValue: 0
+    value: 0
+    modifiers: []
+  damage:
+    startValue: 0
+    value: 0
+    modifiers: []
+  strength:
+    startValue: 0
+    value: 0
+    modifiers: []
+  critChance:
+    startValue: 0
+    value: 0
+    modifiers: []
+  baseMaxSpeed: 3
+  baseMaxHealth: 100
+  baseProt: 0.3
+  baseWeight: 5
+  baseDamage: 5
+  baseStrength: 1.5
+  baseCritChance: 0.2
   side: -1
-  maxSpeed: 2.5
-  maxHealth: 200
-  prot: 0.65
-  weight: 5
-  damage: 5
-  strength: 1.25
-  critChance: 0.2
   shakeOnHit: 1
   attackAnimDuration: 0.25
   size: 2
@@ -340,6 +368,18 @@ PrefabInstance:
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075689924130556044, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075689924130556044, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075689924130556044, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 6766762401796785405, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_Value

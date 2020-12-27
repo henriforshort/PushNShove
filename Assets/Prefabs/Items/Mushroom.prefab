@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &371315991027302209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383173423795482590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714e64423091a4d4891da933cfa62c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 6383173423795482591}
+  currentEffects: []
 --- !u!1001 &7160655617368835451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,9 +105,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4308348561640647332, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 371315991027302209}
+    - target: {fileID: 4308348561640647332, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+      propertyPath: description
+      value: Increases crit chance by 10%.
+      objectReference: {fileID: 0}
     - target: {fileID: 4308348561640647333, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+--- !u!1 &6383173423795482590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4308348561640647333, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+  m_PrefabInstance: {fileID: 7160655617368835451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6383173423795482591 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4308348561640647332, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+  m_PrefabInstance: {fileID: 7160655617368835451}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383173423795482590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf0fd9dc78e40f42b3d9764f648fcbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class R : MonoBehaviour { //Run manager, handles a single run.
@@ -25,6 +26,7 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 	public bool needRunInit;
 	public GameSave save;
 	public List<Hero> usedHeroes;
+	public List<Action> onRunEnd = new List<Action>();
 
 	[Header("Prefabs")]
 	public List<Hero> heroPrefabs;
@@ -53,5 +55,9 @@ public class R : MonoBehaviour { //Run manager, handles a single run.
 			usedHeroes.RemoveAt(this.Random(usedHeroes.Count));
 		}
 		save.InitRun();
+	}
+
+	public void EndRun() {
+		onRunEnd.ForEach(a => a());
 	}
 }

@@ -96,14 +96,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78638656cee26a4a92baf113b897ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed:
+    startValue: 3
+    value: 3
+    modifiers: []
+  maxHealth:
+    startValue: 200
+    value: 200
+    modifiers: []
+  prot:
+    startValue: 0
+    value: 0
+    modifiers: []
+  weight:
+    startValue: 5
+    value: 5
+    modifiers: []
+  damage:
+    startValue: 10
+    value: 10
+    modifiers: []
+  strength:
+    startValue: 1.25
+    value: 1.25
+    modifiers: []
+  critChance:
+    startValue: 0.1
+    value: 0.1
+    modifiers: []
+  baseMaxSpeed: 3
+  baseMaxHealth: 100
+  baseProt: 0
+  baseWeight: 5
+  baseDamage: 5
+  baseStrength: 1.25
+  baseCritChance: 0.1
   side: 1
-  maxSpeed: 3
-  maxHealth: 200
-  prot: 0.1
-  weight: 2
-  damage: 5
-  strength: 1.5
-  critChance: 0.2
   shakeOnHit: 0
   attackAnimDuration: 0.25
   size: 1
@@ -122,13 +150,14 @@ MonoBehaviour:
   lockPosition: 0
   index: 0
   hero: {fileID: 6646292189090240541}
+  monster: {fileID: 0}
   healthBar: {fileID: 2229701680886870555}
   tmpHealthBar: {fileID: 5005238066686466572}
   animator: {fileID: 1773981805822391867}
   rigidbodee: {fileID: 1773981805588913687}
   hpLossUis: []
-  strengthIncrease: 0.25
   range: 4
+  ultStatModifs: []
   strongmanUltFx: {fileID: 688306038408255481, guid: 279e740964ee90a4faae7db10cffb98f, type: 3}
 --- !u!1 &1773981805822391869
 GameObject:
@@ -156,7 +185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773981805822391869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69, y: -0.027777782, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.9722222, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6252388531141032251}

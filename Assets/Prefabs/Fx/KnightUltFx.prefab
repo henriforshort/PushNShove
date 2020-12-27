@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7057374149709267351}
   - component: {fileID: 7057374149709267350}
   - component: {fileID: 7057374149709267349}
-  - component: {fileID: 7057374149709267348}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -103,27 +102,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7057374149709267348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7057374149709267355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640cc06d7440b2f4587043d29d484655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  style: 1
-  period: 2
-  amplitude: 0.25
-  valueBoost: 0
-  startOffset: 0
-  startDate: 0
-  startValue: 0
-  currentValue: 0
-  graphicComponent: {fileID: 0}
 --- !u!1 &7057374150237274002
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +111,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7057374150237274028}
-  - component: {fileID: 7057374150237274003}
+  - component: {fileID: 2982756488830926091}
+  - component: {fileID: 913080726}
   m_Layer: 0
   m_Name: KnightUltFx
   m_TagString: Untagged
@@ -156,7 +135,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7057374150237274003
+--- !u!114 &2982756488830926091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,21 +144,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 7057374150237274002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f4b3bc36a726446b7909fe3761e442, type: 3}
+  m_Script: {fileID: 11500000, guid: 281b979ff7e09254ba68b1136fffd0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  style: 2
-  targetPosition: {x: 0, y: 2, z: 0}
-  duration: 5
-  destroyWhenDone: 1
-  easingPower: 3
-  isOver: 0
-  currentValue: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  startDate: 0
-  animationCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  property: 0
+  style: 0
+  whenDone: 0
+  duration: 2
+  restartDelay: 0
+  target: {x: 0, y: 0, z: 0}
+  amplitude: {x: 1, y: 0, z: 0}
+  visuals: {fileID: 0}
+  playing: 0
+  reversed: 0
+  startValue: {x: 0, y: 0, z: 0}
+  targetValue: {x: 1, y: 0, z: 0}
+  currentValue: {x: 0, y: 0, z: 0}
+  linearValue: 0
+--- !u!114 &913080726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057374150237274002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281b979ff7e09254ba68b1136fffd0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: 1
+  style: 4
+  whenDone: 0
+  duration: 1
+  restartDelay: 0
+  target: {x: 0, y: 0, z: 0}
+  amplitude: {x: 0.25, y: 0, z: 0}
+  visuals: {fileID: 0}
+  playing: 0
+  reversed: 0
+  startValue: {x: 0, y: 0, z: 0}
+  targetValue: {x: 0, y: 0, z: 0}
+  currentValue: {x: 0, y: 0, z: 0}
+  linearValue: 0

@@ -96,14 +96,117 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce11c64293f26c4ab56edbaf79d6e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed:
+    startValue: 3
+    value: 3
+    modifiers:
+    - type: 0
+      value: 0
+      duration: 0
+      scope: 0
+      priority: 0
+  maxHealth:
+    startValue: 100
+    value: 100
+    modifiers:
+    - type: 0
+      value: 0
+      duration: 0
+      scope: 0
+      priority: 0
+  prot:
+    startValue: 0.2
+    value: 0.5
+    modifiers:
+    - type: 0
+      value: 0.1
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 0.1
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 0.1
+      duration: -1
+      scope: 1
+      priority: 0
+  weight:
+    startValue: 5
+    value: 5
+    modifiers: []
+  damage:
+    startValue: 5
+    value: 23
+    modifiers:
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+    - type: 0
+      value: 2
+      duration: -1
+      scope: 1
+      priority: 0
+  strength:
+    startValue: 1
+    value: 1
+    modifiers: []
+  critChance:
+    startValue: 0.1
+    value: 0.2
+    modifiers:
+    - type: 0
+      value: 0.1
+      duration: -1
+      scope: 1
+      priority: 0
+  baseMaxSpeed: 3
+  baseMaxHealth: 100
+  baseProt: 0.2
+  baseWeight: 5
+  baseDamage: 5
+  baseStrength: 1
+  baseCritChance: 0.1
   side: 1
-  maxSpeed: 3
-  maxHealth: 250
-  prot: 0.25
-  weight: 2
-  damage: 10
-  strength: 1
-  critChance: 0.2
   shakeOnHit: 0
   attackAnimDuration: 0.25
   size: 1
@@ -122,14 +225,15 @@ MonoBehaviour:
   lockPosition: 0
   index: 0
   hero: {fileID: 5839365868507422637}
+  monster: {fileID: 0}
   healthBar: {fileID: 7398883394539054116}
   tmpHealthBar: {fileID: 4407138794253257779}
   animator: {fileID: 6971875616310140932}
   rigidbodee: {fileID: 6971875616277727272}
   hpLossUis: []
-  healDelay: 0.2
+  healDelay: 0.5
   healFxDuration: 0.5
-  protBuff: 0.5
+  ultStatModifs: []
   ultFx: {fileID: 7057374150237274002, guid: 95e2b3cd432312a44badd8635b85b45b, type: 3}
 --- !u!1 &6971875616310140930
 GameObject:
@@ -157,7 +261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6971875616310140930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.544, y: 0.13888888, z: 0}
+  m_LocalPosition: {x: 0.544, y: 1.138889, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3358439422909492996}

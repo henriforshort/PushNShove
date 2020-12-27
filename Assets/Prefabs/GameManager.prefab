@@ -45,9 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDistance: 3
   collideDistance: 2
-  commonDropChance: 4
-  rareDropChance: 2
+  commonDropChance: 10
+  rareDropChance: 3
   leggyDropChance: 1
+  needInitGame: 0
   commonItems: []
   rareItems: []
   leggyItems: []

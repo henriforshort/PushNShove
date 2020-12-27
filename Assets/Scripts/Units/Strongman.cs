@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -7,8 +6,8 @@ public class Strongman : Unit {
     [Header("--------------------")]
     [Header("STRONGMAN VARIABLES", order = 2)]
     [Header("Balancing", order = 3)]
-    public float strengthIncrease;
     public float range;
+    public List<StatModifier> ultStatModifs = new List<StatModifier>();
 
     public GameObject strongmanUltFx;
     
@@ -23,20 +22,19 @@ public class Strongman : Unit {
     public void PatateDeForain(Unit target) {
         lockAnim = false;
         SetAnim(Anim.HIT);
-        strength *= (1 + strengthIncrease);
-        float oldCrit = critChance;
-        critChance = 1;
+        ultStatModifs.Add(strength.AddModifier(1.25f, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(critChance.AddModifier(1, StatModifier.Type.SET));
         
-        B.m.SpawnFX(strongmanUltFx, transform.position + new Vector3(3, 0, -1), 
-            false, B.m.transform, 0.5f);
+        B.m.SpawnFX(strongmanUltFx, transform.position + new Vector3(3, 1, -1), 
+            false, B.m.transform);
         if (target != null) {
             target.GetBumpedBy(this);
             DefendFrom(target);
         }
 
         lockPosition = false;
-        critChance = oldCrit;
-        strength /= (1 + strengthIncrease);
+        ultStatModifs.ForEach(m => m.Terminate());
+        ultStatModifs.Clear();
     }
 
     public Unit TargetInRange() {

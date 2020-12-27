@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Tween : MonoBehaviour {
@@ -10,8 +9,9 @@ public class Tween : MonoBehaviour {
     public Style style;
     public WhenDone whenDone;
     public float duration;
+    public ValueType valueType;
+    public Vector3 value;
     public float restartDelay;
-    public Vector3 targetValue;
     public Action onEnd;
 
     [Header("Alternative Parameters")]
@@ -22,16 +22,29 @@ public class Tween : MonoBehaviour {
     public bool playing;
     public bool reversed;
     public Vector3 startValue;
+    public Vector3 targetValue;
     public Vector3 currentValue;
     [Range(0,1)] public float linearValue;
 
     public enum Property { VERTICAL, HORIZONTAL, POSITION, SCALE, ALPHA }
     public enum Style { LINEAR, EASE_IN, EASE_OUT, EASE_IN_OUT, SINE, BOUNCE }
     public enum WhenDone { RESTART, PINGPONG, STOP, DESTROY }
+    public enum ValueType { TARGET, AMPLITUDE }
 
-    public Tween Init(Vector3 targetValue, Property property, Style style, float duration, 
+    public Tween InitByValue(Vector3 target, Property property, Style style, float duration, 
         WhenDone whenDone, Action onEnd, float restartDelay, Graphic visuals) {
-        this.targetValue = targetValue;
+        return Init(target, true, property, style, duration, whenDone, onEnd, restartDelay, visuals);
+    }
+
+    public Tween InitByAmplitude(Vector3 amplitude, Property property, Style style, float duration, 
+        WhenDone whenDone, Action onEnd, float restartDelay, Graphic visuals) {
+        return Init(amplitude, false, property, style, duration, whenDone, onEnd, restartDelay, visuals);
+    }
+
+    private Tween Init(Vector3 value, bool isTarget, Property property, Style style, float duration, 
+        WhenDone whenDone, Action onEnd, float restartDelay, Graphic visuals) {
+        valueType = isTarget ? ValueType.TARGET : ValueType.AMPLITUDE;
+        this.value = value;
         this.property = property;
         this.style = style;
         this.duration = duration;
@@ -39,6 +52,7 @@ public class Tween : MonoBehaviour {
         this.onEnd = onEnd;
         this.restartDelay = restartDelay;
         this.visuals = visuals;
+        
         Start();
         return this;
     }
@@ -53,6 +67,9 @@ public class Tween : MonoBehaviour {
         if (property == Property.ALPHA) startValue.x = visuals.color.a;
         if (property == Property.SCALE) startValue = transform.localScale;
         if (property == Property.POSITION) startValue = transform.position;
+
+        if (valueType == ValueType.TARGET) targetValue = value;
+        else targetValue = startValue + value;
     }
 
     public void Update() {

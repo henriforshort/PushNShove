@@ -71,6 +71,7 @@ public class Hero : MonoBehaviour {
     }
 
     public void EndUlt() {
+        if (ultStatus != UltStatus.ACTIVATED) return;
         ultStatus = UltStatus.RELOADING;
         ultCooldownLeft = ultCooldown;
         unit.EndUlt();
@@ -88,10 +89,10 @@ public class Hero : MonoBehaviour {
         icon.ClearItems();
     }
 
-    public void GetItemFromFight(Item itemPrefab, Unit u) {
-        Item itemInstance = icon.GainItemFromFight(itemPrefab, u.transform.position.SetY(-2.75f));
+    public void GetItemFromFight(Item itemPrefab, Unit monster) {
+        Item itemInstance = icon.GainItemFromFight(itemPrefab, monster.transform.position.SetY(-2.75f));
         items.Add(itemInstance);
-        itemInstance.ApplyEffect();
+        itemInstance.SwitchTo(this);
     }
 
     public void GetItemAtStartup(Item itemPrefab) {

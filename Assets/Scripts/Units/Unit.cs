@@ -2,19 +2,31 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Unit : MonoBehaviour {
+    [Header("Stats")]
+    public Stat maxSpeed;
+    public Stat maxHealth; //Resistance
+    public Stat prot; //How much collision force is reduced (whether I got hit or not)
+    public Stat weight; //Chance to hit & not get hit
+    public Stat damage; //How much damage I deal when i hit
+    public Stat strength; //How far I push people I collide with (wether I hit them or not)
+    public Stat critChance;
+
+    [Header("Base Stats")]
+    public float baseMaxSpeed;
+    public float baseMaxHealth;
+    [Range(0,1)] public float baseProt;
+    public float baseWeight;
+    public float baseDamage;
+    public float baseStrength;
+    [Range(0,1)] public float baseCritChance;
+    
     [Header("Balancing")]
     public Side side;
-    public float maxSpeed;
-    public float maxHealth; //Resistance
-    [Range (0,1)] public float prot; //How much collision force is reduced (whether I got hit or not)
-    public float weight; //Chance to hit & not get hit
-    public float damage; //How much damage I deal when i hit
-    public float strength; //How far I push people I collide with (wether I hit them or not)
-    [Range(0, 1)] public float critChance;
     public bool shakeOnHit;
     public float attackAnimDuration;
     public float size;
@@ -74,6 +86,16 @@ public class Unit : MonoBehaviour {
     // INIT
     // ====================
 
+    public void InitGame() {
+        maxSpeed.Init(baseMaxSpeed);
+        maxHealth.Init(baseMaxHealth);
+        prot.Init(baseProt);
+        weight.Init(baseWeight);
+        damage.Init(baseDamage);
+        strength.Init(baseStrength);
+        critChance.Init(baseCritChance);
+    }
+
     public void InitBattle() {
         SetAnim(Anim.WALK);
         currentSpeed = maxSpeed;
@@ -84,7 +106,10 @@ public class Unit : MonoBehaviour {
     }
 
     public void MonsterInit() {
-        if (gameObject.activeInHierarchy) monsterUnits.Add(this);
+        if (!gameObject.activeInHierarchy) return;
+            
+        monsterUnits.Add(this);
+        InitGame();
         SetHealth(maxHealth);
     }
 
@@ -116,7 +141,6 @@ public class Unit : MonoBehaviour {
     public void UpdateVisuals() {
         animator.enabled = (B.m.gameState != B.State.PAUSE);
         
-        if (tmpHealthBar.value.isClearlyNot(currentHealth)) tmpHealthBar.LerpTo(healthBar.value, 3f);
         if (lockZOrder) this.SetZ(-5);
         else if (attackStatus != AttackStatus.ATTACKING && this.GetZ().isAbout(-1)) this.SetZ(-0.5f);
     }
@@ -149,11 +173,11 @@ public class Unit : MonoBehaviour {
 
     public void StartWalking() {
         SetAnim(Anim.WALK);
-        B.m.SpawnFX(R.m.bumpDustFxPrefab,
-            new Vector3(this.GetX() - (int)side, -2, -2),
-            side == Side.MONSTER, B.m.transform);
         this.SetZ(0f);
         if (status == Status.DYING) DieDuringBattle();
+        else B.m.SpawnFX(R.m.bumpDustFxPrefab,
+                new Vector3(this.GetX() - (int)side, -2, -2),
+                side == Side.MONSTER, B.m.transform);
     }
 
     
@@ -296,9 +320,9 @@ public class Unit : MonoBehaviour {
         loser.GetBumpedBy(winner);
         winner.DefendFrom(loser);
         
-        if (unit1.shakeOnHit || unit2.shakeOnHit) B.m.cameraManager.Shake(0.2f);
+        if (winner.shakeOnHit) B.m.cameraManager.Shake(0.2f);
         B.m.SpawnFX(R.m.sparkFxPrefab,
-            transform.position + new Vector3(1.5f * (int) side, 0, -2),
+            transform.position + new Vector3(1.5f * (int) side, 1, -2),
             false, null, 0.5f,
             Vector3.forward * Random.Range(0, 360));
         
@@ -325,7 +349,7 @@ public class Unit : MonoBehaviour {
         SetAnim(Anim.BUMPED);
         currentSpeed = R.m.bumpSpeed * other.strength * (1 - prot);
         
-        bool isCrit = other.critChance.Chance();
+        bool isCrit = ((float)other.critChance).Chance();
         TakeCollisionDamage(other.damage, isCrit);
         if (isCrit) {
             critCollisionDate = Time.time;
@@ -392,6 +416,10 @@ public class Unit : MonoBehaviour {
     public void SetHealth(float amount) {
         currentHealth = Mathf.Clamp(amount, 0, maxHealth);
         healthBar.value = currentHealth / maxHealth;
+        tmpHealthBar.value = healthBar.value;
+        healthBar.gameObject.SetActive(false);
+        this.Wait(0.1f, () => healthBar.gameObject.SetActive(true));
+        
         if (hero != null) {
             hero.icon.SetHealth(currentHealth/maxHealth);
             hero.icon.FlashHealth();
@@ -441,14 +469,16 @@ public class Unit : MonoBehaviour {
         animator.gameObject.SetActive(false);
         R.m.save.heroes[index].Save();
         hero.icon.Die();
+        hero.EndUlt();
         OnDestroy();
     }
 
     public void MonsterDeath() {
-        if (monster.dropRate.Chance() && !G.m.itemsDepleted) 
+        if (monster.dropRate.Chance() && !G.m.itemsDepleted)
             heroUnits.Where(u => u.hero.items.Count < 7).ToList()
-            .Random()
-            .hero.GetItemFromFight(G.m.GetRandomItem(), this);
+                .Random()
+                ?.hero
+                ?.GetItemFromFight(G.m.GetRandomItem(), this);
         Destroy(gameObject);
     }
 

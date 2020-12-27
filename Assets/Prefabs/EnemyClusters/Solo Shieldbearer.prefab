@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3012777840633684400}
   m_Layer: 0
-  m_Name: Solo ShieldBearer
+  m_Name: Solo Shieldbearer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5914191361000633564, guid: caccfe4afe68ecf4a9dbd7392d45e69e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5914191361000633564, guid: caccfe4afe68ecf4a9dbd7392d45e69e, type: 3}
       propertyPath: m_LocalPosition.z

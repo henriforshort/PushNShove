@@ -13,6 +13,7 @@ public class G : MonoBehaviour {
     public float leggyDropChance;
 
     [Header("State")]
+    public bool needInitGame;
     public List<Item> commonItems;
     public List<Item> rareItems;
     public List<Item> leggyItems;
@@ -46,9 +47,14 @@ public class G : MonoBehaviour {
         }
         DontDestroyOnLoad(this);
 
+        needInitGame = true;
         commonItems = items.Where(i => i.rarity == Item.Rarity.COMMON).ToList();
         rareItems = items.Where(i => i.rarity == Item.Rarity.RARE).ToList();
         leggyItems = items.Where(i => i.rarity == Item.Rarity.LEGGY).ToList();
+    }
+
+    public void InitGame() {
+        Unit.allHeroUnits.ForEach(u => u.InitGame());
     }
 
     public void StartGame() {

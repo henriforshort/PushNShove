@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class B : MonoBehaviour { //Battle manager, handles a single battle.
                                  //Should contain only Balancing and References relative to this battle.
@@ -15,6 +17,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
     public bool restarting;
     public State gameState;
     public Item movingItem;
+    public List<Action> onBattleEnd = new List<Action>();
 
     [Header("Scene References")]
     public List<GameObject> deathZones;
@@ -50,7 +53,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         for (int i = 0; i < R.m.save.heroes.Count; i++) {
             Hero hero = Instantiate(
                 R.m.save.heroes[i].prefab,
-                new Vector3(this.Random(-R.m.spawnPosXRange.x, -R.m.spawnPosXRange.y), -2, 0),
+                new Vector3(this.Random(-R.m.spawnPosXRange.x, -R.m.spawnPosXRange.y), -3, 0),
                 Quaternion.identity,
                 unitsHolder);
             hero.InitBattle(heroIcons[i]);
@@ -72,6 +75,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         //Init scene
         fightPrompt.SetActive(true);
         transition.FadeOut();
+        
+        if (G.m.needInitGame) G.m.InitGame();
     }
 
     public void Update() {
@@ -97,6 +102,7 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         gameOverText.text = "Defeat";
         R.m.needRunInit = true;
         GameOver();
+        R.m.EndRun();
     }
 
     public void Victory() {
@@ -112,6 +118,8 @@ public class B : MonoBehaviour { //Battle manager, handles a single battle.
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
+        onBattleEnd.ForEach(a => a());
+        this.Wait(0.5f, () => Unit.heroUnits.ForEach(u => u.hero.EndUlt()));
     }
 
     public void AwaitRestart() {

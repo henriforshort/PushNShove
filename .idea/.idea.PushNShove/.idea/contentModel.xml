@@ -15,8 +15,14 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Item.cs" t="Include" />
-          <e p="ItemPanel.cs" t="Include" />
+          <e p="Items" t="Include">
+            <e p="CommonEffect.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
+            <e p="ItemEffect.cs" t="Include" />
+            <e p="ItemPanel.cs" t="Include" />
+            <e p="LegendaryEffect.cs" t="Include" />
+            <e p="RareEffect.cs" t="Include" />
+          </e>
           <e p="Managers" t="Include">
             <e p="B.cs" t="Include" />
             <e p="CameraManager.cs" t="Include" />
@@ -38,14 +44,13 @@
             <e p="HpLossUi.cs" t="Include" />
             <e p="Knight.cs" t="Include" />
             <e p="Monster.cs" t="Include" />
+            <e p="Stat.cs" t="Include" />
             <e p="Strongman.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitMaxRange.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="Hanimator.cs" t="Include" />
-            <e p="OldSine.cs" t="Include" />
-            <e p="OldTween.cs" t="Include" />
             <e p="Tween.cs" t="Include" />
             <e p="Util.cs" t="Include" />
           </e>

@@ -37,9 +37,10 @@ public class FightPrompt : MonoBehaviour {
         currentPhase = 2;
         StopAll();
         currentTweens.Add(battleText.TweenAlpha(0, Tween.Style.LINEAR, battleFadeDuration, 
-            () => fightText.gameObject.SetActive(true)));
+            () => fightText.gameObject.SetActive(true), Tween.WhenDone.DESTROY));
         battleImages.ForEach(i => 
-            currentTweens.Add(i.TweenAlpha(0, Tween.Style.LINEAR, battleFadeDuration)));
+            currentTweens.Add(i.TweenAlpha(0, Tween.Style.LINEAR, battleFadeDuration, () => { }, 
+                Tween.WhenDone.DESTROY)));
         this.Wait(battleFadeDuration + fightDuration, Phase3);
     }
 

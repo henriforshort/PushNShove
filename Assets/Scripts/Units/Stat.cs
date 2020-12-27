@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+[Serializable]
+public class Stat {
+    public float startValue;
+    [SerializeField] private float value;
+    [SerializeField] private List<StatModifier> modifiers;
+
+    public static implicit operator float(Stat s) => s.value;
+
+    public void Init(float val) {
+        startValue = val;
+        modifiers.Clear();
+        UpdateValue();
+    }
+
+    public StatModifier AddModifier(float val = 0, StatModifier.Type type = StatModifier.Type.ADD, 
+        StatModifier.Scope scope = StatModifier.Scope.BATTLE, float duration = -1, int priority = 0) {
+        StatModifier modifier = new StatModifier(val, type, duration, scope, priority, this);
+        
+        if (modifier.scope == StatModifier.Scope.BATTLE) B.m.onBattleEnd.Add(() => RemoveModifier(modifier.guid));
+        if (modifier.scope == StatModifier.Scope.RUN) R.m.onRunEnd.Add(() => RemoveModifier(modifier.guid));
+        if (modifier.duration > 0) G.m.Wait(modifier.duration, () => RemoveModifier(modifier.guid));
+        
+        modifiers.Add(modifier);
+        UpdateValue();
+        return modifier;
+    }
+
+    public void RemoveModifier(Guid guid) {
+        modifiers.RemoveAll(m => m.guid == guid);
+        UpdateValue();
+    }
+
+    private void UpdateValue() {
+        float result = startValue;
+        List<StatModifier> modifiersClone = modifiers.Clone();
+        int circuitBreaker = 0;
+        while (modifiersClone.Count > 0) {
+            modifiersClone//Get list of stat modifiers with lowest priority
+                .Where(m => m.priority == modifiersClone.Select(n => n.priority).Min())
+                .ToList()
+                .ForEach(m => {//Apply each one of them, and remove them from original list
+                    if (m.type == StatModifier.Type.ADD) result += m.value;
+                    else if (m.type == StatModifier.Type.MULTIPLY) result *= m.value;
+                    else if (m.type == StatModifier.Type.SET) result = m.value;
+                    modifiersClone.Remove(m);
+                });
+            circuitBreaker++;
+            if (circuitBreaker > 100) {
+                Debug.LogError("using circuit breaker");
+                break;
+            }
+        }
+        value = result;
+    }
+
+    private float ApplyModifier(float stat, StatModifier modifier) {
+        if (modifier.type == StatModifier.Type.ADD) return stat + modifier.value;
+        else if (modifier.type == StatModifier.Type.MULTIPLY) return stat * modifier.value;
+        else if (modifier.type == StatModifier.Type.SET) return modifier.value;
+        return 0;
+    }
+}
+
+[Serializable]
+public class StatModifier {
+    public Guid guid;
+    public Type type;
+    public float value;
+    public float duration;
+    public Scope scope;
+    public int priority; //Lowest priority is applied first
+    [NonSerialized] private Stat stat;
+    
+    public enum Type { ADD, MULTIPLY, SET }
+    public enum Scope { BATTLE, RUN, GAME }
+
+    public StatModifier(float value, Type type, float duration, Scope scope, int priority, Stat stat) {
+        guid = Guid.NewGuid();
+        this.type = type;
+        this.value = value;
+        this.duration = duration;
+        this.scope = scope;
+        this.priority = priority;
+        this.stat = stat;
+    }
+
+    public void Terminate() => stat.RemoveModifier(guid);
+}
