@@ -550,7 +550,7 @@ public static class Util {
     // REPEAT
     // --------------------
 
-    public static void Repeat(this MonoBehaviour target, Action action, int times) {
+    public static void Repeat(this MonoBehaviour target, int times, Action action) {
         if (times < 1) return;
         for (int i = 0; i < times; i++) action();
     }

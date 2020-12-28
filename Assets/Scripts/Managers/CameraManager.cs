@@ -17,7 +17,7 @@ public class CameraManager : MonoBehaviour {
     public GameObject sun;
 
     public void Update() {
-        if (B.m.gameState == B.State.PLAYING) {
+        if (Battle.m.gameState == Battle.State.PLAYING) {
             UpdateCameraAndParallax();
         }
         
@@ -39,10 +39,10 @@ public class CameraManager : MonoBehaviour {
             (Unit.heroUnits.Select(unit => unit.GetX()).Max()
              + Unit.monsterUnits.Select(unit => unit.GetX()).Min()) / 2;
 			
-        if (Mathf.Abs(cameraFocus.GetX() - this.GetX()) > R.m.camMaxDistFromUnits) 
+        if (Mathf.Abs(cameraFocus.GetX() - this.GetX()) > Run.m.camMaxDistFromUnits) 
             transform
-                .LerpTo(cameraFocus, R.m.camSpeed)
-                .ClampX(-R.m.camMaxDistFromMapCenter, R.m.camMaxDistFromMapCenter);
+                .LerpTo(cameraFocus, Run.m.camSpeed)
+                .ClampX(-Run.m.camMaxDistFromMapCenter, Run.m.camMaxDistFromMapCenter);
 
         hills.SetX(this.GetX() * hillsParallax);
         sun.SetX(this.GetX());

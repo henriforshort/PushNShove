@@ -42,7 +42,7 @@ public class Hero : MonoBehaviour {
     // ====================
 
     public void UpdateUlt() {
-        if (B.m.gameState != B.State.PLAYING) return;
+        if (Battle.m.gameState != Battle.State.PLAYING) return;
         if (unit.status != Unit.Status.ALIVE) return;
         if (ultStatus != UltStatus.RELOADING) return;
         
@@ -57,7 +57,7 @@ public class Hero : MonoBehaviour {
     }
 
     public bool CanUlt() {
-        if (B.m.gameState != B.State.PLAYING) return false;
+        if (Battle.m.gameState != Battle.State.PLAYING) return false;
         if (ultStatus != UltStatus.AVAILABLE) return false;
 
         return true;
@@ -90,13 +90,10 @@ public class Hero : MonoBehaviour {
     }
 
     public void GetItemFromFight(Item itemPrefab, Unit monster) {
-        Item itemInstance = icon.GainItemFromFight(itemPrefab, monster.transform.position.SetY(-2.75f));
-        items.Add(itemInstance);
-        itemInstance.SwitchTo(this);
+        icon.GainItemFromFight(itemPrefab, monster.transform.position.SetY(-2.75f));
     }
 
     public void GetItemAtStartup(Item itemPrefab) {
-        Item itemInstance = icon.GetItemAtStartup(itemPrefab);
-        items.Add(itemInstance);
+        icon.GetItemAtStartup(itemPrefab);
     }
 }

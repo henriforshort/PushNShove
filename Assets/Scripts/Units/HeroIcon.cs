@@ -102,14 +102,14 @@ public class HeroIcon : MonoBehaviour {
         //Create item
         Item itemInstance = Instantiate(
             itemPrefab, 
-            B.m.cameraManager.cam.WorldToScreenPoint(position),
+            Battle.m.cameraManager.cam.WorldToScreenPoint(position),
             Quaternion.identity,
-            B.m.itemsCanvas);
-        itemInstance.Init(itemPrefab);
+            Battle.m.itemsCanvas);
+        itemInstance.Init(itemPrefab, hero);
         
         //Bounce item then move it to top left corner
         GameObject placeholder = new GameObject();
-        placeholder.AddComponent<Image>().sprite = G.m.transparentSprite;
+        placeholder.AddComponent<Image>().sprite = Game.m.transparentSprite;
         placeholder.transform.SetParent(itemPanel.transform);
         itemInstance.TweenPosition(itemInstance.transform.position + Vector3.up * 50, 
             Tween.Style.BOUNCE, 0.5f, () => 
@@ -125,7 +125,7 @@ public class HeroIcon : MonoBehaviour {
 
     public Item GetItemAtStartup(Item itemPrefab) {
         Item itemInstance = Instantiate(itemPrefab, itemPanel.transform);
-        itemInstance.Init(itemPrefab);
+        itemInstance.Init(itemPrefab, hero);
         return itemInstance;
     }
 }

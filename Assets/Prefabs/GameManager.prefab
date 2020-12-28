@@ -43,32 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3cf68eda5662349ab6e4d8adedeb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 3
-  collideDistance: 2
-  commonDropChance: 10
-  rareDropChance: 3
-  leggyDropChance: 1
-  needInitGame: 0
-  commonItems: []
-  rareItems: []
-  leggyItems: []
-  items:
-  - {fileID: 3767489134611511852, guid: bc9609b57564c09408faadc47ca901af, type: 3}
-  - {fileID: 6765754073021860725, guid: 2d078b3acc2b41146b8d2031c72dc0b8, type: 3}
-  - {fileID: 3310669461592632198, guid: ecf7c9a8abbb47c48b35c14ff8e17a28, type: 3}
-  - {fileID: 3606662160201698309, guid: f1f88d3e09d54264886cfdb1a5aa5efd, type: 3}
-  - {fileID: 7333351420034040813, guid: 21d4bff8409ae1542b16c0b352908bd5, type: 3}
-  - {fileID: 1173142925431017876, guid: c50b96db18f67024ba5b532d6b8bcf8f, type: 3}
-  - {fileID: 434102133686799851, guid: 4b8ba9dcad6ca6a41901116cd58ff147, type: 3}
-  - {fileID: 2306487344902198767, guid: 4a94525dda6bc8c41a001bc0c84971d1, type: 3}
-  - {fileID: 6383173423795482591, guid: 1871a70f4a737534d9e88cf33a57fb5e, type: 3}
-  - {fileID: 6570611022392474386, guid: 6ff28dee2c44032428f2b96e82e5823d, type: 3}
-  - {fileID: 2795209787395023485, guid: 77f6e99e6450bac458d2d358da1f0c45, type: 3}
-  - {fileID: 5005325200625248526, guid: 3a455b3db7e89dd46a40a7d84d3c8a7b, type: 3}
-  - {fileID: 2537417152627680142, guid: 62874a008cb3cf94db57bc086c5b167c, type: 3}
-  - {fileID: 7092679812090381517, guid: afbd45b1799407c46bfc5999b5d026a6, type: 3}
   transparentSprite: {fileID: 21300000, guid: 81285999a139f494fb84c0501f058978, type: 3}
-  background: {fileID: 0}
+  whiteSprite: {fileID: 21300000, guid: 98c490c41fcfcc64894520d1b8233d32, type: 3}
   white: {r: 0.7411765, g: 0.7490196, b: 0.5921569, a: 1}
   yellow: {r: 0.79215693, g: 0.627451, b: 0.3529412, a: 1}
   orange: {r: 0.68235296, g: 0.4156863, b: 0.2784314, a: 1}

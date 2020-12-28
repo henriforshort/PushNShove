@@ -18,12 +18,11 @@ public class Stat {
     }
 
     public StatModifier AddModifier(float val = 0, StatModifier.Type type = StatModifier.Type.ADD, 
-        StatModifier.Scope scope = StatModifier.Scope.BATTLE, float duration = -1, int priority = 0) {
-        StatModifier modifier = new StatModifier(val, type, duration, scope, priority, this);
+        StatModifier.Scope scope = StatModifier.Scope.BATTLE, int priority = 0) {
+        StatModifier modifier = new StatModifier(val, type, scope, priority, this);
         
-        if (modifier.scope == StatModifier.Scope.BATTLE) B.m.onBattleEnd.Add(() => RemoveModifier(modifier.guid));
-        if (modifier.scope == StatModifier.Scope.RUN) R.m.onRunEnd.Add(() => RemoveModifier(modifier.guid));
-        if (modifier.duration > 0) G.m.Wait(modifier.duration, () => RemoveModifier(modifier.guid));
+        if (modifier.scope == StatModifier.Scope.BATTLE) Battle.m.onBattleEnd.Add(() => RemoveModifier(modifier.guid));
+        if (modifier.scope == StatModifier.Scope.RUN) Run.m.onRunEnd.Add(() => RemoveModifier(modifier.guid));
         
         modifiers.Add(modifier);
         UpdateValue();
@@ -71,7 +70,6 @@ public class StatModifier {
     public Guid guid;
     public Type type;
     public float value;
-    public float duration;
     public Scope scope;
     public int priority; //Lowest priority is applied first
     [NonSerialized] private Stat stat;
@@ -79,11 +77,10 @@ public class StatModifier {
     public enum Type { ADD, MULTIPLY, SET }
     public enum Scope { BATTLE, RUN, GAME }
 
-    public StatModifier(float value, Type type, float duration, Scope scope, int priority, Stat stat) {
+    public StatModifier(float value, Type type, Scope scope, int priority, Stat stat) {
         guid = Guid.NewGuid();
         this.type = type;
         this.value = value;
-        this.duration = duration;
         this.scope = scope;
         this.priority = priority;
         this.stat = stat;

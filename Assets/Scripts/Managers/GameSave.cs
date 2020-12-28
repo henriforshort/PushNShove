@@ -12,7 +12,7 @@ public class GameSave {
         battle = 1;
         
         heroes = new List<HeroState>();
-        for (int i = 0; i < R.m.usedHeroes.Count; i++) heroes.Add(new HeroState(i, R.m.usedHeroes[i]));
+        for (int i = 0; i < Run.m.usedHeroes.Count; i++) heroes.Add(new HeroState(i, Run.m.usedHeroes[i]));
     }
 
     public void SaveHeroes() { //Called at the end of each battle

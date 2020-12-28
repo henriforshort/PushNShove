@@ -212,7 +212,7 @@ MonoBehaviour:
   baseMaxHealth: 100
   baseProt: 0.3
   baseWeight: 5
-  baseDamage: 5
+  baseDamage: 3
   baseStrength: 1.5
   baseCritChance: 0.2
   side: -1

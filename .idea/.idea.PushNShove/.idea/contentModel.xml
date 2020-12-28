@@ -24,12 +24,14 @@
             <e p="RareEffect.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
-            <e p="B.cs" t="Include" />
+            <e p="Battle.cs" t="Include" />
             <e p="CameraManager.cs" t="Include" />
-            <e p="G.cs" t="Include" />
+            <e p="Game.cs" t="Include" />
             <e p="GameSave.cs" t="Include" />
             <e p="HeroState.cs" t="Include" />
-            <e p="R.cs" t="Include" />
+            <e p="Level.cs" t="Include" />
+            <e p="Run.cs" t="Include" />
+            <e p="StartMenu.cs" t="Include" />
           </e>
           <e p="SimpleBehaviors" t="Include">
             <e p="Cloud.cs" t="Include" />
@@ -50,6 +52,8 @@
             <e p="UnitMaxRange.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
+            <e p="DragNDropBox.cs" t="Include" />
+            <e p="DragNDropItem.cs" t="Include" />
             <e p="Hanimator.cs" t="Include" />
             <e p="Tween.cs" t="Include" />
             <e p="Util.cs" t="Include" />

@@ -18,10 +18,10 @@ public class Knight : Unit {
             () => {
                 float heal = this.Random(3, 7);
                 Unit randomUnit = allHeroUnits.Random();
-                if (randomUnit.status != Status.DEAD) randomUnit.AddHealth(heal, heal.ToString(), G.m.yellow);
-                B.m.SpawnFX(ultFx, 
+                if (randomUnit.status != Status.DEAD) randomUnit.AddHealth(heal, heal.ToString(), Game.m.yellow);
+                Game.m.SpawnFX(ultFx, 
                     transform.position + new Vector3(this.Random(-1f, 1f), 0, -3),
-                    false, B.m.transform, healFxDuration);
+                    false, Battle.m.transform, healFxDuration);
             }, 
             healDelay);
     }

@@ -1,12 +1,18 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ItemPanel : MonoBehaviour, IDropHandler {
     public Hero hero;
+    public Image image;
     
     public void OnDrop(PointerEventData eventData) { //What to do when drag ends on an icon
-        if (!isFull) B.m.movingItem.SwitchTo(hero);
+        if (hero.items.Count < Run.m.maxItemsPerHero) Run.m.movingItem.SwitchTo(hero);
+        else FlashRed();
     }
 
-    public bool isFull => hero.items.Count > R.m.maxItemsPerHero;
+    public void FlashRed() {
+        image.SetAlpha(1f);
+        image.TweenAlpha(0, Tween.Style.EASE_OUT, 1f);
+    }
 }
