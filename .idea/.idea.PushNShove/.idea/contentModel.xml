@@ -14,6 +14,15 @@
             </e>
           </e>
         </e>
+        <e p="Hinventory" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Hinventory.cs" t="Include" />
+            <e p="Inventory.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
+            <e p="Resources.cs" t="Include" />
+            <e p="Slot.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Items" t="Include">
             <e p="CommonEffect.cs" t="Include" />
@@ -52,8 +61,6 @@
             <e p="UnitMaxRange.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
-            <e p="DragNDropBox.cs" t="Include" />
-            <e p="DragNDropItem.cs" t="Include" />
             <e p="Hanimator.cs" t="Include" />
             <e p="Tween.cs" t="Include" />
             <e p="Util.cs" t="Include" />
