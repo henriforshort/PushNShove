@@ -163,6 +163,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -209,349 +211,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: strongman_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 105
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d9193e7b61fea2a0800000000000000
-      internalID: -6724171749636105775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_1
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 105
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5edf12d54bcd423d0800000000000000
-      internalID: -3232215965330440731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_2
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 105
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cff1888269a0aae60800000000000000
-      internalID: 7974197730254266364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_3
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 105
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5216d2cbe108ae20800000000000000
-      internalID: 3361939233929826910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_4
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 105
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 732305721c42757c0800000000000000
-      internalID: -4082754125181210057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 70
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dba93139bc85d1400800000000000000
-      internalID: 296490781845461693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_6
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 70
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf7cf0b4618718890800000000000000
-      internalID: -7457547470804891652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_7
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 70
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e95419627e696dba0800000000000000
-      internalID: -6064493928679127650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_8
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 70
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d0c936306947e0d0800000000000000
-      internalID: -3393663116624936743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_9
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 70
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 619e048b06a979f20800000000000000
-      internalID: 3429379381464721686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 35
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d364d12fad4a31270800000000000000
-      internalID: 8220095005153117757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_11
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 35
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d997f99a33e6f9eb0800000000000000
-      internalID: -4710925517038061155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_12
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 35
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bbb89679375d61c0800000000000000
-      internalID: -4508851747613525071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_13
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 35
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee6da403b09fad1c0800000000000000
-      internalID: -4477993053016369426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_14
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 35
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f4e5102e36b123c0800000000000000
-      internalID: -4386024184139619081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strongman_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 63
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c3a424d6c3f0f260800000000000000
-      internalID: 7129466245415740358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: strongman_16
       rect:
         serializedVersion: 2
         x: 63
         y: 0
         width: 63
-        height: 35
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,7 +238,7 @@ TextureImporter:
         x: 126
         y: 0
         width: 63
-        height: 35
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,7 +259,7 @@ TextureImporter:
         x: 189
         y: 0
         width: 63
-        height: 35
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -608,13 +274,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strongman_19
+      name: strongman_0
       rect:
         serializedVersion: 2
-        x: 252
-        y: 0
+        x: 0
+        y: 129
         width: 63
-        height: 35
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,8 +288,323 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4566b452681fca340800000000000000
-      internalID: 4876538054989014612
+      spriteID: b394ed36651b6ea20800000000000000
+      internalID: 3091353178837240123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 129
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ee257b4d5d0c4f0800000000000000
+      internalID: -810412823341240808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 129
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911390abdb2e98cb0800000000000000
+      internalID: -4861105018271878887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 129
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4168b215cbfed48c0800000000000000
+      internalID: -4013288100822546924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 129
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1814c453df19a3c0800000000000000
+      internalID: -4347908972728805350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6540e41784f14aa40800000000000000
+      internalID: 5378458250986259542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_6
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 86
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4678565d61ffad840800000000000000
+      internalID: 5249788789188298596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_7
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 86
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d779f9e42ae33f10800000000000000
+      internalID: 2248398083253172181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_8
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 86
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19f85bb5395d8b20800000000000000
+      internalID: 3138262602658412831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_9
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 86
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec931529954d824a0800000000000000
+      internalID: -6617806171248969266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 43
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32fb046353f2bf60800000000000000
+      internalID: 8048763023550837308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 43
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10ab2e78ff0f5ca0800000000000000
+      internalID: -6026080216455340004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_12
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 43
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ee99d00539a0950800000000000000
+      internalID: 6416102591177551518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_13
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 43
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a022c78e26a33ced0800000000000000
+      internalID: -2395006380349316598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_14
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 43
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7ed0038fd358a60800000000000000
+      internalID: 7675609276090279904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 63
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e8885451754e040800000000000000
+      internalID: 4675958061989924453
       vertices: []
       indices: 
       edges: []

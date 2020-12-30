@@ -75,6 +75,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         //Init scene
         fightPrompt.SetActive(true);
         transition.FadeOut();
+        Game.m.InitGame();
     }
     
     

@@ -38,7 +38,6 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void SwitchTo(Hero h) {
         if (hero == h) return;
 
-        // Debug.Log(name + " switches to " + h.name);
         effect.Cancel();
         if (hero != null) hero.items.Remove(this);
         hero = h;

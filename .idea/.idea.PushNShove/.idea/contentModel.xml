@@ -45,6 +45,7 @@
           <e p="SimpleBehaviors" t="Include">
             <e p="Cloud.cs" t="Include" />
             <e p="FightPrompt.cs" t="Include" />
+            <e p="Parallax.cs" t="Include" />
             <e p="UITransition.cs" t="Include" />
             <e p="VersionText.cs" t="Include" />
           </e>

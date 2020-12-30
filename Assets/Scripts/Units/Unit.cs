@@ -176,8 +176,8 @@ public class Unit : MonoBehaviour {
         this.SetZ(0f);
         if (status == Status.DYING) DieDuringBattle();
         else Game.m.SpawnFX(Run.m.bumpDustFxPrefab,
-                new Vector3(this.GetX() - (int)side, -2, -2),
-                side == Side.MONSTER, Battle.m.transform);
+                new Vector3(this.GetX() - (int)side * 0.5f, -2, -2),
+                side == Side.HERO, Battle.m.transform);
     }
 
     
@@ -454,7 +454,7 @@ public class Unit : MonoBehaviour {
 
     public void DieDuringBattle() {
         if (size >= 2 || side == Side.HERO) Battle.m.cameraManager.Shake(0.2f);
-        Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1.5f*Vector3.up, Quaternion.identity);
+        Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
         Die();
     }
 

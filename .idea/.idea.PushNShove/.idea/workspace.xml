@@ -22,11 +22,45 @@
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/DragNDropBox.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/DragNDropBox.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/DragNDropItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/DragNDropItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/DeathCloud.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/DeathCloud.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/DeathCloud.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/DeathCloud.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/flag.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/flag.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/flag.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FX/flag.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Environment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Environment.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/Death.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/Death.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/DeathCloud 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fx/DeathCloud 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_sparks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_sparks.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_spear_slash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_spear_slash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/Bump_dust_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/Bump_dust_cloud.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/cloud.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/flag.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/flag.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/flies.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/flies.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/hills.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/hills.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/platform.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/platform.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/platform.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/platform.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/background.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/background.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/flag.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/flag.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/flies.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/flies.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/platform.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/platform.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/fx/fx_Death_Cloud 1.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/fx/fx_Death_Cloud 1.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/fx/fx_sparks.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/fx/fx_sparks.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +77,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/9e/ad5abd2f/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/c9/d4cf512d/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/99/dbf38612/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/Parallax.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Martians/Assets/Scripts/Util.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/fc/d2d224c8/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/3c/3514f8b3/Void.cs" root0="SKIP_HIGHLIGHTING" />
@@ -91,13 +126,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tween.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/OldTween.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/SimpleMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanim.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Monster.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ItemPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/UITransition.cs" />
@@ -116,25 +148,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/FightPrompt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/SceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/StartMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/ItemPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Knight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Strongman.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Level.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/DragNDropItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/DragNDropBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hinventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Box.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Hinventory/Resources.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Hinventory/Slot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Hinventory/Item.cs" />
@@ -142,6 +167,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Hinventory/Hinventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Hinventory/Scripts/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Hinventory/Scripts/Hinventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/Parallax.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
       </list>
     </option>
   </component>
@@ -241,6 +276,7 @@
       <workItem from="1609063020972" duration="26492000" />
       <workItem from="1609149629069" duration="8910000" />
       <workItem from="1609236765505" duration="27215000" />
+      <workItem from="1609320889802" duration="6968000" />
     </task>
     <servers />
   </component>

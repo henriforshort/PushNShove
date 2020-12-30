@@ -57,7 +57,7 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 		}
 		DontDestroyOnLoad(this);
 		InitRun();
-		Game.m.InitGame(); //Trouver mieux
+		// Game.m.InitGame(); //Trouver mieux
 	}
     
     

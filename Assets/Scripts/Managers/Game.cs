@@ -7,6 +7,9 @@ using UnityEngine.Serialization;
 public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs (NOT depending on any specific game mode)
                             //Should contain State info that is persisted across the whole game
+    [Header("State")]
+    private bool needInitGame = true;
+                            
     [Header("Prefabs")]
     public Sprite transparentSprite;
     public Sprite whiteSprite;
@@ -36,7 +39,9 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     }
 
     public void InitGame() {
-        // Run.m.heroPrefabs.ForEach(u => u.unit.InitGame());
+        if (!needInitGame) return;
+        needInitGame = false;
+        Unit.allHeroUnits.ForEach(u => u.InitGame());
     }
 
     public void LoadScene(SceneName sceneName) {

@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class Hanimator : MonoBehaviour {
     [Header("Balancing")]
     public bool autoPlay;
-    public bool isUI;
+    public WhenAnimFinishes whenAnimFinishes;
+    public SpriteRenderer spriteRenderer;
+    public Image image;
     public List<Hanimation> anims;
     
     [Header("State")]
@@ -16,13 +18,14 @@ public class Hanimator : MonoBehaviour {
     public int currentFrame;
     public float startAnimDate;
     
-    [Header("Self References")]
-    public SpriteRenderer spriteRenderer;
-    public Image image;
+    public enum WhenAnimFinishes { PAUSE, HIDE, DESTROY }
 
     public void Start() {
-        if (isUI && image == null) image = GetComponent<Image>();
-        if (!isUI && spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        if (image == null && spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null) image = GetComponent<Image>();
+        if (image == null && spriteRenderer == null) 
+            Debug.LogError("Hanimator does not have a target graphic", gameObject);
+        
         if (autoPlay) {
             playing = true;
             Play(anims[0]);
@@ -31,23 +34,27 @@ public class Hanimator : MonoBehaviour {
 
     public void Update() {
         if (!playing) return;
-        if ((Time.time - startAnimDate) / (currentAnim.frameDuration/1000) > currentFrame) {
-            currentFrame += 1;
-            if (currentFrame >= currentAnim.sprites.Count) {
-                if (currentAnim.loop) {
-                    startAnimDate = Time.time + (currentAnim.delay/1000);
-                    currentFrame = 0;
-                } else {
-                    playing = false;
-                    return;
-                }
+        if ((Time.time - startAnimDate) / (currentAnim.frameDuration / 1000) < currentFrame + 1) return;
+        
+        currentFrame += 1;
+        if (currentFrame >= currentAnim.sprites.Count) {
+            if (currentAnim.loop) {
+                startAnimDate = Time.time + (currentAnim.delay/1000);
+                currentFrame = 0;
+            } else {
+                if (whenAnimFinishes == WhenAnimFinishes.HIDE) SetVisible(false);
+                if (whenAnimFinishes == WhenAnimFinishes.DESTROY) Destroy(gameObject);
+                playing = false;
+                return;
             }
-            SetSprite(currentAnim.sprites[currentFrame]);
         }
+        SetSprite(currentAnim.sprites[currentFrame]);
     }
 
     public void Play(string s) {
-        Hanimation a = anims.FirstOrDefault(a => a.name == s);
+        Hanimation anim = anims.FirstOrDefault(a => a.name == s);
+        if (anim == null) Debug.LogError("Anim not found: " + s, gameObject);
+        else Play(anim);
     }
 
     public void Play(Hanimation a) {
@@ -56,6 +63,7 @@ public class Hanimator : MonoBehaviour {
             return;
         }
 
+        SetVisible(true);
         playing = true;
         currentAnim = a;
         startAnimDate = Time.time;
@@ -68,8 +76,13 @@ public class Hanimator : MonoBehaviour {
     }
 
     public void SetSprite(Sprite s) {
-        if (isUI) image.sprite = s;
+        if (image != null) image.sprite = s;
         else spriteRenderer.sprite = s;
+    }
+
+    public void SetVisible(bool b) {
+        if (image != null) image.enabled = b;
+        else spriteRenderer.enabled = b;
     }
 }
 

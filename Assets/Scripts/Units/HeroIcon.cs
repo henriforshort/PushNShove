@@ -98,7 +98,7 @@ public class HeroIcon : MonoBehaviour {
         foreach (Transform i in itemPanel.transform) Destroy(i.gameObject);
     }
 
-    public Item GainItemFromFight(Item itemPrefab, Vector3 position) {
+    public void GainItemFromFight(Item itemPrefab, Vector3 position) {
         //Create item
         Item itemInstance = Instantiate(
             itemPrefab, 
@@ -119,13 +119,10 @@ public class HeroIcon : MonoBehaviour {
                         Destroy(placeholder);
                         itemInstance.transform.SetParent(itemPanel.transform);
                     })));
-        
-        return itemInstance;
     }
 
-    public Item GetItemAtStartup(Item itemPrefab) {
+    public void GetItemAtStartup(Item itemPrefab) {
         Item itemInstance = Instantiate(itemPrefab, itemPanel.transform);
         itemInstance.Init(itemPrefab, hero);
-        return itemInstance;
     }
 }
