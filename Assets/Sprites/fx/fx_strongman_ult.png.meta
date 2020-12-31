@@ -79,6 +79,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -129,9 +131,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 52
-        width: 77
-        height: 26
+        y: 104
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +151,10 @@ TextureImporter:
       name: fx_strongman_ult_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 52
-        width: 77
-        height: 26
+        x: 154
+        y: 104
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +172,10 @@ TextureImporter:
       name: fx_strongman_ult_2
       rect:
         serializedVersion: 2
-        x: 154
-        y: 52
-        width: 77
-        height: 26
+        x: 308
+        y: 104
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,9 +194,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 26
-        width: 77
-        height: 26
+        y: 52
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +214,10 @@ TextureImporter:
       name: fx_strongman_ult_4
       rect:
         serializedVersion: 2
-        x: 77
-        y: 26
-        width: 77
-        height: 26
+        x: 154
+        y: 52
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +235,10 @@ TextureImporter:
       name: fx_strongman_ult_5
       rect:
         serializedVersion: 2
-        x: 154
-        y: 26
-        width: 77
-        height: 26
+        x: 308
+        y: 52
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,8 +258,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 77
-        height: 26
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +277,10 @@ TextureImporter:
       name: fx_strongman_ult_7
       rect:
         serializedVersion: 2
-        x: 77
+        x: 154
         y: 0
-        width: 77
-        height: 26
+        width: 154
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

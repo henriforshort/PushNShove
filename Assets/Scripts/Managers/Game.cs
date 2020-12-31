@@ -49,12 +49,12 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     }
 
     public GameObject SpawnFX(GameObject fx, Vector3 position, bool mirrored = false, 
-        Transform holder = null, float duration = 0.5f, Vector3 rotation = default) {
-        if (holder == null) holder = transform;
+        float duration = -1, Transform holder = null, Vector3 rotation = default) {
+        if (holder == null) holder = Battle.m.transform;
         if (rotation == default) rotation = Vector3.zero;
         GameObject spawnedFx = Instantiate(fx, position, Quaternion.Euler(rotation), holder);
         if (mirrored) spawnedFx.transform.localScale = new Vector3(-1, 1, 1);
-        Destroy(spawnedFx, duration);
+        if (duration > 0) Destroy(spawnedFx, duration);
         return spawnedFx;
     }
 }

@@ -101,8 +101,8 @@ MonoBehaviour:
     value: 3
     modifiers: []
   maxHealth:
-    startValue: 200
-    value: 200
+    startValue: 100
+    value: 100
     modifiers: []
   prot:
     startValue: 0
@@ -113,9 +113,13 @@ MonoBehaviour:
     value: 5
     modifiers: []
   damage:
-    startValue: 10
-    value: 10
-    modifiers: []
+    startValue: 5
+    value: 6
+    modifiers:
+    - type: 0
+      value: 1
+      scope: 1
+      priority: 0
   strength:
     startValue: 1.25
     value: 1.25
@@ -156,7 +160,7 @@ MonoBehaviour:
   animator: {fileID: 1773981805822391867}
   rigidbodee: {fileID: 1773981805588913687}
   hpLossUis: []
-  range: 4
+  range: 9
   ultStatModifs: []
   strongmanUltFx: {fileID: 688306038408255481, guid: 279e740964ee90a4faae7db10cffb98f, type: 3}
 --- !u!1 &1773981805822391869
@@ -185,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773981805822391869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.1944444, z: 0}
+  m_LocalPosition: {x: 0.144, y: 1.1944444, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6252388531141032251}
@@ -368,11 +372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.495
+      value: -0.183
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.87
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

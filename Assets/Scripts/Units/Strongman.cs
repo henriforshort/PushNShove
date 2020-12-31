@@ -25,8 +25,8 @@ public class Strongman : Unit {
         ultStatModifs.Add(strength.AddModifier(1.25f, StatModifier.Type.MULTIPLY));
         ultStatModifs.Add(critChance.AddModifier(1, StatModifier.Type.SET));
         
-        Game.m.SpawnFX(strongmanUltFx, transform.position + new Vector3(3, 1, -1), 
-            false, Battle.m.transform);
+        Game.m.SpawnFX(strongmanUltFx, 
+            transform.position + new Vector3(3, 1, -1), false, 0.5f);
         if (target != null) {
             target.GetBumpedBy(this);
             DefendFrom(target);

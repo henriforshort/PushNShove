@@ -56,7 +56,9 @@ public class Unit : MonoBehaviour {
     public Rigidbody rigidbodee;
     
     [Header("Self References (Assigned at runtime)")]
-    public List<HpLossUi> hpLossUis;
+    public List<GameObject> hpLossUis;
+
+    public static float lastSparkFxDate;
 
     private static List<Unit> _allHeroUnits; //Even the dead ones
     public static List<Unit> allHeroUnits => _allHeroUnits ?? (_allHeroUnits = new List<Unit>());
@@ -177,7 +179,7 @@ public class Unit : MonoBehaviour {
         if (status == Status.DYING) DieDuringBattle();
         else Game.m.SpawnFX(Run.m.bumpDustFxPrefab,
                 new Vector3(this.GetX() - (int)side * 0.5f, -2, -2),
-                side == Side.HERO, Battle.m.transform);
+                side == Side.HERO, 0.5f);
     }
 
     
@@ -189,7 +191,7 @@ public class Unit : MonoBehaviour {
         if (!CanUpdateSpeed()) return;
         
         float newSpeed = currentSpeed.LerpTo(maxSpeed, Run.m.bumpRecoverySpeed);
-        if (currentSpeed < 0 && newSpeed > 0) StartWalking();
+        if (currentSpeed.isAboutOrLowerThan(0) && newSpeed.isClearlyPositive()) StartWalking();
         currentSpeed = newSpeed;
         if (currentSpeed.isAboutOrHigherThan(maxSpeed)) currentSpeed = maxSpeed;
     }
@@ -321,10 +323,13 @@ public class Unit : MonoBehaviour {
         winner.DefendFrom(loser);
         
         if (winner.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
-        Game.m.SpawnFX(Run.m.sparkFxPrefab,
-            transform.position + new Vector3(1.5f * (int) side, 1, -2),
-            false, null, 0.5f,
-            Vector3.forward * Random.Range(0, 360));
+        if (Time.time - lastSparkFxDate > 0f) {
+            lastSparkFxDate = Time.time;
+            Game.m.SpawnFX(Run.m.sparkFxPrefab,
+                new Vector3(this.GetX() + 2f * (int) side, -2, -2),
+                winner.side == Side.MONSTER, 0.5f);
+                // Random.Range(0,3) * 90 * Vector3.forward);
+        }
         
     }
 
@@ -396,16 +401,11 @@ public class Unit : MonoBehaviour {
     public void AddHealth(float amount, string uiText = null, Color uiColor = default) {
         if (uiText != null) {
             if (uiColor == default) uiColor = Game.m.black;
-            HpLossUi hpLossUi = Game.m.SpawnFX(Run.m.hpLossUIPrefab,
-                    transform.position + 
-                        new Vector3(0.2f * (int) side + this.Random(-0.5f, 0.5f), 2.25f*size - 0.6f, -5),
-                    false,
-                    transform,
-                    3)
-                .GetComponent<HpLossUi>();
+            GameObject hpLossUi = Game.m.SpawnFX(Run.m.hpLossUIPrefab,
+                new Vector3(this.GetX(), healthBar.GetY() +0.25f, -5),
+                false, 3, transform);
             hpLossUis.Add(hpLossUi);
-            hpLossUi.unit = this;
-            TMP_Text number = hpLossUi.number;
+            TMP_Text number = hpLossUi.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
             number.color = uiColor;
             number.text = uiText;
         }
@@ -484,7 +484,10 @@ public class Unit : MonoBehaviour {
 
     public void OnDestroy() {
         if (Battle.m == null || Battle.m.gameState != Battle.State.PLAYING) return;
-        hpLossUis.ForEach(ui => ui.transform.SetParent(Run.m.transform));
+        hpLossUis
+            .Where(ui => ui != null)
+            .ToList()
+            .ForEach(ui => ui.transform.SetParent(Run.m.transform));
         allies.Remove(this);
 
         if (allies.Count == 0) {

@@ -1,43 +1,7 @@
 fileFormatVersion: 2
-guid: a5a5c23e92f638d45b7aef6ffeb662c9
+guid: 1564ea9ca83db7945aa60c57c4c0f0ac
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 872456342753083573
-    second: fx_sparks_0
-  - first:
-      213: 2793369586315611697
-    second: fx_sparks_1
-  - first:
-      213: -2746764710628950152
-    second: fx_sparks_2
-  - first:
-      213: -1472476474143916961
-    second: fx_sparks_3
-  - first:
-      213: -840002930577871754
-    second: fx_sparks_4
-  - first:
-      213: -2655132597739797201
-    second: fx_sparks_5
-  - first:
-      213: 4116652886403912322
-    second: fx_sparks_6
-  - first:
-      213: -8490520443796691966
-    second: fx_sparks_7
-  - first:
-      213: 2788818142064694082
-    second: fx_sparks_8
-  - first:
-      213: -4939302771571505217
-    second: fx_sparks_9
-  - first:
-      213: -6554490621636980998
-    second: fx_sparks_10
-  - first:
-      213: 9221458013671425281
-    second: fx_sparks_11
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -77,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -137,70 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: fx_sparks_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b085d7db669b1c00800000000000000
-      internalID: 872456342753083573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fx_sparks_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13ec8beb6da04c620800000000000000
-      internalID: 2793369586315611697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fx_sparks_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87ff1657c0881e9d0800000000000000
-      internalID: -2746764710628950152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

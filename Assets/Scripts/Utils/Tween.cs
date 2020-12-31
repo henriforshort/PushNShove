@@ -17,14 +17,15 @@ public class Tween : MonoBehaviour {
     [Header("Alternative Parameters")]
     // public float targetValue; //overrides amplitude if different from 0
     public Graphic visuals; //for alpha changes
+    public SpriteRenderer sprite; //for alpha changes
 
-    [Header("State")]
-    public bool playing;
-    public bool reversed;
-    public Vector3 startValue;
-    public Vector3 targetValue;
-    public Vector3 currentValue;
-    [Range(0,1)] public float linearValue;
+    // [Header("State")]
+    private bool playing;
+    private bool reversed;
+    private Vector3 startValue;
+    private Vector3 targetValue;
+    private Vector3 currentValue;
+    [Range(0,1)] private float linearValue;
 
     public enum Property { VERTICAL, HORIZONTAL, POSITION, SCALE, ALPHA }
     public enum Style { LINEAR, EASE_IN, EASE_OUT, EASE_IN_OUT, SINE, BOUNCE }
@@ -64,7 +65,7 @@ public class Tween : MonoBehaviour {
 
         if (property == Property.HORIZONTAL) startValue.x = transform.position.x;
         if (property == Property.VERTICAL) startValue.x = transform.position.y;
-        if (property == Property.ALPHA) startValue.x = visuals.color.a;
+        if (property == Property.ALPHA) startValue.x = GetAlpha();
         if (property == Property.SCALE) startValue = transform.localScale;
         if (property == Property.POSITION) startValue = transform.position;
 
@@ -80,7 +81,7 @@ public class Tween : MonoBehaviour {
         
         if (property == Property.HORIZONTAL) this.SetX(currentValue.x);
         if (property == Property.VERTICAL) this.SetY(currentValue.x);
-        if (property == Property.ALPHA) visuals.SetAlpha(currentValue.x);
+        if (property == Property.ALPHA) SetAlpha(currentValue.x);
         if (property == Property.SCALE) transform.localScale = currentValue;
         if (property == Property.POSITION) transform.position = currentValue;
 
@@ -91,6 +92,19 @@ public class Tween : MonoBehaviour {
             if (whenDone == WhenDone.STOP) playing = false;
             if (whenDone == WhenDone.DESTROY) Destroy(gameObject);
         }
+    }
+
+    public void SetAlpha(float v) {
+        if (visuals != null) visuals.SetAlpha(v);
+        else if (sprite != null) sprite.SetAlpha(v);
+        else Debug.LogError("visuals not assigned");
+    }
+
+    public float GetAlpha() {
+        if (visuals != null) return visuals.color.a;
+        else if (sprite != null) return sprite.color.a;
+        else Debug.LogError("visuals not assigned");
+        return default;
     }
 
     public void MaxOut() => linearValue = reversed ? 0 : 1;

@@ -585,11 +585,19 @@ public static class Util {
     // COLORS
     // --------------------
 
-    public static T SetAlpha<T>(this T g, float alpha) where T : Graphic {         
-        Color color = g.color;
-        color.a = alpha;
-        g.color = color;
+    public static T SetAlpha<T>(this T g, float alpha) where T : Graphic {  
+        g.color = g.color.SetAlpha(alpha);
         return g;
+    }
+
+    public static SpriteRenderer SetAlpha(this SpriteRenderer spriteRenderer, float alpha) {  
+        spriteRenderer.color = spriteRenderer.color.SetAlpha(alpha);
+        return spriteRenderer;
+    }
+
+    public static Color SetAlpha(this Color col, float alpha) {         
+        col.a = alpha;
+        return col;
     }
     
     

@@ -53,8 +53,12 @@ public class Hanimator : MonoBehaviour {
 
     public void Play(string s) {
         Hanimation anim = anims.FirstOrDefault(a => a.name == s);
-        if (anim == null) Debug.LogError("Anim not found: " + s, gameObject);
-        else Play(anim);
+        if (anim == null) {
+            Debug.LogError("Anim not found: " + s, gameObject);
+            return;
+        }
+        
+        Play(anim);
     }
 
     public void Play(Hanimation a) {

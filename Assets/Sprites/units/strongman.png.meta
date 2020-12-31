@@ -214,9 +214,9 @@ TextureImporter:
       name: strongman_16
       rect:
         serializedVersion: 2
-        x: 63
+        x: 74
         y: 0
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -235,9 +235,9 @@ TextureImporter:
       name: strongman_17
       rect:
         serializedVersion: 2
-        x: 126
+        x: 148
         y: 0
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,9 +256,9 @@ TextureImporter:
       name: strongman_18
       rect:
         serializedVersion: 2
-        x: 189
+        x: 222
         y: 0
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -279,7 +279,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 129
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -298,9 +298,9 @@ TextureImporter:
       name: strongman_1
       rect:
         serializedVersion: 2
-        x: 63
+        x: 74
         y: 129
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -319,9 +319,9 @@ TextureImporter:
       name: strongman_2
       rect:
         serializedVersion: 2
-        x: 126
+        x: 148
         y: 129
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -340,9 +340,9 @@ TextureImporter:
       name: strongman_3
       rect:
         serializedVersion: 2
-        x: 189
+        x: 222
         y: 129
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -361,9 +361,9 @@ TextureImporter:
       name: strongman_4
       rect:
         serializedVersion: 2
-        x: 252
+        x: 296
         y: 129
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -384,7 +384,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 86
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -403,9 +403,9 @@ TextureImporter:
       name: strongman_6
       rect:
         serializedVersion: 2
-        x: 63
+        x: 74
         y: 86
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -424,9 +424,9 @@ TextureImporter:
       name: strongman_7
       rect:
         serializedVersion: 2
-        x: 126
+        x: 148
         y: 86
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -445,9 +445,9 @@ TextureImporter:
       name: strongman_8
       rect:
         serializedVersion: 2
-        x: 189
+        x: 222
         y: 86
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -466,9 +466,9 @@ TextureImporter:
       name: strongman_9
       rect:
         serializedVersion: 2
-        x: 252
+        x: 296
         y: 86
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -489,7 +489,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 43
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -508,9 +508,9 @@ TextureImporter:
       name: strongman_11
       rect:
         serializedVersion: 2
-        x: 63
+        x: 74
         y: 43
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -529,9 +529,9 @@ TextureImporter:
       name: strongman_12
       rect:
         serializedVersion: 2
-        x: 126
+        x: 148
         y: 43
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -550,9 +550,9 @@ TextureImporter:
       name: strongman_13
       rect:
         serializedVersion: 2
-        x: 189
+        x: 222
         y: 43
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -571,9 +571,9 @@ TextureImporter:
       name: strongman_14
       rect:
         serializedVersion: 2
-        x: 252
+        x: 296
         y: 43
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -594,7 +594,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 63
+        width: 74
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -605,6 +605,27 @@ TextureImporter:
       bones: []
       spriteID: 56e8885451754e040800000000000000
       internalID: 4675958061989924453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_19
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 74
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4566b452681fca340800000000000000
+      internalID: 4876538054989014612
       vertices: []
       indices: 
       edges: []

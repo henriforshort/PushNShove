@@ -53,7 +53,6 @@
             <e p="Bruiser.cs" t="Include" />
             <e p="Hero.cs" t="Include" />
             <e p="HeroIcon.cs" t="Include" />
-            <e p="HpLossUi.cs" t="Include" />
             <e p="Knight.cs" t="Include" />
             <e p="Monster.cs" t="Include" />
             <e p="Stat.cs" t="Include" />

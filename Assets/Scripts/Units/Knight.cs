@@ -6,7 +6,6 @@ public class Knight : Unit {
     [Header("KNIGHT VARIABLES", order = 2)]
     [Header("Balancing", order = 3)]
     public float healDelay;
-    public float healFxDuration;
     public List<StatModifier> ultStatModifs = new List<StatModifier>();
     
     [Header("Prefabs")]
@@ -16,12 +15,11 @@ public class Knight : Unit {
         heroUnits.ForEach(u => ultStatModifs.Add(u.prot.AddModifier(0.3f)));
         this.While(() => hero.ultStatus == Hero.UltStatus.ACTIVATED, 
             () => {
-                float heal = this.Random(3, 7);
+                float heal = this.Random(1, 4);
                 Unit randomUnit = allHeroUnits.Random();
                 if (randomUnit.status != Status.DEAD) randomUnit.AddHealth(heal, heal.ToString(), Game.m.yellow);
                 Game.m.SpawnFX(ultFx, 
-                    transform.position + new Vector3(this.Random(-1f, 1f), 0, -3),
-                    false, Battle.m.transform, healFxDuration);
+                    transform.position + new Vector3(this.Random(-1f, 1f), 0, -3));
             }, 
             healDelay);
     }

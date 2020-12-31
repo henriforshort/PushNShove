@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 40
+  ultCooldown: 2
   ultDuration: 5
   ultCooldownLeft: 2
   ultStatus: 0
@@ -99,91 +99,31 @@ MonoBehaviour:
   maxSpeed:
     startValue: 3
     value: 3
-    modifiers:
-    - type: 0
-      value: 0
-      scope: 0
-      priority: 0
+    modifiers: []
   maxHealth:
     startValue: 100
     value: 100
-    modifiers:
-    - type: 0
-      value: 0
-      scope: 0
-      priority: 0
+    modifiers: []
   prot:
     startValue: 0.2
-    value: 0.5
-    modifiers:
-    - type: 0
-      value: 0.1
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 0.1
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 0.1
-      scope: 1
-      priority: 0
+    value: 0.2
+    modifiers: []
   weight:
     startValue: 5
     value: 5
     modifiers: []
   damage:
     startValue: 5
-    value: 23
-    modifiers:
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
-    - type: 0
-      value: 2
-      scope: 1
-      priority: 0
+    value: 5
+    modifiers: []
   strength:
     startValue: 1
     value: 1
     modifiers: []
   critChance:
     startValue: 0.1
-    value: 0.2
-    modifiers:
-    - type: 0
-      value: 0.1
-      scope: 1
-      priority: 0
+    value: 0.1
+    modifiers: []
   baseMaxSpeed: 3
   baseMaxHealth: 100
   baseProt: 0.2
@@ -216,8 +156,7 @@ MonoBehaviour:
   animator: {fileID: 6971875616310140932}
   rigidbodee: {fileID: 6971875616277727272}
   hpLossUis: []
-  healDelay: 0.5
-  healFxDuration: 0.5
+  healDelay: 0.25
   ultStatModifs: []
   ultFx: {fileID: 7057374150237274002, guid: 95e2b3cd432312a44badd8635b85b45b, type: 3}
 --- !u!1 &6971875616310140930

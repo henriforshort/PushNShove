@@ -149,18 +149,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   property: 0
   style: 0
-  whenDone: 0
-  duration: 2
+  whenDone: 3
+  duration: 1
+  valueType: 1
+  value: {x: 2, y: 0, z: 0}
   restartDelay: 0
-  target: {x: 0, y: 0, z: 0}
-  amplitude: {x: 1, y: 0, z: 0}
   visuals: {fileID: 0}
-  playing: 0
-  reversed: 0
-  startValue: {x: 0, y: 0, z: 0}
-  targetValue: {x: 1, y: 0, z: 0}
-  currentValue: {x: 0, y: 0, z: 0}
-  linearValue: 0
+  sprite: {fileID: 0}
 --- !u!114 &913080726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,13 +172,8 @@ MonoBehaviour:
   style: 4
   whenDone: 0
   duration: 1
+  valueType: 1
+  value: {x: 0.5, y: 0, z: 0}
   restartDelay: 0
-  target: {x: 0, y: 0, z: 0}
-  amplitude: {x: 0.25, y: 0, z: 0}
   visuals: {fileID: 0}
-  playing: 0
-  reversed: 0
-  startValue: {x: 0, y: 0, z: 0}
-  targetValue: {x: 0, y: 0, z: 0}
-  currentValue: {x: 0, y: 0, z: 0}
-  linearValue: 0
+  sprite: {fileID: 0}
