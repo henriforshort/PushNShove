@@ -98,8 +98,9 @@ MonoBehaviour:
     without relying on meaningful content. '
   isDragged: 0
   canvasGroup: {fileID: 8233179869333219589}
+  effect: {fileID: 0}
   hero: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 4308348561640647332}
 --- !u!114 &4308348561640647331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPlay: 1
-  isUI: 1
+  whenAnimFinishes: 0
+  spriteRenderer: {fileID: 0}
+  image: {fileID: 781404664490748831}
   anims:
   - name: 
     frameDuration: 50
@@ -141,8 +144,6 @@ MonoBehaviour:
     randomStart: 0
   currentFrame: 0
   startAnimDate: 0
-  spriteRenderer: {fileID: 0}
-  image: {fileID: 781404664490748831}
 --- !u!225 &8233179869333219589
 CanvasGroup:
   m_ObjectHideFlags: 0

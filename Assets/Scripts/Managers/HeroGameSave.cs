@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -9,6 +11,8 @@ public class HeroGameSave {
     
     //Data
     public UnitData data;
+    
+    public HeroRunSave runSave => Run.m.save.heroes.First(h => h.prefabIndex == index);
 
     public HeroGameSave (int index, Hero prefab) {
         this.prefab = prefab;
@@ -26,14 +30,16 @@ public class HeroGameSave {
         data.strength.Init(prefab.unit.baseStrength);
         data.critChance.Init(prefab.unit.baseCritChance);
         data.currentHealth = prefab.unit.data.maxHealth;
+        data.ultCooldownLeft = 0;
+        data.itemPrefabs.Clear();
         data.CopyTo(prefab.unit.data);
     }
 
     public void Save() {
-        Run.m.save.heroes[index].data.CopyTo(data);
+        runSave.data.CopyTo(data);
     }
 
     public void Load() {
-        data.CopyTo(Run.m.save.heroes[index].data);
+        data.CopyTo(runSave.data);
     }
 }

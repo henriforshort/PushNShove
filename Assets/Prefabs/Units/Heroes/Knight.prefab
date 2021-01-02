@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6971875616277727287}
   - component: {fileID: 6971875616277727284}
   - component: {fileID: 6971875616277727272}
-  - component: {fileID: 5839365868507422637}
   - component: {fileID: -8380110151794944169}
+  - component: {fileID: 5839365868507422637}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -64,26 +64,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5839365868507422637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6971875616277727282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ultCooldown: 32
-  ultDuration: 5
-  ultCooldownLeft: 2
-  ultStatus: 0
-  items: []
-  unit: {fileID: -8380110151794944169}
-  image: {fileID: 21300000, guid: 0ef2f9755ffd62d40a534b56122d91ae, type: 3}
-  icon: {fileID: 0}
 --- !u!114 &-8380110151794944169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,34 +76,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce11c64293f26c4ab56edbaf79d6e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed:
-    startValue: 3
-    value: 3
-    modifiers: []
-  maxHealth:
-    startValue: 100
-    value: 100
-    modifiers: []
-  prot:
-    startValue: 0.2
-    value: 0.2
-    modifiers: []
-  weight:
-    startValue: 5
-    value: 5
-    modifiers: []
-  damage:
-    startValue: 5
-    value: 5
-    modifiers: []
-  strength:
-    startValue: 1
-    value: 1
-    modifiers: []
-  critChance:
-    startValue: 0.1
-    value: 0.1
-    modifiers: []
+  data:
+    maxSpeed:
+      startValue: 3
+      value: 3
+      modifiers: []
+    maxHealth:
+      startValue: 100
+      value: 100
+      modifiers: []
+    prot:
+      startValue: 0.2
+      value: 0.2
+      modifiers: []
+    weight:
+      startValue: 5
+      value: 5
+      modifiers: []
+    damage:
+      startValue: 5
+      value: 5
+      modifiers: []
+    strength:
+      startValue: 1
+      value: 1
+      modifiers: []
+    critChance:
+      startValue: 0.1
+      value: 0.1
+      modifiers: []
+    currentHealth: 100
+    ultCooldownLeft: 0
+    _itemPrefabs: []
   baseMaxSpeed: 3
   baseMaxHealth: 100
   baseProt: 0.2
@@ -159,6 +143,25 @@ MonoBehaviour:
   healDelay: 0.25
   ultStatModifs: []
   ultFx: {fileID: 7057374150237274002, guid: 95e2b3cd432312a44badd8635b85b45b, type: 3}
+--- !u!114 &5839365868507422637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971875616277727282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ultCooldown: 32
+  ultDuration: 5
+  ultCooldownLeft: 2
+  ultStatus: 0
+  unit: {fileID: -8380110151794944169}
+  image: {fileID: 21300000, guid: 0ef2f9755ffd62d40a534b56122d91ae, type: 3}
+  _icon: {fileID: 0}
 --- !u!1 &6971875616310140930
 GameObject:
   m_ObjectHideFlags: 0

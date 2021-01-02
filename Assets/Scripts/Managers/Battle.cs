@@ -108,12 +108,10 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void GameOver() {
-        Unit.allHeroUnits.ForEach(h => h.EndUlt());
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
         onBattleEnd.ForEach(a => a());
-        Run.m.save.SaveHeroes();
         this.Wait(0.5f, () => Unit.heroUnits.ForEach(u => u.hero.EndUlt()));
     }
 
@@ -129,16 +127,20 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void PressRestartButton() {
+        if (gameState != State.GAME_OVER) return;
+        
         gameOverPanelWhiteButton.fillAmount = 1;
         this.Wait(0.1f, then:Restart);
     }
 
     public void Restart() {
         gameState = State.RESTARTING;
-        transition.FadeIn();
+        Unit.heroUnits.ForEach(u => u.hero.EndUlt());
+        Run.m.save.SaveHeroes();
         Unit.heroUnits.Clear();
         Unit.allHeroUnits.Clear();
         Unit.monsterUnits.Clear();
+        transition.FadeIn();
         this.Wait(0.4f, () => {
             if (hasWon) Game.m.LoadScene(Game.SceneName.Battle);
             else Game.m.LoadScene(Game.SceneName.Camp);

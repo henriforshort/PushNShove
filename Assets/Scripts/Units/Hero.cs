@@ -7,30 +7,36 @@ public class Hero : MonoBehaviour {
     public float ultDuration;
     
     [Header("State")]
-    public float ultCooldownLeft;
     public UltStatus ultStatus;
-
-    [Header("Scene References (assigned at runtime)")]
-    public List<Item> items;
     
     [Header("Self References")]
     public Unit unit;
     public Sprite image;
-    public HeroIcon icon;
+    public HeroIcon _icon;
     
     public enum UltStatus { AVAILABLE, RELOADING, ACTIVATED }
-    
-    
+
+    public List<Item> items => unit.data.itemPrefabs;
+    public HeroIcon icon => _icon ?? (_icon = Battle.m.heroIcons[unit.index]);
+    public float ultCooldownLeft {
+        get { return unit.data.ultCooldownLeft; }
+        set { unit.data.ultCooldownLeft = value; }
+    }
+
+
     // ====================
     // BASICS
     // ====================
 
-    public void InitBattle(HeroIcon i) { //Called after loading
-        items.ForEach(item => GetItemAtStartup(item.prefab));
-        ultStatus = UltStatus.RELOADING;
-        icon = i;
-        icon.InitBattle(this);
+    public void Awake() { //Called before loading
+        _icon = null;
         ClearItems();
+    }
+
+    public void InitBattle(HeroIcon i) { //Called after loading
+        ultStatus = UltStatus.RELOADING;
+        icon.InitBattle(this);
+        items.ForEach(item => GetItemAtStartup(item.prefab));
         unit.InitBattle();
     }
 
@@ -87,7 +93,7 @@ public class Hero : MonoBehaviour {
     // ====================
 
     public void ClearItems() {
-        items = new List<Item>();
+        items.Clear();
         icon.ClearItems();
     }
 

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1773981805588913672}
   - component: {fileID: 1773981805588913675}
   - component: {fileID: 1773981805588913687}
-  - component: {fileID: 6646292189090240541}
   - component: {fileID: 4700471019136354901}
+  - component: {fileID: 6646292189090240541}
   m_Layer: 0
   m_Name: Strongman
   m_TagString: Untagged
@@ -64,26 +64,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6646292189090240541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773981805588913677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ultCooldown: 32
-  ultDuration: 0.5
-  ultCooldownLeft: 2
-  ultStatus: 0
-  items: []
-  unit: {fileID: 4700471019136354901}
-  image: {fileID: 21300000, guid: 64471d6bee8f92143a750eb72e4d10a5, type: 3}
-  icon: {fileID: 0}
 --- !u!114 &4700471019136354901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,38 +76,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78638656cee26a4a92baf113b897ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed:
-    startValue: 3
-    value: 3
-    modifiers: []
-  maxHealth:
-    startValue: 100
-    value: 100
-    modifiers: []
-  prot:
-    startValue: 0
-    value: 0
-    modifiers: []
-  weight:
-    startValue: 5
-    value: 5
-    modifiers: []
-  damage:
-    startValue: 5
-    value: 6
-    modifiers:
-    - type: 0
-      value: 1
-      scope: 1
-      priority: 0
-  strength:
-    startValue: 1.25
-    value: 1.25
-    modifiers: []
-  critChance:
-    startValue: 0.1
-    value: 0.1
-    modifiers: []
+  data:
+    maxSpeed:
+      startValue: 3
+      value: 3
+      modifiers: []
+    maxHealth:
+      startValue: 100
+      value: 100
+      modifiers: []
+    prot:
+      startValue: 0
+      value: 0
+      modifiers: []
+    weight:
+      startValue: 5
+      value: 5
+      modifiers: []
+    damage:
+      startValue: 5
+      value: 5
+      modifiers: []
+    strength:
+      startValue: 1.25
+      value: 1.25
+      modifiers: []
+    critChance:
+      startValue: 0.1
+      value: 0.1
+      modifiers: []
+    currentHealth: 100
+    ultCooldownLeft: 0
+    _itemPrefabs: []
   baseMaxSpeed: 3
   baseMaxHealth: 100
   baseProt: 0
@@ -163,6 +143,25 @@ MonoBehaviour:
   range: 9
   ultStatModifs: []
   strongmanUltFx: {fileID: 688306038408255481, guid: 279e740964ee90a4faae7db10cffb98f, type: 3}
+--- !u!114 &6646292189090240541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773981805588913677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ultCooldown: 32
+  ultDuration: 0.5
+  ultCooldownLeft: 2
+  ultStatus: 0
+  unit: {fileID: 4700471019136354901}
+  image: {fileID: 21300000, guid: 64471d6bee8f92143a750eb72e4d10a5, type: 3}
+  _icon: {fileID: 0}
 --- !u!1 &1773981805822391869
 GameObject:
   m_ObjectHideFlags: 0

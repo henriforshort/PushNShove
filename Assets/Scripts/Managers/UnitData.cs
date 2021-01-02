@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 [Serializable]
 public class UnitData {
@@ -16,7 +17,9 @@ public class UnitData {
     //Other info
     public float currentHealth;
     public float ultCooldownLeft;
-    public List<Item> itemPrefabs; //instances or prefabs?
+    [SerializeField] private List<Item> _itemPrefabs;
+    
+    public List<Item> itemPrefabs => _itemPrefabs ?? (_itemPrefabs = new List<Item>());
 
     public void CopyTo(UnitData copy) {
         copy.maxSpeed = maxSpeed;
@@ -29,6 +32,7 @@ public class UnitData {
 
         copy.currentHealth = currentHealth;
         copy.ultCooldownLeft = ultCooldownLeft;
-        copy.itemPrefabs = itemPrefabs.Select(i => i.prefab).ToList();
+        copy.itemPrefabs.Clear();
+        copy.itemPrefabs.AddRange(itemPrefabs.Select(i => i.prefab).ToList());
     }
 }

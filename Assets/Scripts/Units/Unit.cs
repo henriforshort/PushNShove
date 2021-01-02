@@ -31,7 +31,6 @@ public class Unit : MonoBehaviour {
     public Status status;
     public AttackStatus attackStatus;
     public Anim anim;
-    public float currentHealth;
     public bool lastWindupIsTwo;
     public float critCollisionDate;
     public bool isOnFreezeFrame;
@@ -95,7 +94,7 @@ public class Unit : MonoBehaviour {
     public void Awake() { //Called before loading
         SetAnim(Anim.WALK);
         currentSpeed = data.maxSpeed;
-        tmpHealthBar.value = currentHealth;
+        tmpHealthBar.value = data.currentHealth;
         
         if (side == Side.MONSTER) MonsterInit();
         if (side == Side.HERO) HeroInit();
@@ -409,21 +408,21 @@ public class Unit : MonoBehaviour {
             number.text = uiText;
         }
         
-        SetHealth(currentHealth + amount);
+        SetHealth(data.currentHealth + amount);
     }
 
     public void SetHealth(float amount) {
-        currentHealth = Mathf.Clamp(amount, 0, data.maxHealth);
-        healthBar.value = currentHealth / data.maxHealth;
+        data.currentHealth = Mathf.Clamp(amount, 0, data.maxHealth);
+        healthBar.value = data.currentHealth / data.maxHealth;
         tmpHealthBar.value = healthBar.value;
         healthBar.gameObject.SetActive(false);
         this.Wait(0.1f, () => healthBar.gameObject.SetActive(true));
         
         if (hero != null) {
-            hero.icon.SetHealth(currentHealth/data.maxHealth);
+            hero.icon.SetHealth(data.currentHealth/data.maxHealth);
             hero.icon.FlashHealth();
         }
-        if (currentHealth <= 0) DeathByHp();
+        if (data.currentHealth <= 0) DeathByHp();
     }
     
     
@@ -473,7 +472,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void MonsterDeath() {
-        // if (monster.dropRate.Chance() && !Run.m.itemsDepleted)
+        if (monster.dropRate.Chance() && !Run.m.itemsDepleted)
             heroUnits.Where(u => u.hero.items.Count < Run.m.maxItemsPerHero).ToList()
                 .Random()
                 ?.hero

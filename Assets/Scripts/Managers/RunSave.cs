@@ -11,10 +11,11 @@ public class RunSave {
         battle = 1;
         
         heroes = new List<HeroRunSave>();
-        Run.m.activeHeroPrefabs.ForEach(h => {
-            int index = Game.m.heroPrefabs.IndexOf(h);
-            heroes.Add(new HeroRunSave(index, h, Game.m.save.heroes[index].data));
-        });
+        for (int i = 0; i < Run.m.activeHeroPrefabs.Count; i++) {
+            Hero hero = Run.m.activeHeroPrefabs[i];
+            int index = Game.m.heroPrefabs.IndexOf(hero);
+            heroes.Add(new HeroRunSave(index, i,hero, Game.m.save.heroes[index].data));
+        }
     }
 
     public void SaveHeroes() { //Called at the end of each battle

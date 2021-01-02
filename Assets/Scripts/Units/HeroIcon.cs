@@ -105,7 +105,7 @@ public class HeroIcon : MonoBehaviour {
             Battle.m.cameraManager.cam.WorldToScreenPoint(position),
             Quaternion.identity,
             Battle.m.itemsCanvas);
-        itemInstance.Init(itemPrefab, hero);
+        itemInstance.Init(itemPrefab, hero, true);
         
         //Bounce item then move it to top left corner
         GameObject placeholder = new GameObject();
@@ -123,6 +123,6 @@ public class HeroIcon : MonoBehaviour {
 
     public void GetItemAtStartup(Item itemPrefab) {
         Item itemInstance = Instantiate(itemPrefab, itemPanel.transform);
-        itemInstance.Init(itemPrefab, hero);
+        itemInstance.Init(itemPrefab, hero, false);
     }
 }

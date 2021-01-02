@@ -59,6 +59,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         float duration = -1, Transform holder = null, Vector3 rotation = default) {
         if (holder == null) holder = Battle.m.transform;
         if (rotation == default) rotation = Vector3.zero;
+        
         GameObject spawnedFx = Instantiate(fx, position, Quaternion.Euler(rotation), holder);
         if (mirrored) spawnedFx.transform.localScale = new Vector3(-1, 1, 1);
         if (duration > 0) Destroy(spawnedFx, duration);

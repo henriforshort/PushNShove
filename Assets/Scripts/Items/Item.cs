@@ -14,36 +14,46 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     [Header("Self References")]
     public CanvasGroup canvasGroup;
     public ItemEffect effect;
+    public Item prefab;
     
     [Header("Scene References (assigned at runtime)")]
     public Hero hero;
-    public Item prefab;
 
     public static Item describedItem;
     
     public enum Rarity { COMMON, RARE, LEGGY }
 
-    public void Init(Item p, Hero h) {
+    
+    // ====================
+    // EFFECT
+    // ====================
+
+    public void Init(Item p, Hero h, bool fromFight) {
         prefab = p;
         name = prefab.name;
         description = name+"\n"+description;
         effect.item = this;
-        SwitchTo(h);
+        hero = h;
+        if (fromFight) {
+            hero.items.Add(prefab);
+            effect.Apply();
+        }
     }
 
-    public void Update() {
-        if (isDragged) this.LerpTo(Input.mousePosition, 20);
-    }
-
-    public void SwitchTo(Hero h) {
-        if (hero == h) return;
+    public void SwitchTo(Hero newHero) {
+        if (hero == newHero) return;
 
         effect.Cancel();
-        if (hero != null) hero.items.Remove(this);
-        hero = h;
-        hero.items.Add(this);
+        hero.items.Remove(prefab);
+        hero = newHero;
+        hero.items.Add(prefab);
         effect.Apply();
     }
+    
+    
+    // ====================
+    // DRAG
+    // ====================
 
     public void OnBeginDrag(PointerEventData eventData) {
         if (Run.m.movingItem != null) return;
@@ -56,7 +66,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         Battle.m.itemDescription.SetActive(false);
     }
 
-    public void OnDrag(PointerEventData eventData) { }
+    public void OnDrag(PointerEventData eventData) => transform.position = Input.mousePosition;
 
     public void OnEndDrag(PointerEventData eventData) { //What to do when drag ends, either on an icon or not
         if (Run.m.movingItem != this) return;

@@ -6,7 +6,7 @@ public class HeroRunSave {
     //Basic info
     public Hero prefab;
     public int prefabIndex; //Index of the prefab in the Game.m.heroPrefabs list
-    public int instanceIndex; //Index of the instance in the Unit.allHeroUnits list
+    public int instanceIndex; //Index of the instance in the Unit.allHeroUnits list or the Run.m.activeHeroPrefabs list
     
     //Data
     public UnitData data;
@@ -28,12 +28,10 @@ public class HeroRunSave {
     }
 
     public void Save() {
-        Debug.Log(instance.unit.data.ultCooldownLeft);
         instance.unit.data.CopyTo(data);
     }
 
     public void Load() {
-        Debug.Log(Unit.allHeroUnits.Count);
         data.CopyTo(instance.unit.data);
     }
 }
