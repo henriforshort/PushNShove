@@ -22,8 +22,8 @@ public class Strongman : Unit {
     public void PatateDeForain(Unit target) {
         lockAnim = false;
         SetAnim(Anim.HIT);
-        ultStatModifs.Add(strength.AddModifier(1.25f, StatModifier.Type.MULTIPLY));
-        ultStatModifs.Add(critChance.AddModifier(1, StatModifier.Type.SET));
+        ultStatModifs.Add(data.strength.AddModifier(1.25f, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(data.critChance.AddModifier(1, StatModifier.Type.SET));
         
         Game.m.SpawnFX(strongmanUltFx, 
             transform.position + new Vector3(3, 1, -1), false, 0.5f);

@@ -12,7 +12,7 @@ public class Knight : Unit {
     public GameObject ultFx;
 
     public override void Ult() {
-        heroUnits.ForEach(u => ultStatModifs.Add(u.prot.AddModifier(0.3f)));
+        heroUnits.ForEach(u => ultStatModifs.Add(u.data.prot.AddModifier(0.3f)));
         this.While(() => hero.ultStatus == Hero.UltStatus.ACTIVATED, 
             () => {
                 float heal = this.Random(1, 4);

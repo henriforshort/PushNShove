@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs (NOT depending on any specific game mode)
                             //Should contain State info that is persisted across the whole game
     [Header("State")]
-    private bool needInitGame = true;
+    public GameSave save;
                             
     [Header("Prefabs")]
+    public List<Hero> heroPrefabs;
     public Sprite transparentSprite;
     public Sprite whiteSprite;
 
@@ -26,7 +25,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     
     public static Game m;
     
-    public enum SceneName { Battle, StartMenu }
+    public enum SceneName { Battle, StartMenu, Camp }
 
     public void Start() {
         if (m == null) m = this;
@@ -35,14 +34,22 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
             return;
         }
         DontDestroyOnLoad(this);
-        // InitGame();
+        InitGame();
     }
+    
+    
+    // ====================
+    // START & END
+    // ====================
 
-    public void InitGame() {
-        if (!needInitGame) return;
-        needInitGame = false;
-        Unit.allHeroUnits.ForEach(u => u.InitGame());
+    public void InitGame() { //Called at the start of each run, before init the first battle
+        save.InitGame();
     }
+    
+    
+    // ====================
+    // UTILS
+    // ====================
 
     public void LoadScene(SceneName sceneName) {
         SceneManager.LoadScene(sceneName.ToString());

@@ -19,10 +19,10 @@ public class Bruiser : Unit {
         attackSpeed = 0f;
         attackAnimDuration = 0;
 
-        ultStatModifs.Add(prot.AddModifier(0.9f, StatModifier.Type.SET));
-        ultStatModifs.Add(weight.AddModifier(50, StatModifier.Type.MULTIPLY));
-        ultStatModifs.Add(damage.AddModifier(0.3f, StatModifier.Type.MULTIPLY));
-        ultStatModifs.Add(critChance.AddModifier(0.1f, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(data.prot.AddModifier(0.9f, StatModifier.Type.SET));
+        ultStatModifs.Add(data.weight.AddModifier(50, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(data.damage.AddModifier(0.3f, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(data.critChance.AddModifier(0.1f, StatModifier.Type.MULTIPLY));
 
         isInvincible = true;
     }

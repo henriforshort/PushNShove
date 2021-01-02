@@ -20,44 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroGameSave.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroGameSave.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroRunSave.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroRunSave.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Units/ShieldBearer/ShieldBearer_Bump.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Units/ShieldBearer/ShieldBearer_Bump.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Blue.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/KnightUltFx.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fx/KnightUltFx.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_sparks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fx/fx_sparks.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Bruiser.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Heroes/Strongman.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Parts/hp loss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Parts/hp loss.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/CommonEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/CommonEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/LegendaryEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/LegendaryEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/RareEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/RareEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/HpLossUi.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/HpLossUi.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameSave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RunSave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameSave.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RunSave.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/HeroState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Bruiser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Bruiser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Knight.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Strongman.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Strongman.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/flag.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/flag.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx/fx_sparks.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/fx/fx_sparks.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx/fx_sparks.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/fx/fx_sparks.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx/fx_strongman_ult.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/fx/fx_strongman_ult.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/fx/fx_strongman_ult.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/fx/fx_strongman_ult.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/Shieldbearer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/bruiser.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/bruiser.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/brute.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/brute.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/knight.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/knight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/strongman.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/strongman.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/strongman.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/strongman.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/Knight.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/Knight.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/Shieldbearer.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/Shieldbearer.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/bruiser.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/bruiser.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/brute.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/brute.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/strongman.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/strongman.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/flag.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/flag.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/fx/fx_strongman_ult.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/fx/fx_strongman_ult.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +81,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21BBF68D-61D6-4A2A-A5C3-E180E6B6706D/47/0e08a226/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Level.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/14/21476f1a/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B9928817-6026-4650-AF20-035B53BF15A8/d4/38c8424f/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/2d/061a09d0/Comparison`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/89/ecc8fecd/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
@@ -98,6 +89,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/f5/1c488330/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/86/6653b0e2/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSave.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/c9/e829940b/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/MaskableGraphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -123,24 +115,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/OldTween.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/SimpleMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanim.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Monster.cs" />
-        <option value="$PROJECT_DIR$/Assets/ItemPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/UITransition.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/R.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/PushNShoveUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stat.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/G.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/BoneItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Items/LegendaryEffect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Items/RareEffect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Bruiser.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/ItemEffect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Items/CommonEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/B.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/FightPrompt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" />
@@ -164,16 +142,30 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" />
+        <option value="$PROJECT_DIR$/Assets/Camp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Strongman.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Ult.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/KnightUlt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Bruiser.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Knight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Strongman.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSave.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Items/CommonEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Items/LegendaryEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Items/RareEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RunSave.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroGameSave.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Hero.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroRunSave.cs" />
       </list>
     </option>
   </component>
@@ -276,6 +268,7 @@
       <workItem from="1609320889802" duration="6968000" />
       <workItem from="1609409521374" duration="868000" />
       <workItem from="1609410715053" duration="12463000" />
+      <workItem from="1609497386033" duration="20351000" />
     </task>
     <servers />
   </component>
@@ -312,14 +305,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1609275604109" />
-    <state x="2678" y="-24" width="1154" height="655" maximized="true" key="dock-window-1" timestamp="1607265809752">
+    <state x="2177" y="-15" width="1215" height="811" maximized="true" key="dock-window-1" timestamp="1609520416922">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2678" y="-24" width="1154" height="655" maximized="true" key="dock-window-1/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1607265809752" />
-    <state x="-1442" y="-23" width="1156" height="811" maximized="true" key="dock-window-2" timestamp="1607265809752">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="2177" y="-15" width="1215" height="811" maximized="true" key="dock-window-1/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1609520416922" />
+    <state x="2106" y="190" width="1215" height="811" key="dock-window-2" timestamp="1609520937001">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1442" y="-23" width="1156" height="811" maximized="true" key="dock-window-2/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1607265809752" />
+    <state x="2106" y="190" width="1215" height="811" key="dock-window-2/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1609520937001" />
+    <state x="1920" y="0" width="1215" height="811" key="dock-window-3" timestamp="1609520937001">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1920" y="0" width="1215" height="811" key="dock-window-3/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1609520937001" />
     <state x="165" y="25" width="1210" height="775" key="find.popup" timestamp="1608823003021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

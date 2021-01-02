@@ -25,10 +25,12 @@ public class Hero : MonoBehaviour {
     // BASICS
     // ====================
 
-    public void InitBattle(HeroIcon i) {
+    public void InitBattle(HeroIcon i) { //Called after loading
+        items.ForEach(item => GetItemAtStartup(item.prefab));
         ultStatus = UltStatus.RELOADING;
         icon = i;
         icon.InitBattle(this);
+        ClearItems();
         unit.InitBattle();
     }
 

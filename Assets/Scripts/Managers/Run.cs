@@ -30,9 +30,8 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	public float leggyDropChance;
 	
 	[Header("State")]
-	public bool needRunInit; //Instead : on defeat, save data to Game, destroy Run
-	public GameSave save;
-	public List<Hero> usedHeroes;
+	public RunSave save;
+	public List<Hero> activeHeroPrefabs;
 	public List<Item> commonItems;
 	public List<Item> rareItems;
 	public List<Item> leggyItems;
@@ -40,7 +39,6 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	public Item movingItem;
 
 	[Header("Prefabs")]
-	public List<Hero> heroPrefabs;
 	public GameObject hpLossUIPrefab;
 	public GameObject bumpDustFxPrefab;
 	public GameObject deathCloudFxPrefab;
@@ -57,7 +55,6 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 		}
 		DontDestroyOnLoad(this);
 		InitRun();
-		// Game.m.InitGame(); //Trouver mieux
 	}
     
     
@@ -66,10 +63,9 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	// ====================
 
 	public void InitRun() { //Called at the start of each run, before init the first battle
-		needRunInit = false;
-
-		usedHeroes = heroPrefabs.Clone();
-		while (usedHeroes.Count > amountOfHeroes) usedHeroes.RemoveAt(this.Random(usedHeroes.Count));
+		activeHeroPrefabs = Game.m.heroPrefabs.Clone();
+		while (activeHeroPrefabs.Count > amountOfHeroes) 
+			activeHeroPrefabs.RemoveAt(this.Random(activeHeroPrefabs.Count));
 		save.InitRun();
 		
 		commonItems = items.Where(i => i.rarity == Item.Rarity.COMMON).ToList();
@@ -79,6 +75,7 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 
 	public void EndRun() {
 		onRunEnd.ForEach(a => a());
+		Destroy(gameObject);
 	}
 	
     

@@ -18,6 +18,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public float timeSinceGameOver;
     public State gameState;
     public List<Action> onBattleEnd = new List<Action>();
+    public bool hasWon;
 
     [Header("Scene References")]
     public List<GameObject> deathZones;
@@ -47,18 +48,13 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
 
     public void InitBattle() {
         gameState = State.PAUSE;
-        if (Run.m.needRunInit) Run.m.InitRun();
         
         //Create heroes
-        for (int i = 0; i < Run.m.save.heroes.Count; i++) {
-            Hero hero = Instantiate(
-                Run.m.save.heroes[i].prefab,
+        Run.m.save.heroes.ForEach(hrs => Instantiate(hrs.prefab,
                 new Vector3(this.Random(-Run.m.spawnPosXRange.x, -Run.m.spawnPosXRange.y), -3, 0),
-                Quaternion.identity,
-                unitsHolder);
-            hero.InitBattle(heroIcons[i]);
-        }
+                Quaternion.identity, unitsHolder));
         Run.m.save.LoadHeroes();
+        for (int i=0; i<Unit.allHeroUnits.Count; i++) Unit.allHeroUnits[i].hero.InitBattle(heroIcons[i]);
         
         //Create enemies
         this.Repeat(times:numberOfEnemyClusters, () => {
@@ -67,7 +63,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
                 Transform monster = clusterInstance.GetChild(0);
                 monster.SetX(Random.Range(Run.m.spawnPosXRange.x, Run.m.spawnPosXRange.y));
                 monster.SetParent(unitsHolder);
-                monster.GetComponent<Unit>().InitBattle();
             }
             Destroy(clusterInstance.gameObject);
         });
@@ -75,8 +70,16 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         //Init scene
         fightPrompt.SetActive(true);
         transition.FadeOut();
-        Game.m.InitGame();
     }
+    
+    
+    // ====================
+    // CHEATS
+    // ====================
+    
+    public void CheatVictory() { while (Unit.monsterUnits.Count > 0) Unit.monsterUnits[0].DeathByHp(); }
+    public void CheatDefeat() { while (Unit.heroUnits.Count > 0) Unit.heroUnits[0].DeathByHp(); }
+    public void CheatReloadUlts() => Unit.heroUnits.ForEach(u => u.hero.ultCooldownLeft = 0);
     
     
     // ====================
@@ -87,14 +90,10 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         if (gameState == State.GAME_OVER) AwaitRestart();
     }
 
-    public void CheatVictory() { while (Unit.monsterUnits.Count > 0) Unit.monsterUnits[0].DeathByHp(); }
-    public void CheatDefeat() { while (Unit.heroUnits.Count > 0) Unit.heroUnits[0].DeathByHp(); }
-
     public void Defeat() {
         if (gameState != State.PLAYING) return;
         
         gameOverText.text = "Defeat";
-        Run.m.needRunInit = true;
         GameOver();
         Run.m.EndRun();
     }
@@ -102,6 +101,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public void Victory() {
         if (gameState != State.PLAYING) return;
 
+        hasWon = true;
         gameOverText.text = "Victory";
         Run.m.save.battle++;
         GameOver();
@@ -113,6 +113,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
         onBattleEnd.ForEach(a => a());
+        Run.m.save.SaveHeroes();
         this.Wait(0.5f, () => Unit.heroUnits.ForEach(u => u.hero.EndUlt()));
     }
 
@@ -135,10 +136,12 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public void Restart() {
         gameState = State.RESTARTING;
         transition.FadeIn();
-        Run.m.save.SaveHeroes();
         Unit.heroUnits.Clear();
         Unit.allHeroUnits.Clear();
         Unit.monsterUnits.Clear();
-        this.Wait(0.4f, () => Game.m.LoadScene(Game.SceneName.Battle));
+        this.Wait(0.4f, () => {
+            if (hasWon) Game.m.LoadScene(Game.SceneName.Battle);
+            else Game.m.LoadScene(Game.SceneName.Camp);
+        });
     }
 }

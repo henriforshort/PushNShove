@@ -7,14 +7,8 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Unit : MonoBehaviour {
-    [Header("Stats")]
-    public Stat maxSpeed;
-    public Stat maxHealth; //Resistance
-    public Stat prot; //How much collision force is reduced (whether I got hit or not)
-    public Stat weight; //Chance to hit & not get hit
-    public Stat damage; //How much damage I deal when i hit
-    public Stat strength; //How far I push people I collide with (wether I hit them or not)
-    public Stat critChance;
+    [Header("Data")]
+    public UnitData data;
 
     [Header("Base Stats")]
     public float baseMaxSpeed;
@@ -72,7 +66,7 @@ public class Unit : MonoBehaviour {
     public List<Unit> allies => side == Side.HERO ? heroUnits : monsterUnits;
     public List<Unit>  enemies => side == Side.MONSTER ? heroUnits : monsterUnits;
 
-    public float speedPercent => currentSpeed / maxSpeed;
+    public float speedPercent => currentSpeed / data.maxSpeed;
     public bool isWalking => currentSpeed > 0;
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
@@ -89,18 +83,18 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void InitGame() {
-        maxSpeed.Init(baseMaxSpeed);
-        maxHealth.Init(baseMaxHealth);
-        prot.Init(baseProt);
-        weight.Init(baseWeight);
-        damage.Init(baseDamage);
-        strength.Init(baseStrength);
-        critChance.Init(baseCritChance);
+        data.maxSpeed.Init(baseMaxSpeed);
+        data.maxHealth.Init(baseMaxHealth);
+        data.prot.Init(baseProt);
+        data.weight.Init(baseWeight);
+        data.damage.Init(baseDamage);
+        data.strength.Init(baseStrength);
+        data.critChance.Init(baseCritChance);
     }
 
-    public void InitBattle() {
+    public void Awake() { //Called before loading
         SetAnim(Anim.WALK);
-        currentSpeed = maxSpeed;
+        currentSpeed = data.maxSpeed;
         tmpHealthBar.value = currentHealth;
         
         if (side == Side.MONSTER) MonsterInit();
@@ -112,13 +106,18 @@ public class Unit : MonoBehaviour {
             
         monsterUnits.Add(this);
         InitGame();
-        SetHealth(maxHealth);
+        SetHealth(data.maxHealth);
     }
 
     public void HeroInit() {
         index = allHeroUnits.Count;
         allHeroUnits.Add(this);
         heroUnits.Add(this);
+    }
+
+    public void InitBattle() { //Called after loading
+        if (data.currentHealth.isAboutOrLowerThan(0)) Die();
+        else SetHealth(data.currentHealth);
     }
     
     
@@ -190,10 +189,10 @@ public class Unit : MonoBehaviour {
     public void UpdateSpeed() {
         if (!CanUpdateSpeed()) return;
         
-        float newSpeed = currentSpeed.LerpTo(maxSpeed, Run.m.bumpRecoverySpeed);
+        float newSpeed = currentSpeed.LerpTo(data.maxSpeed, Run.m.bumpRecoverySpeed);
         if (currentSpeed.isAboutOrLowerThan(0) && newSpeed.isClearlyPositive()) StartWalking();
         currentSpeed = newSpeed;
-        if (currentSpeed.isAboutOrHigherThan(maxSpeed)) currentSpeed = maxSpeed;
+        if (currentSpeed.isAboutOrHigherThan(data.maxSpeed)) currentSpeed = data.maxSpeed;
     }
 
     public bool CanUpdateSpeed() {
@@ -202,7 +201,7 @@ public class Unit : MonoBehaviour {
         if (Battle.m.gameState == Battle.State.PAUSE) return false;
         
         if (status == Status.FALLING) return false;
-        if (currentSpeed.isAboutOrHigherThan(maxSpeed)) return false;
+        if (currentSpeed.isAboutOrHigherThan(data.maxSpeed)) return false;
 
         return true;
     }
@@ -340,8 +339,8 @@ public class Unit : MonoBehaviour {
         if (!unit1.CanAttack()) return unit2;
         if (!unit2.CanAttack()) return unit1;
         
-        float momentum1 = unit1.weight * (2 * unit1.speedPercent).Clamp01(); //max momentum if > 50% speed
-        float momentum2 = unit2.weight * (2 * unit2.speedPercent).Clamp01();
+        float momentum1 = unit1.data.weight * (2 * unit1.speedPercent).Clamp01(); //max momentum if > 50% speed
+        float momentum2 = unit2.data.weight * (2 * unit2.speedPercent).Clamp01();
         return Random.value < momentum1 / (momentum1 + momentum2) ? unit1 : unit2;
     }
 
@@ -352,10 +351,10 @@ public class Unit : MonoBehaviour {
 
     public void GetBumpedBy(Unit other) {
         SetAnim(Anim.BUMPED);
-        currentSpeed = Run.m.bumpSpeed * other.strength * (1 - prot);
+        currentSpeed = Run.m.bumpSpeed * other.data.strength * (1 - data.prot);
         
-        bool isCrit = ((float)other.critChance).Chance();
-        TakeCollisionDamage(other.damage, isCrit);
+        bool isCrit = ((float)other.data.critChance).Chance();
+        TakeCollisionDamage(other.data.damage, isCrit);
         if (isCrit) {
             critCollisionDate = Time.time;
             currentSpeed -= 5;
@@ -363,7 +362,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void DefendFrom(Unit other) {
-        currentSpeed = Run.m.defendSpeed * other.strength * (1 - prot);
+        currentSpeed = Run.m.defendSpeed * other.data.strength * (1 - data.prot);
     }
 
     public Unit NearbyEnemy() => enemies
@@ -414,14 +413,14 @@ public class Unit : MonoBehaviour {
     }
 
     public void SetHealth(float amount) {
-        currentHealth = Mathf.Clamp(amount, 0, maxHealth);
-        healthBar.value = currentHealth / maxHealth;
+        currentHealth = Mathf.Clamp(amount, 0, data.maxHealth);
+        healthBar.value = currentHealth / data.maxHealth;
         tmpHealthBar.value = healthBar.value;
         healthBar.gameObject.SetActive(false);
         this.Wait(0.1f, () => healthBar.gameObject.SetActive(true));
         
         if (hero != null) {
-            hero.icon.SetHealth(currentHealth/maxHealth);
+            hero.icon.SetHealth(currentHealth/data.maxHealth);
             hero.icon.FlashHealth();
         }
         if (currentHealth <= 0) DeathByHp();
@@ -436,7 +435,7 @@ public class Unit : MonoBehaviour {
         Deactivate();
         status = Status.DYING;
         healthBar.transform.parent.gameObject.SetActive(false);
-        currentSpeed = Run.m.bumpSpeed * (1 - prot);
+        currentSpeed = Run.m.bumpSpeed * (1 - data.prot);
     }
 
     public void DeathByFall() {
@@ -474,7 +473,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void MonsterDeath() {
-        if (monster.dropRate.Chance() && !Run.m.itemsDepleted)
+        // if (monster.dropRate.Chance() && !Run.m.itemsDepleted)
             heroUnits.Where(u => u.hero.items.Count < Run.m.maxItemsPerHero).ToList()
                 .Random()
                 ?.hero

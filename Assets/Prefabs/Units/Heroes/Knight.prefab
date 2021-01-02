@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538a454c0dbb8444b9e17557e29baaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 2
+  ultCooldown: 32
   ultDuration: 5
   ultCooldownLeft: 2
   ultStatus: 0
