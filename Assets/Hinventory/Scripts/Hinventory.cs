@@ -18,10 +18,11 @@ namespace Hiloqo.Hinventory {
             if (_i != this) DestroyImmediate(gameObject);
         }
 
+        #if UNITY_EDITOR
         public void Update() {
             SnapItems();
         }
-
+        
         [MenuItem("Tools/Hinventory/Generate Selected Inventories")]
         public static void GenerateSelectedInventories() {
             foreach (GameObject go in Selection.gameObjects) {
@@ -121,5 +122,6 @@ namespace Hiloqo.Hinventory {
                 }
             }
         }
+        #endif
     }
 }

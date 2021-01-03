@@ -18,7 +18,7 @@ public class Hanimator : MonoBehaviour {
     public int currentFrame;
     public float startAnimDate;
     
-    public enum WhenAnimFinishes { PAUSE, HIDE, DESTROY }
+    public enum WhenAnimFinishes { PAUSE, HIDE, DESTROY, PLAY_RANDOM, PLAY_RANDOM_DEFAULT }
 
     public void Start() {
         if (image == null && spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
@@ -42,6 +42,26 @@ public class Hanimator : MonoBehaviour {
                 startAnimDate = Time.time + (currentAnim.delay/1000);
                 currentFrame = 0;
             } else {
+                if (whenAnimFinishes == WhenAnimFinishes.PLAY_RANDOM)
+                    if (anims.Count < 2) {
+                        Debug.LogError("PLAY_RANDOM setting needs at least 2 animations");
+                        whenAnimFinishes = WhenAnimFinishes.PAUSE;
+                    } else {
+                        Play(anims.Where(a => a.name != currentAnim.name).ToList().Random());
+                        return;
+                    }
+                if (whenAnimFinishes == WhenAnimFinishes.PLAY_RANDOM_DEFAULT)
+                    if (anims.Count < 2) {
+                        Debug.LogError("PLAY_RANDOM setting needs at least 2 animations");
+                        whenAnimFinishes = WhenAnimFinishes.PAUSE;
+                    } else if (anims.FirstOrDefault(a => a.name == "default") == null) {
+                        Debug.LogError("PLAY_RANDOM setting needs an animation called \"default\"");
+                        whenAnimFinishes = WhenAnimFinishes.PAUSE;
+                    } else {
+                        if (currentAnim.name != "default") Play("default");
+                        else Play(anims.Where(a => a.name != currentAnim.name).ToList().Random());
+                        return;
+                    }
                 if (whenAnimFinishes == WhenAnimFinishes.HIDE) SetVisible(false);
                 if (whenAnimFinishes == WhenAnimFinishes.DESTROY) Destroy(gameObject);
                 playing = false;
@@ -53,12 +73,8 @@ public class Hanimator : MonoBehaviour {
 
     public void Play(string s) {
         Hanimation anim = anims.FirstOrDefault(a => a.name == s);
-        if (anim == null) {
-            Debug.LogError("Anim not found: " + s, gameObject);
-            return;
-        }
-        
-        Play(anim);
+        if (anim == null) Debug.LogError("Anim not found: " + s, gameObject);
+        else Play(anim);
     }
 
     public void Play(Hanimation a) {
