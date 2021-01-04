@@ -1,0 +1,2139 @@
+fileFormatVersion: 2
+guid: 12cc8a25d528b614b96351d29b28e7ad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3686265438720889693
+    second: strongman_camp_0
+  - first:
+      213: 4691504629341843869
+    second: strongman_camp_1
+  - first:
+      213: -1407590872186668092
+    second: strongman_camp_2
+  - first:
+      213: 1185000048688657416
+    second: strongman_camp_3
+  - first:
+      213: 1738261366549668790
+    second: strongman_camp_4
+  - first:
+      213: -4101182711022149866
+    second: strongman_camp_5
+  - first:
+      213: 6614331738216683732
+    second: strongman_camp_6
+  - first:
+      213: -5202055342790631859
+    second: strongman_camp_7
+  - first:
+      213: -5362742250436024249
+    second: strongman_camp_8
+  - first:
+      213: -2159871477358698994
+    second: strongman_camp_9
+  - first:
+      213: -2049235677495341267
+    second: strongman_camp_10
+  - first:
+      213: 8010982613354391220
+    second: strongman_camp_11
+  - first:
+      213: 1692352295049656655
+    second: strongman_camp_12
+  - first:
+      213: -4456156472186827482
+    second: strongman_camp_13
+  - first:
+      213: -916069095792705691
+    second: strongman_camp_14
+  - first:
+      213: 4661640097910144573
+    second: strongman_camp_15
+  - first:
+      213: 3598800514448594265
+    second: strongman_camp_16
+  - first:
+      213: 7138007154794412184
+    second: strongman_camp_17
+  - first:
+      213: 1354509162713752915
+    second: strongman_camp_18
+  - first:
+      213: 5947461107399359041
+    second: strongman_camp_19
+  - first:
+      213: 8869603261122345761
+    second: strongman_camp_20
+  - first:
+      213: -7072989869849990390
+    second: strongman_camp_21
+  - first:
+      213: -5221058237424104115
+    second: strongman_camp_22
+  - first:
+      213: 8930099721474308066
+    second: strongman_camp_23
+  - first:
+      213: -6095816916236567688
+    second: strongman_camp_24
+  - first:
+      213: 4675287604815243142
+    second: strongman_camp_25
+  - first:
+      213: -4146670578455722878
+    second: strongman_camp_26
+  - first:
+      213: 2533851965791819860
+    second: strongman_camp_27
+  - first:
+      213: -6741186409913386981
+    second: strongman_camp_28
+  - first:
+      213: 4036831348824209032
+    second: strongman_camp_29
+  - first:
+      213: 8744866571617031027
+    second: strongman_camp_30
+  - first:
+      213: -917039813723623788
+    second: strongman_camp_31
+  - first:
+      213: 4831615002701538268
+    second: strongman_camp_32
+  - first:
+      213: -5652783942735101059
+    second: strongman_camp_33
+  - first:
+      213: 4363930809348796655
+    second: strongman_camp_34
+  - first:
+      213: 3130424187640822555
+    second: strongman_camp_35
+  - first:
+      213: 7466940195989067686
+    second: strongman_camp_36
+  - first:
+      213: -5428775957170572800
+    second: strongman_camp_37
+  - first:
+      213: -8751406131636235856
+    second: strongman_camp_38
+  - first:
+      213: 4816321252073086294
+    second: strongman_camp_39
+  - first:
+      213: 3424669657049729503
+    second: strongman_camp_40
+  - first:
+      213: 7478877627497228367
+    second: strongman_camp_41
+  - first:
+      213: -205148231224105414
+    second: strongman_camp_42
+  - first:
+      213: -7193479273726055366
+    second: strongman_camp_43
+  - first:
+      213: 6721451470997220823
+    second: strongman_camp_44
+  - first:
+      213: 7386464544079184377
+    second: strongman_camp_45
+  - first:
+      213: -978646390773206317
+    second: strongman_camp_46
+  - first:
+      213: 2959963767672804668
+    second: strongman_camp_47
+  - first:
+      213: 6889964124410923574
+    second: strongman_camp_48
+  - first:
+      213: 4904988434916689085
+    second: strongman_camp_49
+  - first:
+      213: -8290456906552227411
+    second: strongman_camp_50
+  - first:
+      213: 2219375928522859968
+    second: strongman_camp_51
+  - first:
+      213: 587198751751429283
+    second: strongman_camp_52
+  - first:
+      213: -8293148698096818870
+    second: strongman_camp_53
+  - first:
+      213: 1927354676627769126
+    second: strongman_camp_54
+  - first:
+      213: 4691700257396451587
+    second: strongman_camp_55
+  - first:
+      213: -2374089753021681021
+    second: strongman_camp_56
+  - first:
+      213: -8459136157648527488
+    second: strongman_camp_57
+  - first:
+      213: 7397867825943947294
+    second: strongman_camp_58
+  - first:
+      213: 105662858904868569
+    second: strongman_camp_59
+  - first:
+      213: 3180473461387394003
+    second: strongman_camp_60
+  - first:
+      213: -7908850894282000630
+    second: strongman_camp_61
+  - first:
+      213: -7305462198759082531
+    second: strongman_camp_62
+  - first:
+      213: 424642233781440829
+    second: strongman_camp_63
+  - first:
+      213: -3890707578170674525
+    second: strongman_camp_64
+  - first:
+      213: -3886466117225338917
+    second: strongman_camp_65
+  - first:
+      213: 6811167693181166374
+    second: strongman_camp_66
+  - first:
+      213: -7791974862731706621
+    second: strongman_camp_67
+  - first:
+      213: 2621153844189601469
+    second: strongman_camp_68
+  - first:
+      213: 3629610639190006600
+    second: strongman_camp_69
+  - first:
+      213: -4664476337031537112
+    second: strongman_camp_70
+  - first:
+      213: 2783369769158700797
+    second: strongman_camp_71
+  - first:
+      213: -3874850185402311451
+    second: strongman_camp_72
+  - first:
+      213: 1473005493497590088
+    second: strongman_camp_73
+  - first:
+      213: -543068066124528747
+    second: strongman_camp_74
+  - first:
+      213: 4754334811724319720
+    second: strongman_camp_75
+  - first:
+      213: 1942486636295875214
+    second: strongman_camp_76
+  - first:
+      213: -9114443361030762181
+    second: strongman_camp_77
+  - first:
+      213: 3268262041712665914
+    second: strongman_camp_78
+  - first:
+      213: -5091429662798966955
+    second: strongman_camp_79
+  - first:
+      213: 65885761097861326
+    second: strongman_camp_80
+  - first:
+      213: -7147566691193474655
+    second: strongman_camp_81
+  - first:
+      213: 5836411775909128932
+    second: strongman_camp_82
+  - first:
+      213: -2927441713924170908
+    second: strongman_camp_83
+  - first:
+      213: 4759382342256079778
+    second: strongman_camp_84
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 18
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: strongman_camp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aced393d11c7dcc0800000000000000
+      internalID: -3686265438720889693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91750e8a929b1140800000000000000
+      internalID: 4691504629341843869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb3b3a3f8b377ce0800000000000000
+      internalID: -1407590872186668092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80478e01447f17010800000000000000
+      internalID: 1185000048688657416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_4
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b36affc08b8f1810800000000000000
+      internalID: 1738261366549668790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_5
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f1d86ad0ca517c0800000000000000
+      internalID: -4101182711022149866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_6
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d85ff2fba3dacb50800000000000000
+      internalID: 6614331738216683732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_7
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e9a073a369ec7b0800000000000000
+      internalID: -5202055342790631859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_8
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74828c41656b395b0800000000000000
+      internalID: -5362742250436024249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_9
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 360
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e5987b5589602e0800000000000000
+      internalID: -2159871477358698994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f45d53207af83e0800000000000000
+      internalID: -2049235677495341267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_11
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6a1da2e3abc2f60800000000000000
+      internalID: 8010982613354391220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_12
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49704522717c7710800000000000000
+      internalID: 1692352295049656655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_13
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d0fbb5c4d8822c0800000000000000
+      internalID: -4456156472186827482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_14
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fff8bc2087943f0800000000000000
+      internalID: -916069095792705691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_15
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3eb6aa78f871b040800000000000000
+      internalID: 4661640097910144573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_16
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9559339200281f130800000000000000
+      internalID: 3598800514448594265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_17
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898b7b140bb4f0360800000000000000
+      internalID: 7138007154794412184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_18
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355a09038ee2cc210800000000000000
+      internalID: 1354509162713752915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_19
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 315
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a7dfdbd50a98250800000000000000
+      internalID: 5947461107399359041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bf7dd3c29271b70800000000000000
+      internalID: 8869603261122345761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_21
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ba7ab0031b7dd90800000000000000
+      internalID: -7072989869849990390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_22
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d85b602331b87b0800000000000000
+      internalID: -5221058237424104115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e77a4b02661eeb70800000000000000
+      internalID: 8930099721474308066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_24
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87bf6ebcfce476ba0800000000000000
+      internalID: -6095816916236567688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_25
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687accb4e45f1e040800000000000000
+      internalID: 4675287604815243142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_26
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284459234111476c0800000000000000
+      internalID: -4146670578455722878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_27
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458527e10fc0a2320800000000000000
+      internalID: 2533851965791819860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_28
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18fb603dae7272a0800000000000000
+      internalID: -6741186409913386981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_29
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 270
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886f3d449b4b50830800000000000000
+      internalID: 4036831348824209032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373db6980d10c5970800000000000000
+      internalID: 8744866571617031027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_31
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49eec1ae5250643f0800000000000000
+      internalID: -917039813723623788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_32
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd32977fe385d0340800000000000000
+      internalID: 4831615002701538268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_33
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d730e3d24f64d81b0800000000000000
+      internalID: -5652783942735101059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_34
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe03e9333fbcf8c30800000000000000
+      internalID: 4363930809348796655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_35
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b3f948630817b20800000000000000
+      internalID: 3130424187640822555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_36
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a79305fb86ef9760800000000000000
+      internalID: 7466940195989067686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_37
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002baa3a70d19a4b0800000000000000
+      internalID: -5428775957170572800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_38
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b195ae7d72cc8680800000000000000
+      internalID: -8751406131636235856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_39
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 225
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d1bf929a207d240800000000000000
+      internalID: 4816321252073086294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9028d88eed68f20800000000000000
+      internalID: 3424669657049729503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_41
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48a691d39f4ac760800000000000000
+      internalID: 7478877627497228367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_42
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36669745ca272df0800000000000000
+      internalID: -205148231224105414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_43
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c6c6696b0ab2c90800000000000000
+      internalID: -7193479273726055366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_44
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dde0d74084674d50800000000000000
+      internalID: 6721451470997220823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_45
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f18bdf1e5ef18660800000000000000
+      internalID: 7386464544079184377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_46
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2be3dea462b62f0800000000000000
+      internalID: -978646390773206317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_47
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c351a283d57e31920800000000000000
+      internalID: 2959963767672804668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_48
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ac2b6ddd11e9f50800000000000000
+      internalID: 6889964124410923574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_49
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 180
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4cb9a6ef4021440800000000000000
+      internalID: 4904988434916689085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da945434e5162fc80800000000000000
+      internalID: -8290456906552227411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_51
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c568a2f5aeccce10800000000000000
+      internalID: 2219375928522859968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_52
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac52b25726262800800000000000000
+      internalID: 587198751751429283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_53
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a452274b231d8ec80800000000000000
+      internalID: -8293148698096818870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_54
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6270698edd65fba10800000000000000
+      internalID: 1927354676627769126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_55
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30969b2c6844c1140800000000000000
+      internalID: 4691700257396451587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_56
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3827f36b2f98d0fd0800000000000000
+      internalID: -2374089753021681021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_57
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f52b8ab7c1b9a80800000000000000
+      internalID: -8459136157648527488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_58
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e182ea497918aa660800000000000000
+      internalID: 7397867825943947294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_59
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 135
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d61af27fc3677100800000000000000
+      internalID: 105662858904868569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db7d8323cf432c20800000000000000
+      internalID: 3180473461387394003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_61
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a077ac8b30e1e3290800000000000000
+      internalID: -7908850894282000630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_62
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5bbe216d8cd9a90800000000000000
+      internalID: -7305462198759082531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_63
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31db2d9cd1a4e500800000000000000
+      internalID: 424642233781440829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_64
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2773e421e610ac0800000000000000
+      internalID: -3890707578170674525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_65
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7213368af701ac0800000000000000
+      internalID: -3886466117225338917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_66
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6232ea90ee0268e50800000000000000
+      internalID: 6811167693181166374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_67
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f7a1065285dd390800000000000000
+      internalID: -7791974862731706621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_68
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe1298a885306420800000000000000
+      internalID: 2621153844189601469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_69
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 90
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b16e555a7fe5230800000000000000
+      internalID: 3629610639190006600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e15042c73744fb0800000000000000
+      internalID: -4664476337031537112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_71
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfee341ee0480a620800000000000000
+      internalID: 2783369769158700797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_72
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec1d354944c93ac0800000000000000
+      internalID: -3874850185402311451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_73
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8417f1821ba217410800000000000000
+      internalID: 1473005493497590088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_74
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5930acd9872a678f0800000000000000
+      internalID: -543068066124528747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_75
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb0a1c525acaf140800000000000000
+      internalID: 4754334811724319720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_76
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8aeb51dd4915fa10800000000000000
+      internalID: 1942486636295875214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_77
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b311854bd0ef28180800000000000000
+      internalID: -9114443361030762181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_78
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a352d2dc2033b5d20800000000000000
+      internalID: 3268262041712665914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_79
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 45
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f0bfd72bb9759b0800000000000000
+      internalID: -5091429662798966955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec88ef920c21ae000800000000000000
+      internalID: 65885761097861326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_81
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1bffab6fdbecc90800000000000000
+      internalID: -7147566691193474655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_82
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea68f966991ff050800000000000000
+      internalID: 5836411775909128932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_83
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b93ec7543af57d0800000000000000
+      internalID: -2927441713924170908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
