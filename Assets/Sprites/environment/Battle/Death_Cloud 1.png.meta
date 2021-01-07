@@ -1,25 +1,43 @@
 fileFormatVersion: 2
-guid: 65f309b349e4e0a41a5d5253a896761a
+guid: 999d2da347079af4c90b6b55e07c4e71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6433743098227295270
-    second: campfire_test_0
+      213: -6101154489503128534
+    second: Death_Cloud_0
   - first:
-      213: -9180451933742290215
-    second: campfire_test_1
+      213: 92504644814121858
+    second: Death_Cloud_1
   - first:
-      213: 4919479965733867474
-    second: campfire_test_2
+      213: 192688261096428222
+    second: Death_Cloud_2
   - first:
-      213: 716906375057307828
-    second: campfire_test_3
+      213: -2790231697620465679
+    second: Death_Cloud_3
   - first:
-      213: 2328209949957159538
-    second: campfire_test_4
+      213: 7253451781370390909
+    second: Death_Cloud_0
   - first:
-      213: 237876874826339791
-    second: campfire_test_5
+      213: 3269771407719054469
+    second: Death_Cloud_1
+  - first:
+      213: -2670105013800578082
+    second: Death_Cloud_2
+  - first:
+      213: -7727167813247461996
+    second: Death_Cloud_3
+  - first:
+      213: 509935994663998345
+    second: Death_Cloud 1_0
+  - first:
+      213: -258941129229258168
+    second: Death_Cloud 1_1
+  - first:
+      213: -6718774336904274594
+    second: Death_Cloud 1_2
+  - first:
+      213: -7801867616705174070
+    second: Death_Cloud 1_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -51,7 +69,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -121,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: campfire_test_0
+      name: Death_Cloud 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 40
+        width: 72
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62485f9a24f394950800000000000000
-      internalID: 6433743098227295270
+      spriteID: 983122cd518a31700800000000000000
+      internalID: 509935994663998345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: campfire_test_1
+      name: Death_Cloud 1_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 72
         y: 0
-        width: 40
-        height: 40
+        width: 72
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9da2ebb3b9b789080800000000000000
-      internalID: -9180451933742290215
+      spriteID: 8423d863a6e086cf0800000000000000
+      internalID: -258941129229258168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: campfire_test_2
+      name: Death_Cloud 1_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 144
         y: 0
-        width: 40
-        height: 40
+        width: 72
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dfc73dd6f0854440800000000000000
-      internalID: 4919479965733867474
+      spriteID: e5d5fc2965e12c2a0800000000000000
+      internalID: -6718774336904274594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: campfire_test_3
+      name: Death_Cloud 1_3
       rect:
         serializedVersion: 2
-        x: 120
+        x: 216
         y: 0
-        width: 40
-        height: 40
+        width: 72
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,50 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b8f08ebc86f2f900800000000000000
-      internalID: 716906375057307828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: campfire_test_4
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27af9b53d967f4020800000000000000
-      internalID: 2328209949957159538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: campfire_test_5
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc5dd40e1cb1d4300800000000000000
-      internalID: 237876874826339791
+      spriteID: ac52aa91db23ab390800000000000000
+      internalID: -7801867616705174070
       vertices: []
       indices: 
       edges: []

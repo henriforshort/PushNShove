@@ -257,6 +257,105 @@ TextureImporter:
   - first:
       213: 4759382342256079778
     second: strongman_camp_84
+  - first:
+      213: -5025527236499786806
+    second: strongman_camp_85
+  - first:
+      213: 3515867617789740680
+    second: strongman_camp_86
+  - first:
+      213: -2541930488064740722
+    second: strongman_camp_87
+  - first:
+      213: -4655382420331523890
+    second: strongman_camp_88
+  - first:
+      213: -2572135424470767424
+    second: strongman_camp_89
+  - first:
+      213: -7213634193909813508
+    second: strongman_camp_90
+  - first:
+      213: -3091650926782526695
+    second: strongman_camp_91
+  - first:
+      213: 8536264342698732877
+    second: strongman_camp_92
+  - first:
+      213: -4215079052104032158
+    second: strongman_camp_93
+  - first:
+      213: 1128010915157329457
+    second: strongman_camp_94
+  - first:
+      213: -7917040968640784385
+    second: strongman_camp_95
+  - first:
+      213: 6214668689966960666
+    second: strongman_camp_96
+  - first:
+      213: 46153608732604177
+    second: strongman_camp_97
+  - first:
+      213: -2616060526187817359
+    second: strongman_camp_98
+  - first:
+      213: -4900442366025616642
+    second: strongman_camp_99
+  - first:
+      213: 1093927368405524727
+    second: strongman_camp_100
+  - first:
+      213: 591301940114912658
+    second: strongman_camp_101
+  - first:
+      213: -5602734086620012915
+    second: strongman_camp_102
+  - first:
+      213: -2337196325942686199
+    second: strongman_camp_103
+  - first:
+      213: -7147344768839528293
+    second: strongman_camp_104
+  - first:
+      213: 1032229877369755946
+    second: strongman_camp_105
+  - first:
+      213: 1304680278294213368
+    second: strongman_camp_106
+  - first:
+      213: -7223263183562180407
+    second: strongman_camp_107
+  - first:
+      213: -3372230218921580377
+    second: strongman_camp_108
+  - first:
+      213: 8667326026003237840
+    second: strongman_camp_109
+  - first:
+      213: -7562769034122838862
+    second: strongman_camp_110
+  - first:
+      213: -3528582194474610788
+    second: strongman_camp_111
+  - first:
+      213: -7416135073560162813
+    second: strongman_camp_112
+  - first:
+      213: 1262714940268260526
+    second: strongman_camp_113
+  - first:
+      213: 4669212961792399072
+    second: strongman_camp_114
+  - first:
+      213: 3739199906441546738
+    second: strongman_camp_115
+  - first:
+      213: -3380413915377790635
+    second: strongman_camp_116
+  - first:
+      213: -4370016847840688352
+    second: strongman_camp_117
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -320,7 +419,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -332,7 +431,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -344,7 +443,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -362,7 +461,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -383,7 +482,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 43
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -404,7 +503,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 86
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -425,7 +524,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 129
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -446,7 +545,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 172
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -467,7 +566,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 215
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -488,7 +587,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 258
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -509,7 +608,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 301
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -530,7 +629,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 344
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -551,7 +650,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 387
-        y: 360
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -571,8 +670,8 @@ TextureImporter:
       name: strongman_camp_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 315
+        x: 430
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -592,8 +691,8 @@ TextureImporter:
       name: strongman_camp_11
       rect:
         serializedVersion: 2
-        x: 43
-        y: 315
+        x: 473
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -613,8 +712,8 @@ TextureImporter:
       name: strongman_camp_12
       rect:
         serializedVersion: 2
-        x: 86
-        y: 315
+        x: 516
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -634,8 +733,8 @@ TextureImporter:
       name: strongman_camp_13
       rect:
         serializedVersion: 2
-        x: 129
-        y: 315
+        x: 559
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -655,8 +754,8 @@ TextureImporter:
       name: strongman_camp_14
       rect:
         serializedVersion: 2
-        x: 172
-        y: 315
+        x: 602
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -676,8 +775,8 @@ TextureImporter:
       name: strongman_camp_15
       rect:
         serializedVersion: 2
-        x: 215
-        y: 315
+        x: 645
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -697,8 +796,8 @@ TextureImporter:
       name: strongman_camp_16
       rect:
         serializedVersion: 2
-        x: 258
-        y: 315
+        x: 688
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -718,8 +817,8 @@ TextureImporter:
       name: strongman_camp_17
       rect:
         serializedVersion: 2
-        x: 301
-        y: 315
+        x: 731
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -739,8 +838,8 @@ TextureImporter:
       name: strongman_camp_18
       rect:
         serializedVersion: 2
-        x: 344
-        y: 315
+        x: 774
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -760,8 +859,8 @@ TextureImporter:
       name: strongman_camp_19
       rect:
         serializedVersion: 2
-        x: 387
-        y: 315
+        x: 817
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -781,8 +880,8 @@ TextureImporter:
       name: strongman_camp_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 270
+        x: 860
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -802,8 +901,8 @@ TextureImporter:
       name: strongman_camp_21
       rect:
         serializedVersion: 2
-        x: 43
-        y: 270
+        x: 903
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -823,8 +922,8 @@ TextureImporter:
       name: strongman_camp_22
       rect:
         serializedVersion: 2
-        x: 86
-        y: 270
+        x: 946
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -844,8 +943,8 @@ TextureImporter:
       name: strongman_camp_23
       rect:
         serializedVersion: 2
-        x: 129
-        y: 270
+        x: 989
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -865,8 +964,8 @@ TextureImporter:
       name: strongman_camp_24
       rect:
         serializedVersion: 2
-        x: 172
-        y: 270
+        x: 1032
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -886,8 +985,8 @@ TextureImporter:
       name: strongman_camp_25
       rect:
         serializedVersion: 2
-        x: 215
-        y: 270
+        x: 1075
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -907,8 +1006,8 @@ TextureImporter:
       name: strongman_camp_26
       rect:
         serializedVersion: 2
-        x: 258
-        y: 270
+        x: 1118
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -928,8 +1027,8 @@ TextureImporter:
       name: strongman_camp_27
       rect:
         serializedVersion: 2
-        x: 301
-        y: 270
+        x: 1161
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -949,8 +1048,8 @@ TextureImporter:
       name: strongman_camp_28
       rect:
         serializedVersion: 2
-        x: 344
-        y: 270
+        x: 1204
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -970,8 +1069,8 @@ TextureImporter:
       name: strongman_camp_29
       rect:
         serializedVersion: 2
-        x: 387
-        y: 270
+        x: 1247
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -991,8 +1090,8 @@ TextureImporter:
       name: strongman_camp_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 225
+        x: 1290
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1012,8 +1111,8 @@ TextureImporter:
       name: strongman_camp_31
       rect:
         serializedVersion: 2
-        x: 43
-        y: 225
+        x: 1333
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1033,8 +1132,8 @@ TextureImporter:
       name: strongman_camp_32
       rect:
         serializedVersion: 2
-        x: 86
-        y: 225
+        x: 1376
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1054,8 +1153,8 @@ TextureImporter:
       name: strongman_camp_33
       rect:
         serializedVersion: 2
-        x: 129
-        y: 225
+        x: 1419
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1075,8 +1174,8 @@ TextureImporter:
       name: strongman_camp_34
       rect:
         serializedVersion: 2
-        x: 172
-        y: 225
+        x: 1462
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1096,8 +1195,8 @@ TextureImporter:
       name: strongman_camp_35
       rect:
         serializedVersion: 2
-        x: 215
-        y: 225
+        x: 1505
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1117,8 +1216,8 @@ TextureImporter:
       name: strongman_camp_36
       rect:
         serializedVersion: 2
-        x: 258
-        y: 225
+        x: 1548
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1138,8 +1237,8 @@ TextureImporter:
       name: strongman_camp_37
       rect:
         serializedVersion: 2
-        x: 301
-        y: 225
+        x: 1591
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1159,8 +1258,8 @@ TextureImporter:
       name: strongman_camp_38
       rect:
         serializedVersion: 2
-        x: 344
-        y: 225
+        x: 1634
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1180,8 +1279,8 @@ TextureImporter:
       name: strongman_camp_39
       rect:
         serializedVersion: 2
-        x: 387
-        y: 225
+        x: 1677
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1201,8 +1300,8 @@ TextureImporter:
       name: strongman_camp_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 180
+        x: 1720
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1222,8 +1321,8 @@ TextureImporter:
       name: strongman_camp_41
       rect:
         serializedVersion: 2
-        x: 43
-        y: 180
+        x: 1763
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1243,8 +1342,8 @@ TextureImporter:
       name: strongman_camp_42
       rect:
         serializedVersion: 2
-        x: 86
-        y: 180
+        x: 1806
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1264,8 +1363,8 @@ TextureImporter:
       name: strongman_camp_43
       rect:
         serializedVersion: 2
-        x: 129
-        y: 180
+        x: 1849
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1285,8 +1384,8 @@ TextureImporter:
       name: strongman_camp_44
       rect:
         serializedVersion: 2
-        x: 172
-        y: 180
+        x: 1892
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1306,8 +1405,8 @@ TextureImporter:
       name: strongman_camp_45
       rect:
         serializedVersion: 2
-        x: 215
-        y: 180
+        x: 1935
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1327,8 +1426,8 @@ TextureImporter:
       name: strongman_camp_46
       rect:
         serializedVersion: 2
-        x: 258
-        y: 180
+        x: 1978
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1348,8 +1447,8 @@ TextureImporter:
       name: strongman_camp_47
       rect:
         serializedVersion: 2
-        x: 301
-        y: 180
+        x: 2021
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1369,8 +1468,8 @@ TextureImporter:
       name: strongman_camp_48
       rect:
         serializedVersion: 2
-        x: 344
-        y: 180
+        x: 2064
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1390,8 +1489,8 @@ TextureImporter:
       name: strongman_camp_49
       rect:
         serializedVersion: 2
-        x: 387
-        y: 180
+        x: 2107
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1411,8 +1510,8 @@ TextureImporter:
       name: strongman_camp_50
       rect:
         serializedVersion: 2
-        x: 0
-        y: 135
+        x: 2150
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1432,8 +1531,8 @@ TextureImporter:
       name: strongman_camp_51
       rect:
         serializedVersion: 2
-        x: 43
-        y: 135
+        x: 2193
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1453,8 +1552,8 @@ TextureImporter:
       name: strongman_camp_52
       rect:
         serializedVersion: 2
-        x: 86
-        y: 135
+        x: 2236
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1474,8 +1573,8 @@ TextureImporter:
       name: strongman_camp_53
       rect:
         serializedVersion: 2
-        x: 129
-        y: 135
+        x: 2279
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1495,8 +1594,8 @@ TextureImporter:
       name: strongman_camp_54
       rect:
         serializedVersion: 2
-        x: 172
-        y: 135
+        x: 2322
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1516,8 +1615,8 @@ TextureImporter:
       name: strongman_camp_55
       rect:
         serializedVersion: 2
-        x: 215
-        y: 135
+        x: 2365
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1537,8 +1636,8 @@ TextureImporter:
       name: strongman_camp_56
       rect:
         serializedVersion: 2
-        x: 258
-        y: 135
+        x: 2408
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1558,8 +1657,8 @@ TextureImporter:
       name: strongman_camp_57
       rect:
         serializedVersion: 2
-        x: 301
-        y: 135
+        x: 2451
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1579,8 +1678,8 @@ TextureImporter:
       name: strongman_camp_58
       rect:
         serializedVersion: 2
-        x: 344
-        y: 135
+        x: 2494
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1600,8 +1699,8 @@ TextureImporter:
       name: strongman_camp_59
       rect:
         serializedVersion: 2
-        x: 387
-        y: 135
+        x: 2537
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1621,8 +1720,8 @@ TextureImporter:
       name: strongman_camp_60
       rect:
         serializedVersion: 2
-        x: 0
-        y: 90
+        x: 2580
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1642,8 +1741,8 @@ TextureImporter:
       name: strongman_camp_61
       rect:
         serializedVersion: 2
-        x: 43
-        y: 90
+        x: 2623
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1663,8 +1762,8 @@ TextureImporter:
       name: strongman_camp_62
       rect:
         serializedVersion: 2
-        x: 86
-        y: 90
+        x: 2666
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1684,8 +1783,8 @@ TextureImporter:
       name: strongman_camp_63
       rect:
         serializedVersion: 2
-        x: 129
-        y: 90
+        x: 2709
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1705,8 +1804,8 @@ TextureImporter:
       name: strongman_camp_64
       rect:
         serializedVersion: 2
-        x: 172
-        y: 90
+        x: 2752
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1726,8 +1825,8 @@ TextureImporter:
       name: strongman_camp_65
       rect:
         serializedVersion: 2
-        x: 215
-        y: 90
+        x: 2795
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1747,8 +1846,8 @@ TextureImporter:
       name: strongman_camp_66
       rect:
         serializedVersion: 2
-        x: 258
-        y: 90
+        x: 2838
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1768,8 +1867,8 @@ TextureImporter:
       name: strongman_camp_67
       rect:
         serializedVersion: 2
-        x: 301
-        y: 90
+        x: 2881
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1789,8 +1888,8 @@ TextureImporter:
       name: strongman_camp_68
       rect:
         serializedVersion: 2
-        x: 344
-        y: 90
+        x: 2924
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1810,8 +1909,8 @@ TextureImporter:
       name: strongman_camp_69
       rect:
         serializedVersion: 2
-        x: 387
-        y: 90
+        x: 2967
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1831,8 +1930,8 @@ TextureImporter:
       name: strongman_camp_70
       rect:
         serializedVersion: 2
-        x: 0
-        y: 45
+        x: 3010
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1852,8 +1951,8 @@ TextureImporter:
       name: strongman_camp_71
       rect:
         serializedVersion: 2
-        x: 43
-        y: 45
+        x: 3053
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1873,8 +1972,8 @@ TextureImporter:
       name: strongman_camp_72
       rect:
         serializedVersion: 2
-        x: 86
-        y: 45
+        x: 3096
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1894,8 +1993,8 @@ TextureImporter:
       name: strongman_camp_73
       rect:
         serializedVersion: 2
-        x: 129
-        y: 45
+        x: 3139
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1915,8 +2014,8 @@ TextureImporter:
       name: strongman_camp_74
       rect:
         serializedVersion: 2
-        x: 172
-        y: 45
+        x: 3182
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1936,8 +2035,8 @@ TextureImporter:
       name: strongman_camp_75
       rect:
         serializedVersion: 2
-        x: 215
-        y: 45
+        x: 3225
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1957,8 +2056,8 @@ TextureImporter:
       name: strongman_camp_76
       rect:
         serializedVersion: 2
-        x: 258
-        y: 45
+        x: 3268
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1978,8 +2077,8 @@ TextureImporter:
       name: strongman_camp_77
       rect:
         serializedVersion: 2
-        x: 301
-        y: 45
+        x: 3311
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -1999,8 +2098,8 @@ TextureImporter:
       name: strongman_camp_78
       rect:
         serializedVersion: 2
-        x: 344
-        y: 45
+        x: 3354
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -2020,8 +2119,8 @@ TextureImporter:
       name: strongman_camp_79
       rect:
         serializedVersion: 2
-        x: 387
-        y: 45
+        x: 3397
+        y: 0
         width: 43
         height: 45
       alignment: 0
@@ -2041,7 +2140,7 @@ TextureImporter:
       name: strongman_camp_80
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3440
         y: 0
         width: 43
         height: 45
@@ -2062,7 +2161,7 @@ TextureImporter:
       name: strongman_camp_81
       rect:
         serializedVersion: 2
-        x: 43
+        x: 3483
         y: 0
         width: 43
         height: 45
@@ -2083,7 +2182,7 @@ TextureImporter:
       name: strongman_camp_82
       rect:
         serializedVersion: 2
-        x: 86
+        x: 3526
         y: 0
         width: 43
         height: 45
@@ -2104,7 +2203,7 @@ TextureImporter:
       name: strongman_camp_83
       rect:
         serializedVersion: 2
-        x: 129
+        x: 3569
         y: 0
         width: 43
         height: 45
@@ -2117,6 +2216,720 @@ TextureImporter:
       bones: []
       spriteID: 46b93ec7543af57d0800000000000000
       internalID: -2927441713924170908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_84
+      rect:
+        serializedVersion: 2
+        x: 3612
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3b0742609bc0240800000000000000
+      internalID: 4759382342256079778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_85
+      rect:
+        serializedVersion: 2
+        x: 3655
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac33163da9db14ab0800000000000000
+      internalID: -5025527236499786806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_86
+      rect:
+        serializedVersion: 2
+        x: 3698
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88608a378fedac030800000000000000
+      internalID: 3515867617789740680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_87
+      rect:
+        serializedVersion: 2
+        x: 3741
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e827a2750bf39bcd0800000000000000
+      internalID: -2541930488064740722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_88
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec09a8e9a52c46fb0800000000000000
+      internalID: -4655382420331523890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_89
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8a83e8570fd4cd0800000000000000
+      internalID: -2572135424470767424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_90
+      rect:
+        serializedVersion: 2
+        x: 3870
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfee46c8be504eb90800000000000000
+      internalID: -7213634193909813508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_91
+      rect:
+        serializedVersion: 2
+        x: 3913
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bce93ccdf3815d0800000000000000
+      internalID: -3091650926782526695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_92
+      rect:
+        serializedVersion: 2
+        x: 3956
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d246f4137e67670800000000000000
+      internalID: 8536264342698732877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_93
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260262f3fe70185c0800000000000000
+      internalID: -4215079052104032158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_94
+      rect:
+        serializedVersion: 2
+        x: 4042
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13647bc63ff77af00800000000000000
+      internalID: 1128010915157329457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_95
+      rect:
+        serializedVersion: 2
+        x: 4085
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff793ff6f25012290800000000000000
+      internalID: -7917040968640784385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_96
+      rect:
+        serializedVersion: 2
+        x: 4128
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10193e2f30fe3650800000000000000
+      internalID: 6214668689966960666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_97
+      rect:
+        serializedVersion: 2
+        x: 4171
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117fb9d6678f3a000800000000000000
+      internalID: 46153608732604177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_98
+      rect:
+        serializedVersion: 2
+        x: 4214
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17657a9dfc2e1bbd0800000000000000
+      internalID: -2616060526187817359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_99
+      rect:
+        serializedVersion: 2
+        x: 4257
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2b4cab1a12efbb0800000000000000
+      internalID: -4900442366025616642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_100
+      rect:
+        serializedVersion: 2
+        x: 4300
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0a3eb45296e2f00800000000000000
+      internalID: 1093927368405524727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_101
+      rect:
+        serializedVersion: 2
+        x: 4343
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2957c8f4bf9b43800800000000000000
+      internalID: 591301940114912658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_102
+      rect:
+        serializedVersion: 2
+        x: 4386
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e9a0468071f32b0800000000000000
+      internalID: -5602734086620012915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_103
+      rect:
+        serializedVersion: 2
+        x: 4429
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e86d5135c909fd0800000000000000
+      internalID: -2337196325942686199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_104
+      rect:
+        serializedVersion: 2
+        x: 4472
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b90d21e0dc78fcc90800000000000000
+      internalID: -7147344768839528293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_105
+      rect:
+        serializedVersion: 2
+        x: 4515
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a295b2fba97335e00800000000000000
+      internalID: 1032229877369755946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_106
+      rect:
+        serializedVersion: 2
+        x: 4558
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f23f25fcc72b1210800000000000000
+      internalID: 1304680278294213368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_107
+      rect:
+        serializedVersion: 2
+        x: 4601
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c87e90b760d1cb90800000000000000
+      internalID: -7223263183562180407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_108
+      rect:
+        serializedVersion: 2
+        x: 4644
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a867549b7e6331d0800000000000000
+      internalID: -3372230218921580377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_109
+      rect:
+        serializedVersion: 2
+        x: 4687
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbcb646917884870800000000000000
+      internalID: 8667326026003237840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_110
+      rect:
+        serializedVersion: 2
+        x: 4730
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bcb8caf1a5ab0790800000000000000
+      internalID: -7562769034122838862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_111
+      rect:
+        serializedVersion: 2
+        x: 4773
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f82997035f70fc0800000000000000
+      internalID: -3528582194474610788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_112
+      rect:
+        serializedVersion: 2
+        x: 4816
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e81266178941990800000000000000
+      internalID: -7416135073560162813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_113
+      rect:
+        serializedVersion: 2
+        x: 4859
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaca44b4c80168110800000000000000
+      internalID: 1262714940268260526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_114
+      rect:
+        serializedVersion: 2
+        x: 4902
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6194043706cc040800000000000000
+      internalID: 4669212961792399072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_115
+      rect:
+        serializedVersion: 2
+        x: 4945
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb4f97f08e44e330800000000000000
+      internalID: 3739199906441546738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_116
+      rect:
+        serializedVersion: 2
+        x: 4988
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5519e14447b5611d0800000000000000
+      internalID: -3380413915377790635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strongman_camp_117
+      rect:
+        serializedVersion: 2
+        x: 5031
+        y: 0
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027cbf984d49a53c0800000000000000
+      internalID: -4370016847840688352
       vertices: []
       indices: 
       edges: []
