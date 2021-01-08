@@ -18,7 +18,7 @@ public class Hanimator : MonoBehaviour {
     public int currentFrame;
     public float startAnimDate;
     
-    public enum WhenAnimFinishes { PAUSE, HIDE, DESTROY, PLAY_RANDOM, PLAY_RANDOM_DEFAULT }
+    public enum WhenAnimFinishes { PAUSE, LOOP, HIDE, DESTROY, PLAY_RANDOM }
 
     public void Start() {
         if (image == null && spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
@@ -47,21 +47,10 @@ public class Hanimator : MonoBehaviour {
                         Debug.LogError("PLAY_RANDOM setting needs at least 2 animations");
                         whenAnimFinishes = WhenAnimFinishes.PAUSE;
                     } else {
-                        Play(anims.Where(a => a.name != currentAnim.name).ToList().Random());
+                        Play(anims.WeightedRandom(anims.Select(a => a.weight).ToList()));
                         return;
                     }
-                if (whenAnimFinishes == WhenAnimFinishes.PLAY_RANDOM_DEFAULT)
-                    if (anims.Count < 2) {
-                        Debug.LogError("PLAY_RANDOM setting needs at least 2 animations");
-                        whenAnimFinishes = WhenAnimFinishes.PAUSE;
-                    } else if (anims.FirstOrDefault(a => a.name == "default") == null) {
-                        Debug.LogError("PLAY_RANDOM setting needs an animation called \"default\"");
-                        whenAnimFinishes = WhenAnimFinishes.PAUSE;
-                    } else {
-                        if (currentAnim.name != "default") Play("default");
-                        else Play(anims.Where(a => a.name != currentAnim.name).ToList().Random());
-                        return;
-                    }
+                if (whenAnimFinishes == WhenAnimFinishes.LOOP) Play(currentAnim);
                 if (whenAnimFinishes == WhenAnimFinishes.HIDE) SetVisible(false);
                 if (whenAnimFinishes == WhenAnimFinishes.DESTROY) Destroy(gameObject);
                 playing = false;
@@ -110,9 +99,14 @@ public class Hanimator : MonoBehaviour {
 public class Hanimation {
     public string name;
     public float frameDuration;
-    public List<Sprite> sprites;
-    public bool loop;
     public float delay;
+    public int weight;
+    public bool loop;
     public bool randomStart;
+    public List<Sprite> sprites;
+
+    public override string ToString() {
+        return name;
+    }
 }
     

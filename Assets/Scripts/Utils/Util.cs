@@ -505,6 +505,21 @@ public static class Util {
         else return t4;
     }
 
+    public static T WeightedRandom<T>(this List<T> list, List<int> weights) {
+        if (list.Count != weights.Count) {
+            Debug.LogError("the two lists need to have equal length");
+            return default;
+        }
+        
+        int ran = UnityEngine.Random.Range(0, weights.Sum());
+        int cumul = 0;
+        for (int i = 0; i < list.Count; i++) {
+            cumul += weights[i];
+            if (ran < cumul) return list[i];
+        }
+        return list.LastOrDefault();
+    }
+
     
     // --------------------
     // DELAY

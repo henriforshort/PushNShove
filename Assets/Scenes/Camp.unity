@@ -387,6 +387,10 @@ MonoBehaviour:
   anims:
   - name: 
     frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 1
     sprites:
     - {fileID: 2132466614085998469, guid: b3a22fcdb2a5ad148b0602442720f724, type: 3}
     - {fileID: 1970625101659835686, guid: b3a22fcdb2a5ad148b0602442720f724, type: 3}
@@ -396,17 +400,15 @@ MonoBehaviour:
     - {fileID: 5767074515346897650, guid: b3a22fcdb2a5ad148b0602442720f724, type: 3}
     - {fileID: -5119511082802778473, guid: b3a22fcdb2a5ad148b0602442720f724, type: 3}
     - {fileID: -615903256908367317, guid: b3a22fcdb2a5ad148b0602442720f724, type: 3}
-    loop: 1
-    delay: 0
-    randomStart: 1
   playing: 0
   currentAnim:
     name: 
     frameDuration: 0
-    sprites: []
-    loop: 0
     delay: 0
+    weight: 0
+    loop: 0
     randomStart: 0
+    sprites: []
   currentFrame: 0
   startAnimDate: 0
 --- !u!4 &357549009 stripped
@@ -505,6 +507,10 @@ MonoBehaviour:
   anims:
   - name: 
     frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
     sprites:
     - {fileID: 6433743098227295270, guid: 65f309b349e4e0a41a5d5253a896761a, type: 3}
     - {fileID: -9180451933742290215, guid: 65f309b349e4e0a41a5d5253a896761a, type: 3}
@@ -512,17 +518,15 @@ MonoBehaviour:
     - {fileID: 716906375057307828, guid: 65f309b349e4e0a41a5d5253a896761a, type: 3}
     - {fileID: 2328209949957159538, guid: 65f309b349e4e0a41a5d5253a896761a, type: 3}
     - {fileID: 237876874826339791, guid: 65f309b349e4e0a41a5d5253a896761a, type: 3}
-    loop: 1
-    delay: 0
-    randomStart: 0
   playing: 0
   currentAnim:
     name: 
     frameDuration: 0
-    sprites: []
-    loop: 0
     delay: 0
+    weight: 0
+    loop: 0
     randomStart: 0
+    sprites: []
   currentFrame: 0
   startAnimDate: 0
 --- !u!212 &636263790
@@ -905,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1439611115009238894, guid: 366c597e6ef870145bf68207dd78d9d0, type: 3}
       propertyPath: m_Name
-      value: Strongman (1)
+      value: Strongman (sleepy)
       objectReference: {fileID: 0}
     - target: {fileID: 1854472772432204391, guid: 366c597e6ef870145bf68207dd78d9d0, type: 3}
       propertyPath: m_IsActive
@@ -979,11 +983,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1273804978730077114, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: anims.Array.data[0].frameDuration
-      value: 500
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2790193703975639255, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_Name
-      value: Bruiser (1)
+      value: Bruiser (sleepy)
       objectReference: {fileID: 0}
     - target: {fileID: 6288908709325535599, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -999,15 +1003,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.74
+      value: 3.097
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.999
+      value: -5.8323336
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1908,7 +1912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.999
+      value: -5.8323336
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_LocalPosition.z

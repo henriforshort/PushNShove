@@ -281,6 +281,96 @@ TextureImporter:
   - first:
       213: -5430592220785481313
     second: knight_camp_92
+  - first:
+      213: 392454930191578048
+    second: knight_camp_93
+  - first:
+      213: -6711640762336101145
+    second: knight_camp_94
+  - first:
+      213: -6250805563299049659
+    second: knight_camp_95
+  - first:
+      213: -9100784730112171504
+    second: knight_camp_96
+  - first:
+      213: -6670611983929784766
+    second: knight_camp_97
+  - first:
+      213: 2434883011827742659
+    second: knight_camp_98
+  - first:
+      213: -8345531858230173148
+    second: knight_camp_99
+  - first:
+      213: 3432735651217828500
+    second: knight_camp_100
+  - first:
+      213: 8202972813925993079
+    second: knight_camp_101
+  - first:
+      213: -1582476747060253328
+    second: knight_camp_102
+  - first:
+      213: -3765600746049856975
+    second: knight_camp_103
+  - first:
+      213: -5710974918834774951
+    second: knight_camp_104
+  - first:
+      213: 1726423381314273796
+    second: knight_camp_105
+  - first:
+      213: -1899043513019709174
+    second: knight_camp_106
+  - first:
+      213: 1728095620239139235
+    second: knight_camp_107
+  - first:
+      213: 4956201031462914856
+    second: knight_camp_108
+  - first:
+      213: -913581693603643835
+    second: knight_camp_109
+  - first:
+      213: -9175201241037838838
+    second: knight_camp_110
+  - first:
+      213: 306404262616235519
+    second: knight_camp_111
+  - first:
+      213: -8822812492748658708
+    second: knight_camp_112
+  - first:
+      213: 7553283780078331513
+    second: knight_camp_113
+  - first:
+      213: -9185791423378471423
+    second: knight_camp_114
+  - first:
+      213: -2892511553436787091
+    second: knight_camp_115
+  - first:
+      213: 6951373832411995339
+    second: knight_camp_116
+  - first:
+      213: 8977668172140406397
+    second: knight_camp_117
+  - first:
+      213: -356089953351377185
+    second: knight_camp_118
+  - first:
+      213: -535668846817544631
+    second: knight_camp_119
+  - first:
+      213: 1614622482016111886
+    second: knight_camp_120
+  - first:
+      213: 3030245519677933781
+    second: knight_camp_121
+  - first:
+      213: -8287292454464555603
+    second: knight_camp_122
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -344,7 +434,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -356,7 +446,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -368,7 +458,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -386,7 +476,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -407,7 +497,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 52
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -428,7 +518,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 104
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -449,7 +539,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 156
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -470,7 +560,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 208
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -491,7 +581,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 260
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -512,7 +602,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 312
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -533,7 +623,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 364
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -554,7 +644,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -575,7 +665,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 468
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -596,7 +686,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 520
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -617,7 +707,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 572
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -638,7 +728,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 624
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -659,7 +749,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 676
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -680,7 +770,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 728
-        y: 0
+        y: 256
         width: 52
         height: 32
       alignment: 0
@@ -700,8 +790,8 @@ TextureImporter:
       name: knight_camp_15
       rect:
         serializedVersion: 2
-        x: 780
-        y: 0
+        x: 0
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -721,8 +811,8 @@ TextureImporter:
       name: knight_camp_16
       rect:
         serializedVersion: 2
-        x: 832
-        y: 0
+        x: 52
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -742,8 +832,8 @@ TextureImporter:
       name: knight_camp_17
       rect:
         serializedVersion: 2
-        x: 884
-        y: 0
+        x: 104
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -763,8 +853,8 @@ TextureImporter:
       name: knight_camp_18
       rect:
         serializedVersion: 2
-        x: 936
-        y: 0
+        x: 156
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -784,8 +874,8 @@ TextureImporter:
       name: knight_camp_19
       rect:
         serializedVersion: 2
-        x: 988
-        y: 0
+        x: 208
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -805,8 +895,8 @@ TextureImporter:
       name: knight_camp_20
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 0
+        x: 260
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -826,8 +916,8 @@ TextureImporter:
       name: knight_camp_21
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 0
+        x: 312
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -847,8 +937,8 @@ TextureImporter:
       name: knight_camp_22
       rect:
         serializedVersion: 2
-        x: 1144
-        y: 0
+        x: 364
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -868,8 +958,8 @@ TextureImporter:
       name: knight_camp_23
       rect:
         serializedVersion: 2
-        x: 1196
-        y: 0
+        x: 416
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -889,8 +979,8 @@ TextureImporter:
       name: knight_camp_24
       rect:
         serializedVersion: 2
-        x: 1248
-        y: 0
+        x: 468
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -910,8 +1000,8 @@ TextureImporter:
       name: knight_camp_25
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 0
+        x: 520
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -931,8 +1021,8 @@ TextureImporter:
       name: knight_camp_26
       rect:
         serializedVersion: 2
-        x: 1352
-        y: 0
+        x: 572
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -952,8 +1042,8 @@ TextureImporter:
       name: knight_camp_27
       rect:
         serializedVersion: 2
-        x: 1404
-        y: 0
+        x: 624
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -973,8 +1063,8 @@ TextureImporter:
       name: knight_camp_28
       rect:
         serializedVersion: 2
-        x: 1456
-        y: 0
+        x: 676
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -994,8 +1084,8 @@ TextureImporter:
       name: knight_camp_29
       rect:
         serializedVersion: 2
-        x: 1508
-        y: 0
+        x: 728
+        y: 224
         width: 52
         height: 32
       alignment: 0
@@ -1015,8 +1105,8 @@ TextureImporter:
       name: knight_camp_30
       rect:
         serializedVersion: 2
-        x: 1560
-        y: 0
+        x: 0
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1036,8 +1126,8 @@ TextureImporter:
       name: knight_camp_31
       rect:
         serializedVersion: 2
-        x: 1612
-        y: 0
+        x: 52
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1057,8 +1147,8 @@ TextureImporter:
       name: knight_camp_32
       rect:
         serializedVersion: 2
-        x: 1664
-        y: 0
+        x: 104
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1078,8 +1168,8 @@ TextureImporter:
       name: knight_camp_33
       rect:
         serializedVersion: 2
-        x: 1716
-        y: 0
+        x: 156
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1099,8 +1189,8 @@ TextureImporter:
       name: knight_camp_34
       rect:
         serializedVersion: 2
-        x: 1768
-        y: 0
+        x: 208
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1120,8 +1210,8 @@ TextureImporter:
       name: knight_camp_35
       rect:
         serializedVersion: 2
-        x: 1820
-        y: 0
+        x: 260
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1141,8 +1231,8 @@ TextureImporter:
       name: knight_camp_36
       rect:
         serializedVersion: 2
-        x: 1872
-        y: 0
+        x: 312
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1162,8 +1252,8 @@ TextureImporter:
       name: knight_camp_37
       rect:
         serializedVersion: 2
-        x: 1924
-        y: 0
+        x: 364
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1183,8 +1273,8 @@ TextureImporter:
       name: knight_camp_38
       rect:
         serializedVersion: 2
-        x: 1976
-        y: 0
+        x: 416
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1204,8 +1294,8 @@ TextureImporter:
       name: knight_camp_39
       rect:
         serializedVersion: 2
-        x: 2028
-        y: 0
+        x: 468
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1225,8 +1315,8 @@ TextureImporter:
       name: knight_camp_40
       rect:
         serializedVersion: 2
-        x: 2080
-        y: 0
+        x: 520
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1246,8 +1336,8 @@ TextureImporter:
       name: knight_camp_41
       rect:
         serializedVersion: 2
-        x: 2132
-        y: 0
+        x: 572
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1267,8 +1357,8 @@ TextureImporter:
       name: knight_camp_42
       rect:
         serializedVersion: 2
-        x: 2184
-        y: 0
+        x: 624
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1288,8 +1378,8 @@ TextureImporter:
       name: knight_camp_43
       rect:
         serializedVersion: 2
-        x: 2236
-        y: 0
+        x: 676
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1309,8 +1399,8 @@ TextureImporter:
       name: knight_camp_44
       rect:
         serializedVersion: 2
-        x: 2288
-        y: 0
+        x: 728
+        y: 192
         width: 52
         height: 32
       alignment: 0
@@ -1330,8 +1420,8 @@ TextureImporter:
       name: knight_camp_45
       rect:
         serializedVersion: 2
-        x: 2340
-        y: 0
+        x: 0
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1351,8 +1441,8 @@ TextureImporter:
       name: knight_camp_46
       rect:
         serializedVersion: 2
-        x: 2392
-        y: 0
+        x: 52
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1372,8 +1462,8 @@ TextureImporter:
       name: knight_camp_47
       rect:
         serializedVersion: 2
-        x: 2444
-        y: 0
+        x: 104
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1393,8 +1483,8 @@ TextureImporter:
       name: knight_camp_48
       rect:
         serializedVersion: 2
-        x: 2496
-        y: 0
+        x: 156
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1414,8 +1504,8 @@ TextureImporter:
       name: knight_camp_49
       rect:
         serializedVersion: 2
-        x: 2548
-        y: 0
+        x: 208
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1435,8 +1525,8 @@ TextureImporter:
       name: knight_camp_50
       rect:
         serializedVersion: 2
-        x: 2600
-        y: 0
+        x: 260
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1456,8 +1546,8 @@ TextureImporter:
       name: knight_camp_51
       rect:
         serializedVersion: 2
-        x: 2652
-        y: 0
+        x: 312
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1477,8 +1567,8 @@ TextureImporter:
       name: knight_camp_52
       rect:
         serializedVersion: 2
-        x: 2704
-        y: 0
+        x: 364
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1498,8 +1588,8 @@ TextureImporter:
       name: knight_camp_53
       rect:
         serializedVersion: 2
-        x: 2756
-        y: 0
+        x: 416
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1519,8 +1609,8 @@ TextureImporter:
       name: knight_camp_54
       rect:
         serializedVersion: 2
-        x: 2808
-        y: 0
+        x: 468
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1540,8 +1630,8 @@ TextureImporter:
       name: knight_camp_55
       rect:
         serializedVersion: 2
-        x: 2860
-        y: 0
+        x: 520
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1561,8 +1651,8 @@ TextureImporter:
       name: knight_camp_56
       rect:
         serializedVersion: 2
-        x: 2912
-        y: 0
+        x: 572
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1582,8 +1672,8 @@ TextureImporter:
       name: knight_camp_57
       rect:
         serializedVersion: 2
-        x: 2964
-        y: 0
+        x: 624
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1603,8 +1693,8 @@ TextureImporter:
       name: knight_camp_58
       rect:
         serializedVersion: 2
-        x: 3016
-        y: 0
+        x: 676
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1624,8 +1714,8 @@ TextureImporter:
       name: knight_camp_59
       rect:
         serializedVersion: 2
-        x: 3068
-        y: 0
+        x: 728
+        y: 160
         width: 52
         height: 32
       alignment: 0
@@ -1645,8 +1735,8 @@ TextureImporter:
       name: knight_camp_60
       rect:
         serializedVersion: 2
-        x: 3120
-        y: 0
+        x: 0
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1666,8 +1756,8 @@ TextureImporter:
       name: knight_camp_61
       rect:
         serializedVersion: 2
-        x: 3172
-        y: 0
+        x: 52
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1687,8 +1777,8 @@ TextureImporter:
       name: knight_camp_62
       rect:
         serializedVersion: 2
-        x: 3224
-        y: 0
+        x: 104
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1708,8 +1798,8 @@ TextureImporter:
       name: knight_camp_63
       rect:
         serializedVersion: 2
-        x: 3276
-        y: 0
+        x: 156
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1729,8 +1819,8 @@ TextureImporter:
       name: knight_camp_64
       rect:
         serializedVersion: 2
-        x: 3328
-        y: 0
+        x: 208
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1750,8 +1840,8 @@ TextureImporter:
       name: knight_camp_65
       rect:
         serializedVersion: 2
-        x: 3380
-        y: 0
+        x: 260
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1771,8 +1861,8 @@ TextureImporter:
       name: knight_camp_66
       rect:
         serializedVersion: 2
-        x: 3432
-        y: 0
+        x: 312
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1792,8 +1882,8 @@ TextureImporter:
       name: knight_camp_67
       rect:
         serializedVersion: 2
-        x: 3484
-        y: 0
+        x: 364
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1813,8 +1903,8 @@ TextureImporter:
       name: knight_camp_68
       rect:
         serializedVersion: 2
-        x: 3536
-        y: 0
+        x: 416
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1834,8 +1924,8 @@ TextureImporter:
       name: knight_camp_69
       rect:
         serializedVersion: 2
-        x: 3588
-        y: 0
+        x: 468
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1855,8 +1945,8 @@ TextureImporter:
       name: knight_camp_70
       rect:
         serializedVersion: 2
-        x: 3640
-        y: 0
+        x: 520
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1876,8 +1966,8 @@ TextureImporter:
       name: knight_camp_71
       rect:
         serializedVersion: 2
-        x: 3692
-        y: 0
+        x: 572
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1897,8 +1987,8 @@ TextureImporter:
       name: knight_camp_72
       rect:
         serializedVersion: 2
-        x: 3744
-        y: 0
+        x: 624
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1918,8 +2008,8 @@ TextureImporter:
       name: knight_camp_73
       rect:
         serializedVersion: 2
-        x: 3796
-        y: 0
+        x: 676
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1939,8 +2029,8 @@ TextureImporter:
       name: knight_camp_74
       rect:
         serializedVersion: 2
-        x: 3848
-        y: 0
+        x: 728
+        y: 128
         width: 52
         height: 32
       alignment: 0
@@ -1960,8 +2050,8 @@ TextureImporter:
       name: knight_camp_75
       rect:
         serializedVersion: 2
-        x: 3900
-        y: 0
+        x: 0
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -1981,8 +2071,8 @@ TextureImporter:
       name: knight_camp_76
       rect:
         serializedVersion: 2
-        x: 3952
-        y: 0
+        x: 52
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2002,8 +2092,8 @@ TextureImporter:
       name: knight_camp_77
       rect:
         serializedVersion: 2
-        x: 4004
-        y: 0
+        x: 104
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2023,8 +2113,8 @@ TextureImporter:
       name: knight_camp_78
       rect:
         serializedVersion: 2
-        x: 4056
-        y: 0
+        x: 156
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2044,8 +2134,8 @@ TextureImporter:
       name: knight_camp_79
       rect:
         serializedVersion: 2
-        x: 4108
-        y: 0
+        x: 208
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2065,8 +2155,8 @@ TextureImporter:
       name: knight_camp_80
       rect:
         serializedVersion: 2
-        x: 4160
-        y: 0
+        x: 260
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2086,8 +2176,8 @@ TextureImporter:
       name: knight_camp_81
       rect:
         serializedVersion: 2
-        x: 4212
-        y: 0
+        x: 312
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2107,8 +2197,8 @@ TextureImporter:
       name: knight_camp_82
       rect:
         serializedVersion: 2
-        x: 4264
-        y: 0
+        x: 364
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2128,8 +2218,8 @@ TextureImporter:
       name: knight_camp_83
       rect:
         serializedVersion: 2
-        x: 4316
-        y: 0
+        x: 416
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2149,8 +2239,8 @@ TextureImporter:
       name: knight_camp_84
       rect:
         serializedVersion: 2
-        x: 4368
-        y: 0
+        x: 468
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2170,8 +2260,8 @@ TextureImporter:
       name: knight_camp_85
       rect:
         serializedVersion: 2
-        x: 4420
-        y: 0
+        x: 520
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2191,8 +2281,8 @@ TextureImporter:
       name: knight_camp_86
       rect:
         serializedVersion: 2
-        x: 4472
-        y: 0
+        x: 572
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2212,8 +2302,8 @@ TextureImporter:
       name: knight_camp_87
       rect:
         serializedVersion: 2
-        x: 4524
-        y: 0
+        x: 624
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2233,8 +2323,8 @@ TextureImporter:
       name: knight_camp_88
       rect:
         serializedVersion: 2
-        x: 4576
-        y: 0
+        x: 676
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2254,8 +2344,8 @@ TextureImporter:
       name: knight_camp_89
       rect:
         serializedVersion: 2
-        x: 4628
-        y: 0
+        x: 728
+        y: 96
         width: 52
         height: 32
       alignment: 0
@@ -2275,8 +2365,8 @@ TextureImporter:
       name: knight_camp_90
       rect:
         serializedVersion: 2
-        x: 4680
-        y: 0
+        x: 0
+        y: 64
         width: 52
         height: 32
       alignment: 0
@@ -2296,8 +2386,8 @@ TextureImporter:
       name: knight_camp_91
       rect:
         serializedVersion: 2
-        x: 4732
-        y: 0
+        x: 52
+        y: 64
         width: 52
         height: 32
       alignment: 0
@@ -2317,8 +2407,8 @@ TextureImporter:
       name: knight_camp_92
       rect:
         serializedVersion: 2
-        x: 4784
-        y: 0
+        x: 104
+        y: 64
         width: 52
         height: 32
       alignment: 0
@@ -2330,6 +2420,636 @@ TextureImporter:
       bones: []
       spriteID: f99e410d529a2a4b0800000000000000
       internalID: -5430592220785481313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_93
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c37b600ea7427500800000000000000
+      internalID: 392454930191578048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_94
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecbce459467bd2a0800000000000000
+      internalID: -6711640762336101145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_95
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f4687557da049a0800000000000000
+      internalID: -6250805563299049659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_96
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0126d58818483b180800000000000000
+      internalID: -9100784730112171504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_97
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246c6673eb93d63a0800000000000000
+      internalID: -6670611983929784766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_98
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c730add2317ac120800000000000000
+      internalID: 2434883011827742659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_99
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4222c70ddf6be2c80800000000000000
+      internalID: -8345531858230173148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_100
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a68aa23e683af20800000000000000
+      internalID: 3432735651217828500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_101
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ace342050d6d170800000000000000
+      internalID: 8202972813925993079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_102
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d682a68c9e90ae0800000000000000
+      internalID: -1582476747060253328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_103
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a90cd8216edbbc0800000000000000
+      internalID: -3765600746049856975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_104
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 64
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c10b1c19a8eb0b0800000000000000
+      internalID: -5710974918834774951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4028a271bec75f710800000000000000
+      internalID: 1726423381314273796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_106
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0943798cfd35a5e0800000000000000
+      internalID: -1899043513019709174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_107
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1234e8fcd6bf710800000000000000
+      internalID: 1728095620239139235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_108
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b85cb3496f7c440800000000000000
+      internalID: 4956201031462914856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_109
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e747f3a4e4253f0800000000000000
+      internalID: -913581693603643835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_110
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06673565132ba080800000000000000
+      internalID: -9175201241037838838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_111
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdf7eead01904400800000000000000
+      internalID: 306404262616235519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_112
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce766d978c21f8580800000000000000
+      internalID: -8822812492748658708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_113
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976e9473497a2d860800000000000000
+      internalID: 7553283780078331513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_114
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10642bc6e53858080800000000000000
+      internalID: -9185791423378471423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_115
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6edfac311cbbd7d0800000000000000
+      internalID: -2892511553436787091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_116
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccdcddabad387060800000000000000
+      internalID: 6951373832411995339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_117
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7662c703a5179c70800000000000000
+      internalID: 8977668172140406397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_118
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fded766f21aee0bf0800000000000000
+      internalID: -356089953351377185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_119
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 32
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946723c950ce098f0800000000000000
+      internalID: -535668846817544631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d0eeeb79a486610800000000000000
+      internalID: 1614622482016111886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_121
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d84f96ce389d0a20800000000000000
+      internalID: 3030245519677933781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_camp_122
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da57dddab6f9dfc80800000000000000
+      internalID: -8287292454464555603
       vertices: []
       indices: 
       edges: []

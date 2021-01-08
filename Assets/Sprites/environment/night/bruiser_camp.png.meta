@@ -113,6 +113,168 @@ TextureImporter:
   - first:
       213: -8381948637396218051
     second: bruiser_camp_36
+  - first:
+      213: -5702795417160665893
+    second: bruiser_camp_37
+  - first:
+      213: -3922278086100094833
+    second: bruiser_camp_38
+  - first:
+      213: 765979796592840422
+    second: bruiser_camp_39
+  - first:
+      213: -5213342507771127679
+    second: bruiser_camp_40
+  - first:
+      213: -8600025689448779733
+    second: bruiser_camp_41
+  - first:
+      213: -6622185073508160491
+    second: bruiser_camp_42
+  - first:
+      213: -2204154413532733029
+    second: bruiser_camp_43
+  - first:
+      213: -3164164269290925377
+    second: bruiser_camp_44
+  - first:
+      213: 1131932276429254448
+    second: bruiser_camp_45
+  - first:
+      213: 6553172990092097113
+    second: bruiser_camp_46
+  - first:
+      213: -8934828690474659621
+    second: bruiser_camp_47
+  - first:
+      213: -5090938812117753178
+    second: bruiser_camp_48
+  - first:
+      213: 1880100564831550186
+    second: bruiser_camp_49
+  - first:
+      213: 3131248072195814532
+    second: bruiser_camp_50
+  - first:
+      213: -2433967492400865505
+    second: bruiser_camp_51
+  - first:
+      213: -3559300799597769061
+    second: bruiser_camp_52
+  - first:
+      213: 1608374530918323212
+    second: bruiser_camp_53
+  - first:
+      213: 5797195411577905733
+    second: bruiser_camp_54
+  - first:
+      213: -4182123096557669959
+    second: bruiser_camp_55
+  - first:
+      213: -4419861816867386937
+    second: bruiser_camp_56
+  - first:
+      213: -8455850929154124874
+    second: bruiser_camp_57
+  - first:
+      213: 913711625949545019
+    second: bruiser_camp_58
+  - first:
+      213: -1936761946683630368
+    second: bruiser_camp_59
+  - first:
+      213: 912685000014560594
+    second: bruiser_camp_60
+  - first:
+      213: -1490428601695872717
+    second: bruiser_camp_61
+  - first:
+      213: -1295654268639397508
+    second: bruiser_camp_62
+  - first:
+      213: 6945063901604541335
+    second: bruiser_camp_63
+  - first:
+      213: 5845852468065318916
+    second: bruiser_camp_64
+  - first:
+      213: -2812633297995653481
+    second: bruiser_camp_65
+  - first:
+      213: 882697569588161947
+    second: bruiser_camp_66
+  - first:
+      213: 8521026712612834148
+    second: bruiser_camp_67
+  - first:
+      213: 3075510745130735174
+    second: bruiser_camp_68
+  - first:
+      213: 4652125272064146567
+    second: bruiser_camp_69
+  - first:
+      213: 3493566924095748024
+    second: bruiser_camp_70
+  - first:
+      213: 1342695129802537993
+    second: bruiser_camp_71
+  - first:
+      213: 2304432371091371895
+    second: bruiser_camp_72
+  - first:
+      213: 1454947415052824378
+    second: bruiser_camp_73
+  - first:
+      213: 8922544578434624029
+    second: bruiser_camp_74
+  - first:
+      213: 7398919579529262511
+    second: bruiser_camp_75
+  - first:
+      213: -6419639261121797339
+    second: bruiser_camp_76
+  - first:
+      213: 4080911502773637259
+    second: bruiser_camp_77
+  - first:
+      213: 2870332770684151035
+    second: bruiser_camp_78
+  - first:
+      213: 8655528287907950765
+    second: bruiser_camp_79
+  - first:
+      213: 1270812699692789165
+    second: bruiser_camp_80
+  - first:
+      213: 6027707354635966686
+    second: bruiser_camp_81
+  - first:
+      213: 1336746269635625083
+    second: bruiser_camp_82
+  - first:
+      213: 3545525260397782094
+    second: bruiser_camp_83
+  - first:
+      213: 2760261131324515179
+    second: bruiser_camp_84
+  - first:
+      213: 1983758153345190050
+    second: bruiser_camp_85
+  - first:
+      213: -2123322203129631765
+    second: bruiser_camp_86
+  - first:
+      213: -6245602547517930188
+    second: bruiser_camp_87
+  - first:
+      213: -6825505335808677395
+    second: bruiser_camp_88
+  - first:
+      213: 217426683043521060
+    second: bruiser_camp_89
+  - first:
+      213: 6190717530396670615
+    second: bruiser_camp_90
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -218,9 +380,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 35
-        height: 27
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +400,10 @@ TextureImporter:
       name: bruiser_camp_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 0
-        width: 35
-        height: 27
+        x: 49
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +421,10 @@ TextureImporter:
       name: bruiser_camp_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 35
-        height: 27
+        x: 98
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +442,10 @@ TextureImporter:
       name: bruiser_camp_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 0
-        width: 35
-        height: 27
+        x: 147
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +463,10 @@ TextureImporter:
       name: bruiser_camp_4
       rect:
         serializedVersion: 2
-        x: 140
-        y: 0
-        width: 35
-        height: 27
+        x: 196
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +484,10 @@ TextureImporter:
       name: bruiser_camp_5
       rect:
         serializedVersion: 2
-        x: 175
-        y: 0
-        width: 35
-        height: 27
+        x: 245
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +505,10 @@ TextureImporter:
       name: bruiser_camp_6
       rect:
         serializedVersion: 2
-        x: 210
-        y: 0
-        width: 35
-        height: 27
+        x: 294
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +526,10 @@ TextureImporter:
       name: bruiser_camp_7
       rect:
         serializedVersion: 2
-        x: 245
-        y: 0
-        width: 35
-        height: 27
+        x: 343
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,10 +547,10 @@ TextureImporter:
       name: bruiser_camp_8
       rect:
         serializedVersion: 2
-        x: 280
-        y: 0
-        width: 35
-        height: 27
+        x: 392
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,10 +568,10 @@ TextureImporter:
       name: bruiser_camp_9
       rect:
         serializedVersion: 2
-        x: 315
-        y: 0
-        width: 35
-        height: 27
+        x: 441
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,10 +589,10 @@ TextureImporter:
       name: bruiser_camp_10
       rect:
         serializedVersion: 2
-        x: 350
-        y: 0
-        width: 35
-        height: 27
+        x: 490
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -448,10 +610,10 @@ TextureImporter:
       name: bruiser_camp_11
       rect:
         serializedVersion: 2
-        x: 385
-        y: 0
-        width: 35
-        height: 27
+        x: 539
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,10 +631,10 @@ TextureImporter:
       name: bruiser_camp_12
       rect:
         serializedVersion: 2
-        x: 420
-        y: 0
-        width: 35
-        height: 27
+        x: 588
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -490,10 +652,10 @@ TextureImporter:
       name: bruiser_camp_13
       rect:
         serializedVersion: 2
-        x: 455
-        y: 0
-        width: 35
-        height: 27
+        x: 637
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,10 +673,10 @@ TextureImporter:
       name: bruiser_camp_14
       rect:
         serializedVersion: 2
-        x: 490
-        y: 0
-        width: 35
-        height: 27
+        x: 686
+        y: 198
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -532,10 +694,10 @@ TextureImporter:
       name: bruiser_camp_15
       rect:
         serializedVersion: 2
-        x: 525
-        y: 0
-        width: 35
-        height: 27
+        x: 0
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,10 +715,10 @@ TextureImporter:
       name: bruiser_camp_16
       rect:
         serializedVersion: 2
-        x: 560
-        y: 0
-        width: 35
-        height: 27
+        x: 49
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -574,10 +736,10 @@ TextureImporter:
       name: bruiser_camp_17
       rect:
         serializedVersion: 2
-        x: 595
-        y: 0
-        width: 35
-        height: 27
+        x: 98
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,10 +757,10 @@ TextureImporter:
       name: bruiser_camp_18
       rect:
         serializedVersion: 2
-        x: 630
-        y: 0
-        width: 35
-        height: 27
+        x: 147
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,10 +778,10 @@ TextureImporter:
       name: bruiser_camp_19
       rect:
         serializedVersion: 2
-        x: 665
-        y: 0
-        width: 35
-        height: 27
+        x: 196
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,10 +799,10 @@ TextureImporter:
       name: bruiser_camp_20
       rect:
         serializedVersion: 2
-        x: 700
-        y: 0
-        width: 35
-        height: 27
+        x: 245
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -658,10 +820,10 @@ TextureImporter:
       name: bruiser_camp_21
       rect:
         serializedVersion: 2
-        x: 735
-        y: 0
-        width: 35
-        height: 27
+        x: 294
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -679,10 +841,10 @@ TextureImporter:
       name: bruiser_camp_22
       rect:
         serializedVersion: 2
-        x: 770
-        y: 0
-        width: 35
-        height: 27
+        x: 343
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -700,10 +862,10 @@ TextureImporter:
       name: bruiser_camp_23
       rect:
         serializedVersion: 2
-        x: 805
-        y: 0
-        width: 35
-        height: 27
+        x: 392
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,10 +883,10 @@ TextureImporter:
       name: bruiser_camp_24
       rect:
         serializedVersion: 2
-        x: 840
-        y: 0
-        width: 35
-        height: 27
+        x: 441
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -742,10 +904,10 @@ TextureImporter:
       name: bruiser_camp_25
       rect:
         serializedVersion: 2
-        x: 875
-        y: 0
-        width: 35
-        height: 27
+        x: 490
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -763,10 +925,10 @@ TextureImporter:
       name: bruiser_camp_26
       rect:
         serializedVersion: 2
-        x: 910
-        y: 0
-        width: 35
-        height: 27
+        x: 539
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -784,10 +946,10 @@ TextureImporter:
       name: bruiser_camp_27
       rect:
         serializedVersion: 2
-        x: 945
-        y: 0
-        width: 35
-        height: 27
+        x: 588
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -805,10 +967,10 @@ TextureImporter:
       name: bruiser_camp_28
       rect:
         serializedVersion: 2
-        x: 980
-        y: 0
-        width: 35
-        height: 27
+        x: 637
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,10 +988,10 @@ TextureImporter:
       name: bruiser_camp_29
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 0
-        width: 35
-        height: 27
+        x: 686
+        y: 165
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -847,10 +1009,10 @@ TextureImporter:
       name: bruiser_camp_30
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 0
-        width: 35
-        height: 27
+        x: 0
+        y: 132
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -868,10 +1030,10 @@ TextureImporter:
       name: bruiser_camp_31
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 0
-        width: 35
-        height: 27
+        x: 49
+        y: 132
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -889,10 +1051,10 @@ TextureImporter:
       name: bruiser_camp_32
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 0
-        width: 35
-        height: 27
+        x: 98
+        y: 132
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -910,10 +1072,10 @@ TextureImporter:
       name: bruiser_camp_33
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 0
-        width: 35
-        height: 27
+        x: 147
+        y: 132
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -931,10 +1093,10 @@ TextureImporter:
       name: bruiser_camp_34
       rect:
         serializedVersion: 2
-        x: 1190
-        y: 0
-        width: 35
-        height: 27
+        x: 196
+        y: 132
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -952,10 +1114,10 @@ TextureImporter:
       name: bruiser_camp_35
       rect:
         serializedVersion: 2
-        x: 1225
-        y: 0
-        width: 35
-        height: 27
+        x: 245
+        y: 132
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -973,10 +1135,10 @@ TextureImporter:
       name: bruiser_camp_36
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 0
-        width: 35
-        height: 27
+        x: 294
+        y: 132
+        width: 49
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -986,6 +1148,1140 @@ TextureImporter:
       bones: []
       spriteID: d3fcd6eaf165dab80800000000000000
       internalID: -8381948637396218051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_37
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4b96568c99bd0b0800000000000000
+      internalID: -5702795417160665893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_38
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8074bf9cd44199c0800000000000000
+      internalID: -3922278086100094833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_39
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eeca01119e41aa00800000000000000
+      internalID: 765979796592840422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_40
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1889bd35c9c76a7b0800000000000000
+      internalID: -5213342507771127679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_41
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20fb29433296a880800000000000000
+      internalID: -8600025689448779733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_42
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ce6a0f2c54914a0800000000000000
+      internalID: -6622185073508160491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_43
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91a54f2d354961e0800000000000000
+      internalID: -2204154413532733029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_44
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 132
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb25eed8c51a614d0800000000000000
+      internalID: -3164164269290925377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f6d5e786e65bf00800000000000000
+      internalID: 1131932276429254448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_46
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956bf124d1c81fa50800000000000000
+      internalID: 6553172990092097113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_47
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd01a4f05ac110480800000000000000
+      internalID: -8934828690474659621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_48
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a2e8729f1a5959b0800000000000000
+      internalID: -5090938812117753178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_49
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeabbc4a085771a10800000000000000
+      internalID: 1880100564831550186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_50
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484bbd6188d647b20800000000000000
+      internalID: 3131248072195814532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_51
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f199c167fc83ed0800000000000000
+      internalID: -2433967492400865505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_52
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e063fd7c2da9ec0800000000000000
+      internalID: -3559300799597769061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_53
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c041c254d18125610800000000000000
+      internalID: 1608374530918323212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_54
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54220a01386c37050800000000000000
+      internalID: 5797195411577905733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_55
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b139b6933d16f5c0800000000000000
+      internalID: -4182123096557669959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_56
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c98e41581f79a2c0800000000000000
+      internalID: -4419861816867386937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_57
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b39c168168c6aa80800000000000000
+      internalID: -8455850929154124874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_58
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b320edbf1e72eac00800000000000000
+      internalID: 913711625949545019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_59
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 99
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec9d69554d3f15e0800000000000000
+      internalID: -1936761946683630368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25df1b10c228aac00800000000000000
+      internalID: 912685000014560594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_61
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339d5d8551fe05be0800000000000000
+      internalID: -1490428601695872717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_62
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79b70eae49e40ee0800000000000000
+      internalID: -1295654268639397508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_63
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793f68d62d2d16060800000000000000
+      internalID: 6945063901604541335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_64
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408bf58d8d3a02150800000000000000
+      internalID: 5845852468065318916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_65
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e988ddae487f8d0800000000000000
+      internalID: -2812633297995653481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_66
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d276743c8ff3c00800000000000000
+      internalID: 882697569588161947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_67
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b07e616a4c04670800000000000000
+      internalID: 8521026712612834148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_68
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6461a6a5ab86eaa20800000000000000
+      internalID: 3075510745130735174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_69
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c3004794baf8040800000000000000
+      internalID: 4652125272064146567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_70
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7f7c59b94ab7030800000000000000
+      internalID: 3493566924095748024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_71
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90cf68d4b1632a210800000000000000
+      internalID: 1342695129802537993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_72
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777ffc7380dfaff10800000000000000
+      internalID: 2304432371091371895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_73
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fa81127f2013410800000000000000
+      internalID: 1454947415052824378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_74
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 66
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1aee2a350f33db70800000000000000
+      internalID: 8922544578434624029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5368b082e3ea660800000000000000
+      internalID: 7398919579529262511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_76
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5232faeca1cd8e6a0800000000000000
+      internalID: -6419639261121797339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_77
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80d0a2e36f42a830800000000000000
+      internalID: 4080911502773637259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_78
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4aacf727875d720800000000000000
+      internalID: 2870332770684151035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_79
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da039107e1d9e1870800000000000000
+      internalID: 8655528287907950765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_80
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad6e35da65d2a110800000000000000
+      internalID: 1270812699692789165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_81
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8161327e7b6a350800000000000000
+      internalID: 6027707354635966686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_82
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70c57c56a31d8210800000000000000
+      internalID: 1336746269635625083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_83
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e442f28707c343130800000000000000
+      internalID: 3545525260397782094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_84
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b636aebdfda6e4620800000000000000
+      internalID: 2760261131324515179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_85
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8cc62b789b78b10800000000000000
+      internalID: 1983758153345190050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_86
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb22c2c4b17882e0800000000000000
+      internalID: -2123322203129631765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_87
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4354bead2992359a0800000000000000
+      internalID: -6245602547517930188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_88
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de927966f0fe641a0800000000000000
+      internalID: -6825505335808677395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_89
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 33
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422208f8a64740300800000000000000
+      internalID: 217426683043521060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bruiser_camp_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ab3184bc8d9e550800000000000000
+      internalID: 6190717530396670615
       vertices: []
       indices: 
       edges: []
