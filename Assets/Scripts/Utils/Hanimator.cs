@@ -34,30 +34,24 @@ public class Hanimator : MonoBehaviour {
 
     public void Update() {
         if (!playing) return;
-        if ((Time.time - startAnimDate) / (currentAnim.frameDuration / 1000) < currentFrame + 1) return;
-        
-        currentFrame += 1;
-        if (currentFrame >= currentAnim.sprites.Count) {
-            if (currentAnim.loop) {
-                startAnimDate = Time.time + (currentAnim.delay/1000);
-                currentFrame = 0;
-            } else {
-                if (whenAnimFinishes == WhenAnimFinishes.PLAY_RANDOM)
-                    if (anims.Count < 2) {
-                        Debug.LogError("PLAY_RANDOM setting needs at least 2 animations");
-                        whenAnimFinishes = WhenAnimFinishes.PAUSE;
-                    } else {
-                        Play(anims.WeightedRandom(anims.Select(a => a.weight).ToList()));
-                        return;
-                    }
+        if ((Time.time - startAnimDate) / (currentAnim.frameDuration/1000) < currentFrame + 1) return;
+
+        if (currentFrame + 1 < currentAnim.sprites.Count) {
+            currentFrame += 1;
+            SetSprite(currentAnim.sprites[currentFrame]);
+        } else {
+            playing = false;
+            if (currentAnim.loop) this.Wait(currentAnim.delay/1000, () => Play(currentAnim, true));
+            else {
+                if (whenAnimFinishes == WhenAnimFinishes.PAUSE) playing = false; //do nothing
                 if (whenAnimFinishes == WhenAnimFinishes.LOOP) Play(currentAnim);
                 if (whenAnimFinishes == WhenAnimFinishes.HIDE) SetVisible(false);
                 if (whenAnimFinishes == WhenAnimFinishes.DESTROY) Destroy(gameObject);
-                playing = false;
-                return;
+                if (whenAnimFinishes == WhenAnimFinishes.PLAY_RANDOM)
+                    if (anims.Count < 2) Debug.LogError("PLAY_RANDOM setting needs at least 2 animations");
+                    else Play(anims.WeightedRandom(anims.Select(a => a.weight).ToList()));
             }
         }
-        SetSprite(currentAnim.sprites[currentFrame]);
     }
 
     public void Play(string s) {
@@ -66,7 +60,7 @@ public class Hanimator : MonoBehaviour {
         else Play(anim);
     }
 
-    public void Play(Hanimation a) {
+    public void Play(Hanimation a, bool isLoop = false) {
         if (!anims.Contains(a)) {
             Debug.Log("anim doesnt exist");
             return;
@@ -77,7 +71,7 @@ public class Hanimator : MonoBehaviour {
         currentAnim = a;
         startAnimDate = Time.time;
         currentFrame = 0;
-        if (a.randomStart) {
+        if (!isLoop && a.randomStart) {
             currentFrame = this.Random(a.sprites.Count);
             startAnimDate -= a.frameDuration * currentFrame;
         }

@@ -113,6 +113,9 @@ public static class Util {
     public static float Abs(this float target) => Mathf.Abs(target);
     public static float Abs(this int target) => Mathf.Abs(target);
 
+    public static float Sign(this float target) => Mathf.Sign(target);
+    public static float Sign(this int target) => Mathf.Sign(target);
+
     public static float Pow(this float target, float other) => Mathf.Pow(target, other);
     public static float Pow(this float target, int other) => Mathf.Pow(target, other);
     public static float Pow(this int target, float other) => Mathf.Pow(target, other);
@@ -157,6 +160,24 @@ public static class Util {
     }
 
     
+    // --------------------
+    // VECTOR3 - MIRROR
+    // --------------------
+
+    public static bool IsMirrored(this Vector3 target) => target.x < 0;
+    public static bool IsMirrored(this GameObject target) => target.transform.localScale.IsMirrored();
+    public static bool IsMirrored(this Component target) => target.transform.localScale.IsMirrored();
+
+    public static Vector3 SetMirrored(this Vector3 target, bool mirrored) => 
+        target.SetX(target.x.Abs().ReverseIf(mirrored));
+    public static Component SetMirrored(this Component target, bool mirrored) {
+        target.transform.localScale = target.transform.localScale.SetMirrored(mirrored);
+        return target;
+    }
+    public static GameObject SetMirrored(this GameObject target, bool mirrored) => 
+        target.transform.SetMirrored(mirrored).gameObject;
+
+
     // --------------------
     // VECTOR3 - GET
     // --------------------
