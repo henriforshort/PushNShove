@@ -19,13 +19,13 @@ public class Tween : MonoBehaviour {
     public Graphic visuals; //for alpha changes
     public SpriteRenderer sprite; //for alpha changes
 
-    // [Header("State")]
-    private bool playing;
-    private bool reversed;
-    private Vector3 startValue;
-    private Vector3 targetValue;
-    private Vector3 currentValue;
-    [Range(0,1)] private float linearValue;
+    [Header("State")]
+    public bool playing;
+    public bool reversed;
+    public Vector3 startValue;
+    public Vector3 targetValue;
+    public Vector3 currentValue;
+    [Range(0,1)] public float linearValue;
 
     public enum Property { VERTICAL, HORIZONTAL, POSITION, SCALE, ALPHA }
     public enum Style { LINEAR, EASE_IN, EASE_OUT, EASE_IN_OUT, SINE, BOUNCE }
@@ -88,8 +88,8 @@ public class Tween : MonoBehaviour {
         if (linearValue > 1 || linearValue < 0) {
             if (onEnd != null) onEnd();
             if (whenDone == WhenDone.RESTART) { linearValue -= 1; Restart(); }
-            if (whenDone == WhenDone.PINGPONG) { reversed = !reversed; Restart(); }
-            if (whenDone == WhenDone.STOP) playing = false;
+            if (whenDone == WhenDone.PINGPONG) { reversed = (linearValue > 0.5f); Restart(); }
+            if (whenDone == WhenDone.STOP) Destroy(this);
             if (whenDone == WhenDone.DESTROY) Destroy(gameObject);
         }
     }
@@ -128,8 +128,11 @@ public class Tween : MonoBehaviour {
     public float Bounce(float x) => -4 * (x - 0.5f).Pow(2) + 1;
 
     public void Restart() {
-        playing = false;
-        this.Wait(restartDelay, () => playing = true);
+        if (restartDelay.isAbout(0)) playing = true;
+        else {
+            playing = false;
+            this.Wait(restartDelay, () => playing = true);
+        }
     }
 }
 

@@ -60,6 +60,11 @@ public class Hanimator : MonoBehaviour {
         else Play(anim);
     }
 
+    public void Play(int i) {
+        try { Play(anims[i]); }
+        catch { Debug.LogError("Hanimator does not have anim with index: "+i, gameObject); }
+    }
+
     public void Play(Hanimation a, bool isLoop = false) {
         if (!anims.Contains(a)) {
             Debug.Log("anim doesnt exist");

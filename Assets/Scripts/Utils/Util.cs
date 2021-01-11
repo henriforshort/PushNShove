@@ -92,8 +92,12 @@ public static class Util {
         (target * 10.Pow(precision)).Round() / 10.Pow(precision);
 
     public static bool isAbout(this float target, float other) => Mathf.Approximately(target, other);
-    public static bool isClearlyNot(this float target, float other) => !Mathf.Approximately(target, other);
-    
+    public static bool isClearlyNot(this float target, float other) => !target.isAbout(other);
+
+    public static bool isAbout(this float target, float other, float precision) => (target - other).Abs() < precision;
+    public static bool isClearlyNot(this float target, float other, float precision) => 
+        !target.isAbout(other, precision);
+
     public static bool isAboutOrHigherThan(this float target, float other) => target.isAbout(other) || target > other;
     public static bool isClearlyHigherThan(this float target, float other) => 
         target.isClearlyNot(other) && target > other;
@@ -635,6 +639,12 @@ public static class Util {
         col.a = alpha;
         return col;
     }
+
+    public static void SetNormalColor(this Selectable selectable, Color color) {
+        ColorBlock colorBlock = selectable.colors;
+        colorBlock.normalColor = color;
+        selectable.colors = colorBlock;
+    }
     
     
     // --------------------
@@ -665,5 +675,12 @@ public static class Util {
         return visuals.gameObject.AddComponent<Tween>().InitByValue(
             targetValue * Vector3.right, Tween.Property.ALPHA, 
             style, duration, whenDone, onEnd, restartDelay, visuals);
+    }
+
+    public static Tween Bounce(this MonoBehaviour target, float amplitude = 0.05f, float duration = 0.25f, 
+        Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
+        return target.gameObject.AddComponent<Tween>().InitByValue(
+            target.transform.localScale * (1 + amplitude), Tween.Property.SCALE, Tween.Style.BOUNCE, duration,
+            whenDone, onEnd, restartDelay, null);
     }
 }

@@ -38,15 +38,22 @@ public class CampUnit : MonoBehaviour {
     }
 
     public void SetGoal(Camp.Activity newActivity, Camp.Slot newSlot) {
-        if (currentSlot != null) currentSlot.unit = null;
+        if (currentSlot != null) {
+            currentSlot.unit = null;
+            currentSlot.emptyMarkers.ForEach(m => m.SetActive(true));
+            currentActivity.fullMarkers.ForEach(m => m.SetActive(false));
+        }
         currentSlot = newSlot;
         currentActivity = newActivity;
         currentSlot.unit = this;
         SetStatus(Camp.Activity.Type.WALKING);
         this.SetMirrored(currentSlot.x < this.GetX());
+        this.SetZ(-2);
     }
 
     public void ReachGoal() {
+        currentSlot.emptyMarkers.ForEach(m => m.SetActive(false));
+        currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.emptySlot == default));
         SetStatus(currentActivity.type);
         this.SetX(currentSlot.x);
         if (status == Camp.Activity.Type.IDLE) {
@@ -68,5 +75,6 @@ public class CampUnit : MonoBehaviour {
         List<GameObject> visuals = new List<GameObject>{ idleVisuals, sleepingVisuals, readyVisuals, walkingVisuals };
         visuals.ForEach(s => s.SetActive(false));
         visuals[(int)status].SetActive(true);
+        visuals[(int)status].GetComponent<Hanimator>()?.Play(0);
     }
 }

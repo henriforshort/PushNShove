@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Camp/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Camp/Bruiser.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Camp/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Camp/Knight.prefab" afterDir="false" />
@@ -28,19 +29,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camp/CampUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camp/CampUnit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/bruiser_camp.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/bruiser_camp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/bruiser_camp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/bruiser_camp.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/fire_big.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/fire_big.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/fire_big.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/fire_big.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/knight_camp.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/knight_camp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/knight_camp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/knight_camp.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/strongman_camp.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/strongman_camp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/strongman_camp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/strongman_camp.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/Knight_night.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/Knight_night.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/Knight_night.png" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/Knight_night.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/bruiser_test.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/bruiser_test.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/fire_big.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/fire_big.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,12 +80,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/StartMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/ee/275568d5/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Units/Monster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/GridLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/ColorBlock.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/16/4c6426cd/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/e6/134fff40/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/de/31acd207/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/9b/41b73f65/Renderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/089220ED-4552-42CC-B860-BD613F35B934/6b/628ed2b7/IPointerClickHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/089220ED-4552-42CC-B860-BD613F35B934/f3/ca6ac339/IEventSystemHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -109,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Items/BoneItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/ItemEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/B.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/FightPrompt.cs" />
@@ -131,7 +123,6 @@
         <option value="$PROJECT_DIR$/Assets/Hinventory/Scripts/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/Parallax.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" />
         <option value="$PROJECT_DIR$/Assets/Camp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Ult.cs" />
@@ -157,9 +148,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Hinventory/Scripts/Hinventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampArrow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampUnit.cs" />
       </list>
     </option>
   </component>
@@ -270,6 +263,7 @@
       <workItem from="1610113055778" duration="3256000" />
       <workItem from="1610209884226" duration="2086000" />
       <workItem from="1610274438023" duration="17773000" />
+      <workItem from="1610354190849" duration="23057000" />
     </task>
     <servers />
   </component>
