@@ -56,7 +56,7 @@ public class Camp : Level<Camp> {
         selectedActivity.button.Bounce(0.05f, .1f);
         selectedActivity.button.GetComponent<Image>().TweenAlpha(0, Tween.Style.EASE_IN, .35f,
             () => {
-                selectedActivity.button.SetNormalColor(Game.m.red);
+                selectedActivity.button.SetNormalColor(Game.m.white);
                 selectedActivity.button.gameObject.SetActive(false);
                 selectedActivity.button.GetComponent<Image>().SetAlpha(1);
             });

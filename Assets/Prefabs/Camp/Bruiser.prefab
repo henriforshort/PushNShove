@@ -175,8 +175,12 @@ MonoBehaviour:
   currentSlot:
     unit: {fileID: 0}
     x: 0
+    button: {fileID: 0}
+    emptyMarkers: []
   currentActivity:
     type: 0
+    button: {fileID: 0}
+    fullMarkers: []
     slots: []
   idleVisuals: {fileID: 8652952944342771914}
   sleepingVisuals: {fileID: 7157445823998992083}
@@ -533,7 +537,7 @@ MonoBehaviour:
   - name: default
     frameDuration: 100
     delay: 0
-    weight: 20
+    weight: 10
     loop: 0
     randomStart: 0
     sprites:
