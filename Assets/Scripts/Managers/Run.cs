@@ -63,9 +63,14 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	// ====================
 
 	public void InitRun() { //Called at the start of each run, before init the first battle
-		activeHeroPrefabs = Game.m.heroPrefabs.Clone();
-		while (activeHeroPrefabs.Count > amountOfHeroes) 
-			activeHeroPrefabs.RemoveAt(this.Random(activeHeroPrefabs.Count));
+		//active heroes are the ones selected from the camp
+		activeHeroPrefabs = Game.m.save.heroes
+			.Where(hgs => hgs.data.activity == UnitData.Activity.COMBAT)
+			.Select(hgs => hgs.battlePrefab).ToList();
+		//If there are none (ie we didn't get here from camp), select random heroes
+		while (activeHeroPrefabs.Count < amountOfHeroes) activeHeroPrefabs.Add(Game.m.save.heroes
+				.Select(hgs => hgs.battlePrefab)
+				.RandomWhere(h => !activeHeroPrefabs.Contains(h)));
 		save.InitRun();
 		
 		commonItems = items.Where(i => i.rarity == Item.Rarity.COMMON).ToList();

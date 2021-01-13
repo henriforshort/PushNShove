@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Hero : MonoBehaviour {
     [Header("Balancing")]
@@ -11,6 +12,8 @@ public class Hero : MonoBehaviour {
     
     [Header("Self References")]
     public Unit unit;
+    [FormerlySerializedAs("campUnit")]
+    public CampHero campHero;
     public Sprite image;
     public HeroIcon _icon;
     

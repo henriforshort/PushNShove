@@ -29,6 +29,9 @@ public static class Util {
         if (target == null || target.Count == 0) return default;
         return target.Where(t => !t.Equals(except)).ToList().Random();
     }
+
+    public static T RandomWhere<T>(this IEnumerable<T> target, Func<T, bool> predicate) => 
+        target.Where(predicate).ToList().Random();
     
     public static List<T> Except<T> (this List<T> target, T except) {
         if (target == null || target.Count == 0) return default;

@@ -124,7 +124,6 @@ MonoBehaviour:
   status: 0
   attackStatus: 0
   anim: 0
-  currentHealth: 0
   lastWindupIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
@@ -157,9 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ultCooldown: 32
   ultDuration: 5
-  ultCooldownLeft: 2
   ultStatus: 0
   unit: {fileID: -8380110151794944169}
+  campUnit: {fileID: 4802802870216699466, guid: 8de3d551bb0b89b4484bb3acc1b2f0ad, type: 3}
   image: {fileID: 21300000, guid: 0ef2f9755ffd62d40a534b56122d91ae, type: 3}
   _icon: {fileID: 0}
 --- !u!1 &6971875616310140930

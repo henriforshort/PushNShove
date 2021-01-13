@@ -11,11 +11,8 @@ public class GameSave {
         heroes.ForEach(h => h.InitGame());
     }
 
-    public void SaveHeroes() { //Called at the end of each run
-        heroes.ForEach(h => h.Save());
-    }
-
-    public void LoadHeroes() { //Called at the beginning of each run
-        heroes.ForEach(h => h.Load());
-    }
+    public void SaveHeroes() => heroes.ForEach(h => h.Save()); //Called at the end of each run
+    public void LoadHeroes() => heroes.ForEach(h => h.Load()); //Called at the beginning of each run
+    public void SaveCampHeroes() => heroes.ForEach(h => h.SaveCamp()); //Called when leaving the camp
+    public void LoadCampHeroes() => heroes.ForEach(h => h.LoadCamp()); //Called awhen entering the camp
 }

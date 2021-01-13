@@ -7,9 +7,9 @@ public class CampArrow : MonoBehaviour {
     public bool locked;
     
     public void Update() {
-        if (locked) this.SetX(Camp.m.selectedUnit.GetX());
-        if (!locked) this.LerpXTo(Camp.m.selectedUnit.GetX(), 10);
+        if (locked) this.SetX(Camp.m.selectedHero.GetX());
+        if (!locked) this.LerpXTo(Camp.m.selectedHero.GetX(), 10);
 
-        if (!locked && this.GetX().isAbout(Camp.m.selectedUnit.GetX(), 0.05f)) locked = true;
+        if (!locked && this.GetX().isAbout(Camp.m.selectedHero.GetX(), 0.05f)) locked = true;
     }
 }

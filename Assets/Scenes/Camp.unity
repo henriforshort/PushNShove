@@ -942,6 +942,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bruiser
       objectReference: {fileID: 0}
+    - target: {fileID: 2790193703975639255, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1132,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2790193703975639255, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_RootOrder
@@ -1575,43 +1579,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccae7a73c1ad38443819b111236325c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedUnit: {fileID: 0}
+  selectedHero: {fileID: 0}
+  heroes: []
   transition: {fileID: 1849976274}
   arrow: {fileID: 1225479993}
+  unitsHolder: {fileID: 1420776070}
   idle:
     type: 0
     button: {fileID: 96083185}
     fullMarkers: []
     slots:
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: 1.5
       button: {fileID: 1809063990}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: -1.5
       button: {fileID: 1513812529}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: 2.5
       button: {fileID: 448529086}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: -2.5
       button: {fileID: 1072974584}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: 3.5
       button: {fileID: 561161121}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: -3.5
       button: {fileID: 1606269393}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: 4.5
       button: {fileID: 750483096}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: -4.5
       button: {fileID: 61197074}
       emptyMarkers: []
@@ -1620,12 +1626,12 @@ MonoBehaviour:
     button: {fileID: 585191443}
     fullMarkers: []
     slots:
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: -6.25
       button: {fileID: 1867147390}
       emptyMarkers:
       - {fileID: 896682830}
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: -7.5
       button: {fileID: 1393498963}
       emptyMarkers:
@@ -1636,11 +1642,11 @@ MonoBehaviour:
     fullMarkers:
     - {fileID: 830227919}
     slots:
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: 6.25
       button: {fileID: 26203687}
       emptyMarkers: []
-    - unit: {fileID: 0}
+    - hero: {fileID: 0}
       x: 7.5
       button: {fileID: 1523983610}
       emptyMarkers: []
@@ -2912,7 +2918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2790193703975639255, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432870541435540203, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
       propertyPath: m_RootOrder
@@ -3551,7 +3557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1439611115009238894, guid: 366c597e6ef870145bf68207dd78d9d0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5161802452234951607, guid: 366c597e6ef870145bf68207dd78d9d0, type: 3}
       propertyPath: m_RootOrder
@@ -4355,7 +4361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8945571108189740027, guid: 8de3d551bb0b89b4484bb3acc1b2f0ad, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de3d551bb0b89b4484bb3acc1b2f0ad, type: 3}
@@ -6223,7 +6229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8945571108189740027, guid: 8de3d551bb0b89b4484bb3acc1b2f0ad, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de3d551bb0b89b4484bb3acc1b2f0ad, type: 3}

@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CampUnit : MonoBehaviour {
+public class CampHero : MonoBehaviour {
     [Header("State")]
+    public UnitData data;
     public Camp.Activity.Type status;
     public Camp.Slot currentSlot;
     [HideInInspector] public Camp.Activity currentActivity;
@@ -19,6 +20,7 @@ public class CampUnit : MonoBehaviour {
     public void Start() {
         Camp.m.activities.FirstOrDefault(a => a.type == status)?.Add(this);
         this.SetX(currentSlot.x);
+        this.SetY(-3);
     }
 
     public void Update() {
@@ -39,13 +41,13 @@ public class CampUnit : MonoBehaviour {
 
     public void SetGoal(Camp.Activity newActivity, Camp.Slot newSlot) {
         if (currentSlot != null) {
-            currentSlot.unit = null;
+            currentSlot.hero = null;
             currentSlot.emptyMarkers.ForEach(m => m.SetActive(true));
             currentActivity.fullMarkers.ForEach(m => m.SetActive(false));
         }
         currentSlot = newSlot;
         currentActivity = newActivity;
-        currentSlot.unit = this;
+        currentSlot.hero = this;
         SetStatus(Camp.Activity.Type.WALKING);
         this.SetMirrored(currentSlot.x < this.GetX());
         this.SetZ(-2);

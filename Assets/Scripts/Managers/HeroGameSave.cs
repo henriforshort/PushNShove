@@ -6,40 +6,39 @@ using UnityEngine;
 [Serializable]
 public class HeroGameSave {
     //Basic info
-    public Hero prefab;
+    public Hero battlePrefab;
     public int index; //Index in the Game.m.heroesPrefabs list
     
     //Data
     public UnitData data;
     
-    public HeroRunSave runSave => Run.m.save.heroes.First(h => h.prefabIndex == index);
+    public HeroRunSave runSave => Run.m.save.heroes.FirstOrDefault(h => h.prefabIndex == index);
+    public CampHero campInstance => Camp.m.heroes[index];
 
-    public HeroGameSave (int index, Hero prefab) {
-        this.prefab = prefab;
+    public HeroGameSave (int index, Hero battlePrefab) {
+        this.battlePrefab = battlePrefab;
         this.index = index;
         data = new UnitData();
     }
     
     public void InitGame() {
-        prefab.unit.data.CopyTo(data);
-        data.maxSpeed.Init(prefab.unit.baseMaxSpeed);
-        data.maxHealth.Init(prefab.unit.baseMaxHealth);
-        data.prot.Init(prefab.unit.baseProt);
-        data.weight.Init(prefab.unit.baseWeight);
-        data.damage.Init(prefab.unit.baseDamage);
-        data.strength.Init(prefab.unit.baseStrength);
-        data.critChance.Init(prefab.unit.baseCritChance);
-        data.currentHealth = prefab.unit.data.maxHealth;
+        battlePrefab.unit.data.CopyTo(data);
+        data.maxSpeed.Init(battlePrefab.unit.baseMaxSpeed);
+        data.maxHealth.Init(battlePrefab.unit.baseMaxHealth);
+        data.prot.Init(battlePrefab.unit.baseProt);
+        data.weight.Init(battlePrefab.unit.baseWeight);
+        data.damage.Init(battlePrefab.unit.baseDamage);
+        data.strength.Init(battlePrefab.unit.baseStrength);
+        data.critChance.Init(battlePrefab.unit.baseCritChance);
+        data.currentHealth = battlePrefab.unit.data.maxHealth;
         data.ultCooldownLeft = 0;
         data.itemPrefabs.Clear();
-        data.CopyTo(prefab.unit.data);
+        data.CopyTo(battlePrefab.unit.data);
+        data.activity = UnitData.Activity.IDLE;
     }
 
-    public void Save() {
-        runSave.data.CopyTo(data);
-    }
-
-    public void Load() {
-        data.CopyTo(runSave.data);
-    }
+    public void Save() => runSave.data.CopyTo(data); //Called at the end of each run
+    public void Load() => data.CopyTo(runSave.data); //Called at the beginning of each run
+    public void SaveCamp() => campInstance.data.CopyTo(data); //Called when leaving the camp
+    public void LoadCamp() => data.CopyTo(campInstance.data); //Called when entering the camp
 }

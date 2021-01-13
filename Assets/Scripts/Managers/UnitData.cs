@@ -15,11 +15,14 @@ public class UnitData {
     public Stat critChance;
     
     //Other info
+    public Activity activity;
     public float currentHealth;
     public float ultCooldownLeft;
     [SerializeField] private List<Item> _itemPrefabs;
     
     public List<Item> itemPrefabs => _itemPrefabs ?? (_itemPrefabs = new List<Item>());
+    
+    public enum Activity { IDLE, SLEEP, COMBAT }
 
     public void CopyTo(UnitData copy) {
         copy.maxSpeed = maxSpeed;
@@ -30,6 +33,7 @@ public class UnitData {
         copy.strength = strength;
         copy.critChance = critChance;
 
+        copy.activity = activity;
         copy.currentHealth = currentHealth;
         copy.ultCooldownLeft = ultCooldownLeft;
         copy.itemPrefabs.Clear();
