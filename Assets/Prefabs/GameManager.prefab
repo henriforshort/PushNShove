@@ -43,12 +43,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3cf68eda5662349ab6e4d8adedeb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableCheats: 1
+  battlesPerRun: 5
+  timeToAutoRestart: 2
+  spawnPosXRange: {x: 1, y: 7}
+  amountOfHeroes: 2
+  attackDistance: 3
+  collideDistance: 2
+  freezeFrameDuration: 0.15
+  bumpRecoverySpeed: 5
+  bumpSpeed: -20
+  defendSpeed: -10
+  maxItemsPerHero: 6
+  commonDropChance: 10
+  rareDropChance: 3
+  leggyDropChance: 1
   save:
+    battle: 0
     heroes: []
   heroPrefabs:
+  - {fileID: 6646292189090240541, guid: b8d9d7ad73c780341893780c4a95e73c, type: 3}
   - {fileID: 1125540990976075291, guid: 28fe68f2b07b05a429625dea2bd27067, type: 3}
   - {fileID: 5839365868507422637, guid: ef8e44773ad2a9a4b9a75ba4fa668ed9, type: 3}
-  - {fileID: 6646292189090240541, guid: b8d9d7ad73c780341893780c4a95e73c, type: 3}
   transparentSprite: {fileID: 21300000, guid: 81285999a139f494fb84c0501f058978, type: 3}
   whiteSprite: {fileID: 21300000, guid: 98c490c41fcfcc64894520d1b8233d32, type: 3}
   white: {r: 0.7411765, g: 0.7490196, b: 0.5921569, a: 1}

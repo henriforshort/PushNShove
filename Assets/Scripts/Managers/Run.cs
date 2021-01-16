@@ -4,33 +4,9 @@ using System.Linq;
 using UnityEngine;
 
 public class Run : MonoBehaviour { //Run manager, handles a single run.
-                                 //Should contain all balancing and prefabs relative to battles
+                                 //Should not contain any balancing or prefabs
                                  //Should contain only State info that is persisted across a single run
-	[Header("Balancing")]
-	public bool enableCheats;
-	[Space(20)]
-	public float timeToAutoRestart;
-	public Vector2 spawnPosXRange;
-	public int amountOfHeroes;
-	[Space(20)]
-	public float camSpeed;
-	public float camMaxDistFromUnits;
-	public float camMaxDistFromMapCenter;
-	[Space(20)]
-	public float attackDistance;
-	public float collideDistance;
-	public float freezeFrameDuration;
-	public float bumpRecoverySpeed;
-	public float bumpSpeed;
-	public float defendSpeed;
-	[Space(20)]
-	public int maxItemsPerHero;
-	public float commonDropChance;
-	public float rareDropChance;
-	public float leggyDropChance;
-	
-	[Header("State")]
-	public RunSave save;
+    [Header("State")]
 	public List<Hero> activeHeroPrefabs;
 	public List<Item> commonItems;
 	public List<Item> rareItems;
@@ -68,10 +44,15 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 			.Where(hgs => hgs.data.activity == UnitData.Activity.COMBAT)
 			.Select(hgs => hgs.battlePrefab).ToList();
 		//If there are none (ie we didn't get here from camp), select random heroes
-		while (activeHeroPrefabs.Count < amountOfHeroes) activeHeroPrefabs.Add(Game.m.save.heroes
+		while (activeHeroPrefabs.Count < Game.m.amountOfHeroes) 
+			activeHeroPrefabs.Add(Game.m.save.heroes
 				.Select(hgs => hgs.battlePrefab)
 				.RandomWhere(h => !activeHeroPrefabs.Contains(h)));
-		save.InitRun();
+		Game.m.save.battle = 1;
+		Game.m.save.heroes.ForEach(h => {
+			h.data.ultCooldownLeft = 0;
+			h.data.itemPrefabs.Clear();
+		});
 		
 		commonItems = items.Where(i => i.rarity == Item.Rarity.COMMON).ToList();
 		rareItems = items.Where(i => i.rarity == Item.Rarity.RARE).ToList();
@@ -90,9 +71,9 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	
 	public Item GetRandomItem() {
 		Item.Rarity rarity = this.WeightedRandom(
-			Item.Rarity.COMMON, (commonItems.Count == 0) ? 0 : commonDropChance, 
-			Item.Rarity.RARE, (rareItems.Count == 0) ? 0 : rareDropChance,
-			Item.Rarity.LEGGY, (leggyItems.Count == 0) ? 0 : leggyDropChance);
+			Item.Rarity.COMMON, (commonItems.Count == 0) ? 0 : Game.m.commonDropChance, 
+			Item.Rarity.RARE, (rareItems.Count == 0) ? 0 : Game.m.rareDropChance,
+			Item.Rarity.LEGGY, (leggyItems.Count == 0) ? 0 : Game.m.leggyDropChance);
 
 		Item pickedItem;
 		if (rarity == Item.Rarity.COMMON) {

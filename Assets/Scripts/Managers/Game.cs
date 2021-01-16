@@ -3,8 +3,28 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour { //Game manager, handles the whole game
-                            //Should contain global balancing and prefabs (NOT depending on any specific game mode)
+                            //Should contain global balancing and prefabs
                             //Should contain State info that is persisted across the whole game
+    [Header("Balancing")]
+    public bool enableCheats;
+    [Space(20)]
+    public int battlesPerRun;
+    public float timeToAutoRestart;
+    public Vector2 spawnPosXRange;
+    public int amountOfHeroes;
+    [Space(20)]
+    public float attackDistance;
+    public float collideDistance;
+    public float freezeFrameDuration;
+    public float bumpRecoverySpeed;
+    public float bumpSpeed;
+    public float defendSpeed;
+    [Space(20)]
+    public int maxItemsPerHero;
+    public float commonDropChance;
+    public float rareDropChance;
+    public float leggyDropChance;
+    
     [Header("State")]
     public GameSave save;
                             

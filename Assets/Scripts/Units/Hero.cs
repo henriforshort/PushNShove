@@ -19,7 +19,7 @@ public class Hero : MonoBehaviour {
     
     public enum UltStatus { AVAILABLE, RELOADING, ACTIVATED }
 
-    public List<Item> items => unit.data.itemPrefabs;
+    public List<Item> itemPrefabs => unit.data.itemPrefabs;
     public HeroIcon icon => _icon ?? (_icon = Battle.m.heroIcons[unit.index]);
     public float ultCooldownLeft {
         get { return unit.data.ultCooldownLeft; }
@@ -33,13 +33,13 @@ public class Hero : MonoBehaviour {
 
     public void Awake() { //Called before loading
         _icon = null;
-        ClearItems();
+        icon.ClearItems();
     }
 
     public void InitBattle(HeroIcon i) { //Called after loading
         ultStatus = UltStatus.RELOADING;
         icon.InitBattle(this);
-        items.ForEach(item => GetItemAtStartup(item.prefab));
+        itemPrefabs.ForEach(item => GetItemAtStartup(item.prefab));
         unit.InitBattle();
     }
 
@@ -94,11 +94,6 @@ public class Hero : MonoBehaviour {
     // ====================
     // ITEMS
     // ====================
-
-    public void ClearItems() {
-        items.Clear();
-        icon.ClearItems();
-    }
 
     public void GetItemFromFight(Item itemPrefab, Unit monster) {
         icon.GainItemFromFight(itemPrefab, monster.transform.position.SetY(-2.75f));

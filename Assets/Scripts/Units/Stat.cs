@@ -11,6 +11,10 @@ public class Stat {
 
     public static implicit operator float(Stat s) => s.value;
 
+    public Stat() {
+        modifiers = new List<StatModifier>();
+    }
+
     public void Init(float val) {
         startValue = val;
         modifiers.Clear();

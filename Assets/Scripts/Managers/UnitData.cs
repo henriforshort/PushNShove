@@ -24,19 +24,13 @@ public class UnitData {
     
     public enum Activity { IDLE, SLEEP, COMBAT }
 
-    public void CopyTo(UnitData copy) {
-        copy.maxSpeed = maxSpeed;
-        copy.maxHealth = maxHealth;
-        copy.prot = prot;
-        copy.weight = weight;
-        copy.damage = damage;
-        copy.strength = strength;
-        copy.critChance = critChance;
-
-        copy.activity = activity;
-        copy.currentHealth = currentHealth;
-        copy.ultCooldownLeft = ultCooldownLeft;
-        copy.itemPrefabs.Clear();
-        copy.itemPrefabs.AddRange(itemPrefabs.Select(i => i.prefab).ToList());
+    public UnitData() {
+        maxSpeed = new Stat();
+        maxHealth = new Stat();
+        prot  = new Stat();
+        weight = new Stat();
+        damage = new Stat();
+        strength = new Stat();
+        critChance = new Stat();
     }
 }

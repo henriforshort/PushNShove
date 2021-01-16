@@ -721,7 +721,6 @@ MonoBehaviour:
   numberOfEnemyClusters: 1
   timeSinceGameOver: 0
   gameState: 0
-  hasWon: 0
   deathZones:
   - {fileID: 1250013049}
   - {fileID: 1656520206}
@@ -1489,26 +1488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e4a9f2ee6c0a1b384e6fbad4eba83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableCheats: 1
-  timeToAutoRestart: 2
-  spawnPosXRange: {x: 1, y: 7}
-  amountOfHeroes: 2
-  camSpeed: 0.5
-  camMaxDistFromUnits: 1
-  camMaxDistFromMapCenter: 10
-  attackDistance: 3
-  collideDistance: 2
-  freezeFrameDuration: 0.15
-  bumpRecoverySpeed: 5
-  bumpSpeed: -20
-  defendSpeed: -10
-  maxItemsPerHero: 6
-  commonDropChance: 10
-  rareDropChance: 3
-  leggyDropChance: 1
-  save:
-    battle: 0
-    heroes: []
   activeHeroPrefabs: []
   commonItems: []
   rareItems: []
@@ -4057,6 +4036,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bbd79d42949216448cb4147f8994a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.5
+  maxDistFromUnits: 1
+  maxDistFromMapCenter: 10
   currentShake: 0
   cameraFocus: {fileID: 2096997357}
   cam: {fileID: 519420031}
@@ -5378,9 +5360,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 138473062, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
+      propertyPath: ForceModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138473062, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138473062, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
+      propertyPath: ForceModule.y.minScalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138473062, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 138473062, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904197424622343989, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 904cdaec7e6e50447b4e4a6cc10e3f12, type: 2}
     - target: {fileID: 6904197424794876784, guid: 9ecc231f531a7824e9cc007938148a5b, type: 3}
       propertyPath: m_RootOrder
       value: 6

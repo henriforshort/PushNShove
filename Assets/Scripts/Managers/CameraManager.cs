@@ -3,6 +3,11 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public class CameraManager : MonoBehaviour {
+    [Header("Balancing")]
+    public float speed;
+    public float maxDistFromUnits;
+    public float maxDistFromMapCenter;
+    
     [Header("State")]
     public float currentShake;
 
@@ -31,10 +36,10 @@ public class CameraManager : MonoBehaviour {
             (Unit.heroUnits.Select(unit => unit.GetX()).Max()
              + Unit.monsterUnits.Select(unit => unit.GetX()).Min()) / 2;
 			
-        if (Mathf.Abs(cameraFocus.GetX() - this.GetX()) > Run.m.camMaxDistFromUnits) 
+        if (Mathf.Abs(cameraFocus.GetX() - this.GetX()) > maxDistFromUnits) 
             transform
-                .LerpTo(cameraFocus, Run.m.camSpeed)
-                .ClampX(-Run.m.camMaxDistFromMapCenter, Run.m.camMaxDistFromMapCenter);
+                .LerpTo(cameraFocus, speed)
+                .ClampX(-maxDistFromMapCenter, maxDistFromMapCenter);
     }
 
     public void Shake(float amount) {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -18,7 +19,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public float timeSinceGameOver;
     public State gameState;
     public List<Action> onBattleEnd = new List<Action>();
-    public bool hasWon;
+    private Game.SceneName nextScene;
 
     [Header("Scene References")]
     public List<GameObject> deathZones;
@@ -50,10 +51,15 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         gameState = State.PAUSE;
         
         //Create heroes
-        Run.m.save.heroes.ForEach(hrs => Instantiate(hrs.prefab,
-                new Vector3(this.Random(-Run.m.spawnPosXRange.x, -Run.m.spawnPosXRange.y), -3, 0),
-                Quaternion.identity, unitsHolder));
-        Run.m.save.LoadHeroes();
+        Game.m.save.heroes
+            .Where(hgs => Run.m.activeHeroPrefabs.Contains(hgs.battlePrefab))
+            .ToList()
+            .ForEach(hgs => {
+                Hero newHero = Instantiate(hgs.battlePrefab, new Vector3(
+                        this.Random(-Game.m.spawnPosXRange.x, -Game.m.spawnPosXRange.y), -3, 0),
+                    Quaternion.identity, unitsHolder);
+                newHero.unit.prefabIndex = hgs.prefabIndex;
+            });
         for (int i=0; i<Unit.allHeroUnits.Count; i++) Unit.allHeroUnits[i].hero.InitBattle(heroIcons[i]);
         
         //Create enemies
@@ -61,7 +67,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             Transform clusterInstance = Instantiate(enemyClusters.Random());
             while (clusterInstance.childCount > 0) {
                 Transform monster = clusterInstance.GetChild(0);
-                monster.SetX(Random.Range(Run.m.spawnPosXRange.x, Run.m.spawnPosXRange.y));
+                monster.SetX(Random.Range(Game.m.spawnPosXRange.x, Game.m.spawnPosXRange.y));
                 monster.SetParent(unitsHolder);
             }
             Destroy(clusterInstance.gameObject);
@@ -94,16 +100,22 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         if (gameState != State.PLAYING) return;
         
         gameOverText.text = "Defeat";
+        onBattleEnd.Add(() => Run.m.EndRun());
+        nextScene = Game.SceneName.Camp;
         GameOver();
-        Run.m.EndRun();
     }
 
     public void Victory() {
         if (gameState != State.PLAYING) return;
 
-        hasWon = true;
         gameOverText.text = "Victory";
-        Run.m.save.battle++;
+        Game.m.save.battle++;
+        if (Game.m.save.battle < Game.m.battlesPerRun) nextScene = Game.SceneName.Battle;
+        else {
+            onBattleEnd.Add(() => Run.m.EndRun());
+            nextScene = Game.SceneName.Camp;
+        }
+
         GameOver();
     }
 
@@ -111,18 +123,20 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
-        onBattleEnd.ForEach(a => a());
-        this.Wait(0.5f, () => Unit.heroUnits.ForEach(u => u.hero.EndUlt()));
+        this.Wait(0.5f, () => {
+            Unit.heroUnits.ForEach(u => u.hero.EndUlt());
+            onBattleEnd.ForEach(a => a());
+        });
     }
 
     public void AwaitRestart() {
         timeSinceGameOver += Time.deltaTime;
         
         if (Input.GetKeyDown(KeyCode.Space)) PressRestartButton();
-        if (timeSinceGameOver > Run.m.timeToAutoRestart) Restart();
+        if (timeSinceGameOver > Game.m.timeToAutoRestart) Restart();
 
         if (gameOverPanelWhiteButton.fillAmount < 1) gameOverPanelWhiteButton.fillAmount = timeSinceGameOver
-            .Prel(0, Run.m.timeToAutoRestart)
+            .Prel(0, Game.m.timeToAutoRestart)
             .Clamp01();
     }
 
@@ -136,14 +150,10 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public void Restart() {
         gameState = State.RESTARTING;
         Unit.heroUnits.ForEach(u => u.hero.EndUlt());
-        Run.m.save.SaveHeroes();
         Unit.heroUnits.Clear();
         Unit.allHeroUnits.Clear();
         Unit.monsterUnits.Clear();
         transition.FadeIn();
-        this.Wait(0.4f, () => {
-            if (hasWon) Game.m.LoadScene(Game.SceneName.Battle);
-            else Game.m.LoadScene(Game.SceneName.Camp);
-        });
+        this.Wait(0.4f, () => Game.m.LoadScene(nextScene));
     }
 }

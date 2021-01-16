@@ -3,32 +3,48 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CampHero : MonoBehaviour {
     [Header("State")]
-    public UnitData data;
     public Camp.Activity.Type status;
     public Camp.Slot currentSlot;
     [HideInInspector] public Camp.Activity currentActivity;
     
     [Header("References")]
+    public GameObject body;
     public GameObject idleVisuals;
     public GameObject sleepingVisuals;
     public GameObject walkingVisuals;
     public GameObject readyVisuals;
+    public Slider healthBar;
+    
+    [Header("Self References (Assigned at runtime)")]
+    public int prefabIndex;
+    
+    public UnitData data => Game.m.save.heroes[prefabIndex].data;
 
     public void Start() {
-        Camp.m.activities.FirstOrDefault(a => a.type == status)?.Add(this);
+        Camp.m.GetActivity(status)?.Add(this);
         this.SetX(currentSlot.x);
         this.SetY(-3);
+        healthBar.value = data.currentHealth/data.maxHealth;
     }
 
     public void Update() {
-        Camp.Activity activity = Camp.m.activities.FirstOrDefault(a => a.type == status);
+        Camp.Activity activity = Camp.m.GetActivity(status);
         if (activity != null && activity != currentActivity) activity.Add(this);
         
         if (Input.GetKeyDown(KeyCode.C)) currentActivity.Add(this);
         MoveToGoal();
+        if (status == Camp.Activity.Type.SLEEPING) {
+            if (data.currentHealth.isAbout(data.maxHealth)) 
+                this.Wait(0.5f, () => Camp.m.GetActivity(Camp.Activity.Type.IDLE)?.Add(this));
+            else {
+                data.currentHealth = (data.currentHealth + Time.deltaTime * 20).AtMost(data.maxHealth);
+                healthBar.value = data.currentHealth / data.maxHealth;
+            }
+        }
     }
 
     public void MoveToGoal() {
@@ -49,7 +65,7 @@ public class CampHero : MonoBehaviour {
         currentActivity = newActivity;
         currentSlot.hero = this;
         SetStatus(Camp.Activity.Type.WALKING);
-        this.SetMirrored(currentSlot.x < this.GetX());
+        body.SetMirrored(currentSlot.x < this.GetX());
         this.SetZ(-2);
     }
 
@@ -60,15 +76,15 @@ public class CampHero : MonoBehaviour {
         this.SetX(currentSlot.x);
         if (status == Camp.Activity.Type.IDLE) {
             this.SetZ(-0.1f*currentSlot.x.Abs());
-            this.SetMirrored(currentSlot.x > 0);
+            body.SetMirrored(currentSlot.x > 0);
         }
         if (status == Camp.Activity.Type.SLEEPING) {
             this.SetZ(-2 - 0.1f*currentSlot.x);
-            this.SetMirrored(false);
+            body.SetMirrored(false);
         }
         if (status == Camp.Activity.Type.READY) {
             this.SetZ(0);
-            this.SetMirrored(false);
+            body.SetMirrored(false);
         }
     }
 

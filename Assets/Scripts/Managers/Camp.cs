@@ -30,9 +30,12 @@ public class Camp : Level<Camp> {
 
     public void InitCamp() {
         //Create heroes
-        Game.m.heroPrefabs.ForEach(hp => heroes.Add(Instantiate(hp.campHero, unitsHolder)));
-        Game.m.save.LoadCampHeroes();
-        
+        Game.m.save.heroes.ForEach(hgs => {
+            CampHero newHero = Instantiate(hgs.campPrefab, unitsHolder);
+            heroes.Add(newHero);
+            newHero.prefabIndex = hgs.prefabIndex;
+
+        });
         DeselectUnit();
         activities.ForEach(a => {
             a.Init();
@@ -47,15 +50,23 @@ public class Camp : Level<Camp> {
         transition.FadeIn();
         this.Wait(0.4f, () => Game.m.LoadScene(Game.SceneName.Battle));
         heroes.ForEach(h => h.data.activity = (UnitData.Activity)(int)h.currentActivity.type);
-        Game.m.save.SaveCampHeroes();
     }
 
+    public Activity GetActivity(Activity.Type wantedType) 
+        => activities.FirstOrDefault(a => a.type == wantedType);
+    
     public void SelectUnit(CampHero campHero) {
         arrow.locked = (selectedHero == null);
         selectedHero = campHero;
         arrow.spriteRenderer.enabled = true;
-        activities.ForEach(a => 
-            a.button.gameObject.SetActive(a != campHero.currentActivity && a.emptySlot != default));
+        activities.ForEach(a => {
+            // ReSharper disable once ReplaceWithSingleAssignment.True
+            bool openToHero = true;
+            if (a == campHero.currentActivity) openToHero = false;
+            if (a.emptySlot == default) openToHero = false;
+            if (a.type == Activity.Type.READY && campHero.data.currentHealth == 0) openToHero = false;
+            a.button.gameObject.SetActive(openToHero);
+        });
     }
 
     public void DeselectUnit() {

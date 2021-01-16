@@ -28,14 +28,14 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     // EFFECT
     // ====================
 
-    public void Init(Item p, Hero h, bool fromFight) {
-        prefab = p;
-        name = prefab.name;
+    public void Init(Item prefab, Hero hero, bool fromFight) {
+        this.prefab = prefab;
+        this.hero = hero;
+        name = this.prefab.name;
         description = name+"\n"+description;
         effect.item = this;
-        hero = h;
         if (fromFight) {
-            hero.items.Add(prefab);
+            this.hero.itemPrefabs.Add(this.prefab);
             effect.Apply();
         }
     }
@@ -44,9 +44,9 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (hero == newHero) return;
 
         effect.Cancel();
-        hero.items.Remove(prefab);
+        hero.itemPrefabs.Remove(prefab);
         hero = newHero;
-        hero.items.Add(prefab);
+        hero.itemPrefabs.Add(prefab);
         effect.Apply();
     }
     
@@ -91,8 +91,8 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     
     public void OnDrop(PointerEventData eventData) { //Not active for now. Look into UI layers
-        if (hero.items.Count >= Run.m.maxItemsPerHero) hero.icon.itemPanel.FlashRed();
-        else if (Run.m.movingItem.hero.items.Count >= Run.m.maxItemsPerHero) 
+        if (hero.itemPrefabs.Count >= Game.m.maxItemsPerHero) hero.icon.itemPanel.FlashRed();
+        else if (Run.m.movingItem.hero.itemPrefabs.Count >= Game.m.maxItemsPerHero) 
             Run.m.movingItem.hero.icon.itemPanel.FlashRed();
         else {
             Hero otherhero = Run.m.movingItem.hero;

@@ -27,7 +27,7 @@ public class FightPrompt : MonoBehaviour {
     public void Phase1() {//Enable battle text
         currentPhase = 1;
         StopAll();
-        battleText.text = "Battle " + Run.m.save.battle.AtLeast(1);
+        battleText.text = "Battle " + Game.m.save.battle;
         battleText.gameObject.SetActive(true);
         fightText.gameObject.SetActive(false);
         this.Wait(battleDuration, Phase2);
