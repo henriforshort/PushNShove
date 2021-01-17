@@ -1,12 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs
                             //Should contain State info that is persisted across the whole game
     [Header("Balancing")]
     public bool enableCheats;
+    [Space(20)]
+    public int secondsToAHundredHp;
     [Space(20)]
     public int battlesPerRun;
     public float timeToAutoRestart;
@@ -45,25 +50,40 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     
     public static Game m;
     
-    public enum SceneName { Battle, StartMenu, Camp }
+    public enum SceneName { StartMenu, Battle, Camp }
+    
+    private string savePath => Application.persistentDataPath + "/save.hiloqo";
 
-    public void Start() {
+    public void Awake() {
         if (m == null) m = this;
         if (m != this) {
             Destroy(gameObject);
             return;
         }
         DontDestroyOnLoad(this);
-        InitGame();
+        LoadFromDevice();
     }
     
     
     // ====================
-    // START & END
+    // SAVE & LOAD
     // ====================
 
-    public void InitGame() { //Called at the start of each run, before init the first battle
-        save.InitGame();
+    public void SaveToDevice() {
+        FileStream fileStream = new FileStream(savePath, FileMode.Create);
+        new BinaryFormatter().Serialize(fileStream, save);
+        fileStream.Close();
+    }
+
+    public void LoadFromDevice() {
+        if (File.Exists(savePath)) {
+            FileStream fileStream = new FileStream(savePath, FileMode.Open);
+            save = (GameSave)new BinaryFormatter().Deserialize(fileStream);
+            fileStream.Close();
+            LoadScene(save.currentScene);
+        } else {
+            save.InitGame();
+        }
     }
     
     
@@ -72,6 +92,8 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     // ====================
 
     public void LoadScene(SceneName sceneName) {
+        save.currentScene = sceneName;
+        SaveToDevice();
         SceneManager.LoadScene(sceneName.ToString());
     }
 

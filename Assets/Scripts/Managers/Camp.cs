@@ -49,7 +49,7 @@ public class Camp : Level<Camp> {
     public void StartBattle() {
         transition.FadeIn();
         this.Wait(0.4f, () => Game.m.LoadScene(Game.SceneName.Battle));
-        heroes.ForEach(h => h.data.activity = (UnitData.Activity)(int)h.currentActivity.type);
+        heroes.ForEach(h => h.data.activity = h.currentActivity.type);
     }
 
     public Activity GetActivity(Activity.Type wantedType) 
@@ -60,12 +60,7 @@ public class Camp : Level<Camp> {
         selectedHero = campHero;
         arrow.spriteRenderer.enabled = true;
         activities.ForEach(a => {
-            // ReSharper disable once ReplaceWithSingleAssignment.True
-            bool openToHero = true;
-            if (a == campHero.currentActivity) openToHero = false;
-            if (a.emptySlot == default) openToHero = false;
-            if (a.type == Activity.Type.READY && campHero.data.currentHealth == 0) openToHero = false;
-            a.button.gameObject.SetActive(openToHero);
+            a.button.gameObject.SetActive(a.IsOpenTo(campHero));
         });
     }
 
@@ -77,7 +72,7 @@ public class Camp : Level<Camp> {
         CampHero oldSelectedHero = selectedHero;
         activities.Except(selectedActivity).ForEach(a => a.button.gameObject.SetActive(false));
         selectedHero = null;
-        if (oldSelectedHero.status != Activity.Type.WALKING) {
+        if (oldSelectedHero.data.activity != Activity.Type.WALKING) {
             selectedActivity.button.gameObject.SetActive(false);
             return;
         }
@@ -96,9 +91,12 @@ public class Camp : Level<Camp> {
         DeselectUnit();
     }
 
+    public void OnApplicationQuit() {
+        Game.m.SaveToDevice();
+    }
+
     [Serializable]
     public class Slot {
-        [FormerlySerializedAs("unit")]
         public CampHero hero;
         public float x;
         public Button button;
@@ -107,7 +105,7 @@ public class Camp : Level<Camp> {
 
         public void Init() {
             button.onClick.AddListener(() => {
-                if (hero == null || hero.status == Activity.Type.WALKING) activity.AddSelected();
+                if (hero == null || hero.data.activity == Activity.Type.WALKING) activity.AddSelected();
                 else Camp.m.SelectUnit(hero);
             });
         }
@@ -131,10 +129,11 @@ public class Camp : Level<Camp> {
         }
 
         public void AddSelected() {
-            if (Camp.m.selectedHero != null && Camp.m.selectedHero.status != type) {
-                Add(Camp.m.selectedHero);
-                Camp.m.DeselectUnit();
-            }
+            if (Camp.m.selectedHero == null) return;
+            if (Camp.m.selectedHero.data.activity == type) return;
+            
+            Add(Camp.m.selectedHero);
+            Camp.m.DeselectUnit();
         }
         
         public void Add(CampHero campHero) {
@@ -142,21 +141,15 @@ public class Camp : Level<Camp> {
                 Debug.Log(type+" is full, can't add "+campHero.name);
                 return;
             }
-
-            Activity oldActivity = campHero.currentActivity;
             campHero.SetGoal(this, emptySlot);
+        }
 
-            // BELOW : move units if there is an empty slot in front
-            
-            // if (oldActivity.type == Type.IDLE) {
-            //     List <Slot> ls = oldActivity.slots.Clone();
-            //     while (ls.Count > 0) {
-            //         if (ls[0].unit == null && ls.Count >= 3 && ls[2].unit != null) {
-            //             Camp.m.Wait(0.25f, () => oldActivity.Add(ls[2].unit));
-            //             break;
-            //         } else ls.RemoveAt(0);
-            //     }
-            // }
+        public bool IsOpenTo(CampHero hero) {
+            if (this == hero.currentActivity) return false;
+            if (emptySlot == default) return false;
+            if (type == Type.READY && hero.data.currentHealth == 0) return false;
+            if (type == Type.SLEEPING && hero.data.currentHealth.isAbout(hero.data.maxHealth)) return false;
+            return true;
         }
     }
 }

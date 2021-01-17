@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Run : MonoBehaviour { //Run manager, handles a single run.
                                  //Should not contain any balancing or prefabs
@@ -41,7 +42,7 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	public void InitRun() { //Called at the start of each run, before init the first battle
 		//active heroes are the ones selected from the camp
 		activeHeroPrefabs = Game.m.save.heroes
-			.Where(hgs => hgs.data.activity == UnitData.Activity.COMBAT)
+			.Where(hgs => hgs.data.activity == Camp.Activity.Type.READY)
 			.Select(hgs => hgs.battlePrefab).ToList();
 		//If there are none (ie we didn't get here from camp), select random heroes
 		while (activeHeroPrefabs.Count < Game.m.amountOfHeroes) 
@@ -51,7 +52,7 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 		Game.m.save.battle = 1;
 		Game.m.save.heroes.ForEach(h => {
 			h.data.ultCooldownLeft = 0;
-			h.data.itemPrefabs.Clear();
+			h.data.itemPrefabPaths.Clear();
 		});
 		
 		commonItems = items.Where(i => i.rarity == Item.Rarity.COMMON).ToList();

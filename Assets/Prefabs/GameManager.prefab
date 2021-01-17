@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableCheats: 1
+  secondsToAHundredHp: 60
   battlesPerRun: 5
   timeToAutoRestart: 2
   spawnPosXRange: {x: 1, y: 7}
@@ -60,6 +61,7 @@ MonoBehaviour:
   leggyDropChance: 1
   save:
     battle: 0
+    currentScene: 0
     heroes: []
   heroPrefabs:
   - {fileID: 6646292189090240541, guid: b8d9d7ad73c780341893780c4a95e73c, type: 3}

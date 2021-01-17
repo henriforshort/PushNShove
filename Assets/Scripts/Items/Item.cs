@@ -35,7 +35,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         description = name+"\n"+description;
         effect.item = this;
         if (fromFight) {
-            this.hero.itemPrefabs.Add(this.prefab);
+            this.hero.itemPrefabPaths.Add(this.prefab.ToPath("Items/"));
             effect.Apply();
         }
     }
@@ -44,9 +44,9 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (hero == newHero) return;
 
         effect.Cancel();
-        hero.itemPrefabs.Remove(prefab);
+        hero.itemPrefabPaths.Remove(prefab.ToPath("Items/"));
         hero = newHero;
-        hero.itemPrefabs.Add(prefab);
+        hero.itemPrefabPaths.Add(prefab.ToPath("Items/"));
         effect.Apply();
     }
     
@@ -91,8 +91,8 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     
     public void OnDrop(PointerEventData eventData) { //Not active for now. Look into UI layers
-        if (hero.itemPrefabs.Count >= Game.m.maxItemsPerHero) hero.icon.itemPanel.FlashRed();
-        else if (Run.m.movingItem.hero.itemPrefabs.Count >= Game.m.maxItemsPerHero) 
+        if (hero.itemPrefabPaths.Count >= Game.m.maxItemsPerHero) hero.icon.itemPanel.FlashRed();
+        else if (Run.m.movingItem.hero.itemPrefabPaths.Count >= Game.m.maxItemsPerHero) 
             Run.m.movingItem.hero.icon.itemPanel.FlashRed();
         else {
             Hero otherhero = Run.m.movingItem.hero;

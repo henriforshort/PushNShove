@@ -1,20 +1,21 @@
 ﻿using System;
-using UnityEngine;
 
 [Serializable]
 public class HeroGameSave {
     //Basic info
-    public Hero battlePrefab;
-    public CampHero campPrefab;
+    public string battlePrefabPath;
+    public string campPrefabPath;
+    public Hero battlePrefab => battlePrefabPath.ToPrefab<Hero>();
+    public CampHero campPrefab => campPrefabPath.ToPrefab<CampHero>();
     public int prefabIndex; //Index of the prefab in Game.m.heroPrefabs
     
     //Data
     public UnitData data;
     
     public HeroGameSave (int prefabIndex, Hero battlePrefab) {
-        this.battlePrefab = battlePrefab;
         this.prefabIndex = prefabIndex;
-        this.campPrefab = battlePrefab.campHero;
+        battlePrefabPath = battlePrefab.ToPath("Heroes/");
+        campPrefabPath = battlePrefab.campHero.ToPath("Camp/");
         data = new UnitData();
     }
     
@@ -28,7 +29,7 @@ public class HeroGameSave {
         data.critChance.Init(battlePrefab.unit.baseCritChance);
         data.currentHealth = battlePrefab.unit.data.maxHealth;
         data.ultCooldownLeft = 0;
-        data.itemPrefabs.Clear();
-        data.activity = UnitData.Activity.IDLE;
+        data.itemPrefabPaths.Clear();
+        data.activity = Camp.Activity.Type.IDLE;
     }
 }

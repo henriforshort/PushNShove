@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -19,7 +21,7 @@ public class Hero : MonoBehaviour {
     
     public enum UltStatus { AVAILABLE, RELOADING, ACTIVATED }
 
-    public List<Item> itemPrefabs => unit.data.itemPrefabs;
+    public List<string> itemPrefabPaths => unit.data.itemPrefabPaths;
     public HeroIcon icon => _icon ?? (_icon = Battle.m.heroIcons[unit.index]);
     public float ultCooldownLeft {
         get { return unit.data.ultCooldownLeft; }
@@ -39,7 +41,7 @@ public class Hero : MonoBehaviour {
     public void InitBattle(HeroIcon i) { //Called after loading
         ultStatus = UltStatus.RELOADING;
         icon.InitBattle(this);
-        itemPrefabs.ForEach(item => GetItemAtStartup(item.prefab));
+        itemPrefabPaths.ForEach(ipp => GetItemAtStartup(ipp.ToPrefab<Item>()));
         unit.InitBattle();
     }
 

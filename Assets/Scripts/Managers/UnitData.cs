@@ -15,14 +15,14 @@ public class UnitData {
     public Stat critChance;
     
     //Other info
-    public Activity activity;
+    public Camp.Activity.Type activity;
     public float currentHealth;
     public float ultCooldownLeft;
-    [SerializeField] private List<Item> _itemPrefabs;
+    public string lastSeenSleepingString;
+    public DateTime lastSeenSleeping;
+    [SerializeField] private List<string> _itemPrefabPaths;
     
-    public List<Item> itemPrefabs => _itemPrefabs ?? (_itemPrefabs = new List<Item>());
-    
-    public enum Activity { IDLE, SLEEP, COMBAT }
+    public List<string> itemPrefabPaths => _itemPrefabPaths ?? (_itemPrefabPaths = new List<string>());
 
     public UnitData() {
         maxSpeed = new Stat();

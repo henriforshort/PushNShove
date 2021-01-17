@@ -97,7 +97,8 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void Defeat() {
-        if (gameState != State.PLAYING) return;
+        if (gameState == State.GAME_OVER) return;
+        if (gameState == State.RESTARTING) return;
         
         gameOverText.text = "Defeat";
         onBattleEnd.Add(() => Run.m.EndRun());
@@ -106,16 +107,16 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void Victory() {
-        if (gameState != State.PLAYING) return;
+        if (gameState == State.GAME_OVER) return;
+        if (gameState == State.RESTARTING) return;
 
         gameOverText.text = "Victory";
-        Game.m.save.battle++;
         if (Game.m.save.battle < Game.m.battlesPerRun) nextScene = Game.SceneName.Battle;
         else {
             onBattleEnd.Add(() => Run.m.EndRun());
             nextScene = Game.SceneName.Camp;
         }
-
+        Game.m.save.battle++;
         GameOver();
     }
 

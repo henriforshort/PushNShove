@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -156,14 +157,14 @@ public static class Util {
         return obj + new Vector3(
             UnityEngine.Random.Range(-range, range), 
             UnityEngine.Random.Range(-range, range), 
-            0);
+            UnityEngine.Random.Range(-range, range));
     }
     
     public static Vector3 RandomWithin(this Component obj, float range) {
         return new Vector3(
             UnityEngine.Random.Range(-range, range), 
             UnityEngine.Random.Range(-range, range), 
-            0);
+            UnityEngine.Random.Range(-range, range));
     }
 
     
@@ -686,4 +687,16 @@ public static class Util {
             target.transform.localScale * (1 + amplitude), Tween.Property.SCALE, Tween.Style.BOUNCE, duration,
             whenDone, onEnd, restartDelay, null);
     }
+    
+    
+    // --------------------
+    // PREFABS
+    // --------------------
+
+    // public static string ToPath(this MonoBehaviour prefab) => AssetDatabase.GetAssetPath(prefab);
+    public static string ToPath(this MonoBehaviour prefab, string subPath) =>
+        "Assets/Resources/Prefabs/" + subPath + prefab.name + ".prefab";
+    public static T ToPrefab<T>(this string path) where T : MonoBehaviour => Resources.Load<T>(path
+        .Replace("Assets/Resources/", "")
+        .Replace(".prefab", ""));
 }

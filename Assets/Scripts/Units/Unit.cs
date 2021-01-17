@@ -459,6 +459,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void HeroDeath() {
+        data.activity = Camp.Activity.Type.IDLE;
         allies.Remove(this);
         animator.gameObject.SetActive(false);
         hero.icon.Die();
@@ -468,14 +469,18 @@ public class Unit : MonoBehaviour {
 
     public void MonsterDeath() {
         if (monster.dropRate.Chance() && !Run.m.itemsDepleted)
-            heroUnits.RandomWhere(u => u.hero.itemPrefabs.Count < Game.m.maxItemsPerHero)
+            heroUnits.RandomWhere(u => u.hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero)
                 ?.hero
                 ?.GetItemFromFight(Run.m.GetRandomItem(), this);
         Destroy(gameObject);
     }
 
     public void OnDestroy() {
-        if (Battle.m == null || Battle.m.gameState != Battle.State.PLAYING) return;
+        if (Battle.m == null) return;
+        if (Battle.m.gameState == Battle.State.GAME_OVER) return;
+        if (Battle.m.gameState == Battle.State.RESTARTING) return;
+        
+
         hpLossUis
             .Where(ui => ui != null)
             .ToList()

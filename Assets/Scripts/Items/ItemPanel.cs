@@ -7,7 +7,7 @@ public class ItemPanel : MonoBehaviour, IDropHandler {
     public Image image;
     
     public void OnDrop(PointerEventData eventData) { //What to do when drag ends on an icon
-        if (hero.itemPrefabs.Count < Game.m.maxItemsPerHero) Run.m.movingItem.SwitchTo(hero);
+        if (hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero) Run.m.movingItem.SwitchTo(hero);
         else FlashRed();
     }
 
