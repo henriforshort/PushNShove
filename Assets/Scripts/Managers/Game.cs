@@ -52,7 +52,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     
     public enum SceneName { StartMenu, Battle, Camp }
     
-    private string savePath => Application.persistentDataPath + "/save.hiloqo";
+    public string savePath => Application.persistentDataPath + "/save.hiloqo";
 
     public void Awake() {
         if (m == null) m = this;

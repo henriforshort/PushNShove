@@ -169,40 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1d1c5979ab60e47b46720e02751a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    maxSpeed:
-      startValue: 0
-      value: 0
-      modifiers: []
-    maxHealth:
-      startValue: 0
-      value: 0
-      modifiers: []
-    prot:
-      startValue: 0
-      value: 0
-      modifiers: []
-    weight:
-      startValue: 0
-      value: 0
-      modifiers: []
-    damage:
-      startValue: 0
-      value: 0
-      modifiers: []
-    strength:
-      startValue: 0
-      value: 0
-      modifiers: []
-    critChance:
-      startValue: 0
-      value: 0
-      modifiers: []
-    activity: 0
-    currentHealth: 0
-    ultCooldownLeft: 0
-    _itemPrefabs: []
-  status: 0
   currentSlot:
     hero: {fileID: 0}
     x: 0
@@ -219,6 +185,7 @@ MonoBehaviour:
   walkingVisuals: {fileID: 3635688041126548686}
   readyVisuals: {fileID: 2025954968861810530}
   healthBar: {fileID: 5066212966969861065}
+  prefabIndex: 0
 --- !u!1 &3635688041126548686
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6288908709325535599
 Transform:
   m_ObjectHideFlags: 0

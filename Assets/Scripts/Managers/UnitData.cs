@@ -15,7 +15,7 @@ public class UnitData {
     public Stat critChance;
     
     //Other info
-    public Camp.Activity.Type activity;
+    public CampActivity.Type activity;
     public float currentHealth;
     public float ultCooldownLeft;
     public string lastSeenSleepingString;

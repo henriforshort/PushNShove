@@ -459,7 +459,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void HeroDeath() {
-        data.activity = Camp.Activity.Type.IDLE;
+        data.activity = CampActivity.Type.IDLE;
         allies.Remove(this);
         animator.gameObject.SetActive(false);
         hero.icon.Die();

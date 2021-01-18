@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class CampHero : MonoBehaviour {
     [Header("State")]
-    public Camp.Slot currentSlot;
-    [HideInInspector] public Camp.Activity currentActivity;
+    public CampSlot currentSlot;
+    [HideInInspector] public CampActivity currentActivity;
     
     [Header("References")]
     public GameObject body;
@@ -27,7 +27,7 @@ public class CampHero : MonoBehaviour {
         Camp.m.GetActivity(data.activity)?.Add(this);
         this.SetX(currentSlot.x);
         this.SetY(-3);
-        healthBar.value = data.currentHealth/data.maxHealth;
+        SetHealth(data.currentHealth);
     }
 
     public void Update() {
@@ -36,14 +36,14 @@ public class CampHero : MonoBehaviour {
     }
 
     public void MoveToGoal() {
-        if (data.activity != Camp.Activity.Type.WALKING) return;
+        if (data.activity != CampActivity.Type.WALKING) return;
 
         float dif = currentSlot.x - this.GetX();
         this.SetX(this.GetX() + dif.Sign() * (Time.deltaTime * 2f).AtMost(dif.Abs()));
         if (this.GetX().isAbout(currentSlot.x)) ReachGoal();
     }
 
-    public void SetGoal(Camp.Activity newActivity, Camp.Slot newSlot) {
+    public void SetGoal(CampActivity newActivity, CampSlot newSlot) {
         if (currentSlot != null) {
             currentSlot.hero = null;
             currentSlot.emptyMarkers.ForEach(m => m.SetActive(true));
@@ -52,7 +52,7 @@ public class CampHero : MonoBehaviour {
         currentSlot = newSlot;
         currentActivity = newActivity;
         currentSlot.hero = this;
-        SetStatus(Camp.Activity.Type.WALKING);
+        SetStatus(CampActivity.Type.WALKING);
         body.SetMirrored(currentSlot.x < this.GetX());
         this.SetZ(-2);
     }
@@ -62,11 +62,11 @@ public class CampHero : MonoBehaviour {
         currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.emptySlot == default));
         SetStatus(currentActivity.type);
         this.SetX(currentSlot.x);
-        if (data.activity == Camp.Activity.Type.IDLE) {
+        if (data.activity == CampActivity.Type.IDLE) {
             this.SetZ(-0.1f*currentSlot.x.Abs());
             body.SetMirrored(currentSlot.x > 0);
         }
-        if (data.activity == Camp.Activity.Type.SLEEPING) {
+        if (data.activity == CampActivity.Type.SLEEPING) {
             if (Time.frameCount != 1) {
                 data.lastSeenSleeping = DateTime.Now;
                 data.lastSeenSleepingString = data.lastSeenSleeping.ToLongTimeString();
@@ -74,29 +74,39 @@ public class CampHero : MonoBehaviour {
             this.SetZ(-2 - 0.1f*currentSlot.x);
             body.SetMirrored(false);
         }
-        if (data.activity == Camp.Activity.Type.READY) {
+        if (data.activity == CampActivity.Type.READY) {
             this.SetZ(0);
             body.SetMirrored(false);
         }
     }
 
     public void Sleep() {
-        if (data.activity != Camp.Activity.Type.SLEEPING) return;
+        if (data.activity != CampActivity.Type.SLEEPING) return;
         if (Time.frameCount == 1) return;
         
         if (data.currentHealth.isAbout(data.maxHealth))
-            this.Wait(0.5f, () => Camp.m.GetActivity(Camp.Activity.Type.IDLE)?.Add(this));
+            this.Wait(0.5f, () => Camp.m.GetActivity(CampActivity.Type.IDLE)?.Add(this));
         else {
             float sleepDuration = (float)(DateTime.Now - data.lastSeenSleeping).TotalMilliseconds;
-            data.currentHealth += 0.1f * sleepDuration / Game.m.secondsToAHundredHp;
-            if (data.currentHealth > data.maxHealth) data.currentHealth = data.maxHealth;
-            healthBar.value = data.currentHealth / data.maxHealth;
+            AddHealth(0.1f * sleepDuration / Game.m.secondsToAHundredHp);
             data.lastSeenSleeping = DateTime.Now;
             data.lastSeenSleepingString = data.lastSeenSleeping.ToLongTimeString();
         }
     }
 
-    public void SetStatus(Camp.Activity.Type newStatus) {
+    public bool CanBeClicked() {
+        if (data.activity == CampActivity.Type.SLEEPING && data.currentHealth < data.maxHealth * 0.1f) return false;
+        return true;
+    }
+
+    public void AddHealth(float amount) => SetHealth(data.currentHealth + amount);
+    public void SetHealth(float amount) {
+        data.currentHealth = amount;
+        if (data.currentHealth > data.maxHealth) data.currentHealth = data.maxHealth;
+        healthBar.value = data.currentHealth / data.maxHealth;
+    }
+
+    public void SetStatus(CampActivity.Type newStatus) {
         data.activity = newStatus;
         List<GameObject> visuals = new List<GameObject>{ idleVisuals, sleepingVisuals, readyVisuals, walkingVisuals };
         visuals.ForEach(s => s.SetActive(false));

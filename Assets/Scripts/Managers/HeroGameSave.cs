@@ -30,6 +30,6 @@ public class HeroGameSave {
         data.currentHealth = battlePrefab.unit.data.maxHealth;
         data.ultCooldownLeft = 0;
         data.itemPrefabPaths.Clear();
-        data.activity = Camp.Activity.Type.IDLE;
+        data.activity = CampActivity.Type.IDLE;
     }
 }
