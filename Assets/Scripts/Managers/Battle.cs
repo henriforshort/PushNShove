@@ -34,6 +34,12 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public Transform itemsCanvas;
     public GameObject itemDescription;
     public TMP_Text itemDescriptionText;
+
+    [Header("Audio Clips")]
+    public AudioClip hitSound;
+    public AudioClip whooshSound;
+    public AudioClip deathSound;
+    public AudioClip itemSound;
 	
     public enum State { PLAYING, PAUSE, GAME_OVER, RESTARTING }
 

@@ -95,5 +95,6 @@ public class Camp : Level<Camp> {
         Game.m.SaveToDevice();
     }
 
-    public void HealAllHeroes() => heroes.ForEach(h => h.SetHealth(h.data.maxHealth));
+    public void HealAllHeroes() => heroes.ForEach(h => h.AddHealth(20));
+    public void HurtAllHeroes() => heroes.ForEach(h => h.AddHealth(-20));
 }

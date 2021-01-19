@@ -246,6 +246,7 @@ public class Unit : MonoBehaviour {
         ally.TakeCollisionDamage(-currentSpeed/5, true);
         ally.critCollisionDate = critCollisionDate;
         
+        Battle.m.Play(Battle.m.hitSound);
         Battle.m.cameraManager.Shake(0.2f);
     }
     
@@ -297,6 +298,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void Attack() {
+        Battle.m.Play(Battle.m.whooshSound);
         SetAnim(Anim.HIT);
         attackStatus = AttackStatus.ATTACKING;
         this.Wait(attackAnimDuration, RecoverFromAttack);
@@ -314,14 +316,14 @@ public class Unit : MonoBehaviour {
         
         loser.GetBumpedBy(winner);
         winner.DefendFrom(loser);
-        
+
         if (winner.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
+        this.Wait(0.1f, () => Battle.m.Play(Battle.m.hitSound));
         if (Time.time - lastSparkFxDate > 0.1f) {
             lastSparkFxDate = Time.time;
             Game.m.SpawnFX(Run.m.sparkFxPrefab,
                 new Vector3(this.GetX() + 2f * (int) side, -2, -2),
                 winner.side == Side.MONSTER, 0.5f);
-                // Random.Range(0,3) * 90 * Vector3.forward);
         }
         
     }
@@ -449,6 +451,7 @@ public class Unit : MonoBehaviour {
         SetHealth(0);
         if (size >= 2 || side == Side.HERO) Battle.m.cameraManager.Shake(0.2f);
         Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
+        Battle.m.Play(Battle.m.deathSound);
         Die();
     }
 

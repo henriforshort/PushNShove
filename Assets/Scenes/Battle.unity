@@ -719,6 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f86cb67bdd599c49a780456961de2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1226202754}
   enemyClusters:
   - {fileID: 5452640271022862066, guid: 084954b836ec31646af7c43e05c10bbb, type: 3}
   - {fileID: 3931528018635196961, guid: 0372c8552d4c7f044b077195b326f9e5, type: 3}
@@ -743,6 +744,10 @@ MonoBehaviour:
   itemsCanvas: {fileID: 1847672174}
   itemDescription: {fileID: 2079556376}
   itemDescriptionText: {fileID: 193150128}
+  hitSound: {fileID: 8300000, guid: 9828ecdcf8b461c4d91f841d35aeb565, type: 3}
+  whooshSound: {fileID: 8300000, guid: b69e4746aa1e5724eb117232241d97bf, type: 3}
+  deathSound: {fileID: 8300000, guid: ed82881f4eb25ab41887e6acce4ae13d, type: 3}
+  itemSound: {fileID: 8300000, guid: 8a6b585df918216409b662325189ff0c, type: 3}
 --- !u!224 &382655257 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}

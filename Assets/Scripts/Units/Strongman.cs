@@ -16,6 +16,9 @@ public class Strongman : Unit {
         SetAnim(Anim.ULT_STRONGMAN);
         lockAnim = true;
         lockPosition = true;
+        Battle.m.Play(Battle.m.whooshSound);
+        this.Wait(0.2f, () => Battle.m.Play(Battle.m.whooshSound));
+        this.Wait(0.4f, () => Battle.m.Play(Battle.m.whooshSound));
         this.Wait(hero.ultDuration, then:() => PatateDeForain(TargetInRange()));
     }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class CampHero : MonoBehaviour {
     public GameObject sleepingVisuals;
     public GameObject walkingVisuals;
     public GameObject readyVisuals;
+    public GameObject timer;
+    public TMP_Text timerText;
     public Slider healthBar;
     
     [Header("Self References (Assigned at runtime)")]
@@ -49,6 +52,7 @@ public class CampHero : MonoBehaviour {
             currentSlot.emptyMarkers.ForEach(m => m.SetActive(true));
             currentActivity.fullMarkers.ForEach(m => m.SetActive(false));
         }
+        if (data.activity == CampActivity.Type.SLEEPING) timer.SetActive(false);
         currentSlot = newSlot;
         currentActivity = newActivity;
         currentSlot.hero = this;
@@ -71,6 +75,7 @@ public class CampHero : MonoBehaviour {
                 data.lastSeenSleeping = DateTime.Now;
                 data.lastSeenSleepingString = data.lastSeenSleeping.ToLongTimeString();
             }
+            timer.SetActive(true);
             this.SetZ(-2 - 0.1f*currentSlot.x);
             body.SetMirrored(false);
         }
@@ -83,6 +88,21 @@ public class CampHero : MonoBehaviour {
     public void Sleep() {
         if (data.activity != CampActivity.Type.SLEEPING) return;
         if (Time.frameCount == 1) return;
+
+        float secondsToFullLife = (data.maxHealth - data.currentHealth) * Game.m.secondsToAHundredHp / 100;
+
+        if (secondsToFullLife > 3600) {
+            int hours = secondsToFullLife.RoundToInt() / 3600;
+            int minutes = secondsToFullLife.RoundToInt() % (hours * 3600) / 60;
+            timerText.text = hours+"h"+(minutes < 10 ? "0" : "")+minutes;
+        } else if (secondsToFullLife > 60) {
+            int minutes = secondsToFullLife.RoundToInt() / 60;
+            int seconds = secondsToFullLife.RoundToInt() % (minutes * 60);
+            timerText.text = minutes+"m"+(seconds < 10 ? "0" : "")+seconds;
+        } else {
+            int seconds = secondsToFullLife.RoundToInt();
+            timerText.text = seconds+"s";
+        }
         
         if (data.currentHealth.isAbout(data.maxHealth))
             this.Wait(0.5f, () => Camp.m.GetActivity(CampActivity.Type.IDLE)?.Add(this));
@@ -101,8 +121,7 @@ public class CampHero : MonoBehaviour {
 
     public void AddHealth(float amount) => SetHealth(data.currentHealth + amount);
     public void SetHealth(float amount) {
-        data.currentHealth = amount;
-        if (data.currentHealth > data.maxHealth) data.currentHealth = data.maxHealth;
+        data.currentHealth = amount.Clamp(0, data.maxHealth);
         healthBar.value = data.currentHealth / data.maxHealth;
     }
 

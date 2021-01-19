@@ -214,7 +214,8 @@ MonoBehaviour:
     activity: 0
     currentHealth: 0
     ultCooldownLeft: 0
-    _itemPrefabs: []
+    lastSeenSleepingString: 
+    _itemPrefabPaths: []
 --- !u!114 &4884354168730958002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +258,7 @@ MonoBehaviour:
   tmpHealthBar: {fileID: 4974386014944740836}
   animator: {fileID: 4884354167670392196}
   rigidbodee: {fileID: 4884354168730958000}
+  hitSound: {fileID: 8300000, guid: 1213936f6e3eec94496ac561aaeb8361, type: 3}
   prefabIndex: 0
   hpLossUis: []
 --- !u!1001 &1792660477476782361

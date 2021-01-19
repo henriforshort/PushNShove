@@ -92,6 +92,7 @@ public static class Util {
         (1 - speed/100).Pow(60 * Time.fixedDeltaTime).Lerp(b, a);
 
     public static float Round(this float target) => Mathf.Round(target);
+    public static int RoundToInt(this float target) => Mathf.RoundToInt(target);
     public static float Round(this float target, float precision) => 
         (target * 10.Pow(precision)).Round() / 10.Pow(precision);
 
