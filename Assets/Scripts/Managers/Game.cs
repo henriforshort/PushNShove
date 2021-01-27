@@ -47,6 +47,9 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public Color darkGrey = new Color(81, 82, 98);
     public Color grey = new Color(99, 120, 125);
     public Color lightGrey = new Color(142, 160, 145);
+
+    [Header("Self References")]
+    public SoundManager sound;
     
     public static Game m;
     

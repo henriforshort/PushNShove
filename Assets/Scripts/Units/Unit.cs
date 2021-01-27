@@ -246,7 +246,7 @@ public class Unit : MonoBehaviour {
         ally.TakeCollisionDamage(-currentSpeed/5, true);
         ally.critCollisionDate = critCollisionDate;
         
-        Battle.m.Play(Battle.m.hitSound);
+        Game.m.sound.Play(SoundType.BODY_FALL);
         Battle.m.cameraManager.Shake(0.2f);
     }
     
@@ -298,16 +298,13 @@ public class Unit : MonoBehaviour {
     }
 
     public void Attack() {
-        Battle.m.Play(Battle.m.whooshSound);
+        Game.m.sound.Play(SoundType.WHOOSH_1);
         SetAnim(Anim.HIT);
         attackStatus = AttackStatus.ATTACKING;
         this.Wait(attackAnimDuration, RecoverFromAttack);
     }
 
     public void ResolveCombat(Unit unit1, Unit unit2) { //Called by attacking side only
-        if (Game.m.enableCheats && Input.GetKey(KeyCode.W)) (unit1.side == Side.HERO ? unit2 : unit1).DeathByHp();
-        if (Game.m.enableCheats && Input.GetKey(KeyCode.L)) (unit1.side == Side.MONSTER ? unit2 : unit1).DeathByHp();
-
         Unit winner = GetAttackWinner(unit1, unit2);
         Unit loser = (winner == unit1 ? unit2 : unit1); 
         
@@ -318,7 +315,10 @@ public class Unit : MonoBehaviour {
         winner.DefendFrom(loser);
 
         if (winner.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
-        this.Wait(0.1f, () => Battle.m.Play(Battle.m.hitSound));
+        this.Wait(0.1f, () => {
+            // Game.m.sound.Play(SoundType.METAL_WEAPON_HIT_METAL_1);
+            Game.m.sound.Play(SoundType.BODY_FALL);
+        });
         if (Time.time - lastSparkFxDate > 0.1f) {
             lastSparkFxDate = Time.time;
             Game.m.SpawnFX(Run.m.sparkFxPrefab,
@@ -451,7 +451,7 @@ public class Unit : MonoBehaviour {
         SetHealth(0);
         if (size >= 2 || side == Side.HERO) Battle.m.cameraManager.Shake(0.2f);
         Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
-        Battle.m.Play(Battle.m.deathSound);
+        Game.m.sound.Play(SoundType.BODY_FALL, 4);
         Die();
     }
 

@@ -47,6 +47,7 @@
             <e p="HeroGameSave.cs" t="Include" />
             <e p="Level.cs" t="Include" />
             <e p="Run.cs" t="Include" />
+            <e p="SoundManager.cs" t="Include" />
             <e p="StartMenu.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
           </e>
