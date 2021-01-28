@@ -1,39 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
+    [Header("Self References")]
     public AudioSource audioSource;
-    public List<SoundCategory> sounds;
 
-    public void Play(SoundType soundType, int index = -1) {
-        SoundCategory category = sounds.FirstOrDefault(c => c.type == soundType);
-        if (category == null) {
-            Debug.LogError("Cannot play sound, category : "+soundType+" doesn't exist");
-            return;
-        }
-        if (category.audioClips == null || category.audioClips.Count == 0) {
-            Debug.LogError("Cannot play sound, category : "+soundType+" has no audio clips");
-            return;
-        }
+    private string resourcesPath = "Assets/Resources/";
+    private string audioPath = "Audio/Medieval Combat Sounds";
 
-        AudioClip clipToPlay;
-        if (index < 0) clipToPlay = category.audioClips.Random();
-        else if (category.audioClips.Count >= index) clipToPlay = category.audioClips[index-1];
-        else {
-            Debug.LogError("Cannot play sound, category : "+soundType+" doesn't have "+
-                           index+" audioclips");
-            return;
-        }
+    public void Play(SoundType soundType, float volume = .5f, int index = -1) {
+        string filename = soundType.ToString().ToCamelCaseWithSpaces();
+        if (index > 0) filename += "*" + index;
+        string path = Directory
+            .GetFiles(resourcesPath + audioPath, filename + "*", SearchOption.AllDirectories)
+            .Where(p => !p.Contains(".meta"))
+            .Random()
+            ?.Remove(resourcesPath)
+            ?.Remove(".wav");
+        // Debug.Log(path);
+        audioSource.PlayOneShot(Resources.Load<AudioClip>(path), volume);
         
-        audioSource.PlayOneShot(clipToPlay);
-    }
-
-    [Serializable]
-    public class SoundCategory {
-        public SoundType type;
-        public List<AudioClip> audioClips;
     }
 }
 
@@ -70,5 +59,11 @@ public enum SoundType {
     METAL_WEAPON_HIT_STONE_1,
     METAL_WEAPON_HIT_WOOD_1,
     STAB_1,
-    WEAPON_DRAW_METAL
+    WEAPON_DRAW_METAL,
+    MAGIC_HOLY,
+    WHOOSH_8,
+    WHOOSH_6,
+    MAGIC_LOOP_FIRE,
+    SWORD_SWING_2,
+    SWORD_SWING_10
 }

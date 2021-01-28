@@ -18,15 +18,16 @@ public class CampActivity {
         
 
     public void Init() => button.onClick.AddListener(AddSelected);
+    public void AddSelected() => Add(Camp.m.selectedHero, true);
 
-    public void AddSelected() {
-        if (Add(Camp.m.selectedHero)) Camp.m.DeselectUnit();
-    }
+    public void Add(CampHero campHero, bool deselect = false) {
+        if (!IsOpenTo(campHero)) return;
         
-    public bool Add(CampHero campHero) {
-        bool open = this.IsOpenTo(campHero);
-        if (open) campHero.SetGoal(this, emptySlot);
-        return open;
+        campHero.SetGoal(this, emptySlot);
+        if (deselect) {
+            Game.m.PlaySound(SoundType.UI_TIGHT, .5f, 2);
+            Camp.m.DeselectUnit();
+        }
     }
 
     public bool IsOpenTo(CampHero hero) {

@@ -110,4 +110,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         if (duration > 0) Destroy(spawnedFx, duration);
         return spawnedFx;
     }
+
+    public void PlaySound(SoundType soundType, float volume = 0.5f, int index = -1) => 
+        sound.Play(soundType, volume, index);
 }

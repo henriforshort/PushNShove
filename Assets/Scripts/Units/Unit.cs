@@ -22,6 +22,7 @@ public class Unit : MonoBehaviour {
     public float attackAnimDuration;
     public float size;
     public float attackSpeed;
+    public SoundType attackSound;
     
     [Header("State")]
     public float currentSpeed;
@@ -246,7 +247,7 @@ public class Unit : MonoBehaviour {
         ally.TakeCollisionDamage(-currentSpeed/5, true);
         ally.critCollisionDate = critCollisionDate;
         
-        Game.m.sound.Play(SoundType.BODY_FALL);
+        Game.m.PlaySound(SoundType.BODY_FALL);
         Battle.m.cameraManager.Shake(0.2f);
     }
     
@@ -278,6 +279,7 @@ public class Unit : MonoBehaviour {
             DefendFrom(collidingEnemy);
             collidingEnemy.SetAnim(Anim.DEFEND);
             collidingEnemy.DefendFrom(this);
+            Game.m.PlaySound(SoundType.METAL_WEAPON_HIT_METAL_1);
         }
     }
 
@@ -298,7 +300,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void Attack() {
-        Game.m.sound.Play(SoundType.WHOOSH_1);
+        Game.m.PlaySound(SoundType.WHOOSH_1);
         SetAnim(Anim.HIT);
         attackStatus = AttackStatus.ATTACKING;
         this.Wait(attackAnimDuration, RecoverFromAttack);
@@ -317,7 +319,8 @@ public class Unit : MonoBehaviour {
         if (winner.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
         this.Wait(0.1f, () => {
             // Game.m.sound.Play(SoundType.METAL_WEAPON_HIT_METAL_1);
-            Game.m.sound.Play(SoundType.BODY_FALL);
+            Game.m.PlaySound(winner.attackSound);
+            if (winner.size > 1) Game.m.PlaySound(SoundType.BODY_FALL);
         });
         if (Time.time - lastSparkFxDate > 0.1f) {
             lastSparkFxDate = Time.time;
@@ -438,7 +441,10 @@ public class Unit : MonoBehaviour {
         Deactivate();
         status = Status.FALLING;
         rigidbodee.useGravity = true;
-        this.Wait(0.5f, DieDuringBattle);
+        this.Wait(0.5f, () => {
+            Game.m.PlaySound(SoundType.STAB_1);
+            DieDuringBattle();
+        });
     }
 
     public void Deactivate() {
@@ -451,7 +457,7 @@ public class Unit : MonoBehaviour {
         SetHealth(0);
         if (size >= 2 || side == Side.HERO) Battle.m.cameraManager.Shake(0.2f);
         Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
-        Game.m.sound.Play(SoundType.BODY_FALL, 4);
+        Game.m.PlaySound(SoundType.BODY_FALL, 0.5f, 4);
         Die();
     }
 

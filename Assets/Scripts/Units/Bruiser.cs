@@ -13,6 +13,8 @@ public class Bruiser : Unit {
     public override void Ult() {
         SetAnim(Anim.ULT_BRUISER);
         lockAnim = true;
+        Game.m.PlaySound(SoundType.WHOOSH_8);
+        this.Repeat(9, () => Game.m.PlaySound(SoundType.WHOOSH_6), 0.5f);
 
         oldAttackAnimDuration = attackAnimDuration;
         oldAttackSpeed = attackSpeed;

@@ -240,6 +240,7 @@ MonoBehaviour:
   attackAnimDuration: 0.25
   size: 0.5
   attackSpeed: 0.5
+  attackSound: 31
   currentSpeed: 0
   status: 0
   attackStatus: 0
@@ -258,7 +259,6 @@ MonoBehaviour:
   tmpHealthBar: {fileID: 847713964275857684}
   animator: {fileID: 6381897783652793431}
   rigidbodee: {fileID: 6381897783818097787}
-  hitSound: {fileID: 8300000, guid: 1213936f6e3eec94496ac561aaeb8361, type: 3}
   prefabIndex: 0
   hpLossUis: []
 --- !u!1001 &4630882952223870881

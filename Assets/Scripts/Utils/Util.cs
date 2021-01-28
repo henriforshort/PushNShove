@@ -12,19 +12,37 @@ public static class Util {
     // --------------------
 
 
+    public static string Join(this string[] target, string separator = default) {
+        return String.Join(separator, target);
+    }
+    
     public static string ToSentenceCase(this string target) {
         if (string.IsNullOrEmpty(target)) return target;
         return target.First().ToString().ToUpper() + target.Substring(1).ToLower();
     }
+
+    public static string ToCamelCaseWithSpaces(this string target) {
+        if (string.IsNullOrEmpty(target)) return target;
+        return target
+            .Split('_')
+            .ToList()
+            .Select(s => s.ToSentenceCase())
+            .ToArray()
+            .Join(" ");
+    }
+
+    public static string Remove(this string target, string toRemove) => target.Replace(toRemove, "");
     
     // --------------------
     // LISTS
     // --------------------
+
     
     public static T Random<T> (this List<T> target) {
         if (target == null || target.Count == 0) return default;
         return target[UnityEngine.Random.Range(0, target.Count)];
     }
+    public static T Random<T>(this IEnumerable<T> target) => target.ToList().Random();
     
     public static T RandomExcept<T> (this List<T> target, T except) {
         if (target == null || target.Count == 0) return default;
@@ -582,9 +600,9 @@ public static class Util {
         Action eventually = null) => obj.StartCoroutine(_While(condition, then, delay, eventually));
     private static IEnumerator _While(Func<bool> condition, Action then, float delay, Action eventually) {
         while (condition()) {
+            then();
             if (delay < 0) yield return new WaitForEndOfFrame();
             else yield return new WaitForSeconds(delay);
-            then();
         }
         eventually?.Invoke();
         yield return null;
@@ -595,9 +613,9 @@ public static class Util {
     // REPEAT
     // --------------------
 
-    public static void Repeat(this MonoBehaviour target, int times, Action action) {
+    public static void Repeat(this MonoBehaviour target, int times, Action action, float delay = 0) {
         if (times < 1) return;
-        for (int i = 0; i < times; i++) action();
+        for (int i = 0; i < times; i++) target.Wait(delay * i, action);
     }
 
     
@@ -694,7 +712,6 @@ public static class Util {
     // PREFABS
     // --------------------
 
-    // public static string ToPath(this MonoBehaviour prefab) => AssetDatabase.GetAssetPath(prefab);
     public static string ToPath(this MonoBehaviour prefab, string subPath) =>
         "Assets/Resources/Prefabs/" + subPath + prefab.name + ".prefab";
     public static T ToPrefab<T>(this string path) where T : MonoBehaviour => Resources.Load<T>(path

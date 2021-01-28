@@ -62,6 +62,7 @@ public class CampHero : MonoBehaviour {
     }
 
     public void ReachGoal() {
+        Game.m.PlaySound(SoundType.UI_TIGHT, .5f, 5);
         currentSlot.emptyMarkers.ForEach(m => m.SetActive(false));
         currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.emptySlot == default));
         SetStatus(currentActivity.type);
@@ -82,6 +83,7 @@ public class CampHero : MonoBehaviour {
         if (data.activity == CampActivity.Type.READY) {
             this.SetZ(0);
             body.SetMirrored(false);
+            if (currentActivity.emptySlot == default) Game.m.PlaySound(SoundType.SPECIAL_CLICK, .5f, 5);
         }
     }
 

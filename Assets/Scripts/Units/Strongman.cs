@@ -16,13 +16,13 @@ public class Strongman : Unit {
         SetAnim(Anim.ULT_STRONGMAN);
         lockAnim = true;
         lockPosition = true;
-        Game.m.sound.Play(SoundType.WHOOSH_1);
-        this.Wait(0.15f, () => Game.m.sound.Play(SoundType.WHOOSH_1));
-        this.Wait(0.3f, () => Game.m.sound.Play(SoundType.WHOOSH_1));
+        this.Repeat(3, () => Game.m.PlaySound(SoundType.WHOOSH_1), 0.1f);
         this.Wait(hero.ultDuration, then:() => PatateDeForain(TargetInRange()));
     }
 
     public void PatateDeForain(Unit target) {
+        Game.m.PlaySound(SoundType.REALISTIC_PUNCH_1);
+        Game.m.PlaySound(SoundType.BODY_FALL);
         lockAnim = false;
         SetAnim(Anim.HIT);
         ultStatModifs.Add(data.strength.AddModifier(1.25f, StatModifier.Type.MULTIPLY));

@@ -118,7 +118,7 @@ public class HeroIcon : MonoBehaviour {
                         () => {
                         Destroy(placeholder);
                         itemInstance.transform.SetParent(itemPanel.transform);
-                        Game.m.sound.Play(SoundType.COIN_AND_PURSE);
+                        Game.m.PlaySound(SoundType.COIN_AND_PURSE);
                     })));
     }
 
