@@ -111,6 +111,15 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         return spawnedFx;
     }
 
-    public void PlaySound(SoundType soundType, float volume = 0.5f, int index = -1) => 
-        sound.Play(soundType, volume, index);
+    public void PlaySound(MedievalCombat medievalCombat, float volume = 0.5f, int index = -1, 
+        SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
+        sound.Play("Audio/Medieval Combat Sounds", medievalCombat.ToString(), volume, index, pitch);
+    
+    public void PlaySound(Animals animals, float volume = 0.5f, int index = -1, 
+        SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
+        sound.Play("Audio/Farm Animal Sounds", animals.ToString(), volume, index, pitch);
+    
+    public void PlaySound(Human human, float volume = 0.5f, int index = -1, 
+        SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
+        sound.Play("Audio/Human Sounds", human.ToString(), volume, index, pitch);
 }

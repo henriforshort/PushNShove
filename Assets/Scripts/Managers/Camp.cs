@@ -29,7 +29,7 @@ public class Camp : Level<Camp> {
     }
 
     public void InitCamp() {
-        this.While(() => true, () => Game.m.PlaySound(SoundType.MAGIC_LOOP_FIRE, .25f), 5f);
+        this.While(() => true, () => Game.m.PlaySound(MedievalCombat.MAGIC_LOOP_FIRE, .25f), 5f);
             
         //Create heroes
         Game.m.save.heroes.ForEach(hgs => {
@@ -49,7 +49,7 @@ public class Camp : Level<Camp> {
     }
     
     public void StartBattle() {
-        Game.m.PlaySound(SoundType.SPECIAL_CLICK, 1, 3);
+        Game.m.PlaySound(MedievalCombat.SPECIAL_CLICK, 1, 3);
         transition.FadeIn();
         this.Wait(0.4f, () => Game.m.LoadScene(Game.SceneName.Battle));
         heroes.ForEach(h => h.data.activity = h.currentActivity.type);
@@ -59,7 +59,7 @@ public class Camp : Level<Camp> {
         => activities.FirstOrDefault(a => a.type == wantedType);
     
     public void SelectUnit(CampHero campHero) {
-        Game.m.PlaySound(SoundType.UI_TIGHT, 1, 1);
+        Game.m.PlaySound(MedievalCombat.UI_TIGHT, 1, 1);
         arrow.locked = (selectedHero == null);
         selectedHero = campHero;
         arrow.spriteRenderer.enabled = true;

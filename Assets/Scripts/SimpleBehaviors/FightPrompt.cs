@@ -25,7 +25,7 @@ public class FightPrompt : MonoBehaviour {
     }
 
     public void Phase1() {//Enable battle text
-        Game.m.PlaySound(SoundType.SPECIAL_CLICK, .5f, 2);
+        Game.m.PlaySound(MedievalCombat.SPECIAL_CLICK, .5f, 2);
         currentPhase = 1;
         StopAll();
         battleText.text = "Battle " + Game.m.save.battle;
@@ -37,7 +37,7 @@ public class FightPrompt : MonoBehaviour {
     public void Phase2() {//Fade out battle text, enable battle text
         currentPhase = 2;
         StopAll();
-        this.Wait(battleFadeDuration, () => Game.m.PlaySound(SoundType.SWORD_SWING_10, .5f, 2));
+        this.Wait(battleFadeDuration, () => Game.m.PlaySound(MedievalCombat.SWORD_SWING_10, .5f, 2));
         
         currentTweens.Add(battleText.TweenAlpha(0, Tween.Style.LINEAR, battleFadeDuration, 
             () => fightText.gameObject.SetActive(true), Tween.WhenDone.DESTROY));
@@ -48,7 +48,7 @@ public class FightPrompt : MonoBehaviour {
     }
 
     public void Phase3() {//Fade out fight text 
-        Game.m.PlaySound(SoundType.SWORD_SWING_2, .5f, 2);
+        Game.m.PlaySound(MedievalCombat.SWORD_SWING_2, .5f, 2);
         currentPhase = 3;
         StopAll();
         bg.FadeOut();

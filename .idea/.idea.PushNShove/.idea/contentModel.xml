@@ -37,6 +37,7 @@
             <e p="RareEffect.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
+            <e p="Animals.cs" t="Include" />
             <e p="Battle.cs" t="Include" />
             <e p="CameraManager.cs" t="Include" />
             <e p="Camp.cs" t="Include" />
@@ -45,7 +46,9 @@
             <e p="Game.cs" t="Include" />
             <e p="GameSave.cs" t="Include" />
             <e p="HeroGameSave.cs" t="Include" />
+            <e p="Human.cs" t="Include" />
             <e p="Level.cs" t="Include" />
+            <e p="MedievalCombat.cs" t="Include" />
             <e p="Run.cs" t="Include" />
             <e p="SoundManager.cs" t="Include" />
             <e p="StartMenu.cs" t="Include" />

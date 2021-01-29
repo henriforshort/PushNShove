@@ -98,7 +98,7 @@ public class Hero : MonoBehaviour {
     // ====================
 
     public void GetItemFromFight(Item itemPrefab, Unit monster) {
-        Game.m.PlaySound(SoundType.COINS);
+        Game.m.PlaySound(MedievalCombat.COINS);
         icon.GainItemFromFight(itemPrefab, monster.transform.position.SetY(-2.75f));
     }
 

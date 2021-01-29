@@ -25,7 +25,7 @@ public class CampActivity {
         
         campHero.SetGoal(this, emptySlot);
         if (deselect) {
-            Game.m.PlaySound(SoundType.UI_TIGHT, .5f, 2);
+            Game.m.PlaySound(MedievalCombat.UI_TIGHT, .5f, 2);
             Camp.m.DeselectUnit();
         }
     }

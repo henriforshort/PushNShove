@@ -240,7 +240,11 @@ MonoBehaviour:
   attackAnimDuration: 0.25
   size: 0.5
   attackSpeed: 0.5
-  attackSound: 31
+  attackSound: 159
+  attackSoundAnimal: 10
+  deathSoundAnimal: 0
+  deathSoundHuman: 0
+  pitch: 2
   currentSpeed: 0
   status: 0
   attackStatus: 0

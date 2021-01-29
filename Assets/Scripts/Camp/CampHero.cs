@@ -62,7 +62,7 @@ public class CampHero : MonoBehaviour {
     }
 
     public void ReachGoal() {
-        Game.m.PlaySound(SoundType.UI_TIGHT, .5f, 5);
+        Game.m.PlaySound(MedievalCombat.UI_TIGHT, .5f, 5);
         currentSlot.emptyMarkers.ForEach(m => m.SetActive(false));
         currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.emptySlot == default));
         SetStatus(currentActivity.type);
@@ -75,6 +75,8 @@ public class CampHero : MonoBehaviour {
             if (Time.frameCount != 1) {
                 data.lastSeenSleeping = DateTime.Now;
                 data.lastSeenSleepingString = data.lastSeenSleeping.ToLongTimeString();
+                Game.m.PlaySound(MedievalCombat.BAG);
+                Game.m.PlaySound(MedievalCombat.POTION_AND_ALCHEMY, 0.5f, 10);
             }
             timer.SetActive(true);
             this.SetZ(-2 - 0.1f*currentSlot.x);
@@ -83,7 +85,8 @@ public class CampHero : MonoBehaviour {
         if (data.activity == CampActivity.Type.READY) {
             this.SetZ(0);
             body.SetMirrored(false);
-            if (currentActivity.emptySlot == default) Game.m.PlaySound(SoundType.SPECIAL_CLICK, .5f, 5);
+            Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, 0.5f, 1);
+            if (currentActivity.emptySlot == default) Game.m.PlaySound(MedievalCombat.SPECIAL_CLICK, .5f, 5);
         }
     }
 

@@ -22,7 +22,11 @@ public class Unit : MonoBehaviour {
     public float attackAnimDuration;
     public float size;
     public float attackSpeed;
-    public SoundType attackSound;
+    public MedievalCombat attackSound;
+    public Animals attackSoundAnimal;
+    public Animals deathSoundAnimal;
+    public Human deathSoundHuman;
+    public SoundManager.Pitch pitch;
     
     [Header("State")]
     public float currentSpeed;
@@ -247,7 +251,7 @@ public class Unit : MonoBehaviour {
         ally.TakeCollisionDamage(-currentSpeed/5, true);
         ally.critCollisionDate = critCollisionDate;
         
-        Game.m.PlaySound(SoundType.BODY_FALL);
+        Game.m.PlaySound(MedievalCombat.BODY_FALL);
         Battle.m.cameraManager.Shake(0.2f);
     }
     
@@ -279,7 +283,7 @@ public class Unit : MonoBehaviour {
             DefendFrom(collidingEnemy);
             collidingEnemy.SetAnim(Anim.DEFEND);
             collidingEnemy.DefendFrom(this);
-            Game.m.PlaySound(SoundType.METAL_WEAPON_HIT_METAL_1);
+            Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
         }
     }
 
@@ -300,7 +304,7 @@ public class Unit : MonoBehaviour {
     }
 
     public void Attack() {
-        Game.m.PlaySound(SoundType.WHOOSH_1);
+        Game.m.PlaySound(MedievalCombat.WHOOSH_1);
         SetAnim(Anim.HIT);
         attackStatus = AttackStatus.ATTACKING;
         this.Wait(attackAnimDuration, RecoverFromAttack);
@@ -320,7 +324,9 @@ public class Unit : MonoBehaviour {
         this.Wait(0.1f, () => {
             // Game.m.sound.Play(SoundType.METAL_WEAPON_HIT_METAL_1);
             Game.m.PlaySound(winner.attackSound);
-            if (winner.size > 1) Game.m.PlaySound(SoundType.BODY_FALL);
+            Game.m.PlaySound(winner.attackSoundAnimal, .5f, -1, pitch);
+            if (.1f.Chance()) Game.m.PlaySound(winner.deathSoundHuman, .5f, -1, pitch);
+            if (winner.size > 1) Game.m.PlaySound(MedievalCombat.BODY_FALL);
         });
         if (Time.time - lastSparkFxDate > 0.1f) {
             lastSparkFxDate = Time.time;
@@ -384,6 +390,7 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void TakeCollisionDamage(float amount, bool isCrit = false) {
+        if (side == Side.HERO) Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
         amount = amount.MoreOrLessPercent(0.5f).Round();
         if (amount.isAbout(0)) {
             critCollisionDate = -1;
@@ -442,7 +449,7 @@ public class Unit : MonoBehaviour {
         status = Status.FALLING;
         rigidbodee.useGravity = true;
         this.Wait(0.5f, () => {
-            Game.m.PlaySound(SoundType.STAB_1);
+            Game.m.PlaySound(MedievalCombat.STAB_1);
             DieDuringBattle();
         });
     }
@@ -457,7 +464,11 @@ public class Unit : MonoBehaviour {
         SetHealth(0);
         if (size >= 2 || side == Side.HERO) Battle.m.cameraManager.Shake(0.2f);
         Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
-        Game.m.PlaySound(SoundType.BODY_FALL, 0.5f, 4);
+        Game.m.PlaySound(MedievalCombat.BODY_FALL, 0.5f, 4);
+        if (side == Side.HERO || size.Chance()) {
+            Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
+            Game.m.PlaySound(deathSoundAnimal);
+        }
         Die();
     }
 

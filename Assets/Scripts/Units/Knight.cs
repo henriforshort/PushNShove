@@ -12,7 +12,7 @@ public class Knight : Unit {
     public GameObject ultFx;
 
     public override void Ult() {
-        Game.m.PlaySound(SoundType.MAGIC_HOLY, .5f, 1);
+        Game.m.PlaySound(MedievalCombat.MAGIC_HOLY, .5f, 1);
         heroUnits.ForEach(u => ultStatModifs.Add(u.data.prot.AddModifier(0.3f)));
         this.While(() => hero.ultStatus == Hero.UltStatus.ACTIVATED, 
             () => {

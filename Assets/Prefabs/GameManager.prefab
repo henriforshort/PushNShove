@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableCheats: 1
-  secondsToAHundredHp: 60
+  secondsToAHundredHp: 600
   battlesPerRun: 5
   timeToAutoRestart: 2
   spawnPosXRange: {x: 1, y: 7}
@@ -86,6 +86,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1755454257190141483}
     m_Modifications:
+    - target: {fileID: 2598992204125710275, guid: 2531d206a9d648a4cb8d9bafc0160418, type: 3}
+      propertyPath: m_Pitch
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4730464463106871705, guid: 2531d206a9d648a4cb8d9bafc0160418, type: 3}
       propertyPath: sounds.Array.size
       value: 33
@@ -182,6 +186,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[32].audioClips.Array.data[19]
       value: 
       objectReference: {fileID: 8300000, guid: 897e71aec5aebe3488f612f768c3ebde, type: 3}
+    - target: {fileID: 6213470022990284584, guid: 2531d206a9d648a4cb8d9bafc0160418, type: 3}
+      propertyPath: m_Pitch
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6924573683880662740, guid: 2531d206a9d648a4cb8d9bafc0160418, type: 3}
       propertyPath: m_RootOrder
       value: 0

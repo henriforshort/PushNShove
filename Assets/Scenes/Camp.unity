@@ -3053,10 +3053,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1755454257190141480, guid: 1a60d3dda9b1d2d49ab0ba5d2d7579ed, type: 3}
-      propertyPath: secondsToAHundredHp
-      value: 600
-      objectReference: {fileID: 0}
     - target: {fileID: 1755454257190141481, guid: 1a60d3dda9b1d2d49ab0ba5d2d7579ed, type: 3}
       propertyPath: m_Name
       value: GameManager

@@ -12,22 +12,21 @@ public static class Util {
     // --------------------
 
 
-    public static string Join(this string[] target, string separator = default) {
-        return String.Join(separator, target);
-    }
-    
+    public static string Join(this IEnumerable<string> target, string separator = default) => 
+        String.Join(separator, target);
+    public static IEnumerable<string> Split(this string target, string separator = default) => 
+        target.Split(separator[0]).ToList();
+
     public static string ToSentenceCase(this string target) {
         if (string.IsNullOrEmpty(target)) return target;
         return target.First().ToString().ToUpper() + target.Substring(1).ToLower();
     }
 
-    public static string ToCamelCaseWithSpaces(this string target) {
+    public static string ToCamelCase(this string target) {
         if (string.IsNullOrEmpty(target)) return target;
         return target
-            .Split('_')
-            .ToList()
+            .Split(" ")
             .Select(s => s.ToSentenceCase())
-            .ToArray()
             .Join(" ");
     }
 

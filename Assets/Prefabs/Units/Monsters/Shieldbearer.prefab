@@ -136,7 +136,11 @@ MonoBehaviour:
   attackAnimDuration: 0.25
   size: 1
   attackSpeed: 0.5
-  attackSound: 31
+  attackSound: 159
+  attackSoundAnimal: 0
+  deathSoundAnimal: 0
+  deathSoundHuman: 24
+  pitch: 1
   currentSpeed: 0
   status: 0
   attackStatus: 0

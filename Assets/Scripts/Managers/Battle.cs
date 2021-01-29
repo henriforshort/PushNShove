@@ -160,7 +160,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         Unit.heroUnits.Clear();
         Unit.allHeroUnits.Clear();
         Unit.monsterUnits.Clear();
-        Game.m.PlaySound(SoundType.WHOOSH_6);
+        Game.m.PlaySound(MedievalCombat.WHOOSH_6);
         transition.FadeIn();
         this.Wait(0.4f, () => Game.m.LoadScene(nextScene));
     }
