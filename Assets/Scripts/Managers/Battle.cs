@@ -82,6 +82,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         //Init scene
         fightPrompt.SetActive(true);
         transition.FadeOut();
+        Game.m.PlayMusic(AdventureRPG.ADVENTURE_TIME);
     }
     
     
@@ -106,6 +107,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         if (gameState == State.GAME_OVER) return;
         if (gameState == State.RESTARTING) return;
         
+        Game.m.PlaySound(Casual.NEGATIVE, 0.5f, 6);
         gameOverText.text = "Defeat";
         onBattleEnd.Add(() => Run.m.EndRun());
         nextScene = Game.SceneName.Camp;
@@ -113,6 +115,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void Victory() {
+        Game.m.PlaySound(Casual.POSITIVE, 0.5f, 6);
         if (gameState == State.GAME_OVER) return;
         if (gameState == State.RESTARTING) return;
 
@@ -127,6 +130,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void GameOver() {
+        Game.m.MuteMusic();
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;

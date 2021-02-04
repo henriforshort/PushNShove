@@ -322,10 +322,10 @@ public class Unit : MonoBehaviour {
 
         if (winner.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
         this.Wait(0.1f, () => {
-            // Game.m.sound.Play(SoundType.METAL_WEAPON_HIT_METAL_1);
             Game.m.PlaySound(winner.attackSound);
             Game.m.PlaySound(winner.attackSoundAnimal, .5f, -1, pitch);
-            if (.1f.Chance()) Game.m.PlaySound(winner.deathSoundHuman, .5f, -1, pitch);
+            if (.2f.Chance()) 
+                Game.m.PlaySound(this.Random(winner, loser).deathSoundHuman, .5f, -1, pitch);
             if (winner.size > 1) Game.m.PlaySound(MedievalCombat.BODY_FALL);
         });
         if (Time.time - lastSparkFxDate > 0.1f) {
@@ -465,10 +465,8 @@ public class Unit : MonoBehaviour {
         if (size >= 2 || side == Side.HERO) Battle.m.cameraManager.Shake(0.2f);
         Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
         Game.m.PlaySound(MedievalCombat.BODY_FALL, 0.5f, 4);
-        if (side == Side.HERO || size.Chance()) {
-            Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
-            Game.m.PlaySound(deathSoundAnimal);
-        }
+        Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
+        Game.m.PlaySound(deathSoundAnimal);
         Die();
     }
 

@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 
 public class SoundManager : MonoBehaviour {
     [Header("Self References")]
+    public AudioSource musicAudioSource;
     public AudioSource lowPitchedAudioSource;
     public AudioSource normalPitchedAudioSource;
     public AudioSource highPitchedAudioSource;
@@ -19,20 +20,25 @@ public class SoundManager : MonoBehaviour {
         if (filename == "NONE") return;
         if (audioPath == null) return;
 
+        GetAudioSource(pitch).PlayOneShot(GetAudioClip(audioPath, filename, index), volume);
+    }
+
+    public AudioClip GetAudioClip(string audioPath, string filename, int index = -1) {
         filename = filename.Replace("_", " ").ToCamelCase();
         if (index > 0) filename += "*" + index;
-        string path = Directory
+        return Resources.Load<AudioClip>(Directory
             .GetFiles(resourcesPath + audioPath, filename + "*", SearchOption.AllDirectories)
             .Where(p => !p.Contains(".meta"))
             .Random()
             ?.Remove(resourcesPath)
-            ?.Remove(".wav");
+            ?.Remove(".wav"));
+    }
 
-        (pitch switch {
+    public AudioSource GetAudioSource(Pitch pitch) {
+        return pitch switch {
             Pitch.LOW => lowPitchedAudioSource,
             Pitch.HIGH => highPitchedAudioSource,
             _ => normalPitchedAudioSource
-        }).PlayOneShot(Resources.Load<AudioClip>(path), volume);
-        
+        };
     }
 }

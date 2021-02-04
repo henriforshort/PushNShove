@@ -37,12 +37,14 @@
             <e p="RareEffect.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
+            <e p="AdventureRPG.cs" t="Include" />
             <e p="Animals.cs" t="Include" />
             <e p="Battle.cs" t="Include" />
             <e p="CameraManager.cs" t="Include" />
             <e p="Camp.cs" t="Include" />
             <e p="CampActivity.cs" t="Include" />
             <e p="CampSlot.cs" t="Include" />
+            <e p="Casual.cs" t="Include" />
             <e p="Game.cs" t="Include" />
             <e p="GameSave.cs" t="Include" />
             <e p="HeroGameSave.cs" t="Include" />

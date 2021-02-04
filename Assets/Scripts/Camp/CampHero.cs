@@ -108,9 +108,13 @@ public class CampHero : MonoBehaviour {
             int seconds = secondsToFullLife.RoundToInt();
             timerText.text = seconds+"s";
         }
-        
-        if (data.currentHealth.isAbout(data.maxHealth))
-            this.Wait(0.5f, () => Camp.m.GetActivity(CampActivity.Type.IDLE)?.Add(this));
+
+        if (data.currentHealth.isAbout(data.maxHealth)) {
+            this.Wait(0.5f, () => {
+                Camp.m.GetActivity(CampActivity.Type.IDLE)?.Add(this);
+                Game.m.PlaySound(Casual.POSITIVE, 0.5f, 5);
+            });
+        }
         else {
             float sleepDuration = (float)(DateTime.Now - data.lastSeenSleeping).TotalMilliseconds;
             AddHealth(0.1f * sleepDuration / Game.m.secondsToAHundredHp);
@@ -120,8 +124,9 @@ public class CampHero : MonoBehaviour {
     }
 
     public bool CanBeClicked() {
-        if (data.activity == CampActivity.Type.SLEEPING && data.currentHealth < data.maxHealth * 0.1f) return false;
-        return true;
+        if (data.activity != CampActivity.Type.SLEEPING) return true;
+        if (data.currentHealth > 0.1f) return true;
+        return false;
     }
 
     public void AddHealth(float amount) => SetHealth(data.currentHealth + amount);

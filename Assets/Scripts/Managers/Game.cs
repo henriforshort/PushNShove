@@ -95,6 +95,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     // ====================
 
     public void LoadScene(SceneName sceneName) {
+        MuteMusic(false);
         save.currentScene = sceneName;
         SaveToDevice();
         SceneManager.LoadScene(sceneName.ToString());
@@ -122,4 +123,19 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public void PlaySound(Human human, float volume = 0.5f, int index = -1, 
         SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
         sound.Play("Audio/Human Sounds", human.ToString(), volume, index, pitch);
+    
+    public void PlaySound(Casual casual, float volume = 0.5f, int index = -1, 
+        SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
+        sound.Play("Audio/Casual Music Pack", casual.ToString(), volume, index, pitch);
+
+    public void PlayMusic(AdventureRPG adventureRpg) {
+        AudioClip clip = sound.GetAudioClip("Audio/2D Adventure RPG Music Pack" , adventureRpg.ToString());
+        AudioSource audioSource = sound.musicAudioSource;
+        if (audioSource.clip == clip) return;
+        
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+
+    public void MuteMusic(bool mute = true) => sound.musicAudioSource.volume = mute ? 0 : .25f;
 }

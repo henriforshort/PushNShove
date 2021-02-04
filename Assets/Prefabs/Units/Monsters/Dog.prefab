@@ -241,8 +241,8 @@ MonoBehaviour:
   size: 0.5
   attackSpeed: 0.5
   attackSound: 159
-  attackSoundAnimal: 10
-  deathSoundAnimal: 0
+  attackSoundAnimal: 12
+  deathSoundAnimal: 10
   deathSoundHuman: 0
   pitch: 2
   currentSpeed: 0

@@ -29,7 +29,8 @@ public class Camp : Level<Camp> {
     }
 
     public void InitCamp() {
-        this.While(() => true, () => Game.m.PlaySound(MedievalCombat.MAGIC_LOOP_FIRE, .25f), 5f);
+        this.While(() => true, () => Game.m.PlaySound(MedievalCombat.MAGIC_LOOP_FIRE, .05f), 5f);
+        this.While(() => true, () => Game.m.PlaySound(Animals.OWL_3, .25f), 10f);
             
         //Create heroes
         Game.m.save.heroes.ForEach(hgs => {
@@ -46,6 +47,8 @@ public class Camp : Level<Camp> {
                 s.Init();
             });
         });
+        
+        Game.m.PlayMusic(AdventureRPG.OUR_VILLAGE);
     }
     
     public void StartBattle() {
