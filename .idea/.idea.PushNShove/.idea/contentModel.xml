@@ -65,15 +65,17 @@
             <e p="VersionText.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
-            <e p="Bruiser.cs" t="Include" />
-            <e p="Hero.cs" t="Include" />
             <e p="HeroIcon.cs" t="Include" />
-            <e p="Knight.cs" t="Include" />
-            <e p="Monster.cs" t="Include" />
             <e p="Stat.cs" t="Include" />
-            <e p="Strongman.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
+            <e p="UnitHero.cs" t="Include" />
             <e p="UnitMaxRange.cs" t="Include" />
+            <e p="UnitMonster.cs" t="Include" />
+            <e p="UnitSide.cs" t="Include" />
+            <e p="UnitUlt.cs" t="Include" />
+            <e p="UnitUltBruiser.cs" t="Include" />
+            <e p="UnitUltKnight.cs" t="Include" />
+            <e p="UnitUltStrongman.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="Hanimator.cs" t="Include" />

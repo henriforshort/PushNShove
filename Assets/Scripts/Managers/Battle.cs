@@ -61,13 +61,13 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             .Where(hgs => Run.m.activeHeroPrefabs.Contains(hgs.battlePrefab))
             .ToList()
             .ForEach(hgs => {
-                Hero newHero = Instantiate(hgs.battlePrefab, new Vector3(
+                UnitHero newHero = Instantiate(hgs.battlePrefab, new Vector3(
                         this.Random(-Game.m.spawnPosXRange.x, -Game.m.spawnPosXRange.y), -3, 0),
                     Quaternion.identity, unitsHolder);
                 newHero.unit.prefabIndex = hgs.prefabIndex;
+                newHero.InitBattle();
             });
-        for (int i=0; i<Unit.allHeroUnits.Count; i++) Unit.allHeroUnits[i].hero.InitBattle(heroIcons[i]);
-        
+
         //Create enemies
         this.Repeat(times:numberOfEnemyClusters, () => {
             Transform clusterInstance = Instantiate(enemyClusters.Random());

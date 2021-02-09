@@ -17,7 +17,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Item prefab;
     
     [Header("Scene References (assigned at runtime)")]
-    public Hero hero;
+    public UnitHero hero;
 
     public static Item describedItem;
     
@@ -28,7 +28,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     // EFFECT
     // ====================
 
-    public void Init(Item prefab, Hero hero, bool fromFight) {
+    public void Init(Item prefab, UnitHero hero, bool fromFight) {
         this.prefab = prefab;
         this.hero = hero;
         name = this.prefab.name;
@@ -40,7 +40,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
     }
 
-    public void SwitchTo(Hero newHero) {
+    public void SwitchTo(UnitHero newHero) {
         if (hero == newHero) return;
 
         Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
@@ -96,7 +96,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         else if (Run.m.movingItem.hero.itemPrefabPaths.Count >= Game.m.maxItemsPerHero) 
             Run.m.movingItem.hero.icon.itemPanel.FlashRed();
         else {
-            Hero otherhero = Run.m.movingItem.hero;
+            UnitHero otherhero = Run.m.movingItem.hero;
             Run.m.movingItem.SwitchTo(hero);
             SwitchTo(otherhero);
         }

@@ -3707,7 +3707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   maxDistFromUnits: 1
-  maxDistFromMapCenter: 10
+  maxDistFromMapCenter: 15
   currentShake: 0
   cameraFocus: {fileID: 2096997357}
   cam: {fileID: 519420031}

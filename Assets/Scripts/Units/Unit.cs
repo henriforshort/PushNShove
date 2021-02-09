@@ -2,7 +2,6 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -17,7 +16,6 @@ public class Unit : MonoBehaviour {
     [Range(0,1)] public float baseCritChance;
     
     [Header("Balancing")]
-    public Side side;
     public bool shakeOnHit;
     public float attackAnimDuration;
     public float size;
@@ -41,20 +39,25 @@ public class Unit : MonoBehaviour {
     public bool lockAnim;
     public bool lockPosition;
     public int index;
-
-    [Header("Self References")]
-    public Hero hero;
-    public Monster monster;
-    public Slider healthBar;
-    public Slider tmpHealthBar;
-    public Animator animator;
-    public Rigidbody rigidbodee;
     
     [Header("Self References (Assigned at runtime)")]
     public int prefabIndex;
     public List<GameObject> hpLossUis;
 
+
+    [Header("Self References")]
+    public UnitSide unitSide;
+    public UnitUlt ult;
+    public Slider healthBar;
+    public Slider tmpHealthBar;
+    public Animator animator;
+    public Rigidbody rigidbodee;
+    
+
     public static float lastSparkFxDate;
+    
+    public UnitHero hero => unitSide as UnitHero;
+    public UnitMonster monster => unitSide as UnitMonster;
 
     private static List<Unit> _allHeroUnits; //Even the dead ones
     public static List<Unit> allHeroUnits => _allHeroUnits ?? (_allHeroUnits = new List<Unit>());
@@ -65,10 +68,10 @@ public class Unit : MonoBehaviour {
     private static List<Unit> _monsterUnits;
     public static List<Unit> monsterUnits => _monsterUnits ?? (_monsterUnits = new List<Unit>());
 
-    public List<Unit> allies => side == Side.HERO ? heroUnits : monsterUnits;
-    public List<Unit>  enemies => side == Side.MONSTER ? heroUnits : monsterUnits;
+    public List<Unit> allies => isHero ? heroUnits : monsterUnits;
+    public List<Unit>  enemies => isMonster ? heroUnits : monsterUnits;
 
-    public UnitData data => side == Side.HERO ? Game.m.save.heroes[prefabIndex].data : monster.data;
+    public UnitData data => isHero ? Game.m.save.heroes[prefabIndex].data : monster.data;
     public float speedPercent => currentSpeed / data.maxSpeed;
     public bool isWalking => currentSpeed > 0;
     
@@ -78,7 +81,9 @@ public class Unit : MonoBehaviour {
         WALK, WINDUP, HIT, DEFEND, BUMPED,
         ULT_BRUISER, ULT_STRONGMAN
     }
-    public enum Side { HERO = 1, MONSTER = -1 }
+
+    public bool isHero => unitSide is UnitHero;
+    public bool isMonster => !isHero;
     
     
     // ====================
@@ -89,29 +94,7 @@ public class Unit : MonoBehaviour {
         SetAnim(Anim.WALK);
         currentSpeed = data.maxSpeed;
         tmpHealthBar.value = data.currentHealth;
-        
-        if (side == Side.MONSTER) MonsterInit();
-        if (side == Side.HERO) HeroInit();
-    }
-
-    public void MonsterInit() {
-        if (!gameObject.activeInHierarchy) return;
-            
-        monsterUnits.Add(this);
-        data.maxSpeed.Init(baseMaxSpeed);
-        data.maxHealth.Init(baseMaxHealth);
-        data.prot.Init(baseProt);
-        data.weight.Init(baseWeight);
-        data.damage.Init(baseDamage);
-        data.strength.Init(baseStrength);
-        data.critChance.Init(baseCritChance);
-        SetHealth(data.maxHealth);
-    }
-
-    public void HeroInit() {
-        index = allHeroUnits.Count;
-        allHeroUnits.Add(this);
-        heroUnits.Add(this);
+        unitSide.unit = this;
     }
 
     public void InitBattle() { //Called after loading
@@ -176,8 +159,8 @@ public class Unit : MonoBehaviour {
         this.SetZ(0f);
         if (status == Status.DYING) DieDuringBattle();
         else Game.m.SpawnFX(Run.m.bumpDustFxPrefab,
-                new Vector3(this.GetX() - (int)side * 0.5f, -2, -2),
-                side == Side.HERO, 0.5f);
+                new Vector3(this.GetX() - 0.5f.ReverseIf(isMonster), -2, -2),
+                isHero, 0.5f);
     }
 
     
@@ -208,7 +191,7 @@ public class Unit : MonoBehaviour {
     public void UpdatePosition() {
         if (!CanMove()) return;
         
-        transform.position += currentSpeed * Time.deltaTime * (int)side * Vector3.right;
+        transform.position += currentSpeed.ReverseIf(isMonster) * Time.deltaTime * Vector3.right;
     }
 
     public bool CanMove() {
@@ -324,15 +307,17 @@ public class Unit : MonoBehaviour {
         this.Wait(0.1f, () => {
             Game.m.PlaySound(winner.attackSound);
             Game.m.PlaySound(winner.attackSoundAnimal, .5f, -1, pitch);
-            if (.2f.Chance()) 
+            if (.5f.Chance()) {
                 Game.m.PlaySound(this.Random(winner, loser).deathSoundHuman, .5f, -1, pitch);
+                Game.m.PlaySound(this.Random(winner, loser).deathSoundAnimal, .5f, -1, pitch);
+            }
             if (winner.size > 1) Game.m.PlaySound(MedievalCombat.BODY_FALL);
         });
         if (Time.time - lastSparkFxDate > 0.1f) {
             lastSparkFxDate = Time.time;
             Game.m.SpawnFX(Run.m.sparkFxPrefab,
-                new Vector3(this.GetX() + 2f * (int) side, -2, -2),
-                winner.side == Side.MONSTER, 0.5f);
+                new Vector3(this.GetX() + 2f.ReverseIf(isMonster), -2, -2),
+                winner.isMonster, 0.5f);
         }
         
     }
@@ -381,16 +366,13 @@ public class Unit : MonoBehaviour {
     public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();
     public bool CanAttack() => isWalking && attackStatus == AttackStatus.PREPARING;
 
-    public virtual void Ult() { }
-    public virtual void EndUlt() { }
-
 
     // ====================
     // HEALTH
     // ====================
 
     public void TakeCollisionDamage(float amount, bool isCrit = false) {
-        if (side == Side.HERO) Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
+        if (isHero) Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
         amount = amount.MoreOrLessPercent(0.5f).Round();
         if (amount.isAbout(0)) {
             critCollisionDate = -1;
@@ -457,12 +439,12 @@ public class Unit : MonoBehaviour {
     public void Deactivate() {
         allies.Remove(this);
         SetAnim(Anim.BUMPED);
-        if (side == Side.HERO) hero.icon.Die();
+        if (isHero) hero.icon.Die();
     }
 
     public void DieDuringBattle() {
         SetHealth(0);
-        if (size >= 2 || side == Side.HERO) Battle.m.cameraManager.Shake(0.2f);
+        if (size >= 2 || isHero) Battle.m.cameraManager.Shake(0.2f);
         Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
         Game.m.PlaySound(MedievalCombat.BODY_FALL, 0.5f, 4);
         Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
@@ -472,25 +454,7 @@ public class Unit : MonoBehaviour {
 
     public void Die() {
         status = Status.DEAD;
-        if (side == Side.HERO) HeroDeath();
-        else MonsterDeath();
-    }
-
-    public void HeroDeath() {
-        data.activity = CampActivity.Type.IDLE;
-        allies.Remove(this);
-        animator.gameObject.SetActive(false);
-        hero.icon.Die();
-        hero.EndUlt();
-        OnDestroy();
-    }
-
-    public void MonsterDeath() {
-        if (monster.dropRate.Chance() && !Run.m.itemsDepleted)
-            heroUnits.RandomWhere(u => u.hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero)
-                ?.hero
-                ?.GetItemFromFight(Run.m.GetRandomItem(), this);
-        Destroy(gameObject);
+        unitSide.Die();
     }
 
     public void OnDestroy() {
@@ -505,9 +469,6 @@ public class Unit : MonoBehaviour {
             .ForEach(ui => ui.transform.SetParent(Run.m.transform));
         allies.Remove(this);
 
-        if (allies.Count == 0) {
-            if (side == Side.HERO) Battle.m.Defeat();
-            else Battle.m.Victory();
-        }
+        if (allies.Count == 0) unitSide.GetDefeated();
     }
 }

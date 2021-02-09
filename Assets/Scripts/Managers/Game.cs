@@ -34,7 +34,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public GameSave save;
                             
     [Header("Prefabs")]
-    public List<Hero> heroPrefabs;
+    public List<UnitHero> heroPrefabs;
     public Sprite transparentSprite;
     public Sprite whiteSprite;
 
@@ -137,5 +137,5 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         audioSource.Play();
     }
 
-    public void MuteMusic(bool mute = true) => sound.musicAudioSource.volume = mute ? 0 : .25f;
+    public void MuteMusic(bool mute = true) => sound.musicAudioSource.volume = mute ? 0 : .1f;
 }

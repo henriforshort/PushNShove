@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ItemPanel : MonoBehaviour, IDropHandler {
-    public Hero hero;
+    public UnitHero hero;
     public Image image;
     
     public void OnDrop(PointerEventData eventData) { //What to do when drag ends on an icon

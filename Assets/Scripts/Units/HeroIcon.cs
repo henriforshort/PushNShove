@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class HeroIcon : MonoBehaviour {
@@ -16,7 +15,7 @@ public class HeroIcon : MonoBehaviour {
     public ItemPanel itemPanel;
 
     [Header("Scene References (Assigned at runtime)")]
-    public Hero hero;
+    public UnitHero hero;
 
     public enum IconAnim { LOADING, SHINE, USED, DEAD }
     
@@ -25,7 +24,7 @@ public class HeroIcon : MonoBehaviour {
     // BASICS
     // ====================
 
-    public void InitBattle(Hero h) {
+    public void InitBattle(UnitHero h) {
         hero = h;
         icon.sprite = h.image;
         itemPanel.hero = h;

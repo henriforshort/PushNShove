@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class Hero : MonoBehaviour {
+public class UnitHero : UnitSide {
     [Header("Balancing")]
     public float ultCooldown;
     public float ultDuration;
@@ -12,12 +9,12 @@ public class Hero : MonoBehaviour {
     [Header("State")]
     public UltStatus ultStatus;
     
-    [Header("Self References")]
-    public Unit unit;
-    [FormerlySerializedAs("campUnit")]
+    [Header("Scene References (assigned at runtime)")]
+    public HeroIcon _icon;
+    
+    [Header("Resource References")]
     public CampHero campHero;
     public Sprite image;
-    public HeroIcon _icon;
     
     public enum UltStatus { AVAILABLE, RELOADING, ACTIVATED }
 
@@ -34,11 +31,15 @@ public class Hero : MonoBehaviour {
     // ====================
 
     public void Awake() { //Called before loading
+        unit.index = Unit.allHeroUnits.Count;
+        Unit.allHeroUnits.Add(unit);
+        Unit.heroUnits.Add(unit);
         _icon = null;
         icon.ClearItems();
+        unit.ult.unit = unit;
     }
 
-    public void InitBattle(HeroIcon i) { //Called after loading
+    public void InitBattle() { //Called after loading
         ultStatus = UltStatus.RELOADING;
         icon.InitBattle(this);
         itemPrefabPaths.ForEach(ipp => GetItemAtStartup(ipp.ToPrefab<Item>()));
@@ -47,6 +48,19 @@ public class Hero : MonoBehaviour {
 
     public void Update() {
         UpdateUlt();
+    }
+
+    public override void Die() {
+        unit.data.activity = CampActivity.Type.IDLE;
+        unit.allies.Remove(unit);
+        unit.animator.gameObject.SetActive(false);
+        unit.hero.icon.Die();
+        unit.hero.EndUlt();
+        unit.OnDestroy();
+    }
+
+    public override void GetDefeated() {
+        Battle.m.Defeat();
     }
     
     
@@ -78,7 +92,7 @@ public class Hero : MonoBehaviour {
 
     public void Ult() {
         ultStatus = UltStatus.ACTIVATED;
-        unit.Ult();
+        unit.ult.Ult();
         this.Wait(ultDuration, EndUlt);
         unit.lockZOrder = true;
     }
@@ -87,7 +101,7 @@ public class Hero : MonoBehaviour {
         if (ultStatus != UltStatus.ACTIVATED) return;
         ultStatus = UltStatus.RELOADING;
         ultCooldownLeft = ultCooldown;
-        unit.EndUlt();
+        unit.ult.EndUlt();
         icon.StartUltReload();
         unit.lockZOrder = false;
     }

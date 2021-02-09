@@ -8,7 +8,7 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
                                  //Should not contain any balancing or prefabs
                                  //Should contain only State info that is persisted across a single run
     [Header("State")]
-	public List<Hero> activeHeroPrefabs;
+	public List<UnitHero> activeHeroPrefabs;
 	public List<Item> commonItems;
 	public List<Item> rareItems;
 	public List<Item> leggyItems;

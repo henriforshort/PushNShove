@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5914191361000633564}
   - component: {fileID: 5914191361000633567}
   - component: {fileID: 5914191361000633539}
-  - component: {fileID: -3954800748470413380}
   - component: {fileID: 5914191361000633560}
+  - component: {fileID: 4387343385029516869}
   m_Layer: 0
   m_Name: Shieldbearer
   m_TagString: Untagged
@@ -64,7 +64,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-3954800748470413380
+--- !u!114 &5914191361000633560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,11 +73,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 5914191361000633561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d63027eee2f2b439718c3ba6d39967, type: 3}
+  m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseMaxSpeed: 3
+  baseMaxHealth: 50
+  baseProt: 0
+  baseWeight: 1
+  baseDamage: 3
+  baseStrength: 1
+  baseCritChance: 0.1
+  unitSide: {fileID: 4387343385029516869}
+  shakeOnHit: 0
+  attackAnimDuration: 0.25
+  size: 1
+  attackSpeed: 0.5
+  attackSound: 159
+  attackSoundAnimal: 0
+  deathSoundAnimal: 0
+  deathSoundHuman: 24
+  pitch: 1
+  currentSpeed: 0
+  status: 0
+  attackStatus: 0
+  anim: 0
+  lastWindupIsTwo: 0
+  critCollisionDate: 0
+  isOnFreezeFrame: 0
+  isInvincible: 0
+  lockZOrder: 0
+  lockAnim: 0
+  lockPosition: 0
+  index: 0
+  hero: {fileID: 0}
+  healthBar: {fileID: 6087850083390855375}
+  tmpHealthBar: {fileID: 1151570446728982744}
+  animator: {fileID: 5914191361033034991}
+  rigidbodee: {fileID: 5914191361000633539}
+  prefabIndex: 0
+  hpLossUis: []
+--- !u!114 &4387343385029516869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914191361000633561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbac38a8b5d141c41a569360af190ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
   dropRate: 0.2
-  unit: {fileID: 5914191361000633560}
   data:
     maxSpeed:
       startValue: 0
@@ -112,55 +160,6 @@ MonoBehaviour:
     ultCooldownLeft: 0
     lastSeenSleepingString: 
     _itemPrefabPaths: []
---- !u!114 &5914191361000633560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5914191361000633561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseMaxSpeed: 3
-  baseMaxHealth: 50
-  baseProt: 0
-  baseWeight: 1
-  baseDamage: 3
-  baseStrength: 1
-  baseCritChance: 0.1
-  side: -1
-  shakeOnHit: 0
-  attackAnimDuration: 0.25
-  size: 1
-  attackSpeed: 0.5
-  attackSound: 159
-  attackSoundAnimal: 0
-  deathSoundAnimal: 0
-  deathSoundHuman: 24
-  pitch: 1
-  currentSpeed: 0
-  status: 0
-  attackStatus: 0
-  anim: 0
-  lastWindupIsTwo: 0
-  critCollisionDate: 0
-  isOnFreezeFrame: 0
-  isInvincible: 0
-  lockZOrder: 0
-  lockAnim: 0
-  lockPosition: 0
-  index: 0
-  hero: {fileID: 0}
-  monster: {fileID: -3954800748470413380}
-  healthBar: {fileID: 6087850083390855375}
-  tmpHealthBar: {fileID: 1151570446728982744}
-  animator: {fileID: 5914191361033034991}
-  rigidbodee: {fileID: 5914191361000633539}
-  prefabIndex: 0
-  hpLossUis: []
 --- !u!1 &5914191361033034985
 GameObject:
   m_ObjectHideFlags: 0
