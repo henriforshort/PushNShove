@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 6381897783818097787}
   - component: {fileID: 6381897783818097760}
   - component: {fileID: 462261917282853761}
+  - component: {fileID: 6029256729984578456}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -187,7 +188,6 @@ MonoBehaviour:
   baseDamage: 3
   baseStrength: 0.5
   baseCritChance: 0.05
-  unitSide: {fileID: 462261917282853761}
   shakeOnHit: 0
   attackAnimDuration: 0.25
   size: 0.5
@@ -209,13 +209,15 @@ MonoBehaviour:
   lockAnim: 0
   lockPosition: 0
   index: 0
-  hero: {fileID: 0}
+  prefabIndex: 0
+  hpLossUis: []
+  unitSide: {fileID: 462261917282853761}
+  ult: {fileID: 0}
+  behavior: {fileID: 6029256729984578456}
   healthBar: {fileID: 5784028226419069187}
   tmpHealthBar: {fileID: 847713964275857684}
   animator: {fileID: 6381897783652793431}
   rigidbodee: {fileID: 6381897783818097787}
-  prefabIndex: 0
-  hpLossUis: []
 --- !u!114 &462261917282853761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,10 +233,6 @@ MonoBehaviour:
   unit: {fileID: 0}
   dropRate: 0.1
   data:
-    maxSpeed:
-      startValue: 0
-      value: 0
-      modifiers: []
     maxHealth:
       startValue: 0
       value: 0
@@ -264,6 +262,19 @@ MonoBehaviour:
     ultCooldownLeft: 0
     lastSeenSleepingString: 
     _itemPrefabPaths: []
+--- !u!114 &6029256729984578456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381897783818097761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4850f4a1aaa283746a4ef82549b9a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
 --- !u!1001 &4630882952223870881
 PrefabInstance:
   m_ObjectHideFlags: 0

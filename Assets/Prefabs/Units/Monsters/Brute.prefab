@@ -180,14 +180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxSpeed: 3
+  baseMaxSpeed: 0
   baseMaxHealth: 100
   baseProt: 0.3
   baseWeight: 5
   baseDamage: 3
   baseStrength: 1.5
   baseCritChance: 0.2
-  unitSide: {fileID: 8565579205406979095}
   shakeOnHit: 1
   attackAnimDuration: 0.25
   size: 2
@@ -209,13 +208,15 @@ MonoBehaviour:
   lockAnim: 0
   lockPosition: 0
   index: 0
-  hero: {fileID: 0}
+  prefabIndex: 0
+  hpLossUis: []
+  unitSide: {fileID: 8565579205406979095}
+  ult: {fileID: 0}
+  behavior: {fileID: 0}
   healthBar: {fileID: 2202191930307489267}
   tmpHealthBar: {fileID: 4974386014944740836}
   animator: {fileID: 4884354167670392196}
   rigidbodee: {fileID: 4884354168730958000}
-  prefabIndex: 0
-  hpLossUis: []
 --- !u!114 &8565579205406979095
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,6 @@ public class HeroGameSave {
     }
     
     public void InitGame() {
-        data.maxSpeed.Init(battlePrefab.unit.baseMaxSpeed);
         data.maxHealth.Init(battlePrefab.unit.baseMaxHealth);
         data.prot.Init(battlePrefab.unit.baseProt);
         data.weight.Init(battlePrefab.unit.baseWeight);

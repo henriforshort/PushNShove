@@ -68,8 +68,10 @@
             <e p="HeroIcon.cs" t="Include" />
             <e p="Stat.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
+            <e p="UnitBehavior.cs" t="Include" />
             <e p="UnitHero.cs" t="Include" />
             <e p="UnitMaxRange.cs" t="Include" />
+            <e p="UnitMelee.cs" t="Include" />
             <e p="UnitMonster.cs" t="Include" />
             <e p="UnitSide.cs" t="Include" />
             <e p="UnitUlt.cs" t="Include" />

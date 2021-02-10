@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public class UnitData {
     //Stats
-    public Stat maxSpeed;
     public Stat maxHealth; //Resistance
     public Stat prot; //How much collision force is reduced (whether I got hit or not)
     public Stat weight; //Chance to hit & not get hit
@@ -25,7 +24,6 @@ public class UnitData {
     public List<string> itemPrefabPaths => _itemPrefabPaths ?? (_itemPrefabPaths = new List<string>());
 
     public UnitData() {
-        maxSpeed = new Stat();
         maxHealth = new Stat();
         prot  = new Stat();
         weight = new Stat();

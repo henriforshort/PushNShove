@@ -17,7 +17,9 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float timeToAutoRestart;
     public Vector2 spawnPosXRange;
     public int amountOfHeroes;
+
     [Space(20)]
+    public float unitMaxSpeed;
     public float attackDistance;
     public float collideDistance;
     public float freezeFrameDuration;

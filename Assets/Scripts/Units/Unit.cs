@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class Unit : MonoBehaviour {
     [Header("Base Stats")]
-    public float baseMaxSpeed;
     public float baseMaxHealth;
     [Range(0,1)] public float baseProt;
     public float baseWeight;
@@ -44,10 +43,9 @@ public class Unit : MonoBehaviour {
     public int prefabIndex;
     public List<GameObject> hpLossUis;
 
-
     [Header("Self References")]
     public UnitSide unitSide;
-    public UnitUlt ult;
+    public UnitBehavior behavior;
     public Slider healthBar;
     public Slider tmpHealthBar;
     public Animator animator;
@@ -72,8 +70,8 @@ public class Unit : MonoBehaviour {
     public List<Unit>  enemies => isMonster ? heroUnits : monsterUnits;
 
     public UnitData data => isHero ? Game.m.save.heroes[prefabIndex].data : monster.data;
-    public float speedPercent => currentSpeed / data.maxSpeed;
-    public bool isWalking => currentSpeed > 0;
+    public float speedPercent => currentSpeed / Game.m.unitMaxSpeed;
+    public bool isWalking => currentSpeed.isClearlyPositive();
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
     public enum AttackStatus { NOT_PREPARED, PREPARING, ATTACKING, RECOVERING }
@@ -92,9 +90,9 @@ public class Unit : MonoBehaviour {
 
     public void Awake() { //Called before loading
         SetAnim(Anim.WALK);
-        currentSpeed = data.maxSpeed;
         tmpHealthBar.value = data.currentHealth;
-        unitSide.unit = this;
+        if (unitSide != null) unitSide.unit = this;
+        if (behavior != null) behavior.unit = this;
     }
 
     public void InitBattle() { //Called after loading
@@ -154,15 +152,6 @@ public class Unit : MonoBehaviour {
         this.Wait(Game.m.freezeFrameDuration, () => isOnFreezeFrame = false);
     }
 
-    public void StartWalking() {
-        SetAnim(Anim.WALK);
-        this.SetZ(0f);
-        if (status == Status.DYING) DieDuringBattle();
-        else Game.m.SpawnFX(Run.m.bumpDustFxPrefab,
-                new Vector3(this.GetX() - 0.5f.ReverseIf(isMonster), -2, -2),
-                isHero, 0.5f);
-    }
-
     
     // ====================
     // MOVEMENT
@@ -171,19 +160,19 @@ public class Unit : MonoBehaviour {
     public void UpdateSpeed() {
         if (!CanUpdateSpeed()) return;
         
-        float newSpeed = currentSpeed.LerpTo(data.maxSpeed, Game.m.bumpRecoverySpeed);
-        if (currentSpeed.isAboutOrLowerThan(0) && newSpeed.isClearlyPositive()) StartWalking();
-        currentSpeed = newSpeed;
-        if (currentSpeed.isAboutOrHigherThan(data.maxSpeed)) currentSpeed = data.maxSpeed;
+        currentSpeed = currentSpeed
+            .LerpTo(Game.m.unitMaxSpeed, Game.m.bumpRecoverySpeed)
+            .AtMost(0);
+        
+        if (status == Status.DYING && currentSpeed.isAbout(0)) DieDuringBattle();
     }
 
     public bool CanUpdateSpeed() {
         if (lockPosition) return false;
         if (isOnFreezeFrame) return false;
         if (Battle.m.gameState == Battle.State.PAUSE) return false;
-        
         if (status == Status.FALLING) return false;
-        if (currentSpeed.isAboutOrHigherThan(data.maxSpeed)) return false;
+        if (currentSpeed.isAboutOrHigherThan(0)) return false;
 
         return true;
     }

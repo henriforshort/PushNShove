@@ -13,7 +13,6 @@ public class UnitMonster : UnitSide {
         if (!unit.gameObject.activeInHierarchy) return;
             
         Unit.monsterUnits.Add(unit);
-        unit.data.maxSpeed.Init(unit.baseMaxSpeed);
         unit.data.maxHealth.Init(unit.baseMaxHealth);
         unit.data.prot.Init(unit.baseProt);
         unit.data.weight.Init(unit.baseWeight);

@@ -12,7 +12,8 @@ public class UnitHero : UnitSide {
     [Header("Scene References (assigned at runtime)")]
     public HeroIcon _icon;
     
-    [Header("Resource References")]
+    [Header("References")]
+    public UnitUlt ult;
     public CampHero campHero;
     public Sprite image;
     
@@ -36,7 +37,7 @@ public class UnitHero : UnitSide {
         Unit.heroUnits.Add(unit);
         _icon = null;
         icon.ClearItems();
-        unit.ult.unit = unit;
+        ult.unit = unit;
     }
 
     public void InitBattle() { //Called after loading
@@ -92,7 +93,7 @@ public class UnitHero : UnitSide {
 
     public void Ult() {
         ultStatus = UltStatus.ACTIVATED;
-        unit.ult.Ult();
+        ult.Ult();
         this.Wait(ultDuration, EndUlt);
         unit.lockZOrder = true;
     }
@@ -101,7 +102,7 @@ public class UnitHero : UnitSide {
         if (ultStatus != UltStatus.ACTIVATED) return;
         ultStatus = UltStatus.RELOADING;
         ultCooldownLeft = ultCooldown;
-        unit.ult.EndUlt();
+        ult.EndUlt();
         icon.StartUltReload();
         unit.lockZOrder = false;
     }
