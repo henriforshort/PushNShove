@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4884354167670392198}
-  - component: {fileID: 4884354167670392196}
   - component: {fileID: 4884354167670392197}
+  - component: {fileID: 988931033438503087}
   m_Layer: 0
   m_Name: Brute_visuals
   m_TagString: Untagged
@@ -34,25 +34,6 @@ Transform:
   m_Father: {fileID: 4884354168730958003}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4884354167670392196
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4884354167670392199}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 7c8a409e824b35a488bf670114b0ce7c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &4884354167670392197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -104,6 +85,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &988931033438503087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884354167670392199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlay: 1
+  whenAnimFinishes: 0
+  spriteRenderer: {fileID: 0}
+  image: {fileID: 0}
+  anims:
+  - name: WALK
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: 1092193355370073605, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+    - {fileID: -7020857357276367441, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+    - {fileID: 217873372868201962, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+    - {fileID: -1578107764885755671, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+  - name: WINDUP
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -8200651855622180100, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+  - name: HIT
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -7643767869277526368, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+    - {fileID: -8902117605360516759, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+    - {fileID: -8046777144419649649, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+  - name: BUMPED
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -8369920915914150388, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+  - name: DEFEND
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 4749942772989927502, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
+  playing: 0
+  currentAnim:
+    name: 
+    frameDuration: 0
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites: []
+  currentFrame: 0
+  startAnimDate: 0
 --- !u!1 &4884354168730958004
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +171,7 @@ GameObject:
   - component: {fileID: 4884354168730958000}
   - component: {fileID: 4884354168730958002}
   - component: {fileID: 8565579205406979095}
+  - component: {fileID: -352246479384488573}
   m_Layer: 0
   m_Name: Brute
   m_TagString: Untagged
@@ -180,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxSpeed: 0
   baseMaxHealth: 100
   baseProt: 0.3
   baseWeight: 5
@@ -211,12 +265,12 @@ MonoBehaviour:
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: 8565579205406979095}
-  ult: {fileID: 0}
-  behavior: {fileID: 0}
+  behavior: {fileID: -352246479384488573}
   healthBar: {fileID: 2202191930307489267}
   tmpHealthBar: {fileID: 4974386014944740836}
-  animator: {fileID: 4884354167670392196}
+  animator: {fileID: 0}
   rigidbodee: {fileID: 4884354168730958000}
+  hanimator: {fileID: 988931033438503087}
 --- !u!114 &8565579205406979095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,10 +286,6 @@ MonoBehaviour:
   unit: {fileID: 0}
   dropRate: 1
   data:
-    maxSpeed:
-      startValue: 0
-      value: 0
-      modifiers: []
     maxHealth:
       startValue: 0
       value: 0
@@ -265,6 +315,19 @@ MonoBehaviour:
     ultCooldownLeft: 0
     lastSeenSleepingString: 
     _itemPrefabPaths: []
+--- !u!114 &-352246479384488573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884354168730958004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4850f4a1aaa283746a4ef82549b9a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
 --- !u!1001 &1792660477476782361
 PrefabInstance:
   m_ObjectHideFlags: 0

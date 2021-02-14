@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6381897783652793424}
   - component: {fileID: 6381897783652793430}
-  - component: {fileID: 6381897783652793431}
+  - component: {fileID: 1867010349133672435}
   m_Layer: 0
   m_Name: dog_sprite
   m_TagString: Untagged
@@ -85,25 +85,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6381897783652793431
-Animator:
-  serializedVersion: 3
+--- !u!114 &1867010349133672435
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6381897783652793425}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 0893a4760d58f7d4986b556cd66c6a58, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlay: 1
+  whenAnimFinishes: 0
+  spriteRenderer: {fileID: 0}
+  image: {fileID: 0}
+  anims:
+  - name: WALK
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: 1480917699468073914, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+    - {fileID: 9118213209582376027, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+    - {fileID: -1146434942223613854, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+    - {fileID: 4232618656017457076, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+  - name: WINDUP
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 8622651429821660651, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+  - name: HIT
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 6148440367437093035, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+    - {fileID: 6148440367437093035, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+    - {fileID: 1172281312028412848, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+  - name: BUMPED
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 324536050776143305, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+  - name: DEFEND
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -5732640591474583860, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
+  playing: 0
+  currentAnim:
+    name: 
+    frameDuration: 0
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites: []
+  currentFrame: 0
+  startAnimDate: 0
 --- !u!1 &6381897783818097761
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxSpeed: 4
   baseMaxHealth: 15
   baseProt: 0
   baseWeight: 0.25
@@ -212,12 +265,12 @@ MonoBehaviour:
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: 462261917282853761}
-  ult: {fileID: 0}
   behavior: {fileID: 6029256729984578456}
   healthBar: {fileID: 5784028226419069187}
   tmpHealthBar: {fileID: 847713964275857684}
-  animator: {fileID: 6381897783652793431}
+  animator: {fileID: 0}
   rigidbodee: {fileID: 6381897783818097787}
+  hanimator: {fileID: 1867010349133672435}
 --- !u!114 &462261917282853761
 MonoBehaviour:
   m_ObjectHideFlags: 0

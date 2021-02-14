@@ -54,7 +54,7 @@ public class UnitHero : UnitSide {
     public override void Die() {
         unit.data.activity = CampActivity.Type.IDLE;
         unit.allies.Remove(unit);
-        unit.animator.gameObject.SetActive(false);
+        unit.hanimator.gameObject.SetActive(false);
         unit.hero.icon.Die();
         unit.hero.EndUlt();
         unit.OnDestroy();

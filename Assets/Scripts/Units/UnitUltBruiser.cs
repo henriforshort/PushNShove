@@ -14,10 +14,10 @@ public class UnitUltBruiser : UnitUlt {
         Game.m.PlaySound(MedievalCombat.WHOOSH_8);
         this.Repeat(9, () => Game.m.PlaySound(MedievalCombat.WHOOSH_6), 0.5f);
 
-        oldAttackAnimDuration = unit.attackAnimDuration;
-        oldAttackSpeed = unit.attackSpeed;
-        unit.attackSpeed = 0f;
-        unit.attackAnimDuration = 0;
+        oldAttackAnimDuration = unit.melee.attackAnimDuration;
+        oldAttackSpeed = unit.melee.attackSpeed;
+        unit.melee.attackSpeed = 0f;
+        unit.melee.attackAnimDuration = 0;
 
         ultStatModifs.Add(unit.data.prot.AddModifier(0.9f, StatModifier.Type.SET));
         ultStatModifs.Add(unit.data.weight.AddModifier(50, StatModifier.Type.MULTIPLY));
@@ -30,8 +30,8 @@ public class UnitUltBruiser : UnitUlt {
     public override void EndUlt() {
         unit.lockAnim = false;
         unit.SetAnim(Unit.Anim.DEFEND);
-        unit.attackAnimDuration = oldAttackAnimDuration;
-        unit.attackSpeed = oldAttackSpeed;
+        unit.melee.attackAnimDuration = oldAttackAnimDuration;
+        unit.melee.attackSpeed = oldAttackSpeed;
         ultStatModifs.ForEach(m => m.Terminate());
         ultStatModifs.Clear();
         

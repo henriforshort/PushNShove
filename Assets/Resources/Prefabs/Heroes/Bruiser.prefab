@@ -111,8 +111,9 @@ MonoBehaviour:
   behavior: {fileID: -1725123356962079158}
   healthBar: {fileID: 45564277804295137}
   tmpHealthBar: {fileID: 6568130779824425974}
-  animator: {fileID: 490591814931064769}
+  animator: {fileID: 0}
   rigidbodee: {fileID: 490591814827413485}
+  hanimator: {fileID: 3482692593037295875}
 --- !u!114 &-3902853122371618417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490591814931064774}
   - component: {fileID: 490591814931064768}
-  - component: {fileID: 490591814931064769}
+  - component: {fileID: 3482692593037295875}
   m_Layer: 0
   m_Name: Bruiser_visuals
   m_TagString: Untagged
@@ -247,25 +248,108 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &490591814931064769
-Animator:
-  serializedVersion: 3
+--- !u!114 &3482692593037295875
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490591814931064775}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: ef53ede1d3f47584cb8918cc44268f2c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlay: 1
+  whenAnimFinishes: 0
+  spriteRenderer: {fileID: 490591814931064768}
+  image: {fileID: 0}
+  anims:
+  - name: WALK
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: 740242000534278018, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -6016191042328661550, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 7174724521984023984, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -8849449827238776105, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  - name: WINDUP
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 7183375906486206432, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  - name: HIT
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -5953706530349332062, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -364896107309993220, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 4808763617771383303, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  - name: BUMPED
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -3936708783585791709, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  - name: DEFEND
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -9102215036314525063, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  - name: WINDUP2
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 5804808923002972390, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  - name: HIT2
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 7238206231204765735, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -6838526995658360098, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -1542703513063588084, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  - name: ULT_BRUISER
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: 2751765179324594813, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 8320475909363473942, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -7062840624321980151, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 8745514035611474826, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  playing: 0
+  currentAnim:
+    name: 
+    frameDuration: 0
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites: []
+  currentFrame: 0
+  startAnimDate: 0
 --- !u!1001 &490591816483049227
 PrefabInstance:
   m_ObjectHideFlags: 0

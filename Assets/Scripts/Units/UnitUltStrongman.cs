@@ -33,7 +33,7 @@ public class UnitUltStrongman : UnitUlt {
             transform.position + new Vector3(3, 1, -1), false, 0.5f);
         if (target != null) {
             target.GetBumpedBy(unit);
-            unit.DefendFrom(target);
+            unit.melee.DefendFrom(target);
         }
 
         unit.lockPosition = false;
@@ -44,7 +44,7 @@ public class UnitUltStrongman : UnitUlt {
     public Unit TargetInRange() {
         return unit.enemies
             .Where(e => e.status == Unit.Status.ALIVE)
-            .WithLowest(unit.DistanceToMe)
-            .If(e => unit.DistanceToMe(e) < range);
+            .WithLowest(unit.melee.DistanceToMe)
+            .If(e => unit.melee.DistanceToMe(e) < range);
     }
 }

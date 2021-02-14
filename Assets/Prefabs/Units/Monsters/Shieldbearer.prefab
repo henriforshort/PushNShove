@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5914191361000633539}
   - component: {fileID: 5914191361000633560}
   - component: {fileID: 4387343385029516869}
+  - component: {fileID: -6533232074459550741}
   m_Layer: 0
   m_Name: Shieldbearer
   m_TagString: Untagged
@@ -76,14 +77,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxSpeed: 3
   baseMaxHealth: 50
   baseProt: 0
   baseWeight: 1
   baseDamage: 3
   baseStrength: 1
   baseCritChance: 0.1
-  unitSide: {fileID: 4387343385029516869}
   shakeOnHit: 0
   attackAnimDuration: 0.25
   size: 1
@@ -105,13 +104,15 @@ MonoBehaviour:
   lockAnim: 0
   lockPosition: 0
   index: 0
-  hero: {fileID: 0}
-  healthBar: {fileID: 6087850083390855375}
-  tmpHealthBar: {fileID: 1151570446728982744}
-  animator: {fileID: 5914191361033034991}
-  rigidbodee: {fileID: 5914191361000633539}
   prefabIndex: 0
   hpLossUis: []
+  unitSide: {fileID: 4387343385029516869}
+  behavior: {fileID: -6533232074459550741}
+  healthBar: {fileID: 6087850083390855375}
+  tmpHealthBar: {fileID: 1151570446728982744}
+  animator: {fileID: 0}
+  rigidbodee: {fileID: 5914191361000633539}
+  hanimator: {fileID: 4148910036850988144}
 --- !u!114 &4387343385029516869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,10 +128,6 @@ MonoBehaviour:
   unit: {fileID: 0}
   dropRate: 0.2
   data:
-    maxSpeed:
-      startValue: 0
-      value: 0
-      modifiers: []
     maxHealth:
       startValue: 0
       value: 0
@@ -160,6 +157,19 @@ MonoBehaviour:
     ultCooldownLeft: 0
     lastSeenSleepingString: 
     _itemPrefabPaths: []
+--- !u!114 &-6533232074459550741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914191361000633561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4850f4a1aaa283746a4ef82549b9a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
 --- !u!1 &5914191361033034985
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5914191361033034984}
   - component: {fileID: 5914191361033034990}
-  - component: {fileID: 5914191361033034991}
+  - component: {fileID: 4148910036850988144}
   m_Layer: 0
   m_Name: Shieldbearer_red_0
   m_TagString: Untagged
@@ -245,25 +255,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5914191361033034991
-Animator:
-  serializedVersion: 3
+--- !u!114 &4148910036850988144
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5914191361033034985}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 1dadef1ac5520244cbf718adcc2bf3ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlay: 1
+  whenAnimFinishes: 0
+  spriteRenderer: {fileID: 0}
+  image: {fileID: 0}
+  anims:
+  - name: WALK
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: 4902428322751657069, guid: a8358957a5cace546ba6776621617d95, type: 3}
+    - {fileID: -1525656478950299767, guid: a8358957a5cace546ba6776621617d95, type: 3}
+    - {fileID: 61880631047394491, guid: a8358957a5cace546ba6776621617d95, type: 3}
+    - {fileID: -6201221139989666735, guid: a8358957a5cace546ba6776621617d95, type: 3}
+  - name: WINDUP
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -9155063323150433618, guid: a8358957a5cace546ba6776621617d95, type: 3}
+  - name: HIT
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -7058090812444314124, guid: a8358957a5cace546ba6776621617d95, type: 3}
+    - {fileID: -3094193515071434152, guid: a8358957a5cace546ba6776621617d95, type: 3}
+    - {fileID: -654665205619561766, guid: a8358957a5cace546ba6776621617d95, type: 3}
+  - name: BUMPED
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -1055571764222102526, guid: a8358957a5cace546ba6776621617d95, type: 3}
+  - name: DEFEND
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -3448914769251482193, guid: a8358957a5cace546ba6776621617d95, type: 3}
+  playing: 0
+  currentAnim:
+    name: 
+    frameDuration: 0
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites: []
+  currentFrame: 0
+  startAnimDate: 0
 --- !u!1001 &164944674463828644
 PrefabInstance:
   m_ObjectHideFlags: 0

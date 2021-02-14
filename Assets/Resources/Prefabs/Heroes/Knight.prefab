@@ -108,11 +108,12 @@ MonoBehaviour:
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: -8068071798747146441}
-  behavior: {fileID: 0}
+  behavior: {fileID: -6017134764705405788}
   healthBar: {fileID: 7398883394539054116}
   tmpHealthBar: {fileID: 4407138794253257779}
-  animator: {fileID: 6971875616310140932}
+  animator: {fileID: 0}
   rigidbodee: {fileID: 6971875616277727272}
+  hanimator: {fileID: 7683955556941975696}
 --- !u!114 &-8068071798747146441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6971875616310140931}
   - component: {fileID: 6971875616310140933}
-  - component: {fileID: 6971875616310140932}
+  - component: {fileID: 7683955556941975696}
   m_Layer: 0
   m_Name: Knight_visuals
   m_TagString: Untagged
@@ -247,25 +248,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6971875616310140932
-Animator:
-  serializedVersion: 3
+--- !u!114 &7683955556941975696
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6971875616310140930}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 7cf1efb69c2b2b24ebd5799d78281e93, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlay: 1
+  whenAnimFinishes: 0
+  spriteRenderer: {fileID: 0}
+  image: {fileID: 0}
+  anims:
+  - name: WALK
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: 4495478712733764576, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+    - {fileID: -2735361975599426438, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+    - {fileID: 5410854522603319429, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+    - {fileID: -5936517905134697562, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+  - name: WINDUP
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -3704987648149241375, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+  - name: HIT
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 1371051767199663645, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+    - {fileID: 8576002100360556633, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+    - {fileID: -7796392955062674155, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+  - name: BUMPED
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 4445329437732904335, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+  - name: DEFEND
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -4161681692043255833, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+  - name: WINDUP2
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 7733677496383810577, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+  - name: HIT2
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -7344660812612507114, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+    - {fileID: -3968132453645717588, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+    - {fileID: -5263157939376276026, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
+  playing: 0
+  currentAnim:
+    name: 
+    frameDuration: 0
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites: []
+  currentFrame: 0
+  startAnimDate: 0
 --- !u!1001 &1124976910701609633
 PrefabInstance:
   m_ObjectHideFlags: 0

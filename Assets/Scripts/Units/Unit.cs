@@ -16,9 +16,7 @@ public class Unit : MonoBehaviour {
     
     [Header("Balancing")]
     public bool shakeOnHit;
-    public float attackAnimDuration;
     public float size;
-    public float attackSpeed;
     public MedievalCombat attackSound;
     public Animals attackSoundAnimal;
     public Animals deathSoundAnimal;
@@ -28,7 +26,6 @@ public class Unit : MonoBehaviour {
     [Header("State")]
     public float currentSpeed;
     public Status status;
-    public AttackStatus attackStatus;
     public Anim anim;
     public bool lastWindupIsTwo;
     public float critCollisionDate;
@@ -39,20 +36,18 @@ public class Unit : MonoBehaviour {
     public bool lockPosition;
     public int index;
     
-    [Header("Self References (Assigned at runtime)")]
+    [Header("References (Assigned at runtime)")]
     public int prefabIndex;
     public List<GameObject> hpLossUis;
 
-    [Header("Self References")]
+    [Header("References")]
     public UnitSide unitSide;
     public UnitBehavior behavior;
     public Slider healthBar;
     public Slider tmpHealthBar;
-    public Animator animator;
     public Rigidbody rigidbodee;
+    public Hanimator hanimator;
     
-
-    public static float lastSparkFxDate;
     
     public UnitHero hero => unitSide as UnitHero;
     public UnitMonster monster => unitSide as UnitMonster;
@@ -74,7 +69,6 @@ public class Unit : MonoBehaviour {
     public bool isWalking => currentSpeed.isClearlyPositive();
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
-    public enum AttackStatus { NOT_PREPARED, PREPARING, ATTACKING, RECOVERING }
     public enum Anim {
         WALK, WINDUP, HIT, DEFEND, BUMPED,
         ULT_BRUISER, ULT_STRONGMAN
@@ -110,7 +104,6 @@ public class Unit : MonoBehaviour {
         
         UpdateSpeed();
         UpdatePosition();
-        UpdateCombat();
         UpdateVisuals();
     }
     
@@ -120,10 +113,9 @@ public class Unit : MonoBehaviour {
     // ====================
     
     public void UpdateVisuals() {
-        animator.enabled = (Battle.m.gameState != Battle.State.PAUSE);
+        hanimator.enabled = (Battle.m.gameState != Battle.State.PAUSE);
         
         if (lockZOrder) this.SetZ(-5);
-        else if (attackStatus != AttackStatus.ATTACKING && this.GetZ().isAbout(-1)) this.SetZ(-0.5f);
     }
 
     public void SetAnim(Anim a) {
@@ -131,20 +123,22 @@ public class Unit : MonoBehaviour {
         if (anim == a) return;
         
         anim = a;
-        PlayAnim();
+        if (hanimator.gameObject.activeInHierarchy) hanimator.Play(GetAnim());
     }
 
     //Play current anim
     //Pick one at random if it's WINDUP
     //Play appropriate one if it's HIT (HIT if WINDUP, HIT2 if WINDUP2)
-    public void PlayAnim() {
+    public string GetAnim() {
         bool playAnimTwo = false;
-        if (anim == Anim.WINDUP) {
-            playAnimTwo = this.CoinFlip();
-            lastWindupIsTwo = playAnimTwo;
+        if (isHero) {
+            if (anim == Anim.WINDUP) {
+                playAnimTwo = this.CoinFlip();
+                lastWindupIsTwo = playAnimTwo;
+            }
+            if (anim == Anim.HIT) playAnimTwo = lastWindupIsTwo;
         }
-        if (anim == Anim.HIT) playAnimTwo = lastWindupIsTwo;
-        if (animator.gameObject.activeInHierarchy) animator.Play(anim + (playAnimTwo ? "2" : ""));
+        return anim + (playAnimTwo ? "2" : "");
     }
 
     public void FreezeFrame() {
@@ -238,95 +232,7 @@ public class Unit : MonoBehaviour {
     // COMBAT
     // ====================
 
-    public void UpdateCombat() { //Called by both sides
-        if (Battle.m.gameState != Battle.State.PLAYING) return;
-        if (isWalking 
-                && attackStatus == AttackStatus.NOT_PREPARED 
-                && NearbyEnemy() != null) 
-            PrepareAttack();
-
-        Unit collidingEnemy = CollidingEnemy();
-        if (isWalking
-                && attackStatus != AttackStatus.PREPARING
-                && collidingEnemy != null
-                && collidingEnemy.isWalking
-                && collidingEnemy.attackStatus != AttackStatus.PREPARING) {
-            SetAnim(Anim.DEFEND);
-            DefendFrom(collidingEnemy);
-            collidingEnemy.SetAnim(Anim.DEFEND);
-            collidingEnemy.DefendFrom(this);
-            Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
-        }
-    }
-
-    public void PrepareAttack() {//Called by both sides
-        SetAnim(Anim.WINDUP);
-        attackStatus = AttackStatus.PREPARING;
-        this.SetZ(-1);
-        FreezeFrame();
-        this.Wait(0.1f, TryAttack);
-    }
-
-    public void TryAttack() {//Called by both sides
-        if (attackStatus != AttackStatus.PREPARING) return;
-        
-        Unit target = NearbyEnemy();
-        if (target == null) Attack();
-        else ResolveCombat(this, target);
-    }
-
-    public void Attack() {
-        Game.m.PlaySound(MedievalCombat.WHOOSH_1);
-        SetAnim(Anim.HIT);
-        attackStatus = AttackStatus.ATTACKING;
-        this.Wait(attackAnimDuration, RecoverFromAttack);
-    }
-
-    public void ResolveCombat(Unit unit1, Unit unit2) { //Called by attacking side only
-        Unit winner = GetAttackWinner(unit1, unit2);
-        Unit loser = (winner == unit1 ? unit2 : unit1); 
-        
-        winner.Attack();
-        loser.Attack();
-        
-        loser.GetBumpedBy(winner);
-        winner.DefendFrom(loser);
-
-        if (winner.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
-        this.Wait(0.1f, () => {
-            Game.m.PlaySound(winner.attackSound);
-            Game.m.PlaySound(winner.attackSoundAnimal, .5f, -1, pitch);
-            if (.5f.Chance()) {
-                Game.m.PlaySound(this.Random(winner, loser).deathSoundHuman, .5f, -1, pitch);
-                Game.m.PlaySound(this.Random(winner, loser).deathSoundAnimal, .5f, -1, pitch);
-            }
-            if (winner.size > 1) Game.m.PlaySound(MedievalCombat.BODY_FALL);
-        });
-        if (Time.time - lastSparkFxDate > 0.1f) {
-            lastSparkFxDate = Time.time;
-            Game.m.SpawnFX(Run.m.sparkFxPrefab,
-                new Vector3(this.GetX() + 2f.ReverseIf(isMonster), -2, -2),
-                winner.isMonster, 0.5f);
-        }
-        
-    }
-
-    public Unit GetAttackWinner(Unit unit1, Unit unit2) {
-        if (unit1.isInvincible) return unit1;
-        if (unit2.isInvincible) return unit2;
-        
-        if (!unit1.CanAttack()) return unit2;
-        if (!unit2.CanAttack()) return unit1;
-        
-        float momentum1 = unit1.data.weight * (2 * unit1.speedPercent).Clamp01(); //max momentum if > 50% speed
-        float momentum2 = unit2.data.weight * (2 * unit2.speedPercent).Clamp01();
-        return Random.value < momentum1 / (momentum1 + momentum2) ? unit1 : unit2;
-    }
-
-    public void RecoverFromAttack() {
-        attackStatus = AttackStatus.RECOVERING;
-        this.Wait(attackSpeed, () => attackStatus = AttackStatus.NOT_PREPARED);
-    }
+    public UnitMelee melee => behavior as UnitMelee;
 
     public void GetBumpedBy(Unit other) {
         SetAnim(Anim.BUMPED);
@@ -339,21 +245,6 @@ public class Unit : MonoBehaviour {
             currentSpeed -= 5;
         }
     }
-
-    public void DefendFrom(Unit other) {
-        currentSpeed = Game.m.defendSpeed * other.data.strength * (1 - data.prot);
-    }
-
-    public Unit NearbyEnemy() => enemies
-        .WithLowest(DistanceToMe)
-        .If(e => e != null && DistanceToMe(e) < Game.m.attackDistance);
-    
-    public Unit CollidingEnemy() => enemies
-        .WithLowest(DistanceToMe)
-        .If(e => e != null && DistanceToMe(e) < Game.m.collideDistance);
-
-    public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();
-    public bool CanAttack() => isWalking && attackStatus == AttackStatus.PREPARING;
 
 
     // ====================

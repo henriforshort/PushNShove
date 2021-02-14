@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5718404463525869649}
   - component: {fileID: 4838143930224751872}
   - component: {fileID: -611657466688060983}
+  - component: {fileID: -2404303435061571694}
   m_Layer: 0
   m_Name: Strongman
   m_TagString: Untagged
@@ -107,11 +108,12 @@ MonoBehaviour:
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: 4838143930224751872}
-  behavior: {fileID: 0}
+  behavior: {fileID: -2404303435061571694}
   healthBar: {fileID: 2229701680886870555}
   tmpHealthBar: {fileID: 5005238066686466572}
-  animator: {fileID: 1773981805822391867}
+  animator: {fileID: 0}
   rigidbodee: {fileID: 1773981805588913687}
+  hanimator: {fileID: 283222066076282828}
 --- !u!114 &4838143930224751872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +150,19 @@ MonoBehaviour:
   range: 9
   ultStatModifs: []
   strongmanUltFx: {fileID: 688306038408255481, guid: 279e740964ee90a4faae7db10cffb98f, type: 3}
+--- !u!114 &-2404303435061571694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773981805588913677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4850f4a1aaa283746a4ef82549b9a45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
 --- !u!1 &1773981805822391869
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773981805822391868}
   - component: {fileID: 1773981805822391866}
-  - component: {fileID: 1773981805822391867}
+  - component: {fileID: 283222066076282828}
   m_Layer: 0
   m_Name: Strongman_visuals
   m_TagString: Untagged
@@ -233,25 +248,108 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1773981805822391867
-Animator:
-  serializedVersion: 3
+--- !u!114 &283222066076282828
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773981805822391869}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 2024339282dc76f449d7b18e9eac1df6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlay: 1
+  whenAnimFinishes: 0
+  spriteRenderer: {fileID: 0}
+  image: {fileID: 0}
+  anims:
+  - name: WALK
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: 3091353178837240123, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: -810412823341240808, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: -4861105018271878887, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: -4013288100822546924, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  - name: WINDUP
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -4347908972728805350, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  - name: HIT
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 5378458250986259542, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: 5249788789188298596, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: 2248398083253172181, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  - name: BUMPED
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -6617806171248969266, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  - name: DEFEND
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 8048763023550837308, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  - name: WINDUP2
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -6026080216455340004, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  - name: HIT2
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 6416102591177551518, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: -2395006380349316598, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: 7675609276090279904, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  - name: ULT_STRONGMAN
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 1
+    randomStart: 0
+    sprites:
+    - {fileID: -975599643065135723, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: 7756641604900895601, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: 5661400411018279016, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+    - {fileID: 4876538054989014612, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
+  playing: 0
+  currentAnim:
+    name: 
+    frameDuration: 0
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites: []
+  currentFrame: 0
+  startAnimDate: 0
 --- !u!1001 &1773981806183128817
 PrefabInstance:
   m_ObjectHideFlags: 0
