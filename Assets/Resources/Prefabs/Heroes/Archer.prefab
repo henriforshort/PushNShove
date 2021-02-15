@@ -13,10 +13,8 @@ GameObject:
   - component: {fileID: 490591814827413485}
   - component: {fileID: 8046062835865571401}
   - component: {fileID: -3902853122371618417}
-  - component: {fileID: 1497386388499329877}
-  - component: {fileID: -1725123356962079158}
   m_Layer: 0
-  m_Name: Bruiser
+  m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,11 +84,11 @@ MonoBehaviour:
   baseCritChance: 0.1
   shakeOnHit: 0
   size: 1
-  attackSound: 106
+  attackSound: 138
   attackSoundAnimal: 0
   deathSoundAnimal: 0
   deathSoundHuman: 13
-  pitch: 1
+  pitch: 0
   currentSpeed: 0
   status: 0
   anim: 0
@@ -105,7 +103,7 @@ MonoBehaviour:
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: -3902853122371618417}
-  behavior: {fileID: -1725123356962079158}
+  behavior: {fileID: 0}
   healthBar: {fileID: 45564277804295137}
   tmpHealthBar: {fileID: 6568130779824425974}
   rigidbodee: {fileID: 490591814827413485}
@@ -127,41 +125,9 @@ MonoBehaviour:
   ultDuration: 5
   ultStatus: 0
   _icon: {fileID: 0}
-  ult: {fileID: 1497386388499329877}
+  ult: {fileID: 0}
   campHero: {fileID: 3034245689411466590, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
   image: {fileID: 21300000, guid: 5ec68743aad18b648baaa4880f9acf8c, type: 3}
---- !u!114 &1497386388499329877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490591814827413495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628e610eae786474ab5fb2cabada4379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unit: {fileID: 0}
-  oldAttackAnimDuration: 0
-  oldAttackSpeed: 0
-  ultStatModifs: []
---- !u!114 &-1725123356962079158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490591814827413495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4850f4a1aaa283746a4ef82549b9a45f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unit: {fileID: 0}
-  attackStatus: 0
-  attackAnimDuration: 0.25
-  attackSpeed: 0.5
 --- !u!1 &490591814931064775
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +140,7 @@ GameObject:
   - component: {fileID: 490591814931064768}
   - component: {fileID: 3482692593037295875}
   m_Layer: 0
-  m_Name: Bruiser_visuals
+  m_Name: Archer_visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,11 +154,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490591814931064775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.085, y: 1.638889, z: 0}
+  m_LocalPosition: {x: 0.41666666, y: 0.6944444, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5229927781760084161}
   - {fileID: 9121465626171203504}
+  - {fileID: 5229927781760084161}
   m_Father: {fileID: 490591814827413490}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -236,7 +202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8107710928406730386, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  m_Sprite: {fileID: 5731584507761909605, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -271,10 +237,10 @@ MonoBehaviour:
     loop: 1
     randomStart: 0
     sprites:
-    - {fileID: 740242000534278018, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -6016191042328661550, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 7174724521984023984, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -8849449827238776105, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 5731584507761909605, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -7615759149648210162, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -1516033387003549848, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: 4216426741142755077, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   - name: WINDUP
     frameDuration: 100
     delay: 0
@@ -282,7 +248,11 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: 7183375906486206432, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -4784937291257459594, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -2896677429709300588, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -1237044410232977109, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: 4255292104823726704, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: 2375208054730090502, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   - name: HIT
     frameDuration: 100
     delay: 0
@@ -290,9 +260,9 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -5953706530349332062, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -364896107309993220, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 4808763617771383303, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 480887029864472272, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: 7135723650130993342, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -2211983078384136945, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   - name: BUMPED
     frameDuration: 100
     delay: 0
@@ -300,7 +270,7 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -3936708783585791709, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -596610279889723890, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   - name: DEFEND
     frameDuration: 100
     delay: 0
@@ -308,36 +278,7 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -9102215036314525063, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-  - name: WINDUP2
-    frameDuration: 100
-    delay: 0
-    weight: 0
-    loop: 0
-    randomStart: 0
-    sprites:
-    - {fileID: 5804808923002972390, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-  - name: HIT2
-    frameDuration: 100
-    delay: 0
-    weight: 0
-    loop: 0
-    randomStart: 0
-    sprites:
-    - {fileID: 7238206231204765735, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -6838526995658360098, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -1542703513063588084, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-  - name: ULT_BRUISER
-    frameDuration: 100
-    delay: 0
-    weight: 0
-    loop: 1
-    randomStart: 0
-    sprites:
-    - {fileID: 2751765179324594813, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 8320475909363473942, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -7062840624321980151, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 8745514035611474826, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -3783999413710591504, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   playing: 0
   currentAnim:
     name: 
@@ -394,7 +335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchorMax.x
@@ -446,19 +387,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.151
+      value: -0.41666666
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.25
+      value: 0.8888891
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -546,7 +487,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1996428754146833308, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1996428754146833308, guid: 7802a36b8e8f6b343885a180df24bb99, type: 3}
       propertyPath: m_LocalPosition.x

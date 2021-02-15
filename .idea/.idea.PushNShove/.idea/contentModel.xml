@@ -73,6 +73,7 @@
             <e p="UnitMaxRange.cs" t="Include" />
             <e p="UnitMelee.cs" t="Include" />
             <e p="UnitMonster.cs" t="Include" />
+            <e p="UnitRanged.cs" t="Include" />
             <e p="UnitSide.cs" t="Include" />
             <e p="UnitUlt.cs" t="Include" />
             <e p="UnitUltBruiser.cs" t="Include" />
