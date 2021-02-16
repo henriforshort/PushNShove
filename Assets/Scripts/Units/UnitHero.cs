@@ -37,7 +37,7 @@ public class UnitHero : UnitSide {
         Unit.heroUnits.Add(unit);
         _icon = null;
         icon.ClearItems();
-        ult.unit = unit;
+        if (ult) ult.unit = unit;
     }
 
     public void InitBattle() { //Called after loading

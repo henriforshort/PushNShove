@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class UnitSide : MonoBehaviour {
-    [HideInInspector] public Unit unit;
+    private Unit _unit;
+    public Unit unit => _unit ?? (_unit = GetComponent<Unit>());
     
     
     public virtual void Die() { }

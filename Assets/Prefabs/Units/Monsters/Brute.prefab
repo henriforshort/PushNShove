@@ -113,7 +113,7 @@ MonoBehaviour:
     - {fileID: -7020857357276367441, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
     - {fileID: 217873372868201962, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
     - {fileID: -1578107764885755671, guid: f74b2ad89e28f0c4b8f50cc92a68295a, type: 3}
-  - name: WINDUP
+  - name: PREPARE
     frameDuration: 100
     delay: 0
     weight: 0
@@ -241,20 +241,16 @@ MonoBehaviour:
   baseDamage: 3
   baseStrength: 1.5
   baseCritChance: 0.2
-  shakeOnHit: 1
-  attackAnimDuration: 0.25
   size: 2
-  attackSpeed: 0.5
-  attackSound: 85
-  attackSoundAnimal: 0
+  bumpedSound: 24
+  bumpedSoundAnimal: 0
+  deathSound: 24
   deathSoundAnimal: 0
-  deathSoundHuman: 24
   pitch: 2
   currentSpeed: 0
   status: 0
-  attackStatus: 0
   anim: 0
-  lastWindupIsTwo: 0
+  lastPrepareIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
   isInvincible: 0
@@ -268,7 +264,6 @@ MonoBehaviour:
   behavior: {fileID: -352246479384488573}
   healthBar: {fileID: 2202191930307489267}
   tmpHealthBar: {fileID: 4974386014944740836}
-  animator: {fileID: 0}
   rigidbodee: {fileID: 4884354168730958000}
   hanimator: {fileID: 988931033438503087}
 --- !u!114 &8565579205406979095
@@ -328,6 +323,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
+  shakeOnHit: 1
+  attackSound: 85
+  gruntAnimal: 0
+  gruntHuman: 24
+  attackStatus: 0
+  attackAnimDuration: 0.25
+  attackSpeed: 0.5
 --- !u!1001 &1792660477476782361
 PrefabInstance:
   m_ObjectHideFlags: 0

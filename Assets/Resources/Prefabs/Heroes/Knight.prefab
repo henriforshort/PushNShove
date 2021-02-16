@@ -84,20 +84,16 @@ MonoBehaviour:
   baseDamage: 5
   baseStrength: 1
   baseCritChance: 0.1
-  shakeOnHit: 0
-  attackAnimDuration: 0.25
   size: 1
-  attackSpeed: 0.5
-  attackSound: 147
-  attackSoundAnimal: 0
+  bumpedSound: 24
+  bumpedSoundAnimal: 0
+  deathSound: 24
   deathSoundAnimal: 0
-  deathSoundHuman: 24
   pitch: 0
   currentSpeed: 0
   status: 0
-  attackStatus: 0
   anim: 0
-  lastWindupIsTwo: 0
+  lastPrepareIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
   isInvincible: 0
@@ -111,7 +107,6 @@ MonoBehaviour:
   behavior: {fileID: -6017134764705405788}
   healthBar: {fileID: 7398883394539054116}
   tmpHealthBar: {fileID: 4407138794253257779}
-  animator: {fileID: 0}
   rigidbodee: {fileID: 6971875616277727272}
   hanimator: {fileID: 7683955556941975696}
 --- !u!114 &-8068071798747146441
@@ -163,6 +158,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: -1451976987720899589}
+  shakeOnHit: 0
+  attackSound: 147
+  gruntAnimal: 0
+  gruntHuman: 24
+  attackStatus: 0
+  attackAnimDuration: 0.25
+  attackSpeed: 0.5
 --- !u!1 &6971875616310140930
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +278,7 @@ MonoBehaviour:
     - {fileID: -2735361975599426438, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
     - {fileID: 5410854522603319429, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
     - {fileID: -5936517905134697562, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
-  - name: WINDUP
+  - name: PREPARE
     frameDuration: 100
     delay: 0
     weight: 0
@@ -310,7 +312,7 @@ MonoBehaviour:
     randomStart: 0
     sprites:
     - {fileID: -4161681692043255833, guid: 31dd972d5e0cdc745a68785ef194b479, type: 3}
-  - name: WINDUP2
+  - name: PREPARE2
     frameDuration: 100
     delay: 0
     weight: 0

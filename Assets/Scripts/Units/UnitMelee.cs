@@ -1,6 +1,12 @@
 using UnityEngine;
 
 public class UnitMelee : UnitBehavior {
+    [Header("Balancing")]
+    public bool shakeOnHit;
+    public MedievalCombat attackSound;
+    public Animals gruntAnimal;
+    public Human gruntHuman;
+    
     [Header("State")]
     public AttackStatus attackStatus;
     
@@ -14,7 +20,6 @@ public class UnitMelee : UnitBehavior {
     // ====================
     // BASICS
     // ====================
-    
     
     public void Awake() {
         unit.currentSpeed = Game.m.unitMaxSpeed;
@@ -34,9 +39,7 @@ public class UnitMelee : UnitBehavior {
     public void UpdateSpeed() {
         if (!CanUpdateSpeed()) return;
         
-        float newSpeed = unit.currentSpeed.LerpTo(Game.m.unitMaxSpeed, Game.m.bumpRecoverySpeed);
-        if (unit.currentSpeed.isAboutOrLowerThan(0) && newSpeed.isClearlyPositive()) StartWalking();
-        unit.currentSpeed = newSpeed.AtMost(Game.m.unitMaxSpeed);
+        unit.currentSpeed = unit.currentSpeed.LerpTo(Game.m.unitMaxSpeed, Game.m.bumpRecoverySpeed);
     }
 
     public void UpdateCombat() { //Called by both sides
@@ -68,15 +71,6 @@ public class UnitMelee : UnitBehavior {
         if (unit.currentSpeed.isClearlyNegative()) return false;
 
         return true;
-    }
-
-    public void StartWalking() {
-        unit.SetAnim(Unit.Anim.WALK);
-        this.SetZ(0f);
-        if (unit.status == Unit.Status.DYING) unit.DieDuringBattle();
-        else Game.m.SpawnFX(Run.m.bumpDustFxPrefab,
-            new Vector3(this.GetX() - 0.5f.ReverseIf(unit.isMonster), -2, -2),
-            unit.isHero, 0.5f);
     }
     
     
@@ -116,7 +110,7 @@ public class UnitMelee : UnitBehavior {
     }
 
     public void PrepareAttack() {//Called by both sides
-        unit.SetAnim(Unit.Anim.WINDUP);
+        unit.SetAnim(Unit.Anim.PREPARE);
         attackStatus = AttackStatus.PREPARING;
         this.SetZ(-1);
         unit.FreezeFrame();
@@ -142,21 +136,18 @@ public class UnitMelee : UnitBehavior {
         Unit winner = GetAttackWinner(unit1, unit2);
         Unit loser = (winner == unit1 ? unit2 : unit1); 
         
-        winner.melee?.Attack();
+        winner.melee.Attack();
         loser.melee?.Attack();
         
         loser.GetBumpedBy(winner);
-        winner.melee?.DefendFrom(loser);
+        winner.melee.DefendFrom(loser);
 
-        if (winner.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
+        if (winner.melee.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
         this.Wait(0.1f, () => {
-            Game.m.PlaySound(winner.attackSound);
-            Game.m.PlaySound(winner.attackSoundAnimal, .5f, -1, unit.pitch);
+            Game.m.PlaySound(winner.melee.attackSound);
             if (.5f.Chance()) {
-                Game.m.PlaySound(
-                    this.Random(winner, loser).deathSoundHuman, .5f, -1, unit.pitch);
-                Game.m.PlaySound(
-                    this.Random(winner, loser).deathSoundAnimal, .5f, -1, unit.pitch);
+                Game.m.PlaySound(winner.melee.gruntAnimal, .5f, -1, unit.pitch);
+                Game.m.PlaySound(winner.melee.gruntHuman, .5f, -1, unit.pitch);
             }
             if (winner.size > 1) Game.m.PlaySound(MedievalCombat.BODY_FALL);
         });

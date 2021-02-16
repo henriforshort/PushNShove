@@ -3,7 +3,6 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class Unit : MonoBehaviour {
     [Header("Base Stats")]
@@ -15,19 +14,19 @@ public class Unit : MonoBehaviour {
     [Range(0,1)] public float baseCritChance;
     
     [Header("Balancing")]
-    public bool shakeOnHit;
     public float size;
-    public MedievalCombat attackSound;
-    public Animals attackSoundAnimal;
+    public Human bumpedSound;
+    public Animals bumpedSoundAnimal;
+    public Human deathSound;
     public Animals deathSoundAnimal;
-    public Human deathSoundHuman;
     public SoundManager.Pitch pitch;
-    
+
     [Header("State")]
+    public float speedLastFrame;
     public float currentSpeed;
     public Status status;
     public Anim anim;
-    public bool lastWindupIsTwo;
+    public bool lastPrepareIsTwo;
     public float critCollisionDate;
     public bool isOnFreezeFrame;
     public bool isInvincible;
@@ -70,7 +69,7 @@ public class Unit : MonoBehaviour {
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
     public enum Anim {
-        WALK, WINDUP, HIT, DEFEND, BUMPED,
+        WALK, PREPARE, HIT, DEFEND, BUMPED, IDLE,
         ULT_BRUISER, ULT_STRONGMAN
     }
 
@@ -85,8 +84,8 @@ public class Unit : MonoBehaviour {
     public void Awake() { //Called before loading
         SetAnim(Anim.WALK);
         tmpHealthBar.value = data.currentHealth;
-        if (unitSide != null) unitSide.unit = this;
         if (behavior != null) behavior.unit = this;
+        speedLastFrame = -1;
     }
 
     public void InitBattle() { //Called after loading
@@ -114,7 +113,6 @@ public class Unit : MonoBehaviour {
     
     public void UpdateVisuals() {
         hanimator.enabled = (Battle.m.gameState != Battle.State.PAUSE);
-        
         if (lockZOrder) this.SetZ(-5);
     }
 
@@ -126,18 +124,20 @@ public class Unit : MonoBehaviour {
         if (hanimator.gameObject.activeInHierarchy) hanimator.Play(GetAnim());
     }
 
-    //Play current anim
-    //Pick one at random if it's WINDUP
-    //Play appropriate one if it's HIT (HIT if WINDUP, HIT2 if WINDUP2)
+    //Get current anim
+    //Pick one at random if it's PREPARE
+    //Get appropriate one if it's HIT (HIT if PREPARE, HIT2 if PREPARE2)
     public string GetAnim() {
+        if (!hanimator.anims
+            .Select(a => a.name + "2")
+            .Contains(anim.ToString())) return anim.ToString();
+        
         bool playAnimTwo = false;
-        if (isHero) {
-            if (anim == Anim.WINDUP) {
-                playAnimTwo = this.CoinFlip();
-                lastWindupIsTwo = playAnimTwo;
-            }
-            if (anim == Anim.HIT) playAnimTwo = lastWindupIsTwo;
+        if (anim == Anim.PREPARE) {
+            playAnimTwo = this.CoinFlip();
+            lastPrepareIsTwo = playAnimTwo;
         }
+        if (anim == Anim.HIT) playAnimTwo = lastPrepareIsTwo;
         return anim + (playAnimTwo ? "2" : "");
     }
 
@@ -153,12 +153,20 @@ public class Unit : MonoBehaviour {
 
     public void UpdateSpeed() {
         if (!CanUpdateSpeed()) return;
-        
+
+        speedLastFrame = currentSpeed;
         currentSpeed = currentSpeed
             .LerpTo(Game.m.unitMaxSpeed, Game.m.bumpRecoverySpeed)
             .AtMost(0);
-        
-        if (status == Status.DYING && currentSpeed.isAbout(0)) DieDuringBattle();
+        if (speedLastFrame.isClearlyNegative() && currentSpeed.isAboutOrHigherThan(0)) StartWalking();
+    }
+
+    public void StartWalking() {
+        SetAnim(Anim.WALK);
+        this.SetZ(0f);
+        if (status == Status.DYING) DieDuringBattle();
+        else Game.m.SpawnFX(Run.m.bumpDustFxPrefab, 
+            new Vector3(this.GetX() - 0.5f.ReverseIf(isMonster), -2, -2), isHero, 0.5f);
     }
 
     public bool CanUpdateSpeed() {
@@ -252,7 +260,10 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void TakeCollisionDamage(float amount, bool isCrit = false) {
-        if (isHero) Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
+        if (isHero || 0.5f.Chance()) {
+            Game.m.PlaySound(bumpedSound, .5f, -1, pitch);
+            Game.m.PlaySound(bumpedSoundAnimal, .5f, -1, pitch);
+        }
         amount = amount.MoreOrLessPercent(0.5f).Round();
         if (amount.isAbout(0)) {
             critCollisionDate = -1;
@@ -327,7 +338,7 @@ public class Unit : MonoBehaviour {
         if (size >= 2 || isHero) Battle.m.cameraManager.Shake(0.2f);
         Instantiate(Run.m.deathCloudFxPrefab, transform.position + 1f*Vector3.up, Quaternion.identity);
         Game.m.PlaySound(MedievalCombat.BODY_FALL, 0.5f, 4);
-        Game.m.PlaySound(deathSoundHuman, .5f, -1, pitch);
+        Game.m.PlaySound(deathSound, .5f, -1, pitch);
         Game.m.PlaySound(deathSoundAnimal);
         Die();
     }

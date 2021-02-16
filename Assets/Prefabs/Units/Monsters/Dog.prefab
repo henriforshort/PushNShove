@@ -113,7 +113,7 @@ MonoBehaviour:
     - {fileID: 9118213209582376027, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
     - {fileID: -1146434942223613854, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
     - {fileID: 4232618656017457076, guid: c38043bab7700924caab775de0c7e3aa, type: 3}
-  - name: WINDUP
+  - name: PREPARE
     frameDuration: 100
     delay: 0
     weight: 0
@@ -241,20 +241,16 @@ MonoBehaviour:
   baseDamage: 3
   baseStrength: 0.5
   baseCritChance: 0.05
-  shakeOnHit: 0
-  attackAnimDuration: 0.25
   size: 0.5
-  attackSpeed: 0.5
-  attackSound: 159
-  attackSoundAnimal: 12
+  bumpedSound: 0
+  bumpedSoundAnimal: 10
+  deathSound: 0
   deathSoundAnimal: 10
-  deathSoundHuman: 0
   pitch: 2
   currentSpeed: 0
   status: 0
-  attackStatus: 0
   anim: 0
-  lastWindupIsTwo: 0
+  lastPrepareIsTwo: 0
   critCollisionDate: 0
   isOnFreezeFrame: 0
   isInvincible: 0
@@ -268,7 +264,6 @@ MonoBehaviour:
   behavior: {fileID: 6029256729984578456}
   healthBar: {fileID: 5784028226419069187}
   tmpHealthBar: {fileID: 847713964275857684}
-  animator: {fileID: 0}
   rigidbodee: {fileID: 6381897783818097787}
   hanimator: {fileID: 1867010349133672435}
 --- !u!114 &462261917282853761
@@ -328,6 +323,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
+  shakeOnHit: 0
+  attackSound: 159
+  gruntAnimal: 12
+  gruntHuman: 0
+  attackStatus: 0
+  attackAnimDuration: 0.25
+  attackSpeed: 0.5
 --- !u!1001 &4630882952223870881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -536,6 +538,10 @@ PrefabInstance:
     - target: {fileID: 6262325635221722628, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_SizeDelta.x
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933742521147783863, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8293401416456333148, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_Name
