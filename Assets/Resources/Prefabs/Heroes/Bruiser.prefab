@@ -90,6 +90,7 @@ MonoBehaviour:
   deathSound: 13
   deathSoundAnimal: 0
   pitch: 1
+  speedLastFrame: 0
   currentSpeed: 0
   status: 0
   anim: 0
@@ -109,6 +110,9 @@ MonoBehaviour:
   tmpHealthBar: {fileID: 6568130779824425974}
   rigidbodee: {fileID: 490591814827413485}
   hanimator: {fileID: 3482692593037295875}
+  OnTakeCollisionDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-3902853122371618417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b363d206fffbe94f8aab5550865f4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 0}
   ultCooldown: 24
   ultDuration: 5
   ultStatus: 0

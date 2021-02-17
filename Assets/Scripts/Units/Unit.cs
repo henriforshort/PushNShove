@@ -2,6 +2,7 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Unit : MonoBehaviour {
@@ -244,7 +245,7 @@ public class Unit : MonoBehaviour {
 
     public void GetBumpedBy(Unit other) {
         SetAnim(Anim.BUMPED);
-        currentSpeed = Game.m.bumpSpeed * other.data.strength * (1 - data.prot);
+        currentSpeed = currentSpeed.AtMost(0) + Game.m.bumpSpeed * other.data.strength * (1 - data.prot);
         
         bool isCrit = ((float)other.data.critChance).Chance();
         TakeCollisionDamage(other.data.damage, isCrit);
@@ -258,6 +259,8 @@ public class Unit : MonoBehaviour {
     // ====================
     // HEALTH
     // ====================
+
+    public UnityEvent OnTakeCollisionDamage;
 
     public void TakeCollisionDamage(float amount, bool isCrit = false) {
         if (isHero || 0.5f.Chance()) {
@@ -274,6 +277,7 @@ public class Unit : MonoBehaviour {
             AddHealth(-amount, amount + "!", Game.m.red);
             Battle.m.cameraManager.Shake(0.2f);
         } else AddHealth(-amount, amount.ToString());
+        OnTakeCollisionDamage.Invoke();
     }
 
     public void AddHealth(float amount, string uiText = null, Color uiColor = default) {

@@ -65,6 +65,7 @@
             <e p="VersionText.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
+            <e p="Arrow.cs" t="Include" />
             <e p="HeroIcon.cs" t="Include" />
             <e p="Stat.cs" t="Include" />
             <e p="Unit.cs" t="Include" />

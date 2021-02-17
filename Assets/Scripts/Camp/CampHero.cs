@@ -74,7 +74,6 @@ public class CampHero : MonoBehaviour {
         if (data.activity == CampActivity.Type.SLEEPING) {
             if (Time.frameCount != 1) {
                 data.lastSeenSleeping = DateTime.Now;
-                data.lastSeenSleepingString = data.lastSeenSleeping.ToLongTimeString();
                 Game.m.PlaySound(MedievalCombat.BAG);
                 Game.m.PlaySound(MedievalCombat.POTION_AND_ALCHEMY, 0.5f, 10);
             }
@@ -119,7 +118,6 @@ public class CampHero : MonoBehaviour {
             float sleepDuration = (float)(DateTime.Now - data.lastSeenSleeping).TotalMilliseconds;
             AddHealth(0.1f * sleepDuration / Game.m.secondsToAHundredHp);
             data.lastSeenSleeping = DateTime.Now;
-            data.lastSeenSleepingString = data.lastSeenSleeping.ToLongTimeString();
         }
     }
 

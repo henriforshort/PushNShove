@@ -44,6 +44,12 @@ TextureImporter:
   - first:
       213: -596610279889723890
     second: archer_13
+  - first:
+      213: -4286994160140225813
+    second: archer_14
+  - first:
+      213: 4998874239661532241
+    second: archer_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -446,6 +452,48 @@ TextureImporter:
       bones: []
       spriteID: e0e93d58c1a68b7f0800000000000000
       internalID: -596610279889723890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_14
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 36
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2faaa56898184c0800000000000000
+      internalID: -4286994160140225813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_15
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 36
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15460e3c2a19f5540800000000000000
+      internalID: 4998874239661532241
       vertices: []
       indices: 
       edges: []

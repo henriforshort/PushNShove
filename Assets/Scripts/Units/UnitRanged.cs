@@ -3,28 +3,36 @@
 public class UnitRanged : UnitBehavior {
     [Header("Balancing")]
     public float range;
+    public MedievalCombat aimSound;
+    public MedievalCombat shootSound;
+    public float aimDuration;
+    public float reloadDuration;
 
     [Header("State")]
     public AttackStatus attackStatus;
+    public float timeTillReloaded;
+
+    [Header("References")]
+    public Arrow arrowPrefab;
     
-    public enum AttackStatus { NOT_PREPARED, PREPARING, ATTACKING, RECOVERING }
+    public enum AttackStatus { READY, ATTACKING, RECOVERING }
 
     public void Start() {
-        attackStatus = AttackStatus.NOT_PREPARED;
+        attackStatus = AttackStatus.READY;
+        unit.OnTakeCollisionDamage.AddListener(this.OnTakeCollisionDamage);
     }
 
     public void Update() {
         UpdateVisuals();
         UpdateSpeed();
         UpdateCombat();
+        UpdateReload();
     }
 
     public void UpdateVisuals() {
-        
-        if (unit.speedLastFrame.isAbout(0) && unit.currentSpeed.isClearlyNot(0)) {
-            unit.SetAnim(Unit.Anim.WALK);
-        }
-        if (unit.anim != Unit.Anim.HIT && unit.anim != Unit.Anim.PREPARE) attackStatus = AttackStatus.NOT_PREPARED;
+        if (unit.currentSpeed.isClearlyPositive()) unit.SetAnim(Unit.Anim.WALK);
+        if (unit.currentSpeed.isAbout(0) && attackStatus == AttackStatus.RECOVERING) 
+            unit.SetAnim(Unit.Anim.IDLE);
     }
 
     public void UpdateSpeed() {
@@ -35,8 +43,13 @@ public class UnitRanged : UnitBehavior {
         if (unit.enemies.Exists(e => DistanceToMe(e) <= range)) unit.currentSpeed = 0;
         else {
             unit.currentSpeed = unit.currentSpeed.LerpTo(Game.m.unitMaxSpeed, Game.m.bumpRecoverySpeed);
-            attackStatus = AttackStatus.NOT_PREPARED;
+            attackStatus = AttackStatus.READY;
         }
+    }
+
+    public void OnTakeCollisionDamage() {
+        attackStatus = AttackStatus.RECOVERING;
+        timeTillReloaded = reloadDuration;
     }
 
     public bool CanUpdateSpeed() {
@@ -45,33 +58,48 @@ public class UnitRanged : UnitBehavior {
         if (Battle.m.gameState == Battle.State.PAUSE) return false;
         if (unit.status == Unit.Status.FALLING) return false;
         if (unit.currentSpeed.isClearlyNegative()) return false;
+        if (attackStatus != AttackStatus.READY) return false;
 
         return true;
     }
 
     public void UpdateCombat() {
-        if (!unit.enemies.Exists(e => DistanceToMe(e) <= range)) return;
+        if (attackStatus != AttackStatus.READY) return;
+        if (Battle.m.gameState == Battle.State.PAUSE) return;
         if (unit.currentSpeed.isClearlyNot(0)) return;
-        if (attackStatus != AttackStatus.NOT_PREPARED) return;
+        if (!unit.enemies.Exists(e => DistanceToMe(e) <= range)) return;
         
         PrepareAttack();
     }
 
+    public void UpdateReload() {
+        if (attackStatus != AttackStatus.RECOVERING) return;
+        if (Battle.m.gameState == Battle.State.PAUSE) return;
+
+        timeTillReloaded -= Time.deltaTime;
+        if (timeTillReloaded <= 0) attackStatus = AttackStatus.READY;
+    }
+
     public void PrepareAttack() {
-        Debug.Log("prepare attack");
-        attackStatus = AttackStatus.PREPARING;
+        Game.m.PlaySound(aimSound, .25f);
+        attackStatus = AttackStatus.ATTACKING;
         unit.SetAnim(Unit.Anim.PREPARE);
-        this.Wait(1f, Attack);
+        this.Wait(aimDuration, Attack);
     }
 
     public void Attack() {
-        Debug.Log("hit");
+        if (attackStatus != AttackStatus.ATTACKING) return;
+        
+        Game.m.PlaySound(shootSound);
+        attackStatus = AttackStatus.RECOVERING;
         unit.SetAnim(Unit.Anim.HIT);
-        this.Wait(0.5f, () => {
-            unit?.enemies?.WithLowest(DistanceToMe)?.GetBumpedBy(unit);
-            attackStatus = AttackStatus.NOT_PREPARED;
-        });
+        Arrow arrow = Instantiate(arrowPrefab, 
+            transform.position + new Vector3(13/36f, 21/36f), 
+            Quaternion.identity, 
+            transform);
+        arrow.owner = unit;
+        timeTillReloaded = reloadDuration;
     }
-    
+
     public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();
 }
