@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,13 +10,12 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs
                             //Should contain State info that is persisted across the whole game
     [Header("Balancing")]
-    public bool enableCheats;
-    [Space(20)]
     public int secondsToAHundredHp;
     [Space(20)]
     public int battlesPerRun;
     public float timeToAutoRestart;
-    public Vector2 spawnPosXRange;
+    public Vector2 spawnPosXRangeForMelee;
+    public Vector2 spawnPosXRangeForRanged;
     public int amountOfHeroes;
 
     [Space(20)]
@@ -113,6 +113,20 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         if (duration > 0) Destroy(spawnedFx, duration);
         return spawnedFx;
     }
+
+    public void PurgeStatModifiers(StatModifier.Scope scope) {
+        save.heroes.ForEach(h => 
+            h.data.stats.ForEach(s => 
+                s.modifiers
+                    .Where(mod => mod.scope == scope)
+                    .ToList()
+                    .ForEach(mod => mod.Terminate())));
+    }
+    
+    
+    // ====================
+    // SOUND
+    // ====================
 
     public void PlaySound(MedievalCombat medievalCombat, float volume = 0.5f, int index = -1, 
         SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 

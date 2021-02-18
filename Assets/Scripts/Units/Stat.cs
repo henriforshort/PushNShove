@@ -6,8 +6,8 @@ using UnityEngine;
 [Serializable]
 public class Stat {
     public float startValue;
-    [SerializeField] private float value;
-    [SerializeField] private List<StatModifier> modifiers;
+    [SerializeField] public float value;
+    [SerializeField] public List<StatModifier> modifiers;
 
     public static implicit operator float(Stat s) => s.value;
 
@@ -25,8 +25,8 @@ public class Stat {
         StatModifier.Scope scope = StatModifier.Scope.BATTLE, int priority = 0) {
         StatModifier modifier = new StatModifier(val, type, scope, priority, this);
         
-        if (modifier.scope == StatModifier.Scope.BATTLE) Battle.m.onBattleEnd.Add(() => RemoveModifier(modifier.guid));
-        if (modifier.scope == StatModifier.Scope.RUN) Run.m.onRunEnd.Add(() => RemoveModifier(modifier.guid));
+        // if (modifier.scope == StatModifier.Scope.BATTLE) Battle.m.onBattleEnd.Add(() => RemoveModifier(modifier.guid));
+        // if (modifier.scope == StatModifier.Scope.RUN) Run.m.onRunEnd.Add(() => RemoveModifier(modifier.guid));
         
         modifiers.Add(modifier);
         UpdateValue();

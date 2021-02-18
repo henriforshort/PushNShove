@@ -12,7 +12,6 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	public List<Item> commonItems;
 	public List<Item> rareItems;
 	public List<Item> leggyItems;
-	public List<Action> onRunEnd = new List<Action>();
 	public Item movingItem;
 
 	[Header("Prefabs")]
@@ -61,8 +60,7 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 	}
 
 	public void EndRun() {
-		onRunEnd.ForEach(a => a());
-		Destroy(gameObject);
+		Game.m.PurgeStatModifiers(StatModifier.Scope.RUN);
 	}
 	
     

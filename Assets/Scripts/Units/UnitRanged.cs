@@ -17,9 +17,11 @@ public class UnitRanged : UnitBehavior {
     
     public enum AttackStatus { READY, ATTACKING, RECOVERING }
 
-    public void Start() {
+    public void Awake() {
         attackStatus = AttackStatus.READY;
         unit.OnTakeCollisionDamage.AddListener(this.OnTakeCollisionDamage);
+        transform.position = new Vector3(this.Random(Game.m.spawnPosXRangeForRanged.x, 
+                Game.m.spawnPosXRangeForRanged.y).ReverseIf(unit.isHero), -3, 0);
     }
 
     public void Update() {
@@ -31,8 +33,6 @@ public class UnitRanged : UnitBehavior {
 
     public void UpdateVisuals() {
         if (unit.currentSpeed.isClearlyPositive()) unit.SetAnim(Unit.Anim.WALK);
-        if (unit.currentSpeed.isAbout(0) && attackStatus == AttackStatus.RECOVERING) 
-            unit.SetAnim(Unit.Anim.IDLE);
     }
 
     public void UpdateSpeed() {
@@ -65,6 +65,7 @@ public class UnitRanged : UnitBehavior {
 
     public void UpdateCombat() {
         if (attackStatus != AttackStatus.READY) return;
+        if (unit.status != Unit.Status.ALIVE) return;
         if (Battle.m.gameState == Battle.State.PAUSE) return;
         if (unit.currentSpeed.isClearlyNot(0)) return;
         if (!unit.enemies.Exists(e => DistanceToMe(e) <= range)) return;

@@ -22,7 +22,10 @@ public class UnitMelee : UnitBehavior {
     // ====================
     
     public void Awake() {
+        unit.SetAnim(Unit.Anim.WALK);
         unit.currentSpeed = Game.m.unitMaxSpeed;
+        transform.position = new Vector3(this.Random(Game.m.spawnPosXRangeForMelee.x, 
+                Game.m.spawnPosXRangeForMelee.y).ReverseIf(unit.isHero), -3, 0);
     }
 
     public void Update() {

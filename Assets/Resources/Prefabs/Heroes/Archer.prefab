@@ -130,7 +130,7 @@ MonoBehaviour:
   _icon: {fileID: 0}
   ult: {fileID: 0}
   campHero: {fileID: 3034245689411466590, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}
-  image: {fileID: 21300000, guid: 5ec68743aad18b648baaa4880f9acf8c, type: 3}
+  image: {fileID: 21300000, guid: 278c5e24931de1044ad83fcfa6257d33, type: 3}
 --- !u!114 &1219178943284343492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +286,8 @@ MonoBehaviour:
     sprites:
     - {fileID: 480887029864472272, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: 7135723650130993342, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -2211983078384136945, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -2211983078384136945, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: -2211983078384136945, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: -3783999413710591504, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: -596610279889723890, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}

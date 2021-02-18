@@ -18,7 +18,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     [Header("State")]
     public float timeSinceGameOver;
     public State gameState;
-    public List<Action> onBattleEnd = new List<Action>();
     private Game.SceneName nextScene;
 
     [Header("Scene References")]
@@ -34,12 +33,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public Transform itemsCanvas;
     public GameObject itemDescription;
     public TMP_Text itemDescriptionText;
-
-    [Header("Audio Clips")]
-    public AudioClip hitSound;
-    public AudioClip whooshSound;
-    public AudioClip deathSound;
-    public AudioClip itemSound;
 	
     public enum State { PLAYING, PAUSE, GAME_OVER, RESTARTING }
 
@@ -61,9 +54,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             .Where(hgs => Run.m.activeHeroPrefabs.Contains(hgs.battlePrefab))
             .ToList()
             .ForEach(hgs => {
-                UnitHero newHero = Instantiate(hgs.battlePrefab, new Vector3(
-                        this.Random(-Game.m.spawnPosXRange.x, -Game.m.spawnPosXRange.y), -3, 0),
-                    Quaternion.identity, unitsHolder);
+                UnitHero newHero = Instantiate(hgs.battlePrefab, unitsHolder);
                 newHero.unit.prefabIndex = hgs.prefabIndex;
                 newHero.InitBattle();
             });
@@ -73,7 +64,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             Transform clusterInstance = Instantiate(enemyClusters.Random());
             while (clusterInstance.childCount > 0) {
                 Transform monster = clusterInstance.GetChild(0);
-                monster.SetX(Random.Range(Game.m.spawnPosXRange.x, Game.m.spawnPosXRange.y));
                 monster.SetParent(unitsHolder);
             }
             Destroy(clusterInstance.gameObject);
@@ -109,7 +99,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         
         Game.m.PlaySound(Casual.NEGATIVE, 0.5f, 6);
         gameOverText.text = "Defeat";
-        onBattleEnd.Add(() => Run.m.EndRun());
         nextScene = Game.SceneName.Camp;
         GameOver();
     }
@@ -122,7 +111,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         gameOverText.text = "Victory";
         if (Game.m.save.battle < Game.m.battlesPerRun) nextScene = Game.SceneName.Battle;
         else {
-            onBattleEnd.Add(() => Run.m.EndRun());
             nextScene = Game.SceneName.Camp;
         }
         Game.m.save.battle++;
@@ -136,7 +124,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         timeSinceGameOver = 0;
         this.Wait(0.5f, () => {
             Unit.heroUnits.ForEach(u => u.hero.EndUlt());
-            onBattleEnd.ForEach(a => a());
+            Game.m.PurgeStatModifiers(StatModifier.Scope.BATTLE);
         });
     }
 
@@ -166,6 +154,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         Unit.monsterUnits.Clear();
         Game.m.PlaySound(MedievalCombat.WHOOSH_6);
         transition.FadeIn();
+        if (nextScene == Game.SceneName.Camp) Run.m.EndRun();
         this.Wait(0.4f, () => Game.m.LoadScene(nextScene));
     }
 }

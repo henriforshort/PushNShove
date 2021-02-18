@@ -21,6 +21,7 @@ public class UnitData {
     [SerializeField] private List<string> _itemPrefabPaths;
     
     public List<string> itemPrefabPaths => _itemPrefabPaths ?? (_itemPrefabPaths = new List<string>());
+    public List<Stat> stats => new List<Stat> { maxHealth, prot, weight, damage, strength, critChance };
 
     public UnitData() {
         maxHealth = new Stat();

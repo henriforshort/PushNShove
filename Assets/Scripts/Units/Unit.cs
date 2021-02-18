@@ -51,6 +51,7 @@ public class Unit : MonoBehaviour {
     
     public UnitHero hero => unitSide as UnitHero;
     public UnitMonster monster => unitSide as UnitMonster;
+    public UnitMelee melee => behavior as UnitMelee;
 
     private static List<Unit> _allHeroUnits; //Even the dead ones
     public static List<Unit> allHeroUnits => _allHeroUnits ?? (_allHeroUnits = new List<Unit>());
@@ -83,7 +84,6 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void Awake() { //Called before loading
-        SetAnim(Anim.WALK);
         tmpHealthBar.value = data.currentHealth;
         if (behavior != null) behavior.unit = this;
         speedLastFrame = -1;
@@ -120,6 +120,7 @@ public class Unit : MonoBehaviour {
     public void SetAnim(Anim a) {
         if (lockAnim) return;
         if (anim == a) return;
+        if (!hanimator.enabled) return;
         
         anim = a;
         if (hanimator.gameObject.activeInHierarchy) hanimator.Play(GetAnim());
@@ -241,11 +242,11 @@ public class Unit : MonoBehaviour {
     // COMBAT
     // ====================
 
-    public UnitMelee melee => behavior as UnitMelee;
-
     public void GetBumpedBy(Unit other) {
         SetAnim(Anim.BUMPED);
-        currentSpeed = currentSpeed.AtMost(0) + Game.m.bumpSpeed * other.data.strength * (1 - data.prot);
+        //speed becomes (bump speed * attacker's strength * (1-my prot)), or one less than current speed, whichever is
+        //lower (ie fastest negative speed)
+        currentSpeed = (Game.m.bumpSpeed * other.data.strength * (1 - data.prot)).AtMost(currentSpeed - 1);
         
         bool isCrit = ((float)other.data.critChance).Chance();
         TakeCollisionDamage(other.data.damage, isCrit);

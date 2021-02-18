@@ -48,7 +48,8 @@ MonoBehaviour:
   secondsToAHundredHp: 600
   battlesPerRun: 5
   timeToAutoRestart: 2
-  spawnPosXRange: {x: 1, y: 7}
+  spawnPosXRangeForMelee: {x: 1, y: 5}
+  spawnPosXRangeForRanged: {x: 3, y: 7}
   amountOfHeroes: 2
   unitMaxSpeed: 3
   attackDistance: 3
