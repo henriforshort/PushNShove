@@ -509,9 +509,6 @@ public static class Util {
     public static bool Chance(this float target) => UnityEngine.Random.value < target;
     public static bool Chance(this int target) => UnityEngine.Random.value < target;
 
-    public static float MoreOrLessPercent(this float target, float amount) =>
-        UnityEngine.Random.Range((1-amount) * target, (1+amount) * target);
-
     public static bool CoinFlip(this MonoBehaviour target) => target.Random(2) == 0;
 
     public static T Random<T>(this MonoBehaviour target, T t1, T t2) => target.CoinFlip() ? t1 : t2;
@@ -530,6 +527,9 @@ public static class Util {
         else if (i == 2) return t3;
         else return t4;
     }
+
+    public static float MoreOrLessPercent(this float target, float amount) =>
+        UnityEngine.Random.Range((1-amount) * target, (1+amount) * target);
 
     public static T WeightedRandom<T>(this MonoBehaviour target, T t1, float weight1, T t2, float weight2) {
         return target.Random() < weight1 / (weight1 + weight2) ? t1 : t2;

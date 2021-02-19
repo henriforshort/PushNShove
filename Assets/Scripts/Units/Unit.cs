@@ -357,7 +357,6 @@ public class Unit : MonoBehaviour {
         if (Battle.m == null) return;
         if (Battle.m.gameState == Battle.State.GAME_OVER) return;
         if (Battle.m.gameState == Battle.State.RESTARTING) return;
-        
 
         hpLossUis
             .Where(ui => ui != null)

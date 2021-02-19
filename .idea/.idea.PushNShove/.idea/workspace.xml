@@ -21,18 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/archer2.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/archer2.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +89,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/b7/36ce8b3a/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/16/4c6426cd/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/29/d4956126/BinaryFormatter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/bc/83b5daea/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/25/07913fa3/FileMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/31/e5f02608/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/e6/134fff40/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/de/31acd207/Color.cs" root0="SKIP_HIGHLIGHTING" />
@@ -124,7 +117,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CampActivity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/UITransition.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/FightPrompt.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/MedievalCombat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Human.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Animals.cs" />
@@ -168,6 +160,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
       </list>
     </option>
@@ -308,6 +301,7 @@
       <workItem from="1613479302776" duration="9116000" />
       <workItem from="1613554219485" duration="11861000" />
       <workItem from="1613670220144" duration="7432000" />
+      <workItem from="1613719798342" duration="4487000" />
     </task>
     <servers />
   </component>
@@ -360,10 +354,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1920" y="0" width="1215" height="811" key="dock-window-3/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1609520937001" />
-    <state x="165" y="25" width="1210" height="775" key="find.popup" timestamp="1610912232894">
+    <state x="165" y="25" width="1210" height="775" key="find.popup" timestamp="1613774791255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="165" y="25" width="1210" height="775" key="find.popup/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1610912232894" />
+    <state x="165" y="25" width="1210" height="775" key="find.popup/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1613774791255" />
     <state x="432" y="190" width="672" height="677" key="run.anything.popup" timestamp="1611938249406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
