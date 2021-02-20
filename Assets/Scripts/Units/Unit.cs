@@ -71,8 +71,8 @@ public class Unit : MonoBehaviour {
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
     public enum Anim {
-        WALK, PREPARE, HIT, DEFEND, BUMPED, IDLE,
-        ULT_BRUISER, ULT_STRONGMAN
+        WALK, PREPARE, HIT, DEFEND, BUMPED,
+        ULT_BRUISER, ULT_STRONGMAN, ULT_ARCHER_AIM, ULT_ARCHER_SHOOT
     }
 
     public bool isHero => unitSide is UnitHero;

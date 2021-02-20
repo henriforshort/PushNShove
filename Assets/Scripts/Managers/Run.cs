@@ -61,6 +61,8 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 
 	public void EndRun() {
 		Game.m.PurgeStatModifiers(StatModifier.Scope.RUN);
+		Game.m.save.heroes.ForEach(h => h.data.itemPrefabPaths.Clear());
+		Destroy(gameObject);
 	}
 	
     

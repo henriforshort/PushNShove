@@ -25,9 +25,6 @@ public class Stat {
         StatModifier.Scope scope = StatModifier.Scope.BATTLE, int priority = 0) {
         StatModifier modifier = new StatModifier(val, type, scope, priority, this);
         
-        // if (modifier.scope == StatModifier.Scope.BATTLE) Battle.m.onBattleEnd.Add(() => RemoveModifier(modifier.guid));
-        // if (modifier.scope == StatModifier.Scope.RUN) Run.m.onRunEnd.Add(() => RemoveModifier(modifier.guid));
-        
         modifiers.Add(modifier);
         UpdateValue();
         return modifier;
@@ -35,6 +32,11 @@ public class Stat {
 
     public void RemoveModifier(Guid guid) {
         modifiers.RemoveAll(m => m.guid == guid);
+        UpdateValue();
+    }
+
+    public void PurgeModifiers(StatModifier.Scope scope) {
+        modifiers.RemoveAll(mod => mod.scope == scope);
         UpdateValue();
     }
 

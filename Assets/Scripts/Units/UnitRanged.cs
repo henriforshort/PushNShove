@@ -76,6 +76,7 @@ public class UnitRanged : UnitBehavior {
     public void UpdateReload() {
         if (attackStatus != AttackStatus.RECOVERING) return;
         if (Battle.m.gameState == Battle.State.PAUSE) return;
+        if (unit.hero.ultStatus == UnitHero.UltStatus.ACTIVATED) return;
 
         timeTillReloaded -= Time.deltaTime;
         if (timeTillReloaded <= 0) attackStatus = AttackStatus.READY;

@@ -116,11 +116,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
 
     public void PurgeStatModifiers(StatModifier.Scope scope) {
         save.heroes.ForEach(h => 
-            h.data.stats.ForEach(s => 
-                s.modifiers
-                    .Where(mod => mod.scope == scope)
-                    .ToList()
-                    .ForEach(mod => mod.Terminate())));
+            h.data.stats.ForEach(s => s.PurgeModifiers(scope)));
     }
     
     
