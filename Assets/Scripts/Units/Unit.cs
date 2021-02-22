@@ -105,6 +105,7 @@ public class Unit : MonoBehaviour {
         UpdateSpeed();
         UpdatePosition();
         UpdateVisuals();
+        UpdateCollisions();
     }
     
     
@@ -115,6 +116,7 @@ public class Unit : MonoBehaviour {
     public void UpdateVisuals() {
         hanimator.enabled = (Battle.m.gameState != Battle.State.PAUSE);
         if (lockZOrder) this.SetZ(-5);
+        if (isWalking && anim == Anim.BUMPED) SetAnim(Anim.WALK);
     }
 
     public void SetAnim(Anim a) {
@@ -166,6 +168,7 @@ public class Unit : MonoBehaviour {
     public void StartWalking() {
         SetAnim(Anim.WALK);
         this.SetZ(0f);
+        critCollisionDate = -1;
         if (status == Status.DYING) DieDuringBattle();
         else Game.m.SpawnFX(Run.m.bumpDustFxPrefab, 
             new Vector3(this.GetX() - 0.5f.ReverseIf(isMonster), -2, -2), isHero, 0.5f);
@@ -204,52 +207,60 @@ public class Unit : MonoBehaviour {
     // COLLISIONS
     // ====================
 
-    public void LongRangeCollide(Collider other) { //Called by both sides
-        Unit collidedAlly = allies.FirstOrDefault(u => u.gameObject == other.gameObject);
-        if (collidedAlly != null 
-                && enemies.Count > 0
-                && currentSpeed < 0
-                && this.isCloserTo(enemies[0].transform.position, than:collidedAlly)
-                && critCollisionDate > 0
-                && critCollisionDate.isClearlyNot(collidedAlly.critCollisionDate)) 
-            FriendlyCollide(collidedAlly);
+    public void UpdateCollisions() {
+        if (CanDieByFall()) DeathByFall();
+        FriendlyCollide(GetCollidedAlly());
     }
 
-    public void FriendlyCollide(Unit ally) { //Called by the unit in front
-        currentSpeed = (currentSpeed + 2).AtMost(0); //slow down
+    public bool CanDieByFall() {
+        if (status == Status.FALLING) return false;
+        if (this.GetX().Abs() < Game.m.boardSize) return false;
+
+        return true;
+    }
+
+    public Unit GetCollidedAlly() { //Called by unit in front
+        Unit closestAlly = allies.Except(this)?.WithLowest(DistanceToMe);
         
-        allies
-            .Where(a => a.critCollisionDate.isAbout(critCollisionDate))
-            .ToList()
-            .ForEach(a => a.currentSpeed = currentSpeed);
+        if (critCollisionDate.isAboutOrLowerThan(0)) return null;
+        // if (currentSpeed.isClearlyPositive()) return null;
+        if (closestAlly == null) return null;
+        if (closestAlly.critCollisionDate.isAbout(critCollisionDate)) return null;
+        if (DistanceToMe(closestAlly) > 1f) return null;
+        
+        return closestAlly;
+    }
+
+    public void FriendlyCollide(Unit ally) { //Called by unit in front
+        if (ally == null) return;
         
         ally.SetAnim(Anim.BUMPED);
         ally.TakeCollisionDamage(-currentSpeed/5, true);
         ally.critCollisionDate = critCollisionDate;
+        ally.currentSpeed = currentSpeed;
         
         Game.m.PlaySound(MedievalCombat.BODY_FALL);
         Battle.m.cameraManager.Shake(0.2f);
     }
     
-    public void OnTriggerStay(Collider other) {
-        if (status != Status.FALLING 
-            && Battle.m.deathZones.Contains(other.gameObject))
-            DeathByFall();
-    }
+    public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();
     
     
     // ====================
     // COMBAT
     // ====================
 
-    public void GetBumpedBy(Unit other) {
+    public void GetBumpedBy(Unit other) =>
+        GetBumpedBy(other.data.strength, other.data.critChance, other.data.damage);
+
+    public void GetBumpedBy(float strength, float critChance, float damage) {
         SetAnim(Anim.BUMPED);
         //speed becomes (bump speed * attacker's strength * (1-my prot)), or one less than current speed, whichever is
         //lower (ie fastest negative speed)
-        currentSpeed = (Game.m.bumpSpeed * other.data.strength * (1 - data.prot)).AtMost(currentSpeed - 1);
+        currentSpeed = (Game.m.bumpSpeed * strength * (1 - data.prot)).AtMost(currentSpeed - 1);
         
-        bool isCrit = ((float)other.data.critChance).Chance();
-        TakeCollisionDamage(other.data.damage, isCrit);
+        bool isCrit = critChance.Chance();
+        TakeCollisionDamage(damage, isCrit);
         if (isCrit) {
             critCollisionDate = Time.time;
             currentSpeed -= 5;
@@ -264,14 +275,15 @@ public class Unit : MonoBehaviour {
     public UnityEvent OnTakeCollisionDamage;
 
     public void TakeCollisionDamage(float amount, bool isCrit = false) {
-        if (isHero || 0.5f.Chance()) {
-            Game.m.PlaySound(bumpedSound, .5f, -1, pitch);
-            Game.m.PlaySound(bumpedSoundAnimal, .5f, -1, pitch);
-        }
-        amount = amount.MoreOrLessPercent(0.5f).Round();
+        amount = (amount * this.Random(.5f, 1.5f)).Round();
         if (amount.isAbout(0)) {
             critCollisionDate = -1;
             return;
+        }
+        
+        if (isHero || 0.5f.Chance()) {
+            Game.m.PlaySound(bumpedSound, .5f, -1, pitch);
+            Game.m.PlaySound(bumpedSoundAnimal, .5f, -1, pitch);
         }
         if (isCrit) {
             amount = 3 * amount;

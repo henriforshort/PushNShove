@@ -76,6 +76,12 @@ public static class Util {
     
     public static T WithHighest<T, TKey>(this IEnumerable<T> target, Func<T, TKey> keySelector) =>
         target.OrderBy(keySelector).LastOrDefault();
+
+    public static TKey GetLowest<T, TKey>(this IEnumerable<T> target, Func<T, TKey> keySelector) =>
+        target.Select(keySelector).Min();
+
+    public static TKey GetHighest<T, TKey>(this IEnumerable<T> target, Func<T, TKey> keySelector) =>
+        target.Select(keySelector).Max();
     
     public static List<T> AsList<T>(this T item) => new List<T> { item };
 
@@ -528,9 +534,6 @@ public static class Util {
         else return t4;
     }
 
-    public static float MoreOrLessPercent(this float target, float amount) =>
-        UnityEngine.Random.Range((1-amount) * target, (1+amount) * target);
-
     public static T WeightedRandom<T>(this MonoBehaviour target, T t1, float weight1, T t2, float weight2) {
         return target.Random() < weight1 / (weight1 + weight2) ? t1 : t2;
     }
@@ -679,6 +682,8 @@ public static class Util {
     public static float ReverseIf(this int target, bool condition) => target * (condition ? -1 : 1);
     
     public static float ToInt(this bool target) => target ? 1 : 0;
+
+    public static bool Not(this bool target) => !target;
     
     
     // --------------------

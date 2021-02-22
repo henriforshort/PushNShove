@@ -44,7 +44,7 @@ public class UnitUltStrongman : UnitUlt {
     public Unit TargetInRange() {
         return unit.enemies
             .Where(e => e.status == Unit.Status.ALIVE)
-            .WithLowest(unit.melee.DistanceToMe)
-            .If(e => unit.melee.DistanceToMe(e) < range);
+            .WithLowest(unit.DistanceToMe)
+            .If(e => unit.DistanceToMe(e) < range);
     }
 }

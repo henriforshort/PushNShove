@@ -44,12 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3cf68eda5662349ab6e4d8adedeb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableCheats: 1
   secondsToAHundredHp: 600
   battlesPerRun: 5
   timeToAutoRestart: 2
-  spawnPosXRangeForMelee: {x: 1, y: 5}
-  spawnPosXRangeForRanged: {x: 3, y: 7}
+  spawnPosXRangeForMelee: {x: 1, y: 4}
+  spawnPosXRangeForRanged: {x: 4, y: 7}
   amountOfHeroes: 2
   unitMaxSpeed: 3
   attackDistance: 3
@@ -58,6 +57,7 @@ MonoBehaviour:
   bumpRecoverySpeed: 5
   bumpSpeed: -20
   defendSpeed: -10
+  boardSize: 13.5
   maxItemsPerHero: 6
   commonDropChance: 10
   rareDropChance: 3

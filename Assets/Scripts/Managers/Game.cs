@@ -26,6 +26,8 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float bumpRecoverySpeed;
     public float bumpSpeed;
     public float defendSpeed;
+    public float boardSize;
+    
     [Space(20)]
     public int maxItemsPerHero;
     public float commonDropChance;

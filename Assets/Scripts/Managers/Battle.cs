@@ -21,8 +21,8 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     private Game.SceneName nextScene;
 
     [Header("Scene References")]
-    public List<GameObject> deathZones;
-    public List<HeroIcon> heroIcons;
+    public GameObject leftDeathZone;
+    public GameObject rightDeathZone;
     public CameraManager cameraManager;
     public GameObject gameOverPanel;
     public TMP_Text gameOverText;
@@ -33,6 +33,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public Transform itemsCanvas;
     public GameObject itemDescription;
     public TMP_Text itemDescriptionText;
+    public List<HeroIcon> heroIcons;
 	
     public enum State { PLAYING, PAUSE, GAME_OVER, RESTARTING }
 

@@ -187,14 +187,13 @@ public class UnitMelee : UnitBehavior {
     }
 
     public Unit NearbyEnemy() => unit.enemies
-        .WithLowest(DistanceToMe)
-        .If(e => e != null && DistanceToMe(e) < Game.m.attackDistance);
+        .WithLowest(unit.DistanceToMe)
+        .If(e => e != null && unit.DistanceToMe(e) < Game.m.attackDistance);
 
     
     public Unit CollidingEnemy() => unit.enemies
-        .WithLowest(DistanceToMe)
-        .If(e => e != null && DistanceToMe(e) < Game.m.collideDistance);
+        .WithLowest(unit.DistanceToMe)
+        .If(e => e != null && unit.DistanceToMe(e) < Game.m.collideDistance);
     
-    public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();
     public bool CanAttack() => unit.isWalking && attackStatus == AttackStatus.PREPARING;
 }

@@ -1,4 +1,9 @@
-﻿public class UnitUltArcher : UnitUlt {
+﻿using UnityEngine;
+
+public class UnitUltArcher : UnitUlt {
+    [Header("Balancing")]
+    public GameObject arrows;
+    
     public override void Ult() {
         unit.SetAnim(Unit.Anim.ULT_ARCHER_AIM);
         unit.lockAnim = true;
@@ -16,6 +21,10 @@
         unit.lockAnim = false;
         unit.SetAnim(Unit.Anim.ULT_ARCHER_SHOOT);
         unit.lockAnim = true;
-        this.Repeat(3, () => Game.m.PlaySound(MedievalCombat.ARROW_FLY_1), 0.1f);
+        this.Repeat(7, () => Game.m.PlaySound(MedievalCombat.ARROW_FLY_1), 0.1f);
+        Instantiate(arrows, 
+            transform.position + new Vector3(.6f, 1, 0), 
+            transform.rotation, 
+            Battle.m.transform);
     }
 }

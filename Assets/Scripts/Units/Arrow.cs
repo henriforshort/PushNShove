@@ -3,7 +3,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour {
     public Unit owner;
     
-    //if equal or farther left than an enemy, bump them
+    //if equal or further left than an enemy, bump them
     public void Update() {
         Unit leftMostEnemy = Unit.monsterUnits.WithLowest(m => m.GetX());
         if (owner == null) return;

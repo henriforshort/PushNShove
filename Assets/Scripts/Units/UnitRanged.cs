@@ -47,11 +47,6 @@ public class UnitRanged : UnitBehavior {
         }
     }
 
-    public void OnTakeCollisionDamage() {
-        attackStatus = AttackStatus.RECOVERING;
-        timeTillReloaded = reloadDuration;
-    }
-
     public bool CanUpdateSpeed() {
         if (unit.lockPosition) return false;
         if (unit.isOnFreezeFrame) return false;
@@ -61,6 +56,11 @@ public class UnitRanged : UnitBehavior {
         if (attackStatus != AttackStatus.READY) return false;
 
         return true;
+    }
+
+    public void OnTakeCollisionDamage() {
+        attackStatus = AttackStatus.RECOVERING;
+        timeTillReloaded = reloadDuration;
     }
 
     public void UpdateCombat() {

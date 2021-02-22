@@ -89,7 +89,7 @@ MonoBehaviour:
   bumpedSoundAnimal: 0
   deathSound: 13
   deathSoundAnimal: 0
-  pitch: 1
+  pitch: 2
   speedLastFrame: 0
   currentSpeed: 0
   status: 0

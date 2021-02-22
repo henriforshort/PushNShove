@@ -20,26 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Parts/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Parts/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Solo Shieldbearer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyClusters/Solo Shieldbearer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Environment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Environment.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMaxRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMaxRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/archer.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/archer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/archer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/archer.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/arrow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/arrow.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/archer2.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/archer2.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CampActivity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/UITransition.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/FightPrompt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/MedievalCombat.cs" />
@@ -157,7 +155,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitSide.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroGameSave.cs" />
@@ -165,18 +162,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampHero.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMaxRange.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs" />
       </list>
     </option>
@@ -319,6 +318,8 @@
       <workItem from="1613670220144" duration="7432000" />
       <workItem from="1613719798342" duration="4487000" />
       <workItem from="1613818893770" duration="6839000" />
+      <workItem from="1613911738799" duration="3221000" />
+      <workItem from="1613986215009" duration="15299000" />
     </task>
     <servers />
   </component>
@@ -355,10 +356,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="573" y="114" key="RiderGenerateDialog/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1609237374267" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1610312482308">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1614021537857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1610312482308" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040/-1920.0.1920.1040@0.0.1536.824" timestamp="1614021537857" />
     <state x="2177" y="-15" width="1215" height="811" maximized="true" key="dock-window-1" timestamp="1610211971301">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
