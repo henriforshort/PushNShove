@@ -18,13 +18,10 @@ public class UnitUltBruiser : UnitUlt {
         oldAttackSpeed = unit.melee.attackSpeed;
         unit.melee.attackSpeed = 0f;
         unit.melee.attackAnimDuration = 0;
-
-        ultStatModifs.Add(unit.data.prot.AddModifier(0.9f, StatModifier.Type.SET));
-        ultStatModifs.Add(unit.data.weight.AddModifier(50, StatModifier.Type.MULTIPLY));
-        ultStatModifs.Add(unit.data.damage.AddModifier(0.3f, StatModifier.Type.MULTIPLY));
-        ultStatModifs.Add(unit.data.critChance.AddModifier(0.1f, StatModifier.Type.MULTIPLY));
-
         unit.isInvincible = true;
+
+        ultStatModifs.Add(unit.data.damage.AddModifier(0.3f, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(unit.data.critChance.AddModifier(0, StatModifier.Type.SET));
     }
 
     public override void EndUlt() {
@@ -32,9 +29,8 @@ public class UnitUltBruiser : UnitUlt {
         unit.SetAnim(Unit.Anim.DEFEND);
         unit.melee.attackAnimDuration = oldAttackAnimDuration;
         unit.melee.attackSpeed = oldAttackSpeed;
+        unit.isInvincible = false;
         ultStatModifs.ForEach(m => m.Terminate());
         ultStatModifs.Clear();
-        
-        unit.isInvincible = false;
     }
 }

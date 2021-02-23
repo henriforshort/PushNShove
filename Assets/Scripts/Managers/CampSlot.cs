@@ -11,10 +11,20 @@ public class CampSlot {
     public List<GameObject> emptyMarkers;
     [NonSerialized] public CampActivity activity;
 
-    public void Init() {
-        button.onClick.AddListener(() => {
-            if (hero == null) activity.AddSelected();
-            else if (hero.CanBeClicked()) Camp.m.SelectUnit(hero);
-        });
+    public void Init(CampActivity a) {
+        button.onClick.AddListener(OnClick);
+        activity = a;
+    }
+
+    public void OnClick() {
+        if (hero == null) activity.AddSelected();
+        else if (CanBeClicked(hero)) Camp.m.SelectUnit(hero);
+    }
+
+    public bool CanBeClicked(CampHero h) {
+        if (h.data.activity != CampActivity.Type.SLEEPING) return true;
+        if (h.data.currentHealth > 0.1f) return true;
+        
+        return false;
     }
 }

@@ -1,13 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Camp : Level<Camp> {
-    [FormerlySerializedAs("selectedUnit")]
     [Header("State")]
     public CampHero selectedHero;
     public List<CampHero> heroes;
@@ -29,26 +25,21 @@ public class Camp : Level<Camp> {
     }
 
     public void InitCamp() {
-        this.While(() => true, () => Game.m.PlaySound(MedievalCombat.MAGIC_LOOP_FIRE, .05f), 5f);
-        this.While(() => true, () => Game.m.PlaySound(Animals.OWL_3, .25f), 10f);
+        //Play music and ambient loops
+        Game.m.PlayMusic(AdventureRPG.OUR_VILLAGE);
+        this.While(() => true, 
+            () => Game.m.PlaySound(MedievalCombat.MAGIC_LOOP_FIRE, .05f), 5f);
+        this.While(() => true, 
+            () => Game.m.PlaySound(Animals.OWL_3, .25f), 10f);
             
         //Create heroes
         Game.m.save.heroes.ForEach(hgs => {
             CampHero newHero = Instantiate(hgs.campPrefab, unitsHolder);
             heroes.Add(newHero);
             newHero.prefabIndex = hgs.prefabIndex;
-
         });
         DeselectUnit();
-        activities.ForEach(a => {
-            a.Init();
-            a.slots.ForEach(s => {
-                s.activity = a;
-                s.Init();
-            });
-        });
-        
-        Game.m.PlayMusic(AdventureRPG.OUR_VILLAGE);
+        activities.ForEach(a => a.Init());
     }
     
     public void StartBattle() {
@@ -83,12 +74,9 @@ public class Camp : Level<Camp> {
             selectedActivity.button.gameObject.SetActive(false);
             return;
         }
-
-        selectedActivity.button.SetNormalColor(Game.m.white);
         selectedActivity.button.Bounce(0.05f, .1f);
         selectedActivity.button.GetComponent<Image>().TweenAlpha(0, Tween.Style.EASE_IN, .35f,
             () => {
-                selectedActivity.button.SetNormalColor(Game.m.white);
                 selectedActivity.button.gameObject.SetActive(false);
                 selectedActivity.button.GetComponent<Image>().SetAlpha(1);
             });

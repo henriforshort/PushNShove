@@ -33,8 +33,8 @@ public class CameraManager : MonoBehaviour {
         if (Unit.heroUnits.Count == 0 || Unit.monsterUnits.Count == 0) return;
 		
         cameraFocus.transform.position = (Vector3.forward * -10) + Vector3.right *
-            (Unit.heroUnits.Select(unit => unit.GetX()).Min()
-             + Unit.monsterUnits.Select(unit => unit.GetX()).Max()) / 2;
+            (Unit.heroUnits.GetHighest(unit => unit.GetX())
+             + Unit.monsterUnits.GetLowest(unit => unit.GetX())) / 2;
 			
         if (Mathf.Abs(cameraFocus.GetX() - this.GetX()) > maxDistFromUnits) 
             transform

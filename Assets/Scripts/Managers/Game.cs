@@ -10,7 +10,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs
                             //Should contain State info that is persisted across the whole game
     [Header("Balancing")]
-    public int secondsToAHundredHp;
+    public int secondsToMaxHp;
     [Space(20)]
     public int battlesPerRun;
     public float timeToAutoRestart;
@@ -26,6 +26,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float bumpRecoverySpeed;
     public float bumpSpeed;
     public float defendSpeed;
+    public float absorbSpeed;
     public float boardSize;
     
     [Space(20)]

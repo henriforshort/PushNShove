@@ -11,7 +11,6 @@ public class Unit : MonoBehaviour {
     [Range(0,1)] public float baseProt;
     public float baseWeight;
     public float baseDamage;
-    public float baseStrength;
     [Range(0,1)] public float baseCritChance;
     
     [Header("Balancing")]
@@ -223,7 +222,6 @@ public class Unit : MonoBehaviour {
         Unit closestAlly = allies.Except(this)?.WithLowest(DistanceToMe);
         
         if (critCollisionDate.isAboutOrLowerThan(0)) return null;
-        // if (currentSpeed.isClearlyPositive()) return null;
         if (closestAlly == null) return null;
         if (closestAlly.critCollisionDate.isAbout(critCollisionDate)) return null;
         if (DistanceToMe(closestAlly) > 1f) return null;
@@ -251,20 +249,28 @@ public class Unit : MonoBehaviour {
     // ====================
 
     public void GetBumpedBy(Unit other) =>
-        GetBumpedBy(other.data.strength, other.data.critChance, other.data.damage);
+        GetBumpedBy(other.data.critChance, other.data.damage);
 
-    public void GetBumpedBy(float strength, float critChance, float damage) {
+    public void GetBumpedBy(float critChance, float damage) {
         SetAnim(Anim.BUMPED);
-        //speed becomes (bump speed * attacker's strength * (1-my prot)), or one less than current speed, whichever is
-        //lower (ie fastest negative speed)
-        currentSpeed = (Game.m.bumpSpeed * strength * (1 - data.prot)).AtMost(currentSpeed - 1);
-        
-        bool isCrit = critChance.Chance();
-        TakeCollisionDamage(damage, isCrit);
-        if (isCrit) {
+        if (critChance.Chance()) { //crit
+            currentSpeed = Game.m.bumpSpeed.AtMost(currentSpeed - 1) - 5;
+            TakeCollisionDamage(damage, true);
             critCollisionDate = Time.time;
-            currentSpeed -= 5;
+        } else if (((float)data.prot).Chance()) { //block
+            Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
+            SetAnim(Anim.DEFEND);
+            currentSpeed = Game.m.absorbSpeed.AtMost(currentSpeed - 1);
+            AddHealth(0, "Block", Game.m.darkGrey);
+        } else { //regular hit
+            currentSpeed = Game.m.bumpSpeed.AtMost(currentSpeed - 1);
+            TakeCollisionDamage(damage);
         }
+    }
+
+    public void SlightKnockback() {
+        if (isInvincible) currentSpeed = 0;
+        else currentSpeed = Game.m.defendSpeed;
     }
 
 
@@ -281,6 +287,7 @@ public class Unit : MonoBehaviour {
             return;
         }
         
+        OnTakeCollisionDamage.Invoke();
         if (isHero || 0.5f.Chance()) {
             Game.m.PlaySound(bumpedSound, .5f, -1, pitch);
             Game.m.PlaySound(bumpedSoundAnimal, .5f, -1, pitch);
@@ -290,7 +297,6 @@ public class Unit : MonoBehaviour {
             AddHealth(-amount, amount + "!", Game.m.red);
             Battle.m.cameraManager.Shake(0.2f);
         } else AddHealth(-amount, amount.ToString());
-        OnTakeCollisionDamage.Invoke();
     }
 
     public void AddHealth(float amount, string uiText = null, Color uiColor = default) {
@@ -327,6 +333,10 @@ public class Unit : MonoBehaviour {
     // DEATH
     // ====================
 
+    public UnityEvent onDeactivate;
+    public UnityEvent onDeath;
+    public UnityEvent onDefeat;
+
     public void DeathByHp() {
         Deactivate();
         status = Status.DYING;
@@ -347,7 +357,7 @@ public class Unit : MonoBehaviour {
     public void Deactivate() {
         allies.Remove(this);
         SetAnim(Anim.BUMPED);
-        if (isHero) hero.icon.Die();
+        onDeactivate.Invoke();
     }
 
     public void DieDuringBattle() {
@@ -362,7 +372,7 @@ public class Unit : MonoBehaviour {
 
     public void Die() {
         status = Status.DEAD;
-        unitSide.Die();
+        onDeath.Invoke();
     }
 
     public void OnDestroy() {
@@ -376,6 +386,6 @@ public class Unit : MonoBehaviour {
             .ForEach(ui => ui.transform.SetParent(Run.m.transform));
         allies.Remove(this);
 
-        if (allies.Count == 0) unitSide.GetDefeated();
+        if (allies.Count == 0) onDefeat.Invoke();
     }
 }

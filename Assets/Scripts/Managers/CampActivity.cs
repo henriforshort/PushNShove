@@ -17,9 +17,12 @@ public class CampActivity {
     public enum Type { IDLE, SLEEPING, READY, WALKING }
         
 
-    public void Init() => button.onClick.AddListener(AddSelected);
-    public void AddSelected() => Add(Camp.m.selectedHero, true);
+    public void Init() {
+        button.onClick.AddListener(AddSelected);
+        slots.ForEach(s => s.Init(this));
+    }
 
+    public void AddSelected() => Add(Camp.m.selectedHero, true);
     public void Add(CampHero campHero, bool deselect = false) {
         if (!IsOpenTo(campHero)) return;
         
@@ -36,6 +39,7 @@ public class CampActivity {
         if (emptySlot == default) return false;
         if (type == Type.READY && hero.data.currentHealth == 0) return false;
         if (type == Type.SLEEPING && hero.data.currentHealth.isAbout(hero.data.maxHealth)) return false;
+        
         return true;
     }
 }

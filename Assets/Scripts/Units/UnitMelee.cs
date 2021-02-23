@@ -82,10 +82,10 @@ public class UnitMelee : UnitBehavior {
     // ====================
 
     public bool CanBumpWithoutAttack(Unit other) {
-        if (!unit.isWalking) return false;
-        if (attackStatus == AttackStatus.PREPARING) return false;
         if (other == null) return false;
+        if (!unit.isWalking) return false;
         if (!other.isWalking) return false;
+        if (attackStatus == AttackStatus.PREPARING) return false;
         if (other.melee?.attackStatus == AttackStatus.PREPARING) return false;
         
         return true;
@@ -93,9 +93,9 @@ public class UnitMelee : UnitBehavior {
 
     public void BumpWithoutAttack(Unit other) {
         unit.SetAnim(Unit.Anim.DEFEND);
-        DefendFrom(other);
         other.SetAnim(Unit.Anim.DEFEND);
-        other.melee.DefendFrom(unit);
+        unit.SlightKnockback();
+        other.SlightKnockback();
         Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
     }
     
@@ -143,7 +143,7 @@ public class UnitMelee : UnitBehavior {
         loser.melee?.Attack();
         
         loser.GetBumpedBy(winner);
-        winner.melee.DefendFrom(loser);
+        winner.SlightKnockback();
 
         if (winner.melee.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
         this.Wait(0.1f, () => {
@@ -156,18 +156,20 @@ public class UnitMelee : UnitBehavior {
         });
         if (Time.time - lastSparkFxDate > 0.1f) {
             lastSparkFxDate = Time.time;
-            Game.m.SpawnFX(Run.m.sparkFxPrefab,
+            GameObject sparkFx = Game.m.SpawnFX(Run.m.sparkFxPrefab,
                 new Vector3(this.GetX() + 2f.ReverseIf(unit.isMonster), -2, -2),
                 winner.isMonster, 0.5f);
+            sparkFx.TweenPosition(Vector3.right * .2f.ReverseIf(winner.isMonster), 
+                Tween.Style.LINEAR, .5f);
         }
     }
 
     public Unit GetAttackWinner(Unit unit1, Unit unit2) {
-        if (unit1.isInvincible) return unit1;
-        if (unit2.isInvincible) return unit2;
-        
         if (unit1.melee == null) return unit2;
         if (unit2.melee == null) return unit1;
+        
+        if (unit1.isInvincible) return unit1;
+        if (unit2.isInvincible) return unit2;
         
         if (!unit1.melee.CanAttack()) return unit2;
         if (!unit2.melee.CanAttack()) return unit1;
@@ -176,24 +178,24 @@ public class UnitMelee : UnitBehavior {
         float momentum2 = unit2.data.weight * (2 * unit2.speedPercent).Clamp01();
         return Random.value < momentum1 / (momentum1 + momentum2) ? unit1 : unit2;
     }
+    
+    public bool CanAttack() => unit.isWalking && attackStatus == AttackStatus.PREPARING;
 
     public void RecoverFromAttack() {
         attackStatus = AttackStatus.RECOVERING;
         this.Wait(attackSpeed, () => attackStatus = AttackStatus.NOT_PREPARED);
     }
-
-    public void DefendFrom(Unit other) {
-        unit.currentSpeed = Game.m.defendSpeed * other.data.strength * (1 - unit.data.prot);
-    }
+    
+    
+    // ====================
+    // UTILS
+    // ====================
 
     public Unit NearbyEnemy() => unit.enemies
         .WithLowest(unit.DistanceToMe)
         .If(e => e != null && unit.DistanceToMe(e) < Game.m.attackDistance);
-
     
     public Unit CollidingEnemy() => unit.enemies
         .WithLowest(unit.DistanceToMe)
         .If(e => e != null && unit.DistanceToMe(e) < Game.m.collideDistance);
-    
-    public bool CanAttack() => unit.isWalking && attackStatus == AttackStatus.PREPARING;
 }

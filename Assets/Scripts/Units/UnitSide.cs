@@ -5,6 +5,14 @@ public class UnitSide : MonoBehaviour {
     public Unit unit => _unit ?? (_unit = GetComponent<Unit>());
     
     
-    public virtual void Die() { }
-    public virtual void GetDefeated() { }
+    protected virtual void Init() { }
+    protected virtual void Die() { }
+    protected virtual void GetDefeated() { }
+
+    public void Awake() {
+        Init();
+        
+        unit.onDeath.AddListener(Die);
+        unit.onDefeat.AddListener(GetDefeated);
+    }
 }

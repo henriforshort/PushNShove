@@ -1,13 +1,9 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class UnitUltStrongman : UnitUlt {
     [Header("Balancing")]
     public float range;
-    
-    [Header("State")]
-    public List<StatModifier> ultStatModifs = new List<StatModifier>();
 
     [Header("Prefab References")]
     public GameObject strongmanUltFx;
@@ -25,20 +21,15 @@ public class UnitUltStrongman : UnitUlt {
         Game.m.PlaySound(MedievalCombat.REALISTIC_PUNCH_1);
         Game.m.PlaySound(MedievalCombat.BODY_FALL);
         unit.lockAnim = false;
+        unit.lockPosition = false;
         unit.SetAnim(Unit.Anim.HIT);
-        ultStatModifs.Add(unit.data.strength.AddModifier(1.25f, StatModifier.Type.MULTIPLY));
-        ultStatModifs.Add(unit.data.critChance.AddModifier(1, StatModifier.Type.SET));
         
         Game.m.SpawnFX(strongmanUltFx, 
             transform.position + new Vector3(3, 1, -1), false, 0.5f);
         if (target != null) {
-            target.GetBumpedBy(unit);
-            unit.melee.DefendFrom(target);
+            target.GetBumpedBy(1, unit.data.damage);
+            unit.currentSpeed = Game.m.defendSpeed;
         }
-
-        unit.lockPosition = false;
-        ultStatModifs.ForEach(m => m.Terminate());
-        ultStatModifs.Clear();
     }
 
     public Unit TargetInRange() {

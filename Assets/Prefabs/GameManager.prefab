@@ -57,7 +57,8 @@ MonoBehaviour:
   bumpRecoverySpeed: 5
   bumpSpeed: -20
   defendSpeed: -10
-  boardSize: 13.5
+  absorbSpeed: -5
+  boardSize: 14
   maxItemsPerHero: 6
   commonDropChance: 10
   rareDropChance: 3

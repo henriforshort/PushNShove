@@ -7,10 +7,9 @@ using UnityEngine;
 public class UnitData {
     //Stats
     public Stat maxHealth; //Resistance
-    public Stat prot; //How much collision force is reduced (whether I got hit or not)
+    public Stat prot; //Chance to absorb a hit completely
     public Stat weight; //Chance to hit & not get hit (melee only)
     public Stat damage; //How much damage I deal when I hit
-    public Stat strength; //How far I push people I hit (wether I hit them or not)
     public Stat critChance;
     
     //Other info
@@ -21,14 +20,13 @@ public class UnitData {
     [SerializeField] private List<string> _itemPrefabPaths;
     
     public List<string> itemPrefabPaths => _itemPrefabPaths ?? (_itemPrefabPaths = new List<string>());
-    public List<Stat> stats => new List<Stat> { maxHealth, prot, weight, damage, strength, critChance };
+    public List<Stat> stats => new List<Stat> { maxHealth, prot, weight, damage, critChance };
 
     public UnitData() {
         maxHealth = new Stat();
         prot  = new Stat();
         weight = new Stat();
         damage = new Stat();
-        strength = new Stat();
         critChance = new Stat();
     }
 }

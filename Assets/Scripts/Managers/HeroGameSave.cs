@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 [Serializable]
 public class HeroGameSave {
@@ -25,7 +24,6 @@ public class HeroGameSave {
         data.prot.Init(battlePrefab.unit.baseProt);
         data.weight.Init(battlePrefab.unit.baseWeight);
         data.damage.Init(battlePrefab.unit.baseDamage);
-        data.strength.Init(battlePrefab.unit.baseStrength);
         data.critChance.Init(battlePrefab.unit.baseCritChance);
         data.currentHealth = battlePrefab.unit.data.maxHealth;
         data.ultCooldownLeft = 0;

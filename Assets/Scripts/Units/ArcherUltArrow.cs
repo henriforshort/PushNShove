@@ -67,8 +67,8 @@ public class ArcherUltArrow : MonoBehaviour {
             (this.GetX() - m.GetX()).Abs() < .2f && (this.GetY() - m.GetY()).Abs() < m.size);
         if (target == null) return;
         
-        target.GetBumpedBy(.5f, 0, 10);
-        Destroy(this);
+        target.GetBumpedBy(0, 10);
+        Destroy(gameObject);
         potentialTargets.Remove(target);
         Game.m.PlaySound(MedievalCombat.STAB_7);
     }

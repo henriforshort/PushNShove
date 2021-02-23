@@ -697,6 +697,13 @@ public static class Util {
             whenDone, onEnd, restartDelay, null);
     }
 
+    public static Tween TweenPosition(this GameObject target, Vector3 targetAmplitude, Tween.Style style, float duration, 
+        Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
+        return target.gameObject.AddComponent<Tween>().InitByAmplitude(
+            targetAmplitude, Tween.Property.POSITION, style, duration,
+            whenDone, onEnd, restartDelay, null);
+    }
+
     public static Tween TweenAlpha(this Graphic visuals, float targetValue, Tween.Style style, float duration, 
         Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
         return visuals.gameObject.AddComponent<Tween>().InitByValue(

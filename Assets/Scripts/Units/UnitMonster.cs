@@ -9,7 +9,7 @@ public class UnitMonster : UnitSide {
     [Header("State")]
     public UnitData data;
     
-    public void Awake() {
+    protected override void Init() { //Called before loading
         if (!unit.gameObject.activeInHierarchy) return;
             
         Unit.monsterUnits.Add(unit);
@@ -17,12 +17,11 @@ public class UnitMonster : UnitSide {
         unit.data.prot.Init(unit.baseProt);
         unit.data.weight.Init(unit.baseWeight);
         unit.data.damage.Init(unit.baseDamage);
-        unit.data.strength.Init(unit.baseStrength);
         unit.data.critChance.Init(unit.baseCritChance);
         unit.SetHealth(unit.data.maxHealth);
     }
 
-    public override void Die() {
+    protected override void Die() {
         Destroy(unit.gameObject);
 
         if (!dropRate.Chance()) return;
@@ -34,7 +33,7 @@ public class UnitMonster : UnitSide {
             ?.GetItemFromFight(Run.m.GetRandomItem(), unit);
     }
 
-    public override void GetDefeated() {
+    protected override void GetDefeated() {
         Battle.m.Victory();
     }
 }

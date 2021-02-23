@@ -31,13 +31,14 @@ public class UnitHero : UnitSide {
     // BASICS
     // ====================
 
-    public void Awake() { //Called before loading
+    protected override void Init() { //Called before loading
         unit.index = Unit.allHeroUnits.Count;
         Unit.allHeroUnits.Add(unit);
         Unit.heroUnits.Add(unit);
         _icon = null;
         icon.ClearItems();
         if (ult) ult.unit = unit;
+        unit.onDeactivate.AddListener(() => icon.Die());
     }
 
     public void InitBattle() { //Called after loading
@@ -51,7 +52,7 @@ public class UnitHero : UnitSide {
         UpdateUlt();
     }
 
-    public override void Die() {
+    protected override void Die() {
         unit.data.activity = CampActivity.Type.IDLE;
         unit.allies.Remove(unit);
         unit.hanimator.gameObject.SetActive(false);
@@ -60,7 +61,7 @@ public class UnitHero : UnitSide {
         unit.OnDestroy();
     }
 
-    public override void GetDefeated() {
+    protected override void GetDefeated() {
         Battle.m.Defeat();
     }
     

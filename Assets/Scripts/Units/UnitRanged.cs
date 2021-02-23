@@ -19,21 +19,21 @@ public class UnitRanged : UnitBehavior {
 
     public void Awake() {
         attackStatus = AttackStatus.READY;
-        unit.OnTakeCollisionDamage.AddListener(this.OnTakeCollisionDamage);
+        unit.OnTakeCollisionDamage.AddListener(ResetReload);
         transform.position = new Vector3(this.Random(Game.m.spawnPosXRangeForRanged.x, 
                 Game.m.spawnPosXRangeForRanged.y).ReverseIf(unit.isHero), -3, 0);
     }
 
     public void Update() {
-        UpdateVisuals();
         UpdateSpeed();
-        UpdateCombat();
         UpdateReload();
+        UpdateCombat();
     }
-
-    public void UpdateVisuals() {
-        if (unit.currentSpeed.isClearlyPositive()) unit.SetAnim(Unit.Anim.WALK);
-    }
+    
+    
+    // ====================
+    // MOVEMENT
+    // ====================
 
     public void UpdateSpeed() {
         if (!CanUpdateSpeed()) return;
@@ -45,6 +45,7 @@ public class UnitRanged : UnitBehavior {
             unit.currentSpeed = unit.currentSpeed.LerpTo(Game.m.unitMaxSpeed, Game.m.bumpRecoverySpeed);
             attackStatus = AttackStatus.READY;
         }
+        if (unit.currentSpeed.isClearlyPositive()) unit.SetAnim(Unit.Anim.WALK);
     }
 
     public bool CanUpdateSpeed() {
@@ -58,10 +59,29 @@ public class UnitRanged : UnitBehavior {
         return true;
     }
 
-    public void OnTakeCollisionDamage() {
-        attackStatus = AttackStatus.RECOVERING;
+    
+    // ====================
+    // RELOADING
+    // ====================
+
+    public void ResetReload() {
         timeTillReloaded = reloadDuration;
+        attackStatus = AttackStatus.RECOVERING;
     }
+
+    public void UpdateReload() {
+        if (attackStatus != AttackStatus.RECOVERING) return;
+        if (Battle.m.gameState == Battle.State.PAUSE) return;
+        if (unit.hero.ultStatus == UnitHero.UltStatus.ACTIVATED) return;
+
+        timeTillReloaded -= Time.deltaTime;
+        if (timeTillReloaded <= 0) attackStatus = AttackStatus.READY;
+    }
+    
+    
+    // ====================
+    // COMBAT
+    // ====================
 
     public void UpdateCombat() {
         if (attackStatus != AttackStatus.READY) return;
@@ -73,15 +93,6 @@ public class UnitRanged : UnitBehavior {
         PrepareAttack();
     }
 
-    public void UpdateReload() {
-        if (attackStatus != AttackStatus.RECOVERING) return;
-        if (Battle.m.gameState == Battle.State.PAUSE) return;
-        if (unit.hero.ultStatus == UnitHero.UltStatus.ACTIVATED) return;
-
-        timeTillReloaded -= Time.deltaTime;
-        if (timeTillReloaded <= 0) attackStatus = AttackStatus.READY;
-    }
-
     public void PrepareAttack() {
         Game.m.PlaySound(aimSound, .25f);
         attackStatus = AttackStatus.ATTACKING;
@@ -90,6 +101,7 @@ public class UnitRanged : UnitBehavior {
     }
 
     public void Attack() {
+        if (unit.status != Unit.Status.ALIVE) return;
         if (attackStatus != AttackStatus.ATTACKING) return;
         
         Game.m.PlaySound(shootSound);
@@ -100,7 +112,7 @@ public class UnitRanged : UnitBehavior {
             Quaternion.identity, 
             transform);
         arrow.owner = unit;
-        timeTillReloaded = reloadDuration;
+        ResetReload();
     }
 
     public float DistanceToMe(Unit other) => (this.GetX() - other.GetX()).Abs();

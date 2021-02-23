@@ -104,21 +104,23 @@ MonoBehaviour:
   anims:
   - name: 
     frameDuration: 50
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
     sprites:
     - {fileID: 872456342753083573, guid: a5a5c23e92f638d45b7aef6ffeb662c9, type: 3}
     - {fileID: 2793369586315611697, guid: a5a5c23e92f638d45b7aef6ffeb662c9, type: 3}
     - {fileID: -2746764710628950152, guid: a5a5c23e92f638d45b7aef6ffeb662c9, type: 3}
-    loop: 0
-    delay: 0
-    randomStart: 0
   playing: 0
   currentAnim:
     name: 
     frameDuration: 0
-    sprites: []
-    loop: 0
     delay: 0
+    weight: 0
+    loop: 0
     randomStart: 0
+    sprites: []
   currentFrame: 0
   startAnimDate: 0
 --- !u!114 &8474402998590796520
@@ -155,7 +157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979848392166745681}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 281b979ff7e09254ba68b1136fffd0d6, type: 3}
   m_Name: 
