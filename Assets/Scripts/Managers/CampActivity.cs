@@ -14,7 +14,7 @@ public class CampActivity {
     public CampSlot emptySlot => slots.FirstOrDefault(s => s.hero == null);
 
     //Walking is not an actual activity with slots, it's the filler between activities
-    public enum Type { IDLE, SLEEPING, READY, WALKING }
+    public enum Type { IDLE, SLEEPING, READY }
         
 
     public void Init() {
@@ -41,5 +41,14 @@ public class CampActivity {
         if (type == Type.SLEEPING && hero.data.currentHealth.isAbout(hero.data.maxHealth)) return false;
         
         return true;
+    }
+
+    public void BounceButton() {
+        button.Bounce(0.05f, .1f);
+        button.GetComponent<Image>().TweenAlpha(0, Tween.Style.EASE_IN, .35f,
+            () => {
+                button.gameObject.SetActive(false);
+                button.GetComponent<Image>().SetAlpha(1);
+            });
     }
 }

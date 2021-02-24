@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Camp : Level<Camp> {
     [Header("State")]
@@ -19,10 +19,20 @@ public class Camp : Level<Camp> {
     public CampActivity ready;
     
     public List<CampActivity> activities => new List<CampActivity> { idle, sleep, ready };
+    
+    
+    // ====================
+    // BASICS
+    // ====================
 
     public void Start() {
         InitCamp();
     }
+    
+    
+    // ====================
+    // CAMP INIT
+    // ====================
 
     public void InitCamp() {
         //Play music and ambient loops
@@ -38,19 +48,16 @@ public class Camp : Level<Camp> {
             heroes.Add(newHero);
             newHero.prefabIndex = hgs.prefabIndex;
         });
+        
+        //Init activities
         DeselectUnit();
         activities.ForEach(a => a.Init());
     }
-    
-    public void StartBattle() {
-        Game.m.PlaySound(MedievalCombat.SPECIAL_CLICK, 1, 3);
-        transition.FadeIn();
-        this.Wait(0.4f, () => Game.m.LoadScene(Game.SceneName.Battle));
-        heroes.ForEach(h => h.data.activity = h.currentActivity.type);
-    }
 
-    public CampActivity GetActivity(CampActivity.Type wantedType) 
-        => activities.FirstOrDefault(a => a.type == wantedType);
+
+    // ====================
+    // ACTIVITIES
+    // ====================
     
     public void SelectUnit(CampHero campHero) {
         Game.m.PlaySound(MedievalCombat.UI_TIGHT, 1, 1);
@@ -62,6 +69,7 @@ public class Camp : Level<Camp> {
         });
     }
 
+    public void ClickOutside() => DeselectUnit(); //Called by ui button
     public void DeselectUnit() {
         arrow.spriteRenderer.enabled = false;
         if (selectedHero == null) return;
@@ -70,25 +78,32 @@ public class Camp : Level<Camp> {
         CampHero oldSelectedHero = selectedHero;
         activities.Except(selectedActivity).ForEach(a => a.button.gameObject.SetActive(false));
         selectedHero = null;
-        if (oldSelectedHero.data.activity != CampActivity.Type.WALKING) {
+        if (oldSelectedHero.isWalking) {
             selectedActivity.button.gameObject.SetActive(false);
             return;
         }
-        selectedActivity.button.Bounce(0.05f, .1f);
-        selectedActivity.button.GetComponent<Image>().TweenAlpha(0, Tween.Style.EASE_IN, .35f,
-            () => {
-                selectedActivity.button.gameObject.SetActive(false);
-                selectedActivity.button.GetComponent<Image>().SetAlpha(1);
-            });
+        selectedActivity.BounceButton();
     }
-
-    public void ClickOutside() {
-        DeselectUnit();
-    }
-
-    public void OnApplicationQuit() {
+    
+    public CampActivity GetActivity(CampActivity.Type wantedType) 
+        => activities.FirstOrDefault(a => a.type == wantedType);
+    
+    
+    // ====================
+    // START BATTLE
+    // ====================
+    
+    public void StartBattle() { //Called by ui button
+        Game.m.PlaySound(MedievalCombat.SPECIAL_CLICK, 1, 3);
+        transition.FadeIn();
+        this.Wait(0.4f, () => Game.m.LoadScene(Game.SceneName.Battle));
         Game.m.SaveToDevice();
     }
+    
+    
+    // ====================
+    // CHEATS
+    // ====================
 
     public void HealAllHeroes() => heroes.ForEach(h => h.AddHealth(20));
     public void HurtAllHeroes() => heroes.ForEach(h => h.AddHealth(-20));

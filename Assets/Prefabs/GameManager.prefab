@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3cf68eda5662349ab6e4d8adedeb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToAHundredHp: 600
+  secondsToMaxHp: 20
   battlesPerRun: 5
   timeToAutoRestart: 2
   spawnPosXRangeForMelee: {x: 1, y: 4}
@@ -58,7 +58,7 @@ MonoBehaviour:
   bumpSpeed: -20
   defendSpeed: -10
   absorbSpeed: -5
-  boardSize: 14
+  boardSize: 13.75
   maxItemsPerHero: 6
   commonDropChance: 10
   rareDropChance: 3

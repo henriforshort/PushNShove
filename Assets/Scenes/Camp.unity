@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedHero: {fileID: 0}
   heroes: []
-  transition: {fileID: 0}
+  transition: {fileID: 686487682}
   arrow: {fileID: 1225479993}
   unitsHolder: {fileID: 1420776070}
   idle:
@@ -2012,6 +2012,17 @@ MonoBehaviour:
   targetValue: {x: 0, y: 0, z: 0}
   currentValue: {x: 0, y: 0, z: 0}
   linearValue: 0
+--- !u!114 &686487682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6810708429010523011, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
+  m_PrefabInstance: {fileID: 1010337484}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8650de694130379488c4615ef742ee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &750483094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,7 +2599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6810708429010523015, guid: 48b7de029b9c34d44b17f98e60e4d9a6, type: 3}
       propertyPath: m_AnchorMax.x

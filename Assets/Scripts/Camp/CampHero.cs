@@ -8,6 +8,8 @@ public class CampHero : MonoBehaviour {
     [Header("State")]
     public CampSlot currentSlot;
     [HideInInspector] public CampActivity currentActivity;
+    public bool isWalking;
+    public bool isFirstFrame;
     
     [Header("References")]
     public GameObject body;
@@ -27,7 +29,7 @@ public class CampHero : MonoBehaviour {
     private List<GameObject> _visuals;
     public List<GameObject> visuals => _visuals ?? (_visuals = new List<GameObject> {idleVisuals, 
         sleepingVisuals, readyVisuals, walkingVisuals});
-    public GameObject currentVisuals => visuals[(int) data.activity];
+    public GameObject currentVisuals => visuals[isWalking ? 3 : (int) data.activity];
 
     
     // ====================
@@ -35,6 +37,8 @@ public class CampHero : MonoBehaviour {
     // ====================
     
     public void Start() {
+        isFirstFrame = true;
+        this.WaitOneFrame(() => isFirstFrame = false);
         Camp.m.GetActivity(data.activity)?.Add(this);
         this.SetX(currentSlot.x);
         this.SetY(-3);
@@ -52,7 +56,7 @@ public class CampHero : MonoBehaviour {
     // ====================
 
     public void MoveToGoal() {
-        if (data.activity != CampActivity.Type.WALKING) return;
+        if (!isWalking) return;
 
         float dif = currentSlot.x - this.GetX();
         this.SetX(this.GetX() + dif.Sign() * (Time.deltaTime * 2f).AtMost(dif.Abs()));
@@ -60,6 +64,7 @@ public class CampHero : MonoBehaviour {
     }
 
     public void SetGoal(CampActivity newActivity, CampSlot newSlot) {
+        //leave old activity
         if (currentSlot != null) {
             currentSlot.hero = null;
             currentSlot.emptyMarkers.ForEach(m => m.SetActive(true));
@@ -69,9 +74,18 @@ public class CampHero : MonoBehaviour {
         currentSlot = newSlot;
         currentActivity = newActivity;
         currentSlot.hero = this;
-        SetStatus(CampActivity.Type.WALKING);
+        
+        //enable walk visuals
+        isWalking = true;
+        SetVisuals();
         body.SetMirrored(currentSlot.x < this.GetX());
         this.SetZ(-2);
+        
+        //set new activity (before I actually start walking)
+        data.activity = currentActivity.type;
+        if (data.activity == CampActivity.Type.SLEEPING && !isFirstFrame) data.lastSeenSleeping = DateTime.Now;
+        currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.emptySlot == default));
+        Game.m.SaveToDevice();
     }
     
     
@@ -79,32 +93,30 @@ public class CampHero : MonoBehaviour {
     // REACH GOAL
     // ====================
 
-    public void ReachGoal() {
+    public void ReachGoal() { //enable new activity visuals
+        isWalking = false;
         Game.m.PlaySound(MedievalCombat.UI_TIGHT, .5f, 5);
         currentSlot.emptyMarkers.ForEach(m => m.SetActive(false));
-        currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.emptySlot == default));
-        SetStatus(currentActivity.type);
+        SetVisuals();
         this.SetX(currentSlot.x);
-        if (data.activity == CampActivity.Type.IDLE) StartIdling();
-        if (data.activity == CampActivity.Type.SLEEPING) StartSleeping();
-        if (data.activity == CampActivity.Type.READY) StartReadying();
+        if (data.activity == CampActivity.Type.IDLE) IdleFeedback();
+        if (data.activity == CampActivity.Type.SLEEPING) SleepFeedback();
+        if (data.activity == CampActivity.Type.READY) ReadyFeedback();
     }
 
-    public void SetStatus(CampActivity.Type newStatus) {
-        data.activity = newStatus;
+    public void SetVisuals() {
         visuals.ForEach(s => s.SetActive(false));
         currentVisuals.SetActive(true);
         currentVisuals.GetComponent<Hanimator>()?.Play(0);
     }
 
-    public void StartIdling() {
+    public void IdleFeedback() {
         this.SetZ(-0.1f*currentSlot.x.Abs());
         body.SetMirrored(currentSlot.x > 0);
     }
 
-    public void StartSleeping() {
-        if (Time.frameCount != 1) {
-            data.lastSeenSleeping = DateTime.Now;
+    public void SleepFeedback() {
+        if (!isFirstFrame) {
             Game.m.PlaySound(MedievalCombat.BAG);
             Game.m.PlaySound(MedievalCombat.POTION_AND_ALCHEMY, 0.5f, 10);
         }
@@ -113,7 +125,7 @@ public class CampHero : MonoBehaviour {
         body.SetMirrored(false);
     }
 
-    public void StartReadying() {
+    public void ReadyFeedback() {
         this.SetZ(0);
         body.SetMirrored(false);
         Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, 0.5f, 1);
@@ -127,7 +139,6 @@ public class CampHero : MonoBehaviour {
 
     public void Sleep() {
         if (data.activity != CampActivity.Type.SLEEPING) return;
-        if (Time.frameCount == 1) return;
 
         //sec = %hp * secper%hp
         float secondsToFullLife = (1 - data.currentHealth/data.maxHealth) * Game.m.secondsToMaxHp;
@@ -141,7 +152,7 @@ public class CampHero : MonoBehaviour {
         if (data.currentHealth.isAbout(data.maxHealth)) {
             this.Wait(0.5f, () => {
                 Camp.m.GetActivity(CampActivity.Type.IDLE)?.Add(this);
-                Game.m.PlaySound(Casual.POSITIVE, .5f, 5); //TODO fix sound bug
+                Game.m.PlaySound(Casual.POSITIVE, .5f, 5);
             });
         }
     }
