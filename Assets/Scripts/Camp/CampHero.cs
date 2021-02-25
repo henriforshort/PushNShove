@@ -39,6 +39,7 @@ public class CampHero : MonoBehaviour {
     public void Start() {
         isFirstFrame = true;
         this.WaitOneFrame(() => isFirstFrame = false);
+        Sleep();
         Camp.m.GetActivity(data.activity)?.Add(this);
         this.SetX(currentSlot.x);
         this.SetY(-3);
@@ -150,7 +151,7 @@ public class CampHero : MonoBehaviour {
         data.lastSeenSleeping = DateTime.Now;
 
         if (data.currentHealth.isAbout(data.maxHealth)) {
-            this.Wait(0.5f, () => {
+            this.Wait(isFirstFrame ? 0 : 0.5f, () => {
                 Camp.m.GetActivity(CampActivity.Type.IDLE)?.Add(this);
                 Game.m.PlaySound(Casual.POSITIVE, .5f, 5);
             });

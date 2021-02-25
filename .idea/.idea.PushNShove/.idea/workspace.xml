@@ -21,12 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camp.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camp/CampHero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camp/CampHero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CampActivity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CampActivity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitSide.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitSide.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +73,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/14/21476f1a/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B9928817-6026-4650-AF20-035B53BF15A8/d4/38c8424f/Input.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/ba/3c78724b/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/2d/061a09d0/Comparison`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFC774E3-9F15-4E8B-ACC0-AAE5397B53AE/89/ecc8fecd/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4BEC26B5-CBC7-4715-8442-F1499E984732/6e/718b9a4e/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -144,27 +149,27 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMaxRange.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitSide.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HeroGameSave.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CampSlot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CampActivity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampHero.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitSide.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" />
       </list>
     </option>
   </component>
@@ -310,6 +315,7 @@
       <workItem from="1613986215009" duration="15299000" />
       <workItem from="1614070680540" duration="19987000" />
       <workItem from="1614156418515" duration="13811000" />
+      <workItem from="1614288340244" duration="3535000" />
     </task>
     <servers />
   </component>

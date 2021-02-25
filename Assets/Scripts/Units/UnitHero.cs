@@ -28,7 +28,7 @@ public class UnitHero : UnitSide {
 
 
     // ====================
-    // BASICS
+    // INIT
     // ====================
 
     protected override void Init() { //Called before loading
@@ -45,23 +45,28 @@ public class UnitHero : UnitSide {
         ultStatus = UltStatus.RELOADING;
         icon.InitBattle(this);
         itemPrefabPaths.ForEach(ipp => GetItemAtStartup(ipp.ToPrefab<Item>()));
-        unit.InitBattle();
     }
 
-    public void Update() {
-        UpdateUlt();
+    public void Start() { //Called after every unit has been created and loaded
+        if (unit.data.currentHealth.isAboutOrLowerThan(0)) unit.onDeath.Invoke();
+        else unit.SetHealth(unit.data.currentHealth);
     }
 
-    protected override void Die() {
+
+    // ====================
+    // EVENTS
+    // ====================
+
+    protected override void OnDeath() {
         unit.data.activity = CampActivity.Type.IDLE;
         unit.allies.Remove(unit);
         unit.hanimator.gameObject.SetActive(false);
-        unit.hero.icon.Die();
-        unit.hero.EndUlt();
+        icon.Die();
+        EndUlt();
         unit.OnDestroy();
     }
 
-    protected override void GetDefeated() {
+    protected override void OnDefeat() {
         Battle.m.Defeat();
     }
     
@@ -69,6 +74,10 @@ public class UnitHero : UnitSide {
     // ====================
     // ULT
     // ====================
+
+    public void Update() {
+        UpdateUlt();
+    }
 
     public void UpdateUlt() {
         if (Battle.m.gameState != Battle.State.PLAYING) return;

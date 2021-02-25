@@ -87,11 +87,6 @@ public class Unit : MonoBehaviour {
         if (behavior != null) behavior.unit = this;
         speedLastFrame = -1;
     }
-
-    public void InitBattle() { //Called after loading
-        if (data.currentHealth.isAboutOrLowerThan(0)) Die();
-        else SetHealth(data.currentHealth);
-    }
     
     
     // ====================
@@ -367,11 +362,6 @@ public class Unit : MonoBehaviour {
         Game.m.PlaySound(MedievalCombat.BODY_FALL, 0.5f, 4);
         Game.m.PlaySound(deathSound, .5f, -1, pitch);
         Game.m.PlaySound(deathSoundAnimal);
-        Die();
-    }
-
-    public void Die() {
-        status = Status.DEAD;
         onDeath.Invoke();
     }
 
@@ -380,6 +370,7 @@ public class Unit : MonoBehaviour {
         if (Battle.m.gameState == Battle.State.GAME_OVER) return;
         if (Battle.m.gameState == Battle.State.RESTARTING) return;
 
+        status = Status.DEAD;
         hpLossUis
             .Where(ui => ui != null)
             .ToList()

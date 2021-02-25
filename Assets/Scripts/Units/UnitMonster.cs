@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitMonster : UnitSide {
@@ -21,7 +19,7 @@ public class UnitMonster : UnitSide {
         unit.SetHealth(unit.data.maxHealth);
     }
 
-    protected override void Die() {
+    protected override void OnDeath() {
         Destroy(unit.gameObject);
 
         if (!dropRate.Chance()) return;
@@ -33,7 +31,7 @@ public class UnitMonster : UnitSide {
             ?.GetItemFromFight(Run.m.GetRandomItem(), unit);
     }
 
-    protected override void GetDefeated() {
+    protected override void OnDefeat() {
         Battle.m.Victory();
     }
 }

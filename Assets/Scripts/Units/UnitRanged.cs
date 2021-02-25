@@ -25,6 +25,8 @@ public class UnitRanged : UnitBehavior {
     }
 
     public void Update() {
+        if (unit.status == Unit.Status.DEAD) return;
+
         UpdateSpeed();
         UpdateReload();
         UpdateCombat();

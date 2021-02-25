@@ -6,13 +6,13 @@ public class UnitSide : MonoBehaviour {
     
     
     protected virtual void Init() { }
-    protected virtual void Die() { }
-    protected virtual void GetDefeated() { }
+    protected virtual void OnDeath() { }
+    protected virtual void OnDefeat() { }
 
     public void Awake() {
         Init();
         
-        unit.onDeath.AddListener(Die);
-        unit.onDefeat.AddListener(GetDefeated);
+        unit.onDeath.AddListener(OnDeath);
+        unit.onDefeat.AddListener(OnDefeat);
     }
 }

@@ -70,7 +70,7 @@ MonoBehaviour:
   baseDamage: 10
   baseCritChance: 0.1
   size: 1
-  bumpedSound: 24
+  bumpedSound: 13
   bumpedSoundAnimal: 0
   deathSound: 13
   deathSoundAnimal: 0

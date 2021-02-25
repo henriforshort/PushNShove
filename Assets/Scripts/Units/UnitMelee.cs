@@ -29,6 +29,8 @@ public class UnitMelee : UnitBehavior {
     }
 
     public void Update() {
+        if (unit.status == Unit.Status.DEAD) return;
+        
         UpdateSpeed();
         UpdateCombat();
         UpdateVisuals();

@@ -578,7 +578,7 @@ public static class Util {
     public static Coroutine Wait(this MonoBehaviour obj, float duration, Action then) => 
         obj.StartCoroutine(_Wait(duration, then));
     private static IEnumerator _Wait(float duration, Action then) {
-        yield return new WaitForSeconds(duration);
+        if (duration > 0) yield return new WaitForSeconds(duration);
         then();
     }
 
