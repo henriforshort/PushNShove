@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b363d206fffbe94f8aab5550865f4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 2
+  ultCooldown: 28
   ultDuration: 1.5
   ultStatus: 0
   _icon: {fileID: 0}

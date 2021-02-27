@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3cf68eda5662349ab6e4d8adedeb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToMaxHp: 20
+  secondsToMaxHp: 600
   battlesPerRun: 5
   timeToAutoRestart: 2
   spawnPosXRangeForMelee: {x: 1, y: 4}

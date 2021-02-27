@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -61,6 +62,11 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public enum SceneName { StartMenu, Battle, Camp }
     
     public string savePath => Application.persistentDataPath + "/save.hiloqo";
+    
+    
+    // ====================
+    // BASICS
+    // ====================
 
     public void Awake() {
         if (m == null) m = this;
@@ -70,6 +76,16 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         }
         DontDestroyOnLoad(this);
         LoadFromDevice();
+    }
+
+    public void OnApplicationQuit() {
+        if (save.currentScene != SceneName.Battle) return;
+        
+        save.currentScene = SceneName.Camp;
+        Unit.heroUnits.ForEach(u => {
+            u.data.activity = CampActivity.Type.IDLE;
+        });
+        SaveToDevice();
     }
     
     
@@ -152,5 +168,5 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         audioSource.Play();
     }
 
-    public void MuteMusic(bool mute = true) => sound.musicAudioSource.volume = mute ? 0 : .1f;
+    public void MuteMusic(bool mute = true) => sound.musicAudioSource.volume = mute ? 0 : .2f;
 }
