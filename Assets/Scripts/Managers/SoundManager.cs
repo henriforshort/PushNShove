@@ -20,7 +20,11 @@ public class SoundManager : MonoBehaviour {
         if (filename == "NONE") return;
         if (audioPath == null) return;
 
-        GetAudioSource(pitch).PlayOneShot(GetAudioClip(audioPath, filename, index), volume);
+        try {
+            GetAudioSource(pitch).PlayOneShot(GetAudioClip(audioPath, filename, index), volume);
+        } catch {
+            Debug.LogWarning("sound not found: "+audioPath+" "+filename);
+        }
     }
 
     public AudioClip GetAudioClip(string audioPath, string filename, int index = -1) {

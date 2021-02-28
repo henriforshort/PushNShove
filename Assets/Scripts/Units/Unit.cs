@@ -273,7 +273,7 @@ public class Unit : MonoBehaviour {
     // HEALTH
     // ====================
 
-    public UnityEvent OnTakeCollisionDamage;
+    [HideInInspector] public UnityEvent OnTakeCollisionDamage;
 
     public void TakeCollisionDamage(float amount, bool isCrit = false) {
         amount = (amount * this.Random(.5f, 1.5f)).Round();
@@ -328,9 +328,9 @@ public class Unit : MonoBehaviour {
     // DEATH
     // ====================
 
-    public UnityEvent onDeactivate;
-    public UnityEvent onDeath;
-    public UnityEvent onDefeat;
+    [HideInInspector] public UnityEvent onDeactivate;
+    [HideInInspector] public UnityEvent onDeath;
+    [HideInInspector] public UnityEvent onDefeat;
 
     public void DeathByHp() {
         Deactivate();

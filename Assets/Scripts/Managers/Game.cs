@@ -160,12 +160,16 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         sound.Play("Audio/Casual Music Pack", casual.ToString(), volume, index, pitch);
 
     public void PlayMusic(AdventureRPG adventureRpg) {
-        AudioClip clip = sound.GetAudioClip("Audio/2D Adventure RPG Music Pack" , adventureRpg.ToString());
-        AudioSource audioSource = sound.musicAudioSource;
-        if (audioSource.clip == clip) return;
+        try {
+            AudioClip clip = sound.GetAudioClip("Audio/2D Adventure RPG Music Pack" , adventureRpg.ToString());
+            AudioSource audioSource = sound.musicAudioSource;
+            if (audioSource.clip == clip) return;
         
-        audioSource.clip = clip;
-        audioSource.Play();
+            audioSource.clip = clip;
+            audioSource.Play();
+        } catch {
+            Debug.LogWarning("sound not found: Audio/2D Adventure RPG Music Pack "+adventureRpg);
+        }
     }
 
     public void MuteMusic(bool mute = true) => sound.musicAudioSource.volume = mute ? 0 : .2f;

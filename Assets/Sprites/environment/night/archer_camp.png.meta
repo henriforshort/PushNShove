@@ -1,0 +1,5268 @@
+fileFormatVersion: 2
+guid: 6f98ca2e755126642a1cb1a5d65d101c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2056454357720752972
+    second: archer_camp_0
+  - first:
+      213: -5458105331676189191
+    second: archer_camp_1
+  - first:
+      213: -3501421555557616268
+    second: archer_camp_2
+  - first:
+      213: 3002814505897914574
+    second: archer_camp_3
+  - first:
+      213: 4438488489204192348
+    second: archer_camp_4
+  - first:
+      213: 6724775565186157046
+    second: archer_camp_5
+  - first:
+      213: -3946543866097473831
+    second: archer_camp_6
+  - first:
+      213: 8085437300100476155
+    second: archer_camp_7
+  - first:
+      213: 8310012157227622466
+    second: archer_camp_8
+  - first:
+      213: -5422912065476014335
+    second: archer_camp_9
+  - first:
+      213: -7880356999030463180
+    second: archer_camp_10
+  - first:
+      213: -3154175370528351120
+    second: archer_camp_11
+  - first:
+      213: -7621075763208656783
+    second: archer_camp_12
+  - first:
+      213: 7333393396900501064
+    second: archer_camp_13
+  - first:
+      213: 7478937068514397050
+    second: archer_camp_14
+  - first:
+      213: -8327836549484465168
+    second: archer_camp_15
+  - first:
+      213: -1463182145298821100
+    second: archer_camp_16
+  - first:
+      213: 2393553012577207850
+    second: archer_camp_17
+  - first:
+      213: 7151818863697933663
+    second: archer_camp_18
+  - first:
+      213: 1869944735750195841
+    second: archer_camp_19
+  - first:
+      213: 9171441918845501864
+    second: archer_camp_20
+  - first:
+      213: -5938117160268580666
+    second: archer_camp_21
+  - first:
+      213: -8937182196272033774
+    second: archer_camp_22
+  - first:
+      213: 6282421552118659573
+    second: archer_camp_23
+  - first:
+      213: -2310477237569967027
+    second: archer_camp_24
+  - first:
+      213: 2551286528656111327
+    second: archer_camp_25
+  - first:
+      213: 5105025933292701767
+    second: archer_camp_26
+  - first:
+      213: -787372634226911642
+    second: archer_camp_27
+  - first:
+      213: -4452906080905137587
+    second: archer_camp_28
+  - first:
+      213: -7452531290061669778
+    second: archer_camp_29
+  - first:
+      213: -3016317022951771138
+    second: archer_camp_30
+  - first:
+      213: 563462168501968063
+    second: archer_camp_31
+  - first:
+      213: -5671448665890670608
+    second: archer_camp_32
+  - first:
+      213: 7354480739050734201
+    second: archer_camp_33
+  - first:
+      213: -5873427797070250228
+    second: archer_camp_34
+  - first:
+      213: 4106952304055428552
+    second: archer_camp_35
+  - first:
+      213: -4306422609864801351
+    second: archer_camp_36
+  - first:
+      213: 8093943680591777790
+    second: archer_camp_37
+  - first:
+      213: -8313300268733268163
+    second: archer_camp_38
+  - first:
+      213: -122843103823801168
+    second: archer_camp_39
+  - first:
+      213: -5952175831959294255
+    second: archer_camp_40
+  - first:
+      213: -183991641987188621
+    second: archer_camp_41
+  - first:
+      213: 9220779929419003703
+    second: archer_camp_42
+  - first:
+      213: 7924862560679753360
+    second: archer_camp_43
+  - first:
+      213: -4924857296093002450
+    second: archer_camp_44
+  - first:
+      213: 778731740079401344
+    second: archer_camp_45
+  - first:
+      213: 4892186321427452267
+    second: archer_camp_46
+  - first:
+      213: 4951000261081651443
+    second: archer_camp_47
+  - first:
+      213: -6871636589922882832
+    second: archer_camp_48
+  - first:
+      213: 8276510425057472835
+    second: archer_camp_49
+  - first:
+      213: 7734032782827017292
+    second: archer_camp_50
+  - first:
+      213: -3722859169316545237
+    second: archer_camp_51
+  - first:
+      213: -6904261407321989071
+    second: archer_camp_52
+  - first:
+      213: -5687305217054080485
+    second: archer_camp_53
+  - first:
+      213: -7153031448623882896
+    second: archer_camp_54
+  - first:
+      213: -5660467228340006034
+    second: archer_camp_55
+  - first:
+      213: -7440929805498717063
+    second: archer_camp_56
+  - first:
+      213: -4888721211450415460
+    second: archer_camp_57
+  - first:
+      213: -6204294241453320871
+    second: archer_camp_58
+  - first:
+      213: 3753236075563242438
+    second: archer_camp_59
+  - first:
+      213: 4948367401668444122
+    second: archer_camp_60
+  - first:
+      213: -8350604653783458490
+    second: archer_camp_61
+  - first:
+      213: 4301409351039257113
+    second: archer_camp_62
+  - first:
+      213: -7020086645502218777
+    second: archer_camp_63
+  - first:
+      213: -1709219091585529775
+    second: archer_camp_64
+  - first:
+      213: -1650777600390562799
+    second: archer_camp_65
+  - first:
+      213: 7311232037676608834
+    second: archer_camp_66
+  - first:
+      213: -8387266782455101332
+    second: archer_camp_67
+  - first:
+      213: -2461029627223443083
+    second: archer_camp_68
+  - first:
+      213: 7122508279074814766
+    second: archer_camp_69
+  - first:
+      213: 359005679130825679
+    second: archer_camp_70
+  - first:
+      213: 8409720544200972816
+    second: archer_camp_71
+  - first:
+      213: -845278104456780890
+    second: archer_camp_72
+  - first:
+      213: 6442298736995953276
+    second: archer_camp_73
+  - first:
+      213: -4063333895397802505
+    second: archer_camp_74
+  - first:
+      213: 4460124164355207063
+    second: archer_camp_75
+  - first:
+      213: 3840105110563121278
+    second: archer_camp_76
+  - first:
+      213: -8413375746451701163
+    second: archer_camp_77
+  - first:
+      213: 83349537207452463
+    second: archer_camp_78
+  - first:
+      213: -8544665476484136796
+    second: archer_camp_79
+  - first:
+      213: 864910794380923677
+    second: archer_camp_80
+  - first:
+      213: -1362649566584253769
+    second: archer_camp_81
+  - first:
+      213: 872399624902025561
+    second: archer_camp_82
+  - first:
+      213: 7637141105242612935
+    second: archer_camp_83
+  - first:
+      213: 3088386166514576883
+    second: archer_camp_84
+  - first:
+      213: -3474436065886638532
+    second: archer_camp_85
+  - first:
+      213: 392341878307607517
+    second: archer_camp_86
+  - first:
+      213: -2784111630989580563
+    second: archer_camp_87
+  - first:
+      213: 4464578531499438336
+    second: archer_camp_88
+  - first:
+      213: 291665249645335194
+    second: archer_camp_89
+  - first:
+      213: -2809855894071444827
+    second: archer_camp_90
+  - first:
+      213: 3967961587272286751
+    second: archer_camp_91
+  - first:
+      213: 6725453499104404009
+    second: archer_camp_92
+  - first:
+      213: 7696667869721825756
+    second: archer_camp_93
+  - first:
+      213: -8843364109881494290
+    second: archer_camp_94
+  - first:
+      213: 7376266524003477051
+    second: archer_camp_95
+  - first:
+      213: -6886151254806429311
+    second: archer_camp_96
+  - first:
+      213: 8031526692862770672
+    second: archer_camp_97
+  - first:
+      213: -652755891377709100
+    second: archer_camp_98
+  - first:
+      213: 153686676221078589
+    second: archer_camp_99
+  - first:
+      213: 5396314477064682073
+    second: archer_camp_100
+  - first:
+      213: 3714355687808465228
+    second: archer_camp_101
+  - first:
+      213: 3788599309316867472
+    second: archer_camp_102
+  - first:
+      213: -6719482415219303102
+    second: archer_camp_103
+  - first:
+      213: -5423642924491855565
+    second: archer_camp_104
+  - first:
+      213: 8949939473021493805
+    second: archer_camp_105
+  - first:
+      213: -6010371554419922562
+    second: archer_camp_106
+  - first:
+      213: 5385374184405768573
+    second: archer_camp_107
+  - first:
+      213: -9112549543970156416
+    second: archer_camp_108
+  - first:
+      213: -125358664876430527
+    second: archer_camp_109
+  - first:
+      213: 8366020481036616395
+    second: archer_camp_110
+  - first:
+      213: -845959515732760052
+    second: archer_camp_111
+  - first:
+      213: -1603343166768216035
+    second: archer_camp_112
+  - first:
+      213: 2123851747752532187
+    second: archer_camp_113
+  - first:
+      213: -1939448340545343073
+    second: archer_camp_114
+  - first:
+      213: 3141593695342535716
+    second: archer_camp_115
+  - first:
+      213: 4231987183063976852
+    second: archer_camp_116
+  - first:
+      213: -2445548310410378294
+    second: archer_camp_117
+  - first:
+      213: 1926498306493569958
+    second: archer_camp_118
+  - first:
+      213: 7894231947211105382
+    second: archer_camp_119
+  - first:
+      213: -7975875437766823578
+    second: archer_camp_120
+  - first:
+      213: -7405699437038455756
+    second: archer_camp_121
+  - first:
+      213: 7507542138729623402
+    second: archer_camp_122
+  - first:
+      213: -1211758552285515356
+    second: archer_camp_123
+  - first:
+      213: -2389232201750316991
+    second: archer_camp_124
+  - first:
+      213: -7511100845166194708
+    second: archer_camp_125
+  - first:
+      213: 3697107029396023641
+    second: archer_camp_126
+  - first:
+      213: -6162640852300008651
+    second: archer_camp_127
+  - first:
+      213: 4496638508321324639
+    second: archer_camp_128
+  - first:
+      213: 8128963416814052227
+    second: archer_camp_129
+  - first:
+      213: -9074991482489977742
+    second: archer_camp_130
+  - first:
+      213: -8651133310390492582
+    second: archer_camp_131
+  - first:
+      213: 4862252434143901611
+    second: archer_camp_132
+  - first:
+      213: -5919430361287042066
+    second: archer_camp_133
+  - first:
+      213: -6078644217896936181
+    second: archer_camp_134
+  - first:
+      213: 5429592555165179233
+    second: archer_camp_135
+  - first:
+      213: -1372572676095795110
+    second: archer_camp_136
+  - first:
+      213: -9085926099497236338
+    second: archer_camp_137
+  - first:
+      213: 4061903714418897428
+    second: archer_camp_138
+  - first:
+      213: 1798763613930402032
+    second: archer_camp_139
+  - first:
+      213: -5619267107947266402
+    second: archer_camp_140
+  - first:
+      213: 5335346663368846887
+    second: archer_camp_141
+  - first:
+      213: -38519006895041876
+    second: archer_camp_142
+  - first:
+      213: 2841189950984769584
+    second: archer_camp_143
+  - first:
+      213: -8728019745887221641
+    second: archer_camp_144
+  - first:
+      213: 8253102940082091688
+    second: archer_camp_145
+  - first:
+      213: 8633793851503170775
+    second: archer_camp_146
+  - first:
+      213: 7530805594044065400
+    second: archer_camp_147
+  - first:
+      213: 4105774991205921892
+    second: archer_camp_148
+  - first:
+      213: 5598274359791716648
+    second: archer_camp_149
+  - first:
+      213: 454432590059855810
+    second: archer_camp_150
+  - first:
+      213: -2981043435166085477
+    second: archer_camp_151
+  - first:
+      213: 6672257363218434331
+    second: archer_camp_152
+  - first:
+      213: -8071950891248421731
+    second: archer_camp_153
+  - first:
+      213: 1937921752222000526
+    second: archer_camp_154
+  - first:
+      213: 4430588014138526208
+    second: archer_camp_155
+  - first:
+      213: -5449906818925057204
+    second: archer_camp_156
+  - first:
+      213: -2357828257344110515
+    second: archer_camp_157
+  - first:
+      213: -2370746564967737707
+    second: archer_camp_158
+  - first:
+      213: 9171307544441031019
+    second: archer_camp_159
+  - first:
+      213: -1373995768439024045
+    second: archer_camp_160
+  - first:
+      213: 1929084185911020910
+    second: archer_camp_161
+  - first:
+      213: 8790458276061313252
+    second: archer_camp_162
+  - first:
+      213: -8142612898548185544
+    second: archer_camp_163
+  - first:
+      213: -6542868924792032158
+    second: archer_camp_164
+  - first:
+      213: 7234534637795314534
+    second: archer_camp_165
+  - first:
+      213: -6104293086970342626
+    second: archer_camp_166
+  - first:
+      213: 2319699896099422676
+    second: archer_camp_167
+  - first:
+      213: 8612784262368710835
+    second: archer_camp_168
+  - first:
+      213: 4146631055097998284
+    second: archer_camp_169
+  - first:
+      213: -2369717710688533654
+    second: archer_camp_170
+  - first:
+      213: 5382897112190732475
+    second: archer_camp_171
+  - first:
+      213: -7852071064191616984
+    second: archer_camp_172
+  - first:
+      213: 1790944469866379227
+    second: archer_camp_173
+  - first:
+      213: 2380767078516662789
+    second: archer_camp_174
+  - first:
+      213: 8903680916884222445
+    second: archer_camp_175
+  - first:
+      213: -6824544106532177451
+    second: archer_camp_176
+  - first:
+      213: 937274565368193720
+    second: archer_camp_177
+  - first:
+      213: -1934089854821202275
+    second: archer_camp_178
+  - first:
+      213: 7957919404792527223
+    second: archer_camp_179
+  - first:
+      213: 8945425240250050898
+    second: archer_camp_180
+  - first:
+      213: -5900587174855599005
+    second: archer_camp_181
+  - first:
+      213: 5014851058152854643
+    second: archer_camp_182
+  - first:
+      213: -4921075630910818507
+    second: archer_camp_183
+  - first:
+      213: -7688055395068252070
+    second: archer_camp_184
+  - first:
+      213: 572353946555176698
+    second: archer_camp_185
+  - first:
+      213: -8878842466729175293
+    second: archer_camp_186
+  - first:
+      213: 7767972883858831431
+    second: archer_camp_187
+  - first:
+      213: 7010392050732970842
+    second: archer_camp_188
+  - first:
+      213: 6749619855637931923
+    second: archer_camp_189
+  - first:
+      213: 4883232213504497623
+    second: archer_camp_190
+  - first:
+      213: -3450524839864747899
+    second: archer_camp_191
+  - first:
+      213: 6579987405616458868
+    second: archer_camp_192
+  - first:
+      213: -3191012053482537397
+    second: archer_camp_193
+  - first:
+      213: 27969770538345785
+    second: archer_camp_194
+  - first:
+      213: 1684491430014988904
+    second: archer_camp_195
+  - first:
+      213: 4159113517033358964
+    second: archer_camp_196
+  - first:
+      213: 1620799502249403025
+    second: archer_camp_197
+  - first:
+      213: 7688976665018540512
+    second: archer_camp_198
+  - first:
+      213: 7127073398721170918
+    second: archer_camp_199
+  - first:
+      213: -8347547493268128400
+    second: archer_camp_200
+  - first:
+      213: 7002623368693732179
+    second: archer_camp_201
+  - first:
+      213: -8592683171058516063
+    second: archer_camp_202
+  - first:
+      213: 5655448508919571772
+    second: archer_camp_203
+  - first:
+      213: -6931222449821562236
+    second: archer_camp_204
+  - first:
+      213: 4742274948103136060
+    second: archer_camp_205
+  - first:
+      213: -8340409744121876846
+    second: archer_camp_206
+  - first:
+      213: -7250141222815970218
+    second: archer_camp_207
+  - first:
+      213: -1508757826298342258
+    second: archer_camp_208
+  - first:
+      213: 716451052787264315
+    second: archer_camp_209
+  - first:
+      213: 666766354237445708
+    second: archer_camp_210
+  - first:
+      213: -9123054023262613676
+    second: archer_camp_211
+  - first:
+      213: 2459842021292742191
+    second: archer_camp_212
+  - first:
+      213: -6391016128549680938
+    second: archer_camp_213
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 18
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: archer_camp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc104f38a10673e0800000000000000
+      internalID: -2056454357720752972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd66ce7e1ae044b0800000000000000
+      internalID: -5458105331676189191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475b71485a3786fc0800000000000000
+      internalID: -3501421555557616268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec07f6e22e32ca920800000000000000
+      internalID: 3002814505897914574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_4
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c541daac3cda89d30800000000000000
+      internalID: 4438488489204192348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9c5254fb3335d50800000000000000
+      internalID: 6724775565186157046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_6
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d663c2734f0b39c0800000000000000
+      internalID: -3946543866097473831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_7
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfcae2ec26e353070800000000000000
+      internalID: 8085437300100476155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_8
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240eab65708135370800000000000000
+      internalID: 8310012157227622466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_9
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f4f115532fdb4b0800000000000000
+      internalID: -5422912065476014335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_10
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435a681bf0953a290800000000000000
+      internalID: -7880356999030463180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_11
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c1f58463e1a34d0800000000000000
+      internalID: -3154175370528351120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_12
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178eb97b8ff7c3690800000000000000
+      internalID: -7621075763208656783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_13
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8461374c07275c560800000000000000
+      internalID: 7333393396900501064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_14
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b4d4283a58ac760800000000000000
+      internalID: 7478937068514397050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_15
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3b670f7c49d6c80800000000000000
+      internalID: -8327836549484465168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_16
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41015c3579bb1bbe0800000000000000
+      internalID: -1463182145298821100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_17
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a260bb988cb973120800000000000000
+      internalID: 2393553012577207850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_18
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5537a45d5d504360800000000000000
+      internalID: 7151818863697933663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_19
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 340
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a800c64d063f910800000000000000
+      internalID: 1869944735750195841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1c9e235d1874f70800000000000000
+      internalID: 9171441918845501864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_21
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c83a8b77e1979da0800000000000000
+      internalID: -5938117160268580666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_22
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210924ac420c8f380800000000000000
+      internalID: -8937182196272033774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_23
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f97a4fad15af2750800000000000000
+      internalID: 6282421552118659573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_24
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c2401a1398fefd0800000000000000
+      internalID: -2310477237569967027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_25
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd679cc949df76320800000000000000
+      internalID: 2551286528656111327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_26
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748811be902b8d640800000000000000
+      internalID: 5105025933292701767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_27
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6669a07c2c0b215f0800000000000000
+      internalID: -787372634226911642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_28
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42f87d03891432c0800000000000000
+      internalID: -4452906080905137587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_29
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6af362e64a439890800000000000000
+      internalID: -7452531290061669778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_30
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3fef416a3e326d0800000000000000
+      internalID: -3016317022951771138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_31
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc5eed5bd1d1d700800000000000000
+      internalID: 563462168501968063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_32
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f739bbac77fa41b0800000000000000
+      internalID: -5671448665890670608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_33
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9724296344d501660800000000000000
+      internalID: 7354480739050734201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_34
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ff8bd89846d7ea0800000000000000
+      internalID: -5873427797070250228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_35
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c522b86c53def830800000000000000
+      internalID: 4106952304055428552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_36
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b34c46e3738c34c0800000000000000
+      internalID: -4306422609864801351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_37
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effc0b9d4e6735070800000000000000
+      internalID: 8093943680591777790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_38
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f7efa837931ac80800000000000000
+      internalID: -8313300268733268163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_39
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 306
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4d97119d29b4ef0800000000000000
+      internalID: -122843103823801168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dea667ed9f956da0800000000000000
+      internalID: -5952175831959294255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_41
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37876b19394527df0800000000000000
+      internalID: -183991641987188621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_42
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7373215fd7ac6ff70800000000000000
+      internalID: 9220779929419003703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_43
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096fb1fd284cafd60800000000000000
+      internalID: 7924862560679753360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_44
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25c2e8d16467abb0800000000000000
+      internalID: -4924857296093002450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_45
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08921c6446c9eca00800000000000000
+      internalID: 778731740079401344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_46
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6155b71a8984e340800000000000000
+      internalID: 4892186321427452267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_47
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f853a4818c75b440800000000000000
+      internalID: 4951000261081651443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_48
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fae110ddea03a0a0800000000000000
+      internalID: -6871636589922882832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_49
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3413e5971621cd270800000000000000
+      internalID: 8276510425057472835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_50
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4451add6ddc45b60800000000000000
+      internalID: 7734032782827017292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_51
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dd4106f4fb55cc0800000000000000
+      internalID: -3722859169316545237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_52
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130622494d22f20a0800000000000000
+      internalID: -6904261407321989071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_53
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b120448a902a211b0800000000000000
+      internalID: -5687305217054080485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_54
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d539dbbc35bbc90800000000000000
+      internalID: -7153031448623882896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_55
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63dd08db0bf171b0800000000000000
+      internalID: -5660467228340006034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_56
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ce1a004c18cb890800000000000000
+      internalID: -7440929805498717063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_57
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96a491b5f5c72cb0800000000000000
+      internalID: -4888721211450415460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_58
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9555c28524be5e9a0800000000000000
+      internalID: -6204294241453320871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_59
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 272
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3d022435c261430800000000000000
+      internalID: 3753236075563242438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adff19a2fe12ca440800000000000000
+      internalID: 4948367401668444122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_61
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d538f8f41bc1c80800000000000000
+      internalID: -8350604653783458490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_62
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a0d32d30da1bb30800000000000000
+      internalID: 4301409351039257113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_63
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed6062d364a39e90800000000000000
+      internalID: -7020086645502218777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_64
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1588ab2ca42a748e0800000000000000
+      internalID: -1709219091585529775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_65
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c7c85c4824719e0800000000000000
+      internalID: -1650777600390562799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_66
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d6b2c3dc6b67560800000000000000
+      internalID: 7311232037676608834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_67
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68845b8c417a9b80800000000000000
+      internalID: -8387266782455101332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_68
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57972a7d79aa8ddd0800000000000000
+      internalID: -2461029627223443083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_69
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b780c0b8b38d260800000000000000
+      internalID: 7122508279074814766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_70
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3d0f853c17bf400800000000000000
+      internalID: 359005679130825679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_71
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a5761474455b470800000000000000
+      internalID: 8409720544200972816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_72
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3207fda08f444f0800000000000000
+      internalID: -845278104456780890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_73
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a679b8194a76950800000000000000
+      internalID: 6442298736995953276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_74
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd7201c9532c97c0800000000000000
+      internalID: -4063333895397802505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_75
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f2786fb4b85ed30800000000000000
+      internalID: 4460124164355207063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_76
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78e647904bca4530800000000000000
+      internalID: 3840105110563121278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_77
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5520cd6a55fad3b80800000000000000
+      internalID: -8413375746451701163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_78
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23817566fd182100800000000000000
+      internalID: 83349537207452463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_79
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 238
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a08e9d45004b6980800000000000000
+      internalID: -8544665476484136796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13d975f8c7c00c00800000000000000
+      internalID: 864910794380923677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_81
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2d7665075e61de0800000000000000
+      internalID: -1362649566584253769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_82
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951287036d26b1c00800000000000000
+      internalID: 872399624902025561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_83
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c425853f539cf960800000000000000
+      internalID: 7637141105242612935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_84
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fde4500bd62cda20800000000000000
+      internalID: 3088386166514576883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_85
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e65027ec258cfc0800000000000000
+      internalID: -3474436065886638532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_86
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3d80f0cd0e17500800000000000000
+      internalID: 392341878307607517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_87
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de625d3f839dc59d0800000000000000
+      internalID: -2784111630989580563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_88
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001fbd1258e55fd30800000000000000
+      internalID: 4464578531499438336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_89
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a929f6ecff33c0400800000000000000
+      internalID: 291665249645335194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_90
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa75db93f26109d0800000000000000
+      internalID: -2809855894071444827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_91
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1282cb5a08011730800000000000000
+      internalID: 3967961587272286751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_92
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922a68f035c955d50800000000000000
+      internalID: 6725453499104404009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_93
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd19ee816ae00da60800000000000000
+      internalID: 7696667869721825756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_94
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4331b323f064580800000000000000
+      internalID: -8843364109881494290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_95
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3625db8253cd5660800000000000000
+      internalID: 7376266524003477051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_96
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18107ab0be97f60a0800000000000000
+      internalID: -6886151254806429311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_97
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd372c69f6b57f60800000000000000
+      internalID: 8031526692862770672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_98
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df5369a9f1f0f6f0800000000000000
+      internalID: -652755891377709100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_99
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 204
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c2edeb731022200800000000000000
+      internalID: 153686676221078589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95afcbd0d6f83ea40800000000000000
+      internalID: 5396314477064682073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_101
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49764d81da0c8330800000000000000
+      internalID: 3714355687808465228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_102
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0954f1cbffec39430800000000000000
+      internalID: 3788599309316867472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_103
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d9e5e385a9fb2a0800000000000000
+      internalID: -6719482415219303102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_104
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3392a11fe795bb4b0800000000000000
+      internalID: -5423642924491855565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_105
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2261ba2882943c70800000000000000
+      internalID: 8949939473021493805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_106
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7920b26aeed69ca0800000000000000
+      internalID: -6010371554419922562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_107
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79901ca941bcba40800000000000000
+      internalID: 5385374184405768573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_108
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080d2895878b98180800000000000000
+      internalID: -9112549543970156416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_109
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14be58e55f2a24ef0800000000000000
+      internalID: -125358664876430527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_110
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc284db6d431a1470800000000000000
+      internalID: 8366020481036616395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_111
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a23627d4c8244f0800000000000000
+      internalID: -845959515732760052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_112
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d180bbb72e7cfb9e0800000000000000
+      internalID: -1603343166768216035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_113
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8d16479ef697d10800000000000000
+      internalID: 2123851747752532187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_114
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91f2998202b515e0800000000000000
+      internalID: -1939448340545343073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_115
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424af7f22de299b20800000000000000
+      internalID: 3141593695342535716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_116
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bc884cbe90bba30800000000000000
+      internalID: 4231987183063976852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_117
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3ceecc4caaf0ed0800000000000000
+      internalID: -2445548310410378294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_118
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abd0f2b00c4cba10800000000000000
+      internalID: 1926498306493569958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_119
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 170
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664ee0c6122fd8d60800000000000000
+      internalID: 7894231947211105382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661352f1c8fff4190800000000000000
+      internalID: -7975875437766823578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_121
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434330e599ba93990800000000000000
+      internalID: -7405699437038455756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_122
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f614b6cc5203860800000000000000
+      internalID: 7507542138729623402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_123
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1fa715408fe2fe0800000000000000
+      internalID: -1211758552285515356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_124
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1487fb0a8fdb7ded0800000000000000
+      internalID: -2389232201750316991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_125
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef8bbba39533c790800000000000000
+      internalID: -7511100845166194708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_126
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959efbf4143ce4330800000000000000
+      internalID: 3697107029396023641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_127
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533f850cbc6e97aa0800000000000000
+      internalID: -6162640852300008651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_128
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5eb5db26e4476e30800000000000000
+      internalID: 4496638508321324639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_129
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383e8539821efc070800000000000000
+      internalID: 8128963416814052227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_130
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2744d7af3572f0280800000000000000
+      internalID: -9074991482489977742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_131
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5220a1071001f780800000000000000
+      internalID: -8651133310390492582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_132
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7fc69d3d03a7340800000000000000
+      internalID: 4862252434143901611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_133
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebd2dae275f9dda0800000000000000
+      internalID: -5919430361287042066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_134
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d55443a4154aba0800000000000000
+      internalID: -6078644217896936181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_135
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16dd9b569a9c95b40800000000000000
+      internalID: 5429592555165179233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_136
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5027ec5c64a3fce0800000000000000
+      internalID: -1372572676095795110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_137
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8844001a5e48e180800000000000000
+      internalID: -9085926099497236338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_138
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41237c948e7ce5830800000000000000
+      internalID: 4061903714418897428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_139
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 136
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f038330afd76f810800000000000000
+      internalID: 1798763613930402032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_140
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e34c4665a5402b0800000000000000
+      internalID: -5619267107947266402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_141
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e6aafb585fa0a40800000000000000
+      internalID: 5335346663368846887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_142
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca29be4da27277ff0800000000000000
+      internalID: -38519006895041876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_143
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0305bd7053fed6720800000000000000
+      internalID: 2841189950984769584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_144
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7780ccdb848dfd680800000000000000
+      internalID: -8728019745887221641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_145
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6335ea569e88270800000000000000
+      internalID: 8253102940082091688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_146
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d45cce93c561d770800000000000000
+      internalID: 8633793851503170775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_147
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8766581b9cbc28860800000000000000
+      internalID: 7530805594044065400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_148
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464f286e994aaf830800000000000000
+      internalID: 4105774991205921892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_149
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829009a8ed011bd40800000000000000
+      internalID: 5598274359791716648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_150
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfd0e078087e4600800000000000000
+      internalID: 454432590059855810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_151
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e4aea3ac431a6d0800000000000000
+      internalID: -2981043435166085477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_152
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b198e9088be989c50800000000000000
+      internalID: 6672257363218434331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_153
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d947db27e6baaff80800000000000000
+      internalID: -8071950891248421731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_154
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85e1bbe091e4ea10800000000000000
+      internalID: 1937921752222000526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_155
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a84d8135c9c7d30800000000000000
+      internalID: 4430588014138526208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_156
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b2efe7f9a0e54b0800000000000000
+      internalID: -5449906818925057204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_157
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4040a731bf474fd0800000000000000
+      internalID: -2357828257344110515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_158
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596de965f8a691fd0800000000000000
+      internalID: -2370746564967737707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_159
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 102
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b698448be97074f70800000000000000
+      internalID: 9171307544441031019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3565d4bd0269eece0800000000000000
+      internalID: -1373995768439024045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_161
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6dcc0ba8db75ca10800000000000000
+      internalID: 1929084185911020910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_162
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8f68d6a3bfdf970800000000000000
+      internalID: 8790458276061313252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_163
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836858ec5b0affe80800000000000000
+      internalID: -8142612898548185544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_164
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26434d5e06f0335a0800000000000000
+      internalID: -6542868924792032158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_165
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b8c014cea366460800000000000000
+      internalID: 7234534637795314534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_166
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13924287c1394ba0800000000000000
+      internalID: -6104293086970342626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_167
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d14484e3ca313020800000000000000
+      internalID: 2319699896099422676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_168
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0df8577a1c68770800000000000000
+      internalID: 8612784262368710835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_169
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb28bd89facb8930800000000000000
+      internalID: 4146631055097998284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_170
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6345742c421d1fd0800000000000000
+      internalID: -2369717710688533654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_171
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8ca9a5764e3ba40800000000000000
+      internalID: 5382897112190732475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_172
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8283cbb18f6d70390800000000000000
+      internalID: -7852071064191616984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_173
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7f5daa186bad810800000000000000
+      internalID: 1790944469866379227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_174
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5022ee74b0f2a0120800000000000000
+      internalID: 2380767078516662789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_175
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1fe44ce9a309b70800000000000000
+      internalID: 8903680916884222445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_176
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9f9280b495a41a0800000000000000
+      internalID: -6824544106532177451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_177
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2a7c5504ed10d00800000000000000
+      internalID: 937274565368193720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_178
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9602b7368bb825e0800000000000000
+      internalID: -1934089854821202275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_179
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 68
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779b8d92985307e60800000000000000
+      internalID: 7957919404792527223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_180
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259eae17cd8842c70800000000000000
+      internalID: 8945425240250050898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_181
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c91842a37ec1ea0800000000000000
+      internalID: -5900587174855599005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_182
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37451b2b774589540800000000000000
+      internalID: 5014851058152854643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_183
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537bab269c3d4bbb0800000000000000
+      internalID: -4921075630910818507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_184
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a507e6be95a8e4590800000000000000
+      internalID: -7688055395068252070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_185
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6d636c1e861f700800000000000000
+      internalID: 572353946555176698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_186
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30754f191d308c480800000000000000
+      internalID: -8878842466729175293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_187
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748b54f6e226dcb60800000000000000
+      internalID: 7767972883858831431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_188
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5339207d6ae94160800000000000000
+      internalID: 7010392050732970842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_189
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397e8386f777bad50800000000000000
+      internalID: 6749619855637931923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_190
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d71ea163d9b4c340800000000000000
+      internalID: 4883232213504497623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_191
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588333790f54d10d0800000000000000
+      internalID: -3450524839864747899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_192
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c2052eeafc05b50800000000000000
+      internalID: 6579987405616458868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_193
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4efe2ea17f37b3d0800000000000000
+      internalID: -3191012053482537397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_194
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935236dab5e536000800000000000000
+      internalID: 27969770538345785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_195
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862bb31e704806710800000000000000
+      internalID: 1684491430014988904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_196
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4768c4335b328b930800000000000000
+      internalID: 4159113517033358964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_197
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192a4b75f8c3e7610800000000000000
+      internalID: 1620799502249403025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_198
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1a2b4f98bb4ba60800000000000000
+      internalID: 7688976665018540512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_199
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 34
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed49eace7378e260800000000000000
+      internalID: 7127073398721170918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_200
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dfc0638cd872c80800000000000000
+      internalID: -8347547493268128400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_201
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353d6d23ad05e2160800000000000000
+      internalID: 7002623368693732179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_202
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af74919e28a0c880800000000000000
+      internalID: -8592683171058516063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_203
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35e9ab74703c7e40800000000000000
+      internalID: 5655448508919571772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_204
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a4c23b7e95fcf90800000000000000
+      internalID: -6931222449821562236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_205
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33ebec80f1ffc140800000000000000
+      internalID: 4742274948103136060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_206
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ea860f689e04c80800000000000000
+      internalID: -8340409744121876846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_207
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c43a288f2526b90800000000000000
+      internalID: -7250141222815970218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_208
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84956f20c0df0be0800000000000000
+      internalID: -1508757826298342258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_209
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3be654cf6851f900800000000000000
+      internalID: 716451052787264315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_210
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46518c6774d04900800000000000000
+      internalID: 666766354237445708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_211
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fcbbca3b6646180800000000000000
+      internalID: -9123054023262613676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_212
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f269bba194d132220800000000000000
+      internalID: 2459842021292742191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archer_camp_213
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 0
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d8010031bc8e47a0800000000000000
+      internalID: -6391016128549680938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

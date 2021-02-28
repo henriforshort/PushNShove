@@ -21,14 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/Battle/hills2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/Battle/hills2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/hills2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/hills2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/background.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/background.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/background_night.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/background_night.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/archer_night.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/night/archer_night.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +119,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Human.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Animals.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AdventureRPG.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Casual.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/ScriptableObjects/UnitBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit_Behavior.cs" />
@@ -164,9 +161,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitSide.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
       </list>
     </option>
@@ -315,6 +313,7 @@
       <workItem from="1614156418515" duration="13811000" />
       <workItem from="1614288340244" duration="3535000" />
       <workItem from="1614361375301" duration="1797000" />
+      <workItem from="1614528580570" duration="2612000" />
     </task>
     <servers />
   </component>
