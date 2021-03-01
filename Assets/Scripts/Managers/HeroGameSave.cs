@@ -18,16 +18,4 @@ public class HeroGameSave {
         campPrefabPath = battlePrefab.campHero.ToPath("Camp/");
         data = new UnitData();
     }
-    
-    public void InitGame() {
-        data.maxHealth.Init(battlePrefab.unit.baseMaxHealth);
-        data.prot.Init(battlePrefab.unit.baseProt);
-        data.weight.Init(battlePrefab.unit.baseWeight);
-        data.damage.Init(battlePrefab.unit.baseDamage);
-        data.critChance.Init(battlePrefab.unit.baseCritChance);
-        data.currentHealth = battlePrefab.unit.data.maxHealth;
-        data.ultCooldownLeft = 0;
-        data.itemPrefabPaths.Clear();
-        data.activity = CampActivity.Type.IDLE;
-    }
 }

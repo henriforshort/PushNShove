@@ -67,8 +67,9 @@ MonoBehaviour:
   baseMaxHealth: 100
   baseProt: 0.1
   baseWeight: 5
-  baseDamage: 10
-  baseCritChance: 0.1
+  baseDamage: 7
+  baseStrength: 1
+  baseCritChance: 0.05
   size: 1
   bumpedSound: 13
   bumpedSoundAnimal: 0

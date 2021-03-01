@@ -68,7 +68,8 @@ MonoBehaviour:
   baseProt: 0.2
   baseWeight: 5
   baseDamage: 5
-  baseCritChance: 0.1
+  baseStrength: 1
+  baseCritChance: 0.05
   size: 1
   bumpedSound: 24
   bumpedSoundAnimal: 0
@@ -156,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: -1451976987720899589}
   shakeOnHit: 0
-  attackSound: 147
+  attackSound: 156
   gruntAnimal: 0
   gruntHuman: 24
   attackStatus: 0
@@ -260,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoPlay: 1
   whenAnimFinishes: 0
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 6971875616310140933}
   image: {fileID: 0}
   anims:
   - name: WALK

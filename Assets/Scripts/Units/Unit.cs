@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour {
     [Range(0,1)] public float baseProt;
     public float baseWeight;
     public float baseDamage;
+    public float baseStrength;
     [Range(0,1)] public float baseCritChance;
     
     [Header("Balancing")]
@@ -243,29 +244,34 @@ public class Unit : MonoBehaviour {
     // COMBAT
     // ====================
 
-    public void GetBumpedBy(Unit other) =>
-        GetBumpedBy(other.data.critChance, other.data.damage);
-
-    public void GetBumpedBy(float critChance, float damage) {
-        SetAnim(Anim.BUMPED);
-        if (critChance.Chance()) { //crit
-            currentSpeed = Game.m.bumpSpeed.AtMost(currentSpeed - 1) - 5;
+    public void GetBumpedBy(Unit other) => GetBumpedBy(other.data.critChance, other.data.damage, other.data.strength);
+    public void GetBumpedBy(float critChance, float damage, float strength) {
+        //crit
+        if (critChance.Chance()) { 
+            SetAnim(Anim.BUMPED);
+            currentSpeed = (Game.m.bumpSpeed * strength).AtMost(currentSpeed - 1) - 5;
             TakeCollisionDamage(damage, true);
             critCollisionDate = Time.time;
-        } else if (((float)data.prot).Chance()) { //block
-            Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
+        }
+        //block
+        else if (data.prot.value.Chance()) { 
             SetAnim(Anim.DEFEND);
-            currentSpeed = Game.m.absorbSpeed.AtMost(currentSpeed - 1);
+            currentSpeed = (Game.m.absorbSpeed * strength).AtMost(currentSpeed - 1);
             AddHealth(0, "Block", Game.m.darkGrey);
-        } else { //regular hit
-            currentSpeed = Game.m.bumpSpeed.AtMost(currentSpeed - 1);
+            Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
+        }
+        //regular hit
+        else {
+            SetAnim(Anim.BUMPED);
+            currentSpeed = (Game.m.bumpSpeed * strength).AtMost(currentSpeed - 1);
             TakeCollisionDamage(damage);
         }
     }
 
-    public void SlightKnockback() {
+    public void SlightKnockbackFrom(Unit unit) => SlightKnockbackFrom(unit.data.strength);
+    public void SlightKnockbackFrom(float strength) {
         if (isInvincible) currentSpeed = 0;
-        else currentSpeed = Game.m.defendSpeed;
+        else currentSpeed = Game.m.defendSpeed * strength;
     }
 
 

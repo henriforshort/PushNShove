@@ -11,12 +11,8 @@ public class UnitMonster : UnitSide {
         if (!unit.gameObject.activeInHierarchy) return;
             
         Unit.monsterUnits.Add(unit);
-        unit.data.maxHealth.Init(unit.baseMaxHealth);
-        unit.data.prot.Init(unit.baseProt);
-        unit.data.weight.Init(unit.baseWeight);
-        unit.data.damage.Init(unit.baseDamage);
-        unit.data.critChance.Init(unit.baseCritChance);
-        unit.SetHealth(unit.data.maxHealth);
+        unit.data.InitFrom(unit);
+        unit.SetHealth(unit.data.currentHealth);
     }
 
     protected override void OnDeath() {

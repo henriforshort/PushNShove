@@ -1,19 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class UnitRanged : UnitBehavior {
     [Header("Balancing")]
     public float range;
-    public MedievalCombat aimSound;
-    public MedievalCombat shootSound;
     public float aimDuration;
     public float reloadDuration;
 
     [Header("State")]
     public AttackStatus attackStatus;
     public float timeTillReloaded;
-
-    [Header("References")]
-    public Arrow arrowPrefab;
     
     public enum AttackStatus { READY, ATTACKING, RECOVERING }
 
@@ -85,6 +81,9 @@ public class UnitRanged : UnitBehavior {
     // COMBAT
     // ====================
 
+    [HideInInspector] public UnityEvent OnAim;
+    [HideInInspector] public UnityEvent OnAttack;
+
     public void UpdateCombat() {
         if (attackStatus != AttackStatus.READY) return;
         if (unit.status != Unit.Status.ALIVE) return;
@@ -96,7 +95,6 @@ public class UnitRanged : UnitBehavior {
     }
 
     public void PrepareAttack() {
-        Game.m.PlaySound(aimSound, .25f);
         attackStatus = AttackStatus.ATTACKING;
         unit.SetAnim(Unit.Anim.PREPARE);
         this.Wait(aimDuration, Attack);
@@ -105,15 +103,10 @@ public class UnitRanged : UnitBehavior {
     public void Attack() {
         if (unit.status != Unit.Status.ALIVE) return;
         if (attackStatus != AttackStatus.ATTACKING) return;
-        
-        Game.m.PlaySound(shootSound);
-        attackStatus = AttackStatus.RECOVERING;
+
+        OnAttack.Invoke();
         unit.SetAnim(Unit.Anim.HIT);
-        Arrow arrow = Instantiate(arrowPrefab, 
-            transform.position + new Vector3(13/36f, 21/36f), 
-            Quaternion.identity, 
-            transform);
-        arrow.owner = unit;
+        attackStatus = AttackStatus.RECOVERING;
         ResetReload();
     }
 

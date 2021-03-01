@@ -68,7 +68,8 @@ MonoBehaviour:
   baseProt: 0.1
   baseWeight: 5
   baseDamage: 5
-  baseCritChance: 0.2
+  baseStrength: 1.25
+  baseCritChance: 0.05
   size: 1
   bumpedSound: 24
   bumpedSoundAnimal: 0
@@ -140,7 +141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   range: 9
-  ultStatModifs: []
   strongmanUltFx: {fileID: 688306038408255481, guid: 279e740964ee90a4faae7db10cffb98f, type: 3}
 --- !u!114 &-2404303435061571694
 MonoBehaviour:
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoPlay: 1
   whenAnimFinishes: 0
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1773981805822391866}
   image: {fileID: 0}
   anims:
   - name: WALK

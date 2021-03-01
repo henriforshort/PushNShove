@@ -12,6 +12,6 @@ public class GameSave {
         currentScene = Game.SceneName.StartMenu;
         heroes = new List<HeroGameSave>();
         for (int i = 0; i < Game.m.heroPrefabs.Count; i++) heroes.Add(new HeroGameSave(i, Game.m.heroPrefabs[i]));
-        heroes.ForEach(h => h.InitGame());
+        heroes.ForEach(h => h.data.InitFrom(h.battlePrefab.unit));
     }
 }

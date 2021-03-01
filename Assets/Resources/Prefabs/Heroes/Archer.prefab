@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8046062835865571401}
   - component: {fileID: -3902853122371618417}
   - component: {fileID: 1219178943284343492}
+  - component: {fileID: -7728459491788081522}
   - component: {fileID: 8638022242478428621}
   m_Layer: 0
   m_Name: Archer
@@ -68,7 +69,8 @@ MonoBehaviour:
   baseProt: 0
   baseWeight: 5
   baseDamage: 5
-  baseCritChance: 0.1
+  baseStrength: 1
+  baseCritChance: 0.05
   size: 1
   bumpedSound: 13
   bumpedSoundAnimal: 0
@@ -140,13 +142,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   range: 10
-  aimSound: 140
-  shootSound: 124
   aimDuration: 1
   reloadDuration: 1
   attackStatus: 0
   timeTillReloaded: 0
+  OnAim:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7728459491788081522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490591814827413495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5dd9298e094bc9ba95fec9d38effb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSound: 140
+  aimSound: 124
   arrowPrefab: {fileID: 8202082160336353080, guid: b6fd56a6729418d4fb606fecfef09e8d, type: 3}
+  unitRanged: {fileID: 1219178943284343492}
 --- !u!114 &8638022242478428621
 MonoBehaviour:
   m_ObjectHideFlags: 0

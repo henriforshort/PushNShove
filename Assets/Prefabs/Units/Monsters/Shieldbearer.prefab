@@ -67,7 +67,8 @@ MonoBehaviour:
   baseProt: 0.2
   baseWeight: 1
   baseDamage: 3
-  baseCritChance: 0.1
+  baseStrength: 1
+  baseCritChance: 0.05
   size: 1
   bumpedSound: 24
   bumpedSoundAnimal: 0
@@ -133,6 +134,10 @@ MonoBehaviour:
       value: 0
       modifiers: []
     damage:
+      startValue: 0
+      value: 0
+      modifiers: []
+    strength:
       startValue: 0
       value: 0
       modifiers: []
@@ -262,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoPlay: 1
   whenAnimFinishes: 0
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 5914191361033034990}
   image: {fileID: 0}
   anims:
   - name: WALK

@@ -96,8 +96,8 @@ public class UnitMelee : UnitBehavior {
     public void BumpWithoutAttack(Unit other) {
         unit.SetAnim(Unit.Anim.DEFEND);
         other.SetAnim(Unit.Anim.DEFEND);
-        unit.SlightKnockback();
-        other.SlightKnockback();
+        unit.SlightKnockbackFrom(other);
+        other.SlightKnockbackFrom(unit);
         Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
     }
     
@@ -145,7 +145,7 @@ public class UnitMelee : UnitBehavior {
         loser.melee?.Attack();
         
         loser.GetBumpedBy(winner);
-        winner.SlightKnockback();
+        winner.SlightKnockbackFrom(loser);
 
         if (winner.melee.shakeOnHit) Battle.m.cameraManager.Shake(0.2f);
         this.Wait(0.1f, () => {

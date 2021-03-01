@@ -27,7 +27,7 @@ public class UnitUltStrongman : UnitUlt {
         Game.m.SpawnFX(strongmanUltFx, 
             transform.position + new Vector3(3, 1, -1), false, 0.5f);
         if (target != null) {
-            target.GetBumpedBy(1, unit.data.damage);
+            target.GetBumpedBy(1, unit.data.damage, unit.data.strength);
             unit.currentSpeed = Game.m.defendSpeed;
         }
     }

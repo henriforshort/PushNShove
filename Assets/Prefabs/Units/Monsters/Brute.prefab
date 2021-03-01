@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoPlay: 1
   whenAnimFinishes: 0
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 4884354167670392197}
   image: {fileID: 0}
   anims:
   - name: WALK
@@ -220,11 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxHealth: 100
-  baseProt: 0.5
+  baseMaxHealth: 50
+  baseProt: 0.7
   baseWeight: 5
   baseDamage: 3
-  baseCritChance: 0.4
+  baseStrength: 1.5
+  baseCritChance: 0.2
   size: 2
   bumpedSound: 24
   bumpedSoundAnimal: 0
@@ -290,6 +291,10 @@ MonoBehaviour:
       value: 0
       modifiers: []
     damage:
+      startValue: 0
+      value: 0
+      modifiers: []
+    strength:
       startValue: 0
       value: 0
       modifiers: []
