@@ -70,12 +70,13 @@
             <e p="HeroIcon.cs" t="Include" />
             <e p="Stat.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
-            <e p="UnitAttackArcher.cs" t="Include" />
             <e p="UnitBehavior.cs" t="Include" />
             <e p="UnitHero.cs" t="Include" />
             <e p="UnitMelee.cs" t="Include" />
             <e p="UnitMonster.cs" t="Include" />
             <e p="UnitRanged.cs" t="Include" />
+            <e p="UnitRangedAttack.cs" t="Include" />
+            <e p="UnitRangedBuff.cs" t="Include" />
             <e p="UnitSide.cs" t="Include" />
             <e p="UnitUlt.cs" t="Include" />
             <e p="UnitUltArcher.cs" t="Include" />

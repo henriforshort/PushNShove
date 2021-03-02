@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class UnitAttackArcher : MonoBehaviour {
+public class UnitRangedAttack : MonoBehaviour {
     [Header("Balancing")]
     public MedievalCombat shootSound;
     public MedievalCombat aimSound;
