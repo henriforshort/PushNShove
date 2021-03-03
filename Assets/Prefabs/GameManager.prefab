@@ -70,6 +70,7 @@ MonoBehaviour:
   heroPrefabs:
   - {fileID: -3902853122371618417, guid: aed7bba1dbbbb3745ab29ef505095fd3, type: 3}
   - {fileID: -3902853122371618417, guid: 28fe68f2b07b05a429625dea2bd27067, type: 3}
+  - {fileID: -3902853122371618417, guid: 45788d4b29da56d4ba2ddf9505328ad1, type: 3}
   - {fileID: -8068071798747146441, guid: ef8e44773ad2a9a4b9a75ba4fa668ed9, type: 3}
   - {fileID: 4838143930224751872, guid: b8d9d7ad73c780341893780c4a95e73c, type: 3}
   transparentSprite: {fileID: 21300000, guid: 81285999a139f494fb84c0501f058978, type: 3}

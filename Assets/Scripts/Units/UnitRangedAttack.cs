@@ -24,6 +24,6 @@ public class UnitRangedAttack : MonoBehaviour {
             transform.position + new Vector3(13/36f, 21/36f), 
             Quaternion.identity, 
             transform);
-        arrow.owner = unitRanged.unit;
+        arrow.Init(unitRanged.unit);
     }
 }

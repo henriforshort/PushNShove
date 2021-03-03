@@ -14,7 +14,7 @@ public class Hanimator : MonoBehaviour {
     
     [Header("State")]
     public bool playing;
-    public Hanimation currentAnim;
+    public Hanimation currentAnim; //TODO only display name. Only store name?
     public int currentFrame;
     public float startAnimDate;
     
@@ -65,6 +65,7 @@ public class Hanimator : MonoBehaviour {
         catch { Debug.LogError("Hanimator does not have anim with index: "+i, gameObject); }
     }
 
+    //TODO ignore if anim is already current and hanimator is playing
     public void Play(Hanimation a, bool isLoop = false) {
         if (!anims.Contains(a)) {
             Debug.Log("anim doesnt exist");
@@ -98,7 +99,7 @@ public class Hanimator : MonoBehaviour {
 public class Hanimation {
     public string name;
     public float frameDuration;
-    public float delay;
+    public float delay; //TODO store in "advanced" struct
     public int weight;
     public bool loop;
     public bool randomStart;

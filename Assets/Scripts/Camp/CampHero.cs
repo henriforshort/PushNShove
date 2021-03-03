@@ -60,7 +60,7 @@ public class CampHero : MonoBehaviour {
         if (!isWalking) return;
 
         float dif = currentSlot.x - this.GetX();
-        this.SetX(this.GetX() + dif.Sign() * (Time.deltaTime * 2f).AtMost(dif.Abs()));
+        this.SetX(this.GetX() + dif.Sign() * (Time.deltaTime * 3f).AtMost(dif.Abs()));
         if (this.GetX().isAbout(currentSlot.x)) ReachGoal();
     }
 

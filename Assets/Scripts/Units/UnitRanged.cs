@@ -96,7 +96,7 @@ public class UnitRanged : UnitBehavior {
 
     public void PrepareAttack() {
         attackStatus = AttackStatus.ATTACKING;
-        unit.SetAnim(Unit.Anim.PREPARE);
+        if (aimDuration.isClearlyPositive()) unit.SetAnim(Unit.Anim.PREPARE);
         this.Wait(aimDuration, Attack);
     }
 

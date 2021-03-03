@@ -116,7 +116,7 @@ public class Unit : MonoBehaviour {
 
     public void SetAnim(Anim a) {
         if (lockAnim) return;
-        if (anim == a) return;
+        if (anim == a && hanimator.playing) return;
         if (!hanimator.enabled) return;
         
         anim = a;

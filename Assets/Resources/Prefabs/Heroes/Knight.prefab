@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMaxHealth: 100
-  baseProt: 0.2
+  baseProt: 0.4
   baseWeight: 5
   baseDamage: 5
   baseStrength: 1
