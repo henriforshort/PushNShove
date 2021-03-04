@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -3902853122371618417}
   - component: {fileID: 1219178943284343492}
   - component: {fileID: 8286308537110559337}
-  - component: {fileID: 8638022242478428621}
   m_Layer: 0
   m_Name: Jester
   m_TagString: Untagged
@@ -68,9 +67,9 @@ MonoBehaviour:
   baseMaxHealth: 50
   baseProt: 0
   baseWeight: 5
-  baseDamage: 5
+  baseDamage: 3
   baseStrength: 1
-  baseCritChance: 0.05
+  baseCritChance: 0
   size: 1
   bumpedSound: 24
   bumpedSoundAnimal: 0
@@ -125,7 +124,7 @@ MonoBehaviour:
   ultDuration: 1.5
   ultStatus: 0
   _icon: {fileID: 0}
-  ult: {fileID: 8638022242478428621}
+  ult: {fileID: 0}
   campHero: {fileID: 3034245689411466590, guid: 22e8b11bc41b62f4ea3fb0bf8372a638, type: 3}
   image: {fileID: 21300000, guid: f9c8ab619f127a049963d59aacafe5e0, type: 3}
 --- !u!114 &1219178943284343492
@@ -141,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
-  range: 12
+  distanceFromScreenEdge: 2
   aimDuration: 0
   reloadDuration: 3
   attackStatus: 0
@@ -165,23 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffDuration: 2.5
-  attackAnimDuration: 0
+  attackAnimDuration: 0.25
+  buffStat: 4
+  buffType: 0
+  buffAmount: 0.5
   buffFx: {fileID: 1375727324785953495, guid: fd02df62535130f42a68e7824c5caec7, type: 3}
   unitRanged: {fileID: 1219178943284343492}
---- !u!114 &8638022242478428621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490591814827413495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d62fe5fe94ce4c4e954c5b90e5d20951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unit: {fileID: 0}
-  arrows: {fileID: 1843746212776340953, guid: f48c3b879c308bc458a9c6c6230b7ced, type: 3}
 --- !u!1 &490591814931064775
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3422354218856617331, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+  m_Sprite: {fileID: -975704140431413408, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -278,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed94924bc9b90e4783b75e237d5f42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoPlay: 1
+  autoPlay: 0
   whenAnimFinishes: 0
   spriteRenderer: {fileID: 490591814931064768}
   image: {fileID: 0}
@@ -308,6 +296,9 @@ MonoBehaviour:
     - {fileID: 2980991817480762901, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: 5076712540641895004, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: -3422354218856617331, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: 6393086938299337564, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -2699831946221042376, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -975704140431413408, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
   - name: BUMPED
     frameDuration: 100
     delay: 0
@@ -315,7 +306,7 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: 6393086938299337564, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: 7307896066278736201, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
   - name: DEFEND
     frameDuration: 100
     delay: 0
@@ -323,7 +314,7 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -3422354218856617331, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -975704140431413408, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
   - name: IDLE
     frameDuration: 100
     delay: 0
@@ -331,7 +322,21 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -3422354218856617331, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -975704140431413408, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+  - name: ULT_JESTER
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: 6428133470281435839, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: 1163719879881353373, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: 5603110923031806001, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -8994396579030650396, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: 2733316496609722315, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: 7243786947635027724, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -3858963379372630616, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
   playing: 0
   currentAnim:
     name: 

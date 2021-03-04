@@ -20,7 +20,7 @@ public class Hanimator : MonoBehaviour {
     
     public enum WhenAnimFinishes { PAUSE, LOOP, HIDE, DESTROY, PLAY_RANDOM }
 
-    public void Start() {
+    public void Awake() {
         if (image == null && spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null) image = GetComponent<Image>();
         if (image == null && spriteRenderer == null) 

@@ -38,6 +38,36 @@ TextureImporter:
   - first:
       213: 6393086938299337564
     second: jester_11
+  - first:
+      213: -2699831946221042376
+    second: jester_12
+  - first:
+      213: -975704140431413408
+    second: jester_13
+  - first:
+      213: 7307896066278736201
+    second: jester_14
+  - first:
+      213: 6428133470281435839
+    second: jester_15
+  - first:
+      213: 1163719879881353373
+    second: jester_16
+  - first:
+      213: 5603110923031806001
+    second: jester_17
+  - first:
+      213: -8994396579030650396
+    second: jester_18
+  - first:
+      213: 2733316496609722315
+    second: jester_19
+  - first:
+      213: 7243786947635027724
+    second: jester_20
+  - first:
+      213: -3858963379372630616
+    second: jester_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -155,9 +185,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 62
-        width: 36
-        height: 31
+        y: 160
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +205,10 @@ TextureImporter:
       name: jester_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 62
-        width: 36
-        height: 31
+        x: 55
+        y: 160
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +226,10 @@ TextureImporter:
       name: jester_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 62
-        width: 36
-        height: 31
+        x: 110
+        y: 160
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +247,10 @@ TextureImporter:
       name: jester_3
       rect:
         serializedVersion: 2
-        x: 108
-        y: 62
-        width: 36
-        height: 31
+        x: 165
+        y: 160
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +268,10 @@ TextureImporter:
       name: jester_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 31
-        width: 36
-        height: 31
+        x: 220
+        y: 160
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +289,10 @@ TextureImporter:
       name: jester_5
       rect:
         serializedVersion: 2
-        x: 36
-        y: 31
-        width: 36
-        height: 31
+        x: 0
+        y: 120
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +310,10 @@ TextureImporter:
       name: jester_6
       rect:
         serializedVersion: 2
-        x: 72
-        y: 31
-        width: 36
-        height: 31
+        x: 55
+        y: 120
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +331,10 @@ TextureImporter:
       name: jester_7
       rect:
         serializedVersion: 2
-        x: 108
-        y: 31
-        width: 36
-        height: 31
+        x: 110
+        y: 120
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +352,10 @@ TextureImporter:
       name: jester_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 36
-        height: 31
+        x: 165
+        y: 120
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +373,10 @@ TextureImporter:
       name: jester_9
       rect:
         serializedVersion: 2
-        x: 36
-        y: 0
-        width: 36
-        height: 31
+        x: 220
+        y: 120
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +394,10 @@ TextureImporter:
       name: jester_10
       rect:
         serializedVersion: 2
-        x: 72
-        y: 0
-        width: 36
-        height: 31
+        x: 0
+        y: 80
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,10 +415,10 @@ TextureImporter:
       name: jester_11
       rect:
         serializedVersion: 2
-        x: 108
-        y: 0
-        width: 36
-        height: 31
+        x: 55
+        y: 80
+        width: 55
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,6 +428,216 @@ TextureImporter:
       bones: []
       spriteID: c5b8587c2bec8b850800000000000000
       internalID: 6393086938299337564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_12
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 80
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8354e343625488ad0800000000000000
+      internalID: -2699831946221042376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_13
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 80
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f25b7f04a9572f0800000000000000
+      internalID: -975704140431413408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_14
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 80
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941c40ed0ccda6560800000000000000
+      internalID: 7307896066278736201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba8ce06551553950800000000000000
+      internalID: 6428133470281435839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_16
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 40
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98636aa01d562010800000000000000
+      internalID: 1163719879881353373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_17
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 40
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1300c6ca2bf32cd40800000000000000
+      internalID: 5603110923031806001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_18
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 40
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1b3e937fb7d2380800000000000000
+      internalID: -8994396579030650396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_19
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 40
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf33273fd0bee520800000000000000
+      internalID: 2733316496609722315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f956289d9178460800000000000000
+      internalID: 7243786947635027724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jester_21
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 55
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8add04b8045327ac0800000000000000
+      internalID: -3858963379372630616
       vertices: []
       indices: 
       edges: []

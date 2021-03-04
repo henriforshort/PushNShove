@@ -46,3 +46,5 @@ public class UnitData {
         activity = CampActivity.Type.IDLE;
     }
 }
+    
+public enum UnitStat { MAX_HEALTH, PROT, WEIGHT, DAMAGE, STRENGTH, CRIT_CHANCE }

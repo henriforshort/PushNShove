@@ -22,9 +22,11 @@ public class Stat {
     }
 
     public StatModifier AddModifier(float val = 0, StatModifier.Type type = StatModifier.Type.ADD, 
-        StatModifier.Scope scope = StatModifier.Scope.BATTLE, int priority = 0) {
-        StatModifier modifier = new StatModifier(val, type, scope, priority, this);
+        StatModifier.Scope scope = StatModifier.Scope.BATTLE, int priority = 0) =>
+            AddModifier(new StatModifier(val, type, scope, priority, this));
         
+    public StatModifier AddModifier(StatModifier modifier) {
+        modifier.stat = this;
         modifiers.Add(modifier);
         UpdateValue();
         return modifier;
@@ -78,7 +80,7 @@ public class StatModifier {
     public float value;
     public Scope scope;
     public int priority; //Lowest priority is applied first
-    [NonSerialized] private Stat stat;
+    [NonSerialized] public Stat stat;
     
     public enum Type { ADD, MULTIPLY, SET }
     public enum Scope { BATTLE, RUN, GAME }
