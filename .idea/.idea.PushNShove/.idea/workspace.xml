@@ -20,18 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/jester.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/jester.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/jester.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/jester.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/jester.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/jester.aseprite" afterDir="false" />
@@ -170,10 +162,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Stat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" />
       </list>
     </option>
   </component>
@@ -326,6 +318,9 @@
       <workItem from="1614697280378" duration="858000" />
       <workItem from="1614764204461" duration="10268000" />
       <workItem from="1614848099552" duration="11288000" />
+      <workItem from="1614949234868" duration="1198000" />
+      <workItem from="1615030717564" duration="600000" />
+      <workItem from="1615050425028" duration="2640000" />
     </task>
     <servers />
   </component>

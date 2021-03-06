@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
-  range: 10
+  distanceFromScreenEdge: 0
   aimDuration: 1
-  reloadDuration: 1
+  reloadDuration: 0.5
   attackStatus: 0
   timeTillReloaded: 0
   OnAim:

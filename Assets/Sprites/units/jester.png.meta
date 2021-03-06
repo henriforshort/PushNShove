@@ -185,9 +185,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 55
-        height: 40
+        y: 128
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: jester_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 160
-        width: 55
-        height: 40
+        x: 61
+        y: 128
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: jester_2
       rect:
         serializedVersion: 2
-        x: 110
-        y: 160
-        width: 55
-        height: 40
+        x: 122
+        y: 128
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: jester_3
       rect:
         serializedVersion: 2
-        x: 165
-        y: 160
-        width: 55
-        height: 40
+        x: 183
+        y: 128
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: jester_4
       rect:
         serializedVersion: 2
-        x: 220
-        y: 160
-        width: 55
-        height: 40
+        x: 244
+        y: 128
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,9 +290,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
-        width: 55
-        height: 40
+        y: 96
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: jester_6
       rect:
         serializedVersion: 2
-        x: 55
-        y: 120
-        width: 55
-        height: 40
+        x: 61
+        y: 96
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: jester_7
       rect:
         serializedVersion: 2
-        x: 110
-        y: 120
-        width: 55
-        height: 40
+        x: 122
+        y: 96
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: jester_8
       rect:
         serializedVersion: 2
-        x: 165
-        y: 120
-        width: 55
-        height: 40
+        x: 183
+        y: 96
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: jester_9
       rect:
         serializedVersion: 2
-        x: 220
-        y: 120
-        width: 55
-        height: 40
+        x: 244
+        y: 96
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,9 +395,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
-        width: 55
-        height: 40
+        y: 64
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +415,10 @@ TextureImporter:
       name: jester_11
       rect:
         serializedVersion: 2
-        x: 55
-        y: 80
-        width: 55
-        height: 40
+        x: 61
+        y: 64
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +436,10 @@ TextureImporter:
       name: jester_12
       rect:
         serializedVersion: 2
-        x: 110
-        y: 80
-        width: 55
-        height: 40
+        x: 122
+        y: 64
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,10 +457,10 @@ TextureImporter:
       name: jester_13
       rect:
         serializedVersion: 2
-        x: 165
-        y: 80
-        width: 55
-        height: 40
+        x: 183
+        y: 64
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +478,10 @@ TextureImporter:
       name: jester_14
       rect:
         serializedVersion: 2
-        x: 220
-        y: 80
-        width: 55
-        height: 40
+        x: 244
+        y: 64
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,9 +500,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 40
-        width: 55
-        height: 40
+        y: 32
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,10 +520,10 @@ TextureImporter:
       name: jester_16
       rect:
         serializedVersion: 2
-        x: 55
-        y: 40
-        width: 55
-        height: 40
+        x: 61
+        y: 32
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +541,10 @@ TextureImporter:
       name: jester_17
       rect:
         serializedVersion: 2
-        x: 110
-        y: 40
-        width: 55
-        height: 40
+        x: 122
+        y: 32
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +562,10 @@ TextureImporter:
       name: jester_18
       rect:
         serializedVersion: 2
-        x: 165
-        y: 40
-        width: 55
-        height: 40
+        x: 183
+        y: 32
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,10 +583,10 @@ TextureImporter:
       name: jester_19
       rect:
         serializedVersion: 2
-        x: 220
-        y: 40
-        width: 55
-        height: 40
+        x: 244
+        y: 32
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,8 +606,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 55
-        height: 40
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,10 +625,10 @@ TextureImporter:
       name: jester_21
       rect:
         serializedVersion: 2
-        x: 55
+        x: 61
         y: 0
-        width: 55
-        height: 40
+        width: 61
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

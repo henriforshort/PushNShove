@@ -32,27 +32,27 @@ public class UnitRangedBuff : MonoBehaviour {
     public List<StatModifier> ApplyBuff() {
         if (unit.status != Unit.Status.ALIVE) return null;
 
-        //Hit all enemies
-        unit.enemies
-            .Where(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
-            .ToList()
-            .ForEach(e => e.GetBumpedBy(unit));
-        
-        //Hit one enemy
+        // //Hit all enemies
         // unit.enemies
-        //     .WithLowest(e => unit.DistanceToMe(e))
-        //     .If(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
-        //     ?.GetBumpedBy(unit);
-
-        List<StatModifier> modifiers = new List<StatModifier>();
-        unit.allies
-            .Except(unit)
-            .ForEach(target => {
-                Game.m.SpawnFX(buffFx, new Vector3(target.GetX(), target.GetY() + .7f, 8f), 
-                    false, buffDuration, target.transform);
-                modifiers.Add(target.data.stats[(int)buffStat].AddModifier(buffAmount, buffType));
-        });
+        //     .Where(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
+        //     .ToList()
+        //     .ForEach(e => e.GetBumpedBy(unit));
         
-        return modifiers;
+        // Hit one enemy
+        unit.enemies
+            .WithLowest(e => unit.DistanceToMe(e))
+            .If(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
+            ?.GetBumpedBy(unit);
+
+        return unit.allies
+            .Except(unit)
+            .Select(target => {
+                Game.m.SpawnFX(buffFx, new Vector3(target.GetX(), target.GetY() + 1f, 8f),
+                    false, buffDuration, target.transform);
+                StatModifier buff =  target.data.stats[(int) buffStat].AddModifier(buffAmount, buffType);
+                unit.onDeath.AddListener(() => buff?.Terminate());
+                return buff;
+            })
+            .ToList();
     }
 }
