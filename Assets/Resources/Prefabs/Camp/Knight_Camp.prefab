@@ -351,7 +351,7 @@ MonoBehaviour:
   - name: default
     frameDuration: 100
     delay: 0
-    weight: 10
+    weight: 20
     loop: 0
     randomStart: 0
     sprites:
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 6687387012494875546}
   - component: {fileID: 4802802870216699466}
   m_Layer: 0
-  m_Name: Knight
+  m_Name: Knight_Camp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,6 +751,8 @@ MonoBehaviour:
     button: {fileID: 0}
     fullMarkers: []
     slots: []
+  isWalking: 0
+  isFirstFrame: 0
   body: {fileID: 6644612656121085380}
   idleVisuals: {fileID: 4350029549092679666}
   sleepingVisuals: {fileID: 3408134528733158426}

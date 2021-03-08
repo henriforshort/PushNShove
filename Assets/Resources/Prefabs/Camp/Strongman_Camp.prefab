@@ -103,7 +103,7 @@ MonoBehaviour:
   - name: default
     frameDuration: 100
     delay: 0
-    weight: 10
+    weight: 20
     loop: 0
     randomStart: 0
     sprites:
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 5161802452234951607}
   - component: {fileID: 8752653754006907758}
   m_Layer: 0
-  m_Name: Strongman
+  m_Name: Strongman_Camp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,6 +357,8 @@ MonoBehaviour:
     button: {fileID: 0}
     fullMarkers: []
     slots: []
+  isWalking: 0
+  isFirstFrame: 0
   body: {fileID: 2867884158540815928}
   idleVisuals: {fileID: 1221089848663151271}
   sleepingVisuals: {fileID: 1854472772432204391}
