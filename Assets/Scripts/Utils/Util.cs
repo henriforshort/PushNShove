@@ -127,7 +127,7 @@ public static class Util {
         !target.isAbout(other, precision);
 
     public static bool isAboutOrHigherThan(this float target, float other) => target.isAbout(other) || target > other;
-    public static bool isClearlyHigherThan(this float target, float other) => 
+    public static bool isClearlyGreaterThan(this float target, float other) => 
         target.isClearlyNot(other) && target > other;
     public static bool isClearlyPositive(this float target) => target.isClearlyNot(0) && target > 0;
     

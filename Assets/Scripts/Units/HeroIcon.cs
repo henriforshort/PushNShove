@@ -46,14 +46,9 @@ public class HeroIcon : MonoBehaviour {
     // HEALTH
     // ====================
 
-    public void FlashHealth() {
-        healthBar.gameObject.SetActive(false);
-        this.Wait(0.1f, () => healthBar.gameObject.SetActive(true));
-    }
-
-    public void SetHealth(float health) {
+    public void SetHealth(float health, float tempHealth = 0) {
         healthBar.value = health;
-        tmpHealthBar.value = health;
+        tmpHealthBar.value = tempHealth;
     }
     
     

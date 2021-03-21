@@ -35,6 +35,7 @@ public class Unit : MonoBehaviour {
     public bool lockAnim;
     public bool lockPosition;
     public int index;
+    public float tempHealth;
     
     [Header("References (Assigned at runtime)")]
     public int prefabIndex;
@@ -300,7 +301,7 @@ public class Unit : MonoBehaviour {
         } else AddHealth(-amount, amount.ToString());
     }
 
-    public void AddHealth(float amount, string uiText = null, Color uiColor = default) {
+    public void AddHealth(float amount, string uiText = null, Color uiColor = default, bool temp = false) {
         if (uiText != null) {
             if (uiColor == default) uiColor = Game.m.black;
             GameObject hpLossUi = Game.m.SpawnFX(Run.m.hpLossUIPrefab,
@@ -312,21 +313,25 @@ public class Unit : MonoBehaviour {
             number.text = uiText;
         }
         
-        SetHealth(data.currentHealth + amount);
+        if (temp) SetHealth(data.currentHealth, (tempHealth + amount).AtLeast(0));
+        else if (amount.isClearlyNegative()) SetHealth(data.currentHealth + (tempHealth + amount).AtMost(0),
+                (tempHealth + amount).AtLeast(0));
+        else SetHealth(data.currentHealth + amount);
     }
 
-    public void SetHealth(float amount) {
+    public void SetHealth(float amount, float tempAmount = -1) {
         data.currentHealth = Mathf.Clamp(amount, 0, data.maxHealth);
         healthBar.value = data.currentHealth / data.maxHealth;
-        tmpHealthBar.value = healthBar.value;
-        healthBar.gameObject.SetActive(false);
-        this.Wait(0.1f, () => healthBar.gameObject.SetActive(true));
-        
-        if (hero != null) {
-            hero.icon.SetHealth(data.currentHealth/data.maxHealth);
-            hero.icon.FlashHealth();
-        }
+
+        if (tempAmount.isClearlyNegative()) tempAmount = tempHealth;
+        tempHealth = tempAmount;
+        if (data.maxHealth.value.isClearlyGreaterThan(tempHealth + data.currentHealth))
+            tmpHealthBar.value = (tempHealth + data.currentHealth) / data.maxHealth;
+        else healthBar.value = data.currentHealth / (tempHealth + data.maxHealth);
+
         if (data.currentHealth <= 0 && status == Status.ALIVE) DeathByHp();
+        
+        if (hero != null) hero.icon.SetHealth(healthBar.value, tmpHealthBar.value);
     }
     
     

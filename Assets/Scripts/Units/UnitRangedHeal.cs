@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
 public class UnitRangedHeal : MonoBehaviour {
@@ -24,9 +23,14 @@ public class UnitRangedHeal : MonoBehaviour {
     public void ApplyBuff() {
         if (unit.status != Unit.Status.ALIVE) return;
 
-        Unit healTarget = unit.allies.Except(unit).Random();
+        Unit healTarget = unit.allies
+            // .Except(unit)
+            // .Where(a => a.data.maxHealth.value.isClearlyGreaterThan(a.data.currentHealth))
+            .Random();
         if (healTarget == null) return;
         
-        healTarget.AddHealth(healAmount);
+        float randomHealAmount = (healAmount * this.Random(.5f, 1.5f)).Round();
+        string uiText = "+" + randomHealAmount.AtMost(healTarget.data.maxHealth - healTarget.data.currentHealth);
+        healTarget.AddHealth(randomHealAmount, uiText, Game.m.white, true);
     }
 }

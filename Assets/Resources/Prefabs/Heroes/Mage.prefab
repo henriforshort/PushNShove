@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e5d675a9b34295adec9e4343a6e031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 10
+  healAmount: 5
   attackAnimDuration: 1
   unitRanged: {fileID: 1219178943284343492}
 --- !u!1 &490591814931064775
