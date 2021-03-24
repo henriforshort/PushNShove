@@ -69,6 +69,7 @@ MonoBehaviour:
   baseWeight: 5
   baseDamage: 5
   baseStrength: 1
+  baseDrag: 0.2
   baseCritChance: 0.05
   size: 1
   bumpedSound: 24
@@ -88,6 +89,7 @@ MonoBehaviour:
   lockAnim: 0
   lockPosition: 0
   index: 0
+  tempHealth: 0
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: -8068071798747146441}
@@ -487,6 +489,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262325635221722628, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933742521147783863, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8293401416456333148, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}

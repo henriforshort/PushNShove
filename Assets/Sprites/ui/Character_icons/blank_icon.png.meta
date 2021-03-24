@@ -79,6 +79,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -267,27 +269,6 @@ TextureImporter:
       bones: []
       spriteID: 3abc5cf596099ce40800000000000000
       internalID: 5677227587529984931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blank_icon_7
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 0
-        width: 25
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 539c6c56222a156d0800000000000000
-      internalID: -3003441207859295947
       vertices: []
       indices: 
       edges: []

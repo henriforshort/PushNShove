@@ -65,11 +65,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMaxHealth: 100
-  baseProt: 0.2
+  baseProt: 0
   baseWeight: 5
   baseDamage: 10
   baseStrength: 0.5
-  baseCritChance: 0.05
+  baseDrag: 0.2
+  baseCritChance: 0.1
   size: 1
   bumpedSound: 13
   bumpedSoundAnimal: 0
@@ -88,6 +89,7 @@ MonoBehaviour:
   lockAnim: 0
   lockPosition: 0
   index: 0
+  tempHealth: 0
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: -3902853122371618417}

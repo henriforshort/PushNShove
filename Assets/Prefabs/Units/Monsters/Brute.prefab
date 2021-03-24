@@ -220,11 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxHealth: 50
-  baseProt: 0.8
+  baseMaxHealth: 100
+  baseProt: 0.3
   baseWeight: 5
   baseDamage: 3
   baseStrength: 1.5
+  baseDrag: 0.6
   baseCritChance: 0.2
   size: 2
   bumpedSound: 24
@@ -244,6 +245,7 @@ MonoBehaviour:
   lockAnim: 0
   lockPosition: 0
   index: 0
+  tempHealth: 0
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: 8565579205406979095}
@@ -295,6 +297,10 @@ MonoBehaviour:
       value: 0
       modifiers: []
     strength:
+      startValue: 0
+      value: 0
+      modifiers: []
+    drag:
       startValue: 0
       value: 0
       modifiers: []

@@ -70,6 +70,7 @@ MonoBehaviour:
   baseWeight: 5
   baseDamage: 3
   baseStrength: 0.75
+  baseDrag: 0
   baseCritChance: 0
   size: 1
   bumpedSound: 24
@@ -89,6 +90,7 @@ MonoBehaviour:
   lockAnim: 0
   lockPosition: 0
   index: 0
+  tempHealth: 0
   prefabIndex: 0
   hpLossUis: []
   unitSide: {fileID: -3902853122371618417}
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffDuration: 1.5
   attackAnimDuration: 0.25
-  buffStat: 1
+  buffStat: 5
   buffType: 0
   buffAmount: 0.5
   buffFx: {fileID: 1375727324785953495, guid: fd02df62535130f42a68e7824c5caec7, type: 3}

@@ -47,6 +47,9 @@ public class HeroIcon : MonoBehaviour {
     // ====================
 
     public void SetHealth(float health, float tempHealth = 0) {
+        healthBar.enabled = false;
+        this.Wait(0.1f, () => healthBar.enabled = true);
+        
         healthBar.value = health;
         tmpHealthBar.value = tempHealth;
     }

@@ -10,6 +10,7 @@ public class UnitData {
     public Stat weight; //Chance to hit & not get hit (melee only)
     public Stat damage; //How much damage I deal when I hit
     public Stat strength; //How far I push enemies I hit
+    public Stat drag; //How well I can resist being pushed
     public Stat critChance;
     
     //Other info
@@ -20,7 +21,7 @@ public class UnitData {
     [SerializeField] private List<string> _itemPrefabPaths;
     
     public List<string> itemPrefabPaths => _itemPrefabPaths ?? (_itemPrefabPaths = new List<string>());
-    public List<Stat> stats => new List<Stat> { maxHealth, prot, weight, damage, strength, critChance };
+    public List<Stat> stats => new List<Stat> { maxHealth, prot, weight, damage, strength, drag, critChance };
 
     public UnitData() {
         maxHealth = new Stat();
@@ -28,6 +29,7 @@ public class UnitData {
         weight = new Stat();
         damage = new Stat();
         strength = new Stat();
+        drag = new Stat();
         critChance = new Stat();
     }
 
@@ -37,6 +39,7 @@ public class UnitData {
         weight.Init(unit.baseWeight);
         damage.Init(unit.baseDamage);
         strength.Init(unit.baseStrength);
+        drag.Init(unit.baseDrag);
         critChance.Init(unit.baseCritChance);
         
         currentHealth = maxHealth;
@@ -46,4 +49,4 @@ public class UnitData {
     }
 }
     
-public enum UnitStat { MAX_HEALTH, PROT, WEIGHT, DAMAGE, STRENGTH, CRIT_CHANCE }
+public enum UnitStat { MAX_HEALTH, PROT, WEIGHT, DAMAGE, STRENGTH, DRAG, CRIT_CHANCE }
