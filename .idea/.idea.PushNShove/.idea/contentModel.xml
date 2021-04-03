@@ -84,6 +84,7 @@
             <e p="UnitUltBruiser.cs" t="Include" />
             <e p="UnitUltJester.cs" t="Include" />
             <e p="UnitUltKnight.cs" t="Include" />
+            <e p="UnitUltMage.cs" t="Include" />
             <e p="UnitUltStrongman.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">

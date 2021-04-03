@@ -17,13 +17,13 @@ public class UnitRangedHeal : MonoBehaviour {
     }
 
     public void Heal() {
-        Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, .5f, 2);
         this.Wait(attackAnimDuration, ApplyBuff);
     }
 
     public void ApplyBuff() {
         if (unit.status != Unit.Status.ALIVE) return;
-
+        
+        Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, .5f, 2);
         Unit healTarget = unit.allies.WithLowest(u => u.tempHealth);
         Unit hurtTarget = unit.enemies.Random();
         

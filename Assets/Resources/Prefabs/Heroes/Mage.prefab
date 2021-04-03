@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3902853122371618417}
   - component: {fileID: 1219178943284343492}
   - component: {fileID: 1256193872244914873}
+  - component: {fileID: -1712622078922639962}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Untagged
@@ -126,9 +127,9 @@ MonoBehaviour:
   ultDuration: 1.5
   ultStatus: 0
   _icon: {fileID: 0}
-  ult: {fileID: 0}
+  ult: {fileID: -1712622078922639962}
   campHero: {fileID: 3034245689411466590, guid: 22e8b11bc41b62f4ea3fb0bf8372a638, type: 3}
-  image: {fileID: 21300000, guid: 278c5e24931de1044ad83fcfa6257d33, type: 3}
+  image: {fileID: 21300000, guid: dbadbd3a03fe4304892211a9ce7c4142, type: 3}
 --- !u!114 &1219178943284343492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,8 +167,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 5
-  attackAnimDuration: 1
+  attackAnimDuration: 0.75
   unitRanged: {fileID: 1219178943284343492}
+--- !u!114 &-1712622078922639962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490591814827413495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448e63a0e2d54449a9821e62fb209663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
+  tmpHealthAmount: 20
 --- !u!1 &490591814931064775
 GameObject:
   m_ObjectHideFlags: 0

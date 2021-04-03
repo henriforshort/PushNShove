@@ -10,6 +10,7 @@ public class CampHero : MonoBehaviour {
     [HideInInspector] public CampActivity currentActivity;
     public bool isWalking;
     public bool isFirstFrame;
+    public bool doneSleeping;
     
     [Header("References")]
     public GameObject body;
@@ -140,6 +141,7 @@ public class CampHero : MonoBehaviour {
 
     public void Sleep() {
         if (data.activity != CampActivity.Type.SLEEPING) return;
+        if (doneSleeping) return;
 
         //sec = %hp * secper%hp
         float secondsToFullLife = (1 - data.currentHealth/data.maxHealth) * Game.m.secondsToMaxHp;
@@ -151,9 +153,11 @@ public class CampHero : MonoBehaviour {
         data.lastSeenSleeping = DateTime.Now;
 
         if (data.currentHealth.isAbout(data.maxHealth)) {
+            doneSleeping = true;
             this.Wait(isFirstFrame ? 0 : 0.5f, () => {
                 Camp.m.GetActivity(CampActivity.Type.IDLE)?.Add(this);
                 Game.m.PlaySound(Casual.POSITIVE, .5f, 5);
+                doneSleeping = false;
             });
         }
     }
