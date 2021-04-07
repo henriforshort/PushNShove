@@ -48,8 +48,7 @@ public class Hanimator : MonoBehaviour {
                 if (whenAnimFinishes == WhenAnimFinishes.HIDE) SetVisible(false);
                 if (whenAnimFinishes == WhenAnimFinishes.DESTROY) Destroy(gameObject);
                 if (whenAnimFinishes == WhenAnimFinishes.PLAY_RANDOM)
-                    if (anims.Count < 2) Debug.LogError("PLAY_RANDOM setting needs at least 2 animations");
-                    else Play(anims.WeightedRandom(anims.Select(a => a.weight).ToList()));
+                    Play(anims.WeightedRandom(anims.Select(a => a.weight).ToList()));
             }
         }
     }

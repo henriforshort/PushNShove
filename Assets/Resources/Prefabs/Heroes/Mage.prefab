@@ -128,7 +128,7 @@ MonoBehaviour:
   ultStatus: 0
   _icon: {fileID: 0}
   ult: {fileID: -1712622078922639962}
-  campHero: {fileID: 3034245689411466590, guid: 22e8b11bc41b62f4ea3fb0bf8372a638, type: 3}
+  campHero: {fileID: 3034245689411466590, guid: 738a913d7f38e1e4ba7b1f4a30979369, type: 3}
   image: {fileID: 21300000, guid: dbadbd3a03fe4304892211a9ce7c4142, type: 3}
 --- !u!114 &1219178943284343492
 MonoBehaviour:
