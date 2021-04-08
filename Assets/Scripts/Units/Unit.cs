@@ -9,10 +9,10 @@ public class Unit : MonoBehaviour {
     [Header("Base Stats")]
     public float baseMaxHealth;
     [Range(0,1)] public float baseProt;
-    public float baseWeight;
+    public float baseSkill;
     public float baseDamage;
     public float baseStrength;
-    [Range(0,1)] public float baseDrag;
+    public float baseWeight;
     [Range(0,1)] public float baseCritChance;
     
     [Header("Balancing")]
@@ -252,7 +252,7 @@ public class Unit : MonoBehaviour {
         //crit
         if (critChance.Chance()) { 
             SetAnim(Anim.BUMPED);
-            currentSpeed = (Game.m.bumpSpeed * strength * (1 - data.drag)).AtMost(currentSpeed - 1) - 5;
+            currentSpeed = (Game.m.bumpSpeed * strength / data.weight).AtMost(currentSpeed - 1) - 5;
             TakeCollisionDamage(damage, true);
             critCollisionDate = Time.time;
         }
@@ -266,7 +266,7 @@ public class Unit : MonoBehaviour {
         //regular hit
         else {
             SetAnim(Anim.BUMPED);
-            currentSpeed = (Game.m.bumpSpeed * strength * (1 - data.drag)).AtMost(currentSpeed - 1);
+            currentSpeed = (Game.m.bumpSpeed * strength / data.weight).AtMost(currentSpeed - 1);
             TakeCollisionDamage(damage);
         }
     }
@@ -274,7 +274,7 @@ public class Unit : MonoBehaviour {
     public void SlightKnockbackFrom(Unit unit) => SlightKnockbackFrom(unit.data.strength);
     public void SlightKnockbackFrom(float strength) {
         if (isInvincible) currentSpeed = 0;
-        else currentSpeed = Game.m.defendSpeed * strength * (1 - data.drag);
+        else currentSpeed = Game.m.defendSpeed * strength / data.weight;
     }
 
 

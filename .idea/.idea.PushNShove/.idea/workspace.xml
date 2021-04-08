@@ -21,9 +21,18 @@
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Brute.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Dog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Monsters/Shieldbearer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Knight.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Mage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Mage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/mage.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/mage.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Strongman.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitMelee.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,13 +120,13 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampHero.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedHeal.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1k6GgUKhAN3iWH4pGLr6hcAIQZY" />
@@ -284,6 +293,7 @@
       <workItem from="1617460968690" duration="3311000" />
       <workItem from="1617712228228" duration="1190000" />
       <workItem from="1617816143627" duration="1633000" />
+      <workItem from="1617913394231" duration="1842000" />
     </task>
     <servers />
   </component>

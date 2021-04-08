@@ -176,8 +176,8 @@ public class UnitMelee : UnitBehavior {
         if (!unit1.melee.CanAttack()) return unit2;
         if (!unit2.melee.CanAttack()) return unit1;
         
-        float momentum1 = unit1.data.weight * (2 * unit1.speedPercent).Clamp01(); //max momentum if > 50% speed
-        float momentum2 = unit2.data.weight * (2 * unit2.speedPercent).Clamp01();
+        float momentum1 = unit1.data.skill * (2 * unit1.speedPercent).Clamp01(); //max momentum if > 50% speed
+        float momentum2 = unit2.data.skill * (2 * unit2.speedPercent).Clamp01();
         return Random.value < momentum1 / (momentum1 + momentum2) ? unit1 : unit2;
     }
     

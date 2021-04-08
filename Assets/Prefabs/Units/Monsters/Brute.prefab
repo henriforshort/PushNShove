@@ -222,10 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaxHealth: 200
   baseProt: 0
-  baseWeight: 5
+  baseSkill: 5
   baseDamage: 3
-  baseStrength: 1.5
-  baseDrag: 0.8
+  baseStrength: 15
+  baseWeight: 20
   baseCritChance: 0.2
   size: 2
   bumpedSound: 24
@@ -288,7 +288,7 @@ MonoBehaviour:
       startValue: 0
       value: 0
       modifiers: []
-    weight:
+    skill:
       startValue: 0
       value: 0
       modifiers: []
@@ -300,7 +300,7 @@ MonoBehaviour:
       startValue: 0
       value: 0
       modifiers: []
-    drag:
+    weight:
       startValue: 0
       value: 0
       modifiers: []

@@ -67,10 +67,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaxHealth: 50
   baseProt: 0
-  baseWeight: 5
+  baseSkill: 5
   baseDamage: 3
-  baseStrength: 0.75
-  baseDrag: 0
+  baseStrength: 7
+  baseWeight: 10
   baseCritChance: 0
   size: 1
   bumpedSound: 24
