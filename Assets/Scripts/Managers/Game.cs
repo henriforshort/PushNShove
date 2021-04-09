@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs
@@ -75,16 +72,18 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
             return;
         }
         DontDestroyOnLoad(this);
-        LoadFromDevice();
+        
+        if (File.Exists(savePath)) LoadFromDevice();
+        else save.InitGame();
+        
+        LoadScene(SceneName.Camp);
     }
 
     public void OnApplicationQuit() {
-        if (save.currentScene != SceneName.Battle) return;
+        if (save.currentScene == SceneName.Camp) return;
         
-        save.currentScene = SceneName.Camp;
-        Unit.heroUnits.ForEach(u => {
-            u.data.activity = CampActivity.Type.IDLE;
-        });
+        // save.currentScene = SceneName.Camp;
+        // Unit.heroUnits.ForEach(u => u.data.activity = CampActivity.Type.IDLE);
         SaveToDevice();
     }
     
@@ -100,14 +99,10 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     }
 
     public void LoadFromDevice() {
-        if (File.Exists(savePath)) {
-            FileStream fileStream = new FileStream(savePath, FileMode.Open);
-            save = (GameSave)new BinaryFormatter().Deserialize(fileStream);
-            fileStream.Close();
-            LoadScene(save.currentScene);
-        } else {
-            save.InitGame();
-        }
+        FileStream fileStream = new FileStream(savePath, FileMode.Open);
+        save = (GameSave)new BinaryFormatter().Deserialize(fileStream);
+        fileStream.Close();
+        // LoadScene(save.currentScene);
     }
     
     

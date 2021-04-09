@@ -4,11 +4,15 @@ using System.Linq;
 using UnityEngine;
 
 public class Camp : Level<Camp> {
+    [Header("Balancing")]
+    public float cameraY;
+    
     [Header("State")]
     public CampHero selectedHero;
     public List<CampHero> heroes;
     
     [Header("References")]
+    public GameObject cameraGO;
     public UITransition transition;
     public CampArrow arrow;
     public Transform unitsHolder;
@@ -26,6 +30,7 @@ public class Camp : Level<Camp> {
     // ====================
 
     public void Start() {
+        if (Time.frameCount == 1) FirstInit();
         InitCamp();
     }
     
@@ -34,6 +39,21 @@ public class Camp : Level<Camp> {
     // CAMP INIT
     // ====================
 
+    //Called the first time this scene loads in a given session (displays title screen & the like)
+    public void FirstInit() {
+        Game.m.save.heroes
+            .Where(h => h.data.activity == CampActivity.Type.READY)
+            .ToList()
+            .ForEach(h => h.data.activity = CampActivity.Type.IDLE);
+
+        cameraGO.SetY(cameraY);
+    }
+
+    public void TweenCamera() {
+        cameraGO.TweenPosition(cameraY * Vector3.down, Tween.Style.EASE_OUT, 2);
+    }
+
+    //Called every time this scene loads
     public void InitCamp() {
         //Play music and ambient loops
         Game.m.PlayMusic(AdventureRPG.OUR_VILLAGE);
@@ -52,6 +72,7 @@ public class Camp : Level<Camp> {
         //Init activities
         DeselectUnit();
         activities.ForEach(a => a.Init());
+        transition.FadeOut();
     }
 
 
