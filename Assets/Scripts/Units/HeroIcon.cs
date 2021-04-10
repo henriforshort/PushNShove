@@ -13,6 +13,7 @@ public class HeroIcon : MonoBehaviour {
     public Animator backgroundAnimator;
     public Image deadOverlay;
     public ItemPanel itemPanel;
+    public Slider xpBar;
 
     [Header("Scene References (Assigned at runtime)")]
     public UnitHero hero;
@@ -122,5 +123,29 @@ public class HeroIcon : MonoBehaviour {
     public void GetItemAtStartup(Item itemPrefab) {
         Item itemInstance = Instantiate(itemPrefab, itemPanel.transform);
         itemInstance.Init(itemPrefab, hero, false);
+    }
+    
+    
+    // ====================
+    // XP
+    // ====================
+
+    public void GainXpFromFight(GameObject xpPrefab, Vector3 position) {
+        //Create item
+        GameObject xpInstance = Instantiate(xpPrefab, 
+            Battle.m.cameraManager.cam.WorldToScreenPoint(position),
+            Quaternion.identity,
+            Battle.m.itemsCanvas);
+        
+        //Bounce item then move it to top left corner
+        xpInstance.TweenPosition(Vector3.up * 50, 
+            Tween.Style.BOUNCE, .5f, () => 
+                this.Wait(0.5f, () => 
+                    xpInstance.TweenPosition(icon.transform.position - xpInstance.transform.position, 
+                        Tween.Style.EASE_OUT, .25f, () => {
+                            Destroy(xpInstance);
+                            Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
+                            hero.unit.AddXp(1);
+                        })));
     }
 }

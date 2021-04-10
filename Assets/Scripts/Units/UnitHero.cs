@@ -50,6 +50,7 @@ public class UnitHero : UnitSide {
     public void Start() { //Called after every unit has been created and loaded
         if (unit.data.currentHealth.isAboutOrLowerThan(0)) unit.onDeath.Invoke();
         else unit.SetHealth(unit.data.currentHealth);
+        unit.SetXp(unit.data.xp);
     }
 
 
@@ -122,12 +123,32 @@ public class UnitHero : UnitSide {
     // ITEMS
     // ====================
 
-    public void GetItemFromFight(Item itemPrefab, Unit monster) {
+    public void GetItemFromFight(Item itemPrefab, Vector3 monsterPosition) {
         Game.m.PlaySound(MedievalCombat.COINS);
-        icon.GainItemFromFight(itemPrefab, monster.transform.position.SetY(-2.75f));
+        icon.GainItemFromFight(itemPrefab, monsterPosition.SetY(-2.75f));
     }
 
     public void GetItemAtStartup(Item itemPrefab) {
         icon.GetItemAtStartup(itemPrefab);
+    }
+    
+    
+    // ====================
+    // XP
+    // ====================
+
+    public void GetXp(int amount, Vector3 monsterPosition) {
+        Game.m.PlaySound(MedievalCombat.COINS);
+        this.Repeat(
+            times:amount, 
+            () => 
+                icon.GainXpFromFight(
+                    this.WeightedRandom(
+                        Game.m.xpPrefabSmall, 10, 
+                        Game.m.xpPrefabMedium, 5, 
+                        Game.m.xpPrefabBig, 1), 
+                    monsterPosition.SetY(-2.75f) + this.Random(-1f, 1f) * Vector3.left), 
+            .1f);
+        
     }
 }

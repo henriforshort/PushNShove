@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   secondsToMaxHp: 600
   battlesPerRun: 5
-  timeToAutoRestart: 2
+  timeToAutoRestart: 5
   spawnPosXRangeForMelee: {x: 1, y: 4}
   spawnPosXRangeForRanged: {x: 4, y: 7}
   amountOfHeroes: 3
@@ -63,6 +63,9 @@ MonoBehaviour:
   commonDropChance: 10
   rareDropChance: 3
   leggyDropChance: 1
+  firstLevelXp: 10
+  levelUpBonus: 1.1
+  levelUpXpIncrease: 1.5
   save:
     battle: 0
     currentScene: 0
@@ -74,6 +77,9 @@ MonoBehaviour:
   - {fileID: -8068071798747146441, guid: ef8e44773ad2a9a4b9a75ba4fa668ed9, type: 3}
   - {fileID: 4838143930224751872, guid: b8d9d7ad73c780341893780c4a95e73c, type: 3}
   - {fileID: -3902853122371618417, guid: 78ddace0b53d32e479cdaece809ec2ca, type: 3}
+  xpPrefabSmall: {fileID: 8083375804294825623, guid: 1f7c485698272cf42bfc108a0f759a9d, type: 3}
+  xpPrefabMedium: {fileID: 2426114426121825844, guid: c5a1b94a8e707b34793db8fe8dd9c492, type: 3}
+  xpPrefabBig: {fileID: 8029603397681566544, guid: 626c81f94bbff544aa48fd3d1755f9cd, type: 3}
   transparentSprite: {fileID: 21300000, guid: 81285999a139f494fb84c0501f058978, type: 3}
   whiteSprite: {fileID: 21300000, guid: 98c490c41fcfcc64894520d1b8233d32, type: 3}
   white: {r: 0.7411765, g: 0.7490196, b: 0.5921569, a: 1}

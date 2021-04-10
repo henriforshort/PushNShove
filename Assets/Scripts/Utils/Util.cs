@@ -116,8 +116,12 @@ public static class Util {
 
     public static float Round(this float target) => Mathf.Round(target);
     public static int RoundToInt(this float target) => Mathf.RoundToInt(target);
+    public static int RoundToInt(this double target) => Mathf.RoundToInt((float)target);
     public static float Round(this float target, float precision) => 
         (target * 10.Pow(precision)).Round() / 10.Pow(precision);
+
+    public static float Floor(this float target) => Mathf.Floor(target);
+    public static int FloorToInt(this float target) => Mathf.FloorToInt(target);
 
     public static bool isAbout(this float target, float other) => Mathf.Approximately(target, other);
     public static bool isClearlyNot(this float target, float other) => !target.isAbout(other);

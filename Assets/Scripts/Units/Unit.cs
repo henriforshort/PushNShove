@@ -3,6 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Unit : MonoBehaviour {
@@ -12,7 +13,7 @@ public class Unit : MonoBehaviour {
     public float baseSkill;
     public float baseDamage;
     public float baseStrength;
-    public float baseWeight;
+    public float baseResistance;
     [Range(0,1)] public float baseCritChance;
     
     [Header("Balancing")]
@@ -149,6 +150,33 @@ public class Unit : MonoBehaviour {
 
     
     // ====================
+    // XP
+    // ====================
+
+    public void AddXp(float amount) => SetXp(data.xp + amount);
+    public void SetXp(float amount) {
+        data.xp = amount;
+        if (data.xp >= data.xpToNextLevel) LevelUp();
+        hero.icon.xpBar.value = data.xp/data.xpToNextLevel;
+    }
+
+    public void LevelUp() {
+        Debug.Log(name + " levelled up");
+        data.xp -= data.xpToNextLevel;
+        data.level++;
+        data.xpToNextLevel *= Game.m.levelUpXpIncrease;
+        
+        data.maxHealth.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.damage.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.strength.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.resistance.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.skill.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        
+        SetHealth(data.maxHealth);
+    }
+
+    
+    // ====================
     // MOVEMENT
     // ====================
 
@@ -252,7 +280,7 @@ public class Unit : MonoBehaviour {
         //crit
         if (critChance.Chance()) { 
             SetAnim(Anim.BUMPED);
-            currentSpeed = (Game.m.bumpSpeed * strength / data.weight).AtMost(currentSpeed - 1) - 5;
+            currentSpeed = (Game.m.bumpSpeed * strength / data.resistance).AtMost(currentSpeed - 1) - 5;
             TakeCollisionDamage(damage, true);
             critCollisionDate = Time.time;
         }
@@ -266,7 +294,7 @@ public class Unit : MonoBehaviour {
         //regular hit
         else {
             SetAnim(Anim.BUMPED);
-            currentSpeed = (Game.m.bumpSpeed * strength / data.weight).AtMost(currentSpeed - 1);
+            currentSpeed = (Game.m.bumpSpeed * strength / data.resistance).AtMost(currentSpeed - 1);
             TakeCollisionDamage(damage);
         }
     }
@@ -274,7 +302,7 @@ public class Unit : MonoBehaviour {
     public void SlightKnockbackFrom(Unit unit) => SlightKnockbackFrom(unit.data.strength);
     public void SlightKnockbackFrom(float strength) {
         if (isInvincible) currentSpeed = 0;
-        else currentSpeed = Game.m.defendSpeed * strength / data.weight;
+        else currentSpeed = Game.m.defendSpeed * strength / data.resistance;
     }
 
 

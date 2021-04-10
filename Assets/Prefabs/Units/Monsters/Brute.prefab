@@ -225,7 +225,7 @@ MonoBehaviour:
   baseSkill: 5
   baseDamage: 3
   baseStrength: 15
-  baseWeight: 20
+  baseWeight: 15
   baseCritChance: 0.2
   size: 2
   bumpedSound: 24
@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbac38a8b5d141c41a569360af190ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropRate: 1
   data:
     maxHealth:
       startValue: 0
@@ -312,6 +311,10 @@ MonoBehaviour:
     currentHealth: 0
     ultCooldownLeft: 0
     _itemPrefabPaths: []
+    level: 0
+    xp: 0
+  droppedItems: []
+  droppedXp: 0
 --- !u!114 &-352246479384488573
 MonoBehaviour:
   m_ObjectHideFlags: 0

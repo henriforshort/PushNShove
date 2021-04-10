@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class Battle : Level<Battle> { //Battle manager, handles a single battle.
                                  //Should contain only Balancing and Scene References relative to this battle.
                                  //Should contain only State info to be deleted at the end of the battle.
     [Header("Balancing")]
     public List<Transform> enemyClusters;
-    [FormerlySerializedAs("numberOfEnemies")]
     public int numberOfEnemyClusters;
+    public int xpRewards;
+    public int itemRewards;
     
     [Header("State")]
     public float timeSinceGameOver;
@@ -21,8 +19,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     private Game.SceneName nextScene;
 
     [Header("Scene References")]
-    public GameObject leftDeathZone;
-    public GameObject rightDeathZone;
     public CameraManager cameraManager;
     public GameObject gameOverPanel;
     public TMP_Text gameOverText;
@@ -69,6 +65,14 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             }
             Destroy(clusterInstance.gameObject);
         });
+
+        //Initiate enemy loot
+        this.Repeat(times:itemRewards, () => {
+            if (!Run.m.itemsDepleted)
+                Unit.monsterUnits.Random().monster.droppedItems.Add(Run.m.GetRandomItem());
+        });
+        this.Repeat(times:xpRewards, () => 
+            Unit.monsterUnits.Random().monster.droppedXp ++);
         
         //Init scene
         fightPrompt.SetActive(true);

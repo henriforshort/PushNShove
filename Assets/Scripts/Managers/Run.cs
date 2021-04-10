@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Run : MonoBehaviour { //Run manager, handles a single run.
                                  //Should not contain any balancing or prefabs
                                  //Should contain only State info that is persisted across a single run
     [Header("State")]
+	public int runLevel;
 	public List<UnitHero> activeHeroPrefabs;
 	public List<Item> commonItems;
 	public List<Item> rareItems;
@@ -53,6 +52,12 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 			h.data.ultCooldownLeft = 0;
 			h.data.itemPrefabPaths.Clear();
 		});
+
+		runLevel = Game.m.save.heroes
+			.Where(hgs => hgs.data.activity == CampActivity.Type.READY)
+			.Select(hgs => hgs.data.level)
+			.Average()
+			.RoundToInt();
 		
 		commonItems = items.Where(i => i.rarity == Item.Rarity.COMMON).ToList();
 		rareItems = items.Where(i => i.rarity == Item.Rarity.RARE).ToList();

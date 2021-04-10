@@ -33,11 +33,19 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float rareDropChance;
     public float leggyDropChance;
     
+    [Space(20)]
+    public int firstLevelXp;
+    public float levelUpBonus;
+    public float levelUpXpIncrease;
+
     [Header("State")]
     public GameSave save;
                             
     [Header("Prefabs")]
     public List<UnitHero> heroPrefabs;
+    public GameObject xpPrefabSmall;
+    public GameObject xpPrefabMedium;
+    public GameObject xpPrefabBig;
     public Sprite transparentSprite;
     public Sprite whiteSprite;
 
@@ -82,8 +90,6 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public void OnApplicationQuit() {
         if (save.currentScene == SceneName.Camp) return;
         
-        // save.currentScene = SceneName.Camp;
-        // Unit.heroUnits.ForEach(u => u.data.activity = CampActivity.Type.IDLE);
         SaveToDevice();
     }
     
@@ -102,7 +108,6 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
         FileStream fileStream = new FileStream(savePath, FileMode.Open);
         save = (GameSave)new BinaryFormatter().Deserialize(fileStream);
         fileStream.Close();
-        // LoadScene(save.currentScene);
     }
     
     

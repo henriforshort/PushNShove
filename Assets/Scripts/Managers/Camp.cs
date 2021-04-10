@@ -50,6 +50,8 @@ public class Camp : Level<Camp> {
     }
 
     public void TweenCamera() {
+        if(cameraGO.GetY().isClearlyNot(cameraY)) return;
+        
         cameraGO.TweenPosition(cameraY * Vector3.down, Tween.Style.EASE_OUT, 2);
     }
 
