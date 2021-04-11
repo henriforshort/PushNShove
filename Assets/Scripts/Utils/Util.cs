@@ -732,4 +732,12 @@ public static class Util {
     public static T ToPrefab<T>(this string path) where T : MonoBehaviour => Resources.Load<T>(path
         .Replace("Assets/Resources/", "")
         .Replace(".prefab", ""));
+    
+    
+    // --------------------
+    // DATETIME
+    // --------------------
+
+    public static bool IsStrictlyLaterThan(this DateTime target, DateTime other) => target.CompareTo(other) > 0;
+    public static bool IsStrictlyEarlierThan(this DateTime target, DateTime other) => target.CompareTo(other) < 0;
 }

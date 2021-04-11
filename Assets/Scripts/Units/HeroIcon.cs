@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HeroIcon : MonoBehaviour {
@@ -14,6 +15,9 @@ public class HeroIcon : MonoBehaviour {
     public Image deadOverlay;
     public ItemPanel itemPanel;
     public Slider xpBar;
+    public TMP_Text levelNumber;
+    public TMP_Text levelUpText;
+    public GameObject doubleXp;
 
     [Header("Scene References (Assigned at runtime)")]
     public UnitHero hero;
@@ -29,6 +33,8 @@ public class HeroIcon : MonoBehaviour {
         hero = h;
         icon.sprite = h.image;
         itemPanel.hero = h;
+        levelUpText.SetAlpha(0);
+        doubleXp.SetActive(hero.unit.data.isOnDoubleXp);
     }
     
     public void Update() {
@@ -130,7 +136,7 @@ public class HeroIcon : MonoBehaviour {
     // XP
     // ====================
 
-    public void GainXpFromFight(GameObject xpPrefab, Vector3 position) {
+    public void GainXpFromFight(GameObject xpPrefab, Vector3 position, float amount) {
         //Create item
         GameObject xpInstance = Instantiate(xpPrefab, 
             Battle.m.cameraManager.cam.WorldToScreenPoint(position),
@@ -142,10 +148,10 @@ public class HeroIcon : MonoBehaviour {
             Tween.Style.BOUNCE, .5f, () => 
                 this.Wait(0.5f, () => 
                     xpInstance.TweenPosition(icon.transform.position - xpInstance.transform.position, 
-                        Tween.Style.EASE_OUT, .25f, () => {
+                        Tween.Style.EASE_OUT, .5f, () => {
                             Destroy(xpInstance);
                             Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
-                            hero.unit.AddXp(1);
+                            hero.unit.AddXp(amount);
                         })));
     }
 }

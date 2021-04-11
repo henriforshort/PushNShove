@@ -29,6 +29,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public Transform itemsCanvas;
     public GameObject itemDescription;
     public TMP_Text itemDescriptionText;
+    public TMP_Text BattleNumber;
     public List<HeroIcon> heroIcons;
 	
     public enum State { PLAYING, PAUSE, GAME_OVER, RESTARTING }
@@ -66,7 +67,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             Destroy(clusterInstance.gameObject);
         });
 
-        //Initiate enemy loot
+        //Init enemy loot
         this.Repeat(times:itemRewards, () => {
             if (!Run.m.itemsDepleted)
                 Unit.monsterUnits.Random().monster.droppedItems.Add(Run.m.GetRandomItem());
@@ -78,6 +79,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         fightPrompt.SetActive(true);
         transition.FadeOut();
         Game.m.PlayMusic(AdventureRPG.ADVENTURE_TIME);
+        BattleNumber.text = "Battle " + Game.m.save.battle + "/" + Game.m.battlesPerRun;
     }
     
     

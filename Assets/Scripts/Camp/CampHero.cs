@@ -21,6 +21,7 @@ public class CampHero : MonoBehaviour {
     public GameObject timer;
     public TMP_Text timerText;
     public Slider healthBar;
+    public GameObject doubleXp;
     
     [Header("Self References (Assigned at runtime)")]
     public int prefabIndex;
@@ -45,11 +46,13 @@ public class CampHero : MonoBehaviour {
         this.SetX(currentSlot.x);
         this.SetY(-3);
         SetHealth(data.currentHealth);
+        doubleXp.SetActive(true);
     }
 
     public void Update() {
         MoveToGoal();
         Sleep();
+        doubleXp.SetActive(data.isOnDoubleXp);
     }
     
     

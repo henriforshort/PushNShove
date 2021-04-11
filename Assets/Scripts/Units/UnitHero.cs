@@ -137,18 +137,15 @@ public class UnitHero : UnitSide {
     // XP
     // ====================
 
-    public void GetXp(int amount, Vector3 monsterPosition) {
+    public void GetXp(float amount, Vector3 monsterPosition) {
         Game.m.PlaySound(MedievalCombat.COINS);
-        this.Repeat(
-            times:amount, 
-            () => 
-                icon.GainXpFromFight(
-                    this.WeightedRandom(
-                        Game.m.xpPrefabSmall, 10, 
-                        Game.m.xpPrefabMedium, 5, 
-                        Game.m.xpPrefabBig, 1), 
-                    monsterPosition.SetY(-2.75f) + this.Random(-1f, 1f) * Vector3.left), 
-            .1f);
-        
+        icon.GainXpFromFight(
+            this.WeightedRandom(
+                Game.m.xpPrefabSmall, 20,
+                Game.m.xpPrefabMedium, 4,
+                Game.m.xpPrefabBig, 1),
+            monsterPosition.SetY(-2.75f) + this.Random(-1f, 1f) * Vector3.left,
+            amount);
+
     }
 }

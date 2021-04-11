@@ -33,6 +33,10 @@ public class Camp : Level<Camp> {
         if (Time.frameCount == 1) FirstInit();
         InitCamp();
     }
+
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.A)) AssignDoubleXp();
+    }
     
     
     // ====================
@@ -112,6 +116,25 @@ public class Camp : Level<Camp> {
         => activities.FirstOrDefault(a => a.type == wantedType);
     
     
+    // ====================
+    // DOUBLE XP
+    // ====================
+
+    public void AssignDoubleXp() {
+        CampHero hero1 = LowestLevelCharacterAmong(heroes);
+        CampHero hero2 = LowestLevelCharacterAmong(heroes.Except(hero1));
+        CampHero hero3 = LowestLevelCharacterAmong(heroes.Except(hero1).Except(hero2));
+        
+        CampHero lowestHero = this.Random(hero1, hero2, hero3);
+        lowestHero.data.DoubleXpForDays(1);
+        heroes.Except(lowestHero).ForEach(h => h.data.EndDoubleXp());
+    }
+
+    public CampHero LowestLevelCharacterAmong(List<CampHero> campHeroes) => campHeroes
+            .Where(ch => ch.data.level == campHeroes.Select(ch2 => ch2.data.level).Min())
+            .WithLowest(ch => ch.data.xp);
+
+
     // ====================
     // START BATTLE
     // ====================

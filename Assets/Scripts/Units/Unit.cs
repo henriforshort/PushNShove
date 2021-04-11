@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -153,18 +154,30 @@ public class Unit : MonoBehaviour {
     // XP
     // ====================
 
-    public void AddXp(float amount) => SetXp(data.xp + amount);
+    public void AddXp(float amount) {
+        if (data.isOnDoubleXp) amount*=2;
+        SetXp(data.xp + amount);
+    }
+
     public void SetXp(float amount) {
         data.xp = amount;
         if (data.xp >= data.xpToNextLevel) LevelUp();
         hero.icon.xpBar.value = data.xp/data.xpToNextLevel;
+        hero.icon.levelNumber.text = data.level.ToString();
     }
 
     public void LevelUp() {
-        Debug.Log(name + " levelled up");
         data.xp -= data.xpToNextLevel;
         data.level++;
-        data.xpToNextLevel *= Game.m.levelUpXpIncrease;
+        data.xpToNextLevel *= Game.m.levelUpXpNeededIncrease;
+
+        if (isHero) {
+            hero.icon.levelUpText.SetAlpha(1);
+            this.Wait(2, () => hero.icon.levelUpText.TweenAlpha(0, Tween.Style.EASE_IN, 1));
+            hero.icon.levelUpText.gameObject.TweenPosition(10f * Vector3.up, Tween.Style.BOUNCE, .25f);
+            hero.icon.levelNumber.Bounce(.5f, .25f, 
+                () => hero.icon.levelNumber.transform.localScale = Vector3.one);
+        }
         
         data.maxHealth.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
         data.damage.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
@@ -287,7 +300,7 @@ public class Unit : MonoBehaviour {
         //block
         else if (data.prot.value.Chance()) { 
             SetAnim(Anim.DEFEND);
-            currentSpeed = (Game.m.absorbSpeed * strength).AtMost(currentSpeed - 1);
+            currentSpeed = (Game.m.absorbSpeed * strength).Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
             AddHealth(0, "Block", Game.m.darkGrey);
             Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
         }

@@ -22,9 +22,14 @@ public class UnitData {
     public int level;
     public float xp;
     public float xpToNextLevel;
+    public DateTime endOfDoubleXp;
     
     public List<string> itemPrefabPaths => _itemPrefabPaths ?? (_itemPrefabPaths = new List<string>());
     public List<Stat> stats => new List<Stat> { maxHealth, prot, skill, damage, strength, resistance, critChance };
+    
+    public bool isOnDoubleXp => endOfDoubleXp.IsStrictlyLaterThan(DateTime.Now);
+    public void DoubleXpForDays(int amount) => endOfDoubleXp = endOfDoubleXp.AddDays(amount);
+    public void EndDoubleXp() => endOfDoubleXp = DateTime.Now;
 
     public UnitData() {
         maxHealth = new Stat();

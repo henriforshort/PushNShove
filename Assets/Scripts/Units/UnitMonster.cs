@@ -28,7 +28,8 @@ public class UnitMonster : UnitSide {
         Vector3 pos = transform.position;
         Battle.m.Wait(.1f, () => 
             Battle.m.Repeat(times:droppedXp, 
-                () => Unit.heroUnits.Random()?.hero?.GetXp(1, pos), 
+                () => Unit.heroUnits.Random()?.hero?
+                    .GetXp(Game.m.levelUpXpGainedIncrease.Pow(Run.m.runLevel), pos), 
                 .1f));
     }
 

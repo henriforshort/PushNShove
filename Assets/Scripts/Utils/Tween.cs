@@ -110,7 +110,6 @@ public class Tween : MonoBehaviour {
     public void MaxOut() => linearValue = reversed ? 0 : 1;
 
     public float GetValue(float x) {
-        
         if (style == Style.SINE) return Sine(x);
         if (style == Style.LINEAR) return Linear(x);
         if (style == Style.EASE_IN) return EaseIn(x);
@@ -132,27 +131,6 @@ public class Tween : MonoBehaviour {
         else {
             playing = false;
             this.Wait(restartDelay, () => playing = true);
-        }
-    }
-}
-
-
-
-namespace SampleApp {
-    public delegate string MyDel(string str);
-	
-    class EventProgram {
-        event MyDel MyEvent;
-		
-        public EventProgram() {
-            MyEvent += WelcomeUser;
-        }
-        public string WelcomeUser(string username) {
-            return "Welcome " + username;
-        }
-        
-        static void Main(string[] args) {
-            Console.WriteLine(new EventProgram().MyEvent("Tutorials Point"));
         }
     }
 }

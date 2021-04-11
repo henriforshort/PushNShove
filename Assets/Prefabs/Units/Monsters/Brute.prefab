@@ -222,10 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaxHealth: 200
   baseProt: 0
-  baseSkill: 5
+  baseSkill: 10
   baseDamage: 3
   baseStrength: 15
-  baseWeight: 15
+  baseResistance: 15
   baseCritChance: 0.2
   size: 2
   bumpedSound: 24
@@ -299,7 +299,7 @@ MonoBehaviour:
       startValue: 0
       value: 0
       modifiers: []
-    weight:
+    resistance:
       startValue: 0
       value: 0
       modifiers: []
@@ -313,6 +313,7 @@ MonoBehaviour:
     _itemPrefabPaths: []
     level: 0
     xp: 0
+    xpToNextLevel: 0
   droppedItems: []
   droppedXp: 0
 --- !u!114 &-352246479384488573

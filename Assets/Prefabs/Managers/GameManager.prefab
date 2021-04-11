@@ -56,16 +56,18 @@ MonoBehaviour:
   freezeFrameDuration: 0.15
   bumpRecoverySpeed: 5
   bumpSpeed: -20
+  maxBumpSpeed: -30
   defendSpeed: -10
   absorbSpeed: -5
   boardSize: 13.75
-  maxItemsPerHero: 6
+  maxItemsPerHero: 5
   commonDropChance: 10
   rareDropChance: 3
   leggyDropChance: 1
-  firstLevelXp: 10
+  firstLevelXp: 20
   levelUpBonus: 1.1
-  levelUpXpIncrease: 1.5
+  levelUpXpNeededIncrease: 2
+  levelUpXpGainedIncrease: 1.5
   save:
     battle: 0
     currentScene: 0

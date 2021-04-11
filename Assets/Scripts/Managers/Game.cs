@@ -23,6 +23,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float freezeFrameDuration;
     public float bumpRecoverySpeed;
     public float bumpSpeed;
+    public float maxBumpSpeed;
     public float defendSpeed;
     public float absorbSpeed;
     public float boardSize;
@@ -36,7 +37,8 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     [Space(20)]
     public int firstLevelXp;
     public float levelUpBonus;
-    public float levelUpXpIncrease;
+    public float levelUpXpNeededIncrease;
+    public float levelUpXpGainedIncrease;
 
     [Header("State")]
     public GameSave save;

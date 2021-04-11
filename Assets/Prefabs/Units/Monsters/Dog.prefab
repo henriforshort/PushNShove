@@ -225,7 +225,7 @@ MonoBehaviour:
   baseSkill: 0.25
   baseDamage: 3
   baseStrength: 7
-  baseWeight: 8
+  baseResistance: 8
   baseCritChance: 0
   size: 0.5
   bumpedSound: 0
@@ -299,7 +299,7 @@ MonoBehaviour:
       startValue: 0
       value: 0
       modifiers: []
-    weight:
+    resistance:
       startValue: 0
       value: 0
       modifiers: []
@@ -313,6 +313,7 @@ MonoBehaviour:
     _itemPrefabPaths: []
     level: 0
     xp: 0
+    xpToNextLevel: 0
   droppedItems: []
   droppedXp: 0
 --- !u!114 &6029256729984578456
