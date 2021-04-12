@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CampHero : MonoBehaviour {
+    [Header("Balancing")]
+    public int idleSlot;
+    
     [Header("State")]
     public CampSlot currentSlot;
     [HideInInspector] public CampActivity currentActivity;
@@ -22,6 +25,7 @@ public class CampHero : MonoBehaviour {
     public TMP_Text timerText;
     public Slider healthBar;
     public GameObject doubleXp;
+    public TMP_Text levelText;
     
     [Header("Self References (Assigned at runtime)")]
     public int prefabIndex;
@@ -47,6 +51,7 @@ public class CampHero : MonoBehaviour {
         this.SetY(-3);
         SetHealth(data.currentHealth);
         doubleXp.SetActive(true);
+        levelText.text = data.level.ToString();
     }
 
     public void Update() {
@@ -75,10 +80,12 @@ public class CampHero : MonoBehaviour {
             currentSlot.emptyMarkers.ForEach(m => m.SetActive(true));
             currentActivity.fullMarkers.ForEach(m => m.SetActive(false));
         }
-        if (data.activity == CampActivity.Type.SLEEPING) timer.SetActive(false);
         currentSlot = newSlot;
         currentActivity = newActivity;
         currentSlot.hero = this;
+        if (currentActivity.type == CampActivity.Type.READY) Camp.m.UpdateUnitsReadyNumber();
+        if (data.activity == CampActivity.Type.READY) Camp.m.UpdateUnitsReadyNumber();
+        if (data.activity == CampActivity.Type.SLEEPING) timer.SetActive(false);
         
         //enable walk visuals
         isWalking = true;
@@ -89,7 +96,7 @@ public class CampHero : MonoBehaviour {
         //set new activity (before I actually start walking)
         data.activity = currentActivity.type;
         if (data.activity == CampActivity.Type.SLEEPING && !isFirstFrame) data.lastSeenSleeping = DateTime.Now;
-        currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.emptySlot == default));
+        currentActivity.fullMarkers.ForEach(m => m.SetActive(currentActivity.isFull));
         Game.m.SaveToDevice();
     }
     
@@ -134,7 +141,7 @@ public class CampHero : MonoBehaviour {
         this.SetZ(0);
         body.SetMirrored(false);
         Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, 0.5f, 1);
-        if (currentActivity.emptySlot == default) Game.m.PlaySound(MedievalCombat.SPECIAL_CLICK, .5f, 5);
+        if (currentActivity.isFull) Game.m.PlaySound(MedievalCombat.SPECIAL_CLICK, .5f, 5);
     }
     
     

@@ -2,6 +2,7 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Battle : Level<Battle> { //Battle manager, handles a single battle.
@@ -10,8 +11,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     [Header("Balancing")]
     public List<Transform> enemyClusters;
     public int numberOfEnemyClusters;
-    public int xpRewards;
-    public int itemRewards;
     
     [Header("State")]
     public float timeSinceGameOver;
@@ -68,12 +67,14 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         });
 
         //Init enemy loot
-        this.Repeat(times:itemRewards, () => {
+        this.Repeat(times:Game.m.itemsPerBattle, () => {
             if (!Run.m.itemsDepleted)
                 Unit.monsterUnits.Random().monster.droppedItems.Add(Run.m.GetRandomItem());
         });
-        this.Repeat(times:xpRewards, () => 
+        this.Repeat(times:Game.m.xpBubblesPerBattle, () => 
             Unit.monsterUnits.Random().monster.droppedXp ++);
+        this.Repeat(times:Game.m.gemsPerBattle.CoinFlipRound(), () => 
+            Unit.monsterUnits.Random().monster.droppedGems++);
         
         //Init scene
         fightPrompt.SetActive(true);
@@ -95,6 +96,8 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     // ====================
     // BATTLE END
     // ====================
+
+    [HideInInspector] public UnityEvent OnBattleEnd;
 
     public void Update() {
         if (gameState == State.GAME_OVER) AwaitRestart();
@@ -154,6 +157,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void Restart() {
+        OnBattleEnd.Invoke();
         gameState = State.RESTARTING;
         Unit.heroUnits.ForEach(u => u.hero.EndUlt());
         Unit.heroUnits.Clear();

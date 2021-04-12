@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Camp : Level<Camp> {
     [Header("Balancing")]
@@ -16,6 +18,10 @@ public class Camp : Level<Camp> {
     public UITransition transition;
     public CampArrow arrow;
     public Transform unitsHolder;
+    public TMP_Text unitsReadyNumber;
+    public Graphic gemsBg;
+    public TMP_Text gemsText;
+    public Graphic gemsIcon;
     
     [Header("Activities")]
     public CampActivity idle;
@@ -33,10 +39,6 @@ public class Camp : Level<Camp> {
         if (Time.frameCount == 1) FirstInit();
         InitCamp();
     }
-
-    public void Update() {
-        if (Input.GetKeyDown(KeyCode.A)) AssignDoubleXp();
-    }
     
     
     // ====================
@@ -51,12 +53,9 @@ public class Camp : Level<Camp> {
             .ForEach(h => h.data.activity = CampActivity.Type.IDLE);
 
         cameraGO.SetY(cameraY);
-    }
-
-    public void TweenCamera() {
-        if(cameraGO.GetY().isClearlyNot(cameraY)) return;
-        
-        cameraGO.TweenPosition(cameraY * Vector3.down, Tween.Style.EASE_OUT, 2);
+        gemsBg.SetAlpha(0);
+        gemsIcon.SetAlpha(0);
+        gemsText.SetAlpha(0);
     }
 
     //Called every time this scene loads
@@ -79,6 +78,12 @@ public class Camp : Level<Camp> {
         DeselectUnit();
         activities.ForEach(a => a.Init());
         transition.FadeOut();
+        
+        //Misc
+        if (Game.m.save.lastAssignedDoubleXp != DateTime.Today) AssignDoubleXp();
+        UpdateUnitsReadyNumber();
+        gemsText.text = Game.m.save.gems.ToString();
+
     }
 
 
@@ -121,13 +126,11 @@ public class Camp : Level<Camp> {
     // ====================
 
     public void AssignDoubleXp() {
+        Game.m.save.lastAssignedDoubleXp = DateTime.Today;
         CampHero hero1 = LowestLevelCharacterAmong(heroes);
         CampHero hero2 = LowestLevelCharacterAmong(heroes.Except(hero1));
         CampHero hero3 = LowestLevelCharacterAmong(heroes.Except(hero1).Except(hero2));
-        
-        CampHero lowestHero = this.Random(hero1, hero2, hero3);
-        lowestHero.data.DoubleXpForDays(1);
-        heroes.Except(lowestHero).ForEach(h => h.data.EndDoubleXp());
+        this.Random(hero1, hero2, hero3).data.DoubleXpForDays(Game.m.doubleXpDurationInHours / 24);
     }
 
     public CampHero LowestLevelCharacterAmong(List<CampHero> campHeroes) => campHeroes
@@ -147,6 +150,23 @@ public class Camp : Level<Camp> {
     }
     
     
+    // ====================
+    // VISUALS
+    // ====================
+
+    public void TweenCamera() {
+        if(cameraGO.GetY().isClearlyNot(cameraY)) return;
+        cameraGO.TweenPosition(cameraY * Vector3.down, Tween.Style.EASE_OUT, 2);
+        gemsBg.TweenAlpha(.25f, Tween.Style.EASE_OUT, 2);
+        gemsIcon.TweenAlpha(1, Tween.Style.EASE_OUT, 2);
+        gemsText.TweenAlpha(1, Tween.Style.EASE_OUT, 2);
+    }
+
+    public void UpdateUnitsReadyNumber() => unitsReadyNumber.text = 
+        "[" + heroes.Count(h => h.currentActivity.type == CampActivity.Type.READY) + 
+        "/" + Game.m.heroesPerBattle + "]";
+
+
     // ====================
     // CHEATS
     // ====================

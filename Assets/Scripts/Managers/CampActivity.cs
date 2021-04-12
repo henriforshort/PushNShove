@@ -11,7 +11,7 @@ public class CampActivity {
     public List<GameObject> fullMarkers;
     public List<CampSlot> slots;
         
-    public CampSlot emptySlot => slots.FirstOrDefault(s => s.hero == null);
+    public bool isFull => slots.All(s => s.hero != null);
 
     //Walking is not an actual activity with slots, it's the filler between activities
     public enum Type { IDLE, SLEEPING, READY }
@@ -26,7 +26,11 @@ public class CampActivity {
     public void Add(CampHero campHero, bool deselect = false) {
         if (!IsOpenTo(campHero)) return;
         
-        campHero.SetGoal(this, emptySlot);
+        CampSlot heroSlot;
+        if (type == Type.IDLE) heroSlot = slots[campHero.idleSlot];
+        else heroSlot = slots.FirstOrDefault(s => s.hero == null);
+        campHero.SetGoal(this, heroSlot);
+        
         if (deselect) {
             Game.m.PlaySound(MedievalCombat.UI_TIGHT, .5f, 2);
             Camp.m.DeselectUnit();
@@ -36,7 +40,7 @@ public class CampActivity {
     public bool IsOpenTo(CampHero hero) {
         if (hero == null) return false;
         if (this == hero.currentActivity) return false;
-        if (emptySlot == default) return false;
+        if (isFull) return false;
         if (type == Type.READY && hero.data.currentHealth == 0) return false;
         if (type == Type.SLEEPING && hero.data.currentHealth.isAbout(hero.data.maxHealth)) return false;
         

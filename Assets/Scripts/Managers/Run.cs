@@ -43,7 +43,7 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 			.Where(hgs => hgs.data.activity == CampActivity.Type.READY)
 			.Select(hgs => hgs.battlePrefab).ToList();
 		//If there are none (ie we didn't get here from camp), select random heroes
-		while (activeHeroPrefabs.Count < Game.m.amountOfHeroes) 
+		while (activeHeroPrefabs.Count < Game.m.heroesPerBattle) 
 			activeHeroPrefabs.Add(Game.m.save.heroes
 				.Select(hgs => hgs.battlePrefab)
 				.RandomWhere(h => !activeHeroPrefabs.Contains(h)));

@@ -8,6 +8,7 @@ public class UnitHero : UnitSide {
     
     [Header("State")]
     public UltStatus ultStatus;
+    public float predictiveXp;
     
     [Header("Scene References (assigned at runtime)")]
     public HeroIcon _icon;
@@ -39,6 +40,8 @@ public class UnitHero : UnitSide {
         icon.ClearItems();
         if (ult) ult.unit = unit;
         unit.onDeactivate.AddListener(() => icon.Die());
+        unit.OnLevelUp.AddListener(LevelUp);
+        Battle.m.OnBattleEnd.AddListener(TransferPredictiveXp);
     }
 
     public void InitBattle() { //Called after loading
@@ -146,6 +149,28 @@ public class UnitHero : UnitSide {
                 Game.m.xpPrefabBig, 1),
             monsterPosition.SetY(-2.75f) + this.Random(-1f, 1f) * Vector3.left,
             amount);
+    }
 
+    public void LevelUp() {
+        icon.levelUpText.SetAlpha(1);
+        this.Wait(2, () => icon.levelUpText.TweenAlpha(0, Tween.Style.EASE_IN, 1));
+        icon.levelUpText.gameObject.TweenPosition(10f * Vector3.up, Tween.Style.BOUNCE, .25f);
+        icon.levelNumber.Bounce(.5f, .25f, 
+            () => icon.levelNumber.transform.localScale = Vector3.one);
+        
+        // SetHealth(data.maxHealth);
+        Battle.m.OnBattleEnd.AddListener(RestoreAllHp);
+        this.While(
+            () => unit.data.currentHealth.isClearlyLowerThan(unit.data.maxHealth), 
+            () => unit.AddHealth(unit.data.maxHealth * .005f),
+            .01f,
+            () => Battle.m.OnBattleEnd.RemoveListener(RestoreAllHp));
+    }
+
+    public void RestoreAllHp() => unit.SetHealth(unit.data.maxHealth);
+
+    public void TransferPredictiveXp() {
+        unit.AddXp(predictiveXp);
+        predictiveXp = 0;
     }
 }

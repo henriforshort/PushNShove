@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Unit : MonoBehaviour {
@@ -154,6 +152,8 @@ public class Unit : MonoBehaviour {
     // XP
     // ====================
 
+    [HideInInspector] public UnityEvent OnLevelUp;
+
     public void AddXp(float amount) {
         if (data.isOnDoubleXp) amount*=2;
         SetXp(data.xp + amount);
@@ -171,21 +171,13 @@ public class Unit : MonoBehaviour {
         data.level++;
         data.xpToNextLevel *= Game.m.levelUpXpNeededIncrease;
 
-        if (isHero) {
-            hero.icon.levelUpText.SetAlpha(1);
-            this.Wait(2, () => hero.icon.levelUpText.TweenAlpha(0, Tween.Style.EASE_IN, 1));
-            hero.icon.levelUpText.gameObject.TweenPosition(10f * Vector3.up, Tween.Style.BOUNCE, .25f);
-            hero.icon.levelNumber.Bounce(.5f, .25f, 
-                () => hero.icon.levelNumber.transform.localScale = Vector3.one);
-        }
+        data.maxHealth.AddModifier(Game.m.levelUpStatBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.damage.AddModifier(Game.m.levelUpStatBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.strength.AddModifier(Game.m.levelUpStatBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.resistance.AddModifier(Game.m.levelUpStatBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
+        data.skill.AddModifier(Game.m.levelUpStatBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
         
-        data.maxHealth.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
-        data.damage.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
-        data.strength.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
-        data.resistance.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
-        data.skill.AddModifier(Game.m.levelUpBonus, StatModifier.Type.MULTIPLY, StatModifier.Scope.GAME, -10);
-        
-        SetHealth(data.maxHealth);
+        OnLevelUp.Invoke();
     }
 
     

@@ -120,6 +120,10 @@ public static class Util {
     public static float Round(this float target, float precision) => 
         (target * 10.Pow(precision)).Round() / 10.Pow(precision);
 
+    public static float Decimal(this float target) => target - target.Floor();
+
+    public static int CoinFlipRound(this float target) => target.FloorToInt() + target.Decimal().Chance().ToInt();
+
     public static float Floor(this float target) => Mathf.Floor(target);
     public static int FloorToInt(this float target) => Mathf.FloorToInt(target);
 
@@ -685,7 +689,7 @@ public static class Util {
     public static float ReverseIf(this float target, bool condition) => target * (condition ? -1 : 1);
     public static float ReverseIf(this int target, bool condition) => target * (condition ? -1 : 1);
     
-    public static float ToInt(this bool target) => target ? 1 : 0;
+    public static int ToInt(this bool target) => target ? 1 : 0;
 
     public static bool Not(this bool target) => !target;
     
@@ -740,4 +744,9 @@ public static class Util {
 
     public static bool IsStrictlyLaterThan(this DateTime target, DateTime other) => target.CompareTo(other) > 0;
     public static bool IsStrictlyEarlierThan(this DateTime target, DateTime other) => target.CompareTo(other) < 0;
+
+    public static DateTime ButNotBefore(this DateTime target, DateTime other) =>
+        target.IsStrictlyLaterThan(other) ? target : other;
+    public static DateTime ButNotAfter(this DateTime target, DateTime other) =>
+        target.IsStrictlyEarlierThan(other) ? target : other;
 }

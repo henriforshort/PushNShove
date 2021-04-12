@@ -118,7 +118,7 @@ public class HeroIcon : MonoBehaviour {
         itemInstance.TweenPosition(itemInstance.transform.position + Vector3.up * 50, 
             Tween.Style.BOUNCE, 0.5f, () => 
                 this.Wait(0.25f, () => 
-                    itemInstance.TweenPosition(placeholder.transform.position, Tween.Style.EASE_OUT, 0.5f, 
+                    itemInstance.TweenPosition(placeholder.transform.position, Tween.Style.EASE_OUT, 1f, 
                         () => {
                         Destroy(placeholder);
                         itemInstance.transform.SetParent(itemPanel.transform);
@@ -146,12 +146,13 @@ public class HeroIcon : MonoBehaviour {
         //Bounce item then move it to top left corner
         xpInstance.TweenPosition(Vector3.up * 50, 
             Tween.Style.BOUNCE, .5f, () => 
-                this.Wait(0.5f, () => 
+                this.Wait(0.25f, () => 
                     xpInstance.TweenPosition(icon.transform.position - xpInstance.transform.position, 
-                        Tween.Style.EASE_OUT, .5f, () => {
+                        Tween.Style.EASE_OUT, 1f, () => {
                             Destroy(xpInstance);
                             Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
                             hero.unit.AddXp(amount);
+                            hero.predictiveXp -= amount;
                         })));
     }
 }

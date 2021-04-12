@@ -69,8 +69,8 @@ MonoBehaviour:
   baseProt: 0
   baseSkill: 5
   baseDamage: 3
-  baseStrength: 7
-  baseWeight: 10
+  baseStrength: 5
+  baseResistance: 10
   baseCritChance: 0
   size: 1
   bumpedSound: 24
@@ -99,6 +99,9 @@ MonoBehaviour:
   tmpHealthBar: {fileID: 6568130779824425974}
   rigidbodee: {fileID: 490591814827413485}
   hanimator: {fileID: 3482692593037295875}
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
   OnTakeCollisionDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -126,6 +129,7 @@ MonoBehaviour:
   ultCooldown: 28
   ultDuration: 1.5
   ultStatus: 0
+  predictiveXp: 0
   _icon: {fileID: 0}
   ult: {fileID: -3266038477927484842}
   campHero: {fileID: 3034245689411466590, guid: 4586ff481dd1a1042b7e7260b832c3b9, type: 3}

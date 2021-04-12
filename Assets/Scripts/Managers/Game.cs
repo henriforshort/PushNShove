@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs
@@ -14,7 +16,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float timeToAutoRestart;
     public Vector2 spawnPosXRangeForMelee;
     public Vector2 spawnPosXRangeForRanged;
-    public int amountOfHeroes;
+    public int heroesPerBattle;
 
     [Space(20)]
     public float unitMaxSpeed;
@@ -29,16 +31,22 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float boardSize;
     
     [Space(20)]
+    public int itemsPerBattle;
     public int maxItemsPerHero;
     public float commonDropChance;
     public float rareDropChance;
     public float leggyDropChance;
     
     [Space(20)]
+    public int xpBubblesPerBattle;
     public int firstLevelXp;
-    public float levelUpBonus;
+    public float levelUpStatBonus;
     public float levelUpXpNeededIncrease;
     public float levelUpXpGainedIncrease;
+    public float doubleXpDurationInHours;
+
+    [Space(20)]
+    public float gemsPerBattle;
 
     [Header("State")]
     public GameSave save;

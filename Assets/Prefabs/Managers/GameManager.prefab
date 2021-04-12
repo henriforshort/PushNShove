@@ -49,25 +49,28 @@ MonoBehaviour:
   timeToAutoRestart: 5
   spawnPosXRangeForMelee: {x: 1, y: 4}
   spawnPosXRangeForRanged: {x: 4, y: 7}
-  amountOfHeroes: 3
+  heroesPerBattle: 3
   unitMaxSpeed: 3
   attackDistance: 3
   collideDistance: 2
   freezeFrameDuration: 0.15
   bumpRecoverySpeed: 5
-  bumpSpeed: -20
+  bumpSpeed: -15
   maxBumpSpeed: -30
   defendSpeed: -10
   absorbSpeed: -5
   boardSize: 13.75
+  itemsPerBattle: 1
   maxItemsPerHero: 5
   commonDropChance: 10
   rareDropChance: 3
   leggyDropChance: 1
-  firstLevelXp: 20
-  levelUpBonus: 1.1
+  xpBubblesPerBattle: 20
+  firstLevelXp: 50
+  levelUpStatBonus: 1.1
   levelUpXpNeededIncrease: 2
-  levelUpXpGainedIncrease: 1.5
+  levelUpXpGainedIncrease: 1.6
+  doubleXpDurationInHours: 24
   save:
     battle: 0
     currentScene: 0
@@ -77,8 +80,8 @@ MonoBehaviour:
   - {fileID: -3902853122371618417, guid: 28fe68f2b07b05a429625dea2bd27067, type: 3}
   - {fileID: -3902853122371618417, guid: 45788d4b29da56d4ba2ddf9505328ad1, type: 3}
   - {fileID: -8068071798747146441, guid: ef8e44773ad2a9a4b9a75ba4fa668ed9, type: 3}
-  - {fileID: 4838143930224751872, guid: b8d9d7ad73c780341893780c4a95e73c, type: 3}
   - {fileID: -3902853122371618417, guid: 78ddace0b53d32e479cdaece809ec2ca, type: 3}
+  - {fileID: 4838143930224751872, guid: b8d9d7ad73c780341893780c4a95e73c, type: 3}
   xpPrefabSmall: {fileID: 8083375804294825623, guid: 1f7c485698272cf42bfc108a0f759a9d, type: 3}
   xpPrefabMedium: {fileID: 2426114426121825844, guid: c5a1b94a8e707b34793db8fe8dd9c492, type: 3}
   xpPrefabBig: {fileID: 8029603397681566544, guid: 626c81f94bbff544aa48fd3d1755f9cd, type: 3}

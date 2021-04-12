@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class GameSave {
     public int battle;
     public Game.SceneName currentScene;
+    public DateTime lastAssignedDoubleXp;
+    public int gems;
     public List<HeroGameSave> heroes;
 
     public void InitGame() { //Called at the beginning of the game, if no save file exists

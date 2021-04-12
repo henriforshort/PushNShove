@@ -46,7 +46,7 @@ public class UnitRangedBuff : MonoBehaviour {
 
         return unit.allies
             .Except(unit)
-            .Select(target => {
+            ?.Select(target => {
                 Game.m.SpawnFX(buffFx, new Vector3(target.GetX(), target.GetY() + 1f, 8f),
                     false, buffDuration, target.transform);
                 StatModifier buff =  target.data.stats[(int) buffStat].AddModifier(buffAmount, buffType);

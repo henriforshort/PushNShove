@@ -6,6 +6,7 @@ public class UnitMonster : UnitSide {
     public UnitData data;
     public List<Item> droppedItems;
     public int droppedXp;
+    public int droppedGems;
     
     protected override void Init() { //Called before loading
         if (!unit.gameObject.activeInHierarchy) return;
@@ -25,12 +26,12 @@ public class UnitMonster : UnitSide {
             ?.hero
             ?.GetItemFromFight(item, transform.position));
 
-        Vector3 pos = transform.position;
-        Battle.m.Wait(.1f, () => 
-            Battle.m.Repeat(times:droppedXp, 
-                () => Unit.heroUnits.Random()?.hero?
-                    .GetXp(Game.m.levelUpXpGainedIncrease.Pow(Run.m.runLevel), pos), 
-                .1f));
+        for (int i = 0; i < droppedXp; i++) {
+            UnitHero hero = Unit.heroUnits.Random().hero;
+            float xpValue = Game.m.levelUpXpGainedIncrease.Pow(Run.m.runLevel);
+            hero.predictiveXp += xpValue;
+            Battle.m.Wait(.1f * (i + 1), () => hero.GetXp(xpValue, transform.position));
+        }
     }
 
     protected override void OnDefeat() {

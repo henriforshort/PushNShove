@@ -28,7 +28,8 @@ public class UnitData {
     public List<Stat> stats => new List<Stat> { maxHealth, prot, skill, damage, strength, resistance, critChance };
     
     public bool isOnDoubleXp => endOfDoubleXp.IsStrictlyLaterThan(DateTime.Now);
-    public void DoubleXpForDays(int amount) => endOfDoubleXp = endOfDoubleXp.AddDays(amount);
+    public void DoubleXpForDays(float amount) => 
+        endOfDoubleXp = DateTime.Now.AddDays(amount).ButNotBefore(endOfDoubleXp);
     public void EndDoubleXp() => endOfDoubleXp = DateTime.Now;
 
     public UnitData() {

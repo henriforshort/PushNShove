@@ -69,7 +69,7 @@ MonoBehaviour:
   baseSkill: 5
   baseDamage: 5
   baseStrength: 10
-  baseWeight: 15
+  baseResistance: 15
   baseCritChance: 0.05
   size: 1
   bumpedSound: 24
@@ -98,6 +98,9 @@ MonoBehaviour:
   tmpHealthBar: {fileID: 4407138794253257779}
   rigidbodee: {fileID: 6971875616277727272}
   hanimator: {fileID: 7683955556941975696}
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
   OnTakeCollisionDamage:
     m_PersistentCalls:
       m_Calls: []
