@@ -4,7 +4,9 @@
     <e p="C:\Users\couvr\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\couvr\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_PushNShove.-2022987125.00" t="ExcludeRecursive" />
     <e p="C:\Users\couvr\Documents\GitHub\PushNShove" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="EasyAnchors" t="Include">
@@ -21,6 +23,35 @@
             <e p="Item.cs" t="Include" />
             <e p="Resources.cs" t="Include" />
             <e p="Slot.cs" t="Include" />
+          </e>
+        </e>
+        <e p="IAP" t="Include">
+          <e p="IAPManager.cs" t="Include" />
+          <e p="RestorePurchases.cs" t="Include" />
+        </e>
+        <e p="LambdaTest.cs" t="Include" />
+        <e p="Plugins" t="Include">
+          <e p="UnityPurchasing" t="Include">
+            <e p="Editor" t="Include">
+              <e p="IAPButtonEditor.cs" t="Include" />
+              <e p="IAPGeneratedCredentials.cs.template" t="Include" />
+            </e>
+            <e p="license.txt" t="Include" />
+            <e p="script" t="Include">
+              <e p="CodelessIAPStoreListener.cs" t="Include" />
+              <e p="ComboBox.cs" t="Include" />
+              <e p="Demo" t="Include">
+                <e p="DemoInventory.cs" t="Include" />
+              </e>
+              <e p="IAPButton.cs" t="Include" />
+              <e p="IAPConfigurationHelper.cs" t="Include" />
+              <e p="IAPDemo.cs" t="Include" />
+              <e p="IAPDemoProductUI.cs" t="Include" />
+              <e p="IAPListener.cs" t="Include" />
+              <e p="link.xml" t="Include" />
+              <e p="PurchasingCheck.cs" t="Include" />
+            </e>
+            <e p="third party notices.txt" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">

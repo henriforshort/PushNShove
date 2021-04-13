@@ -21,7 +21,7 @@ public class UnitUltArcher : UnitUlt {
         unit.lockAnim = false;
         unit.SetAnim(Unit.Anim.ULT_ARCHER_SHOOT);
         unit.lockAnim = true;
-        this.Repeat(7, () => Game.m.PlaySound(MedievalCombat.ARROW_FLY_1), 0.1f);
+        this.For(7, () => Game.m.PlaySound(MedievalCombat.ARROW_FLY_1), 0.1f);
         Instantiate(arrows, 
             transform.position + new Vector3(.6f, 1, 0), 
             transform.rotation, 

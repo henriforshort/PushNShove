@@ -129,6 +129,7 @@ MonoBehaviour:
   ultCooldown: 28
   ultDuration: 1.5
   ultStatus: 0
+  predictiveXp: 0
   _icon: {fileID: 0}
   ult: {fileID: -1712622078922639962}
   campHero: {fileID: 3034245689411466590, guid: 738a913d7f38e1e4ba7b1f4a30979369, type: 3}
@@ -169,7 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e5d675a9b34295adec9e4343a6e031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 5
   attackAnimDuration: 0.75
   unitRanged: {fileID: 1219178943284343492}
 --- !u!114 &-1712622078922639962

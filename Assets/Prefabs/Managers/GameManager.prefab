@@ -71,9 +71,11 @@ MonoBehaviour:
   levelUpXpNeededIncrease: 2
   levelUpXpGainedIncrease: 1.6
   doubleXpDurationInHours: 24
+  gemsPerBattle: 0.5
   save:
     battle: 0
     currentScene: 0
+    gems: 0
     heroes: []
   heroPrefabs:
   - {fileID: -3902853122371618417, guid: aed7bba1dbbbb3745ab29ef505095fd3, type: 3}
@@ -85,6 +87,7 @@ MonoBehaviour:
   xpPrefabSmall: {fileID: 8083375804294825623, guid: 1f7c485698272cf42bfc108a0f759a9d, type: 3}
   xpPrefabMedium: {fileID: 2426114426121825844, guid: c5a1b94a8e707b34793db8fe8dd9c492, type: 3}
   xpPrefabBig: {fileID: 8029603397681566544, guid: 626c81f94bbff544aa48fd3d1755f9cd, type: 3}
+  gemPrefab: {fileID: 6404823746013385325, guid: 7f9167943751d5a42b9647c835d1a1d9, type: 3}
   transparentSprite: {fileID: 21300000, guid: 81285999a139f494fb84c0501f058978, type: 3}
   whiteSprite: {fileID: 21300000, guid: 98c490c41fcfcc64894520d1b8233d32, type: 3}
   white: {r: 0.7411765, g: 0.7490196, b: 0.5921569, a: 1}
@@ -96,6 +99,9 @@ MonoBehaviour:
   grey: {r: 0.38823533, g: 0.47058827, b: 0.4901961, a: 1}
   lightGrey: {r: 0.5568628, g: 0.627451, b: 0.5686275, a: 1}
   sound: {fileID: 4170433408313340895}
+  OnAddGems:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8666517000654692934
 PrefabInstance:
   m_ObjectHideFlags: 0

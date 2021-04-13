@@ -623,9 +623,14 @@ public static class Util {
     // REPEAT
     // --------------------
 
-    public static void Repeat(this MonoBehaviour target, int times, Action action, float delay = 0) {
+    public static void For(this MonoBehaviour target, int times, Action action, float delay = 0) {
         if (times < 1) return;
         for (int i = 0; i < times; i++) target.Wait(delay * i, action);
+    }
+
+    public static void For(this MonoBehaviour target, int times, Action<int> action, float delay = 0) {
+        if (times < 1) return;
+        for (int i = 0; i < times; i++) target.Wait(delay * i, () => action(i));
     }
 
     

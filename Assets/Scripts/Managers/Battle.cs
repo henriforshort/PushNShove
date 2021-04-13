@@ -28,7 +28,9 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public Transform itemsCanvas;
     public GameObject itemDescription;
     public TMP_Text itemDescriptionText;
-    public TMP_Text BattleNumber;
+    public TMP_Text battleNumber;
+    public TMP_Text gemsText;
+    public Image gemsIcon;
     public List<HeroIcon> heroIcons;
 	
     public enum State { PLAYING, PAUSE, GAME_OVER, RESTARTING }
@@ -57,7 +59,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             });
 
         //Create enemies
-        this.Repeat(times:numberOfEnemyClusters, () => {
+        this.For(times:numberOfEnemyClusters, () => {
             Transform clusterInstance = Instantiate(enemyClusters.Random());
             while (clusterInstance.childCount > 0) {
                 Transform monster = clusterInstance.GetChild(0);
@@ -67,20 +69,19 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         });
 
         //Init enemy loot
-        this.Repeat(times:Game.m.itemsPerBattle, () => {
-            if (!Run.m.itemsDepleted)
-                Unit.monsterUnits.Random().monster.droppedItems.Add(Run.m.GetRandomItem());
-        });
-        this.Repeat(times:Game.m.xpBubblesPerBattle, () => 
+        this.For(times:Game.m.itemsPerBattle, () => { if (!Run.m.itemsDepleted) 
+            Unit.monsterUnits.Random().monster.droppedItems.Add(Run.m.GetRandomItem()); });
+        this.For(times:Game.m.xpBubblesPerBattle, () =>
             Unit.monsterUnits.Random().monster.droppedXp ++);
-        this.Repeat(times:Game.m.gemsPerBattle.CoinFlipRound(), () => 
+        this.For(times:Game.m.gemsPerBattle.CoinFlipRound(), () => 
             Unit.monsterUnits.Random().monster.droppedGems++);
         
         //Init scene
         fightPrompt.SetActive(true);
         transition.FadeOut();
         Game.m.PlayMusic(AdventureRPG.ADVENTURE_TIME);
-        BattleNumber.text = "Battle " + Game.m.save.battle + "/" + Game.m.battlesPerRun;
+        battleNumber.text = "Battle " + Game.m.save.battle + "/" + Game.m.battlesPerRun;
+        InitGems();
     }
     
     
@@ -167,5 +168,44 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         transition.FadeIn();
         if (nextScene == Game.SceneName.Camp) Run.m.EndRun();
         this.Wait(0.4f, () => Game.m.LoadScene(nextScene));
+    }
+
+
+    // ====================
+    // GEMS
+    // ====================
+
+    public void InitGems() {
+        SetGems();
+        Game.m.OnAddGems.AddListener(SetGems);
+    }
+
+    public void SetGems() {
+        gemsText.text = Game.m.save.gems.ToString();
+    }
+
+    public void LootOneGem(Vector3 origin) {
+        Game.m.PlaySound(MedievalCombat.COINS);
+        
+        
+        //Create item
+        GameObject gemInstance = Instantiate(Game.m.gemPrefab, 
+            cameraManager.cam.WorldToScreenPoint(origin),
+            Quaternion.identity,
+            itemsCanvas);
+        
+        //Bounce item then move it to top left corner
+        gemInstance.TweenPosition(Vector3.up * 50, 
+            Tween.Style.BOUNCE, .5f, () => 
+                this.Wait(0.25f, () => 
+                    gemInstance.TweenPosition(gemsIcon.transform.position - gemInstance.transform.position, 
+                        Tween.Style.EASE_OUT, 1f, () => {
+                            Destroy(gemInstance);
+                            Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
+                            Game.m.AddOneGem();
+                            OnBattleEnd.RemoveListener(Game.m.AddOneGem);
+                            gemsText.Bounce();
+                            gemsIcon.Bounce();
+                        })));
     }
 }

@@ -11,7 +11,7 @@ public class UnitUltBruiser : UnitUlt {
         unit.SetAnim(Unit.Anim.ULT_BRUISER);
         unit.lockAnim = true;
         Game.m.PlaySound(MedievalCombat.WHOOSH_8);
-        this.Repeat(9, () => Game.m.PlaySound(MedievalCombat.WHOOSH_6), 0.5f);
+        this.For(9, () => Game.m.PlaySound(MedievalCombat.WHOOSH_6), 0.5f);
 
         oldAttackAnimDuration = unit.melee.attackAnimDuration;
         oldAttackSpeed = unit.melee.attackSpeed;

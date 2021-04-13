@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -56,6 +57,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public GameObject xpPrefabSmall;
     public GameObject xpPrefabMedium;
     public GameObject xpPrefabBig;
+    public GameObject gemPrefab;
     public Sprite transparentSprite;
     public Sprite whiteSprite;
 
@@ -183,4 +185,18 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     }
 
     public void MuteMusic(bool mute = true) => sound.musicAudioSource.volume = mute ? 0 : .2f;
+
+
+    // ====================
+    // GEMS
+    // ====================
+
+    [HideInInspector] public UnityEvent OnAddGems;
+    
+    public void AddGems(int amount) {
+        save.gems += amount;
+        OnAddGems.Invoke();
+    }
+
+    public void AddOneGem() => AddGems(1);
 }

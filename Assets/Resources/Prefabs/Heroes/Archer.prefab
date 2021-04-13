@@ -149,7 +149,7 @@ MonoBehaviour:
   unit: {fileID: 0}
   distanceFromScreenEdge: 0
   aimDuration: 1
-  reloadDuration: 0.5
+  reloadDuration: 1
   attackStatus: 0
   timeTillReloaded: 0
   OnAim:

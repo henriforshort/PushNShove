@@ -19,22 +19,33 @@ public class UnitMonster : UnitSide {
     }
 
     protected override void OnDeath() {
+        DropLoot();
         Destroy(unit.gameObject);
-
-        droppedItems.ForEach(item => Unit.heroUnits
-            .RandomWhere(u => u.hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero)
-            ?.hero
-            ?.GetItemFromFight(item, transform.position));
-
-        for (int i = 0; i < droppedXp; i++) {
-            UnitHero hero = Unit.heroUnits.Random().hero;
-            float xpValue = Game.m.levelUpXpGainedIncrease.Pow(Run.m.runLevel);
-            hero.predictiveXp += xpValue;
-            Battle.m.Wait(.1f * (i + 1), () => hero.GetXp(xpValue, transform.position));
-        }
     }
 
     protected override void OnDefeat() {
         Battle.m.Victory();
+    }
+
+    public void DropLoot() {
+        if (Unit.heroUnits.Count == 0) return;
+
+        droppedItems.ForEach(item => Unit.heroUnits
+            .RandomWhere(u => u.hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero)
+            .hero
+            .GetItemFromFight(item, transform.position));
+
+        Vector3 pos = transform.position; //Needs to be defined in advance, before I die
+        this.For(droppedXp, i => {
+            UnitHero hero = Unit.heroUnits.Random().hero;
+            float xpValue = Game.m.levelUpXpGainedIncrease.Pow(Run.m.runLevel);
+            hero.predictiveXp += xpValue;
+            Battle.m.Wait(.1f * (i + 1), () => hero.GetXp(xpValue, pos));
+        });
+
+        this.For(droppedGems, i => {
+            Battle.m.OnBattleEnd.AddListener(Game.m.AddOneGem);
+            Battle.m.Wait(.1f * i, () => Battle.m.LootOneGem(pos.SetY(-2.75f)));
+        });
     }
 }

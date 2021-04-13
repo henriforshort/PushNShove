@@ -13,7 +13,7 @@ public class UnitUltStrongman : UnitUlt {
         unit.SetAnim(Unit.Anim.ULT_STRONGMAN);
         unit.lockAnim = true;
         unit.lockPosition = true;
-        this.Repeat(3, () => Game.m.PlaySound(MedievalCombat.WHOOSH_1), 0.1f);
+        this.For(3, () => Game.m.PlaySound(MedievalCombat.WHOOSH_1), 0.1f);
         this.Wait(unit.hero.ultDuration, then:() => PatateDeForain(TargetInRange()));
     }
 

@@ -83,7 +83,7 @@ public class Camp : Level<Camp> {
         if (Game.m.save.lastAssignedDoubleXp != DateTime.Today) AssignDoubleXp();
         UpdateUnitsReadyNumber();
         gemsText.text = Game.m.save.gems.ToString();
-
+        InitGems();
     }
 
 
@@ -136,6 +136,20 @@ public class Camp : Level<Camp> {
     public CampHero LowestLevelCharacterAmong(List<CampHero> campHeroes) => campHeroes
             .Where(ch => ch.data.level == campHeroes.Select(ch2 => ch2.data.level).Min())
             .WithLowest(ch => ch.data.xp);
+
+
+    // ====================
+    // GEMS
+    // ====================
+
+    public void InitGems() {
+        SetGems();
+        Game.m.OnAddGems.AddListener(SetGems);
+    }
+
+    public void SetGems() {
+        gemsText.text = Game.m.save.gems.ToString();
+    }
 
 
     // ====================
