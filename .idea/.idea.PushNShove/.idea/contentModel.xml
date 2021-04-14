@@ -26,9 +26,10 @@
           </e>
         </e>
         <e p="IAP" t="Include">
-          <e p="IAPManager.cs" t="Include" />
+          <e p="IAP.cs" t="Include" />
           <e p="RestorePurchases.cs" t="Include" />
         </e>
+        <e p="IAPTest.cs" t="Include" />
         <e p="LambdaTest.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="UnityPurchasing" t="Include">
