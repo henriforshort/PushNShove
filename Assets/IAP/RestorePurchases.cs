@@ -11,6 +11,6 @@ public class RestorePurchases : MonoBehaviour
     }
 
     public void ClickRestorePurchaseButton() {
-        IAP.m.RestorePurchases();
+        // IAP.m.RestorePurchases();
     }
 }

@@ -28,6 +28,11 @@ public class IAP : MonoBehaviour, IStoreListener {
     // ====================
     // ADD YOUR IAPs HERE, IGNORE THE REST
     // ====================
+    
+    // STEP 0: go to Window > General > Services
+    // click "In-App Purchasing", enable and import everything
+    
+    
 
     // STEP 1: create the name of your products (= IAPs) in the enum
     // (some examples are provided, you can adapt or delete them)
@@ -45,7 +50,7 @@ public class IAP : MonoBehaviour, IStoreListener {
 
     // STEP 3: add your product to the list, and specify its name, its type (consumable/non-consumable/subscription),
     // and its effect (the method to call when the player buys it)
-    public List<Product> products = new List<Product> {
+    public static List<Product> products = new List<Product> {
         new Product(ProductName.GEMS_50, ProductType.Consumable, gems50),
         new Product(ProductName.GEMS_200, ProductType.Consumable, gems200),
         new Product(ProductName.REMOVE_ADS, ProductType.NonConsumable, removeAds),
@@ -56,7 +61,7 @@ public class IAP : MonoBehaviour, IStoreListener {
     
     // STEP 4: Call the "IAP.m.BuyIAP" method from anywhere in your code to trigger the purchase sequence of a product.
     // Call the "IAP.m.RestorePurchases" to restore all non-consumable purchases (iphone only)
-    // You can also create shortcut methods like these if you want:
+    // You can also create shortcut methods like these:
     public void Buy50Gems() => BuyIAP(ProductName.GEMS_50);
     public void Buy200Gems() => BuyIAP(ProductName.GEMS_200);
     public void BuyRemoveAds() => BuyIAP(ProductName.REMOVE_ADS);
@@ -79,7 +84,7 @@ public class IAP : MonoBehaviour, IStoreListener {
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
         InitPurchases();
     }
     

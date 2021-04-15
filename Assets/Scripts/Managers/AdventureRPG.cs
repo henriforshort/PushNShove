@@ -35,6 +35,6 @@
     HER_MELANCHOLIC_END,
     MY_SAD_ENDING,
     
-    //Themem
+    //Theme
     THEME //01: light, cheerful; 02: dark, threatening
 }

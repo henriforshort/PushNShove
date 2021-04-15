@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour { //Game manager, handles the whole game
                             //Should contain global balancing and prefabs
@@ -157,30 +156,30 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
 
     public void PlaySound(MedievalCombat medievalCombat, float volume = 0.5f, int index = -1, 
         SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
-        sound.Play("Audio/Medieval Combat Sounds", medievalCombat.ToString(), volume, index, pitch);
+        sound.Play(SoundManager.Type.MEDIEVAL_COMBAT, medievalCombat.ToString(), volume, index, pitch);
     
     public void PlaySound(Animals animals, float volume = 0.5f, int index = -1, 
         SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
-        sound.Play("Audio/Farm Animal Sounds", animals.ToString(), volume, index, pitch);
+        sound.Play(SoundManager.Type.ANIMALS, animals.ToString(), volume, index, pitch);
     
     public void PlaySound(Human human, float volume = 0.5f, int index = -1, 
         SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
-        sound.Play("Audio/Human Sounds", human.ToString(), volume, index, pitch);
+        sound.Play(SoundManager.Type.HUMAN, human.ToString(), volume, index, pitch);
     
     public void PlaySound(Casual casual, float volume = 0.5f, int index = -1, 
         SoundManager.Pitch pitch = SoundManager.Pitch.NORMAL) => 
-        sound.Play("Audio/Casual Music Pack", casual.ToString(), volume, index, pitch);
+        sound.Play(SoundManager.Type.CASUAL, casual.ToString(), volume, index, pitch);
 
     public void PlayMusic(AdventureRPG adventureRpg) {
         try {
-            AudioClip clip = sound.GetAudioClip("Audio/2D Adventure RPG Music Pack" , adventureRpg.ToString());
+            AudioClip clip = sound.GetAudioClip(SoundManager.Type.ADVENTURE_RPG, adventureRpg.ToString());
             AudioSource audioSource = sound.musicAudioSource;
             if (audioSource.clip == clip) return;
         
             audioSource.clip = clip;
             audioSource.Play();
         } catch {
-            Debug.LogWarning("sound not found: Audio/2D Adventure RPG Music Pack "+adventureRpg);
+            Debug.LogWarning($"sound not found: 2D Adventure RPG Music Pack/{adventureRpg}");
         }
     }
 
