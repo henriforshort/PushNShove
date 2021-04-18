@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5dd9298e094bc9ba95fec9d38effb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSound: 140
-  aimSound: 124
+  shootSound: 124
+  aimSound: 140
   arrowPrefab: {fileID: 8202082160336353080, guid: b6fd56a6729418d4fb606fecfef09e8d, type: 3}
   unitRanged: {fileID: 1219178943284343492}
 --- !u!114 &8638022242478428621

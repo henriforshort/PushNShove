@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxHealth: 50
+  baseMaxHealth: 40
   baseProt: 0
   baseSkill: 1
   baseDamage: 3
@@ -97,6 +97,9 @@ MonoBehaviour:
   tmpHealthBar: {fileID: 1151570446728982744}
   rigidbodee: {fileID: 5914191361000633539}
   hanimator: {fileID: 4148910036850988144}
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
   OnTakeCollisionDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -159,6 +162,7 @@ MonoBehaviour:
     xpToNextLevel: 0
   droppedItems: []
   droppedXp: 0
+  droppedGems: 0
 --- !u!114 &-6533232074459550741
 MonoBehaviour:
   m_ObjectHideFlags: 0

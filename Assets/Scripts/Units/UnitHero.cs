@@ -127,7 +127,7 @@ public class UnitHero : UnitSide {
     // ====================
 
     public void GetItemFromFight(Item itemPrefab, Vector3 monsterPosition) {
-        Game.m.PlaySound(MedievalCombat.COINS);
+        Game.m.PlaySound(MedievalCombat.COINS, .5f, -1, SoundManager.Pitch.RANDOM);
         icon.GainItemFromFight(itemPrefab, monsterPosition.SetY(-2.75f));
     }
 
@@ -141,7 +141,9 @@ public class UnitHero : UnitSide {
     // ====================
 
     public void GetXp(float amount, Vector3 monsterPosition) {
-        Game.m.PlaySound(MedievalCombat.COINS);
+        if (unit.status != Unit.Status.ALIVE) return;
+        
+        if (.3f.Chance()) Game.m.PlaySound(MedievalCombat.COINS, .5f, -1, SoundManager.Pitch.RANDOM);
         icon.GainXpFromFight(
             this.WeightedRandom(
                 Game.m.xpPrefabSmall, 20,
@@ -161,7 +163,8 @@ public class UnitHero : UnitSide {
         // SetHealth(data.maxHealth);
         Battle.m.OnBattleEnd.AddListener(RestoreAllHp);
         this.While(
-            () => unit.data.currentHealth.isClearlyLowerThan(unit.data.maxHealth), 
+            () => unit.data.currentHealth.isClearlyLowerThan(unit.data.maxHealth) && 
+                  unit.status == Unit.Status.ALIVE, 
             () => unit.AddHealth(unit.data.maxHealth * .005f),
             .01f,
             () => Battle.m.OnBattleEnd.RemoveListener(RestoreAllHp));

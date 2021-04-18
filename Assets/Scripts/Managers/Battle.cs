@@ -108,14 +108,14 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         if (gameState == State.GAME_OVER) return;
         if (gameState == State.RESTARTING) return;
         
-        Game.m.PlaySound(Casual.NEGATIVE, 0.5f, 6);
+        this.Wait(1, () => Game.m.PlaySound(Casual.NEGATIVE, 0.5f, 6));
         gameOverText.text = "Defeat";
         nextScene = Game.SceneName.Camp;
         GameOver();
     }
 
     public void Victory() {
-        Game.m.PlaySound(Casual.POSITIVE, 0.5f, 6);
+        this.Wait(1, () => Game.m.PlaySound(Casual.POSITIVE, 0.5f, 6));
         if (gameState == State.GAME_OVER) return;
         if (gameState == State.RESTARTING) return;
 
@@ -185,8 +185,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void LootOneGem(Vector3 origin) {
-        Game.m.PlaySound(MedievalCombat.COINS);
-        
+        Game.m.PlaySound(MedievalCombat.COINS, .5f, -1, SoundManager.Pitch.RANDOM);
         
         //Create item
         GameObject gemInstance = Instantiate(Game.m.gemPrefab, 
@@ -201,7 +200,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
                     gemInstance.TweenPosition(gemsIcon.transform.position - gemInstance.transform.position, 
                         Tween.Style.EASE_OUT, 1f, () => {
                             Destroy(gemInstance);
-                            Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
+                            Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE, .5f, -1, SoundManager.Pitch.RANDOM);
                             Game.m.AddOneGem();
                             OnBattleEnd.RemoveListener(Game.m.AddOneGem);
                             gemsText.Bounce();

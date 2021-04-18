@@ -31,9 +31,9 @@ public class UnitMonster : UnitSide {
         if (Unit.heroUnits.Count == 0) return;
 
         droppedItems.ForEach(item => Unit.heroUnits
-            .RandomWhere(u => u.hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero)
-            .hero
-            .GetItemFromFight(item, transform.position));
+            ?.RandomWhere(u => u.hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero)
+            ?.hero
+            ?.GetItemFromFight(item, transform.position));
 
         Vector3 pos = transform.position; //Needs to be defined in advance, before I die
         this.For(droppedXp, i => {

@@ -122,7 +122,7 @@ public class HeroIcon : MonoBehaviour {
                         () => {
                         Destroy(placeholder);
                         itemInstance.transform.SetParent(itemPanel.transform);
-                        Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
+                        Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE, .5f, -1, SoundManager.Pitch.RANDOM);
                     })));
     }
 
@@ -150,7 +150,8 @@ public class HeroIcon : MonoBehaviour {
                     xpInstance.TweenPosition(icon.transform.position - xpInstance.transform.position, 
                         Tween.Style.EASE_OUT, 1f, () => {
                             Destroy(xpInstance);
-                            Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
+                            if (.3f.Chance()) Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE, 
+                                .5f, -1, SoundManager.Pitch.RANDOM);
                             hero.unit.AddXp(amount);
                             hero.predictiveXp -= amount;
                         })));

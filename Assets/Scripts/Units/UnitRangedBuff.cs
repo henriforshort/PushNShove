@@ -24,7 +24,7 @@ public class UnitRangedBuff : MonoBehaviour {
 
     public void Attack() {
         List<StatModifier> currentModifiers = null;
-        Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, .5f, 2);
+        // Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, .5f, 2);
         this.Wait(attackAnimDuration, () => currentModifiers = ApplyBuff());
         this.Wait(buffDuration, () => currentModifiers?.ForEach(m => m.Terminate()));
     }

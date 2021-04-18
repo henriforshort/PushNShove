@@ -43,7 +43,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void SwitchTo(UnitHero newHero) {
         if (hero == newHero) return;
 
-        Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE);
+        Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE, .5f, -1, SoundManager.Pitch.RANDOM);
         effect.Cancel();
         hero.itemPrefabPaths.Remove(prefab.ToPath("Items/"));
         hero = newHero;

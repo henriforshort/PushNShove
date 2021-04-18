@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour {
 
     private List<List<AudioClip>> audioClips;
     public enum Type { ADVENTURE_RPG, ANIMALS, CASUAL, HUMAN, MEDIEVAL_COMBAT, NONE }
-    public enum Pitch { HIGH, NORMAL, LOW }
+    public enum Pitch { HIGH, NORMAL, LOW, RANDOM }
 
     public void Awake() {
         audioClips = new List<List<AudioClip>> {adventureRPG, animals, casual, human, medievalCombat};
@@ -48,10 +48,9 @@ public class SoundManager : MonoBehaviour {
     }
 
     public AudioSource GetAudioSource(Pitch pitch) {
-        return pitch switch {
-            Pitch.LOW => lowPitchedAudioSource,
-            Pitch.HIGH => highPitchedAudioSource,
-            _ => normalPitchedAudioSource
-        };
+        if (pitch == Pitch.HIGH) return highPitchedAudioSource;
+        if (pitch == Pitch.NORMAL) return normalPitchedAudioSource;
+        if (pitch == Pitch.LOW) return lowPitchedAudioSource;
+        return this.Random(lowPitchedAudioSource, highPitchedAudioSource, normalPitchedAudioSource);
     }
 }

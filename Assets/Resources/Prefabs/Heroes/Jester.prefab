@@ -193,9 +193,9 @@ MonoBehaviour:
   range: 10
   buffDuration: 5
   attackAnimDuration: 0.25
-  buffStat: 3
-  buffType: 0
-  buffAmount: 10
+  buffStat: 4
+  buffType: 1
+  buffAmount: 1.2
   buffFx: {fileID: 1375727324785953495, guid: 1a6899b0d08bd9d4c883fc6c6abd468d, type: 3}
 --- !u!1 &490591814931064775
 GameObject:
