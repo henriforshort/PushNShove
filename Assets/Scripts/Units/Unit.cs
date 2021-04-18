@@ -292,7 +292,7 @@ public class Unit : MonoBehaviour {
         //block
         else if (data.prot.value.Chance()) { 
             SetAnim(Anim.DEFEND);
-            currentSpeed = (Game.m.absorbSpeed * strength).Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
+            currentSpeed = (Game.m.absorbSpeed * strength / data.resistance).AtMost(currentSpeed - 1);
             AddHealth(0, "Block", Game.m.darkGrey);
             Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
         }

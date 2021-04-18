@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public class UnitUltArcher : UnitUlt {
     [Header("Balancing")]
@@ -22,9 +23,13 @@ public class UnitUltArcher : UnitUlt {
         unit.SetAnim(Unit.Anim.ULT_ARCHER_SHOOT);
         unit.lockAnim = true;
         this.For(7, () => Game.m.PlaySound(MedievalCombat.ARROW_FLY_1), 0.1f);
-        Instantiate(arrows, 
-            transform.position + new Vector3(.6f, 1, 0), 
-            transform.rotation, 
-            Battle.m.transform);
+        Instantiate(arrows,
+                transform.position + new Vector3(.6f, 1, 0),
+                transform.rotation,
+                Battle.m.transform)
+            .transform
+            .GetComponentsInChildren<ArcherUltArrow>()
+            .ToList()
+            .ForEach(a => a.archer = unit);
     }
 }

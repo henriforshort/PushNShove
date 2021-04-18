@@ -21,6 +21,7 @@ public class ArcherUltArrow : MonoBehaviour {
     public Sprite diagUpSprite;
     public Sprite horizontalSprite;
     public Sprite diagDownSprite;
+    public Unit archer;
 
     public static List<Unit> potentialTargets;
 
@@ -30,7 +31,7 @@ public class ArcherUltArrow : MonoBehaviour {
         startPosition = transform.position;
         isMoving = true;
         peakDate = startVerticalSpeed / gravity;
-        potentialTargets = Unit.monsterUnits;
+        potentialTargets = Unit.monsterUnits.Clone();
         //with current parameters the arrows take about 1.26 secs to fall
         //the "clean" way involved solving degree 2 equations and I'm too lazy for that
         horizontalSpeed += (this.GetX() - Unit.monsterUnits.Average(m => m.GetX())).Abs()/1.26f;
@@ -67,7 +68,7 @@ public class ArcherUltArrow : MonoBehaviour {
             (this.GetX() - m.GetX()).Abs() < .2f && (this.GetY() - m.GetY()).Abs() < m.size);
         if (target == null) return;
         
-        target.GetBumpedBy(0, 10, 1);
+        target.GetBumpedBy(0, archer.data.damage * 1.5f, archer.data.strength * .3f);
         Destroy(gameObject);
         potentialTargets.Remove(target);
         Game.m.PlaySound(MedievalCombat.STAB_7);

@@ -16,7 +16,7 @@ public class UnitUltKnight : UnitUlt {
         Unit.heroUnits.ForEach(u => ultStatModifs.Add(u.data.prot.AddModifier(0.3f)));
         this.While(() => unit.hero.ultStatus == UnitHero.UltStatus.ACTIVATED, 
             () => {
-                float heal = this.Random(1, 4);
+                float heal = this.Random(0, unit.data.damage).CoinFlipRound();
                 Unit randomUnit = Unit.allHeroUnits.Random();
                 if (randomUnit.status != Unit.Status.DEAD) 
                     randomUnit.AddHealth(heal, heal.ToString(), Game.m.yellow);
