@@ -6,7 +6,7 @@
         unit.isInvincible = true;
         Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK);
         Unit.heroUnits.ForEach(u => {
-            float randomHealAmount = (unit.data.damage * 2 * this.Random(.5f, 1.5f)).Round();
+            float randomHealAmount = (unit.data.damage * 4 * this.Random(.5f, 1.5f)).Round();
             string uiText = "+" + randomHealAmount.AtMost(u.data.maxHealth - u.data.currentHealth);
             u.AddHealth(randomHealAmount, uiText, Game.m.grey, true);
         });

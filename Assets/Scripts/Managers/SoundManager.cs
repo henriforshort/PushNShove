@@ -41,7 +41,8 @@ public class SoundManager : MonoBehaviour {
     public AudioClip GetAudioClip(Type type, string filename, int index = -1) {
         List<AudioClip> possibleClips = audioClips
             .Get((int) type)
-            .Where(c => new Regex(filename.Replace("_", " ").ToCamelCase(), RegexOptions.IgnoreCase).IsMatch(c.name))
+            .Where(c => new Regex("^"+filename.Replace("_", " ").ToCamelCase(), 
+                RegexOptions.IgnoreCase).IsMatch(c.name))
             .ToList();
         if (index < 0) return possibleClips.Random();
         else return possibleClips.Get(index-1);

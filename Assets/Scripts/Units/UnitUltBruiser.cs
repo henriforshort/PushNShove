@@ -19,7 +19,7 @@ public class UnitUltBruiser : UnitUlt {
         unit.melee.attackAnimDuration = 0;
         unit.isInvincible = true;
 
-        ultStatModifs.Add(unit.data.damage.AddModifier(0.3f, StatModifier.Type.MULTIPLY));
+        ultStatModifs.Add(unit.data.damage.AddModifier(0.5f, StatModifier.Type.MULTIPLY));
         ultStatModifs.Add(unit.data.critChance.AddModifier(0, StatModifier.Type.SET));
     }
 

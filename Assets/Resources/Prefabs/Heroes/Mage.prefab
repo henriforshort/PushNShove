@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b363d206fffbe94f8aab5550865f4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 28
+  ultCooldown: 60
   ultDuration: 1.5
   ultStatus: 0
   predictiveXp: 0
@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
-  tmpHealthAmount: 20
 --- !u!1 &490591814931064775
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,13 +40,15 @@ public class UnitUltJester : UnitUlt {
         unit.enemies
             .Where(e => unit.DistanceToMe(e) < range)
             .ToList()
-            .ForEach(e => e.GetBumpedBy(unit));
+            .ForEach(e => e.GetBumpedBy(unit.data.critChance, 
+                unit.data.damage * 2, unit.data.strength));
         
         //Hit one enemy
         // unit.enemies
         //     .WithLowest(e => unit.DistanceToMe(e))
         //     .If(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
-        //     ?.GetBumpedBy(unit);
+        //     ?.GetBumpedBy(unit.data.critChance, 
+        // unit.data.damage * 2, unit.data.strength);
 
         return unit.allies
             .Except(unit)

@@ -66,7 +66,7 @@ MonoBehaviour:
   baseMaxHealth: 40
   baseProt: 0
   baseSkill: 1
-  baseDamage: 3
+  baseDamage: 5
   baseStrength: 10
   baseResistance: 10
   baseCritChance: 0.05

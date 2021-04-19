@@ -115,7 +115,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     }
 
     public void Victory() {
-        Debug.LogError("here");
         this.Wait(1, () => Game.m.PlaySound(Casual.POSITIVE, 0.5f, 6));
         if (gameState == State.GAME_OVER) return;
         if (gameState == State.RESTARTING) return;

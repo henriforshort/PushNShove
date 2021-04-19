@@ -125,9 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b363d206fffbe94f8aab5550865f4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 24
+  ultCooldown: 60
   ultDuration: 5
   ultStatus: 0
+  predictiveXp: 0
   _icon: {fileID: 0}
   ult: {fileID: 1497386388499329877}
   campHero: {fileID: 3034245689411466590, guid: cbb6ed196c761344fa75afd8a074a6ec, type: 3}

@@ -223,10 +223,10 @@ MonoBehaviour:
   baseMaxHealth: 200
   baseProt: 0
   baseSkill: 10
-  baseDamage: 3
+  baseDamage: 5
   baseStrength: 15
   baseResistance: 15
-  baseCritChance: 0.2
+  baseCritChance: 0.3
   size: 2
   bumpedSound: 24
   bumpedSoundAnimal: 0
@@ -254,6 +254,9 @@ MonoBehaviour:
   tmpHealthBar: {fileID: 4974386014944740836}
   rigidbodee: {fileID: 4884354168730958000}
   hanimator: {fileID: 988931033438503087}
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
   OnTakeCollisionDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -316,6 +319,7 @@ MonoBehaviour:
     xpToNextLevel: 0
   droppedItems: []
   droppedXp: 0
+  droppedGems: 0
 --- !u!114 &-352246479384488573
 MonoBehaviour:
   m_ObjectHideFlags: 0
