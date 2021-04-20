@@ -716,6 +716,13 @@ public static class Util {
             whenDone, onEnd, restartDelay, null);
     }
 
+    public static Tween TweenScale(this MonoBehaviour target, Vector3 targetValue, Tween.Style style, float duration, 
+        Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
+        return target.gameObject.AddComponent<Tween>().InitByValue(
+            targetValue, Tween.Property.SCALE, style, duration,
+            whenDone, onEnd, restartDelay, null);
+    }
+
     public static Tween TweenAlpha(this Graphic visuals, float targetValue, Tween.Style style, float duration, 
         Action onEnd = default, Tween.WhenDone whenDone = Tween.WhenDone.STOP, float restartDelay = 0) {
         return visuals.gameObject.AddComponent<Tween>().InitByValue(

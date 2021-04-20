@@ -9,6 +9,7 @@ public class UnitHero : UnitSide {
     [Header("State")]
     public UltStatus ultStatus;
     public float predictiveXp;
+    public float ultDurationLeft;
     
     [Header("Scene References (assigned at runtime)")]
     public HeroIcon _icon;
@@ -86,10 +87,24 @@ public class UnitHero : UnitSide {
     public void UpdateUlt() {
         if (Battle.m.gameState != Battle.State.PLAYING) return;
         if (unit.status != Unit.Status.ALIVE) return;
+        
+        ReloadUlt();
+        ProcessUlt();
+    }
+
+    public void ReloadUlt() {
         if (ultStatus != UltStatus.RELOADING) return;
         
         ultCooldownLeft -= Time.deltaTime;
         if (ultCooldownLeft < 0) ReadyUlt();
+        
+    }
+
+    public void ProcessUlt() {
+        if (ultStatus != UltStatus.ACTIVATED) return;
+        
+        ultDurationLeft -= Time.deltaTime;
+        if (ultDurationLeft < 0) EndUlt();
     }
 
     public void ReadyUlt() {
@@ -108,7 +123,7 @@ public class UnitHero : UnitSide {
     public void Ult() {
         ultStatus = UltStatus.ACTIVATED;
         ult.Ult();
-        this.Wait(ultDuration, EndUlt);
+        ultDurationLeft = ultDuration;
         unit.lockZOrder = true;
     }
 

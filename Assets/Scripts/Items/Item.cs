@@ -8,13 +8,12 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Rarity rarity;
     [TextArea] public string description;
     
-    [Header("State")]
-    public bool isDragged;
-    
     [Header("Self References")]
     public CanvasGroup canvasGroup;
     public ItemEffect effect;
     public Item prefab;
+    public GameObject glow;
+    public GameObject rotatingGlow;
     
     [Header("Scene References (assigned at runtime)")]
     public UnitHero hero;
@@ -63,7 +62,6 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         Run.m.movingItem = this;
         transform.SetParent(Battle.m.itemsCanvas);
         canvasGroup.blocksRaycasts = false;
-        isDragged = true;
         Battle.m.itemDescription.SetActive(false);
     }
 
@@ -76,7 +74,6 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         Run.m.movingItem = null;
         canvasGroup.blocksRaycasts = true;
         transform.SetParent(hero.icon.itemPanel.transform);
-        isDragged = false;
     }
 
     public void OnPointerClick(PointerEventData eventData) {

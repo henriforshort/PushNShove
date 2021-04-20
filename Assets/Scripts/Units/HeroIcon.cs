@@ -11,7 +11,7 @@ public class HeroIcon : MonoBehaviour {
     public Slider healthBar;
     public Slider tmpHealthBar;
     public Image ultCooldown;
-    public Animator backgroundAnimator;
+    public Hanimator iconFxAnimator;
     public Image deadOverlay;
     public ItemPanel itemPanel;
     public Slider xpBar;
@@ -45,7 +45,7 @@ public class HeroIcon : MonoBehaviour {
         if (iconAnim == ia) return;
         
         iconAnim = ia;
-        backgroundAnimator.Play(iconAnim.ToString());
+        iconFxAnimator.Play(iconAnim.ToString());
     }
     
     
@@ -103,13 +103,18 @@ public class HeroIcon : MonoBehaviour {
     }
 
     public void GainItemFromFight(Item itemPrefab, Vector3 position) {
+        Battle.m.gameState = Battle.State.PAUSE;
+        
         //Create item
         Item itemInstance = Instantiate(
             itemPrefab, 
             Battle.m.cameraManager.cam.WorldToScreenPoint(position),
             Quaternion.identity,
             Battle.m.itemsCanvas);
+        itemInstance.transform.localScale = 2 * Vector3.one;
         itemInstance.Init(itemPrefab, hero, true);
+        itemInstance.glow.SetActive(true);
+        itemInstance.rotatingGlow.SetActive(true);
         
         //Bounce item then move it to top left corner
         GameObject placeholder = new GameObject();
@@ -117,13 +122,19 @@ public class HeroIcon : MonoBehaviour {
         placeholder.transform.SetParent(itemPanel.transform);
         itemInstance.TweenPosition(itemInstance.transform.position + Vector3.up * 50, 
             Tween.Style.BOUNCE, 0.5f, () => 
-                this.Wait(0.25f, () => 
-                    itemInstance.TweenPosition(placeholder.transform.position, Tween.Style.EASE_OUT, 1f, 
-                        () => {
+                this.Wait(1f, () => {
+                if (Unit.monsterUnits.Count > 0) Battle.m.gameState = Battle.State.PLAYING;
+                itemInstance.glow.SetActive(false);
+                itemInstance.rotatingGlow.SetActive(false);
+                itemInstance.TweenScale(Vector3.one, Tween.Style.EASE_OUT, 2f);
+                itemInstance.TweenPosition(placeholder.transform.position, Tween.Style.EASE_OUT, 2f,
+                    () => {
                         Destroy(placeholder);
                         itemInstance.transform.SetParent(itemPanel.transform);
+                        itemInstance.Bounce(.1f);
                         Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE, .5f, -1, SoundManager.Pitch.RANDOM);
-                    })));
+                    });
+            }));
     }
 
     public void GetItemAtStartup(Item itemPrefab) {
@@ -147,7 +158,7 @@ public class HeroIcon : MonoBehaviour {
         xpInstance.TweenPosition(Vector3.up * 50, 
             Tween.Style.BOUNCE, .5f, () => 
                 this.Wait(0.25f, () => 
-                    xpInstance.TweenPosition(icon.transform.position - xpInstance.transform.position, 
+                    xpInstance.TweenPosition(ultCooldown.transform.position - xpInstance.transform.position, 
                         Tween.Style.EASE_OUT, 1f, () => {
                             Destroy(xpInstance);
                             if (.3f.Chance()) Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE, 

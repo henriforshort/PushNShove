@@ -125,8 +125,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shovel
       objectReference: {fileID: 0}
+    - target: {fileID: 8340589069297469610, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f081ff288bd7da49a9873b48108c6c3, type: 3}
     m_RemovedComponents:
     - {fileID: 4308348561640647331, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+    - {fileID: 7833141701792519108, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
 --- !u!1 &2537417152627680143 stripped
 GameObject:

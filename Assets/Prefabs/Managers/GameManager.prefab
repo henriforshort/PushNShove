@@ -100,7 +100,6 @@ MonoBehaviour:
   freezeFrameDuration: 0.15
   bumpRecoverySpeed: 5
   bumpSpeed: -15
-  maxBumpSpeed: -30
   defendSpeed: -10
   absorbSpeed: -5
   boardSize: 13.75

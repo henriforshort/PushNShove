@@ -67,7 +67,7 @@ MonoBehaviour:
   baseMaxHealth: 100
   baseProt: 0
   baseSkill: 5
-  baseDamage: 3
+  baseDamage: 5
   baseStrength: 15
   baseResistance: 12
   baseCritChance: 0.05
@@ -125,14 +125,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b363d206fffbe94f8aab5550865f4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 60
+  ultCooldown: 50
   ultDuration: 0.4
   ultStatus: 0
   predictiveXp: 0
+  ultDurationLeft: 0
   _icon: {fileID: 0}
   ult: {fileID: -611657466688060983}
   campHero: {fileID: 8752653754006907758, guid: 366c597e6ef870145bf68207dd78d9d0, type: 3}
-  image: {fileID: 21300000, guid: 64471d6bee8f92143a750eb72e4d10a5, type: 3}
+  image: {fileID: 21300000, guid: 5598e4f66f13f6049b8159e7418ae220, type: 3}
 --- !u!114 &-611657466688060983
 MonoBehaviour:
   m_ObjectHideFlags: 0

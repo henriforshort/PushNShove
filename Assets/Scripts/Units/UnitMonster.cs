@@ -30,11 +30,13 @@ public class UnitMonster : UnitSide {
     public void DropLoot() {
         if (Unit.heroUnits.Count == 0) return;
 
+        //items
         droppedItems.ForEach(item => Unit.heroUnits
             ?.RandomWhere(u => u.hero.itemPrefabPaths.Count < Game.m.maxItemsPerHero)
             ?.hero
             ?.GetItemFromFight(item, transform.position));
 
+        //xp
         Vector3 pos = transform.position; //Needs to be defined in advance, before I die
         this.For(droppedXp, i => {
             UnitHero hero = Unit.heroUnits.Random().hero;
@@ -43,6 +45,7 @@ public class UnitMonster : UnitSide {
             Battle.m.Wait(.1f * (i + 1), () => hero.GetXp(xpValue, pos));
         });
 
+        //gems
         this.For(droppedGems, i => {
             Battle.m.OnBattleEnd.AddListener(Game.m.AddOneGem);
             Battle.m.Wait(.1f * i, () => Battle.m.LootOneGem(pos.SetY(-2.75f)));

@@ -125,8 +125,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower
       objectReference: {fileID: 0}
+    - target: {fileID: 8340589069297469610, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5e2f4ecd2cbe51488388631d5f7c3b5, type: 3}
     m_RemovedComponents:
     - {fileID: 4308348561640647331, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
+    - {fileID: 7833141701792519108, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f5441c957ca7ef418ba6f45faf97458, type: 3}
 --- !u!1 &3606662160201698308 stripped
 GameObject:

@@ -27,7 +27,7 @@ public class ArcherUltArrow : MonoBehaviour {
 
     public void Start() {
         spriteRenderer.sprite = diagUpSprite;
-        startDate = Time.time + this.Random(-.1f, .1f);
+        duration = this.Random(-.1f, .1f);
         startPosition = transform.position;
         isMoving = true;
         peakDate = startVerticalSpeed / gravity;
@@ -38,9 +38,10 @@ public class ArcherUltArrow : MonoBehaviour {
     }
 
     public void Update() {
+        if (Battle.m.gameState == Battle.State.PAUSE) return;
         if (!isMoving) return;
 
-        duration = Time.time - startDate;
+        duration += Time.deltaTime;
         UpdatePosition();
         UpdateVisuals();
         CheckForTargets();

@@ -23,7 +23,7 @@ public class UnitRangedHeal : MonoBehaviour {
         
         Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, .25f, 2);
         Unit healTarget = unit.allies
-            .Where(u => u.tempHealth <= unit.data.damage)
+            .Where(u => u.tempHealth <= unit.data.damage * 2)
             .WithLowest(u => (u.data.currentHealth + u.tempHealth)/u.data.maxHealth);
         Unit hurtTarget = unit.enemies.Random();
         

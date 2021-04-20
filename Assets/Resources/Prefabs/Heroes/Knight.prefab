@@ -64,12 +64,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxHealth: 100
+  baseMaxHealth: 150
   baseProt: 0
   baseSkill: 5
   baseDamage: 5
-  baseStrength: 10
-  baseResistance: 15
+  baseStrength: 5
+  baseResistance: 18
   baseCritChance: 0.05
   size: 1
   bumpedSound: 24
@@ -129,10 +129,11 @@ MonoBehaviour:
   ultDuration: 5
   ultStatus: 0
   predictiveXp: 0
+  ultDurationLeft: 0
   _icon: {fileID: 0}
   ult: {fileID: -4787851817424554318}
   campHero: {fileID: 4802802870216699466, guid: 8de3d551bb0b89b4484bb3acc1b2f0ad, type: 3}
-  image: {fileID: 21300000, guid: 0ef2f9755ffd62d40a534b56122d91ae, type: 3}
+  image: {fileID: 21300000, guid: 515cbdd7f23d23a4894cbb445fc34612, type: 3}
 --- !u!114 &-4787851817424554318
 MonoBehaviour:
   m_ObjectHideFlags: 0

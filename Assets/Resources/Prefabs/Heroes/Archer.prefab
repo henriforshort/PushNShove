@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7980dd91b21d2c4cf8cda77b0f6cf622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxHealth: 50
+  baseMaxHealth: 20
   baseProt: 0
   baseSkill: 5
   baseDamage: 7
@@ -126,14 +126,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b363d206fffbe94f8aab5550865f4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultCooldown: 60
+  ultCooldown: 50
   ultDuration: 1.5
   ultStatus: 0
   predictiveXp: 0
+  ultDurationLeft: 0
   _icon: {fileID: 0}
   ult: {fileID: 8638022242478428621}
   campHero: {fileID: 3034245689411466590, guid: 22e8b11bc41b62f4ea3fb0bf8372a638, type: 3}
-  image: {fileID: 21300000, guid: 278c5e24931de1044ad83fcfa6257d33, type: 3}
+  image: {fileID: 21300000, guid: bfabe2a35dc375440b79ea8bb0b3f05c, type: 3}
 --- !u!114 &1219178943284343492
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,7 +25,6 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float freezeFrameDuration;
     public float bumpRecoverySpeed;
     public float bumpSpeed;
-    public float maxBumpSpeed;
     public float defendSpeed;
     public float absorbSpeed;
     public float boardSize;
@@ -91,10 +90,14 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
             return;
         }
         DontDestroyOnLoad(this);
-        
+        InitSession();
+    }
+
+    public void InitSession() {
         if (File.Exists(savePath)) LoadFromDevice();
         else save.InitGame();
         
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         LoadScene(SceneName.Camp);
     }
 

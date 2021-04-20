@@ -102,6 +102,8 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
 
     public void Update() {
         if (gameState == State.GAME_OVER) AwaitRestart();
+
+        if (Input.GetKeyDown(KeyCode.P)) gameState = 1 - gameState;
     }
 
     public void Defeat() {
