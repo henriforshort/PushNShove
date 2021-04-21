@@ -57,7 +57,6 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnBeginDrag(PointerEventData eventData) {
         if (Run.m.movingItem != null) return;
-        if (Battle.m.gameState != Battle.State.PLAYING) return;
         
         Run.m.movingItem = this;
         transform.SetParent(Battle.m.itemsCanvas);
@@ -69,7 +68,6 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData) { //What to do when drag ends, either on an icon or not
         if (Run.m.movingItem != this) return;
-        if (Battle.m.gameState != Battle.State.PLAYING) return;
         
         Run.m.movingItem = null;
         canvasGroup.blocksRaycasts = true;

@@ -17,7 +17,7 @@ public class CameraManager : MonoBehaviour {
     public Camera cam;
 
     public void Update() {
-        if (Battle.m.gameState == Battle.State.PLAYING) UpdateCamera();
+        UpdateCamera();
         UpdateShake();
     }
 

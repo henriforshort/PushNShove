@@ -9,6 +9,7 @@ public class UnitUltArcher : UnitUlt {
         unit.SetAnim(Unit.Anim.ULT_ARCHER_AIM);
         unit.lockAnim = true;
         unit.lockPosition = true;
+        unit.isInvincible = true;
         Game.m.PlaySound(MedievalCombat.BOW_DRAW_5);
         this.Wait(1, Shoot);
     }
@@ -16,6 +17,7 @@ public class UnitUltArcher : UnitUlt {
     public override void EndUlt() {
         unit.lockPosition = false;
         unit.lockAnim = false;
+        unit.isInvincible = false;
     }
 
     public void Shoot() {

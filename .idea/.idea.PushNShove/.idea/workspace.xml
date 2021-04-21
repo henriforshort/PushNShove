@@ -22,7 +22,13 @@
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Hero Icon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Hero Icon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon_total.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/ui/Character_icon_total.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +157,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampHero.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CampActivity.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" />
       <option value="$PROJECT_DIR$/Assets/LambdaTest.cs" />
       <option value="$PROJECT_DIR$/Assets/Hinventory/Scripts/Hinventory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSave.cs" />
@@ -161,15 +166,12 @@
       <option value="$PROJECT_DIR$/Assets/IAPTest.cs" />
       <option value="$PROJECT_DIR$/Assets/IAP/RestorePurchases.cs" />
       <option value="$PROJECT_DIR$/Assets/IAP/IAP.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/MedievalCombat.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedHeal.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs" />
@@ -179,7 +181,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1k6GgUKhAN3iWH4pGLr6hcAIQZY" />
@@ -389,6 +396,7 @@
       <workItem from="1618755153662" duration="3338000" />
       <workItem from="1618818185863" duration="9446000" />
       <workItem from="1618905797857" duration="1916000" />
+      <workItem from="1618991131770" duration="5692000" />
     </task>
     <servers />
   </component>

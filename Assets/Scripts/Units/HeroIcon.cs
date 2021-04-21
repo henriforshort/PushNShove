@@ -131,7 +131,7 @@ public class HeroIcon : MonoBehaviour {
                     () => {
                         Destroy(placeholder);
                         itemInstance.transform.SetParent(itemPanel.transform);
-                        itemInstance.Bounce(.1f);
+                        this.Wait(.25f, () => itemInstance.Bounce(.1f));
                         Game.m.PlaySound(MedievalCombat.COIN_AND_PURSE, .5f, -1, SoundManager.Pitch.RANDOM);
                     });
             }));

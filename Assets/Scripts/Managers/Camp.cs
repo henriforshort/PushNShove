@@ -170,7 +170,7 @@ public class Camp : Level<Camp> {
 
     public void TweenCamera() {
         if(cameraGO.GetY().isClearlyNot(cameraY)) return;
-        cameraGO.TweenPosition(cameraY * Vector3.down, Tween.Style.EASE_OUT, 2);
+        cameraGO.TweenPositionByValue(Vector3.back * 10, Tween.Style.EASE_OUT, 2);
         gemsBg.TweenAlpha(.25f, Tween.Style.EASE_OUT, 2);
         gemsIcon.TweenAlpha(1, Tween.Style.EASE_OUT, 2);
         gemsText.TweenAlpha(1, Tween.Style.EASE_OUT, 2);
