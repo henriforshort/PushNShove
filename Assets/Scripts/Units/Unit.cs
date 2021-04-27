@@ -285,21 +285,24 @@ public class Unit : MonoBehaviour {
         //crit
         if (critChance.Chance()) { 
             SetAnim(Anim.BUMPED);
-            currentSpeed = (Game.m.bumpSpeed * strength / data.resistance).AtMost(currentSpeed - 1) - 5;
+            currentSpeed = (Game.m.bumpSpeed * strength / data.resistance - 5)
+                .Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
             TakeCollisionDamage(damage, true);
             critCollisionDate = Time.time;
         }
         //block
         else if (data.prot.value.Chance()) { 
             SetAnim(Anim.DEFEND);
-            currentSpeed = (Game.m.absorbSpeed * strength / data.resistance).AtMost(currentSpeed - 1);
+            currentSpeed = (Game.m.absorbSpeed * strength / data.resistance)
+                .Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
             AddHealth(0, "Block", Game.m.darkGrey);
             Game.m.PlaySound(MedievalCombat.METAL_WEAPON_HIT_METAL_1);
         }
         //regular hit
         else {
             SetAnim(Anim.BUMPED);
-            currentSpeed = (Game.m.bumpSpeed * strength / data.resistance).AtMost(currentSpeed - 1);
+            currentSpeed = (Game.m.bumpSpeed * strength / data.resistance)
+                .Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
             TakeCollisionDamage(damage);
         }
     }

@@ -27,7 +27,7 @@ public class Tween : MonoBehaviour {
     public Vector3 currentValue;
     [Range(0,1)] public float linearValue;
 
-    public enum Property { VERTICAL, HORIZONTAL, POSITION, SCALE, ALPHA }
+    public enum Property { VERTICAL, HORIZONTAL, POSITION, SCALE, ALPHA, DEPTH, LOCAL_HORIZONTAL, LOCAL_DEPTH }
     public enum Style { LINEAR, EASE_IN, EASE_OUT, EASE_IN_OUT, SINE, BOUNCE }
     public enum WhenDone { RESTART, PINGPONG, STOP, DESTROY }
     public enum ValueType { TARGET, AMPLITUDE }
@@ -59,7 +59,6 @@ public class Tween : MonoBehaviour {
     }
 
     public void Start() {
-        linearValue = 0;
         reversed = false;
         playing = true;
 
@@ -68,6 +67,9 @@ public class Tween : MonoBehaviour {
         if (property == Property.ALPHA) startValue.x = GetAlpha();
         if (property == Property.SCALE) startValue = transform.localScale;
         if (property == Property.POSITION) startValue = transform.position;
+        if (property == Property.DEPTH) startValue.x = transform.position.z;
+        if (property == Property.LOCAL_HORIZONTAL) startValue.x = transform.localPosition.x;
+        if (property == Property.LOCAL_DEPTH) startValue.x = transform.localPosition.z;
 
         if (valueType == ValueType.TARGET) targetValue = value;
         else targetValue = startValue + value;
@@ -84,6 +86,9 @@ public class Tween : MonoBehaviour {
         if (property == Property.ALPHA) SetAlpha(currentValue.x);
         if (property == Property.SCALE) transform.localScale = currentValue;
         if (property == Property.POSITION) transform.position = currentValue;
+        if (property == Property.DEPTH) this.SetZ(currentValue.x);
+        if (property == Property.LOCAL_HORIZONTAL) this.SetLocalX(currentValue.x);
+        if (property == Property.LOCAL_DEPTH) this.SetLocalZ(currentValue.x);
 
         if (linearValue > 1 || linearValue < 0) {
             if (onEnd != null) onEnd();

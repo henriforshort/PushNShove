@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaxHealth: 15
   baseProt: 0
-  baseSkill: 0.25
+  baseSkill: 1
   baseDamage: 5
   baseStrength: 7
   baseResistance: 8

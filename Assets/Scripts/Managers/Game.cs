@@ -24,6 +24,7 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float collideDistance;
     public float freezeFrameDuration;
     public float bumpRecoverySpeed;
+    public float maxBumpSpeed;
     public float bumpSpeed;
     public float defendSpeed;
     public float absorbSpeed;

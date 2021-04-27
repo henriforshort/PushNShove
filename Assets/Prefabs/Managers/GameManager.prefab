@@ -99,6 +99,7 @@ MonoBehaviour:
   collideDistance: 2
   freezeFrameDuration: 0.15
   bumpRecoverySpeed: 5
+  maxBumpSpeed: -25
   bumpSpeed: -15
   defendSpeed: -10
   absorbSpeed: -5

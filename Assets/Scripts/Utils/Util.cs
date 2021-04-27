@@ -409,15 +409,15 @@ public static class Util {
 
     //Set Component with float
     public static Component SetLocalX(this Component target, float x) {
-        target.transform.position = target.transform.localPosition.SetX(x);
+        target.transform.localPosition = target.transform.localPosition.SetX(x);
         return target;
     }
     public static Component SetLocalY(this Component target, float y) {
-        target.transform.position = target.transform.localPosition.SetY(y);
+        target.transform.localPosition = target.transform.localPosition.SetY(y);
         return target;
     }
     public static Component SetLocalZ(this Component target, float z) {
-        target.transform.position = target.transform.localPosition.SetZ(z);
+        target.transform.localPosition = target.transform.localPosition.SetZ(z);
         return target;
     }
 

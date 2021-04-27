@@ -69,7 +69,7 @@ MonoBehaviour:
   baseProt: 0
   baseSkill: 5
   baseDamage: 3
-  baseStrength: 5
+  baseStrength: 10
   baseResistance: 10
   baseCritChance: 0
   size: 1
@@ -171,12 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b1abfb1f9a4a839c79dfc0662e5188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffDuration: 1.5
+  buffDuration: 2.5
   attackAnimDuration: 0.25
-  buffStat: 5
-  buffType: 0
-  buffAmount: 0.5
-  buffFx: {fileID: 1375727324785953495, guid: fd02df62535130f42a68e7824c5caec7, type: 3}
+  buffStat: 4
+  currentBuffs: []
+  buffFxPrefab: {fileID: 2424585024168306623, guid: fd02df62535130f42a68e7824c5caec7, type: 3}
   unitRanged: {fileID: 1219178943284343492}
 --- !u!114 &-3266038477927484842
 MonoBehaviour:
