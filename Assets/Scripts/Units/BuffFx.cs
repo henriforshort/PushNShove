@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BuffFx : MonoBehaviour {
@@ -15,8 +12,8 @@ public class BuffFx : MonoBehaviour {
         this.buff = buff;
         
         durationLeft = duration;
-        target.onDeath.AddListener(() => buff?.Terminate());
-        source.onDeath.AddListener(() => buff?.Terminate());
+        target.onDeath.AddListener(EndBuff);
+        source.onDeath.AddListener(EndBuff);
     }
 
     public void Update() {
@@ -27,7 +24,7 @@ public class BuffFx : MonoBehaviour {
     }
 
     public void EndBuff() {
-        buff.Terminate();
+        buff?.Terminate();
         Destroy(gameObject);
     }
 }

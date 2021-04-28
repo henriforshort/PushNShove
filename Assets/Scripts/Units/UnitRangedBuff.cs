@@ -35,17 +35,18 @@ public class UnitRangedBuff : MonoBehaviour {
         //     .ForEach(e => e.GetBumpedBy(unit));
         
         // Hit one enemy
-        unit.enemies
-            .WithLowest(e => unit.DistanceToMe(e))
-            .If(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
-            ?.GetBumpedBy(unit);
+        // unit.enemies
+        //     .WithLowest(e => unit.DistanceToMe(e))
+        //     .If(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
+        //     ?.GetBumpedBy(unit);
 
         unit.allies
             .Except(unit)
             ?.ForEach(target => {
                 BuffFx targetFx = currentBuffs.FirstOrDefault(fx => fx.target == target);
                 if (targetFx == null) {
-                    BuffFx buffFx = Instantiate(buffFxPrefab, new Vector3(target.GetX(), target.GetY() + .7f, 0f),
+                    BuffFx buffFx = Instantiate(buffFxPrefab, 
+                        new Vector3(target.GetX(), target.GetY() + .6f, 0f),
                         Quaternion.identity, target.transform);
                     buffFx.Init(unit, target, buffDuration, 
                         target.data.stats[(int) buffStat].AddModifier(unit.data.stats[(int)buffStat]));

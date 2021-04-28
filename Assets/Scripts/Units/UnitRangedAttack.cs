@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UnitRangedAttack : MonoBehaviour {
     [Header("Balancing")]
@@ -6,7 +7,7 @@ public class UnitRangedAttack : MonoBehaviour {
     public MedievalCombat aimSound;
 
     [Header("References")]
-    public Arrow arrowPrefab;
+    public Projectile projectilePrefab;
     public UnitRanged unitRanged;
 
     public void Awake() {
@@ -20,10 +21,10 @@ public class UnitRangedAttack : MonoBehaviour {
 
     public void Attack() {
         Game.m.PlaySound(shootSound);
-        Arrow arrow = Instantiate(arrowPrefab, 
+        Projectile projectile = Instantiate(projectilePrefab, 
             transform.position + new Vector3(13/36f, 21/36f), 
             Quaternion.identity, 
-            transform);
-        arrow.Init(unitRanged.unit);
+            Battle.m.transform);
+        projectile.Init(unitRanged.unit);
     }
 }

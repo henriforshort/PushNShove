@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3922900879136759742}
   - component: {fileID: 3922900879136759741}
   - component: {fileID: 8202082160336353080}
+  - component: {fileID: 1709615773058237819}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: JesterNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3922900879136759739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7451953295746623981, guid: f0e263b22ba5794469dc7dc18d536894, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de4affbba1acab94285b526d74477555, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,6 +96,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1116d5375faf4c4c880ed6049dba148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4
+  hitSound: 0
+  range: 50
   critChance: 0
   damage: 0
   strength: 0
+--- !u!114 &1709615773058237819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922900879136759739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281b979ff7e09254ba68b1136fffd0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: 0
+  style: 4
+  whenDone: 0
+  duration: 1
+  valueType: 1
+  value: {x: 0.25, y: 0, z: 0}
+  restartDelay: 0
+  visuals: {fileID: 0}
+  sprite: {fileID: 0}
+  playing: 0
+  reversed: 0
+  startValue: {x: 0, y: 0, z: 0}
+  targetValue: {x: 0, y: 0, z: 0}
+  currentValue: {x: 0, y: 0, z: 0}
+  linearValue: 0

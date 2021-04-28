@@ -69,9 +69,9 @@ MonoBehaviour:
   baseProt: 0
   baseSkill: 5
   baseDamage: 3
-  baseStrength: 10
+  baseStrength: 5
   baseResistance: 10
-  baseCritChance: 0
+  baseCritChance: 0.1
   size: 1
   bumpedSound: 24
   bumpedSoundAnimal: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   distanceFromScreenEdge: 2
-  aimDuration: 0
+  aimDuration: 0.25
   reloadDuration: 2
   attackStatus: 0
   timeTillReloaded: 0
@@ -193,10 +193,11 @@ MonoBehaviour:
   range: 10
   buffDuration: 5
   attackAnimDuration: 0.25
-  buffStat: 4
-  buffType: 1
-  buffAmount: 1.2
-  buffFx: {fileID: 1375727324785953495, guid: 1a6899b0d08bd9d4c883fc6c6abd468d, type: 3}
+  buffStat: 5
+  currentBuffs: []
+  buffFxPrefab: {fileID: -3837119716036976938, guid: 1a6899b0d08bd9d4c883fc6c6abd468d, type: 3}
+  projectilePrefab: {fileID: 8202082160336353080, guid: ddbca7a69b3b83d47963e35cb8f9458c, type: 3}
+  unitRanged: {fileID: 1219178943284343492}
 --- !u!1 &490591814931064775
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,8 +317,6 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -170764433648100692, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
-    - {fileID: -2494105334710038022, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: -1457803679456522900, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: 7224368629849581989, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: 2980991817480762901, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
@@ -364,6 +363,15 @@ MonoBehaviour:
     - {fileID: 2733316496609722315, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: 7243786947635027724, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: -3858963379372630616, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+  - name: PREPARE
+    frameDuration: 100
+    delay: 0
+    weight: 0
+    loop: 0
+    randomStart: 0
+    sprites:
+    - {fileID: -170764433648100692, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -2494105334710038022, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
   playing: 0
   currentAnim:
     name: 

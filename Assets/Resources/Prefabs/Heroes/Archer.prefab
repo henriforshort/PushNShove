@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootSound: 124
   aimSound: 140
-  arrowPrefab: {fileID: 8202082160336353080, guid: b6fd56a6729418d4fb606fecfef09e8d, type: 3}
+  projectilePrefab: {fileID: 8202082160336353080, guid: b6fd56a6729418d4fb606fecfef09e8d, type: 3}
   unitRanged: {fileID: 1219178943284343492}
 --- !u!114 &8638022242478428621
 MonoBehaviour:
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   arrows: {fileID: 1843746212776340953, guid: f48c3b879c308bc458a9c6c6230b7ced, type: 3}
+  bigArrowPrefab: {fileID: 8202082160336353080, guid: 19d6d3129cc2b404a8164bd60bee95f9, type: 3}
 --- !u!1 &490591814931064775
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +321,6 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: 480887029864472272, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: 7135723650130993342, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: -2211983078384136945, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: -2211983078384136945, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
@@ -358,12 +358,11 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -5628293126165128258, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: -8695892203303655000, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: 1247079759622273812, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: -1759791881078805778, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: -749623694445501194, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: 2755607612910650718, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: 3682876337854037964, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -8690252261703445637, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: 2199431665083466589, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -1072846411591543831, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
+    - {fileID: -7714815520443705118, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   - name: ULT_ARCHER_SHOOT
     frameDuration: 100
     delay: 0

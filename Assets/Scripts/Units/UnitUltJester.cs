@@ -8,13 +8,14 @@ public class UnitUltJester : UnitUlt {
     public float buffDuration;
     public float attackAnimDuration;
     public UnitStat buffStat;
-    public StatModifier.Type buffType;
-    public float buffAmount;
     
-    // [Header("Status")]
+    [Header("Status")]
+    public List<BuffFx> currentBuffs;
 
     [Header("References")]
-    public GameObject buffFx;
+    public BuffFx buffFxPrefab;
+    public Projectile projectilePrefab;
+    public UnitRanged unitRanged;
     
     public override void Ult() {
         unit.SetAnim(Unit.Anim.ULT_JESTER);
@@ -22,9 +23,7 @@ public class UnitUltJester : UnitUlt {
         unit.isInvincible = true;
         Game.m.PlaySound(MedievalCombat.WHOOSH_3);
         Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, .5f, 2);
-        List<StatModifier> currentModifiers = null;
-        this.Wait(attackAnimDuration, () => currentModifiers = ApplyBuff());
-        this.Wait(buffDuration, () => currentModifiers?.ForEach(m => m.Terminate()));
+        this.Wait(attackAnimDuration, ApplyBuff);
     }
 
     public override void EndUlt() {
@@ -33,15 +32,15 @@ public class UnitUltJester : UnitUlt {
         unit.SetAnim(Unit.Anim.DEFEND);
     }
 
-    public List<StatModifier> ApplyBuff() {
-        if (unit.status != Unit.Status.ALIVE) return null;
+    public void ApplyBuff() {
+        if (unit.status != Unit.Status.ALIVE) return;
 
         //Hit all enemies
-        unit.enemies
-            .Where(e => unit.DistanceToMe(e) < range)
-            .ToList()
-            .ForEach(e => e.GetBumpedBy(unit.data.critChance, 
-                unit.data.damage * 2, unit.data.strength));
+        // unit.enemies
+        //     .Where(e => unit.DistanceToMe(e) < range)
+        //     .ToList()
+        //     .ForEach(e => e.GetBumpedBy(unit.data.critChance, 
+        //         unit.data.damage * 2, unit.data.strength));
         
         //Hit one enemy
         // unit.enemies
@@ -50,15 +49,28 @@ public class UnitUltJester : UnitUlt {
         //     ?.GetBumpedBy(unit.data.critChance, 
         // unit.data.damage * 2, unit.data.strength);
 
-        return unit.allies
-            .Except(unit)
-            .Select(target => {
-                Game.m.SpawnFX(buffFx, new Vector3(target.GetX(), target.GetY() + 1f, 8f),
-                    false, buffDuration, target.transform);
-                StatModifier buff =  target.data.stats[(int) buffStat].AddModifier(buffAmount, buffType);
-                unit.onDeath.AddListener(() => buff?.Terminate());
-                return buff;
-            })
-            .ToList();
+        //Buff allies
+        // unit.allies
+        //     .Except(unit)
+        //     .ForEach(target => {
+        //         BuffFx targetFx = currentBuffs.FirstOrDefault(fx => fx.target == target);
+        //         if (targetFx == null) {
+        //             BuffFx buffFx = Instantiate(buffFxPrefab, 
+        //                 new Vector3(target.GetX(), target.GetY() + 1f, 0f),
+        //                 Quaternion.identity, target.transform);
+        //             buffFx.Init(unit, target, buffDuration, 
+        //                 target.data.stats[(int) buffStat].AddModifier(unit.data.stats[(int)buffStat]));
+        //             currentBuffs.Add(buffFx);
+        //         } else {
+        //             targetFx.durationLeft = buffDuration;
+        //         }
+        //     });
+        
+        //Send note
+        Instantiate(projectilePrefab, 
+            transform.position + new Vector3(13/36f, 21/36f), 
+            Quaternion.identity, 
+            Battle.m.transform)
+            .Init(unit.data.critChance, unit.data.damage, unit.data.strength * 10);
     }
 }

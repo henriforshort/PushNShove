@@ -304,6 +304,7 @@ public class Unit : MonoBehaviour {
             currentSpeed = (Game.m.bumpSpeed * strength / data.resistance)
                 .Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
             TakeCollisionDamage(damage);
+            if (currentSpeed.isAbout(Game.m.maxBumpSpeed)) Debug.Log($"{name} got max bumped");
         }
     }
 
