@@ -956,6 +956,7 @@ MonoBehaviour:
   numberOfEnemyClusters: 1
   timeSinceGameOver: 0
   gameState: 0
+  pauseDurationLeft: 0
   cameraManager: {fileID: 1779532643}
   gameOverPanel: {fileID: 1335224971}
   gameOverText: {fileID: 1537178392}
@@ -4694,10 +4695,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1755454257190141480, guid: 1a60d3dda9b1d2d49ab0ba5d2d7579ed, type: 3}
-      propertyPath: maxBumpSpeed
-      value: -30
-      objectReference: {fileID: 0}
     - target: {fileID: 1755454257190141481, guid: 1a60d3dda9b1d2d49ab0ba5d2d7579ed, type: 3}
       propertyPath: m_Name
       value: GameManager

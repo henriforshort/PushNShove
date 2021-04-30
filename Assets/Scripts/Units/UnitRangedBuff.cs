@@ -7,6 +7,9 @@ public class UnitRangedBuff : MonoBehaviour {
     public float buffDuration;
     public float attackAnimDuration;
     public UnitStat buffStat;
+    public StatModifier.Type buffType;
+    public float buffAmount;
+    public bool targetAllAllies;
     
     [Header("Status")]
     public List<BuffFx> currentBuffs;
@@ -28,32 +31,21 @@ public class UnitRangedBuff : MonoBehaviour {
     public void ApplyBuff() {
         if (unit.status != Unit.Status.ALIVE) return;
 
-        // //Hit all enemies
-        // unit.enemies
-        //     .Where(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
-        //     .ToList()
-        //     .ForEach(e => e.GetBumpedBy(unit));
-        
-        // Hit one enemy
-        // unit.enemies
-        //     .WithLowest(e => unit.DistanceToMe(e))
-        //     .If(e => unit.DistanceToMe(e) < Game.m.attackDistance * 2)
-        //     ?.GetBumpedBy(unit);
+        if (targetAllAllies) unit.allies.Except(unit)?.ForEach(ApplyBuff);
+        else ApplyBuff(unit.allies.Except(unit).Random());
+    }
 
-        unit.allies
-            .Except(unit)
-            ?.ForEach(target => {
-                BuffFx targetFx = currentBuffs.FirstOrDefault(fx => fx.target == target);
-                if (targetFx == null) {
-                    BuffFx buffFx = Instantiate(buffFxPrefab, 
-                        new Vector3(target.GetX(), target.GetY() + .6f, 0f),
-                        Quaternion.identity, target.transform);
-                    buffFx.Init(unit, target, buffDuration, 
-                        target.data.stats[(int) buffStat].AddModifier(unit.data.stats[(int)buffStat]));
-                    currentBuffs.Add(buffFx);
-                } else {
-                    targetFx.durationLeft = buffDuration;
-                }
-            });
+    public void ApplyBuff(Unit ally) {
+        BuffFx targetFx = currentBuffs.FirstOrDefault(fx => fx.target == ally);
+        if (targetFx == null) {
+            BuffFx buffFx = Instantiate(buffFxPrefab, 
+                new Vector3(ally.GetX(), ally.GetY() + .6f, 0f),
+                Quaternion.identity, ally.transform);
+            buffFx.Init(unit, ally, buffDuration, ally.data.stats[(int) buffStat]
+                .AddModifier(buffAmount > 0 ? buffAmount : unit.data.stats[(int)buffStat], buffType));
+            currentBuffs.Add(buffFx);
+        } else {
+            targetFx.durationLeft = buffDuration;
+        }
     }
 }

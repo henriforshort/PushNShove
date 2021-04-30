@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Unit : MonoBehaviour {
     [Header("Base Stats")]
     public float baseMaxHealth;
-    [Range(0,1)] public float baseProt;
+    [Range(0,1)] public float baseBlock;
     public float baseSkill;
     public float baseDamage;
     public float baseStrength;
@@ -49,6 +49,7 @@ public class Unit : MonoBehaviour {
     public Slider tmpHealthBar;
     public Rigidbody rigidbodee;
     public Hanimator hanimator;
+    public GameObject halo;
     
     
     public UnitHero hero => unitSide as UnitHero;
@@ -74,7 +75,7 @@ public class Unit : MonoBehaviour {
     public enum Status { ALIVE, FALLING, DYING, DEAD }
     public enum Anim {
         WALK, PREPARE, HIT, DEFEND, BUMPED,
-        ULT_BRUISER, ULT_STRONGMAN, ULT_ARCHER_AIM, ULT_ARCHER_SHOOT, ULT_JESTER
+        ULT_BRUISER, ULT_STRONGMAN, ULT_ARCHER_AIM, ULT_ARCHER_SHOOT, ULT_JESTER, ULT_KNIGHT, ULT_MAGE
     }
 
     public bool isHero => unitSide is UnitHero;
@@ -111,7 +112,7 @@ public class Unit : MonoBehaviour {
     // ====================
     
     public void UpdateVisuals() {
-        hanimator.enabled = (Battle.m.gameState != Battle.State.PAUSE);
+        hanimator.enabled = Battle.m.gameState != Battle.State.PAUSE || hero?.ultStatus == UnitHero.UltStatus.ACTIVATED;
         if (lockZOrder) this.SetZ(-5);
         if (isWalking && anim == Anim.BUMPED) SetAnim(Anim.WALK);
     }
@@ -291,7 +292,7 @@ public class Unit : MonoBehaviour {
             critCollisionDate = Time.time;
         }
         //block
-        else if (data.prot.value.Chance()) { 
+        else if (data.block.value.Chance()) { 
             SetAnim(Anim.DEFEND);
             currentSpeed = (Game.m.absorbSpeed * strength / data.resistance)
                 .Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
@@ -304,7 +305,6 @@ public class Unit : MonoBehaviour {
             currentSpeed = (Game.m.bumpSpeed * strength / data.resistance)
                 .Clamp(Game.m.maxBumpSpeed, currentSpeed - 1);
             TakeCollisionDamage(damage);
-            if (currentSpeed.isAbout(Game.m.maxBumpSpeed)) Debug.Log($"{name} got max bumped");
         }
     }
 
@@ -339,7 +339,8 @@ public class Unit : MonoBehaviour {
             Battle.m.cameraManager.Shake(0.2f);
         } else AddHealth(-amount, amount.ToString());
     }
-
+    
+    public void AddTmpHealth(float amount) => AddHealth(amount, $"+{amount}", Game.m.grey, true);
     public void AddHealth(float amount, string uiText = null, Color uiColor = default, bool temp = false) {
         if (uiText != null) {
             if (uiColor == default) uiColor = Game.m.black;
@@ -389,7 +390,7 @@ public class Unit : MonoBehaviour {
         Deactivate();
         status = Status.DYING;
         healthBar.transform.parent.gameObject.SetActive(false);
-        currentSpeed = Game.m.bumpSpeed * (1 - data.prot);
+        currentSpeed = Game.m.bumpSpeed * (1 - data.block);
     }
 
     public void DeathByFall() {

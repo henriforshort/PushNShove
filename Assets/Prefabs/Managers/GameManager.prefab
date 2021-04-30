@@ -99,11 +99,12 @@ MonoBehaviour:
   collideDistance: 2
   freezeFrameDuration: 0.15
   bumpRecoverySpeed: 5
-  maxBumpSpeed: -25
+  maxBumpSpeed: -30
   bumpSpeed: -15
   defendSpeed: -10
   absorbSpeed: -5
   boardSize: 13.75
+  ultAnimDuration: 1
   itemsPerBattle: 1
   maxItemsPerHero: 5
   commonDropChance: 10

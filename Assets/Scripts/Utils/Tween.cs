@@ -42,7 +42,7 @@ public class Tween : MonoBehaviour {
         return Init(amplitude, false, property, style, duration, whenDone, onEnd, restartDelay, visuals);
     }
 
-    private Tween Init(Vector3 value, bool isTarget, Property property, Style style, float duration, 
+    public Tween Init(Vector3 value, bool isTarget, Property property, Style style, float duration, 
         WhenDone whenDone, Action onEnd, float restartDelay, Graphic visuals) {
         valueType = isTarget ? ValueType.TARGET : ValueType.AMPLITUDE;
         this.value = value;
@@ -53,6 +53,22 @@ public class Tween : MonoBehaviour {
         this.onEnd = onEnd;
         this.restartDelay = restartDelay;
         this.visuals = visuals;
+        
+        Start();
+        return this;
+    }
+
+    public Tween Init(Vector3 value, bool isTarget, Property property, Style style, float duration, 
+        WhenDone whenDone, Action onEnd, float restartDelay, SpriteRenderer sprite) {
+        valueType = isTarget ? ValueType.TARGET : ValueType.AMPLITUDE;
+        this.value = value;
+        this.property = property;
+        this.style = style;
+        this.duration = duration;
+        this.whenDone = whenDone;
+        this.onEnd = onEnd;
+        this.restartDelay = restartDelay;
+        this.sprite = sprite;
         
         Start();
         return this;

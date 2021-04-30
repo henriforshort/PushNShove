@@ -185,6 +185,6 @@ public class Camp : Level<Camp> {
     // CHEATS
     // ====================
 
-    public void HealAllHeroes() => heroes.ForEach(h => h.AddHealth(20));
-    public void HurtAllHeroes() => heroes.ForEach(h => h.AddHealth(-20));
+    public void HealAllHeroes() => heroes.ForEach(h => h.AddHealth(h.data.maxHealth * .2f));
+    public void HurtAllHeroes() => heroes.ForEach(h => h.AddHealth(-h.data.maxHealth * .2f));
 }

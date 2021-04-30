@@ -32,9 +32,7 @@ public class UnitRangedHeal : MonoBehaviour {
     }
 
     public void HealAlly(Unit ally) {
-        float randomHealAmount = (unit.data.damage * this.Random(.5f, 1.5f)).Round();
-        string uiText = "+" + randomHealAmount.AtMost(ally.data.maxHealth - ally.data.currentHealth);
-        ally.AddHealth(randomHealAmount, uiText, Game.m.grey, true);
+        ally.AddTmpHealth((unit.data.damage * this.Random(.5f, 1.5f)).Round());
     }
 
     public void HurtEnemy(Unit enemy) => enemy?.GetBumpedBy(unit);

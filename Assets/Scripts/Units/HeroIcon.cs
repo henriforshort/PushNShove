@@ -103,7 +103,7 @@ public class HeroIcon : MonoBehaviour {
     }
 
     public void GainItemFromFight(Item itemPrefab, Vector3 position) {
-        Battle.m.gameState = Battle.State.PAUSE;
+        Battle.m.Pause(1.5f);
         
         //Create item
         Item itemInstance = Instantiate(
@@ -123,7 +123,6 @@ public class HeroIcon : MonoBehaviour {
         itemInstance.TweenPosition(itemInstance.transform.position + Vector3.up * 50, 
             Tween.Style.BOUNCE, 0.5f, () => 
                 this.Wait(1f, () => {
-                if (Unit.monsterUnits.Count > 0) Battle.m.gameState = Battle.State.PLAYING;
                 itemInstance.glow.SetActive(false);
                 itemInstance.rotatingGlow.SetActive(false);
                 itemInstance.TweenScale(Vector3.one, Tween.Style.EASE_OUT, 2f);

@@ -16,6 +16,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public float timeSinceGameOver;
     public State gameState;
     private Game.SceneName nextScene;
+    public float pauseDurationLeft;
 
     [Header("Scene References")]
     public CameraManager cameraManager;
@@ -34,10 +35,20 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     public List<HeroIcon> heroIcons;
 	
     public enum State { PLAYING, PAUSE, GAME_OVER, RESTARTING }
+    
+    
+    // ====================
+    // BASICS
+    // ====================
 
 
     public void Start() {
         InitBattle();
+    }
+
+    public void Update() {
+        CheckForGameOver();
+        UpdatePause();
     }
     
     
@@ -46,7 +57,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     // ====================
 
     public void InitBattle() {
-        gameState = State.PAUSE;
+        Pause(2);
         
         //Create heroes
         Game.m.save.heroes
@@ -86,6 +97,21 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
     
     
     // ====================
+    // PAUSE
+    // ====================
+
+    public void UpdatePause() {
+        pauseDurationLeft -= Time.deltaTime;
+        if (pauseDurationLeft <= 0 && gameState == State.PAUSE) gameState = State.PLAYING;
+    }
+
+    public void Pause(float duration = 1) {
+        pauseDurationLeft = pauseDurationLeft.AtLeast(duration);
+        gameState = State.PAUSE;
+    }
+    
+    
+    // ====================
     // CHEATS
     // ====================
     
@@ -100,10 +126,8 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
 
     [HideInInspector] public UnityEvent OnBattleEnd;
 
-    public void Update() {
+    public void CheckForGameOver() {
         if (gameState == State.GAME_OVER) AwaitRestart();
-
-        if (Input.GetKeyDown(KeyCode.P)) gameState = 1 - gameState;
     }
 
     public void Defeat() {

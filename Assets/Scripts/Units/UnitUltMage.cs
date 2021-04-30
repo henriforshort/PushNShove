@@ -1,14 +1,12 @@
 ﻿public class UnitUltMage : UnitUlt {
     public override void Ult() {
-        unit.SetAnim(Unit.Anim.HIT);
+        unit.SetAnim(Unit.Anim.ULT_MAGE);
         unit.lockAnim = true;
         unit.lockPosition = true;
         unit.isInvincible = true;
         Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK);
-        Unit.heroUnits.ForEach(u => {
-            float randomHealAmount = (unit.data.damage * 4 * this.Random(.5f, 1.5f)).Round();
-            string uiText = "+" + randomHealAmount.AtMost(u.data.maxHealth - u.data.currentHealth);
-            u.AddHealth(randomHealAmount, uiText, Game.m.grey, true);
+        Unit.monsterUnits.ForEach(m => {
+            this.Wait(Game.m.ultAnimDuration, () => m.GetBumpedBy(unit));
         });
     }
 

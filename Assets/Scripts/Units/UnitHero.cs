@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitHero : UnitSide {
     [Header("Balancing")]
@@ -123,8 +124,13 @@ public class UnitHero : UnitSide {
     public void Ult() {
         ultStatus = UltStatus.ACTIVATED;
         ult.Ult();
+        Battle.m.Pause(Game.m.ultAnimDuration);
         ultDurationLeft = ultDuration;
         unit.lockZOrder = true;
+        unit.halo.SetActive(true);
+        unit.halo.AddComponent<Tween>().Init(Vector3.zero,true,  Tween.Property.ALPHA, Tween.Style.EASE_IN, 
+            Game.m.ultAnimDuration, Tween.WhenDone.STOP, () => { }, 0, 
+            unit.halo.GetComponent<SpriteRenderer>());
     }
 
     public void EndUlt() {

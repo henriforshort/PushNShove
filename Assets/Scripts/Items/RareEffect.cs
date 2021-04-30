@@ -5,6 +5,6 @@ using UnityEngine;
 public class RareEffect : ItemEffect {
     public override void Apply() {
         currentEffects.Add(
-            item.hero.unit.data.prot.AddModifier(0.1f, StatModifier.Type.ADD, StatModifier.Scope.RUN));
+            item.hero.unit.data.block.AddModifier(0.1f, StatModifier.Type.ADD, StatModifier.Scope.RUN));
     }
 }
