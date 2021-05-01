@@ -88,6 +88,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
             Unit.monsterUnits.Random().monster.droppedGems++);
         
         //Init scene
+        Game.m.PurgeStatModifiers(StatModifier.Scope.BATTLE);
         fightPrompt.SetActive(true);
         transition.FadeOut();
         Game.m.PlayMusic(AdventureRPG.ADVENTURE_TIME);
@@ -159,10 +160,7 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         gameOverPanel.SetActive(true);
         gameState = State.GAME_OVER;
         timeSinceGameOver = 0;
-        this.Wait(0.5f, () => {
-            Unit.heroUnits.ForEach(u => u.hero.EndUlt());
-            Game.m.PurgeStatModifiers(StatModifier.Scope.BATTLE);
-        });
+        this.Wait(0.5f, () => Unit.heroUnits.ForEach(u => u.hero.EndUlt()));
     }
 
     public void AwaitRestart() {
@@ -192,7 +190,6 @@ public class Battle : Level<Battle> { //Battle manager, handles a single battle.
         Unit.monsterUnits.Clear();
         Game.m.PlaySound(MedievalCombat.WHOOSH_6);
         transition.FadeIn();
-        if (nextScene == Game.SceneName.Camp) Run.m.EndRun();
         this.Wait(0.4f, () => Game.m.LoadScene(nextScene));
     }
 

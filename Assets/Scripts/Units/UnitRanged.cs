@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class UnitRanged : UnitBehavior {
     [Header("Balancing")]
-    public float distanceFromScreenEdge;
+    public float range;
     public float aimDuration;
     public float reloadDuration;
 
@@ -38,7 +39,7 @@ public class UnitRanged : UnitBehavior {
 
         //Move forward if no enemy is in range, stop otherwise
         unit.speedLastFrame = unit.currentSpeed;
-        if (IsOnScreen()) unit.currentSpeed = 0;
+        if (IsInRange()) unit.currentSpeed = 0;
         else {
             unit.currentSpeed = unit.currentSpeed.LerpTo(Game.m.unitMaxSpeed, Game.m.bumpRecoverySpeed);
             attackStatus = AttackStatus.READY;
@@ -57,8 +58,7 @@ public class UnitRanged : UnitBehavior {
         return true;
     }
 
-    public bool IsOnScreen() => 
-        (this.GetX() - Battle.m.cameraManager.cameraFocus.GetX()).Abs() < 7f - distanceFromScreenEdge;
+    public bool IsInRange() => (this.GetX() - Battle.m.cameraManager.cameraFocus.GetX()).Abs() < range;
 
     
     // ====================
@@ -92,7 +92,7 @@ public class UnitRanged : UnitBehavior {
         if (unit.status != Unit.Status.ALIVE) return;
         if (Battle.m.gameState == Battle.State.PAUSE) return;
         if (unit.currentSpeed.isClearlyNot(0)) return;
-        if (!IsOnScreen()) return;
+        if (!IsInRange()) return;
         
         PrepareAttack();
     }

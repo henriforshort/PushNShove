@@ -63,12 +63,6 @@ public class Run : MonoBehaviour { //Run manager, handles a single run.
 		rareItems = items.Where(i => i.rarity == Item.Rarity.RARE).ToList();
 		leggyItems = items.Where(i => i.rarity == Item.Rarity.LEGGY).ToList();
 	}
-
-	public void EndRun() {
-		Game.m.PurgeStatModifiers(StatModifier.Scope.RUN);
-		Game.m.save.heroes.ForEach(h => h.data.itemPrefabPaths.Clear());
-		Destroy(gameObject);
-	}
 	
     
 	// ====================

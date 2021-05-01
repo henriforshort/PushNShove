@@ -24,36 +24,26 @@
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/AmazonAppStore.aar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/AmazonAppStore.aar.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/SamsungApps.aar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/SamsungApps.aar.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Managers/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Managers/GameManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Collectibles/Gem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Collectibles/Gem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Collectibles/Gem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Collectibles/Gem.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Gems Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Gems Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Parts/double xp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Parts/double xp.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Knight.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Mage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Mage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Strongman.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/RareEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/RareEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camp.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedHeal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedHeal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/knight.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/knight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/knight.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/knight.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/mage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/mage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/units/mage.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/units/mage.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/Battle/platform.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/Battle/platform.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/Battle/platform.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/Battle/platform.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/environment/night/platform.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/environment/night/platform.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/gem.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/gem.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ui/gem.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/ui/gem.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/Knight.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/Knight.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/mage.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/mage.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Environments/platform.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Environments/platform.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/ui/gem_small.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/ui/gem_small.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +164,6 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Hanimator.cs" />
       <option value="$PROJECT_DIR$/Assets/test.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camp/CampHero.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CampActivity.cs" />
       <option value="$PROJECT_DIR$/Assets/LambdaTest.cs" />
@@ -194,18 +183,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Util.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/BuffFx.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/Arrow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedAttack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/Projectile.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SimpleBehaviors/FightPrompt.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedHeal.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
@@ -214,6 +200,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1k6GgUKhAN3iWH4pGLr6hcAIQZY" />
@@ -434,7 +425,8 @@
       <workItem from="1619511668061" duration="593000" />
       <workItem from="1619544123488" duration="5199000" />
       <workItem from="1619598708977" duration="9082000" />
-      <workItem from="1619777390505" duration="12469000" />
+      <workItem from="1619777390505" duration="12690000" />
+      <workItem from="1619880445497" duration="2104000" />
     </task>
     <servers />
   </component>

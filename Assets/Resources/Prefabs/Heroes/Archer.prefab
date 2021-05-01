@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
-  distanceFromScreenEdge: 1
+  range: 9
   aimDuration: 1
   reloadDuration: 1
   attackStatus: 0

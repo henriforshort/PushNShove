@@ -1235,7 +1235,7 @@ MonoBehaviour:
   unitsReadyNumber: {fileID: 1958526957}
   gemsBg: {fileID: 839956210}
   gemsText: {fileID: 1469313251}
-  gemsIcon: {fileID: 8023208124576260564}
+  gemsIcon: {fileID: 811078338}
   idle:
     type: 0
     button: {fileID: 96083185}
@@ -2286,6 +2286,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750483094}
   m_CullTransparentMesh: 1
+--- !u!114 &811078338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 634748466718189763, guid: 6c0273c8cf342ad46a0091e055e5e4e4, type: 3}
+  m_PrefabInstance: {fileID: 8023208124576260563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &826500636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6009,6 +6020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 7461902889851975996, guid: 5947668f050ae8845a818d56891a1eab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5947668f050ae8845a818d56891a1eab, type: 3}
 --- !u!1 &5136918445584349232
@@ -6320,14 +6335,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0273c8cf342ad46a0091e055e5e4e4, type: 3}
---- !u!114 &8023208124576260564 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2933391044411309567, guid: 6c0273c8cf342ad46a0091e055e5e4e4, type: 3}
-  m_PrefabInstance: {fileID: 8023208124576260563}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

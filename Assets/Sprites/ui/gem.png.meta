@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: -7721892879234192908
     second: gem_6
+  - first:
+      213: -726477819973260145
+    second: gem_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -141,8 +144,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
-        height: 20
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +163,10 @@ TextureImporter:
       name: gem_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 13
         y: 0
-        width: 17
-        height: 20
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +184,10 @@ TextureImporter:
       name: gem_2
       rect:
         serializedVersion: 2
-        x: 34
+        x: 26
         y: 0
-        width: 17
-        height: 20
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +205,10 @@ TextureImporter:
       name: gem_3
       rect:
         serializedVersion: 2
-        x: 51
+        x: 39
         y: 0
-        width: 17
-        height: 20
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +226,10 @@ TextureImporter:
       name: gem_4
       rect:
         serializedVersion: 2
-        x: 68
+        x: 52
         y: 0
-        width: 17
-        height: 20
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +247,10 @@ TextureImporter:
       name: gem_5
       rect:
         serializedVersion: 2
-        x: 85
+        x: 65
         y: 0
-        width: 17
-        height: 20
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +268,10 @@ TextureImporter:
       name: gem_6
       rect:
         serializedVersion: 2
-        x: 102
+        x: 78
         y: 0
-        width: 17
-        height: 20
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,6 +281,27 @@ TextureImporter:
       bones: []
       spriteID: 4f9a0a3b65356d490800000000000000
       internalID: -7721892879234192908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gem_7
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 0
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c2b4395480be5f0800000000000000
+      internalID: -726477819973260145
       vertices: []
       indices: 
       edges: []
