@@ -79,10 +79,11 @@ public class Camp : Level<Camp> {
         activities.ForEach(a => a.Init());
         transition.FadeOut();
         
-        //finish previous battle
+        //finish previous run
         Game.m.PurgeStatModifiers(StatModifier.Scope.RUN);
         Game.m.PurgeStatModifiers(StatModifier.Scope.BATTLE);
         Game.m.save.heroes.ForEach(h => h.data.itemPrefabPaths.Clear());
+        Destroy(Run.m?.gameObject);
         
         //Misc
         if (Game.m.save.lastAssignedDoubleXp != DateTime.Today) AssignDoubleXp();

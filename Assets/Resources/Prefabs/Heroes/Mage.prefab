@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8046062835865571401}
   - component: {fileID: -3902853122371618417}
   - component: {fileID: 1219178943284343492}
-  - component: {fileID: -1712622078922639962}
   - component: {fileID: -93371840396952235}
+  - component: {fileID: -1712622078922639962}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Untagged
@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
-  range: 9
+  range: 6
   aimDuration: 0
-  reloadDuration: 1.5
+  reloadDuration: 2
   attackStatus: 0
   timeTillReloaded: 0
   OnAim:
@@ -160,6 +160,27 @@ MonoBehaviour:
   OnAttack:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-93371840396952235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490591814827413495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b1abfb1f9a4a839c79dfc0662e5188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffDuration: 2.5
+  attackAnimDuration: 0.75
+  buffStat: 1
+  buffType: 0
+  buffAmount: 1
+  targetAllAllies: 1
+  currentBuffs: []
+  buffFxPrefab: {fileID: 8028705020927327517, guid: 63381806bb72e56499a4cdc73858002a, type: 3}
+  unitRanged: {fileID: 1219178943284343492}
 --- !u!114 &-1712622078922639962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,27 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
---- !u!114 &-93371840396952235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490591814827413495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b1abfb1f9a4a839c79dfc0662e5188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buffDuration: 2
-  attackAnimDuration: 0.75
-  buffStat: 1
-  buffType: 0
-  buffAmount: 1
-  targetAllAllies: 1
-  currentBuffs: []
-  buffFxPrefab: {fileID: 8028705020927327517, guid: 63381806bb72e56499a4cdc73858002a, type: 3}
-  unitRanged: {fileID: 1219178943284343492}
 --- !u!1 &490591814931064775
 GameObject:
   m_ObjectHideFlags: 0

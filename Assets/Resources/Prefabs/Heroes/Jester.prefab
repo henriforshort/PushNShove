@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
-  range: 7
-  aimDuration: 0.25
+  range: 4
+  aimDuration: 0
   reloadDuration: 2
   attackStatus: 0
   timeTillReloaded: 0
@@ -315,6 +315,8 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
+    - {fileID: -170764433648100692, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -2494105334710038022, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: -1457803679456522900, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: 7224368629849581989, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: 2980991817480762901, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}

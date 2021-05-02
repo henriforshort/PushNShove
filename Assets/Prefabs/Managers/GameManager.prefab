@@ -104,7 +104,7 @@ MonoBehaviour:
   defendSpeed: -10
   absorbSpeed: -5
   boardSize: 13.75
-  ultAnimDuration: 1
+  ultAnimDuration: 0.75
   itemsPerBattle: 1
   maxItemsPerHero: 5
   commonDropChance: 10
