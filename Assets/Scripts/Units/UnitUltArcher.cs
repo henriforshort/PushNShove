@@ -6,12 +6,12 @@ public class UnitUltArcher : UnitUlt {
     public Projectile bigArrowPrefab;
     
     public override void Ult() {
-        unit.SetAnim(Unit.Anim.ULT_ARCHER_AIM);
+        unit.SetAnim(Unit.Anim.ULT);
         unit.lockAnim = true;
         unit.lockPosition = true;
         unit.isInvincible = true;
         Game.m.PlaySound(MedievalCombat.BOW_DRAW_5);
-        this.Wait(Game.m.ultAnimDuration, Shoot);
+        this.Wait(unit.hero.ultAnimDuration, Shoot);
     }
 
     public override void EndUlt() {

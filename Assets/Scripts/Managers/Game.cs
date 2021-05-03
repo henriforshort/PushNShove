@@ -29,7 +29,6 @@ public class Game : MonoBehaviour { //Game manager, handles the whole game
     public float defendSpeed;
     public float absorbSpeed;
     public float boardSize;
-    public float ultAnimDuration;
     
     [Space(20)]
     public int itemsPerBattle;

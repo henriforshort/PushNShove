@@ -73,10 +73,7 @@ public class Unit : MonoBehaviour {
     public bool isWalking => currentSpeed.isClearlyPositive();
     
     public enum Status { ALIVE, FALLING, DYING, DEAD }
-    public enum Anim {
-        WALK, PREPARE, HIT, DEFEND, BUMPED,
-        ULT_BRUISER, ULT_STRONGMAN, ULT_ARCHER_AIM, ULT_ARCHER_SHOOT, ULT_JESTER, ULT_KNIGHT, ULT_MAGE
-    }
+    public enum Anim { WALK, PREPARE, HIT, DEFEND, BUMPED, PREPARE_ULT, ULT }
 
     public bool isHero => unitSide is UnitHero;
     public bool isMonster => !isHero;
@@ -117,8 +114,8 @@ public class Unit : MonoBehaviour {
         if (isWalking && anim == Anim.BUMPED) SetAnim(Anim.WALK);
     }
 
-    public void SetAnim(Anim a) {
-        if (lockAnim) return;
+    public void SetAnim(Anim a, bool bypassLockAnim = false) {
+        if (lockAnim && !bypassLockAnim) return;
         if (anim == a && hanimator.playing) return;
         if (!hanimator.enabled) return;
         

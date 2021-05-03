@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ultCooldown: 40
   ultDuration: 5
+  ultAnimDuration: 1.1
   ultStatus: 0
   predictiveXp: 0
   ultDurationLeft: 0
@@ -197,7 +198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490591814931064775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.085, y: 1.638889, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1944444, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5229927781760084161}
@@ -245,7 +246,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8107710928406730386, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+  m_Sprite: {fileID: -7868499637312947225, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -280,10 +281,10 @@ MonoBehaviour:
     loop: 1
     randomStart: 0
     sprites:
-    - {fileID: 740242000534278018, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -6016191042328661550, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 7174724521984023984, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -8849449827238776105, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -8178997349941770262, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -8187676932623913719, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -7498870110169521039, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -6739294021931320025, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
   - name: PREPARE
     frameDuration: 100
     delay: 0
@@ -291,7 +292,7 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: 7183375906486206432, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 4828575765646883996, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
   - name: HIT
     frameDuration: 100
     delay: 0
@@ -299,9 +300,10 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -5953706530349332062, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -364896107309993220, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 4808763617771383303, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -5371836427862085642, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 2562725619801180022, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 7341575890145210807, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -7587729509369400263, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
   - name: BUMPED
     frameDuration: 100
     delay: 0
@@ -309,7 +311,7 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -3936708783585791709, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: -5141314437262657703, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
   - name: DEFEND
     frameDuration: 100
     delay: 0
@@ -317,36 +319,36 @@ MonoBehaviour:
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: -9102215036314525063, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-  - name: PREPARE2
+    - {fileID: -7868499637312947225, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+  - name: PREPARE_ULT
     frameDuration: 100
     delay: 0
     weight: 0
     loop: 0
     randomStart: 0
     sprites:
-    - {fileID: 5804808923002972390, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-  - name: HIT2
-    frameDuration: 100
-    delay: 0
-    weight: 0
-    loop: 0
-    randomStart: 0
-    sprites:
-    - {fileID: 7238206231204765735, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -6838526995658360098, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -1542703513063588084, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-  - name: ULT_BRUISER
+    - {fileID: 6050440500542622556, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 7717293860740471744, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -3688036354833404371, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 7249136654742903994, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 3046604187934839615, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 3635863740602296444, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -5323619570685466785, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 8011223545318259736, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -4050887102449659894, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 1911138261157220214, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -8292409535111740317, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+  - name: ULT
     frameDuration: 100
     delay: 0
     weight: 0
     loop: 1
     randomStart: 0
     sprites:
-    - {fileID: 2751765179324594813, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 8320475909363473942, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: -7062840624321980151, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
-    - {fileID: 8745514035611474826, guid: d62a40af46268ba4d8dc9d5f33cc62ab, type: 3}
+    - {fileID: 4870999623540420559, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 1031275557476357991, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: -2043977761287471124, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
+    - {fileID: 3051272073449486452, guid: a7c6aaf4e82df66408c547d3cddb5d08, type: 3}
   playing: 0
   currentAnim:
     name: 
@@ -455,19 +457,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.151
+      value: -0.065999985
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.25
+      value: 0.6944444
       objectReference: {fileID: 0}
     - target: {fileID: 5645967142528362442, guid: a6d8d5369c777c7cab0629f843dcebaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -557,17 +559,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Halo
       objectReference: {fileID: 0}
+    - target: {fileID: 2223809202277375664, guid: e40740581450b95419227534deb64042, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8623771799872029632, guid: e40740581450b95419227534deb64042, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8623771799872029632, guid: e40740581450b95419227534deb64042, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2
+      value: -0.11500001
       objectReference: {fileID: 0}
     - target: {fileID: 8623771799872029632, guid: e40740581450b95419227534deb64042, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.055555463
       objectReference: {fileID: 0}
     - target: {fileID: 8623771799872029632, guid: e40740581450b95419227534deb64042, type: 3}
       propertyPath: m_LocalPosition.z

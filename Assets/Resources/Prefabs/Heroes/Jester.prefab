@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ultCooldown: 20
   ultDuration: 1.5
+  ultAnimDuration: 0.5
   ultStatus: 0
   predictiveXp: 0
   ultDurationLeft: 0
@@ -341,15 +342,7 @@ MonoBehaviour:
     randomStart: 0
     sprites:
     - {fileID: -975704140431413408, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
-  - name: IDLE
-    frameDuration: 100
-    delay: 0
-    weight: 0
-    loop: 0
-    randomStart: 0
-    sprites:
-    - {fileID: -975704140431413408, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
-  - name: ULT_JESTER
+  - name: ULT
     frameDuration: 100
     delay: 0
     weight: 0
@@ -363,6 +356,8 @@ MonoBehaviour:
     - {fileID: 2733316496609722315, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: 7243786947635027724, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
     - {fileID: -3858963379372630616, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: 8423073791072817840, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
+    - {fileID: -8923804495286680877, guid: 2168d4b8333405948b5d27199d0de82d, type: 3}
   - name: PREPARE
     frameDuration: 100
     delay: 0

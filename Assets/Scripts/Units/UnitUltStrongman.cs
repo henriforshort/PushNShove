@@ -10,7 +10,7 @@ public class UnitUltStrongman : UnitUlt {
     
     
     public override void Ult() {
-        unit.SetAnim(Unit.Anim.ULT_STRONGMAN);
+        unit.SetAnim(Unit.Anim.ULT);
         unit.lockAnim = true;
         unit.lockPosition = true;
         this.For(3, () => Game.m.PlaySound(MedievalCombat.WHOOSH_1), 0.1f);

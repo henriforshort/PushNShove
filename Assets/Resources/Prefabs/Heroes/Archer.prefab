@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ultCooldown: 30
   ultDuration: 1.5
+  ultAnimDuration: 1
   ultStatus: 0
   predictiveXp: 0
   ultDurationLeft: 0
@@ -352,7 +353,7 @@ MonoBehaviour:
     randomStart: 0
     sprites:
     - {fileID: -596610279889723890, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-  - name: ULT_ARCHER_AIM
+  - name: ULT
     frameDuration: 100
     delay: 0
     weight: 0
@@ -364,22 +365,6 @@ MonoBehaviour:
     - {fileID: 2199431665083466589, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: -1072846411591543831, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
     - {fileID: -7714815520443705118, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-  - name: ULT_ARCHER_SHOOT
-    frameDuration: 100
-    delay: 0
-    weight: 0
-    loop: 0
-    randomStart: 0
-    sprites:
-    - {fileID: -8210838736343395885, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: 8091852143692746023, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: -692223422303060308, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: 1188899609483295625, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: 6750193663811815428, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: 6960232714566914390, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: -6192669274392354610, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: -3783999413710591504, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
-    - {fileID: -596610279889723890, guid: e5b4b3da1585c434bb2443643d6086c7, type: 3}
   playing: 0
   currentAnim:
     name: 

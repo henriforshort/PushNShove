@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ultCooldown: 20
   ultDuration: 1.5
+  ultAnimDuration: 1
   ultStatus: 0
   predictiveXp: 0
   ultDurationLeft: 0
@@ -363,7 +364,7 @@ MonoBehaviour:
     randomStart: 0
     sprites:
     - {fileID: 8619904004745130942, guid: 6703c063beae85147b351e9cd000ee67, type: 3}
-  - name: ULT_MAGE
+  - name: ULT
     frameDuration: 100
     delay: 0
     weight: 0

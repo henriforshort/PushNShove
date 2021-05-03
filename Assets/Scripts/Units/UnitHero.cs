@@ -6,6 +6,7 @@ public class UnitHero : UnitSide {
     [Header("Balancing")]
     public float ultCooldown;
     public float ultDuration;
+    public float ultAnimDuration;
     
     [Header("State")]
     public UltStatus ultStatus;
@@ -124,12 +125,12 @@ public class UnitHero : UnitSide {
     public void Ult() {
         ultStatus = UltStatus.ACTIVATED;
         ult.Ult();
-        Battle.m.Pause(Game.m.ultAnimDuration);
+        Battle.m.Pause(ultAnimDuration);
         ultDurationLeft = ultDuration;
         unit.lockZOrder = true;
         unit.halo.SetActive(true);
         unit.halo.AddComponent<Tween>().Init(Vector3.zero,true,  Tween.Property.ALPHA, Tween.Style.EASE_IN, 
-            Game.m.ultAnimDuration, Tween.WhenDone.STOP, () => { }, 0, 
+            ultAnimDuration, Tween.WhenDone.STOP, () => { }, 0, 
             unit.halo.GetComponent<SpriteRenderer>());
     }
 

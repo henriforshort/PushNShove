@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ultCooldown: 30
   ultDuration: 0.4
+  ultAnimDuration: 0.5
   ultStatus: 0
   predictiveXp: 0
   ultDurationLeft: 0
@@ -335,7 +336,7 @@ MonoBehaviour:
     - {fileID: 6416102591177551518, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
     - {fileID: -2395006380349316598, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
     - {fileID: 7675609276090279904, guid: 1358a53d284a66a48acafde1bd4fbbfa, type: 3}
-  - name: ULT_STRONGMAN
+  - name: ULT
     frameDuration: 50
     delay: 0
     weight: 0

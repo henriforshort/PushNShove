@@ -6,7 +6,7 @@ public class UnitUltKnight : UnitUlt {
     public BuffFx buffFxPrefab;
 
     public override void Ult() {
-        unit.SetAnim(Unit.Anim.ULT_KNIGHT);
+        unit.SetAnim(Unit.Anim.ULT);
         Game.m.PlaySound(MedievalCombat.MAGIC_HOLY, .5f, 1);
         
         BuffFx buffFx = Instantiate(buffFxPrefab, 

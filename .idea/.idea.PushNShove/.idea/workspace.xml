@@ -21,11 +21,20 @@
   <component name="ChangeListManager">
     <list default="true" id="f316050b-d579-4548-8d0d-2f0c4f3380d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PushNShove/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Managers/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Managers/GameManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Bruiser.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Jester.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Knight.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Mage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Mage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Strongman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Heroes/Strongman.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Working Files/Sprites/Characters/bruiser2.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Working Files/Sprites/Characters/bruiser2.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,8 +169,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitMonster.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/MedievalCombat.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/ArcherUltArrow.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Items/Item.cs" />
@@ -174,19 +181,21 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/HeroIcon.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Tween.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedHeal.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRangedBuff.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Game.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitHero.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UnitData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRanged.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Battle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Run.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/Camp.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltJester.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltKnight.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltMage.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltStrongman.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltArcher.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitUltBruiser.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1k6GgUKhAN3iWH4pGLr6hcAIQZY" />
@@ -410,6 +419,7 @@
       <workItem from="1619777390505" duration="12690000" />
       <workItem from="1619880445497" duration="2104000" />
       <workItem from="1619965538672" duration="3680000" />
+      <workItem from="1620045674807" duration="1496000" />
     </task>
     <servers />
   </component>

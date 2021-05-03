@@ -7,12 +7,12 @@ public class UnitUltJester : UnitUlt {
     public Projectile projectilePrefab;
     
     public override void Ult() {
-        unit.SetAnim(Unit.Anim.ULT_JESTER);
+        unit.SetAnim(Unit.Anim.ULT);
         unit.lockAnim = true;
         unit.isInvincible = true;
         Game.m.PlaySound(MedievalCombat.WHOOSH_3);
         Game.m.PlaySound(MedievalCombat.MAGIC_BUFF_ATTACK, .5f, 2);
-        this.Wait(Game.m.ultAnimDuration, ApplyBuff);
+        this.Wait(unit.hero.ultAnimDuration, ApplyBuff);
     }
 
     public override void EndUlt() {

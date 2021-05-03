@@ -8,7 +8,8 @@ public class UnitUltBruiser : UnitUlt {
     public List<StatModifier> ultStatModifs = new List<StatModifier>();
 
     public override void Ult() {
-        unit.SetAnim(Unit.Anim.ULT_BRUISER);
+        unit.SetAnim(Unit.Anim.PREPARE_ULT);
+        this.Wait(1.1f, () => unit.SetAnim(Unit.Anim.ULT, true));
         unit.lockAnim = true;
         Game.m.PlaySound(MedievalCombat.WHOOSH_8);
         this.For(9, () => Game.m.PlaySound(MedievalCombat.WHOOSH_6), 0.5f);
